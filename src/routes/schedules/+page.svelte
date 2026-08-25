@@ -86,6 +86,7 @@
             ontoggleFavorite={() => selected !== null && app.favorites.toggle(selected)}
             onselectSection={(sectionId) => (detailsSectionId = sectionId)}
             onapplyProblems={(problems) => app.applyProblems(problems)}
+            onimportWorkday={(sections) => app.importEnrolledSections(sections)}
           />
         {/snippet}
       </SplitPane>

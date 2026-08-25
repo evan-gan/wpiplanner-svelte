@@ -30,7 +30,7 @@ search.** §6 has the per-phase gates, §8 lists the four places the rewrite
 deliberately departs from the old app, and §10.5 is the one open question that
 blocks cutover.
 
-`pnpm test` runs 62 tool tests and 352 app tests.
+`pnpm test` runs 62 tool tests and 394 app tests.
 
 ## Structure
 
@@ -84,11 +84,29 @@ Files that carry the most weight, and what to change where.
 | `src/lib/calendar/scheduleExport.ts` | The interesting half: schedule + academic calendar → events. Holidays become `EXDATE`s; a day that follows another weekday drops that day's meetings and adds one-off meetings for the followed day's. |
 | `src/lib/calendar/download.ts` | Blob → anchor click. The only DOM in the folder. |
 
+### Workday import — reading the student's registration, no DOM
+
+| Path | What lives there |
+|---|---|
+| `src/lib/workday/zip.ts` | A read-only ZIP reader. An `.xlsx` is a ZIP of XML parts; this walks the central directory and inflates through `DecompressionStream`, so the import needs no dependency. ZIP64 and encryption throw rather than decode wrongly. |
+| `src/lib/workday/xlsx.ts` | First worksheet → `string[][]`. Scans the XML with regexes, not `DOMParser`, because the tests run under Node. Handles shared strings, inline strings, and lettered column gaps. |
+| `src/lib/workday/enrollment.ts` | Sheet rows → one record per enrolled course. **Columns are found by header text, not by letter.** Groups the separate lecture and lab rows of one course back together, strips `(group N)` notes, and drops rows whose registration status says dropped. |
+| `src/lib/workday/matchEnrollment.ts` | Enrolled courses + catalog → section ids. **Read the header comment before touching it** — the set-matching rule is the whole feature. |
+| `src/lib/workday/index.ts` | `readWorkdayExport(bytes, catalog)`, the four steps in order. Everything is pure; applying the result is the caller's job. |
+
+**Why sets:** Workday names one meeting at a time — `AL01` for the lecture,
+`AX01` for its lab — while the catalog stores the combination a student actually
+registers for as a single section, `CS|1102|AL01/AX01`. A catalog section matches
+when its periods carry exactly the labels Workday listed for that course. An
+exact match wins; a section that merely *contains* the listed labels is taken
+only when it is the only one, and is flagged `partial`. Anything ambiguous is
+left out with a reason rather than guessed at.
+
 ### State — Svelte 5 runes
 
 | Path | What lives there |
 |---|---|
-| `src/lib/state/app.svelte.ts` | `AppState`, put into context by the layout. Owns the one cross-cutting rule: **a change to the choices calls `refresh()`, which restarts the search.** Start here. |
+| `src/lib/state/app.svelte.ts` | `AppState`, put into context by the layout. Owns the one cross-cutting rule: **a change to the choices calls `refresh()`, which restarts the search.** Start here. `importEnrolledSections` applies a Workday import: it replaces the selection and denies every section but the registered one. |
 | `src/lib/state/selection.svelte.ts` | Chosen courses and denied sections; the 18-course limit. Replaces `StudentSchedule`'s course half plus every `SectionProducer`. |
 | `src/lib/state/chosenTimes.svelte.ts` | The per-term availability grid and its drag semantics. |
 | `src/lib/state/favorites.svelte.ts` | Starred schedules, stored as section ids. |
@@ -107,7 +125,7 @@ Files that carry the most weight, and what to change where.
 | `src/lib/components/primitives/` | `SplitPane`, `ScrollArea`, `Modal`, `ToggleButton`, `WarningIcon`, `FilterMenu` (funnel button → popover of tick-box filter groups). Generic, no app knowledge. |
 | `src/lib/components/catalog/` | The Courses tab: `DepartmentPicker` (the six academic groups live here), `CourseTable`, `CourseRow`, `TermBadges`, `CourseDetails`, `SelectedCourseList`. |
 | `src/lib/components/times/` | `TermTimeTabs`, `TimeGrid`, `TimeGridCell`. |
-| `src/lib/components/schedules/` | `SchedulePane` (the view-mode switch), `SectionPicker` (section/term checkboxes plus the per-course filter menu), `ScheduleThumbnailList` / `ScheduleThumbnail` (canvas), `QuarterGrid`, `WeekGrid`, `WeekGridColumn`, `PeriodBlock`, `DetailedView`, `SectionDetailsDialog`, `ConflictResolver`, `GenerationProgress` (canvas), `ShareLink`, `CalendarExport` (the third toolbar view, "Export to Calendar"). |
+| `src/lib/components/schedules/` | `SchedulePane` (the view-mode switch), `SectionPicker` (section/term checkboxes plus the per-course filter menu), `ScheduleThumbnailList` / `ScheduleThumbnail` (canvas), `QuarterGrid`, `WeekGrid`, `WeekGridColumn`, `PeriodBlock`, `DetailedView`, `SectionDetailsDialog`, `ConflictResolver`, `GenerationProgress` (canvas), `ShareLink`, `CalendarExport` (the third toolbar view, "Export to Calendar"), `WorkdayImport` (the fourth toolbar button — an *action*, not a view, so it stays reachable when the pane is showing the conflict resolver). |
 | `src/lib/styles/` | `tokens.css` (every colour and size lifted from the old app) and `reset.css`. |
 | `src/lib/share/shareCode.ts` | Encode/decode `?share=`. Version-prefixed; old hex-CRN links are rejected, not migrated. |
 
@@ -125,8 +143,15 @@ Files that carry the most weight, and what to change where.
   `data/new.schedb`, which it converts at test time. Those numbers were confirmed
   against the original GWT producer by `tools/parity-oracle`, so they belong to
   that one export and must not be re-pinned to a refreshed catalog.
+- `tests/workday/realExport.test.ts` — the import against a real
+  `View_My_Courses.xlsx` and the real `static/schedb.json`. Asserts that every
+  enrolled course resolves to exactly one section, which is what breaks if
+  Workday changes its columns or section labelling.
 
-Both skip themselves when their input file is absent.
+Those three skip themselves when their input file is absent. `tests/fixtures/xlsxBuilder.ts`
+writes genuine `.xlsx` bytes (both ZIP compression methods) so the import tests
+exercise the container, not just the XML; `tests/fixtures/workdayExport.ts` holds
+rows shaped like the real export, awkward parts included.
 
 `tests/fixtures/` holds a three-course `MINI_CATALOG` and readable builders such
 as `section('CS|2102|A01', ['A'], ['9:00AM-9:50AM mon,wed,fri'])`.

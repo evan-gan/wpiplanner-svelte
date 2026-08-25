@@ -20,6 +20,8 @@
   import GenerationProgress from './GenerationProgress.svelte';
   import QuarterGrid from './QuarterGrid.svelte';
   import ShareLink from './ShareLink.svelte';
+  import WorkdayImport from './WorkdayImport.svelte';
+  import type { MatchedCourse } from '$lib/workday';
 
   interface Props {
     catalog: Catalog;
@@ -37,6 +39,8 @@
     ontoggleFavorite: () => void;
     onselectSection: (sectionId: string) => void;
     onapplyProblems: (problems: readonly Problem[]) => void;
+    /** Applies a confirmed Workday import; returns how many courses were kept. */
+    onimportWorkday: (sections: readonly MatchedCourse[]) => number;
   }
 
   let {
@@ -55,6 +59,7 @@
     ontoggleFavorite,
     onselectSection,
     onapplyProblems,
+    onimportWorkday,
   }: Props = $props();
 
   type ViewMode = 'grid' | 'detail' | 'export';
@@ -84,6 +89,7 @@
     <ToggleButton pressed={preferredView === 'export'} onclick={() => (preferredView = 'export')}>
       Export to Calendar
     </ToggleButton>
+    <WorkdayImport {catalog} onimport={onimportWorkday} />
 
     <span class="spacer"></span>
 

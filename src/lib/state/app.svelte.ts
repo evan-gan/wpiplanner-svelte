@@ -19,7 +19,7 @@ import { ChosenTimesState } from './chosenTimes.svelte';
 import { FavoritesState } from './favorites.svelte';
 import { PermutationsState } from './permutations.svelte';
 import { browserStorage, loadSelectedDepartments, saveSelectedDepartments, type StorageLike } from './persistence';
-import { SelectionState, type AddCourseResult } from './selection.svelte';
+import { MAX_COURSES, SelectionState, type AddCourseResult } from './selection.svelte';
 import { TimeRangeState } from './timeRange.svelte';
 
 /** Preselected on a first visit, as the legacy `DepartmentListBox` did. */
@@ -114,6 +114,38 @@ export class AppState {
   ): void {
     this.chosenTimes.applyDrag(term, anchor, drop);
     this.refresh();
+  }
+
+  /**
+   * Replace the selection with the sections a Workday export says the student
+   * is enrolled in.
+   *
+   * Every other section of each course is switched off, so the search has one
+   * combination to find and the Schedules tab shows the real registered
+   * schedule rather than the alternatives to it. This replaces the selection
+   * outright — the import describes a whole schedule, not an addition to one —
+   * which is why the UI confirms before calling it.
+   *
+   * @param enrolledSections The sections to keep, one per course
+   * @returns How many courses were applied, which is fewer than asked for when
+   *   the export exceeds the {@link MAX_COURSES} ceiling
+   */
+  importEnrolledSections(
+    enrolledSections: readonly { courseId: string; sectionId: string }[],
+  ): number {
+    const courses = enrolledSections.slice(0, MAX_COURSES).map(({ courseId, sectionId }) => ({
+      courseId,
+      deniedSectionIds: this.catalog
+        .requireCourse(courseId)
+        .sections.filter((section) => section.id !== sectionId)
+        .map((section) => section.id),
+    }));
+
+    this.selection.replaceAll(courses);
+    this.courseLimitWarning = false;
+    this.refresh();
+
+    return courses.length;
   }
 
   /**

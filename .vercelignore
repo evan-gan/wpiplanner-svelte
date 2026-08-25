@@ -1,0 +1,6 @@
+# Build inputs and dev-only trees — none of this is needed to run `vite build`.
+data/
+tools/
+tests/
+.svelte-kit/
+build/

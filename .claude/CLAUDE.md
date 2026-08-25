@@ -179,6 +179,21 @@ pnpm run check         # svelte-check; must stay at 0 errors, 0 warnings
 tools/parity-oracle/run.sh data/new.schedb CS2102,MA1021   # legacy search, needs a JDK
 ```
 
+## Deployment (Vercel)
+
+The site is a pure static bundle — `adapter-static` writes `build/` and there is
+no server function anywhere. Vercel serves those files directly.
+
+| File | What it does |
+|---|---|
+| `vercel.json` | `framework: null` so Vercel does **not** apply its SvelteKit preset (that preset expects `adapter-vercel` and looks in `.vercel/output`). It runs `pnpm run build` and serves `build/` as plain files. `trailingSlash: true` matches `trailingSlash = 'always'` in `src/routes/+layout.ts`. Cache headers: `_app/immutable/*` forever, `schedb.json` and `yearHeader.txt` never — those two are replaced by `pnpm updateData` and must not be served stale. |
+| `.vercelignore` | Keeps `data/`, `tools/`, and `tests/` out of the upload. Nothing under `src/` imports them; they are only referenced in comments. |
+| `package.json` → `engines.node` | Pins the build to Node 22+, which the tools' type stripping already assumes. |
+
+`static/schedb.json` is committed, so a clean checkout builds without running
+the data pipeline. Refreshing the catalog is `pnpm updateData` followed by a
+commit — the deploy just picks up the new file.
+
 ## Conventions specific to this repo
 
 - **Section identity is `${dept}|${courseNumber}|${sectionNumber}`, never the CRN.**

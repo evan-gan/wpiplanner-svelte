@@ -5,6 +5,9 @@
   "type": "module",
   "description": "WPI Planner — course schedule planner for Workday schedule data.",
   "packageManager": "pnpm@11.1.2",
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",

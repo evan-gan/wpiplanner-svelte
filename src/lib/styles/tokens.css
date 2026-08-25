@@ -1,0 +1,76 @@
+/**
+ * Shared design tokens.
+ *
+ * Every value here is lifted from the GWT app (war/Scheduler.css and the inline
+ * `getStyle().setBackgroundColor(...)` calls scattered through the widgets) so
+ * the rewrite can be re-skinned from one file instead of hunting through
+ * components. Do not change these without a side-by-side check against the old
+ * app — §8 of PLAN.md lists the only intended visual changes, and there are none.
+ */
+:root {
+  /* Brand */
+  --wpi-crimson: #c41230;
+  --wpi-crimson-hover: #e62341;
+  --tab-disabled-bg: #a9b0b7;
+
+  /* Term badge states — CourseSelection.TermView */
+  --term-open: #dfffdf;
+  --term-waitlist: #ccccff;
+  --term-full: #fce2b1;
+  --term-denied: #ffbbbb;
+  --term-not-offered-opacity: 0.2;
+
+  /* Add/remove toggle in the browse list — green when a course can be added,
+     red once it is chosen, so selection state reads at a glance. */
+  --toggle-add: #1a7f37;
+  --toggle-add-bg: #e8f6ec;
+  --toggle-remove: #d32f2f;
+  --toggle-remove-bg: #fdeaea;
+
+  /* Availability warning glyphs — CourseList.NoSeatWarning */
+  --warn-full: red;
+  --warn-waitlist: blue;
+
+  /* Time grid — TimeTable_Cell_* */
+  --timegrid-selected: #339900;
+  --timegrid-deselected: #ffdede;
+  --timegrid-border: #000;
+
+  /* Surfaces */
+  --surface: #fff;
+  --surface-alt: #f3f7fb;
+  --surface-hover: #eee;
+  --surface-heading: lightgrey;
+  --border-subtle: #ddd;
+  --border-muted: #bbb;
+  --border-panel: #aaa;
+  --text: #000;
+  --text-muted: #555;
+  --text-on-brand: #fff;
+
+  /* Type */
+  --font-sans: Arial, Helvetica, sans-serif;
+  --font-size-header-title: 36px;
+  --font-size-header-sub: 12px;
+  --font-size-tab: 20px;
+  --font-size-small: 12px;
+  --font-size-tiny: 9px;
+
+  /* Spacing & shape */
+  --space-1: 2px;
+  --space-2: 4px;
+  --space-3: 8px;
+  --space-4: 12px;
+  --space-5: 16px;
+  --radius-sm: 3px;
+  --radius-md: 5px;
+  --radius-lg: 10px;
+
+  /* Layout — the DockLayoutPanel pixel sizes the old app hardcoded */
+  --header-height: 50px;
+  --dept-pane-width: 250px;
+  --detail-pane-width: 250px;
+  --selected-pane-height: 250px;
+  --course-pane-width: 300px;
+  --thumbnail-pane-width: 170px;
+}

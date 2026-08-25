@@ -1,0 +1,10 @@
+node_modules/
+.svelte-kit/
+build/
+dist/
+.DS_Store
+
+# Build inputs and outputs — regenerate with `pnpm run data:build`
+data/*.schedb
+data/schedb-report.json
+static/schedb.json

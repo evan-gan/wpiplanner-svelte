@@ -28,6 +28,26 @@ describe('loadCatalog', () => {
     expect(onProgress.mock.calls.at(-1)?.[0].loaded).toBeGreaterThan(0);
   });
 
+  it('announces each load stage in order, so the loading screen can name it', async () => {
+    const stages: string[] = [];
+    await loadCatalog({
+      fetchImpl: async () => jsonResponse(JSON.stringify(MINI_CATALOG)),
+      onStage: (stage) => stages.push(stage),
+    });
+    expect(stages).toEqual(['connecting', 'downloading', 'parsing']);
+  });
+
+  it('stops reporting stages once the request fails', async () => {
+    const stages: string[] = [];
+    await expect(
+      loadCatalog({
+        fetchImpl: async () => new Response('nope', { status: 404, statusText: 'Not Found' }),
+        onStage: (stage) => stages.push(stage),
+      }),
+    ).rejects.toThrow(CatalogLoadError);
+    expect(stages).toEqual(['connecting']);
+  });
+
   it('explains a network failure instead of surfacing a raw TypeError', async () => {
     await expect(
       loadCatalog({

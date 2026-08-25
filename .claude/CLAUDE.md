@@ -44,7 +44,7 @@ Files that carry the most weight, and what to change where.
 | `tools/schedb-to-json/` | The older converter, `.schedb` XML → `static/schedb.json`. Kept for `data/new.schedb`, the export the search was verified against. Its own [README](../tools/schedb-to-json/README.md) and `tests/`. |
 | `tools/shared/` | `DescriptionPool` and `AnomalyLog`, used by both converters. |
 | `src/lib/model/schedb.ts` | **Single source of truth** for the `schedb.json` shape. Imported by both the app and both converters, so they cannot drift. |
-| `src/lib/data/loadCatalog.ts` | Fetches and validates `schedb.json`, with byte progress. Replaces `Scheduler.java` + `LoadSchedule.java`. |
+| `src/lib/data/loadCatalog.ts` | Fetches and validates `schedb.json`, reporting byte progress (`onProgress`) and the current step (`onStage`: connecting/downloading/parsing). Replaces `Scheduler.java` + `LoadSchedule.java`. |
 | `src/lib/data/yearHeader.ts` | The two-line `yearHeader.txt` (academic year, whether to show the `/old` link). |
 | `data/` | `new.schedb`, the pinned February 2025 export, and the generated anomaly report. Not served. |
 | `static/` | Served verbatim, including the generated `schedb.json`. |
@@ -118,10 +118,10 @@ left out with a reason rather than guessed at.
 
 | Path | What lives there |
 |---|---|
-| `src/routes/+layout.ts` | Loads the catalog and the year header for every route. `ssr = false`, `trailingSlash = 'always'`. |
-| `src/routes/+layout.svelte` | Creates `AppState`, applies a `?share=` link, renders header + tabs. |
+| `src/routes/+layout.ts` | Route options only — no data loading. `ssr = false`, `prerender = true`, `trailingSlash = 'always'`. |
+| `src/routes/+layout.svelte` | Boot sequence: renders `LoadingScreen` first, then fetches the catalog and year header after mount, then mounts `AppShell`. Owns the load error + retry. |
 | `src/routes/{courses,info,times,schedules}/+page.svelte` | One route per tab, in `TabList.addTab` order. |
-| `src/lib/components/shell/` | `AppHeader`, `TabBar`. |
+| `src/lib/components/shell/` | `AppShell` (creates `AppState`, applies a `?share=` link, renders header + tabs + the route body), `AppHeader`, `TabBar`, `LoadingScreen` (the plain white "Loading scheduler database..." page with the byte counter). |
 | `src/lib/components/primitives/` | `SplitPane`, `ScrollArea`, `Modal`, `ToggleButton`, `WarningIcon`, `FilterMenu` (funnel button → popover of tick-box filter groups). Generic, no app knowledge. |
 | `src/lib/components/catalog/` | The Courses tab: `DepartmentPicker` (the six academic groups live here), `CourseTable`, `CourseRow`, `TermBadges`, `CourseDetails`, `SelectedCourseList`. |
 | `src/lib/components/times/` | `TermTimeTabs`, `TimeGrid`, `TimeGridCell`. |

@@ -1,116 +1,74 @@
 <!--
-  The shell: header, tabs, and the current tab's body.
+  Boots the app: paint the loading screen first, then fetch the catalog.
 
-  This is where the app-level state is created and put into context, and where
-  a `?share=` link is applied before anything renders.
+  The catalog used to be awaited in `+layout.ts`, which left the browser on a
+  blank page for the whole download. Fetching it here, after mount, means the
+  loading screen with its byte counter is on screen while the bytes arrive —
+  the behaviour of the legacy `LoadSchedule` panel.
 -->
 <script lang="ts">
-  import { onMount, untrack } from 'svelte';
-  import { goto } from '$app/navigation';
-  import { page } from '$app/stores';
-  import AppHeader from '$lib/components/shell/AppHeader.svelte';
-  import TabBar from '$lib/components/shell/TabBar.svelte';
-  import { AppState, setAppState } from '$lib/state/app.svelte';
-  import { decodeShareCode, readShareCode, SHARE_PARAM } from '$lib/share/shareCode';
+  import { onMount } from 'svelte';
+  import { base } from '$app/paths';
+  import AppShell from '$lib/components/shell/AppShell.svelte';
+  import LoadingScreen from '$lib/components/shell/LoadingScreen.svelte';
+  import { loadCatalog, type LoadProgress, type LoadStage } from '$lib/data/loadCatalog';
+  import { EMPTY_YEAR_HEADER, loadYearHeader, type YearHeader } from '$lib/data/yearHeader';
+  import type { Catalog } from '$lib/model/catalog';
   import '../app.css';
-  import type { LayoutData } from './$types';
 
   interface Props {
-    data: LayoutData;
     children: import('svelte').Snippet;
   }
 
-  let { data, children }: Props = $props();
+  let { children }: Props = $props();
 
-  // The catalog is loaded once in `+layout.ts` and never changes, so reading it
-  // untracked here keeps the app state from being rebuilt on any `data` update.
-  const app = setAppState(new AppState(untrack(() => data.catalog)));
-  let shareError = $state<string | null>(null);
+  let catalog = $state<Catalog | null>(null);
+  let yearHeader = $state<YearHeader>(EMPTY_YEAR_HEADER);
+  let stage = $state<LoadStage>('connecting');
+  let progress = $state<LoadProgress | null>(null);
+  let loadError = $state<string | null>(null);
 
   onMount(() => {
-    app.restore();
-    applyShareLink();
-    return () => app.dispose();
+    void startLoad();
   });
 
   /**
-   * A `?share=` link replaces the saved selection with the shared schedule.
+   * Fetch the catalog and the year header, leaving the loading screen up until
+   * the catalog is ready.
    *
-   * Each shared section becomes its course with every *other* section switched
-   * off, so the shared schedule is the only one the generator can produce —
-   * the behaviour of `loadScheduleFromParam`, minus the CRN ambiguity.
+   * The header is small and independent: a slow or missing `yearHeader.txt`
+   * must not hold up the catalog, so the two are fetched in parallel and only
+   * the catalog can fail the boot.
    */
-  function applyShareLink() {
-    const code = readShareCode($page.url);
-    if (code === null) return;
+  async function startLoad(): Promise<void> {
+    loadError = null;
+    progress = null;
+    stage = 'connecting';
+
+    // Paths go through `base` so the app also works when deployed under a
+    // subdirectory, and so a route like `/schedules/` does not resolve a bare
+    // filename against itself.
+    const headerRequest = loadYearHeader(fetch, `${base}/yearHeader.txt`);
 
     try {
-      const sectionIds = decodeShareCode(code);
-      const courses = [];
-
-      for (const sectionId of sectionIds) {
-        const courseId = app.catalog.getCourseIdOfSection(sectionId);
-        if (courseId === undefined) continue;
-
-        const course = app.catalog.requireCourse(courseId);
-        courses.push({
-          courseId,
-          deniedSectionIds: course.sections
-            .filter((section) => section.id !== sectionId)
-            .map((section) => section.id),
-        });
-      }
-
-      app.selection.replaceAll(courses);
-      app.refresh();
+      catalog = await loadCatalog({
+        url: `${base}/schedb.json`,
+        onStage: (next) => (stage = next),
+        onProgress: (next) => (progress = next),
+      });
     } catch (error) {
-      shareError = error instanceof Error ? error.message : String(error);
-    } finally {
-      // Drop the parameter so a later reload does not re-apply a stale schedule.
-      const url = new URL($page.url);
-      url.searchParams.delete(SHARE_PARAM);
-      void goto(`${url.pathname}${url.search}`, { replaceState: true, noScroll: true });
+      loadError = error instanceof Error ? error.message : String(error);
+      return;
     }
+
+    yearHeader = await headerRequest;
   }
 </script>
 
-<div class="app">
-  <AppHeader header={data.yearHeader} generated={data.catalog.generated}>
-    {#snippet tabs()}
-      <TabBar hasCourses={app.hasCourses} />
-    {/snippet}
-  </AppHeader>
-
-  {#if shareError !== null}
-    <p class="share-error" role="alert">
-      {shareError}
-      <button type="button" onclick={() => (shareError = null)}>Dismiss</button>
-    </p>
-  {/if}
-
-  <main>
+{#if catalog === null}
+  <LoadingScreen {stage} {progress} error={loadError} onRetry={() => void startLoad()} />
+{:else}
+  <AppShell {catalog} {yearHeader}>
     {@render children()}
-  </main>
-</div>
-
-<style>
-  .app {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
-
-  main {
-    flex: 1 1 auto;
-    min-height: 0;
-    position: relative;
-  }
-
-  .share-error {
-    margin: 0;
-    padding: var(--space-3);
-    background: var(--term-denied);
-    border-bottom: 1px solid var(--border-muted);
-    font-size: var(--font-size-small);
-  }
-</style>
+  </AppShell>
+{/if}

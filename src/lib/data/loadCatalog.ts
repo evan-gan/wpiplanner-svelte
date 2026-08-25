@@ -18,6 +18,12 @@ import type { SchedbFile } from '$lib/model/schedb';
  */
 export const CATALOG_URL = '/schedb.json';
 
+/**
+ * Which step of the load is running, so the loading screen can name it the way
+ * the legacy `LoadSchedule` did with its XHR ready states.
+ */
+export type LoadStage = 'connecting' | 'downloading' | 'parsing';
+
 export interface LoadProgress {
   /** Bytes received so far. */
   loaded: number;
@@ -30,6 +36,8 @@ export interface LoadCatalogOptions {
   url?: string;
   /** Called as bytes arrive, so the loading screen can show a real bar. */
   onProgress?: (progress: LoadProgress) => void;
+  /** Called when the load moves to a new {@link LoadStage}. */
+  onStage?: (stage: LoadStage) => void;
   fetchImpl?: typeof fetch;
   signal?: AbortSignal;
 }
@@ -89,6 +97,8 @@ export async function loadCatalog(options: LoadCatalogOptions = {}): Promise<Cat
   const url = options.url ?? CATALOG_URL;
   let response: Response;
 
+  options.onStage?.('connecting');
+
   try {
     response = await doFetch(url, { signal: options.signal });
   } catch (cause) {
@@ -105,8 +115,10 @@ export async function loadCatalog(options: LoadCatalogOptions = {}): Promise<Cat
     );
   }
 
+  options.onStage?.('downloading');
   const text = await readBodyWithProgress(response, options.onProgress);
 
+  options.onStage?.('parsing');
   let parsed: SchedbFile;
   try {
     parsed = JSON.parse(text) as SchedbFile;

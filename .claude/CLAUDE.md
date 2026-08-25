@@ -30,7 +30,7 @@ search.** §6 has the per-phase gates, §8 lists the four places the rewrite
 deliberately departs from the old app, and §10.5 is the one open question that
 blocks cutover.
 
-`pnpm test` runs 62 tool tests and 338 app tests.
+`pnpm test` runs 62 tool tests and 352 app tests.
 
 ## Structure
 
@@ -59,6 +59,7 @@ Files that carry the most weight, and what to change where.
 | `src/lib/model/terms.ts` | `TermName` parsing, ordering, labels. |
 | `src/lib/model/timeGrid.ts` | The `TimeCell` constants and grid math. A test pins the five constants. |
 | `src/lib/model/availability.ts` | seats/waitlist → `open` / `waitlist` / `full`, per section, per course, per term. |
+| `src/lib/model/sectionFilters.ts` | Filters over a course's sections — currently by professor. Each option names the sections it covers and stores nothing, so the filter menu and the section checkboxes cannot disagree. **Add a filter by adding a builder to `SECTION_FILTER_BUILDERS`.** |
 
 ### Scheduling — the algorithm, no DOM
 
@@ -103,10 +104,10 @@ Files that carry the most weight, and what to change where.
 | `src/routes/+layout.svelte` | Creates `AppState`, applies a `?share=` link, renders header + tabs. |
 | `src/routes/{courses,info,times,schedules}/+page.svelte` | One route per tab, in `TabList.addTab` order. |
 | `src/lib/components/shell/` | `AppHeader`, `TabBar`. |
-| `src/lib/components/primitives/` | `SplitPane`, `ScrollArea`, `Modal`, `ToggleButton`, `WarningIcon`. Generic, no app knowledge. |
+| `src/lib/components/primitives/` | `SplitPane`, `ScrollArea`, `Modal`, `ToggleButton`, `WarningIcon`, `FilterMenu` (funnel button → popover of tick-box filter groups). Generic, no app knowledge. |
 | `src/lib/components/catalog/` | The Courses tab: `DepartmentPicker` (the six academic groups live here), `CourseTable`, `CourseRow`, `TermBadges`, `CourseDetails`, `SelectedCourseList`. |
 | `src/lib/components/times/` | `TermTimeTabs`, `TimeGrid`, `TimeGridCell`. |
-| `src/lib/components/schedules/` | `SchedulePane` (the view-mode switch), `SectionPicker`, `ScheduleThumbnailList` / `ScheduleThumbnail` (canvas), `QuarterGrid`, `WeekGrid`, `WeekGridColumn`, `PeriodBlock`, `DetailedView`, `SectionDetailsDialog`, `ConflictResolver`, `GenerationProgress` (canvas), `ShareLink`, `CalendarExport` (the third toolbar view, "Export to Calendar"). |
+| `src/lib/components/schedules/` | `SchedulePane` (the view-mode switch), `SectionPicker` (section/term checkboxes plus the per-course filter menu), `ScheduleThumbnailList` / `ScheduleThumbnail` (canvas), `QuarterGrid`, `WeekGrid`, `WeekGridColumn`, `PeriodBlock`, `DetailedView`, `SectionDetailsDialog`, `ConflictResolver`, `GenerationProgress` (canvas), `ShareLink`, `CalendarExport` (the third toolbar view, "Export to Calendar"). |
 | `src/lib/styles/` | `tokens.css` (every colour and size lifted from the old app) and `reset.css`. |
 | `src/lib/share/shareCode.ts` | Encode/decode `?share=`. Version-prefixed; old hex-CRN links are rejected, not migrated. |
 
@@ -174,6 +175,16 @@ tools/parity-oracle/run.sh data/new.schedb CS2102,MA1021   # legacy search, need
   in the app knows what day a term starts; the catalog only knows "A Term".
   Rolling to a new academic year is an edit to that one file, gated by
   `tests/calendar/academicCalendar.test.ts`.
+
+## Filtering sections
+
+The funnel beside a course in the Schedules rail opens `FilterMenu`, whose
+options come from `buildSectionFilters` in `src/lib/model/sectionFilters.ts`.
+Nothing new is stored: an option shows ticked while **any** section it covers is
+still switched on, and unticking it calls `AppState.setSectionsDenied` for
+exactly that option's sections — one change, one search restart. That is why
+switching a professor's last section off by hand also unticks the professor, and
+why a group whose options would all cover the same sections is dropped.
 
 ## Two behaviours that look like bugs and are not
 

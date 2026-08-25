@@ -54,6 +54,47 @@ describe('adding and removing courses', () => {
   });
 });
 
+describe('denying a set of sections at once', () => {
+  it('switches every listed section off', () => {
+    const { selection } = makeSelection();
+    selection.addCourse('CS|2102');
+    selection.setSectionsDenied('CS|2102', ['CS|2102|A01', 'CS|2102|A02'], true);
+
+    expect(selection.allowedSections('CS|2102')).toEqual([]);
+  });
+
+  it('switches every listed section back on, leaving the others alone', () => {
+    const { selection } = makeSelection();
+    selection.addCourse('CS|2102');
+    selection.setSectionDenied('CS|2102', 'CS|2102|A01', true);
+    selection.setSectionDenied('CS|2102', 'CS|2102|A02', true);
+
+    selection.setSectionsDenied('CS|2102', ['CS|2102|A01'], false);
+
+    expect(selection.isSectionDenied('CS|2102', 'CS|2102|A01')).toBe(false);
+    expect(selection.isSectionDenied('CS|2102', 'CS|2102|A02')).toBe(true);
+  });
+
+  it('does not record a section twice when it is already denied', () => {
+    const { selection } = makeSelection();
+    selection.addCourse('CS|2102');
+    selection.setSectionDenied('CS|2102', 'CS|2102|A01', true);
+    selection.setSectionsDenied('CS|2102', ['CS|2102|A01', 'CS|2102|A01'], true);
+
+    expect(selection.deniedSectionIds('CS|2102')).toEqual(['CS|2102|A01']);
+  });
+
+  it('leaves the selection untouched when the list is empty', () => {
+    const { selection } = makeSelection();
+    selection.addCourse('CS|2102');
+    const before = selection.deniedSectionIds('CS|2102');
+
+    selection.setSectionsDenied('CS|2102', [], true);
+
+    expect(selection.deniedSectionIds('CS|2102')).toEqual(before);
+  });
+});
+
 describe('denying sections', () => {
   it('switches a section off and back on', () => {
     const { selection } = makeSelection();

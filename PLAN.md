@@ -198,6 +198,7 @@ wpiplanner-svelte/
 │           │   ├── ScrollArea.svelte
 │           │   ├── Modal.svelte              replaces DialogBox + glass panel
 │           │   ├── ToggleButton.svelte
+│           │   ├── FilterMenu.svelte         funnel button -> popover of tick-box filter groups
 │           │   └── WarningIcon.svelte        ⚠ red (full) / blue (waitlist), with tooltip
 │           │
 │           ├── catalog/
@@ -215,7 +216,8 @@ wpiplanner-svelte/
 │           │
 │           └── schedules/
 │               ├── SchedulePane.svelte       view-mode switch: grid / detail / progress / conflict
-│               ├── SectionPicker.svelte      per-course section & term checkboxes (left rail)
+│               ├── SectionPicker.svelte      per-course section & term checkboxes (left rail),
+│               │                             with the per-course section filter menu
 │               ├── ScheduleThumbnailList.svelte  the scrollable strip of mini schedules
 │               ├── ScheduleThumbnail.svelte  one mini schedule (canvas)
 │               ├── QuarterGrid.svelte        2×2 A/B/C/D week grids
@@ -400,6 +402,7 @@ ledger above covers.
 
 | Feature | Where | Notes |
 |---|---|---|
+| **Section filters** — a funnel beside each course in the section rail, filtering its sections by professor | `lib/model/sectionFilters.ts`, `components/primitives/FilterMenu.svelte`, `SectionPicker.svelte` | The options hold no state: an option is ticked while any section it covers is still on, and ticking it off denies exactly those sections. Adding a filter is adding a builder to `SECTION_FILTER_BUILDERS`. |
 | **Export to Calendar** — the selected schedule as an `.ics` download | `lib/calendar/`, `components/schedules/CalendarExport.svelte`, third button in `SchedulePane`'s toolbar | Needs term start/end dates, which are not in the Workday export, so `lib/config/academicCalendar.ts` hardcodes them along with no-class days and breaks. **That file is hand-maintained and must be re-transcribed each academic year.** |
 
 ---

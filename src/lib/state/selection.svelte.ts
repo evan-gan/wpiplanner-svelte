@@ -111,6 +111,23 @@ export class SelectionState {
     });
   }
 
+  /**
+   * Switch a set of sections of one course on or off in a single change.
+   *
+   * The section filters need this: unticking a professor touches every section
+   * they teach, and doing that one `setSectionDenied` at a time would save and
+   * restart the search once per section.
+   */
+  setSectionsDenied(courseId: string, sectionIds: readonly string[], denied: boolean): void {
+    const affected = new Set(sectionIds);
+    if (affected.size === 0) return;
+
+    this.updateDenied(courseId, (current) => {
+      const without = current.filter((id) => !affected.has(id));
+      return denied ? [...without, ...affected] : without;
+    });
+  }
+
   toggleSection(courseId: string, sectionId: string): void {
     this.setSectionDenied(courseId, sectionId, !this.isSectionDenied(courseId, sectionId));
   }

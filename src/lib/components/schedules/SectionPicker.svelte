@@ -10,7 +10,9 @@
   import type { Catalog } from '$lib/model/catalog';
   import { sectionAvailability } from '$lib/model/availability';
   import type { TermName } from '$lib/model/schedb';
+  import { buildSectionFilters } from '$lib/model/sectionFilters';
   import TermBadges from '$lib/components/catalog/TermBadges.svelte';
+  import FilterMenu from '$lib/components/primitives/FilterMenu.svelte';
   import WarningIcon from '$lib/components/primitives/WarningIcon.svelte';
 
   interface Props {
@@ -22,6 +24,8 @@
     scheduledSectionIds: string[];
     colorOf: (courseId: string) => string;
     ontoggleSection: (courseId: string, sectionId: string) => void;
+    /** Switches a filter option's sections on or off in one go. */
+    onsetSectionsDenied: (courseId: string, sectionIds: string[], denied: boolean) => void;
     ontoggleTerm: (courseId: string, term: TermName) => void;
     onhighlight: (sectionId: string | null) => void;
     onshowDetails: (sectionId: string) => void;
@@ -35,6 +39,7 @@
     scheduledSectionIds,
     colorOf,
     ontoggleSection,
+    onsetSectionsDenied,
     ontoggleTerm,
     onhighlight,
     onshowDetails,
@@ -48,6 +53,36 @@
       expanded = { ...expanded, [courseIds[0]]: true };
     }
   });
+
+  /**
+   * A course's filter groups, with each option ticked while any section it
+   * covers is still switched on.
+   *
+   * Derived rather than stored, so the menu can never drift from the section
+   * checkboxes below it — unticking every section of a professor by hand
+   * unticks the professor too.
+   */
+  function filterGroupsFor(courseId: string) {
+    return buildSectionFilters(catalog.requireCourse(courseId)).map((group) => ({
+      ...group,
+      options: group.options.map((option) => ({
+        value: option.value,
+        label: option.label,
+        checked: option.sectionIds.some((id) => !isSectionDenied(courseId, id)),
+      })),
+    }));
+  }
+
+  /** Apply one filter tick: every section under that option follows it. */
+  function applyFilter(courseId: string, groupId: string, value: string, checked: boolean) {
+    const group = buildSectionFilters(catalog.requireCourse(courseId)).find(
+      (candidate) => candidate.id === groupId,
+    );
+    const option = group?.options.find((candidate) => candidate.value === value);
+    if (option === undefined) return;
+
+    onsetSectionsDenied(courseId, option.sectionIds, !checked);
+  }
 
   function professorOf(sectionId: string): string {
     const periods = catalog.getSection(sectionId)?.periods ?? [];
@@ -68,6 +103,11 @@
         >
           {expanded[courseId] === true ? '▼' : '▶'}
         </button>
+        <FilterMenu
+          title="Filter sections"
+          groups={filterGroupsFor(courseId)}
+          ontoggle={(groupId, value, checked) => applyFilter(courseId, groupId, value, checked)}
+        />
         <span class="abbrev">{catalog.courseAbbrev(courseId)}</span>
         <TermBadges
           {course}

@@ -96,6 +96,12 @@ export class AppState {
     this.refresh();
   }
 
+  /** Apply a section filter's tick: many sections change, the search restarts once. */
+  setSectionsDenied(courseId: string, sectionIds: readonly string[], denied: boolean): void {
+    this.selection.setSectionsDenied(courseId, sectionIds, denied);
+    this.refresh();
+  }
+
   setTermDenied(courseId: string, term: TermName, denied: boolean): void {
     this.selection.setTermDenied(courseId, term, denied);
     this.refresh();

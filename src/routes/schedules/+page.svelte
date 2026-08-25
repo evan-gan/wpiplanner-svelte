@@ -44,6 +44,8 @@
           scheduledSectionIds={selected?.sectionIds ?? []}
           {colorOf}
           ontoggleSection={(courseId, sectionId) => app.toggleSection(courseId, sectionId)}
+          onsetSectionsDenied={(courseId, sectionIds, denied) =>
+            app.setSectionsDenied(courseId, sectionIds, denied)}
           ontoggleTerm={(courseId, term) =>
             app.setTermDenied(courseId, term, !app.selection.isTermDenied(courseId, term))}
           onhighlight={(sectionId) => (app.permutations.highlightedSectionId = sectionId)}

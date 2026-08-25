@@ -30,7 +30,7 @@ search.** §6 has the per-phase gates, §8 lists the four places the rewrite
 deliberately departs from the old app, and §10.5 is the one open question that
 blocks cutover.
 
-`pnpm test` runs 62 tool tests and 289 app tests.
+`pnpm test` runs 62 tool tests and 338 app tests.
 
 ## Structure
 
@@ -70,6 +70,17 @@ Files that carry the most weight, and what to change where.
 | `src/lib/scheduling/referenceGenerator.ts` | Brute-force oracle. **Tests only** — exponential, no pruning. |
 | `src/lib/scheduling/worker/` | `protocol.ts` (message types), `generator.worker.ts` (runs the search off-thread), `client.ts` (typed wrapper, with a synchronous fallback). |
 
+### Calendar export — dates, no DOM
+
+| Path | What lives there |
+|---|---|
+| `src/lib/config/academicCalendar.ts` | **Hand-maintained.** Term start/end dates, no-class days, "follow X schedule" days, and breaks. None of this is in the Workday export, so it is transcribed from the Registrar's calendar and must be redone every academic year — the rollover checklist is at the bottom of the file. |
+| `src/lib/calendar/dates.ts` | `YYYY-MM-DD` arithmetic through UTC, plus `zonedTimeToUtcMillis` (wall clock in an IANA zone → instant, via `Intl`). Never touches the host's local zone. |
+| `src/lib/calendar/ics.ts` | RFC 5545 serialisation: escaping, 75-octet folding, VEVENT/RRULE/EXDATE/VALARM. Knows nothing about courses. |
+| `src/lib/calendar/timeZones.ts` | The VTIMEZONE block for `America/New_York`. A `TZID` with no VTIMEZONE is rejected by Outlook; writing meetings in UTC instead would shift them an hour at the DST change. |
+| `src/lib/calendar/scheduleExport.ts` | The interesting half: schedule + academic calendar → events. Holidays become `EXDATE`s; a day that follows another weekday drops that day's meetings and adds one-off meetings for the followed day's. |
+| `src/lib/calendar/download.ts` | Blob → anchor click. The only DOM in the folder. |
+
 ### State — Svelte 5 runes
 
 | Path | What lives there |
@@ -93,7 +104,7 @@ Files that carry the most weight, and what to change where.
 | `src/lib/components/primitives/` | `SplitPane`, `ScrollArea`, `Modal`, `ToggleButton`, `WarningIcon`. Generic, no app knowledge. |
 | `src/lib/components/catalog/` | The Courses tab: `DepartmentPicker` (the six academic groups live here), `CourseTable`, `CourseRow`, `TermBadges`, `CourseDetails`, `SelectedCourseList`. |
 | `src/lib/components/times/` | `TermTimeTabs`, `TimeGrid`, `TimeGridCell`. |
-| `src/lib/components/schedules/` | `SchedulePane` (the view-mode switch), `SectionPicker`, `ScheduleThumbnailList` / `ScheduleThumbnail` (canvas), `QuarterGrid`, `WeekGrid`, `WeekGridColumn`, `PeriodBlock`, `DetailedView`, `SectionDetailsDialog`, `ConflictResolver`, `GenerationProgress` (canvas), `ShareLink`. |
+| `src/lib/components/schedules/` | `SchedulePane` (the view-mode switch), `SectionPicker`, `ScheduleThumbnailList` / `ScheduleThumbnail` (canvas), `QuarterGrid`, `WeekGrid`, `WeekGridColumn`, `PeriodBlock`, `DetailedView`, `SectionDetailsDialog`, `ConflictResolver`, `GenerationProgress` (canvas), `ShareLink`, `CalendarExport` (the third toolbar view, "Export to Calendar"). |
 | `src/lib/styles/` | `tokens.css` (every colour and size lifted from the old app) and `reset.css`. |
 | `src/lib/share/shareCode.ts` | Encode/decode `?share=`. Version-prefixed; old hex-CRN links are rejected, not migrated. |
 
@@ -148,6 +159,10 @@ tools/parity-oracle/run.sh data/new.schedb CS2102,MA1021   # legacy search, need
 - **The mapper throws on structural surprises and logs data oddities.** A changed
   upstream export fails the build; 489 rows with `days="?"` do not.
 - **Adding or removing a feature means updating PLAN.md §5 and this file.**
+- **Term dates live only in `src/lib/config/academicCalendar.ts`.** Nothing else
+  in the app knows what day a term starts; the catalog only knows "A Term".
+  Rolling to a new academic year is an edit to that one file, gated by
+  `tests/calendar/academicCalendar.test.ts`.
 
 ## Two behaviours that look like bugs and are not
 

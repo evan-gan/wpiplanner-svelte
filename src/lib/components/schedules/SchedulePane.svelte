@@ -14,6 +14,7 @@
   import ToggleButton from '$lib/components/primitives/ToggleButton.svelte';
   import type { GenerationStatus } from '$lib/state/permutations.svelte';
   import type { TimeRangeState } from '$lib/state/timeRange.svelte';
+  import CalendarExport from './CalendarExport.svelte';
   import ConflictResolver from './ConflictResolver.svelte';
   import DetailedView from './DetailedView.svelte';
   import GenerationProgress from './GenerationProgress.svelte';
@@ -56,7 +57,7 @@
     onapplyProblems,
   }: Props = $props();
 
-  type ViewMode = 'grid' | 'detail';
+  type ViewMode = 'grid' | 'detail' | 'export';
 
   let preferredView = $state<ViewMode>('grid');
   let sharing = $state(false);
@@ -68,7 +69,7 @@
     return preferredView;
   });
 
-  const showsSchedule = $derived(shown === 'grid' || shown === 'detail');
+  const showsSchedule = $derived(shown === 'grid' || shown === 'detail' || shown === 'export');
   const sectionIds = $derived(selected?.sectionIds ?? []);
 </script>
 
@@ -79,6 +80,9 @@
     </ToggleButton>
     <ToggleButton pressed={preferredView === 'detail'} onclick={() => (preferredView = 'detail')}>
       Detail
+    </ToggleButton>
+    <ToggleButton pressed={preferredView === 'export'} onclick={() => (preferredView = 'export')}>
+      Export to Calendar
     </ToggleButton>
 
     <span class="spacer"></span>
@@ -112,6 +116,8 @@
       <ConflictResolver {catalog} {courses} {chosenTimes} onapply={onapplyProblems} />
     {:else if shown === 'detail'}
       <DetailedView {catalog} {sectionIds} />
+    {:else if shown === 'export'}
+      <CalendarExport {catalog} {sectionIds} />
     {:else}
       <QuarterGrid
         {catalog}

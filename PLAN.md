@@ -393,6 +393,15 @@ app, and that pass has not been done.
 **Count:** 87 Java files → ~55 TS/Svelte files, with 15 deleted outright (10 event
 plumbing classes, 2 parsers, `PeriodType`, `HasCourse`, `BaseTab`).
 
+### Beyond parity
+
+Features with no counterpart in the old app. They do not change anything the
+ledger above covers.
+
+| Feature | Where | Notes |
+|---|---|---|
+| **Export to Calendar** — the selected schedule as an `.ics` download | `lib/calendar/`, `components/schedules/CalendarExport.svelte`, third button in `SchedulePane`'s toolbar | Needs term start/end dates, which are not in the Workday export, so `lib/config/academicCalendar.ts` hardcodes them along with no-class days and breaks. **That file is hand-maintained and must be re-transcribed each academic year.** |
+
 ---
 
 ## 6. Phases

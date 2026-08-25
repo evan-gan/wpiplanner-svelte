@@ -5,27 +5,31 @@
  * cannot quietly change what students see.
  *
  * Every count below has been confirmed against the original GWT
- * `ScheduleProducer` itself, run off-browser over this same February 2025 export
- * by `tools/parity-oracle`. All five agree exactly, so these are parity
- * evidence, not just refactor guards.
+ * `ScheduleProducer` itself, run off-browser over the February 2025 export by
+ * `tools/parity-oracle`. All five agree exactly, so these are parity evidence,
+ * not just refactor guards.
  *
- * `static/schedb.json` is generated and git-ignored, so the suite skips itself
- * when it is absent.
+ * That is why this suite converts `data/new.schedb` itself instead of reading
+ * whatever `static/schedb.json` currently holds: the counts are evidence about
+ * one specific export, and `pnpm updateData` replaces the shipped catalog with
+ * next term's. Re-pinning them to a refreshed catalog would throw the evidence
+ * away, since no oracle run backs the new numbers. `data/new.schedb` is
+ * git-ignored, so the suite skips itself when it is absent.
  */
 import { existsSync, readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { describe, expect, it } from 'vitest';
 import { Catalog } from '$lib/model/catalog';
-import type { SchedbFile } from '$lib/model/schedb';
 import { ScheduleGenerator } from '$lib/scheduling/generator';
 import { createMemoryStorage, loadChosenTimes } from '$lib/state/persistence';
 import { SelectionState } from '$lib/state/selection.svelte';
+import { convertSchedb } from '../../tools/schedb-to-json/src/convert.ts';
 
-const catalogPath = fileURLToPath(new URL('../../static/schedb.json', import.meta.url));
-const hasCatalog = existsSync(catalogPath);
+const exportPath = fileURLToPath(new URL('../../data/new.schedb', import.meta.url));
+const hasExport = existsSync(exportPath);
 
-describe.skipIf(!hasCatalog)('real course sets', () => {
-  const catalog = new Catalog(JSON.parse(readFileSync(catalogPath, 'utf8')) as SchedbFile);
+describe.skipIf(!hasExport)('real course sets', () => {
+  const catalog = new Catalog(convertSchedb(readFileSync(exportPath, 'utf8')).data);
   const openWeek = loadChosenTimes(createMemoryStorage());
 
   /** Chooses the courses the way the UI does, then runs the search to the end. */

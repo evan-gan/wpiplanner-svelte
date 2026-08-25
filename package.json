@@ -14,7 +14,8 @@
     "test": "pnpm run test:tools && pnpm run test:unit",
     "test:tools": "node --experimental-strip-types --test 'tools/**/tests/**/*.test.ts'",
     "test:unit": "vitest run",
-    "data:build": "node --experimental-strip-types tools/schedb-to-json/src/index.ts data/new.schedb static/schedb.json --report data/schedb-report.json"
+    "data:build": "node --experimental-strip-types tools/schedb-to-json/src/index.ts data/new.schedb static/schedb.json --report data/schedb-report.json",
+    "updateData": "node --experimental-strip-types tools/workday-to-schedb/src/index.ts --output static/schedb.json --year-header static/yearHeader.txt --report data/schedb-report.json"
   },
   "devDependencies": {
     "@sveltejs/adapter-static": "^3.0.0",

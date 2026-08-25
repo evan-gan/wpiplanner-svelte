@@ -1,90 +1,106 @@
 /**
- * PLAN.md §6, Phase 1 gate: the app's own index of `schedb.json` must agree with
- * the converter's summary, exactly.
+ * PLAN.md §6, Phase 1 gate: whatever catalog the app is about to ship has to
+ * hold together when the app's own index reads it.
+ *
+ * These are invariants, not pinned counts. `pnpm updateData` replaces
+ * `static/schedb.json` with the current term's catalog whenever anyone runs it,
+ * so a fixed section count would fail on every refresh while telling nobody
+ * anything. The counts that *are* pinned live in
+ * `tests/scheduling/goldenSets.test.ts`, against the one export they were
+ * verified against.
  *
  * `static/schedb.json` is generated and git-ignored, so this suite skips itself
- * when the file is absent (a fresh clone before `pnpm run data:build`).
+ * when the file is absent (a fresh clone before `pnpm updateData`).
  */
 import { existsSync, readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { describe, expect, it } from 'vitest';
 import { Catalog } from '$lib/model/catalog';
 import { sectionAvailability } from '$lib/model/availability';
-import type { SchedbFile } from '$lib/model/schedb';
+import { SCHEDB_FORMAT_VERSION, type SchedbFile, type SectionJson } from '$lib/model/schedb';
 
 const catalogPath = fileURLToPath(new URL('../../static/schedb.json', import.meta.url));
 const hasCatalog = existsSync(catalogPath);
 
 describe.skipIf(!hasCatalog)('the generated catalog', () => {
-  const catalog = new Catalog(JSON.parse(readFileSync(catalogPath, 'utf8')) as SchedbFile);
+  const file = JSON.parse(readFileSync(catalogPath, 'utf8')) as SchedbFile;
+  const catalog = new Catalog(file);
 
-  it('has the counts the converter reported for the February 2025 export', () => {
-    expect(catalog.counts).toEqual({
-      departments: 73,
-      courses: 1233,
-      sections: 5565,
-      periods: 11823,
-    });
+  /** Every section in the catalog, with the course and department that own it. */
+  function everySection(): { section: SectionJson; courseId: string; abbrev: string }[] {
+    return catalog.departments.flatMap((department) =>
+      department.courses.flatMap((course) =>
+        course.sections.map((section) => ({
+          section,
+          courseId: course.id,
+          abbrev: department.abbrev,
+        })),
+      ),
+    );
+  }
+
+  it('declares the format version the app was built against', () => {
+    expect(file.formatVersion).toBe(SCHEDB_FORMAT_VERSION);
+    expect(file.minutesPerBlock).toBeGreaterThan(0);
+    expect(file.generated).not.toBe('');
   });
 
-  it('gives every section a unique id, which CRNs are not', () => {
+  it('holds a catalog of a plausible size', () => {
+    const { departments, courses, sections, periods } = catalog.counts;
+
+    expect(departments).toBeGreaterThan(30);
+    expect(courses).toBeGreaterThan(500);
+    expect(sections).toBeGreaterThan(1000);
+    expect(periods).toBeGreaterThanOrEqual(sections);
+  });
+
+  it('gives every section a unique id', () => {
     const ids = new Set<string>();
-    let crnCollisions = 0;
-    const seenCrns = new Set<string>();
+    for (const { section } of everySection()) {
+      expect(ids.has(section.id)).toBe(false);
+      ids.add(section.id);
+    }
+    expect(ids.size).toBe(catalog.counts.sections);
+  });
 
+  it('builds every section id from its department, course, and section number', () => {
+    for (const { section, courseId, abbrev } of everySection()) {
+      expect(section.id).toBe(`${courseId}|${section.number}`);
+      expect(courseId.startsWith(`${abbrev}|`)).toBe(true);
+    }
+  });
+
+  it('indexes every section back to the department that owns it', () => {
+    for (const { section, courseId, abbrev } of everySection()) {
+      expect(catalog.requireSection(section.id)).toBe(section);
+      expect(catalog.getCourseIdOfSection(section.id)).toBe(courseId);
+      expect(catalog.getDepartmentOfCourse(courseId)?.abbrev).toBe(abbrev);
+    }
+  });
+
+  it('gives every section at least one term and one period', () => {
+    for (const { section } of everySection()) {
+      expect(section.terms.length).toBeGreaterThan(0);
+      expect(section.periods.length).toBeGreaterThan(0);
+    }
+  });
+
+  it('resolves every description index into the pool', () => {
     for (const department of catalog.departments) {
       for (const course of department.courses) {
+        expect(course.descriptionIndex).toBeLessThan(file.descriptions.length);
+
         for (const section of course.sections) {
-          expect(ids.has(section.id)).toBe(false);
-          ids.add(section.id);
-          if (seenCrns.has(section.crn)) crnCollisions++;
-          seenCrns.add(section.crn);
+          expect(section.descriptionIndex).toBeLessThan(file.descriptions.length);
         }
       }
     }
-
-    expect(ids.size).toBe(5565);
-    // The reason section identity is not the CRN.
-    expect(crnCollisions).toBeGreaterThan(0);
-  });
-
-  it('keeps CRNs as strings, since the values exceed Number.MAX_SAFE_INTEGER', () => {
-    // Workday section numbers look like "BL01/BX01" — a paired lecture and lab.
-    expect(typeof catalog.requireSection('CS|2102|BL01/BX01').crn).toBe('string');
-
-    // At least one CRN in the export loses precision if parsed as a JS number,
-    // which is why the wire format keeps every CRN as text.
-    let unsafeCrns = 0;
-    for (const department of catalog.departments) {
-      for (const course of department.courses) {
-        for (const section of course.sections) {
-          if (!Number.isSafeInteger(Number(section.crn))) unsafeCrns++;
-        }
-      }
-    }
-    expect(unsafeCrns).toBeGreaterThan(0);
-  });
-
-  it('indexes a known cross-listed pair into two distinct sections', () => {
-    const art = catalog.getSection('AR|2101|A01');
-    const imgd = catalog.getSection('IMGD|2101|A01');
-
-    expect(art).toBeDefined();
-    expect(imgd).toBeDefined();
-    expect(art!.crn).toBe(imgd!.crn);
-    expect(catalog.getDepartmentOfCourse('AR|2101')?.abbrev).toBe('AR');
-    expect(catalog.getDepartmentOfCourse('IMGD|2101')?.abbrev).toBe('IMGD');
   });
 
   it('classifies every section into one of the three availability states', () => {
     const states = new Set<string>();
-    for (const department of catalog.departments) {
-      for (const course of department.courses) {
-        for (const section of course.sections) {
-          states.add(sectionAvailability(section));
-        }
-      }
-    }
+    for (const { section } of everySection()) states.add(sectionAvailability(section));
+
     expect([...states].sort()).toEqual(['full', 'open', 'waitlist']);
   });
 });

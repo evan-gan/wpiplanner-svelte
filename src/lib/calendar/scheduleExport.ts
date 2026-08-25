@@ -132,7 +132,8 @@ function meetingDescription(
   if (period.type.trim()) lines.push(`Type: ${period.type}`);
   if (period.professor.trim()) lines.push(`Professor: ${period.professor}`);
   if (period.location.trim()) lines.push(`Location: ${period.location}`);
-  lines.push(`CRN ${section.crn}`);
+  // The Workday feed stopped publishing CRNs; older catalogs still carry them.
+  if (section.crn.trim()) lines.push(`CRN ${section.crn}`);
   return lines.join('\n');
 }
 

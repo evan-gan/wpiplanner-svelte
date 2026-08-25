@@ -40,11 +40,13 @@ Files that carry the most weight, and what to change where.
 
 | Path | What lives there |
 |---|---|
-| `tools/schedb-to-json/` | Build-time converter, Workday `.schedb` XML → `static/schedb.json`. Never ships to the browser. Has its own [README](../tools/schedb-to-json/README.md) and `tests/`. |
-| `src/lib/model/schedb.ts` | **Single source of truth** for the `schedb.json` shape. Imported by both the app and the converter, so they cannot drift. |
+| `tools/workday-to-schedb/` | **The live data path.** Fetches WPI's Workday feed and writes `static/schedb.json` + `static/yearHeader.txt` — `pnpm updateData`. Start here to refresh the catalog. Has its own [README](../tools/workday-to-schedb/README.md) and `tests/`. |
+| `tools/schedb-to-json/` | The older converter, `.schedb` XML → `static/schedb.json`. Kept for `data/new.schedb`, the export the search was verified against. Its own [README](../tools/schedb-to-json/README.md) and `tests/`. |
+| `tools/shared/` | `DescriptionPool` and `AnomalyLog`, used by both converters. |
+| `src/lib/model/schedb.ts` | **Single source of truth** for the `schedb.json` shape. Imported by both the app and both converters, so they cannot drift. |
 | `src/lib/data/loadCatalog.ts` | Fetches and validates `schedb.json`, with byte progress. Replaces `Scheduler.java` + `LoadSchedule.java`. |
 | `src/lib/data/yearHeader.ts` | The two-line `yearHeader.txt` (academic year, whether to show the `/old` link). |
-| `data/` | Build inputs (`new.schedb`) and the generated anomaly report. Not served. |
+| `data/` | `new.schedb`, the pinned February 2025 export, and the generated anomaly report. Not served. |
 | `static/` | Served verbatim, including the generated `schedb.json`. |
 
 ### Model — pure data, no DOM, no state
@@ -115,9 +117,15 @@ Files that carry the most weight, and what to change where.
 - `tests/scheduling/generator.parity.test.ts` — the ported DFS against the
   brute-force oracle over 1,000 random course sets. This is the test that would
   catch a bad refactor of the search.
-- `tests/data/realCatalog.test.ts` and `tests/scheduling/goldenSets.test.ts` —
-  run against the real `static/schedb.json` and skip themselves when it is
-  absent.
+- `tests/data/realCatalog.test.ts` — invariants over whatever `static/schedb.json`
+  currently holds (unique ids, resolvable indexes, no section without a period).
+  Deliberately not pinned counts: `pnpm updateData` replaces that file.
+- `tests/scheduling/goldenSets.test.ts` — the pinned counts, over
+  `data/new.schedb`, which it converts at test time. Those numbers were confirmed
+  against the original GWT producer by `tools/parity-oracle`, so they belong to
+  that one export and must not be re-pinned to a refreshed catalog.
+
+Both skip themselves when their input file is absent.
 
 `tests/fixtures/` holds a three-course `MINI_CATALOG` and readable builders such
 as `section('CS|2102|A01', ['A'], ['9:00AM-9:50AM mon,wed,fri'])`.
@@ -134,9 +142,10 @@ are stubs, and why no stub can change a count.
 
 ```bash
 pnpm install           # once; esbuild's postinstall must be allowed to run
-pnpm run data:build    # .schedb XML -> static/schedb.json + data/schedb-report.json
+pnpm updateData        # live Workday feed -> static/schedb.json + static/yearHeader.txt
+pnpm run data:build    # legacy path: data/new.schedb XML -> static/schedb.json
 pnpm dev               # dev server
-pnpm build             # static site into build/ (run data:build first, or use build:full)
+pnpm build             # static site into build/ (refresh the data first)
 pnpm test              # tool tests (node --test) + app tests (vitest)
 pnpm run test:tools    # tool tests only — no install needed, uses Node type stripping
 pnpm run check         # svelte-check; must stay at 0 errors, 0 warnings
@@ -147,8 +156,10 @@ tools/parity-oracle/run.sh data/new.schedb CS2102,MA1021   # legacy search, need
 ## Conventions specific to this repo
 
 - **Section identity is `${dept}|${courseNumber}|${sectionNumber}`, never the CRN.**
-  149 CRNs in the catalog are shared by cross-listed sections, and the 18-digit
-  values exceed `Number.MAX_SAFE_INTEGER`. `crn` is a display-only string.
+  In the older exports 149 CRNs were shared by cross-listed sections and the
+  18-digit values exceeded `Number.MAX_SAFE_INTEGER`; the live Workday feed has
+  stopped publishing them altogether, so `crn` is a display-only string that is
+  now empty. Anything that renders it must tolerate that.
 - **Times are minutes since midnight; days are a 7-bit mask** (`DAY_BITS`).
 - **`src/lib/model/*.ts` imports its siblings with an explicit `.ts` extension.**
   Those four files are shared with `tools/`, which runs under Node type stripping

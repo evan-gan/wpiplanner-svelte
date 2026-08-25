@@ -1,3 +1,9 @@
+/**
+ * This tool's anomaly vocabulary. The log itself is shared with
+ * `tools/workday-to-schedb` — see `tools/shared/anomalies.ts`.
+ */
+import { AnomalyLog as SharedAnomalyLog, type Anomaly as SharedAnomaly } from '../../shared/anomalies.ts';
+
 export type AnomalyKind =
   | 'duplicate-crn'
   | 'unknown-days'
@@ -7,12 +13,7 @@ export type AnomalyKind =
   | 'empty-location'
   | 'missing-attribute';
 
-export interface Anomaly {
-  kind: AnomalyKind;
-  /** Where in the catalog the problem is, e.g. "CS|2102|A01". */
-  where: string;
-  detail: string;
-}
+export type Anomaly = SharedAnomaly<AnomalyKind>;
 
 export interface ConversionStats {
   departments: number;
@@ -23,33 +24,4 @@ export interface ConversionStats {
   pooledDescriptionBytes: number;
 }
 
-/**
- * Collects data-quality problems found while mapping so the conversion can
- * report them in bulk rather than aborting on the first oddity. Structural
- * errors (unparseable times, unknown days) still throw — these are values that
- * are legal but suspicious.
- */
-export class AnomalyLog {
-  private readonly entries: Anomaly[] = [];
-
-  add(kind: AnomalyKind, where: string, detail: string): void {
-    this.entries.push({ kind, where, detail });
-  }
-
-  get all(): readonly Anomaly[] {
-    return this.entries;
-  }
-
-  /** Counts per kind, for the one-line summary printed after a run. */
-  countByKind(): Record<string, number> {
-    const counts: Record<string, number> = {};
-    for (const entry of this.entries) {
-      counts[entry.kind] = (counts[entry.kind] ?? 0) + 1;
-    }
-    return counts;
-  }
-
-  toJSON(): { total: number; byKind: Record<string, number>; entries: readonly Anomaly[] } {
-    return { total: this.entries.length, byKind: this.countByKind(), entries: this.entries };
-  }
-}
+export class AnomalyLog extends SharedAnomalyLog<AnomalyKind> {}

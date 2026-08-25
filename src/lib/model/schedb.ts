@@ -66,7 +66,13 @@ export interface PeriodJson {
 export interface SectionJson {
   /** Stable unique key: `${deptAbbrev}|${courseNumber}|${sectionNumber}`. */
   id: string;
-  /** Raw 18-digit CRN as a string — it exceeds Number.MAX_SAFE_INTEGER. */
+  /**
+   * Raw 18-digit CRN as a string — it exceeds Number.MAX_SAFE_INTEGER.
+   *
+   * Empty for catalogs built by `tools/workday-to-schedb`: the live Workday feed
+   * no longer publishes `cour_sec_def_referenceID`. Display code must tolerate
+   * an empty value.
+   */
   crn: string;
   /** Section label, e.g. "A01". */
   number: string;

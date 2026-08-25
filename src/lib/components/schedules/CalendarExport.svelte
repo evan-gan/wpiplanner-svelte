@@ -142,9 +142,11 @@
       {/if}
 
       <p class="fine-print">
-        Holidays, Wellness Days and Thanksgiving are already removed from the repeating events, and
-        days that follow another weekday's schedule are added as one-off meetings. Times are
-        Worcester local time ({calendar.timeZoneId}), so they stay correct through the daylight
+        Each class is one repeating event covering every day and every term it meets in, so
+        renaming it or changing its reminder only has to be done once. Holidays, Wellness Days,
+        Thanksgiving and the break between terms are already removed from those events, and days
+        that follow another weekday's schedule are added as one-off meetings. Times are Worcester
+        local time ({calendar.timeZoneId}), so they stay correct through the daylight
         saving change.
       </p>
     {/if}

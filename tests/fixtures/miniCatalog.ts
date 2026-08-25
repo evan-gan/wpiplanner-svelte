@@ -48,7 +48,7 @@ export function makeSection(
   };
 }
 
-function makeCourse(
+export function makeCourse(
   deptAbbrev: string,
   number: string,
   name: string,
@@ -62,6 +62,22 @@ function makeCourse(
     maxCredits: 1,
     descriptionIndex: 0,
     sections,
+  };
+}
+
+/**
+ * A one-department catalog, for tests that need meeting patterns of their own.
+ *
+ * Kept separate from {@link MINI_CATALOG} so a test can add odd-shaped sections
+ * without shifting the course counts every other test asserts on.
+ */
+export function makeCatalog(deptAbbrev: string, courses: CourseJson[]): SchedbFile {
+  return {
+    formatVersion: SCHEDB_FORMAT_VERSION,
+    generated: '11:14 PM Feb 19, 2025',
+    minutesPerBlock: 30,
+    descriptions: ['A description shared by everything in the mini catalog.'],
+    departments: [{ abbrev: deptAbbrev, name: `${deptAbbrev} Department`, courses }],
   };
 }
 

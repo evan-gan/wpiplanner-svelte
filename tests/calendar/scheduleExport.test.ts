@@ -15,7 +15,15 @@ import {
   type ScheduleExportOptions,
 } from '$lib/calendar/scheduleExport';
 import type { IcsEvent, TimedIcsEvent } from '$lib/calendar/ics';
-import { MINI_CATALOG } from '../fixtures/miniCatalog';
+import {
+  makeCatalog,
+  makeCourse,
+  makePeriod,
+  makeSection,
+  MINI_CATALOG,
+} from '../fixtures/miniCatalog';
+import { parseDayMask } from '$lib/model/days';
+import type { PeriodJson, TermName } from '$lib/model/schedb';
 
 const catalog = new Catalog(MINI_CATALOG);
 
@@ -26,7 +34,10 @@ const BARE: ScheduleExportOptions = {
 };
 
 function exportEvents(sectionIds: string[], overrides: Partial<ScheduleExportOptions> = {}) {
-  return buildScheduleEvents(catalog, sectionIds, ACADEMIC_CALENDAR, { ...BARE, ...overrides });
+  return buildScheduleEvents(catalog, sectionIds, ACADEMIC_CALENDAR, {
+    ...BARE,
+    ...overrides,
+  });
 }
 
 function timed(events: IcsEvent[]): TimedIcsEvent[] {
@@ -51,12 +62,14 @@ describe('class meetings', () => {
     expect(series.description).toContain('Object-Oriented Design Concepts');
   });
 
-  it('emits one series per term for a section spanning two terms', () => {
-    const series = timed(exportEvents(['PH|1110|A01']));
-    expect(series.map((event) => event.recurrence?.lastDay)).toEqual([
-      '2026-10-09',
-      '2026-12-11',
-    ]);
+  it('emits one series spanning both terms for an A/B section', () => {
+    const series = timed(exportEvents(['PH|1110|A01'])).filter(
+      (event) => event.recurrence !== undefined,
+    );
+    expect(series).toHaveLength(1);
+    // A Term opens Thursday Aug 20; B Term's last day is Dec 11.
+    expect(series[0].start.date).toBe('2026-08-20');
+    expect(series[0].recurrence?.lastDay).toBe('2026-12-11');
   });
 
   it('gives every event a distinct uid', () => {
@@ -79,9 +92,9 @@ describe('no-class days', () => {
   });
 
   it('drops the Thanksgiving days a Tue/Thu lecture would have met on', () => {
-    const bTerm = timed(exportEvents(['PH|1110|A01']))[1];
-    expect(bTerm.recurrence?.excludedDates).toContain('2026-11-26'); // Thursday
-    expect(bTerm.recurrence?.excludedDates).not.toContain('2026-11-25'); // Wednesday: never met
+    const [series] = timed(exportEvents(['PH|1110|A01']));
+    expect(series.recurrence?.excludedDates).toContain('2026-11-26'); // Thursday
+    expect(series.recurrence?.excludedDates).not.toContain('2026-11-25'); // Wednesday: never met
   });
 
   it('leaves days the section does not meet on out of the exclusion list', () => {
@@ -100,11 +113,77 @@ describe('days that follow another weekday', () => {
   });
 
   it('cancels that Thursday for a section that meets Thursdays but not Mondays', () => {
-    const [aTerm] = timed(exportEvents(['PH|1110|A01']));
-    expect(aTerm.recurrence?.excludedDates).toContain('2026-09-10');
+    const [series] = timed(exportEvents(['PH|1110|A01']));
+    expect(series.recurrence?.excludedDates).toContain('2026-09-10');
     expect(timed(exportEvents(['PH|1110|A01'])).some((e) => e.start.date === '2026-09-10')).toBe(
       false,
     );
+  });
+});
+
+describe('combining meetings into one series', () => {
+  /** One section of one course, so a test can shape its periods exactly. */
+  function exportSection(terms: TermName[], periods: PeriodJson[]) {
+    const section = makeSection('TS|1000|A01', terms, periods);
+    const oneSection = new Catalog(
+      makeCatalog('TS', [makeCourse('TS', '1000', 'Test Course', [section])]),
+    );
+    return timed(buildScheduleEvents(oneSection, [section.id], ACADEMIC_CALENDAR, BARE));
+  }
+
+  it('merges catalog periods that differ only in which days they list', () => {
+    const events = exportSection(
+      ['A'],
+      [makePeriod({ days: parseDayMask('wed') }), makePeriod({ days: parseDayMask('thu,fri') })],
+    );
+    const series = events.filter((event) => event.recurrence !== undefined);
+    expect(series).toHaveLength(1);
+    expect(series[0].recurrence?.weekdays).toEqual([3, 4, 5]);
+  });
+
+  it('keeps periods apart when anything but the days differs', () => {
+    const events = exportSection(
+      ['A'],
+      [
+        makePeriod({ days: parseDayMask('wed') }),
+        makePeriod({
+          days: parseDayMask('thu'),
+          type: 'Lab',
+          location: 'SL 105',
+        }),
+      ],
+    );
+    expect(events.filter((event) => event.recurrence !== undefined)).toHaveLength(2);
+    expect(events.map((event) => event.uid)).toEqual([...new Set(events.map((e) => e.uid))]);
+  });
+
+  it('excludes the recess between two back-to-back terms', () => {
+    const [series] = timed(exportEvents(['PH|1110|A01']));
+    // A Term ends Oct 9 and B Term opens Oct 19: nothing meets in between.
+    expect(series.recurrence?.excludedDates).toContain('2026-10-13'); // Tuesday
+    expect(series.recurrence?.excludedDates).toContain('2026-10-15'); // Thursday
+    expect(series.recurrence?.excludedDates).not.toContain('2026-10-14'); // Wednesday: never met
+  });
+
+  it('keeps non-adjacent terms as separate series rather than excluding a whole term', () => {
+    const events = exportSection(['A', 'C'], [makePeriod({ days: parseDayMask('mon') })]);
+    const series = events.filter((event) => event.recurrence !== undefined);
+    expect(series.map((event) => event.recurrence?.lastDay)).toEqual(['2026-10-09', '2027-03-05']);
+    // B Term's Mondays belong to neither series.
+    expect(series.flatMap((event) => event.recurrence?.excludedDates ?? [])).not.toContain(
+      '2026-11-09',
+    );
+  });
+
+  it('starts the series on a day it meets, not on an excluded first occurrence', () => {
+    // C Term's first Monday is MLK Day, so a Monday class starts the week after.
+    const [series] = exportSection(['C'], [makePeriod({ days: parseDayMask('mon') })]);
+    expect(series.start.date).toBe('2027-01-25');
+    expect(series.recurrence?.excludedDates).not.toContain('2027-01-18');
+  });
+
+  it('skips a period whose days the catalog never resolved', () => {
+    expect(exportSection(['A'], [makePeriod({ days: 0 })])).toEqual([]);
   });
 });
 
@@ -114,14 +193,16 @@ describe('academic calendar events', () => {
   });
 
   it('adds holidays and breaks as all-day entries', () => {
-    const allDay = exportEvents(['CS|2102|A01'], { includeAcademicCalendar: true }).filter(
-      (event) => event.kind === 'allDay',
-    );
+    const allDay = exportEvents(['CS|2102|A01'], {
+      includeAcademicCalendar: true,
+    }).filter((event) => event.kind === 'allDay');
     expect(allDay.map((event) => event.summary)).toContain('Labor Day; No Classes');
   });
 
   it('scopes them to the terms the schedule covers', () => {
-    const summaries = exportEvents(['CS|2102|A01'], { includeAcademicCalendar: true })
+    const summaries = exportEvents(['CS|2102|A01'], {
+      includeAcademicCalendar: true,
+    })
       .filter((event) => event.kind === 'allDay')
       .map((event) => event.summary);
     // An A-Term-only schedule must not carry spring's advising day.

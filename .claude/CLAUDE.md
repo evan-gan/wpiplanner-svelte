@@ -81,7 +81,7 @@ Files that carry the most weight, and what to change where.
 | `src/lib/calendar/dates.ts` | `YYYY-MM-DD` arithmetic through UTC, plus `zonedTimeToUtcMillis` (wall clock in an IANA zone → instant, via `Intl`). Never touches the host's local zone. |
 | `src/lib/calendar/ics.ts` | RFC 5545 serialisation: escaping, 75-octet folding, VEVENT/RRULE/EXDATE/VALARM. Knows nothing about courses. |
 | `src/lib/calendar/timeZones.ts` | The VTIMEZONE block for `America/New_York`. A `TZID` with no VTIMEZONE is rejected by Outlook; writing meetings in UTC instead would shift them an hour at the DST change. |
-| `src/lib/calendar/scheduleExport.ts` | The interesting half: schedule + academic calendar → events. Holidays become `EXDATE`s; a day that follows another weekday drops that day's meetings and adds one-off meetings for the followed day's. |
+| `src/lib/calendar/scheduleExport.ts` | The interesting half: schedule + academic calendar → events. Holidays become `EXDATE`s; a day that follows another weekday drops that day's meetings and adds one-off meetings for the followed day's. **One class is one event:** catalog periods that differ only in their days are merged into a single `BYDAY` rule, and back-to-back terms (A/B, C/D) become one series with the recess between them excluded. Non-adjacent terms stay separate. |
 | `src/lib/calendar/download.ts` | Blob → anchor click. The only DOM in the folder. |
 
 ### Workday import — reading the student's registration, no DOM

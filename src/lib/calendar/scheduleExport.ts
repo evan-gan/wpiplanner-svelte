@@ -12,6 +12,13 @@
  *   running Monday's classes, so Thursday meetings are dropped and Monday
  *   meetings gain a one-off event on that date. A period meeting both Monday
  *   and Thursday simply keeps its Thursday occurrence, which is the same thing.
+ *
+ * Everything that can share one recurring event does, because a student who
+ * wants to rename a course or move a reminder should have one event to edit
+ * rather than ten. Catalog periods that differ only in which days they list are
+ * merged into a single multi-day rule, and back-to-back terms (A/B, C/D) become
+ * one series running from the first term's start to the last term's end, with
+ * the recess between them excluded.
  */
 import type {
   AcademicCalendar,
@@ -37,18 +44,37 @@ export interface ScheduleExportOptions {
 /** Where one term's dates and its exceptions are already resolved together. */
 interface TermPlan {
   term: TermName;
+  /** Position in the academic calendar's term list; adjacent terms differ by 1. */
+  calendarIndex: number;
   dates: TermDates;
   /** Every date in the term that does not run its own weekday's schedule. */
   exceptionsByDate: ReadonlyMap<IsoDate, ClassDayException>;
 }
 
 interface MeetingPlan {
-  /** First date the period meets on its own weekdays, or null if it never does. */
-  firstNaturalDay: IsoDate | null;
+  /** First date the meeting actually happens, or null if it never does. */
+  firstMeetingDay: IsoDate | null;
   weekdays: number[];
   excludedDates: IsoDate[];
-  /** Dates the period meets only because that day follows another weekday. */
+  /** Dates the meeting happens only because that day follows another weekday. */
   extraDates: IsoDate[];
+}
+
+/**
+ * Catalog periods that describe the same meeting, with their day masks merged.
+ *
+ * Workday sometimes splits one meeting pattern across several period rows — the
+ * same course, professor, room and time listed once for Wednesday and once for
+ * Thursday/Friday. Those are one weekly event to a student, so they are exported
+ * as one.
+ */
+interface MeetingPattern {
+  /** Index of the group's first catalog period; keeps UIDs stable. */
+  periodIndex: number;
+  /** Representative period: every field except `days` is shared by the group. */
+  period: PeriodJson;
+  /** Union of the group's day masks. */
+  days: number;
 }
 
 /** ICS ids must be printable and stable; section ids contain `|` and `/`. */
@@ -80,36 +106,117 @@ function buildExceptionIndex(calendar: AcademicCalendar): Map<IsoDate, ClassDayE
   return byDate;
 }
 
-/** The days a period meets, as Sunday-based indexes. */
-function periodWeekdays(period: PeriodJson): number[] {
-  return [0, 1, 2, 3, 4, 5, 6].filter((weekday) => maskHasDay(period.days, weekday));
+/** The days a mask covers, as Sunday-based indexes. */
+function weekdaysInMask(days: number): number[] {
+  return [0, 1, 2, 3, 4, 5, 6].filter((weekday) => maskHasDay(days, weekday));
+}
+
+/** Everything but the day mask, so two periods can be tested for sameness. */
+function meetingIdentity(period: PeriodJson): string {
+  return [
+    period.type,
+    period.professor,
+    period.startMinutes,
+    period.endMinutes,
+    period.location,
+    period.sectionNumber,
+  ].join('\u0000');
+}
+
+/** A section's periods, collapsed to one entry per distinct meeting. */
+function meetingPatterns(section: SectionJson): MeetingPattern[] {
+  const byIdentity = new Map<string, MeetingPattern>();
+
+  section.periods.forEach((period, index) => {
+    // Days listed as "?" give no rule to recur on, so there is nothing to export.
+    if (period.days === 0) return;
+
+    const identity = meetingIdentity(period);
+    const existing = byIdentity.get(identity);
+    if (existing === undefined) {
+      byIdentity.set(identity, {
+        periodIndex: index,
+        period,
+        days: period.days,
+      });
+    } else {
+      existing.days |= period.days;
+    }
+  });
+
+  return [...byIdentity.values()];
 }
 
 /**
- * Work out when a period actually meets across one term.
+ * Split a section's terms into runs of terms that sit next to each other.
  *
- * @param period The meeting pattern from the catalog
- * @param plan The term's date range and its schedule exceptions
+ * A run is exported as a single series. Non-adjacent terms stay apart: an A/C
+ * section merged into one rule would spend all of B Term as excluded dates,
+ * which is both a larger file and a worse thing to look at in a calendar client.
+ *
+ * @param plans The section's terms, in calendar order
+ * @returns Groups of consecutive terms, each in calendar order
+ */
+function consecutiveTermRuns(plans: readonly TermPlan[]): TermPlan[][] {
+  const runs: TermPlan[][] = [];
+
+  for (const plan of plans) {
+    const current = runs[runs.length - 1];
+    const previous = current?.[current.length - 1];
+    if (previous !== undefined && plan.calendarIndex === previous.calendarIndex + 1) {
+      current.push(plan);
+    } else {
+      runs.push([plan]);
+    }
+  }
+
+  return runs;
+}
+
+/**
+ * Work out when a meeting actually happens across a run of terms.
+ *
+ * Dates in the recess between two terms of the run are treated exactly like a
+ * holiday: the weekly rule would fire there, so they are excluded.
+ *
+ * @param days Merged day mask for the meeting
+ * @param run One or more consecutive terms, in calendar order
  * @returns The weekly rule plus the dates that rule gets wrong
  */
-function planMeetings(period: PeriodJson, plan: TermPlan): MeetingPlan {
+function planMeetings(days: number, run: readonly TermPlan[]): MeetingPlan {
   const meetings: MeetingPlan = {
-    firstNaturalDay: null,
-    weekdays: periodWeekdays(period),
+    firstMeetingDay: null,
+    weekdays: weekdaysInMask(days),
     excludedDates: [],
     extraDates: [],
   };
 
-  for (const date of datesInRange(plan.dates.firstDay, plan.dates.lastDay)) {
-    const exception = plan.exceptionsByDate.get(date);
-    const meetsNaturally = maskHasDay(period.days, isoDateWeekday(date));
-    const meetsInFact =
-      exception === undefined
-        ? meetsNaturally
-        : exception.followsDay !== null && (period.days & DAY_BITS[exception.followsDay]) !== 0;
+  const spanFirstDay = run[0].dates.firstDay;
+  const spanLastDay = run[run.length - 1].dates.lastDay;
 
-    if (meetsNaturally && meetings.firstNaturalDay === null) meetings.firstNaturalDay = date;
-    if (meetsNaturally && !meetsInFact) meetings.excludedDates.push(date);
+  for (const date of datesInRange(spanFirstDay, spanLastDay)) {
+    const term = run.find((plan) => date >= plan.dates.firstDay && date <= plan.dates.lastDay);
+    const exception = term?.exceptionsByDate.get(date);
+    const meetsNaturally = maskHasDay(days, isoDateWeekday(date));
+    let meetsInFact: boolean;
+
+    if (term === undefined) {
+      meetsInFact = false; // Between two terms of the run — nothing meets.
+    } else if (exception === undefined) {
+      meetsInFact = meetsNaturally;
+    } else {
+      meetsInFact = exception.followsDay !== null && (days & DAY_BITS[exception.followsDay]) !== 0;
+    }
+
+    // The series starts on a day it really meets: a rule whose first occurrence
+    // is immediately excluded shows up as a ghost meeting in some clients. Days
+    // before that start are simply not part of the rule, so they need no EXDATE.
+    if (meetsNaturally && meetsInFact && meetings.firstMeetingDay === null) {
+      meetings.firstMeetingDay = date;
+    }
+    if (meetsNaturally && !meetsInFact && meetings.firstMeetingDay !== null) {
+      meetings.excludedDates.push(date);
+    }
     if (!meetsNaturally && meetsInFact) meetings.extraDates.push(date);
   }
 
@@ -137,20 +244,28 @@ function meetingDescription(
   return lines.join('\n');
 }
 
-/** The recurring meeting plus any one-off make-up meetings, for one term. */
-function periodEvents(
+/**
+ * One recurring meeting, plus any one-off make-up meetings, for a run of terms.
+ *
+ * @param pattern The merged meeting to export
+ * @param run Consecutive terms the section runs in, in calendar order
+ * @returns The series and its make-ups; empty when the meeting never happens on
+ *   its own weekdays inside the run
+ */
+function meetingEvents(
   catalog: Catalog,
   section: SectionJson,
-  period: PeriodJson,
-  periodIndex: number,
-  plan: TermPlan,
+  pattern: MeetingPattern,
+  run: readonly TermPlan[],
   options: ScheduleExportOptions,
 ): TimedIcsEvent[] {
   const courseId = catalog.getCourseIdOfSection(section.id);
-  if (courseId === undefined || period.days === 0) return [];
+  if (courseId === undefined) return [];
 
-  const meetings = planMeetings(period, plan);
-  const uidBase = `${toUidSlug(section.id)}-p${periodIndex}-${plan.term}`;
+  const { period } = pattern;
+  const meetings = planMeetings(pattern.days, run);
+  const terms = run.map((plan) => plan.term).join('');
+  const uidBase = `${toUidSlug(section.id)}-p${pattern.periodIndex}-${terms}`;
   const shared = {
     kind: 'timed' as const,
     summary: meetingSummary(catalog, courseId, period),
@@ -165,21 +280,25 @@ function periodEvents(
 
   const events: TimedIcsEvent[] = [];
 
-  if (meetings.firstNaturalDay !== null) {
+  if (meetings.firstMeetingDay !== null) {
     events.push({
       ...shared,
-      ...timesOn(meetings.firstNaturalDay),
+      ...timesOn(meetings.firstMeetingDay),
       uid: `${uidBase}@wpiplanner`,
       recurrence: {
         weekdays: meetings.weekdays,
-        lastDay: plan.dates.lastDay,
+        lastDay: run[run.length - 1].dates.lastDay,
         excludedDates: meetings.excludedDates,
       },
     });
   }
 
   for (const date of meetings.extraDates) {
-    events.push({ ...shared, ...timesOn(date), uid: `${uidBase}-${date}@wpiplanner` });
+    events.push({
+      ...shared,
+      ...timesOn(date),
+      uid: `${uidBase}-${date}@wpiplanner`,
+    });
   }
 
   return events;
@@ -244,8 +363,13 @@ function plansForSchedule(
   }
 
   return calendar.terms
-    .filter((dates) => used.has(dates.term))
-    .map((dates) => ({ term: dates.term, dates, exceptionsByDate }));
+    .map((dates, calendarIndex) => ({
+      term: dates.term,
+      calendarIndex,
+      dates,
+      exceptionsByDate,
+    }))
+    .filter((plan) => used.has(plan.term));
 }
 
 /**
@@ -268,10 +392,11 @@ export function buildScheduleEvents(
     const section = catalog.getSection(sectionId);
     if (section === undefined) continue;
 
-    for (const plan of plans.filter((candidate) => section.terms.includes(candidate.term))) {
-      section.periods.forEach((period, index) => {
-        events.push(...periodEvents(catalog, section, period, index, plan, options));
-      });
+    const sectionPlans = plans.filter((candidate) => section.terms.includes(candidate.term));
+    for (const run of consecutiveTermRuns(sectionPlans)) {
+      for (const pattern of meetingPatterns(section)) {
+        events.push(...meetingEvents(catalog, section, pattern, run, options));
+      }
     }
   }
 

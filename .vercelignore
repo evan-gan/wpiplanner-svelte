@@ -1,6 +1,8 @@
-# Build inputs and dev-only trees — none of this is needed to run `vite build`.
-data/
-tools/
-tests/
-.svelte-kit/
-build/
+# Dev-only trees, kept out of the upload. Leading slashes anchor these to the
+# repo root — an unanchored `data/` would also match `src/lib/data/`, which the
+# app very much needs.
+/data/
+/tools/
+/tests/
+/.svelte-kit/
+/build/

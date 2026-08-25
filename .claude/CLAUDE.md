@@ -187,8 +187,9 @@ no server function anywhere. Vercel serves those files directly.
 | File | What it does |
 |---|---|
 | `vercel.json` | `framework: null` so Vercel does **not** apply its SvelteKit preset (that preset expects `adapter-vercel` and looks in `.vercel/output`). It runs `pnpm run build` and serves `build/` as plain files. `trailingSlash: true` matches `trailingSlash = 'always'` in `src/routes/+layout.ts`. Cache headers: `_app/immutable/*` forever, `schedb.json` and `yearHeader.txt` never — those two are replaced by `pnpm updateData` and must not be served stale. |
-| `.vercelignore` | Keeps `data/`, `tools/`, and `tests/` out of the upload. Nothing under `src/` imports them; they are only referenced in comments. |
-| `package.json` → `engines.node` | Pins the build to Node 22+, which the tools' type stripping already assumes. |
+| `.vercelignore` | Keeps `data/`, `tools/`, and `tests/` out of the upload. **Every pattern must be anchored with a leading `/`** — an unanchored `data/` also matches `src/lib/data/` and silently strips `loadCatalog.ts` from the deploy. |
+| `pnpm-workspace.yaml` | Approves esbuild's postinstall, which selects its platform binary; without it `vite build` dies on a platform mismatch and CI fails the install outright with `ERR_PNPM_IGNORED_BUILDS`. Carries both `allowBuilds` (pnpm 11) and `onlyBuiltDependencies` (pnpm 10, which is what Vercel resolves from the v9 lockfile). If pnpm ever rewrites this file with a `set this to true or false` placeholder, that is a failed install asking to be answered. |
+| `package.json` → `engines.node` | `22.x` — pinned to a major on purpose; an open range like `>=22` makes Vercel warn that the build will jump majors on its own. |
 
 `static/schedb.json` is committed, so a clean checkout builds without running
 the data pipeline. Refreshing the catalog is `pnpm updateData` followed by a

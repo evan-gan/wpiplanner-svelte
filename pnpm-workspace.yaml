@@ -1,2 +1,8 @@
+# esbuild's postinstall picks its platform binary; without it `vite build` fails
+# with a platform mismatch, so the build script must be approved on CI too.
+# Both keys are here on purpose: pnpm 11 reads `allowBuilds`, pnpm 10 (what
+# Vercel resolves from the lockfile) reads `onlyBuiltDependencies`.
 allowBuilds:
-  esbuild: set this to true or false
+  esbuild: true
+onlyBuiltDependencies:
+  - esbuild

@@ -12,6 +12,7 @@
   import SchedulePane from '$lib/components/schedules/SchedulePane.svelte';
   import SectionDetailsDialog from '$lib/components/schedules/SectionDetailsDialog.svelte';
   import SectionPicker from '$lib/components/schedules/SectionPicker.svelte';
+  import WorkdayImport from '$lib/components/schedules/WorkdayImport.svelte';
   import { colorForCourse } from '$lib/state/permutations.svelte';
   import { getAppState } from '$lib/state/app.svelte';
 
@@ -35,6 +36,22 @@
 </script>
 
 <div class="schedules">
+  {#if !app.hasCourses}
+    <!--
+      Nothing to schedule yet, so the rails and the empty grid would only be
+      furniture. The import is the one thing that works from here.
+    -->
+    <div class="empty">
+      <p class="empty-lead">
+        No courses chosen yet — pick them on the <a href="/courses/">Courses</a> tab, or import the
+        ones you are already registered for:
+      </p>
+      <WorkdayImport
+        catalog={app.catalog}
+        onimport={(sections) => app.importEnrolledSections(sections)}
+      />
+    </div>
+  {:else}
   <SplitPane side="west" bind:size={railWidth} minSize={180} maxSize={520}>
     {#snippet fixed()}
       <ScrollArea>
@@ -99,6 +116,7 @@
       </SplitPane>
     {/snippet}
   </SplitPane>
+  {/if}
 </div>
 
 <SectionDetailsDialog
@@ -122,5 +140,24 @@
   .schedules {
     position: absolute;
     inset: 0;
+  }
+
+  .empty {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  /* The import panel scrolls itself, so it takes the space the lead leaves. */
+  .empty > :global(.panel) {
+    flex: 1 1 auto;
+    min-height: 0;
+    height: auto;
+  }
+
+  .empty-lead {
+    margin: 0;
+    padding: var(--space-4) var(--space-5) 0;
+    max-width: 46em;
   }
 </style>

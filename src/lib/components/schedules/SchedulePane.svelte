@@ -68,13 +68,16 @@
     onimportWorkday,
   }: Props = $props();
 
-  type ViewMode = 'grid' | 'detail' | 'export';
+  type ViewMode = 'grid' | 'detail' | 'export' | 'workday';
 
   let preferredView = $state<ViewMode>('grid');
   let sharing = $state(false);
 
   /** What is actually on screen, which is not always what the buttons request. */
   const shown = $derived.by(() => {
+    // The import is the one view that stays available with nothing to show:
+    // it is how a student with no workable schedule gets one.
+    if (preferredView === 'workday') return 'workday' as const;
     if (status === 'error') return 'error' as const;
     if (scheduleCount === 0) return status === 'searching' ? ('progress' as const) : ('conflict' as const);
     return preferredView;
@@ -95,7 +98,9 @@
     <ToggleButton pressed={preferredView === 'export'} onclick={() => (preferredView = 'export')}>
       Export to Calendar
     </ToggleButton>
-    <WorkdayImport {catalog} onimport={onimportWorkday} />
+    <ToggleButton pressed={preferredView === 'workday'} onclick={() => (preferredView = 'workday')}>
+      Import from Workday
+    </ToggleButton>
 
     <span class="spacer"></span>
 
@@ -133,6 +138,16 @@
       <DetailedView {catalog} {sectionIds} />
     {:else if shown === 'export'}
       <CalendarExport {catalog} {sectionIds} />
+    {:else if shown === 'workday'}
+      <WorkdayImport
+        {catalog}
+        onimport={(sections) => {
+          const count = onimportWorkday(sections);
+          // Land the student on the schedule the import just produced.
+          if (count > 0) preferredView = 'grid';
+          return count;
+        }}
+      />
     {:else}
       <QuarterGrid
         {catalog}

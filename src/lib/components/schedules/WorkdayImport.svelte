@@ -1,18 +1,21 @@
 <!--
-  The "Import from Workday" toolbar button and its review dialog.
+  The "Import from Workday" view: the step-by-step instructions for producing
+  the export, the file picker, and the review dialog.
 
-  Unlike the three buttons beside it this is an action rather than a view: the
-  import has to be reachable when the pane is showing the conflict resolver or
-  the progress bar, which is exactly the state a student with no courses chosen
-  is in.
+  This is a view rather than a plain action button, but unlike the three views
+  beside it, it has to stay reachable with no schedule on screen — a student
+  with no courses chosen sees the conflict resolver or the progress bar, and
+  the import is the one thing they can usefully do from there. `SchedulePane`
+  therefore lets this view win over that state, and the Schedules tab shows it
+  on its own before any course has been chosen.
 
   Nothing is applied until the student confirms. The dialog shows what matched
   and what did not first, because the import replaces the whole selection.
 -->
 <script lang="ts">
   import Modal from '$lib/components/primitives/Modal.svelte';
-  import ToggleButton from '$lib/components/primitives/ToggleButton.svelte';
   import type { Catalog } from '$lib/model/catalog';
+  import WorkdayInstructions from './WorkdayInstructions.svelte';
   import { readWorkdayExport, type EnrollmentMatch, type MatchedCourse } from '$lib/workday';
 
   interface Props {
@@ -67,13 +70,19 @@
   const dialogOpen = $derived(stage.kind !== 'closed');
 </script>
 
-<ToggleButton
-  pressed={dialogOpen}
-  title="Load the courses you are registered for from a Workday export"
-  onclick={() => fileInput?.click()}
->
-  Import from Workday
-</ToggleButton>
+<div class="panel">
+  <h2>Import from Workday</h2>
+  <p class="lead">
+    Load the courses you are registered for straight from Workday, instead of picking them one at
+    a time on the Courses tab.
+  </p>
+
+  <WorkdayInstructions />
+
+  <button type="button" class="choose" onclick={() => fileInput?.click()}>
+    Choose the Workday export…
+  </button>
+</div>
 
 <input
   bind:this={fileInput}
@@ -159,6 +168,36 @@
 </Modal>
 
 <style>
+  .panel {
+    height: 100%;
+    overflow-y: auto;
+    padding: var(--space-4) var(--space-5);
+  }
+
+  h2 {
+    margin: 0 0 var(--space-2);
+    font-size: 1.15rem;
+  }
+
+  .lead {
+    max-width: 46em;
+    color: var(--text-muted);
+  }
+
+  .choose {
+    margin-top: var(--space-2);
+    font: inherit;
+    padding: 6px 12px;
+    cursor: pointer;
+    border: 1px solid var(--border-muted);
+    border-radius: var(--radius-sm);
+    background: var(--surface-alt);
+  }
+
+  .choose:hover {
+    background: var(--surface-hover);
+  }
+
   p {
     margin: 0 0 var(--space-3);
   }

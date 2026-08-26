@@ -14,12 +14,12 @@
     href: string;
     label: string;
     title: string;
-    /** Tabs are dimmed and unclickable until a course is chosen. */
+    /** A dimmed tab is unclickable; Times needs a chosen course. */
     enabled: boolean;
   }
 
   interface Props {
-    /** Times and Schedules need at least one chosen course. */
+    /** Times needs at least one chosen course. */
     hasCourses: boolean;
   }
 
@@ -40,10 +40,12 @@
       enabled: hasCourses,
     },
     {
+      // Always reachable: with no courses chosen it is where the Workday
+      // import lives, which is one way of choosing them.
       href: '/schedules',
       label: 'Schedules',
-      title: 'List of available courses',
-      enabled: hasCourses,
+      title: 'List of available schedules, and the Workday import',
+      enabled: true,
     },
   ]);
 

@@ -60,6 +60,13 @@
       <li>Nick Markou</li>
     </ul>
     <p>In collaboration with the WPI IT Web Development Team.</p>
+    <p>Rewritten from Java (GWT) to Svelte, with the following added, by Evan Gan:</p>
+    <ul>
+      <li>Import your registered courses straight from a Workday export.</li>
+      <li>Export a schedule to your calendar as an <code>.ics</code> file.</li>
+      <li>Filter a course's sections by professor.</li>
+      <li>Name and save favorite schedules.</li>
+    </ul>
   </section>
 </div>
 

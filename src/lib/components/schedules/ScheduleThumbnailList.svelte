@@ -11,12 +11,16 @@
   import ToggleButton from '$lib/components/primitives/ToggleButton.svelte';
   import type { SchedulePermutation } from '$lib/scheduling/types';
   import type { TimeRangeState } from '$lib/state/timeRange.svelte';
+  import FavoriteNameField from './FavoriteNameField.svelte';
   import ScheduleThumbnail from './ScheduleThumbnail.svelte';
 
   interface Props {
     catalog: Catalog;
     permutations: SchedulePermutation[];
     favorites: SchedulePermutation[];
+    /** The name stored for a favourited schedule; blank means never named. */
+    favoriteNameOf: (permutation: SchedulePermutation) => string;
+    onrenameFavorite: (permutation: SchedulePermutation, name: string) => void;
     timeRange: TimeRangeState;
     colorOf: (courseId: string) => string;
     isSelected: (permutation: SchedulePermutation) => boolean;
@@ -29,6 +33,8 @@
     catalog,
     permutations,
     favorites,
+    favoriteNameOf,
+    onrenameFavorite,
     timeRange,
     colorOf,
     isSelected,
@@ -72,14 +78,25 @@
   <div class="list">
     <ScrollArea onscrollnearend={showMore}>
       {#each shown as permutation, index (permutation.sectionIds.join('+') + index)}
-        <ScheduleThumbnail
-          {catalog}
-          {permutation}
-          {timeRange}
-          {colorOf}
-          selected={isSelected(permutation)}
-          onclick={() => onselect(permutation)}
-        />
+        <div class="entry" class:named={showingFavorites}>
+          <ScheduleThumbnail
+            {catalog}
+            {permutation}
+            {timeRange}
+            {colorOf}
+            selected={isSelected(permutation)}
+            onclick={() => onselect(permutation)}
+          />
+
+          {#if showingFavorites}
+            <FavoriteNameField
+              small
+              name={favoriteNameOf(permutation)}
+              placeholder="Unnamed"
+              onrename={(name) => onrenameFavorite(permutation, name)}
+            />
+          {/if}
+        </div>
       {/each}
 
       {#if shown.length === 0}
@@ -113,6 +130,23 @@
   .list {
     flex: 1 1 auto;
     min-height: 0;
+  }
+
+  .entry {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+  }
+
+  /* Pull the name up against its own sketch, so it cannot read as a caption
+     for the next one down; the entry then owns the gap between schedules. */
+  .entry.named {
+    margin-bottom: var(--space-3);
+  }
+
+  .entry.named :global(.thumbnail) {
+    margin-bottom: var(--space-1);
   }
 
   .empty {

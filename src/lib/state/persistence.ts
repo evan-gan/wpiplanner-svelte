@@ -154,15 +154,41 @@ export function loadChosenTimes(storage: StorageLike): ChosenTimes {
   return times;
 }
 
-/** Favourited schedules, each as the ids of its sections. */
-export function saveFavorites(favorites: readonly string[][], storage: StorageLike): void {
+/** One favourited schedule: the ids of its sections plus the name given to it. */
+export interface SavedFavorite {
+  sectionIds: string[];
+  name: string;
+}
+
+export function saveFavorites(favorites: readonly SavedFavorite[], storage: StorageLike): void {
   writeJson(STORAGE_KEYS.favorites, favorites, storage);
 }
 
-export function loadFavorites(storage: StorageLike): string[][] {
+/**
+ * Favourites, accepting both shapes this app has written.
+ *
+ * Before names existed a favourite was a bare array of section ids; those are
+ * read back with an empty name rather than dropped, because they are real
+ * schedules a student starred and only the label is missing.
+ */
+export function loadFavorites(storage: StorageLike): SavedFavorite[] {
   const parsed = readJson<unknown>(STORAGE_KEYS.favorites, storage);
   if (!Array.isArray(parsed)) return [];
-  return parsed.filter(isStringArray);
+
+  return parsed.flatMap((entry): SavedFavorite[] => {
+    if (isStringArray(entry)) return [{ sectionIds: entry, name: '' }];
+    if (typeof entry !== 'object' || entry === null) return [];
+
+    const candidate = entry as Partial<SavedFavorite>;
+    if (!isStringArray(candidate.sectionIds)) return [];
+
+    return [
+      {
+        sectionIds: candidate.sectionIds,
+        name: typeof candidate.name === 'string' ? candidate.name : '',
+      },
+    ];
+  });
 }
 
 /** Terms are the keys of a {@link ChosenTimes}; re-exported for callers. */

@@ -17,6 +17,7 @@
   import CalendarExport from './CalendarExport.svelte';
   import ConflictResolver from './ConflictResolver.svelte';
   import DetailedView from './DetailedView.svelte';
+  import FavoriteNameField from './FavoriteNameField.svelte';
   import GenerationProgress from './GenerationProgress.svelte';
   import QuarterGrid from './QuarterGrid.svelte';
   import ShareLink from './ShareLink.svelte';
@@ -35,8 +36,11 @@
     highlightedSectionId: string | null;
     colorOf: (courseId: string) => string;
     isFavorite: boolean;
+    /** The name of the shown schedule when it is starred; blank if never named. */
+    favoriteName: string;
     currentUrl: string;
     ontoggleFavorite: () => void;
+    onrenameFavorite: (name: string) => void;
     onselectSection: (sectionId: string) => void;
     onapplyProblems: (problems: readonly Problem[]) => void;
     /** Applies a confirmed Workday import; returns how many courses were kept. */
@@ -55,8 +59,10 @@
     highlightedSectionId,
     colorOf,
     isFavorite,
+    favoriteName,
     currentUrl,
     ontoggleFavorite,
+    onrenameFavorite,
     onselectSection,
     onapplyProblems,
     onimportWorkday,
@@ -94,6 +100,9 @@
     <span class="spacer"></span>
 
     {#if showsSchedule}
+      {#if isFavorite}
+        <FavoriteNameField name={favoriteName} placeholder="Unnamed" onrename={onrenameFavorite} />
+      {/if}
       <ToggleButton
         pressed={isFavorite}
         onclick={ontoggleFavorite}

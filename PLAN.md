@@ -161,7 +161,7 @@ wpiplanner-svelte/
 │       │   ├── selection.svelte.ts           chosen courses + denied sections (SectionProducer +
 │       │   │                                 StudentSchedule course half)
 │       │   ├── chosenTimes.svelte.ts         per-term time grid (StudentChosenTimes/TermTimes)
-│       │   ├── favorites.svelte.ts           favorited permutations
+│       │   ├── favorites.svelte.ts           favorited permutations, each with a name
 │       │   ├── permutations.svelte.ts        drives the worker, holds results + selection
 │       │   ├── timeRange.svelte.ts           derived visible start/end hour for the grids
 │       │   └── persistence.ts                localStorage read/write for all of the above
@@ -388,7 +388,7 @@ app, and that pass has not been done.
 
 | Old | New | Notes |
 |---|---|---|
-| `storage/StorageStudentSchedule.java` | `state/persistence.ts` | Keys `savedCourse`, `selectedDepts`, `chosenTimes`, `favorites` — **format changes**, so namespace them (`wpiplanner.v2.*`) and ignore old keys rather than half-migrating |
+| `storage/StorageStudentSchedule.java` | `state/persistence.ts` | Keys `savedCourse`, `selectedDepts`, `chosenTimes`, `favorites` — **format changes**, so namespace them (`wpiplanner.v2.*`) and ignore old keys rather than half-migrating. A `wpiplanner.v2.favorites` entry written before favourites had names still loads, with a blank name |
 | `storage/StorageSharing.java` | `share/shareCode.ts` | Hex-CRN encoding → section ids; fixes cross-listing. **Divergence found in the side-by-side pass — see §10.6:** a shared section with no seats left stays switched on here, where the old app drops it |
 | `welcome/WelcomeTab.java`, `WelcomeView.java` + `.ui.xml` | `routes/info/+page.svelte` | Static content; carry over verbatim including the YouTube embed and the color legend |
 
@@ -543,13 +543,14 @@ constants, and the DFS algorithm itself.
 
 ### Deviations added during the build
 
-Four, each small, each with a reason. Nothing else strayed from the old app.
+Five, each small, each with a reason. Nothing else strayed from the old app.
 
 | Deviation | Why |
 |---|---|
 | **Period block lines stack in flow** instead of being absolutely positioned against the bottom edge, with thresholds 36px/24px rather than 34px/24px | At 34–36px the legacy layout drew the period type on top of the course title. Verified by screenshot; the block is unreadable otherwise. |
 | **The term watermark is sized against its container** (`50cqh`) rather than a hardcoded 325px | 325px only looked right at one window size, and clipped badly inside the 2×2 quarter grid. |
 | **Routes emit directory-style output** (`courses/index.html`, `trailingSlash: 'always'`) | A plain static host serves `/courses` from that with no rewrite rule; `courses.html` would need one. Answers half of §10.2 whichever way the rest lands. |
+| **A favourite carries a name the student can edit** (the pencil label in the Schedules toolbar and under each starred sketch); new stars are named `Favorite N` | The old app showed favourites as unlabelled sketches, so a student comparing four near-identical schedules had no way to record which was which. Names are stored with the section ids; a favourite saved before names existed loads with a blank one. |
 | **The browse-list add/remove toggle is a coloured circle** — green `+` outline when a course can be added, red `−` when it is chosen — instead of the legacy square grey button | Requested: the chosen state was hard to spot while scanning the list. Colours are tokens (`--toggle-add*`, `--toggle-remove*`) in `tokens.css`. |
 
 The time-axis column also went from 32px to 38px, because "10AM" was clipped at

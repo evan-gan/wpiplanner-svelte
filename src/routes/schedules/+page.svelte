@@ -25,6 +25,9 @@
 
   const selected = $derived(app.permutations.selected);
   const isFavorite = $derived(selected !== null && app.favorites.contains(selected));
+  const favoriteName = $derived(
+    selected === null ? '' : (app.favorites.nameOf(selected) ?? ''),
+  );
 
   const detailsCourseId = $derived(
     detailsSectionId === null ? null : (app.catalog.getCourseIdOfSection(detailsSectionId) ?? null),
@@ -61,6 +64,8 @@
             catalog={app.catalog}
             permutations={app.permutations.permutations}
             favorites={app.favorites.asPermutations()}
+            favoriteNameOf={(permutation) => app.favorites.nameOf(permutation) ?? ''}
+            onrenameFavorite={(permutation, name) => app.favorites.rename(permutation, name)}
             timeRange={app.timeRange}
             {colorOf}
             isSelected={(permutation) => app.permutations.isSelected(permutation)}
@@ -82,8 +87,10 @@
             highlightedSectionId={app.permutations.highlightedSectionId}
             {colorOf}
             {isFavorite}
+            {favoriteName}
             currentUrl={$page.url.href}
             ontoggleFavorite={() => selected !== null && app.favorites.toggle(selected)}
+            onrenameFavorite={(name) => selected !== null && app.favorites.rename(selected, name)}
             onselectSection={(sectionId) => (detailsSectionId = sectionId)}
             onapplyProblems={(problems) => app.applyProblems(problems)}
             onimportWorkday={(sections) => app.importEnrolledSections(sections)}

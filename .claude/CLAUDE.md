@@ -30,7 +30,7 @@ search.** §6 has the per-phase gates, §8 lists the four places the rewrite
 deliberately departs from the old app, and §10.5 is the one open question that
 blocks cutover.
 
-`pnpm test` runs 62 tool tests and 394 app tests.
+`pnpm test` runs 62 tool tests and 411 app tests.
 
 ## Structure
 
@@ -109,7 +109,7 @@ left out with a reason rather than guessed at.
 | `src/lib/state/app.svelte.ts` | `AppState`, put into context by the layout. Owns the one cross-cutting rule: **a change to the choices calls `refresh()`, which restarts the search.** Start here. `importEnrolledSections` applies a Workday import: it replaces the selection and denies every section but the registered one. |
 | `src/lib/state/selection.svelte.ts` | Chosen courses and denied sections; the 18-course limit. Replaces `StudentSchedule`'s course half plus every `SectionProducer`. |
 | `src/lib/state/chosenTimes.svelte.ts` | The per-term availability grid and its drag semantics. |
-| `src/lib/state/favorites.svelte.ts` | Starred schedules, stored as section ids. |
+| `src/lib/state/favorites.svelte.ts` | Starred schedules, stored as section ids plus a student-editable name (`Favorite N` by default). Lookup, rename, and removal all match on the section *set*, so a regenerated schedule keeps its name. |
 | `src/lib/state/permutations.svelte.ts` | Drives the worker, holds results and the selected schedule, and the 17-colour palette. |
 | `src/lib/state/timeRange.svelte.ts` | The hours the grids show. |
 | `src/lib/state/persistence.ts` | All `localStorage` reads and writes. Every function is total: a corrupt payload yields the default. |
@@ -125,7 +125,7 @@ left out with a reason rather than guessed at.
 | `src/lib/components/primitives/` | `SplitPane`, `ScrollArea`, `Modal`, `ToggleButton`, `WarningIcon`, `FilterMenu` (funnel button → popover of tick-box filter groups). Generic, no app knowledge. |
 | `src/lib/components/catalog/` | The Courses tab: `DepartmentPicker` (the six academic groups live here), `CourseTable`, `CourseRow`, `TermBadges`, `CourseDetails`, `SelectedCourseList`. |
 | `src/lib/components/times/` | `TermTimeTabs`, `TimeGrid`, `TimeGridCell`. |
-| `src/lib/components/schedules/` | `SchedulePane` (the view-mode switch), `SectionPicker` (section/term checkboxes plus the per-course filter menu), `ScheduleThumbnailList` / `ScheduleThumbnail` (canvas), `QuarterGrid`, `WeekGrid`, `WeekGridColumn`, `PeriodBlock`, `DetailedView`, `SectionDetailsDialog`, `ConflictResolver`, `GenerationProgress` (canvas), `ShareLink`, `CalendarExport` (the third toolbar view, "Export to Calendar"), `WorkdayImport` (the fourth toolbar button — an *action*, not a view, so it stays reachable when the pane is showing the conflict resolver). |
+| `src/lib/components/schedules/` | `SchedulePane` (the view-mode switch), `SectionPicker` (section/term checkboxes plus the per-course filter menu), `ScheduleThumbnailList` / `ScheduleThumbnail` (canvas), `FavoriteNameField` (click-to-edit favourite name, used by both the toolbar and the strip), `QuarterGrid`, `WeekGrid`, `WeekGridColumn`, `PeriodBlock`, `DetailedView`, `SectionDetailsDialog`, `ConflictResolver`, `GenerationProgress` (canvas), `ShareLink`, `CalendarExport` (the third toolbar view, "Export to Calendar"), `WorkdayImport` (the fourth toolbar button — an *action*, not a view, so it stays reachable when the pane is showing the conflict resolver). |
 | `src/lib/styles/` | `tokens.css` (every colour and size lifted from the old app) and `reset.css`. |
 | `src/lib/share/shareCode.ts` | Encode/decode `?share=`. Version-prefixed; old hex-CRN links are rejected, not migrated. |
 

@@ -61,6 +61,43 @@ describe('FavoritesState', () => {
     expect(favorites.asPermutations()).toEqual([{ sectionIds: schedule.sectionIds, problems: [] }]);
   });
 
+  it('names a new favourite after the lowest unused number', () => {
+    const favorites = make();
+    favorites.add(schedule);
+    favorites.add(other);
+    expect(favorites.schedules.map(({ name }) => name)).toEqual(['Favorite 1', 'Favorite 2']);
+  });
+
+  it('keeps the name it was given', () => {
+    const favorites = make();
+    favorites.add(schedule, 'No 8ams');
+    expect(favorites.nameOf(schedule)).toBe('No 8ams');
+  });
+
+  it('renames a favourite, trimming what was typed', () => {
+    const favorites = make();
+    favorites.add(schedule);
+    favorites.rename(schedule, '  Fridays off  ');
+    expect(favorites.nameOf(schedule)).toBe('Fridays off');
+  });
+
+  it('renames by section set, not by the order the sections came in', () => {
+    const favorites = make();
+    favorites.add(schedule);
+    favorites.rename({ sectionIds: [...schedule.sectionIds].reverse(), problems: [] }, 'Reordered');
+    expect(favorites.nameOf(schedule)).toBe('Reordered');
+  });
+
+  it('ignores a rename of a schedule that is not starred', () => {
+    const favorites = make();
+    favorites.rename(schedule, 'Ghost');
+    expect(favorites.count).toBe(0);
+  });
+
+  it('has no name for a schedule that is not starred', () => {
+    expect(make().nameOf(schedule)).toBeUndefined();
+  });
+
   it('restores what was saved', () => {
     const storage = createMemoryStorage();
     const first = new FavoritesState(storage);
@@ -69,5 +106,15 @@ describe('FavoritesState', () => {
     const second = new FavoritesState(storage);
     second.restore();
     expect(second.contains(schedule)).toBe(true);
+  });
+
+  it('restores the names too', () => {
+    const storage = createMemoryStorage();
+    const first = new FavoritesState(storage);
+    first.add(schedule, 'No 8ams');
+
+    const second = new FavoritesState(storage);
+    second.restore();
+    expect(second.nameOf(schedule)).toBe('No 8ams');
   });
 });

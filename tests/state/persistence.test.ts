@@ -101,18 +101,40 @@ describe('chosen-times persistence', () => {
 });
 
 describe('favorites persistence', () => {
-  it('round-trips favorited schedules', () => {
+  it('round-trips favorited schedules with their names', () => {
     const storage = createMemoryStorage();
-    const favorites = [['CS|2102|A01', 'MA|1021|A01'], ['CS|2102|A02']];
+    const favorites = [
+      { sectionIds: ['CS|2102|A01', 'MA|1021|A01'], name: 'No 8ams' },
+      { sectionIds: ['CS|2102|A02'], name: '' },
+    ];
 
     saveFavorites(favorites, storage);
     expect(loadFavorites(storage)).toEqual(favorites);
   });
 
-  it('skips a favorite saved in the legacy format instead of failing', () => {
+  it('reads a favorite saved before names existed, giving it a blank name', () => {
+    const storage = createMemoryStorage();
+    storage.setItem(STORAGE_KEYS.favorites, JSON.stringify([['CS|2102|A01', 'MA|1021|A01']]));
+
+    expect(loadFavorites(storage)).toEqual([
+      { sectionIds: ['CS|2102|A01', 'MA|1021|A01'], name: '' },
+    ]);
+  });
+
+  it('skips a favorite saved in the legacy hex-CRN format instead of failing', () => {
     const storage = createMemoryStorage();
     storage.setItem(STORAGE_KEYS.favorites, JSON.stringify(['01000000004E20AAAA']));
     expect(loadFavorites(storage)).toEqual([]);
+  });
+
+  it('drops an entry whose section ids are unreadable', () => {
+    const storage = createMemoryStorage();
+    storage.setItem(
+      STORAGE_KEYS.favorites,
+      JSON.stringify([{ sectionIds: [3, 4], name: 'broken' }, { sectionIds: ['CS|2102|A01'] }]),
+    );
+
+    expect(loadFavorites(storage)).toEqual([{ sectionIds: ['CS|2102|A01'], name: '' }]);
   });
 });
 

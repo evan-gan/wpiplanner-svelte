@@ -6,16 +6,16 @@
  * 1. **Start times snap to the enclosing block.** A 9:10 lecture is tested
  *    against the 9:00 cell. Changing this changes which sections the Times tab
  *    excludes, so it is preserved exactly.
- * 2. **Cells outside the grid count as blocked.** The grid only covers
- *    Monday–Friday, 8:00AM–6:00PM, and a cell outside it can never be selected,
- *    so a section meeting there always conflicts and is never schedulable. That
- *    is what the old app did — an evening section found its times absent from
- *    the chosen list and dropped out of every schedule — and PLAN.md §10.5
- *    records the decision to keep it, so students see the same schedules they
- *    see today. On the February 2025 catalogue this costs 20 of MA1021's 79
- *    open sections; `tools/parity-oracle` measures it for any course set.
+ * 2. **Cells outside the grid count as blocked.** A cell outside the grid can
+ *    never be selected, so a section meeting there always conflicts and is never
+ *    schedulable. The legacy app did the same, but its grid stopped at 6:00PM,
+ *    which silently deleted every evening section from the search while the
+ *    schedule grids still drew the 7:00PM and 8:00PM rows. The grid now runs to
+ *    9:00PM (`timeGrid.ts`), past the latest meeting in the catalog, so the only
+ *    times still excluded by this rule are the weekend — which no section in the
+ *    Workday feed uses — and anything before 8:00AM.
  *
- *    The one legacy behaviour deliberately *not* kept is the crash: a weekend
+ *    The other legacy behaviour deliberately not kept is the crash: a weekend
  *    section indexed a row of the chosen-times map that did not exist and threw
  *    an NPE inside the search. Here it is an ordinary conflict.
  *

@@ -1,5 +1,6 @@
 <!--
-  One term's availability grid: Monday-Friday, 8:00AM-6:00PM in half hours.
+  One term's availability grid: Monday-Friday, 8:00AM-9:00PM in half hours.
+  Every dimension is derived from `timeGrid.ts`; nothing here is hardcoded.
 
   Drag-select is the whole interaction. The legacy `TimeTable` did it with
   `MouseDown`/`MouseMove` handlers plus a global `MouseUp` on the root panel to

@@ -90,14 +90,20 @@ describe('getTimeConflicts', () => {
 });
 
 describe('times the chosen-times grid cannot express', () => {
-  // The grid covers Monday–Friday, 8:00AM–6:00PM. A block outside it can never
+  // The grid covers Monday–Friday, 8:00AM–9:00PM. A block outside it can never
   // be selected, so a section meeting there always conflicts and is never
-  // schedulable — the old app's behaviour, kept deliberately (PLAN.md §10.5).
-  // The one thing not kept is the crash: a Saturday section used to throw an
-  // NPE inside the generator.
-  it('excludes an evening section even with the whole grid available', () => {
+  // schedulable. The legacy grid stopped at 6:00PM, which made that rule delete
+  // every evening section; the widened grid leaves only the weekend and the
+  // hours before 8:00AM. The crash is still gone: a Saturday section used to
+  // throw an NPE inside the generator.
+  it('schedules an evening section that the legacy 6:00PM grid excluded', () => {
     const evening = section('CS|4432|A01', ['A'], ['6:00PM-8:50PM mon']);
-    expect(hasTimeConflicts(evening, allTimesAvailable())).toBe(true);
+    expect(hasTimeConflicts(evening, allTimesAvailable())).toBe(false);
+  });
+
+  it('still excludes a section running past the bottom of the grid', () => {
+    const late = section('CS|4432|A01', ['A'], ['8:30PM-9:50PM mon']);
+    expect(hasTimeConflicts(late, allTimesAvailable())).toBe(true);
   });
 
   it('excludes an early-morning section even with the whole grid available', () => {
@@ -112,25 +118,25 @@ describe('times the chosen-times grid cannot express', () => {
   });
 
   it('marks an out-of-grid block as one the student cannot re-enable', () => {
-    const evening = section('CS|4432|A01', ['A'], ['6:00PM-6:50PM mon']);
-    const [cell] = getTimeConflicts(evening, allTimesAvailable()).A ?? [];
+    const late = section('CS|4432|A01', ['A'], ['9:00PM-9:50PM mon']);
+    const [cell] = getTimeConflicts(late, allTimesAvailable()).A ?? [];
 
     expect(cell.insideGrid).toBe(false);
     expect(cell.dayIndex).toBe(1);
-    expect(cell.startMinutes).toBe(18 * 60);
+    expect(cell.startMinutes).toBe(21 * 60);
   });
 
   it('reports both halves of a section that straddles the grid edge', () => {
-    // 5:00PM-7:00PM: the 5:00 and 5:30 blocks are real cells, 6:00 and 6:30
+    // 8:00PM-10:00PM: the 8:00 and 8:30 blocks are real cells, 9:00 and 9:30
     // are past the bottom of the grid.
-    const spanning = section('CS|4432|A01', ['A'], ['5:00PM-7:00PM mon']);
+    const spanning = section('CS|4432|A01', ['A'], ['8:00PM-10:00PM mon']);
     const cells = getTimeConflicts(spanning, noTimesAvailable()).A ?? [];
 
     expect(cells.map((cell) => cell.startMinutes)).toEqual([
-      17 * 60,
-      17 * 60 + 30,
-      18 * 60,
-      18 * 60 + 30,
+      20 * 60,
+      20 * 60 + 30,
+      21 * 60,
+      21 * 60 + 30,
     ]);
     expect(cells.map((cell) => cell.insideGrid)).toEqual([true, true, false, false]);
   });

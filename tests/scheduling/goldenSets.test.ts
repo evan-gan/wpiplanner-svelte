@@ -88,15 +88,18 @@ describe.skipIf(!hasExport)('real course sets', () => {
   it('handles a course with many sections in reasonable time', () => {
     // MA1021 has 184 sections, 79 of them open — the widest real case.
     //
-    // 231, not 4 x 79, for two reasons. 20 of those 79 sections carry a
-    // Tue/Thu 6:00–7:50PM lecture, which falls outside the chosen-times grid
-    // and so can never be scheduled (PLAN.md §10.5); the remaining 5 missing
-    // combinations are genuine conflicts with CS2102. The 300-schedule cap is
-    // not involved — the search runs to exhaustion well past it.
+    // 311, not 4 x 79: the 5 missing combinations are genuine conflicts with
+    // CS2102. The 300-schedule cap is not involved — the search runs to
+    // exhaustion well past it.
+    //
+    // This read 231 while the chosen-times grid stopped at 6:00PM, which put 20
+    // of those 79 sections (a Tue/Thu 6:00–7:50PM lecture) permanently out of
+    // reach. That is the one place the search deliberately parts company with
+    // the GWT producer, which `tools/parity-oracle` will still report as 231.
     const started = Date.now();
     const { generator } = schedulesFor(['CS|2102', 'MA|1021']);
 
-    expect(generator.permutations).toHaveLength(231);
+    expect(generator.permutations).toHaveLength(311);
     expect(Date.now() - started).toBeLessThan(5000);
   });
 

@@ -19,24 +19,30 @@ import {
 } from '$lib/model/timeGrid';
 
 describe('grid constants', () => {
-  // PLAN.md §5 requires these to stay byte-for-byte identical to TimeCell.java.
+  // PLAN.md §5 requires these to stay identical to TimeCell.java, with the one
+  // documented exception of NUM_HOURS.
   it('match the legacy TimeCell constants exactly', () => {
     expect(START_DAY).toBe(1);
     expect(START_HOUR).toBe(8);
     expect(CELLS_PER_HOUR).toBe(2);
     expect(NUM_DAYS).toBe(5);
-    expect(NUM_HOURS).toBe(10);
   });
 
-  it('derives a 20-row by 5-column grid', () => {
-    expect(GRID_ROWS).toBe(20);
+  // Widened from the legacy 10 so evening sections are schedulable at all; a
+  // narrower grid deletes them from the search. See timeConflicts.ts.
+  it('covers 13 hours, three more than the legacy grid', () => {
+    expect(NUM_HOURS).toBe(13);
+  });
+
+  it('derives a 26-row by 5-column grid', () => {
+    expect(GRID_ROWS).toBe(26);
     expect(GRID_COLUMNS).toBe(5);
-    expect(GRID_CELL_COUNT).toBe(100);
+    expect(GRID_CELL_COUNT).toBe(130);
   });
 
-  it('spans 8:00AM to 6:00PM', () => {
+  it('spans 8:00AM to 9:00PM', () => {
     expect(gridStartMinutes()).toBe(8 * 60);
-    expect(gridEndMinutes()).toBe(18 * 60);
+    expect(gridEndMinutes()).toBe(21 * 60);
   });
 });
 
@@ -47,7 +53,7 @@ describe('rowToMinutes', () => {
 
   it('advances a half hour per row', () => {
     expect(rowToMinutes(1)).toBe(8 * 60 + 30);
-    expect(rowToMinutes(19)).toBe(17 * 60 + 30);
+    expect(rowToMinutes(25)).toBe(20 * 60 + 30);
   });
 });
 
@@ -60,7 +66,7 @@ describe('minutesToRow', () => {
 
   it('reports rows outside the grid so callers can reject them', () => {
     expect(minutesToRow(7 * 60)).toBe(-2);
-    expect(minutesToRow(18 * 60)).toBe(GRID_ROWS);
+    expect(minutesToRow(21 * 60)).toBe(GRID_ROWS);
   });
 });
 

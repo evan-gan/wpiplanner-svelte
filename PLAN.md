@@ -69,7 +69,7 @@ several decisions, so they are recorded here rather than rediscovered later.
 | `loadSchedule` uses a thrown NPE as control flow to detect a missing `?share=` param | **Fix** — plain null check |
 | `ConflictController.generate()` calls `sectionQueue.remove(0)` without an empty check; re-arming the timer on `addCourse` can hit an empty queue | **Fix** — guard, and move the whole thing off timer-slicing |
 | `location = building + room` with an always-empty `building` yields a trailing space | **Fix** — collapse and trim |
-| `getTimeConflicts` looks up cells the chosen-times grid does not contain. The grid is Mon–Fri 8:00–18:00, so an evening section found its times missing from the chosen list and was dropped from **every** schedule, and a weekend section hit `HashMap.get` returning null and threw an NPE inside the search | **Keep the exclusion, fix the crash** — decided by the maintainer (§10.5). Cells outside the grid count as blocked, so students see the same schedules as today; a weekend section is now an ordinary conflict rather than an NPE. The resolver labels an out-of-grid block as one it cannot re-enable |
+| `getTimeConflicts` looks up cells the chosen-times grid does not contain. The grid is Mon–Fri 8:00–18:00, so an evening section found its times missing from the chosen list and was dropped from **every** schedule, and a weekend section hit `HashMap.get` returning null and threw an NPE inside the search | **Keep the exclusion rule, widen the grid, fix the crash** (§10.5). Out-of-grid cells still count as blocked, but the grid now runs to 21:00, so evening sections are schedulable — the legacy pairing of a 18:00 grid with a hard exclusion contradicted the schedule grids, which draw those hours. A weekend section is now an ordinary conflict rather than an NPE. The resolver labels an out-of-grid block as one it cannot re-enable |
 | Hard limit of 18 courses via `Window.alert` | **Keep** the limit (the color palette has 17 entries), replace the alert with inline UI |
 
 ---
@@ -538,12 +538,13 @@ behavior does not change.
 | Error handling | `Window.alert`, `e.printStackTrace()`, NPE-as-control-flow | typed errors, inline UI states, a build that fails loudly |
 
 **Not changed, on purpose:** the visual design, the tab structure, the term color
-scheme, the 17-color course palette, the 18-course limit, the `TimeCell` grid
-constants, and the DFS algorithm itself.
+scheme, the 17-color course palette, the 18-course limit, and the DFS algorithm
+itself. The `TimeCell` grid constants are unchanged except `NUM_HOURS` (§10.5).
 
 ### Deviations added during the build
 
-Five, each small, each with a reason. Nothing else strayed from the old app.
+Six. Five are small and cosmetic; the sixth, below the table, is the one that
+changes search results.
 
 | Deviation | Why |
 |---|---|
@@ -556,14 +557,15 @@ Five, each small, each with a reason. Nothing else strayed from the old app.
 The time-axis column also went from 32px to 38px, because "10AM" was clipped at
 32px in the browser's default font stack.
 
-A fourth deviation was proposed and **rejected**: treating cells outside the
-chosen-times grid as available, which would have made evening and weekend
-sections schedulable. The maintainer chose the old app's behaviour (§10.5), so
-the rewrite excludes them exactly as the old app does. The crash is still fixed:
-a weekend section is a plain conflict, not an NPE. The only remaining visible
-difference is honest text — the resolver marks an out-of-grid block as one no
-student action can clear, instead of inviting them to re-enable a cell that does
-not exist.
+A sixth deviation, and the only one that changes which schedules the search
+finds: **the chosen-times grid covers 8:00AM–9:00PM instead of the legacy
+8:00AM–6:00PM** (`NUM_HOURS` 10 → 13). Cells outside the grid still count as
+blocked; the legacy grid simply stopped early enough that the rule deleted every
+evening section, while the schedule grids drew those hours anyway. §10.5 has the
+full history — this was decided the other way first. The crash is still fixed: a
+weekend section is a plain conflict, not an NPE. The resolver also marks an
+out-of-grid block as one no student action can clear, instead of inviting them to
+re-enable a cell that does not exist.
 
 ---
 
@@ -599,8 +601,9 @@ These did not block the build. They block the **cutover**.
    requirement below that? The app also uses CSS container queries (the term
    watermark) and `<dialog>` (the section details modal) — both Chrome/Safari/
    Firefox 2023+.
-5. **RESOLVED — the chosen-times boundary (§1, §8).** Should an evening or
-   weekend section be schedulable? **Decided: no**, matching the old app.
+5. **RESOLVED (twice) — the chosen-times boundary (§1, §8).** Should an evening
+   section be schedulable? **Decided: yes** — by widening the grid, not by
+   loosening the rule.
 
    The rewrite briefly treated cells outside the Mon–Fri 8:00–18:00 grid as
    available, which made those sections schedulable. `tools/parity-oracle` put a
@@ -610,10 +613,22 @@ These did not block the build. They block the **cutover**.
    311. The whole gap was this boundary — 20 of MA1021's 79 open sections carry
    a Tue/Thu 6:00–7:50PM lecture, and 20 × CS2102's 4 open sections is 80.
 
-   The maintainer chose to keep what students see today. `timeConflicts.ts` now
-   excludes out-of-grid blocks, the golden set records 231, and the search is at
-   full parity with the legacy algorithm on every set tested. The NPE on weekend
-   sections is still fixed — that was never the question.
+   The first decision was to keep what students see today, so out-of-grid blocks
+   conflicted and the golden set recorded 231. That was reversed once the
+   inconsistency it left became clear: the schedule grids size themselves to the
+   chosen courses and will happily draw a 7:00PM or 8:00PM row, so the app was
+   showing students a time it would never schedule them into. Rather than
+   loosening the conflict rule — which would have made evening times impossible
+   to *block out*, the opposite failure — the grid itself was widened:
+   `NUM_HOURS` 10 → 13, covering 8:00AM–9:00PM, past the catalog's latest
+   meeting at 8:50PM. Rows are appended at the bottom and the column count is
+   unchanged, so blocked-cell indices already in `localStorage` still address the
+   same cells and no storage version bump was needed.
+
+   The golden set now records 311. Weekend and before-8:00AM meetings are still
+   excluded by the out-of-grid rule; the live Workday feed publishes no weekend
+   sections at all. The NPE on weekend sections is still fixed — that was never
+   the question.
 
    **One loose end this leaves.** A section that meets entirely outside the grid
    produces a time-conflict problem the student cannot act on. The description
@@ -673,10 +688,16 @@ lists each stub with why it cannot change a count.
 | CS2102 + MA1021 | 231 | 231 |
 
 All five agree, including the cross-listed pair the old CRN lookup got wrong.
-The last row only agrees because the chosen-times boundary was settled in the
-old app's favour (§10.5); before that it read 311. The 300-schedule cap turned
-out not to be involved anywhere: every search ran to exhaustion.
-`tests/scheduling/goldenSets.test.ts` records these as parity evidence.
+The 300-schedule cap turned out not to be involved anywhere: every search ran to
+exhaustion. `tests/scheduling/goldenSets.test.ts` records these as parity
+evidence.
+
+**The last row has since been re-pinned to 311 on purpose.** It agreed at 231
+only while the chosen-times grid stopped at 6:00PM. That boundary was later
+reopened and decided the other way (§10.5), so the grid now runs to 9:00PM and
+MA1021's 20 evening sections are schedulable again. The oracle still reports
+231, because it runs the unchanged legacy producer; the difference is the
+intended one and the only known behavioural break in the search.
 
 This holds the catalogue fixed and varies only the code, which is the sharper
 version of the question — the deployed old app serves its own export, so a
@@ -685,11 +706,18 @@ is everything outside the search: the UI still needs items 3 and 4 below, and a
 quick spot-check of one or two of these sets in the deployed app is still worth
 doing as a sanity check on the harness itself.
 
-**2. The chosen-times boundary — decided and implemented** (§10.5). Out-of-grid
-blocks conflict, exactly as in the old app; there is no known behavioural
-difference in the search left. One loose end, noted in §10.5: the resolver can
-still offer an APPLY button for a suggestion nothing can apply. That is a UI
-call, so it belongs with item 3.
+**2. The chosen-times boundary — reopened and decided the other way** (§10.5).
+Out-of-grid blocks still conflict, but the grid itself now covers 8:00AM–9:00PM,
+so the rule no longer deletes evening sections the schedule grids were happily
+drawing. The maintainer's original call was to match the old app; the reason for
+reversing it is that the two halves of *this* app disagreed — the week grid drew
+a 7:00PM class that the search would never place. Weekend and before-8:00AM
+meetings are still excluded (the Workday feed has no weekend sections at all).
+This is now the one deliberate search-behaviour break with the old app, and the
+parity oracle will report the old numbers for any course set with evening
+sections. One loose end, noted in §10.5: the resolver can still offer an APPLY
+button for a suggestion nothing can apply. That is a UI call, so it belongs with
+item 3.
 
 **3. The side-by-side screenshot passes** for phases 3, 4 and 5, at 1440×900 and
 1024×768. **These can be run locally now** — `wpiplanner-master/war/` is the

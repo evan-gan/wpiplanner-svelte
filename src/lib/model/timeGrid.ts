@@ -2,8 +2,13 @@
  * The chosen-times grid: which half-hour blocks of which weekdays a student is
  * willing to have class.
  *
- * The five constants below are carried over verbatim from `TimeCell.java`. They
- * decide which sections the Times tab can exclude, so they are pinned by a test.
+ * The constants below decide which sections the Times tab can exclude, so they
+ * are pinned by a test. Four of the five are `TimeCell.java` verbatim; the fifth,
+ * {@link NUM_HOURS}, is deliberately larger than the legacy 10. The old grid
+ * stopped at 6:00PM while the schedule grids drew as late as 9:00PM, so a class
+ * a student could see was one the search would never place. See
+ * `scheduling/timeConflicts.ts` for why an uncovered hour is an unschedulable
+ * one.
  */
 import { MINUTES_PER_HOUR } from './time.ts';
 
@@ -17,8 +22,14 @@ export const START_MIN = 0;
 export const CELLS_PER_HOUR = 2;
 /** Columns — Monday through Friday. */
 export const NUM_DAYS = 5;
-/** Hours the grid spans, starting at {@link START_HOUR}. */
-export const NUM_HOURS = 10;
+/**
+ * Hours the grid spans, starting at {@link START_HOUR}.
+ *
+ * 13 covers through 9:00PM, past the latest meeting in the catalog (8:50PM).
+ * Rows are appended at the bottom and {@link GRID_COLUMNS} is unchanged, so the
+ * blocked-cell indices already in `localStorage` still address the same cells.
+ */
+export const NUM_HOURS = 13;
 
 /** Minutes covered by one cell. */
 export const MINUTES_PER_CELL = MINUTES_PER_HOUR / CELLS_PER_HOUR;

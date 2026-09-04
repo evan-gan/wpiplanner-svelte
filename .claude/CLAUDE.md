@@ -57,7 +57,7 @@ Files that carry the most weight, and what to change where.
 | `src/lib/model/time.ts` | Minutes-since-midnight helpers, 12-hour formatting, and `snapToBlockStart`. |
 | `src/lib/model/days.ts` | `DAY_BITS` mask helpers. Also re-exported by the converter. |
 | `src/lib/model/terms.ts` | `TermName` parsing, ordering, labels. |
-| `src/lib/model/timeGrid.ts` | The `TimeCell` constants and grid math. A test pins the five constants. |
+| `src/lib/model/timeGrid.ts` | The `TimeCell` constants and grid math. A test pins the five constants. `NUM_HOURS` is 13, not the legacy 10 — see the two-behaviours note at the bottom of this file. |
 | `src/lib/model/availability.ts` | seats/waitlist → `open` / `waitlist` / `full`, per section, per course, per term. |
 | `src/lib/model/sectionFilters.ts` | Filters over a course's sections — currently by professor. Each option names the sections it covers and stores nothing, so the filter menu and the section checkboxes cannot disagree. **Add a filter by adding a builder to `SECTION_FILTER_BUILDERS`.** |
 
@@ -233,10 +233,13 @@ why a group whose options would all cover the same sections is dropped.
   entirely**, rather than making the schedule impossible. The legacy producer
   skipped empty section lists the same way. This is why adding a fully-closed
   course such as CS1004 changes nothing.
-- **Cells outside the chosen-times grid count as blocked, so evening and weekend
-  sections are never schedulable.** The grid covers Monday–Friday, 8:00AM–6:00PM,
-  and a cell outside it can never be selected. This matches the old app and is a
-  deliberate decision, not an oversight — PLAN.md §10.5 has the reasoning and the
-  measured cost (20 of MA1021's 79 open sections). The legacy NPE on weekend
-  sections *is* fixed: they are ordinary conflicts. Conflict cells carry
-  `insideGrid`, and the resolver must not offer to re-enable one that is false.
+- **Cells outside the chosen-times grid count as blocked, so weekend and
+  before-8:00AM sections are never schedulable.** The grid covers Monday–Friday,
+  8:00AM–9:00PM (`src/lib/model/timeGrid.ts`), and a cell outside it can never be
+  selected. The legacy grid stopped at 6:00PM, which made this rule delete every
+  evening section from the search while the schedule grids still drew the 7:00PM
+  and 8:00PM rows — widening it to 9:00PM (past the catalog's latest meeting,
+  8:50PM) is the fix, and it is the one deliberate behavioural break with the GWT
+  producer. The legacy NPE on weekend sections is also fixed: they are ordinary
+  conflicts. Conflict cells carry `insideGrid`, and the resolver must not offer to
+  re-enable one that is false.

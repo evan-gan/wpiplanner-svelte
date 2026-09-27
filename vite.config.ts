@@ -1,9 +1,15 @@
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
 import { fileURLToPath } from 'node:url';
+import { catalogEndpointPlugin } from './server/viteCatalogPlugin.ts';
 
 export default defineConfig({
-  plugins: [sveltekit()],
+  // The catalog plugin serves /api/catalog/* under `pnpm dev` and `pnpm preview`,
+  // mirroring the Vercel function so local runs see live Workday data too.
+  plugins: [
+    catalogEndpointPlugin({ showOldLink: process.env.SHOW_OLD_SCHEDULE_LINK === 'true' }),
+    sveltekit(),
+  ],
   // The permutation search runs in a module worker so the DFS never blocks the UI.
   worker: { format: 'es' },
   resolve: {

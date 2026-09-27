@@ -1,0 +1,17 @@
+{
+  // Read by Vercel's Node builder when it compiles this directory. The shared
+  // code imports siblings as `./x.ts` (so Node type stripping can run it), and
+  // `rewriteRelativeImportExtensions` turns those into `./x.js` in the output.
+  // The root tsconfig cannot do this: it is `noEmit` and extends a file that
+  // only exists after `svelte-kit sync`.
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "rewriteRelativeImportExtensions": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "types": ["node"]
+  },
+  "include": ["./**/*.ts", "../server/**/*.ts", "../tools/workday-to-schedb/src/**/*.ts", "../tools/shared/**/*.ts", "../src/lib/model/**/*.ts"]
+}

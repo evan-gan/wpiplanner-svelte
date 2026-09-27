@@ -19,6 +19,15 @@ import type { SchedbFile } from '$lib/model/schedb';
 export const CATALOG_URL = '/schedb.json';
 
 /**
+ * The live endpoint (`api/catalog.ts`), which rebuilds the catalog from Workday
+ * at most every ten minutes. {@link CATALOG_URL} is the snapshot committed with
+ * the deploy, kept as the fallback for when the endpoint is down or absent —
+ * as it is on any host that does not run the function. `pnpm dev` and
+ * `pnpm preview` mount it through `server/viteCatalogPlugin.ts`.
+ */
+export const LIVE_CATALOG_URL = '/api/catalog/schedb.json';
+
+/**
  * Which step of the load is running, so the loading screen can name it the way
  * the legacy `LoadSchedule` did with its XHR ready states.
  */
@@ -34,6 +43,8 @@ export interface LoadProgress {
 export interface LoadCatalogOptions {
   /** Overrides {@link CATALOG_URL}; pass `${base}/schedb.json` under a subpath. */
   url?: string;
+  /** Tried when `url` fails for any reason, e.g. the static snapshot behind the live endpoint. */
+  fallbackUrl?: string;
   /** Called as bytes arrive, so the loading screen can show a real bar. */
   onProgress?: (progress: LoadProgress) => void;
   /** Called when the load moves to a new {@link LoadStage}. */
@@ -60,7 +71,11 @@ async function readBodyWithProgress(
   response: Response,
   onProgress?: (progress: LoadProgress) => void,
 ): Promise<string> {
-  const total = Number(response.headers.get('content-length') ?? 0);
+  // With a Content-Encoding, Content-Length counts compressed bytes while the
+  // reader yields decompressed ones, so it is no use as a total.
+  const total = response.headers.has('content-encoding')
+    ? 0
+    : Number(response.headers.get('content-length') ?? 0);
   const body = response.body;
 
   if (body === null || typeof body.getReader !== 'function') {
@@ -87,14 +102,28 @@ async function readBodyWithProgress(
 }
 
 /**
- * Fetch `schedb.json` and build the {@link Catalog} index from it.
+ * Fetch `schedb.json` and build the {@link Catalog} index from it, trying
+ * `fallbackUrl` if the first URL fails.
  *
+ * @throws CatalogLoadError when every URL fails; the message is the last one's
+ */
+export async function loadCatalog(options: LoadCatalogOptions = {}): Promise<Catalog> {
+  const url = options.url ?? CATALOG_URL;
+  try {
+    return await loadCatalogFrom(url, options);
+  } catch (error) {
+    if (options.fallbackUrl === undefined || options.signal?.aborted) throw error;
+    console.warn(`Falling back to ${options.fallbackUrl}:`, error);
+    return loadCatalogFrom(options.fallbackUrl, options);
+  }
+}
+
+/**
  * @throws CatalogLoadError when the request fails, the body is not JSON, or the
  *   file was written by a different converter version
  */
-export async function loadCatalog(options: LoadCatalogOptions = {}): Promise<Catalog> {
+async function loadCatalogFrom(url: string, options: LoadCatalogOptions): Promise<Catalog> {
   const doFetch = options.fetchImpl ?? fetch;
-  const url = options.url ?? CATALOG_URL;
   let response: Response;
 
   options.onStage?.('connecting');

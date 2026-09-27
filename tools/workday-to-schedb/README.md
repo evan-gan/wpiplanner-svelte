@@ -72,6 +72,7 @@ what the header bar shows as "Schedule Data Refreshed". Reading a saved feed wit
 | Path | Purpose |
 |---|---|
 | `src/index.ts` | CLI: options, file I/O, summary output |
+| `src/refresh.ts` | Fetch + convert + render as one function with no file I/O; used by the live endpoint in `server/` |
 | `src/fetchFeed.ts` | Fetching or reading the feed, and the `Last-Modified` timestamp |
 | `src/feed.ts` | The feed's shape, which rows are plannable, and the academic year |
 | `src/parseEntry.ts` | One row -> parsed values: section label, seats, term, instructor |

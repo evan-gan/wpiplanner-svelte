@@ -25,12 +25,16 @@ export interface FetchedFeed {
  * Download and parse the feed.
  *
  * @param url Overrides {@link FEED_URL}
+ * @param fetchImpl Injected by tests; defaults to the global `fetch`
  * @throws Error when the request fails or the body is not the expected shape
  */
-export async function fetchFeed(url: string = FEED_URL): Promise<FetchedFeed> {
+export async function fetchFeed(
+  url: string = FEED_URL,
+  fetchImpl: typeof fetch = fetch,
+): Promise<FetchedFeed> {
   let response: Response;
   try {
-    response = await fetch(url);
+    response = await fetchImpl(url);
   } catch (cause) {
     throw new Error(
       `Could not reach the course listings feed at ${url}. ` +

@@ -30,7 +30,7 @@ search.** §6 has the per-phase gates, §8 lists the four places the rewrite
 deliberately departs from the old app, and §10.5 is the one open question that
 blocks cutover.
 
-`pnpm test` runs 62 tool tests and 411 app tests.
+`pnpm test` runs 127 tool tests and 456 app tests.
 
 ## Structure
 
@@ -40,14 +40,31 @@ Files that carry the most weight, and what to change where.
 
 | Path | What lives there |
 |---|---|
-| `tools/workday-to-schedb/` | **The live data path.** Fetches WPI's Workday feed and writes `static/schedb.json` + `static/yearHeader.txt` — `pnpm updateData`. Start here to refresh the catalog. Has its own [README](../tools/workday-to-schedb/README.md) and `tests/`. |
+| `tools/workday-to-schedb/` | **The converter.** Fetches WPI's Workday feed and turns it into `schedb.json` + `yearHeader.txt`. `pnpm updateData` writes them to `static/` (the committed snapshot); the live endpoint below runs the same code on request. `src/refresh.ts` is the whole fetch → convert → render as one I/O-free function, shared by both. Has its own [README](../tools/workday-to-schedb/README.md) and `tests/`. |
 | `tools/schedb-to-json/` | The older converter, `.schedb` XML → `static/schedb.json`. Kept for `data/new.schedb`, the export the search was verified against. Its own [README](../tools/schedb-to-json/README.md) and `tests/`. |
 | `tools/shared/` | `DescriptionPool` and `AnomalyLog`, used by both converters. |
 | `src/lib/model/schedb.ts` | **Single source of truth** for the `schedb.json` shape. Imported by both the app and both converters, so they cannot drift. |
-| `src/lib/data/loadCatalog.ts` | Fetches and validates `schedb.json`, reporting byte progress (`onProgress`) and the current step (`onStage`: connecting/downloading/parsing). Replaces `Scheduler.java` + `LoadSchedule.java`. |
-| `src/lib/data/yearHeader.ts` | The two-line `yearHeader.txt` (academic year, whether to show the `/old` link). |
+| `src/lib/data/loadCatalog.ts` | Fetches and validates `schedb.json`, reporting byte progress (`onProgress`) and the current step (`onStage`: connecting/downloading/parsing). Takes a `fallbackUrl`: the layout loads `LIVE_CATALOG_URL` (`/api/catalog/schedb.json`) and falls back to the static `CATALOG_URL`. Replaces `Scheduler.java` + `LoadSchedule.java`. |
+| `src/lib/data/yearHeader.ts` | The two-line `yearHeader.txt` (academic year, whether to show the `/old` link). `loadYearHeader(fetch, ...urls)` tries live then static the same way. |
 | `data/` | `new.schedb`, the pinned February 2025 export, and the generated anomaly report. Not served. |
 | `static/` | Served verbatim, including the generated `schedb.json`. |
+
+### Live catalog endpoint — refresh on request, no cron
+
+The deployed app does not rely on the committed `static/schedb.json` being
+current. The first request more than **ten minutes** after the last pull
+refetches and reconverts the Workday feed (a few seconds, mostly the download); every other request is
+served from the function's memory or from Vercel's CDN (`s-maxage`). The static
+files stay as the fallback. `pnpm dev` and `pnpm preview` refresh the same way:
+`server/viteCatalogPlugin.ts` mounts the same handler on Vite's server. Details and porting notes: [`server/README.md`](../server/README.md).
+
+| Path | What lives there |
+|---|---|
+| `server/catalogHandler.ts` | `createCatalogHandler(options)` → Web-standard `(Request) => Response` serving `schedb.json` / `yearHeader.txt` (file from `?file=` or the last path segment). Gzips once per refresh, sets `s-maxage` to the in-memory copy's remaining life, CORS-open. **Host-agnostic — change caching or headers here.** Its `source` option swaps out the Workday fetch. |
+| `server/refreshingCache.ts` | Generic value-that-reloads-on-read-after-max-age. Shares concurrent reloads; on a failed reload keeps the old value and retries after 60 s. |
+| `server/viteCatalogPlugin.ts` | The local mount: a Vite plugin (registered in `vite.config.ts`) that serves `/api/catalog/*` from the same handler under `pnpm dev` / `pnpm preview`. One handler per process, created on first request. |
+| `api/catalog.ts` | The Vercel mount — three lines. `vercel.json` rewrites `/api/catalog/:file` → `/api/catalog?file=:file`. Env `SHOW_OLD_SCHEDULE_LINK=true` sets line 2 of the year header. |
+| `api/tsconfig.json` | Read by Vercel's Node builder. `rewriteRelativeImportExtensions` turns the shared code's `./x.ts` imports into `./x.js`; **without it the function deploys but crashes on its first import.** |
 
 ### Model — pure data, no DOM, no state
 
@@ -131,7 +148,8 @@ left out with a reason rather than guessed at.
 
 ### Tests
 
-`tests/` mirrors `src/lib/`. Two suites matter more than the rest:
+`tests/` mirrors `src/lib/`, plus `tests/server/` for the live endpoint
+(handler headers, the ten-minute window, stale-on-failure). Two suites matter more than the rest:
 
 - `tests/scheduling/generator.parity.test.ts` — the ported DFS against the
   brute-force oracle over 1,000 random course sets. This is the test that would
@@ -181,19 +199,27 @@ tools/parity-oracle/run.sh data/new.schedb CS2102,MA1021   # legacy search, need
 
 ## Deployment (Vercel)
 
-The site is a pure static bundle — `adapter-static` writes `build/` and there is
-no server function anywhere. Vercel serves those files directly.
+The site is a static bundle — `adapter-static` writes `build/` and Vercel serves
+those files directly. The one server function is `api/catalog.ts`, the live
+catalog endpoint described above.
 
 | File | What it does |
 |---|---|
-| `vercel.json` | `framework: null` so Vercel does **not** apply its SvelteKit preset (that preset expects `adapter-vercel` and looks in `.vercel/output`). It runs `pnpm run build` and serves `build/` as plain files. `trailingSlash: true` matches `trailingSlash = 'always'` in `src/routes/+layout.ts`. Cache headers: `_app/immutable/*` forever, `schedb.json` and `yearHeader.txt` never — those two are replaced by `pnpm updateData` and must not be served stale. |
-| `.vercelignore` | Keeps `data/`, `tools/`, and `tests/` out of the upload. **Every pattern must be anchored with a leading `/`** — an unanchored `data/` also matches `src/lib/data/` and silently strips `loadCatalog.ts` from the deploy. |
+| `vercel.json` | `framework: null` so Vercel does **not** apply its SvelteKit preset (that preset expects `adapter-vercel` and looks in `.vercel/output`). It runs `pnpm run build` and serves `build/` as plain files. `trailingSlash: true` matches `trailingSlash = 'always'` in `src/routes/+layout.ts`. Cache headers: `_app/immutable/*` forever, `schedb.json` and `yearHeader.txt` never — those two are replaced by `pnpm updateData` and must not be served stale. Also declares `api/catalog.ts` (30 s max) and the `/api/catalog/:file` rewrite; the endpoint sets its own cache headers. |
+| `.vercelignore` | Keeps `data/`, `tests/`, and most of `tools/` out of the upload — but **not** `tools/workday-to-schedb/src` or `tools/shared`, which the live endpoint imports. **Every pattern must be anchored with a leading `/`** — an unanchored `data/` also matches `src/lib/data/` and silently strips `loadCatalog.ts` from the deploy. |
 | `pnpm-workspace.yaml` | Approves esbuild's postinstall, which selects its platform binary; without it `vite build` dies on a platform mismatch and CI fails the install outright with `ERR_PNPM_IGNORED_BUILDS`. Carries both `allowBuilds` (pnpm 11) and `onlyBuiltDependencies` (pnpm 10, which is what Vercel resolves from the v9 lockfile). If pnpm ever rewrites this file with a `set this to true or false` placeholder, that is a failed install asking to be answered. |
 | `package.json` → `engines.node` | `22.x` — pinned to a major on purpose; an open range like `>=22` makes Vercel warn that the build will jump majors on its own. |
 
 `static/schedb.json` is committed, so a clean checkout builds without running
-the data pipeline. Refreshing the catalog is `pnpm updateData` followed by a
-commit — the deploy just picks up the new file.
+the data pipeline. In production the app reads the live endpoint
+(`api/catalog.ts`, above) and only falls back to that file, so `pnpm updateData`
++ commit is now needed only to keep the fallback and local dev reasonably
+current — not to publish new seat counts.
+
+`vercel build` works locally to inspect the compiled function: put
+`{"projectId":"x","orgId":"y","settings":{"framework":null}}` in
+`.vercel/project.json` (gitignored) and look under
+`.vercel/output/functions/api/catalog.func/`.
 
 ## Conventions specific to this repo
 

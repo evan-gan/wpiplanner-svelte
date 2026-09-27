@@ -10,6 +10,9 @@
 
 export const YEAR_HEADER_URL = '/yearHeader.txt';
 
+/** The live endpoint's copy; see `LIVE_CATALOG_URL` in `loadCatalog.ts`. */
+export const LIVE_YEAR_HEADER_URL = '/api/catalog/yearHeader.txt';
+
 export interface YearHeader {
   /** e.g. "2024 - 2025 Academic Year"; empty when the file is missing. */
   year: string;
@@ -25,19 +28,23 @@ export function parseYearHeader(text: string): YearHeader {
 }
 
 /**
- * Fetch and parse the header, falling back to blank if it cannot be read.
+ * Fetch and parse the header from the first URL that answers, falling back to
+ * blank if none can be read.
  *
- * @param url Overrides {@link YEAR_HEADER_URL}; pass `${base}/yearHeader.txt`
+ * @param urls Tried in order; pass `${base}/yearHeader.txt` under a subpath
  */
 export async function loadYearHeader(
   fetchImpl: typeof fetch = fetch,
-  url: string = YEAR_HEADER_URL,
+  ...urls: string[]
 ): Promise<YearHeader> {
-  try {
-    const response = await fetchImpl(url);
-    if (!response.ok) return EMPTY_YEAR_HEADER;
-    return parseYearHeader(await response.text());
-  } catch {
-    return EMPTY_YEAR_HEADER;
+  for (const url of urls.length > 0 ? urls : [YEAR_HEADER_URL]) {
+    try {
+      const response = await fetchImpl(url);
+      if (response.ok) return parseYearHeader(await response.text());
+      console.warn(`Could not load ${url}: HTTP ${response.status}`);
+    } catch (error) {
+      console.warn(`Could not load ${url}:`, error);
+    }
   }
+  return EMPTY_YEAR_HEADER;
 }

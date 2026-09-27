@@ -134,3 +134,79 @@ describe('URL handling', () => {
     expect(seen).toEqual(['/planner/schedb.json']);
   });
 });
+
+describe('falling back from the live endpoint to the deployed snapshot', () => {
+  /** Answers each URL from a table; anything missing is a 404. */
+  function routedFetch(routes: Record<string, () => Response>): typeof fetch & { seen: string[] } {
+    const seen: string[] = [];
+    const routed = async (input: RequestInfo | URL) => {
+      seen.push(String(input));
+      return routes[String(input)]?.() ?? new Response('', { status: 404, statusText: 'Not Found' });
+    };
+    return Object.assign(routed, { seen }) as typeof fetch & { seen: string[] };
+  }
+
+  it('uses the live catalog when it loads', async () => {
+    const fetchImpl = routedFetch({ '/live.json': () => jsonResponse(JSON.stringify(MINI_CATALOG)) });
+    await loadCatalog({ url: '/live.json', fallbackUrl: '/static.json', fetchImpl });
+    expect(fetchImpl.seen).toEqual(['/live.json']);
+  });
+
+  it('loads the snapshot when the live endpoint is missing, as under pnpm dev', async () => {
+    const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
+    const fetchImpl = routedFetch({ '/static.json': () => jsonResponse(JSON.stringify(MINI_CATALOG)) });
+    const catalog = await loadCatalog({ url: '/live.json', fallbackUrl: '/static.json', fetchImpl });
+    expect(catalog.counts.sections).toBe(5);
+    expect(fetchImpl.seen).toEqual(['/live.json', '/static.json']);
+    warn.mockRestore();
+  });
+
+  it('loads the snapshot when the live endpoint answers with something that is not a catalog', async () => {
+    const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
+    const fetchImpl = routedFetch({
+      '/live.json': () => jsonResponse('<!doctype html><title>404</title>'),
+      '/static.json': () => jsonResponse(JSON.stringify(MINI_CATALOG)),
+    });
+    await expect(
+      loadCatalog({ url: '/live.json', fallbackUrl: '/static.json', fetchImpl }),
+    ).resolves.toBeDefined();
+    warn.mockRestore();
+  });
+
+  it("reports the snapshot's error when both fail", async () => {
+    const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
+    const fetchImpl = routedFetch({});
+    await expect(
+      loadCatalog({ url: '/live.json', fallbackUrl: '/static.json', fetchImpl }),
+    ).rejects.toThrow(/static\.json failed with HTTP 404/);
+    warn.mockRestore();
+  });
+
+  it('does not treat a compressed Content-Length as the total, since it counts compressed bytes', async () => {
+    const onProgress = vi.fn();
+    await loadCatalog({
+      fetchImpl: async () =>
+        jsonResponse(JSON.stringify(MINI_CATALOG), {
+          headers: { 'content-length': '10', 'content-encoding': 'gzip' },
+        }),
+      onProgress,
+    });
+    expect(onProgress.mock.calls.at(-1)?.[0].total).toBe(0);
+  });
+
+  it('reads the year header from the first URL that answers', async () => {
+    const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
+    const fetchImpl = routedFetch({ '/static.txt': () => new Response('2026 - 2027\ntrue') });
+    const header = await loadYearHeader(fetchImpl, '/live.txt', '/static.txt');
+    expect(header).toEqual({ year: '2026 - 2027', showOldScheduleLink: true });
+    expect(fetchImpl.seen).toEqual(['/live.txt', '/static.txt']);
+    warn.mockRestore();
+  });
+
+  it('falls back to a blank year header when no URL answers', async () => {
+    const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
+    const header = await loadYearHeader(routedFetch({}), '/live.txt', '/static.txt');
+    expect(header).toEqual(EMPTY_YEAR_HEADER);
+    warn.mockRestore();
+  });
+});

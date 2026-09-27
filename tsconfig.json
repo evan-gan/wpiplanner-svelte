@@ -16,5 +16,5 @@
     "noUncheckedIndexedAccess": false,
     "types": ["node", "vite/client"]
   },
-  "include": ["src/**/*.ts", "src/**/*.svelte", "tools/**/*.ts", "tests/**/*.ts"]
+  "include": ["src/**/*.ts", "src/**/*.svelte", "tools/**/*.ts", "tests/**/*.ts", "server/**/*.ts", "api/**/*.ts"]
 }

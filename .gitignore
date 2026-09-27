@@ -8,3 +8,4 @@ dist/
 data/*.schedb
 data/schedb-report.json
 # static/schedb.json
+.vercel

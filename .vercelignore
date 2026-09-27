@@ -2,7 +2,15 @@
 # repo root — an unanchored `data/` would also match `src/lib/data/`, which the
 # app very much needs.
 /data/
-/tools/
 /tests/
 /.svelte-kit/
 /build/
+
+# `api/catalog.ts` runs the Workday converter, so its source and the shared
+# helpers it imports must ship. Everything else under tools/ is dev-only.
+# (`/tools/*` rather than `/tools/`: a directory excluded outright cannot have
+# children re-included.)
+/tools/*
+!/tools/workday-to-schedb/
+!/tools/shared/
+/tools/*/tests/

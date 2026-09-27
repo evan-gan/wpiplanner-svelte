@@ -11,8 +11,20 @@
   import { base } from '$app/paths';
   import AppShell from '$lib/components/shell/AppShell.svelte';
   import LoadingScreen from '$lib/components/shell/LoadingScreen.svelte';
-  import { loadCatalog, type LoadProgress, type LoadStage } from '$lib/data/loadCatalog';
-  import { EMPTY_YEAR_HEADER, loadYearHeader, type YearHeader } from '$lib/data/yearHeader';
+  import {
+    CATALOG_URL,
+    LIVE_CATALOG_URL,
+    loadCatalog,
+    type LoadProgress,
+    type LoadStage,
+  } from '$lib/data/loadCatalog';
+  import {
+    EMPTY_YEAR_HEADER,
+    LIVE_YEAR_HEADER_URL,
+    loadYearHeader,
+    YEAR_HEADER_URL,
+    type YearHeader,
+  } from '$lib/data/yearHeader';
   import type { Catalog } from '$lib/model/catalog';
   import '../app.css';
 
@@ -47,12 +59,18 @@
 
     // Paths go through `base` so the app also works when deployed under a
     // subdirectory, and so a route like `/schedules/` does not resolve a bare
-    // filename against itself.
-    const headerRequest = loadYearHeader(fetch, `${base}/yearHeader.txt`);
+    // filename against itself. Each file comes from the live endpoint when it
+    // is up and from the snapshot shipped with the deploy when it is not.
+    const headerRequest = loadYearHeader(
+      fetch,
+      `${base}${LIVE_YEAR_HEADER_URL}`,
+      `${base}${YEAR_HEADER_URL}`,
+    );
 
     try {
       catalog = await loadCatalog({
-        url: `${base}/schedb.json`,
+        url: `${base}${LIVE_CATALOG_URL}`,
+        fallbackUrl: `${base}${CATALOG_URL}`,
         onStage: (next) => (stage = next),
         onProgress: (next) => (progress = next),
       });

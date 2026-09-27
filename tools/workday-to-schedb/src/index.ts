@@ -9,6 +9,7 @@
 import { writeFileSync } from 'node:fs';
 import { buildSchedb, type ConversionResult } from './buildSchedb.ts';
 import { fetchFeed, formatGenerated, readFeedFile, FEED_URL, type FetchedFeed } from './fetchFeed.ts';
+import { renderCatalogFiles } from './refresh.ts';
 
 interface CliOptions {
   url: string;
@@ -97,18 +98,11 @@ async function fetchFeedWithNotice(url: string): Promise<FetchedFeed> {
 }
 
 function writeOutputs(options: CliOptions, feed: FetchedFeed, result: ConversionResult): void {
-  writeFileSync(
-    options.outputPath,
-    JSON.stringify(result.data, null, options.pretty ? 2 : undefined),
-    'utf8',
-  );
+  const files = renderCatalogFiles(result, options);
+  writeFileSync(options.outputPath, files.schedbJson, 'utf8');
 
   if (options.yearHeaderPath !== null) {
-    writeFileSync(
-      options.yearHeaderPath,
-      `${result.yearHeaderLine}\n${options.showOldLink}\n`,
-      'utf8',
-    );
+    writeFileSync(options.yearHeaderPath, files.yearHeaderText, 'utf8');
   }
   if (options.reportPath !== null) {
     writeFileSync(options.reportPath, JSON.stringify(result.anomalies.toJSON(), null, 2), 'utf8');

@@ -30,7 +30,7 @@ search.** §6 has the per-phase gates, §8 lists the four places the rewrite
 deliberately departs from the old app, and §10.5 is the one open question that
 blocks cutover.
 
-`pnpm test` runs 127 tool tests and 456 app tests.
+`pnpm test` runs 127 tool tests and 474 app tests.
 
 ## Structure
 
@@ -144,7 +144,7 @@ left out with a reason rather than guessed at.
 | `src/lib/components/times/` | `TermTimeTabs`, `TimeGrid`, `TimeGridCell`. |
 | `src/lib/components/schedules/` | `SchedulePane` (the view-mode switch), `SectionPicker` (section/term checkboxes plus the per-course filter menu), `ScheduleThumbnailList` / `ScheduleThumbnail` (canvas), `FavoriteNameField` (click-to-edit favourite name, used by both the toolbar and the strip), `QuarterGrid`, `WeekGrid`, `WeekGridColumn`, `PeriodBlock`, `DetailedView`, `SectionDetailsDialog`, `ConflictResolver`, `GenerationProgress` (canvas), `ShareLink`, `CalendarExport` (the third toolbar view, "Export to Calendar"), `WorkdayImport` (the fourth toolbar view: the step-by-step instructions, the file picker, and the review dialog — it overrides the progress/conflict-resolver state so it stays reachable with no schedule on screen), `WorkdayInstructions` (the six steps for producing the export, including a drawn SVG of Workday's whole top-right icon bank with the unlabelled export button circled). |
 | `src/lib/styles/` | `tokens.css` (every colour and size lifted from the old app) and `reset.css`. |
-| `src/lib/share/shareCode.ts` | Encode/decode `?share=`. Version-prefixed; old hex-CRN links are rejected, not migrated. |
+| `src/lib/share/shareCode.ts` | Encode/decode `?share=`. Version-prefixed. Writes v3 (`3.CS2102-BL01.BX01_MA1021-A01`: only characters a query never percent-encodes, `~XX` escapes for the rare odd character); still reads v2 (`02.` + raw ids joined by `~`) so links already shared keep working. Old hex-CRN links are rejected, not migrated. **The header comment is the format spec.** `tests/share/shareCodeRealCatalog.test.ts` round-trips every id in `static/schedb.json`. |
 
 ### Tests
 

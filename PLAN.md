@@ -181,7 +181,7 @@ wpiplanner-svelte/
 │       │                                      fallback for when Worker is unavailable
 │       │
 │       ├── share/
-│       │   └── shareCode.ts                  encode/decode ?share= from section ids
+│       │   └── shareCode.ts                  encode/decode ?share= from section ids (writes v3, reads v2)
 │       │
 │       ├── styles/
 │       │   ├── tokens.css                    WPI crimson #c41230, term colors, spacing, type

@@ -119,20 +119,35 @@ describe('buildSchedb', () => {
     assert.equal(anomalies.countByKind()['unknown-subject'], 1);
   });
 
+  const interestListAndRealSection = () => [
+    entry({
+      Course_Section: 'CH 1010-AL-Interest List - Chemical Properties',
+      Course_Title: 'CH 1010 - Chemical Properties',
+      Credits: '0',
+      Section_Details: '',
+    }),
+    entry({
+      Course_Section: 'CH 1010-AL01 - Chemical Properties',
+      Course_Title: 'CH 1010 - Chemical Properties',
+      Credits: '3',
+    }),
+  ];
+
+  it('leaves interest lists out of the catalog by default', () => {
+    const { data } = build(interestListAndRealSection());
+
+    const [course] = data.departments[0].courses;
+    assert.deepEqual(
+      course.sections.map((section) => section.number),
+      ['AL01'],
+    );
+  });
+
   it('takes course credits from a real section, not from an interest list', () => {
-    const { data } = build([
-      entry({
-        Course_Section: 'CH 1010-AL-Interest List - Chemical Properties',
-        Course_Title: 'CH 1010 - Chemical Properties',
-        Credits: '0',
-        Section_Details: '',
-      }),
-      entry({
-        Course_Section: 'CH 1010-AL01 - Chemical Properties',
-        Course_Title: 'CH 1010 - Chemical Properties',
-        Credits: '3',
-      }),
-    ]);
+    const { data } = buildSchedb(interestListAndRealSection(), {
+      generated: GENERATED,
+      includeInterestLists: true,
+    });
 
     const [course] = data.departments[0].courses;
     assert.equal(course.minCredits, 3);

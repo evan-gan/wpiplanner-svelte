@@ -57,7 +57,8 @@
   <tbody>
     {#each courseIds as courseId (courseId)}
       {@const course = catalog.requireCourse(courseId)}
-      <tr transition:slide={{ duration: 150 }}>
+      <!-- data-course-id is how the Courses tab finds the row to fly a new course onto. -->
+      <tr transition:slide={{ duration: 150 }} data-course-id={courseId}>
         <td class="remove">
           <button
             type="button"

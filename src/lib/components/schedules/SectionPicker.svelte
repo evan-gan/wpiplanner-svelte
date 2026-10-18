@@ -1,19 +1,21 @@
 <!--
-  The left rail: one collapsible group per chosen course, with a checkbox per
-  section and its professor.
+  The left rail: one collapsible group per chosen course, listing its lectures
+  with each lecture's labs and discussions nested beneath it.
 
   Ported from `StudentCourseList` + `CourseItem` + `SectionCheckbox` +
-  `PeriodSelectList`. Hovering a section previews it on the grid, clicking the
-  professor opens the section details — both behaviours of the old rail.
+  `PeriodSelectList`, which listed every lecture+lab combination as its own
+  checkbox; the split into lectures and labs is `CourseComponentList`. Hovering
+  a row previews it on the grid, clicking its professor opens the section
+  details — both behaviours of the old rail.
+
+  The rail is one CSS grid, and every row below it is a subgrid of it, so the
+  section, professor, and time columns line up across all courses.
 -->
 <script lang="ts">
   import type { Catalog } from '$lib/model/catalog';
-  import { sectionAvailability } from '$lib/model/availability';
   import type { TermName } from '$lib/model/schedb';
-  import { buildSectionFilters } from '$lib/model/sectionFilters';
   import TermBadges from '$lib/components/catalog/TermBadges.svelte';
-  import FilterMenu from '$lib/components/primitives/FilterMenu.svelte';
-  import WarningIcon from '$lib/components/primitives/WarningIcon.svelte';
+  import CourseComponentList from './CourseComponentList.svelte';
 
   interface Props {
     catalog: Catalog;
@@ -23,8 +25,10 @@
     /** Sections of the schedule on screen, highlighted in their course colour. */
     scheduledSectionIds: string[];
     colorOf: (courseId: string) => string;
-    ontoggleSection: (courseId: string, sectionId: string) => void;
-    /** Switches a filter option's sections on or off in one go. */
+    /** Open/closed is owned by the caller so it survives the tab unmounting. */
+    isExpanded: (courseId: string) => boolean;
+    ontoggleExpanded: (courseId: string) => void;
+    /** Switches a group of sections on or off in one go. */
     onsetSectionsDenied: (courseId: string, sectionIds: string[], denied: boolean) => void;
     ontoggleTerm: (courseId: string, term: TermName) => void;
     onhighlight: (sectionId: string | null) => void;
@@ -38,56 +42,13 @@
     isTermDenied,
     scheduledSectionIds,
     colorOf,
-    ontoggleSection,
+    isExpanded,
+    ontoggleExpanded,
     onsetSectionsDenied,
     ontoggleTerm,
     onhighlight,
     onshowDetails,
   }: Props = $props();
-
-  /** The first course starts expanded, as `StudentCourseList` did. */
-  let expanded = $state<Record<string, boolean>>({});
-
-  $effect(() => {
-    if (courseIds.length > 0 && expanded[courseIds[0]] === undefined) {
-      expanded = { ...expanded, [courseIds[0]]: true };
-    }
-  });
-
-  /**
-   * A course's filter groups, with each option ticked while any section it
-   * covers is still switched on.
-   *
-   * Derived rather than stored, so the menu can never drift from the section
-   * checkboxes below it — unticking every section of a professor by hand
-   * unticks the professor too.
-   */
-  function filterGroupsFor(courseId: string) {
-    return buildSectionFilters(catalog.requireCourse(courseId)).map((group) => ({
-      ...group,
-      options: group.options.map((option) => ({
-        value: option.value,
-        label: option.label,
-        checked: option.sectionIds.some((id) => !isSectionDenied(courseId, id)),
-      })),
-    }));
-  }
-
-  /** Apply one filter tick: every section under that option follows it. */
-  function applyFilter(courseId: string, groupId: string, value: string, checked: boolean) {
-    const group = buildSectionFilters(catalog.requireCourse(courseId)).find(
-      (candidate) => candidate.id === groupId,
-    );
-    const option = group?.options.find((candidate) => candidate.value === value);
-    if (option === undefined) return;
-
-    onsetSectionsDenied(courseId, option.sectionIds, !checked);
-  }
-
-  function professorOf(sectionId: string): string {
-    const periods = catalog.getSection(sectionId)?.periods ?? [];
-    return periods[0]?.professor ?? 'Unknown';
-  }
 </script>
 
 <div class="rail">
@@ -98,16 +59,11 @@
         <button
           type="button"
           class="collapse"
-          aria-expanded={expanded[courseId] === true}
-          onclick={() => (expanded = { ...expanded, [courseId]: expanded[courseId] !== true })}
+          aria-expanded={isExpanded(courseId)}
+          onclick={() => ontoggleExpanded(courseId)}
         >
-          {expanded[courseId] === true ? '▼' : '▶'}
+          {isExpanded(courseId) ? '▼' : '▶'}
         </button>
-        <FilterMenu
-          title="Filter sections"
-          groups={filterGroupsFor(courseId)}
-          ontoggle={(groupId, value, checked) => applyFilter(courseId, groupId, value, checked)}
-        />
         <span class="abbrev">{catalog.courseAbbrev(courseId)}</span>
         <TermBadges
           {course}
@@ -117,36 +73,17 @@
         />
       </div>
 
-      {#if expanded[courseId] === true}
-        <ul class="sections">
-          {#each course.sections as section (section.id)}
-            <li
-              style:background-color={scheduledSectionIds.includes(section.id)
-                ? colorOf(courseId)
-                : undefined}
-              onpointerenter={() => onhighlight(section.id)}
-              onpointerleave={() => onhighlight(null)}
-            >
-              <label>
-                <input
-                  type="checkbox"
-                  checked={!isSectionDenied(courseId, section.id)}
-                  onchange={() => ontoggleSection(courseId, section.id)}
-                />
-                <span class="number">{section.number}</span>
-                <WarningIcon availability={sectionAvailability(section)} />
-              </label>
-              <button
-                type="button"
-                class="professor"
-                title="Show details for section {section.number}"
-                onclick={() => onshowDetails(section.id)}
-              >
-                {professorOf(section.id)}
-              </button>
-            </li>
-          {/each}
-        </ul>
+      {#if isExpanded(courseId)}
+        <CourseComponentList
+          {course}
+          isSectionDenied={(sectionId) => isSectionDenied(courseId, sectionId)}
+          {scheduledSectionIds}
+          color={colorOf(courseId)}
+          onsetSectionsDenied={(sectionIds, denied) =>
+            onsetSectionsDenied(courseId, sectionIds, denied)}
+          {onhighlight}
+          {onshowDetails}
+        />
       {/if}
     </section>
   {/each}
@@ -157,16 +94,26 @@
 </div>
 
 <style>
+  /*
+    Columns: checkbox + section label (capped so "Interest List-A Term" cannot
+    take over), professor (takes the slack, truncates), meeting times.
+  */
   .rail {
+    display: grid;
+    grid-template-columns: fit-content(9em) minmax(0, 1fr) max-content;
+    column-gap: var(--space-3);
     padding: var(--space-1);
   }
 
   .course {
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: 1 / -1;
     border-bottom: 1px solid var(--text);
-    width: 100%;
   }
 
   .course-header {
+    grid-column: 1 / -1;
     display: flex;
     align-items: center;
     gap: var(--space-2);
@@ -188,57 +135,8 @@
     padding: 2px 5px;
   }
 
-  .sections {
-    list-style: none;
-    margin: 0;
-    padding: 0 0 var(--space-2) var(--space-3);
-  }
-
-  .sections li {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: var(--space-2);
-    padding: 1px var(--space-2);
-  }
-
-  .sections li:hover {
-    background: var(--surface-alt);
-  }
-
-  label {
-    display: flex;
-    align-items: center;
-    gap: var(--space-1);
-    cursor: pointer;
-    min-width: 0;
-  }
-
-  .number {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  .professor {
-    border: 0;
-    background: none;
-    font: inherit;
-    font-size: var(--font-size-small);
-    color: inherit;
-    cursor: pointer;
-    text-align: right;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 50%;
-  }
-
-  .professor:hover::after {
-    content: '→';
-  }
-
   .empty {
+    grid-column: 1 / -1;
     padding: var(--space-3);
     color: var(--text-muted);
     font-size: var(--font-size-small);

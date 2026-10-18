@@ -6,8 +6,10 @@
   department the lists do not mention falls into "Other", as it did before.
 -->
 <script lang="ts">
+  import { untrack } from 'svelte';
   import type { Catalog } from '$lib/model/catalog';
   import type { DepartmentJson } from '$lib/model/schedb';
+  import { rememberScroll } from '$lib/ui/rememberScroll';
 
   interface AcademicGroup {
     name: string;
@@ -38,9 +40,11 @@
     catalog: Catalog;
     selected: string[];
     onchange: (abbrevs: string[]) => void;
+    /** The list's scroll offset; bind it to keep it across tab switches. */
+    scrollTop?: number;
   }
 
-  let { catalog, selected, onchange }: Props = $props();
+  let { catalog, selected, onchange, scrollTop = $bindable(0) }: Props = $props();
 
   /** Departments bucketed into their group, groups in the declared order. */
   const grouped = $derived.by(() => {
@@ -64,7 +68,16 @@
   }
 </script>
 
-<select multiple size={20} onchange={onSelectChange} aria-label="Departments">
+<select
+  multiple
+  size={20}
+  onchange={onSelectChange}
+  aria-label="Departments"
+  use:rememberScroll={{
+    read: () => untrack(() => scrollTop),
+    write: (offset) => (scrollTop = offset),
+  }}
+>
   {#each grouped as [groupName, departments] (groupName)}
     <optgroup label={groupName}>
       {#each departments as department (department.abbrev)}

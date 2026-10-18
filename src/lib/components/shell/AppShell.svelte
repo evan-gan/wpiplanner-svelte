@@ -13,6 +13,7 @@
   import { page } from '$app/stores';
   import AppHeader from './AppHeader.svelte';
   import TabBar from './TabBar.svelte';
+  import HeaderSearch from '$lib/components/search/HeaderSearch.svelte';
   import { AppState, setAppState } from '$lib/state/app.svelte';
   import { decodeShareCode, readShareCode, SHARE_PARAM } from '$lib/share/shareCode';
   import type { Catalog } from '$lib/model/catalog';
@@ -80,6 +81,9 @@
 
 <div class="app">
   <AppHeader header={yearHeader} generated={catalog.generated}>
+    {#snippet search()}
+      <HeaderSearch />
+    {/snippet}
     {#snippet tabs()}
       <TabBar hasCourses={app.hasCourses} />
     {/snippet}

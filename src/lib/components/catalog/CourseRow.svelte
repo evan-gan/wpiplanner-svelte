@@ -17,15 +17,19 @@
     chosen: boolean;
     selected: boolean;
     onselect: () => void;
-    ontoggleChosen: () => void;
+    /** Receives the row so the caller can animate a copy of it. */
+    ontoggleChosen: (row: HTMLElement) => void;
   }
 
   let { course, abbrev, chosen, selected, onselect, ontoggleChosen }: Props = $props();
 
   const availability = $derived(courseAvailability(course.sections));
+
+  let row: HTMLTableRowElement;
 </script>
 
-<tr class:selected onclick={onselect}>
+<!-- `data-course-id` lets the Courses tab scroll a selected row into view. -->
+<tr class:selected onclick={onselect} bind:this={row} data-course-id={course.id}>
   <td class="add">
     <button
       type="button"
@@ -34,7 +38,7 @@
       aria-label={chosen ? `Remove ${abbrev}` : `Add ${abbrev}`}
       onclick={(event) => {
         event.stopPropagation();
-        ontoggleChosen();
+        ontoggleChosen(row);
       }}
     >
       {chosen ? '−' : '+'}

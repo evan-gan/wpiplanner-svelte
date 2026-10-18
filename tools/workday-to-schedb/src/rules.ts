@@ -38,6 +38,16 @@ export const SPECIAL_SECTION_MARKERS: readonly string[] = [
 /** Marks a placeholder section students join to signal demand, not a real meeting. */
 export const INTEREST_LIST_MARKER = 'Interest List';
 
+/**
+ * Whether interest lists reach the catalog at all.
+ *
+ * Off because they meet at no time, so they never conflict: left ticked, the
+ * search happily schedules one as the course's section and the course takes no
+ * room on the grid. Every course with an interest list also has real sections,
+ * so dropping them hides no course. Turn this on to list them again.
+ */
+export const INCLUDE_INTEREST_LISTS = false;
+
 /** Whether `${subject} ${courseNumber}` is one of {@link SPECIAL_COURSES}. */
 export function isSpecialCourse(subjectCode: string, courseNumber: string): boolean {
   const courseKey = `${subjectCode} ${courseNumber}`;

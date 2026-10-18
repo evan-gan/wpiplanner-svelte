@@ -17,7 +17,7 @@
     chosenCourseIds: string[];
     selectedCourseId: string | null;
     onselect: (courseId: string) => void;
-    ontoggleChosen: (courseId: string) => void;
+    ontoggleChosen: (courseId: string, row: HTMLElement) => void;
   }
 
   let {
@@ -50,7 +50,7 @@
           chosen={chosenCourseIds.includes(course.id)}
           selected={selectedCourseId === course.id}
           onselect={() => onselect(course.id)}
-          ontoggleChosen={() => ontoggleChosen(course.id)}
+          ontoggleChosen={(row) => ontoggleChosen(course.id, row)}
         />
       {/each}
     </tbody>

@@ -30,7 +30,7 @@ search.** §6 has the per-phase gates, §8 lists the four places the rewrite
 deliberately departs from the old app, and §10.5 is the one open question that
 blocks cutover.
 
-`pnpm test` runs 127 tool tests and 474 app tests.
+`pnpm test` runs 129 tool tests and 517 app tests.
 
 ## Structure
 
@@ -40,7 +40,7 @@ Files that carry the most weight, and what to change where.
 
 | Path | What lives there |
 |---|---|
-| `tools/workday-to-schedb/` | **The converter.** Fetches WPI's Workday feed and turns it into `schedb.json` + `yearHeader.txt`. `pnpm updateData` writes them to `static/` (the committed snapshot); the live endpoint below runs the same code on request. `src/refresh.ts` is the whole fetch → convert → render as one I/O-free function, shared by both. Has its own [README](../tools/workday-to-schedb/README.md) and `tests/`. |
+| `tools/workday-to-schedb/` | **The converter.** Fetches WPI's Workday feed and turns it into `schedb.json` + `yearHeader.txt`. `pnpm updateData` writes them to `static/` (the committed snapshot); the live endpoint below runs the same code on request. `src/refresh.ts` is the whole fetch → convert → render as one I/O-free function, shared by both. `src/rules.ts` holds the hand-edited catalog quirks, including `INCLUDE_INTEREST_LISTS` (off: WPI's "Interest List" demand placeholders meet at no time and are dropped). Has its own [README](../tools/workday-to-schedb/README.md) and `tests/`. |
 | `tools/schedb-to-json/` | The older converter, `.schedb` XML → `static/schedb.json`. Kept for `data/new.schedb`, the export the search was verified against. Its own [README](../tools/schedb-to-json/README.md) and `tests/`. |
 | `tools/shared/` | `DescriptionPool` and `AnomalyLog`, used by both converters. |
 | `src/lib/model/schedb.ts` | **Single source of truth** for the `schedb.json` shape. Imported by both the app and both converters, so they cannot drift. |
@@ -76,7 +76,8 @@ files stay as the fallback. `pnpm dev` and `pnpm preview` refresh the same way:
 | `src/lib/model/terms.ts` | `TermName` parsing, ordering, labels. |
 | `src/lib/model/timeGrid.ts` | The `TimeCell` constants and grid math. A test pins the five constants. `NUM_HOURS` is 13, not the legacy 10 — see the two-behaviours note at the bottom of this file. |
 | `src/lib/model/availability.ts` | seats/waitlist → `open` / `waitlist` / `full`, per section, per course, per term. |
-| `src/lib/model/sectionFilters.ts` | Filters over a course's sections — currently by professor. Each option names the sections it covers and stores nothing, so the filter menu and the section checkboxes cannot disagree. **Add a filter by adding a builder to `SECTION_FILTER_BUILDERS`.** |
+| `src/lib/model/sectionComponents.ts` | Splits a course's combined sections (`AL01/AX03`) back into lectures and their labs/discussions, plus the tick rules (`sectionsForLectureToggle`, `sectionsForSecondaryToggle`) and `describeMeetings` ("MTRF 10:00-10:50AM"). Stores nothing — a component is on while any section containing it is on. Also `isPlaceholderProfessor` (N/A, Not Assigned, …). |
+| `src/lib/model/catalogSearch.ts` | `CatalogSearch`: the header search's index — classes by code/title, professors by name with the classes they teach. Built once in `AppState`. |
 
 ### Scheduling — the algorithm, no DOM
 
@@ -129,6 +130,8 @@ left out with a reason rather than guessed at.
 | `src/lib/state/favorites.svelte.ts` | Starred schedules, stored as section ids plus a student-editable name (`Favorite N` by default). Lookup, rename, and removal all match on the section *set*, so a regenerated schedule keeps its name. |
 | `src/lib/state/permutations.svelte.ts` | Drives the worker, holds results and the selected schedule, and the 17-colour palette. |
 | `src/lib/state/timeRange.svelte.ts` | The hours the grids show. |
+| `src/lib/state/coursesView.svelte.ts` | `CoursesViewState`: the Courses tab's dragged pane sizes, its three scroll offsets (departments, course table, chosen list), and which course the table last scrolled to. On `AppState` so a tab switch keeps them; not persisted. |
+| `src/lib/state/railView.svelte.ts` | `RailViewState`: which Schedules-rail courses are expanded and the rail's scroll offset. On `AppState` (not the page) so both survive switching tabs; not persisted, so a fresh visit starts all collapsed. |
 | `src/lib/state/persistence.ts` | All `localStorage` reads and writes. Every function is total: a corrupt payload yields the default. |
 
 ### Routes and components
@@ -137,18 +140,20 @@ left out with a reason rather than guessed at.
 |---|---|
 | `src/routes/+layout.ts` | Route options only — no data loading. `ssr = false`, `prerender = true`, `trailingSlash = 'always'`. |
 | `src/routes/+layout.svelte` | Boot sequence: renders `LoadingScreen` first, then fetches the catalog and year header after mount, then mounts `AppShell`. Owns the load error + retry. |
-| `src/routes/{courses,info,times,schedules}/+page.svelte` | One route per tab, in `TabList.addTab` order. `schedules` renders the Workday import alone when no course has been chosen. |
-| `src/lib/components/shell/` | `AppShell` (creates `AppState`, applies a `?share=` link, renders header + tabs + the route body), `AppHeader`, `TabBar` (**Times is dimmed until a course is chosen; Schedules is not** — with nothing chosen it shows the Workday import on its own), `LoadingScreen` (the plain white "Loading scheduler database..." page with the byte counter). |
-| `src/lib/components/primitives/` | `SplitPane`, `ScrollArea`, `Modal`, `ToggleButton`, `WarningIcon`, `FilterMenu` (funnel button → popover of tick-box filter groups). Generic, no app knowledge. |
+| `src/routes/{courses,info,times,schedules}/+page.svelte` | One route per tab, in `TabList.addTab` order. `courses` auto-sizes the "Courses" box and flies "+" into it. `schedules` renders the Workday import alone when no course has been chosen. |
+| `src/lib/components/shell/` | `AppShell` (creates `AppState`, applies a `?share=` link, renders header + search + tabs + the route body), `AppHeader` (takes `search` and `tabs` snippets), `TabBar` (**Times is dimmed until a course is chosen; Schedules is not** — with nothing chosen it shows the Workday import on its own), `LoadingScreen` (the plain white "Loading scheduler database..." page with the byte counter). |
+| `src/lib/components/search/` | `HeaderSearch` (the box in the crimson bar and the filleted crimson panel that drops from it; live, 250 ms open), `SearchResults` (the Classes and Professors boxes), `SearchResultCourse` (one row: add/remove button, opens the course on the Courses tab). |
+| `src/lib/ui/` | DOM helpers with no app knowledge: `flyToTarget` (animates a copy of an element onto another — "+" flying into the Courses box), `rememberScroll` (an action that restores an element's scroll offset from a store and records it back — how both tabs keep their scroll across tab switches), and `fitPaneSize` (how tall the Courses box should be — fit the list, never crowd the description — and how wide the Schedules rail should be so the calendar is square). |
+| `src/lib/components/primitives/` | `SplitPane`, `ScrollArea`, `Modal`, `ToggleButton`, `WarningIcon`. Generic, no app knowledge. |
 | `src/lib/components/catalog/` | The Courses tab: `DepartmentPicker` (the six academic groups live here), `CourseTable`, `CourseRow`, `TermBadges`, `CourseDetails`, `SelectedCourseList`. |
 | `src/lib/components/times/` | `TermTimeTabs`, `TimeGrid`, `TimeGridCell`. |
-| `src/lib/components/schedules/` | `SchedulePane` (the view-mode switch), `SectionPicker` (section/term checkboxes plus the per-course filter menu), `ScheduleThumbnailList` / `ScheduleThumbnail` (canvas), `FavoriteNameField` (click-to-edit favourite name, used by both the toolbar and the strip), `QuarterGrid`, `WeekGrid`, `WeekGridColumn`, `PeriodBlock`, `DetailedView`, `SectionDetailsDialog`, `ConflictResolver`, `GenerationProgress` (canvas), `ShareLink`, `CalendarExport` (the third toolbar view, "Export to Calendar"), `WorkdayImport` (the fourth toolbar view: the step-by-step instructions, the file picker, and the review dialog — it overrides the progress/conflict-resolver state so it stays reachable with no schedule on screen), `WorkdayInstructions` (the six steps for producing the export, including a drawn SVG of Workday's whole top-right icon bank with the unlabelled export button circled). |
+| `src/lib/components/schedules/` | `SchedulePane` (the view-mode switch), `SectionPicker` (the rail — see "The section rail" below), `CourseComponentList` (one course: each lecture with its own labs/discussions nested under it), `ComponentRow` (one single-line row), `ScheduleThumbnailList` / `ScheduleThumbnail` (canvas), `FavoriteNameField` (click-to-edit favourite name, used by both the toolbar and the strip), `QuarterGrid`, `WeekGrid`, `WeekGridColumn`, `PeriodBlock`, `DetailedView`, `SectionDetailsDialog`, `ConflictResolver`, `GenerationProgress` (canvas), `ShareLink`, `CalendarExport` (the third toolbar view, "Export to Calendar"), `WorkdayImport` (the fourth toolbar view: the step-by-step instructions, the file picker, and the review dialog — it overrides the progress/conflict-resolver state so it stays reachable with no schedule on screen), `WorkdayInstructions` (the six steps for producing the export, including a drawn SVG of Workday's whole top-right icon bank with the unlabelled export button circled). |
 | `src/lib/styles/` | `tokens.css` (every colour and size lifted from the old app) and `reset.css`. |
 | `src/lib/share/shareCode.ts` | Encode/decode `?share=`. Version-prefixed. Writes v3 (`3.CS2102-BL01.BX01_MA1021-A01`: only characters a query never percent-encodes, `~XX` escapes for the rare odd character); still reads v2 (`02.` + raw ids joined by `~`) so links already shared keep working. Old hex-CRN links are rejected, not migrated. **The header comment is the format spec.** `tests/share/shareCodeRealCatalog.test.ts` round-trips every id in `static/schedb.json`. |
 
 ### Tests
 
-`tests/` mirrors `src/lib/`, plus `tests/server/` for the live endpoint
+`tests/` mirrors `src/lib/` (`tests/ui/` covers `src/lib/ui/`), plus `tests/server/` for the live endpoint
 (handler headers, the ten-minute window, stale-on-failure). Two suites matter more than the rest:
 
 - `tests/scheduling/generator.parity.test.ts` — the ported DFS against the
@@ -243,15 +248,41 @@ current — not to publish new seat counts.
   Rolling to a new academic year is an edit to that one file, gated by
   `tests/calendar/academicCalendar.test.ts`.
 
-## Filtering sections
+## The section rail
 
-The funnel beside a course in the Schedules rail opens `FilterMenu`, whose
-options come from `buildSectionFilters` in `src/lib/model/sectionFilters.ts`.
-Nothing new is stored: an option shows ticked while **any** section it covers is
-still switched on, and unticking it calls `AppState.setSectionsDenied` for
-exactly that option's sections — one change, one search restart. That is why
-switching a professor's last section off by hand also unticks the professor, and
-why a group whose options would all cover the same sections is dropped.
+The Schedules rail lists each course's **lectures**, and under every ticked
+lecture the labs and discussions that can be taken with it
+(`buildLectureEntries` in `src/lib/model/sectionComponents.ts`). A professor who
+teaches two lectures appears twice, each with that lecture's labs; unticking a
+lecture folds its labs away. This replaced both the flat list of combined
+`AL01/AX03` sections and the professor funnel filter.
+
+Nothing new is stored: a row is ticked while **any** combined section containing
+it is still on, and every tick calls `AppState.setSectionsDenied` once — one
+change, one search restart. A nested lab toggles only its pairing with *that*
+lecture, and turning it on skips sibling discussions the student switched off
+(`sectionsForLinkedToggle`).
+
+Every course starts **collapsed**; what the student opens, and how far they
+scrolled, lives in `AppState.railView` so it is still there after visiting
+another tab (`ScrollArea`'s bindable `scrollTop`, via `rememberScroll`). The Courses tab
+keeps its scroll and dragged pane sizes the same way, in `AppState.coursesView`.
+
+Lectures are grouped under a thin "──── A-Term ────" divider per term
+(`groupEntriesByTerm`), in calendar order, with a semester-long lecture's group
+("A-Term – B-Term") between its two terms. A course that runs in one term gets
+no divider.
+
+Hovering a row previews a whole combined section, so the rail picks the one
+closest to the course's scheduled section (`closestSection`): hovering another
+discussion moves only the discussion on the grid, not the lab.
+
+Every row is one line — label, professor, times — and the rail is a single CSS
+grid whose rows are subgrids (`SectionPicker` → `CourseComponentList` →
+`ComponentRow`), so the columns line up across courses; a long professor name
+ends in "…". The rail's default width is whatever leaves the calendar square
+(`railWidthForSquareCalendar` in `src/lib/ui/fitPaneSize.ts`), recomputed on
+window resize.
 
 ## Two behaviours that look like bugs and are not
 

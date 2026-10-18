@@ -1,10 +1,13 @@
 <!--
   The Schedules tab: every conflict-free combination of the chosen sections.
 
-  Layout follows `PermutationChooserView.ui.xml` — a 300px course rail, a 170px
-  strip of schedule sketches, and the schedule itself filling the rest.
+  Layout follows `PermutationChooserView.ui.xml` — a course rail, a 170px strip
+  of schedule sketches, and the schedule itself filling the rest. Unlike the old
+  fixed 300px rail, the rail takes whatever width leaves the calendar square
+  (`railWidthForSquareCalendar`), since its rows carry professor and times now.
 -->
 <script lang="ts">
+  import { untrack } from 'svelte';
   import { page } from '$app/stores';
   import ScrollArea from '$lib/components/primitives/ScrollArea.svelte';
   import SplitPane from '$lib/components/primitives/SplitPane.svelte';
@@ -15,11 +18,36 @@
   import WorkdayImport from '$lib/components/schedules/WorkdayImport.svelte';
   import { colorForCourse } from '$lib/state/permutations.svelte';
   import { getAppState } from '$lib/state/app.svelte';
+  import { railWidthForSquareCalendar } from '$lib/ui/fitPaneSize';
 
   const app = getAppState();
 
-  let railWidth = $state(300);
+  const MIN_RAIL_WIDTH = 300;
+  const MAX_RAIL_WIDTH = 900;
+  /** Matches `SplitPane`'s divider and `SchedulePane`'s toolbar. */
+  const DIVIDER_SIZE = 5;
+  const TOOLBAR_HEIGHT = 26;
+
+  let railWidth = $state(MIN_RAIL_WIDTH);
   let thumbnailWidth = $state(170);
+  let containerWidth = $state(0);
+  let containerHeight = $state(0);
+
+  /**
+   * Re-fit the rail when the window changes size. Only the container size is
+   * tracked, so dragging the divider sticks until the next window resize.
+   */
+  $effect(() => {
+    if (containerWidth === 0 || containerHeight === 0) return;
+    railWidth = railWidthForSquareCalendar({
+      containerWidth,
+      containerHeight,
+      middleWidth: untrack(() => thumbnailWidth) + 2 * DIVIDER_SIZE,
+      toolbarHeight: TOOLBAR_HEIGHT,
+      minRailWidth: MIN_RAIL_WIDTH,
+      maxRailWidth: MAX_RAIL_WIDTH,
+    });
+  });
   let detailsSectionId = $state<string | null>(null);
 
   const colorOf = (courseId: string) => colorForCourse(courseId, app.selection.courseIds);
@@ -35,7 +63,7 @@
   );
 </script>
 
-<div class="schedules">
+<div class="schedules" bind:clientWidth={containerWidth} bind:clientHeight={containerHeight}>
   {#if !app.hasCourses}
     <!--
       Nothing to schedule yet, so the rails and the empty grid would only be
@@ -52,9 +80,9 @@
       />
     </div>
   {:else}
-  <SplitPane side="west" bind:size={railWidth} minSize={180} maxSize={520}>
+  <SplitPane side="west" bind:size={railWidth} minSize={180} maxSize={MAX_RAIL_WIDTH}>
     {#snippet fixed()}
-      <ScrollArea>
+      <ScrollArea bind:scrollTop={app.railView.scrollTop}>
         <SectionPicker
           catalog={app.catalog}
           courseIds={app.selection.courseIds}
@@ -63,7 +91,8 @@
           isTermDenied={(courseId, term) => app.selection.isTermDenied(courseId, term)}
           scheduledSectionIds={selected?.sectionIds ?? []}
           {colorOf}
-          ontoggleSection={(courseId, sectionId) => app.toggleSection(courseId, sectionId)}
+          isExpanded={(courseId) => app.railView.isExpanded(courseId)}
+          ontoggleExpanded={(courseId) => app.railView.toggleExpanded(courseId)}
           onsetSectionsDenied={(courseId, sectionIds, denied) =>
             app.setSectionsDenied(courseId, sectionIds, denied)}
           ontoggleTerm={(courseId, term) =>

@@ -26,6 +26,7 @@ import {
 import { parseEntry, type ParsedEntry } from './parseEntry.ts';
 import { parsePeriods } from './periods.ts';
 import { AnomalyLog, type ConversionStats } from './report.ts';
+import { INCLUDE_INTEREST_LISTS } from './rules.ts';
 
 /** The scheduling grid the app draws is half-hour blocks. */
 const MINUTES_PER_BLOCK = 30;
@@ -45,6 +46,8 @@ export interface ConversionResult {
 export interface ConversionOptions {
   /** When the feed was last modified upstream; shown in the app header. */
   generated: string;
+  /** Overrides {@link INCLUDE_INTEREST_LISTS}; tests use it to cover both settings. */
+  includeInterestLists?: boolean;
 }
 
 /**
@@ -61,7 +64,10 @@ export function buildSchedb(
   const validOfferingPeriods = offeringPeriodsFor(academicYear);
   const log = new AnomalyLog();
 
-  const plannable = entries.filter((entry) => isPlannableEntry(entry, validOfferingPeriods));
+  const includeInterestLists = options.includeInterestLists ?? INCLUDE_INTEREST_LISTS;
+  const plannable = entries.filter((entry) =>
+    isPlannableEntry(entry, validOfferingPeriods, includeInterestLists),
+  );
   const parsed = plannable
     .map((entry) => parseEntry(entry, log))
     .filter((entry): entry is ParsedEntry => entry !== null);

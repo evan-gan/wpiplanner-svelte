@@ -82,12 +82,18 @@ describe('isPlannableEntry', () => {
     );
   });
 
-  it('keeps an interest list lecture but not its lab', () => {
+  it('drops an interest list by default', () => {
     const interestList = { Course_Section: 'CH 1010-AL-Interest List - Chemical Properties' };
 
-    assert.equal(isPlannableEntry(entry(interestList), periods), true);
+    assert.equal(isPlannableEntry(entry(interestList), periods), false);
+  });
+
+  it('keeps an interest list lecture but not its lab when interest lists are included', () => {
+    const interestList = { Course_Section: 'CH 1010-AL-Interest List - Chemical Properties' };
+
+    assert.equal(isPlannableEntry(entry(interestList), periods, true), true);
     assert.equal(
-      isPlannableEntry(entry({ ...interestList, Instructional_Format: 'Laboratory' }), periods),
+      isPlannableEntry(entry({ ...interestList, Instructional_Format: 'Laboratory' }), periods, true),
       false,
     );
   });

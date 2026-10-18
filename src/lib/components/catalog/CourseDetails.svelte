@@ -11,9 +11,11 @@
   interface Props {
     catalog: Catalog;
     course: CourseJson | null;
+    /** Height the text needs, whatever the pane's size; lets the Courses box avoid covering it. */
+    contentHeight?: number;
   }
 
-  let { catalog, course }: Props = $props();
+  let { catalog, course, contentHeight = $bindable(0) }: Props = $props();
 
   /** Distinct professor names across every period, in the order encountered. */
   const professors = $derived.by(() => {
@@ -32,20 +34,22 @@
 </script>
 
 <div class="details">
-  {#if course === null}
-    <p class="empty">Select a course to read its description.</p>
-  {:else}
-    <div class="title">{course.name}</div>
-    <div class="description">{catalog.description(course.descriptionIndex)}</div>
-    <div class="professors">
-      <b>Professors: </b>
-      {#if professors.length > 0}
-        <span>{professors.join(', ')}</span>
-      {:else}
-        <i>N/A</i>
-      {/if}
-    </div>
-  {/if}
+  <div bind:clientHeight={contentHeight}>
+    {#if course === null}
+      <p class="empty">Select a course to read its description.</p>
+    {:else}
+      <div class="title">{course.name}</div>
+      <div class="description">{catalog.description(course.descriptionIndex)}</div>
+      <div class="professors">
+        <b>Professors: </b>
+        {#if professors.length > 0}
+          <span>{professors.join(', ')}</span>
+        {:else}
+          <i>N/A</i>
+        {/if}
+      </div>
+    {/if}
+  </div>
 </div>
 
 <style>

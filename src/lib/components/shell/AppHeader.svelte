@@ -1,6 +1,6 @@
 <!--
-  The crimson bar: "Planner", the academic year, the data refresh timestamp, and
-  the optional link to last year's schedule.
+  The crimson bar: "Planner", the academic year, the data refresh timestamp, the
+  optional link to last year's schedule, the search box, and the tabs.
 
   The legacy `MainView.ui.xml` built this out of nested `DockLayoutPanel`s with
   pixel sizes (50/185/280/36/14/11); it is a flex row here, but the text, the
@@ -14,11 +14,13 @@
     header: YearHeader;
     /** Generation timestamp from the catalog. */
     generated: string;
+    /** The search box, centred in the space between the timestamp and the tabs. */
+    search: Snippet;
     /** The tab bar, which sits on the right of the header. */
     tabs: Snippet;
   }
 
-  let { header, generated, tabs }: Props = $props();
+  let { header, generated, search, tabs }: Props = $props();
 </script>
 
 <header>
@@ -34,6 +36,10 @@
       </div>
     {/if}
     <div class="line">Schedule Data Refreshed: {generated}</div>
+  </div>
+
+  <div class="search">
+    {@render search()}
   </div>
 
   <nav class="tabs">
@@ -91,8 +97,16 @@
     text-decoration: underline;
   }
 
+  /* Auto margins on both sides centre the box in whatever room the row leaves. */
+  .search {
+    flex: 0 1 320px;
+    min-width: 160px;
+    margin: 0 auto;
+    padding: 0 var(--space-4);
+  }
+
   .tabs {
-    flex: 1 1 auto;
+    flex: 0 1 auto;
     display: flex;
     justify-content: flex-end;
     align-items: stretch;

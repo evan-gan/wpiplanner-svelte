@@ -12,12 +12,15 @@
  */
 import { getContext, setContext } from 'svelte';
 import type { Catalog } from '$lib/model/catalog';
+import { CatalogSearch } from '$lib/model/catalogSearch';
 import type { TermName } from '$lib/model/schedb';
 import { applyProblem, type SolutionTarget } from '$lib/scheduling/problems';
 import type { Problem } from '$lib/scheduling/types';
 import { ChosenTimesState } from './chosenTimes.svelte';
+import { CoursesViewState } from './coursesView.svelte';
 import { FavoritesState } from './favorites.svelte';
 import { PermutationsState } from './permutations.svelte';
+import { RailViewState } from './railView.svelte';
 import { browserStorage, loadSelectedDepartments, saveSelectedDepartments, type StorageLike } from './persistence';
 import { MAX_COURSES, SelectionState, type AddCourseResult } from './selection.svelte';
 import { TimeRangeState } from './timeRange.svelte';
@@ -32,6 +35,12 @@ export class AppState {
   readonly favorites: FavoritesState;
   readonly timeRange: TimeRangeState;
   readonly permutations: PermutationsState;
+  /** The header search's index; built once because the catalog never changes. */
+  readonly search: CatalogSearch;
+  /** Which rail courses are open and the rail's scroll, kept across tab switches. */
+  readonly railView: RailViewState;
+  /** Courses-tab pane sizes and scroll offsets, kept across tab switches. */
+  readonly coursesView: CoursesViewState;
 
   /** Departments ticked in the picker. */
   selectedDepartments = $state<string[]>([]);
@@ -50,6 +59,9 @@ export class AppState {
     this.favorites = new FavoritesState(storage);
     this.timeRange = new TimeRangeState();
     this.permutations = permutations ?? new PermutationsState();
+    this.search = new CatalogSearch(catalog);
+    this.railView = new RailViewState();
+    this.coursesView = new CoursesViewState();
   }
 
   /** Load everything the student had last time, then start the first search. */

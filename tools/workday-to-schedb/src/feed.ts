@@ -6,6 +6,8 @@
  * field is a string; absent values arrive as `""` rather than being omitted.
  */
 
+import { INCLUDE_INTEREST_LISTS, isInterestListSection } from './rules.ts';
+
 /**
  * One row of `Report_Entry`.
  *
@@ -116,16 +118,22 @@ export function formatAcademicYearHeader({ fallYear, springYear }: AcademicYear)
 /**
  * Whether a row belongs in the planner at all.
  *
- * Three exclusions, all inherited from the legacy converter:
+ * Exclusions:
  * - withdrawn sections;
  * - terms the planner does not lay out (summer, late-start online, next year);
- * - the lab and discussion components of an interest list, which have no
- *   meeting times and would otherwise multiply out against its lecture.
+ * - interest lists, unless `includeInterestLists` (see
+ *   {@link INCLUDE_INTEREST_LISTS}). Even then only the lecture is kept: the
+ *   lab and discussion components have no meeting times and would otherwise
+ *   multiply out against it.
  */
-export function isPlannableEntry(entry: ReportEntry, validOfferingPeriods: ReadonlySet<string>): boolean {
+export function isPlannableEntry(
+  entry: ReportEntry,
+  validOfferingPeriods: ReadonlySet<string>,
+  includeInterestLists: boolean = INCLUDE_INTEREST_LISTS,
+): boolean {
   if (entry.Section_Status === CANCELED_STATUS) return false;
   if (!validOfferingPeriods.has(entry.Offering_Period)) return false;
 
-  const isInterestList = entry.Course_Section.includes('Interest List');
-  return !isInterestList || entry.Instructional_Format === 'Lecture';
+  if (!isInterestListSection(entry.Course_Section)) return true;
+  return includeInterestLists && entry.Instructional_Format === 'Lecture';
 }

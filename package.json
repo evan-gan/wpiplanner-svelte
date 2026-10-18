@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "description": "WPI Planner — course schedule planner for Workday schedule data.",
-  "packageManager": "pnpm@11.1.2",
+  "packageManager": "pnpm@12.8.2",
   "engines": {
     "node": "22.x"
   },

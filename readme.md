@@ -46,7 +46,7 @@ down, the app falls back to the committed `static/schedb.json`. See
 [`server/README.md`](server/README.md) to host the endpoint elsewhere.
 
 **Every academic year:** term dates, holidays, and breaks for calendar export
-are hand-maintained in `src/lib/config/academicCalendar.ts` — they are not in
+are hand-maintained in [`src/lib/config/academicCalendar.ts`](src/lib/config/academicCalendar.ts) — they are not in
 the Workday data. The checklist is at the bottom of that file.
 
 ## License

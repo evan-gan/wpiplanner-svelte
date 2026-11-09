@@ -1,0 +1,143 @@
+department: FP
+entries:
+  - courseId: FP|3080
+    description: "This course introduces principles and applications of building fire safety design. Topics include the interaction between fire, the building, and building occupants; systems that are used to detect, suppress, and control the spread of fire; and systems that facilitate the safe evacuation of occupants during fire. Building code requirements and engineering methods for analysis and design of building fire safety systems will be explored. Recommended background: Thermodynamics."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Thermodynamics."
+        requirement:
+          kind: topic
+          topic: thermodynamics
+    noCreditWith: []
+  - courseId: FP|4001
+    description: "Cat. I As the pace of development increases around the world, fire prevention and control are becoming more vital for individuals, organizations, and society itself. This course introduces students to the fundamental concepts of fire risk and sustainability along with related multi-disciplinary topics such as economics, human behavior, and decision-making. The process of fire risk assessment is taught and applied to the built environment and to the wildland fire problem. Students will undertake a structured applied-research project (individually or in small groups) to develop sustainable solutions at the interface of fire and a chosen area of sustainability such as climate change, safe drinking water, public health, housing, and more. Recommended background: Basic knowledge of fire behavior and control (FP 3070 or equivalent). Students cannot receive credit for both FP 4001 and FP 580S"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Basic knowledge of fire behavior and control (FP 3070 or equivalent)."
+        requirement:
+          kind: topic
+          topic: basic knowledge of fire behavior and control
+          satisfiedBy:
+            kind: course
+            course: FP|3070
+            orEquivalent: true
+    noCreditWith: []
+    needsReview: Says students cannot get credit for both FP 4001 and FP 580S. 'FP 580S' has a letter suffix, which the course-id pattern does not allow, so it is not recorded in noCreditWith.
+  - courseId: FP|520
+    description: "Modeling of compartment fire behavior is studied through the use and application of two types of models: zone and field. The zone model studied is a student developed model. The field model studied is FDS. Focus on in-depth understanding of each of these models is the primary objective in terms of needed input, equations solved, interpretation of output and limitations. A working student model is required for successful completion of the course. Basic computational ability is assumed. Basic numerical methods are used and can be learned during the course via independent study. (Prerequisite: FP 521 or permission of the instructor.)"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "(Prerequisite: FP 521 or permission of the instructor.)"
+        requirement:
+          kind: anyOf
+          of:
+            - kind: course
+              course: FP|521
+            - kind: permission
+              text: permission of the instructor
+    noCreditWith: []
+  - courseId: FP|521
+    description: "This course introduces students to fundamentals of fire and combustion and is intended to serve as the first exposure to fire dynamics phenomena. The course includes fundamental topics in fire and combustion such as thermodynamics of combustion, fire chemistry, premixed and diffusion flames, solid burning, ignition, plumes, heat release rate curves, and flame spread. These topics are then used to develop the basis for introducing compartment fire behavior, pre- and postflashover conditions and zone modeling. Basic computational ability is assumed. Basic numerical methods are used and can be learned during the course via independent study. (Prerequisites: Undergraduate chemistry, thermodynamics or physical chemistry, fluid mechanics and heat transfer.)"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "(Prerequisites: Undergraduate chemistry, thermodynamics or physical chemistry, fluid mechanics and heat transfer.)"
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: undergraduate chemistry
+            - kind: anyOf
+              of:
+                - kind: topic
+                  topic: thermodynamics
+                - kind: topic
+                  topic: physical chemistry
+            - kind: topic
+              topic: fluid mechanics
+            - kind: topic
+              topic: heat transfer
+    noCreditWith: []
+  - courseId: FP|553
+    description: This course provides an introduction to automatically activated fire suppression and detection systems. A general overview is presented of relevant physical and chemical phenomena, and commonly used hardware in automatic sprinklers, gaseous agent, foam and dry chemical systems. Typical contemporary installations and current installation and approval standards are reviewed.
+    clauses: []
+    noCreditWith: []
+  - courseId: FP|554
+    description: Advanced topics in suppression systems analysis and design are discussed with an aim toward developing a performance-based understanding of suppression technology. Automatic sprinkler systems are covered from the standpoint of predicting actuation times, reviewing numerical methods for hydraulic analyses of pipe flow networks and understanding the phenomenology involved in water spray suppression. Special suppression systems are covered from the standpoint of two-phase and non-Newtonian pipe flow and simulations of suppression agent discharge and mixing in an enclosure.
+    clauses: []
+    noCreditWith: []
+  - courseId: FP|571
+    description: "This course covers practical applications of fire protection engineering principles to the design of buildings. Both compartmented and non-compartmented buildings will be designed for criteria of life safety, property protection, continuity of operations, operational management and cost. Modern analytical tools as well as traditional codes and standards are utilized. Interaction with architects and code officials, and an awareness of other factors in the building design process are incorporated through design exercises and a design studio. (Prerequisites: FPE 553, FPE 521 and FPE 570 or special permission of the instructor.)"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "(Prerequisites: FPE 553, FPE 521 and FPE 570 or special permission of the instructor.)"
+        requirement:
+          kind: anyOf
+          of:
+            - kind: allOf
+              of:
+                - kind: course
+                  course: FP|553
+                - kind: course
+                  course: FP|521
+                - kind: course
+                  course: FP|570
+            - kind: permission
+              text: special permission of the instructor
+    noCreditWith: []
+    needsReview: Text writes the codes as FPE 553 / FPE 521 / FPE 570; mapped to the FP department ids the catalog uses for this course.
+  - courseId: FP|573
+    description: "Principles of fire dynamics, heat transfer and thermodynamics are combined with a general knowledge of automatic detection and suppression systems to analyze fire protection requirements for generic industrial hazards. Topics covered include safe separation distances, plant layout, hazard isolation, smoke control, warehouse storage, and flammable liquid processing and storage. Historic industrial fires influencing current practice on these topics are also discussed. (Prerequisites: FPE 553, FPE 521 or special permission of the instructor.)"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "(Prerequisites: FPE 553, FPE 521 or special permission of the instructor.)"
+        requirement:
+          kind: anyOf
+          of:
+            - kind: allOf
+              of:
+                - kind: course
+                  course: FP|553
+                - kind: course
+                  course: FP|521
+            - kind: permission
+              text: special permission of the instructor
+    noCreditWith: []
+    needsReview: Text writes the codes as FPE 553 / FPE 521; mapped to FP. 'FPE 553, FPE 521 or special permission' read as (both courses) or permission.
+  - courseId: FP|582
+    description: "FP 582: Quantitative Risk Analysis (3 credits) This course will cover fundamentals of facility siting studies (FSS), quantitative risk assessments (QRA) and mitigation techniques. The primary objectives are to provide a thorough foundation and knowledge of the inputs, methodologies and typical types of results for FSS and QRAs. It will also provide knowledge of how QRAs can be used to identify and prioritize risk mitigation strategies to make informed and effective risk mitigation decisions. This course is ideal for PSM managers, process safety engineers, facility siting coordinators / SMEs, and anyone involved in the facility siting decision making process."
+    clauses: []
+    noCreditWith: []
+  - courseId: FP|3070
+    description: Cat. I This course teaches students of different technical disciplines the fundamentals of fire protection engineering including combustion chemistry, fire behavior, compartment fire dynamics, toxicity, human behavior in fire, and fire modelling. Students have an opportunity to conduct and view fire experiments in both the WPI Fire Safety Engineering and the WPI Fire Fundamentals laboratories. Fire models are used to aid in use of the scientific method to determine cause and origin of a fire. This course is intended for both majors and non-majors as an introduction into Fire Protection Engineering (FPE) and how engineering knowledge can be used to save lives and property around the world.
+    clauses: []
+    noCreditWith: []
+  - courseId: FP|555
+    description: Principles of fire detection using flame, heat and smoke detector technology are described. Fire alarm technology and the electrical interface with fire/smoke detectors are reviewed in the context of contemporary equipment and installation standards. Smoke control systems based on buoyancy and HVAC principles are studied in the context of building smoke control for survivability and safe egress.
+    clauses: []
+    noCreditWith: []
+  - courseId: FP|570
+    description: This course focuses on the presentation of qualitative and quantitative means for firesafety analysis in buildings. Fire test methods, fire and building codes and standards of practice are reviewed in the context of a systematic review of firesafety in proposed and existing structures.
+    clauses: []
+    noCreditWith: []
+  - courseId: FP|575
+    description: Principles of combustion explosions are taught along with explosion hazard and protection applications. Topics include a review of flammability limit concentrations for flammable gases and dusts; thermochemical equilibrium calculations of adiabatic closed-vessel deflagration pressures, and detonation pressures and velocities; pressure development as a function of time for closed vessels and vented enclosures; the current status of explosion suppression technology; and vapor cloud explosion hazards.
+    clauses: []
+    noCreditWith: []
+  - courseId: FP|580
+    description: One of the biggest ways that you can influence the quality of your life is by improving the quality of your decisions. Complex Decision Making is intended for professionals in management positions and/ or those individuals, regardless of industry, who seek to enhance both their career potential and their overall quality of life. Based on logical principles, and informed by what we know about the limitations of human judgment and decision-making in complex situations, the course trains managers how to think about and structure decisions. These decisions incorporate both their everyday decisions as well as the tough, complex decisions that involve uncertainty, risk, several possible perspectives, and multiple competing objectives, thus improving the quality of the resulting decisions. In addition to teaching formal decision theory and application, we will explore cognitive biases that prevent us from being completely rational in our thinking and deciding. Exit this course able to define the right decision problem, clearly specify your objectives, create imaginative alternatives, understand consequences, grapple with trade-offs, clarify uncertainties, and think hard about your individual values and risk tolerance.
+    clauses: []
+    noCreditWith: []
+  - courseId: FP|585
+    description: "FP 585: Explosion Dynamics (3 credits) This course will focus on fundamentals of explosions due to the combustion of flammable gas-air mixtures and combustible dust cloud Some generic questions that will be answered in an explosion dynamics context are: 1. How does a flammable mixture of gas or vapor or a suspension of powder or dust particles or droplets form in the industrial processing of these materials? 2. What are gas or dust cloud limits of ignitability, or in other words, what is the range of temperature, pressure, and concentration in which a flame can ignite and propagate? 3. What is the relationship between the flame propagation rate and the associated explosion pressure, and how is it influenced by the combustibility properties of the gas or dust cloud? 4. How does the “rate-of-pressure-rise” affect the overall explosion hazard and the viability of various explosion protection measures? 5. How does pressure development within the flammable gas or combustible dust cloud relate to the blast wave pressures propagating away from the cloud and away from the equipment in which the explosion originated? The course explains the physical and thermochemical phenomena pertinent to these questions and provides a mathematical framework for characterizing and applying the answers."
+    clauses: []
+    noCreditWith: []
+  - courseId: FP|588
+    description: "FP 588 Practical Explosion Analysis: Case Studies in Energy Industry (3 credits) This course will focus on new and renewable energy technologies, hydrogen, battery storage, electrical arc explosions, and transformer safety. Tailored for professionals navigating the evolving energy landscape, this course explores the fundamentals of explosions in unique applications in renewable energy facilities and the challenges posed by electrical arc explosions. The course is case study driven, where the lecturers will provide 5 – 6 in-depth case studies related to electrical arc explosions, explosions in batteries, hydrogen, and geothermal energy and explosion risks in space. Compliance measures are explored with a specific lens on the regulatory landscape governing these cutting-edge technologies. Practical components include emergency response planning, ensuring the safety and resilience of renewable energy assets, and addressing transformer explosion risks. Geared towards engineers, safety professionals, and managers in the energy industry, this course teaches participants to master explosion analysis and risk management tailored to the nuanced challenges of new energy technologies, including electrical arc explosions and transformer safety."
+    clauses: []
+    noCreditWith: []

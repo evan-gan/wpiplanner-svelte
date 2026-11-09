@@ -1,0 +1,30 @@
+department: DEV
+entries:
+  - courseId: DEV|1200
+    description: "Cat. I What is development? How has international development been understood and what has been done about it? How do development scholars explain why some countries are rich while others are poor? How can students understand and incorporate development studies in the contexts of their own global engagements? This course addresses these questions by looking at theories, ideologies, and processes that have influenced and embodied development thinking and practice over the past five decades. We will examine the role of colonization, modernization, dependency, globalization, democratization, industrialization, and urbanization in processes of development in countries across the globe. The course encourages students to think critically about what development is, about how it is carried out and, most importantly of all, about what it can achieve. DEV 1200 provides excellent preparation for international projects and careers. Recommended background: None."
+    clauses: []
+    noCreditWith: []
+  - courseId: DEV|2200
+    description: "Cat. II The engineers and scientists of tomorrow have a crucial role to play in discovering and implementing solutions to daunting international challenges related to food, water, energy, sanitation and infrastructure. The urgency of such challenges grows alongside and increasingly globalized workplace, where a growing number of graduates find themselves working outside the US, and invited to engage cultures, worldviews, value systems and physical environments that are very unlike their own. This course prepares students with ‘global competency’, to enable them to more effectively and ethically tackle problems in the context of starkly different socioeconomic, political, social and physical realities. Students will develop the knowledge, skills and understanding required to consider, accommodate and effectively integrate contextual difference into engineering practice by exploring the complexity of project design, the potential for unintended consequences, and how technologies are transformed in different contexts. This course will prepare students for a broad range of international IQP and MQPs. Recommended background: None. This course will be offered in 2020-21, and in alternating years thereafter"
+    clauses: []
+    noCreditWith: []
+  - courseId: DEV|501
+    description: "Social Innovation and Global Development provides a broad overview of the program. We will touch on many of the themes that will be explored in depth in the core courses. These themes include but are not limited to: design thinking, cross-cultural design, ethics in design, and visual expression. We will also employ team building exercises bring the cohort together as a cohesive group. The mornings will be spent in interactive classroom experiences where students will engage in seminar discussions, small group activities, and feedback sessions. This course will take place in the two weeks leading up to the students first semester in the program. The course will run two weeks, for approximately six hours per day, Monday through Friday."
+    clauses: []
+    noCreditWith: []
+  - courseId: DEV|502
+    description: "Everyone is entitled to good design, without distinction of any kind. Race, color, sex, language, religion, political or other opinions, national or social origins, property, birth or other status should have effective visual communication. Social Impact Design Course is a place where student designers learn to create “good design” for the “good of others.” Community engagement through community-based design projects is just one aspect of the course. Students will learn additional practice skills in design thinking and cause branding. This course explores various community and professional practices when designing for social change. Through community-based projects with non-profit organizations, students explore the many roles creative professionals can play when executing socially-minded work. Students will be challenged to expand their comprehension of design problem solving for new audiences. Design teams will develop skills in design methodology for visual communication: identifying problems, design research, ideation, and implementation."
+    clauses: []
+    noCreditWith: []
+  - courseId: DEV|510
+    description: This studio course introduces students to a variety of design case studies from developing world infrastructure projects, to human computer interaction, autonomous vehicles, and others to give students an opportunity to explore and critique design processes and to develop a sense of their own approach with some depth.
+    clauses: []
+    noCreditWith: []
+  - courseId: DEV|520
+    description: This studio course is taken in E(1) term. Here students will begin to develop their own GQP or thesis projects. They will share their work with their peers in weekly feedback sessions. Faculty will act as mentors who push the students toward project and process clarity. For students traveling abroad the studio will provide an opportunity to raise and explore important cultural considerations.
+    clauses: []
+    noCreditWith: []
+  - courseId: DEV|540
+    description: ""
+    clauses: []
+    noCreditWith: []

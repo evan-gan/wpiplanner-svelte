@@ -1,0 +1,47 @@
+department: ECON
+entries:
+  - courseId: ECON|1110
+    description: Cat. I The course focuses upon the implications of reliance upon markets for the allocation of resources in a society, at the household, firm, and community level. Outcomes of current market systems are examined in terms of the efficient use of natural and other economic resources, as well as their impact upon the environment, fairness, and social welfare. of special interest in these analyses is the role of prices in the determination of what commodities are produced, their means of production, and distribution among households. In cases where current market outcomes have features subject to widespread criticism, such as the presence of excessive pollution, risk, discrimination, and poverty, the analysis is extended to suggest economic solutions. There are no prerequisites for the course.
+    clauses: []
+    noCreditWith: []
+  - courseId: ECON|1800
+    description: "Cat. III (Credits will be assigned by the instructor, either 1/6 or 1/3 unit) This course provides an opportunity for students with little to no background in economics to learn about a special topic in Economics. Recommended background: none. This course may be repeated for different topics."
+    clauses: []
+    noCreditWith: []
+  - courseId: ECON|2110
+    description: "Cat. II The topics addressed in this course are similar to those covered in ECON 1110 (Introductory Microeconomics) but the treatment proceeds in a more rigorous and theoretical fashion to provide a firm platform for students majoring in Economics or Business, or those having a strong interest in economics. Mathematics at a level comparable to that taught in MA 1021-MA 1024 is frequently applied to lend precision to the analysis. The course rigorously develops the microeconomic foundations of the theory of the firm, the theory of the consumer, the theory of markets, and the conditions required for efficiency in economic systems. Recommended background: ECON 1110. This course will be offered in 2019-20, and in alternating years thereafter."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: ECON 1110."
+        requirement:
+          kind: course
+          course: ECON|1110
+    noCreditWith: []
+  - courseId: ECON|2800
+    description: "ECON 2800: Special Topics in Economics This course provides an opportunity for students with some background in economics to learn about a special topic in Economics. Recommended background: An introductory background in economics (ECON 1110, ECON 1120, or equivalent). This course may be repeated for different topics. (Credits will be assigned by the instructor, either 1/6 or 1/3 unit)"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: An introductory background in economics (ECON 1110, ECON 1120, or equivalent)."
+        requirement:
+          kind: topic
+          topic: an introductory background in economics
+          satisfiedBy:
+            kind: anyOf
+            of:
+              - kind: course
+                course: ECON|1110
+                orEquivalent: true
+              - kind: course
+                course: ECON|1120
+                orEquivalent: true
+    noCreditWith: []
+  - courseId: ECON|2910
+    description: "Cat. I This course is designed to provide an introduction to economics, an introduction to entrepreneurship, and an understanding of the linkages between economics and entrepreneurship. Students will apply these concepts to the assessment of opportunities that might arise from participation in WPI projects. Students will engage in exploring how economics and entrepreneurship can inform opportunity assessment within an ambiguous and uncertain context. These decisions are always made with incomplete information and there is typically no single correct answer but rather multiple possible answers -- each with pluses and minuses. Recommended background: None"
+    clauses: []
+    noCreditWith: []
+  - courseId: ECON|1120
+    description: Cat. I This course is designed to acquaint students with the ways in which macroeconomic variables such as national income, employment and the general level of prices are determined in an economic system. It also includes a study of how the techniques of monetary policy and fiscal policy attempt to achieve stability in the general price level and growth in national income and employment. The problems of achieving these national goals (simultaneously) are also analyzed. The course stresses economic issues in public policy and international trade.
+    clauses: []
+    noCreditWith: []

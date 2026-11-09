@@ -1,0 +1,430 @@
+department: CE
+entries:
+  - courseId: CE|2001
+    description: "Cat. IThis course provides an introduction to the relationship between analysis, design, and the behavior of materials under load. Theory and applications are developed that utilize simple and combined stress-strain behavior of members subjected to axial, torsional, and flexural loadings, with applications to beams, trusses, rigid frames, shafts, and tension and compression structures.Recommended background: CE 2000."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: CE 2000."
+        requirement:
+          kind: course
+          course: CE|2000
+    noCreditWith: []
+  - courseId: CE|2002
+    description: "Cat. IThis course develops an understanding of classical and modern structural analysis. Topics include loading systems, and the analysis of statically determinate and statically indeterminate beams, frames, trusses, structural floor systems for buildings, bridges, and other structural assemblies.Recommended background: CE 2000 and CE 2001.Suggested background: CE 1030."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: CE 2000 and CE 2001."
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: CE|2000
+            - kind: course
+              course: CE|2001
+      - strength: suggested
+        timing: prior
+        sourceText: "Suggested background: CE 1030."
+        requirement:
+          kind: course
+          course: CE|1030
+    noCreditWith: []
+  - courseId: CE|3006
+    description: "Cat. IThis course covers the theory and practice of structural steel design. The structural design process for beams, columns, trusses, frames, and connections is based on Load and Resistance Factor Design (LRFD) specifications of the American Institute of Steel Construction.Recommended background: CE 2002 and CE 3010.Suggested background: CE 1030."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: CE 2002 and CE 3010."
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: CE|2002
+            - kind: course
+              course: CE|3010
+      - strength: suggested
+        timing: prior
+        sourceText: "Suggested background: CE 1030."
+        requirement:
+          kind: course
+          course: CE|1030
+    noCreditWith: []
+  - courseId: CE|3008
+    description: "Cat. I This course covers the theory and practice of reinforced concrete design. The structural design process for beams, columns, slabs, frames, flat slabs, footings, and retaining walls uses the ultimate strength design codes of the American Concrete Institute. Recommended background: CE 2002 and CE 3010. Suggested background: CE 1030."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: CE 2002 and CE 3010."
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: CE|2002
+            - kind: course
+              course: CE|3010
+      - strength: suggested
+        timing: prior
+        sourceText: "Suggested background: CE 1030."
+        requirement:
+          kind: course
+          course: CE|1030
+    noCreditWith: []
+  - courseId: CE|3010
+    description: "Cat. IThis course provides an understanding of the practice of structural engineering. It builds upon the fundamental skills developed in CE 2000, CE 2001, and CE 2002 to present the principles of structures and their elements. The courseprovides a perspective for dealing with the issues of strength, stiffness, and stability. Although wood is the principle material used to develop the study of the interrelationship between analysis and design of structural systems, structural steel and reinforced concrete systems are also discussed. It also introduces students to the use of building codes for design criteria. The role of the structural engineer in the design process and cost factors are also discussed.Recommended background: CE 2000, CE 2001, and CE 2002.Suggested background: CE 1030."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: CE 2000, CE 2001, and CE 2002."
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: CE|2000
+            - kind: course
+              course: CE|2001
+            - kind: course
+              course: CE|2002
+      - strength: suggested
+        timing: prior
+        sourceText: "Suggested background: CE 1030."
+        requirement:
+          kind: course
+          course: CE|1030
+    noCreditWith: []
+  - courseId: CE|3025
+    description: "Cat. IIn this course students are provided with a systematic framework for evaluating the economic sustainability and financial aspects of a building investment through its life cycle: project definition, design, construction and operation. The course develops according to several interrelated topics: budgeting (square foot cost and parametric estimating) and economic feasibility analysis, financing mechanisms, cash flow analysis, (time-value -of -money factors, present worth and rate of return), life-cycle assessment (environmental impact analysis), taxes, depreciation and regulations as well as consideration of risks and uncertainties.Recommended background: AREN 2023. This course will be offered in 2020-21, and in alternating years thereafter."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: AREN 2023."
+        requirement:
+          kind: course
+          course: AREN|2023
+    noCreditWith: []
+  - courseId: CE|3026
+    description: "Cat. IThis course provides an understanding of the use and acquisition of engineering properties of construction materials. Topics include relationships between the structure of materials, their engineering properties, and the selection of suitable materials for applications involving strength, durability, and serviceability. Experimental laboratory procedures including design of experiments, data collection, analysis, and representation, and report writing are an integral part ofthe work.Recommended background: CE 1030 and CE 2001. Some sections of this course may be offered as Writing Intensive (WI)."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: CE 1030 and CE 2001."
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: CE|1030
+            - kind: course
+              course: CE|2001
+    noCreditWith: []
+  - courseId: CE|303X
+    description: This course is intended to give students experience in achieving goals using software. It introduces Civil Engineering students to the fundamental uses of AutoDesk software in the implementation of Virtual Design and Construction (VDC) planning. Concepts covered combine Computer Aided Drawing (CAD) and Building Information Modeling (BIM) techniques. Application software such as AutoCAD Civil 3D, Autodesk Revit and Navisworks are used in this course. Students are required to become familiar with the software packages; specific skills taught are basic 2D drawing techniques, advanced 3D drawing and rendering techniques, basic 3D software environments, object creation and manipulation, assemblies of objects, surface and terrain modeling, building modeling, geographic and building information databases. Emphasis is given to the adaptability of this method to changes in design and to the generation of graphic design documentation. Lastly, software packages change over time, and different packages are used by different organizations. This course has an overall goal of training students in the thinking behind software, so as not to be tied to particular software but instead to be adaptable to changing circumstances. Knowledge of the subject matter in at least two Civil Engineering design courses is expected background for this course.
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: Knowledge of the subject matter in at least two Civil Engineering design courses is expected background for this course.
+        requirement:
+          kind: other
+          text: Knowledge of the subject matter in at least two Civil Engineering design courses
+    noCreditWith: []
+    needsReview: Says 'expected background' with no lead word. Recorded as recommended; which two design courses is not named.
+  - courseId: CE|3041
+    description: "Cat. I This is an introductory course dealing with the science and technology of earth materials with an emphasis on fundamental concepts of particulate mechanics. The topics which are discussed include fluid flow through porous media, deformation and shear characteristics of soil, consolidation, lateral earth pressure, and slope stability. Recommended background: CE 2000 and CE 2001. Suggested background: GE 2341."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: CE 2000 and CE 2001."
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: CE|2000
+            - kind: course
+              course: CE|2001
+      - strength: suggested
+        timing: prior
+        sourceText: "Suggested background: GE 2341."
+        requirement:
+          kind: course
+          course: GE|2341
+    noCreditWith: []
+  - courseId: CE|3059
+    description: "Cat. I This course provides an introduction to engineering aspects of environmental quality control. Students will learn fundamental science and engineering principles needed for environmental engineering, including concepts in chemistry, biology, physics, mass conservation, kinetics and reactor design. These principles are then applied to environmental engineering problems, including modeling of pollutants in natural systems and design of unit processes in engineered systems. Topics covered include environmental regulations, surface and ground water quality, drinking water treatment, wastewater treatment, air pollution, and hazardous waste management. Recommended background: college-level chemistry."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: college-level chemistry."
+        requirement:
+          kind: topic
+          topic: college-level chemistry
+    noCreditWith: []
+  - courseId: CE|3060
+    description: "Cat. I This course provides in-depth coverage of processes used in water treatment. Topics include: review of water chemistry and drinking water standards, impurities in natural waters, aeration, water softening coagulation, flocculation, sedimentation, filtration, disinfection, taste and odor control, corrosion control, and iron and manganese removal. Recommended background: CE 3059 and ES 3004."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: CE 3059 and ES 3004."
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: CE|3059
+            - kind: course
+              course: ES|3004
+    noCreditWith: []
+  - courseId: CE|3061
+    description: "Cat. IThis course provides in-depth coverage of processes used in wastewater treatment. Topics include: review of water quality standards, wastewater characteristics, application of biochemical oxygen demand, sources and effects of pollution, physical, chemical, and biological wastewater treatment processes, and waste sludge management.Recommended background: CE 3059 and ES 3004."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: CE 3059 and ES 3004."
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: CE|3059
+            - kind: course
+              course: ES|3004
+    noCreditWith: []
+  - courseId: CE|3062
+    description: "Cat. I This course provides a background for applying the principles of fluid mechanics to analyze and design hydraulic and fluid flow systems for projects related to water resources and civil and environmental engineering. Topics include hydraulics in pipes and closed systems, open channels and rivers, water supply systems and water distribution networks, pump systems and turbines, wastewater collection and treatment systems, and coastal and other natural environmental systems. Course content includes water quality and energy considerations, as well as the development and application of hydraulic models. Recommended background: ES 3004."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: ES 3004."
+        requirement:
+          kind: course
+          course: ES|3004
+    noCreditWith: []
+  - courseId: CE|3063
+    description: "In this course, students learn how to perform analytical methods and conduct laboratory experiments relevant to natural and engineered treatment systems in environmental engineering. Topics in water quality, water treatment, wastewater treatment, and reactors are included. The course focuses on data acquisition, analysis, and interpretation. Recommended background: CE 3059, CE 3060, and CE 3061."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: CE 3059, CE 3060, and CE 3061."
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: CE|3059
+            - kind: course
+              course: CE|3060
+            - kind: course
+              course: CE|3061
+    noCreditWith: []
+  - courseId: CE|4044
+    description: "Cat. IFoundation engineering is a study of the applications of the principles of soil mechanics and structural theory to the analysis, design and construction of foundations for engineering works with the emphasis on the soil engineering aspects of soil structure interaction. Subsurface exploration techniques, design of rigid and flexible retaining structures, and design of, shallow and deep foundations are considered. Although the course deals mainly with aspects of the design of buildings and bridges, certain parts of the course (design of temporary trench bracing, for example) are very relevant to construction engineering.Recommended background: CE 3041.Suggested background: CE 3008."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: CE 3041."
+        requirement:
+          kind: course
+          course: CE|3041
+      - strength: suggested
+        timing: prior
+        sourceText: "Suggested background: CE 3008."
+        requirement:
+          kind: course
+          course: CE|3008
+    noCreditWith: []
+  - courseId: CE|404X
+    description: "CE 404X, Geotechnical Engineering Laboratory. This course provides students with understanding, knowledge, skills and tools to conduct laboratory tests to measure or estimate key soil parameters required for construction site preparation and for design of suitable foundations for structures to be built. Principles and methods of volumetric testing and soil classification, permeability and consolidation testing, shear strength tests, interpretation and analysis of the data, and preparation of soil reports will be presented. Recommended Background: Recommended background: CE 2001, CE 3041, ES 3004. Suggested background: GE 2341."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: Recommended background: CE 2001, CE 3041, ES 3004."
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: CE|2001
+            - kind: course
+              course: CE|3041
+            - kind: course
+              course: ES|3004
+      - strength: suggested
+        timing: prior
+        sourceText: "Suggested background: GE 2341."
+        requirement:
+          kind: course
+          course: GE|2341
+    noCreditWith: []
+    needsReview: The source text repeats the phrase 'Recommended background' twice; read as one recommended list.
+  - courseId: CE|4063
+    description: "Cat. II In this course, students will learn to make quantitative relationships between human activities and the effects on water, soil, and air in the environment. Students will learn the scientific and engineering principles that are needed to understand how contaminants enter and move in the environment, how compounds react in the environment, how to predict their concentrations in the environment, and how to develop solutions to environmental problems. Topics to be covered may include water quality engineering (including microbial interactions), air quality engineering, and hazardous waste management. Recommended Background: familiarity with transport phenomena, such as in ES 3004 (Fluid Mechanics) and ES 3002 (Mass Transfer), and familiarity with reaction kinetics and reactor design, such as through CHE 3201 (Kinetics and Reactor Design). Background such as CE 3059 (Environmental Engineering), CE 3060 (Water Treatment), or CE3061 (Wastewater Treatment) is suggested. This course will be offered in 2020-21, and in alternating years thereafter"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: familiarity with transport phenomena, such as in ES 3004 (Fluid Mechanics) and ES 3002 (Mass Transfer), and familiarity with reaction kinetics and reactor design, such as through CHE 3201 (Kinetics and Reactor Design)."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: familiarity with transport phenomena
+              satisfiedBy:
+                kind: anyOf
+                of:
+                  - kind: course
+                    course: ES|3004
+                  - kind: course
+                    course: ES|3002
+            - kind: topic
+              topic: familiarity with reaction kinetics and reactor design
+              satisfiedBy:
+                kind: course
+                course: CHE|3201
+      - strength: suggested
+        timing: prior
+        sourceText: Background such as CE 3059 (Environmental Engineering), CE 3060 (Water Treatment), or CE3061 (Wastewater Treatment) is suggested.
+        requirement:
+          kind: anyOf
+          of:
+            - kind: course
+              course: CE|3059
+            - kind: course
+              course: CE|3060
+            - kind: course
+              course: CE|3061
+    noCreditWith: []
+    needsReview: "'such as' examples are not exhaustive."
+  - courseId: CE|4071
+    description: Cat. I The purpose of this course is to provide an understanding of the regulatory framework under which land is developed and the built environment is designed. The quality of our environment depends upon the development which is permitted to take place and the controls which direct that development. Through this course, the student will learn the principles, methods, and techniques which a planner or engineer may use to plan and design the highest and best uses and development of land. In particular, the use and limits of zoning, special permits, subdivision control, and other tools with which a developer or planner should be familiar will be examined in detail. Some sections of this course may be offered as Writing Intensive (WI).
+    clauses: []
+    noCreditWith: []
+  - courseId: CE|4610
+    description: "Cat. II This course will provide an overview of municipal solid waste (MSW) engineering with specific attention to municipal solid waste quantities and characteristics, refuse collection systems, landfilling, recycling and material processing, pollution prevention, biological processing, and energy recovery. Recommended background: Basic knowledge of general chemistry (CH 1010, CH 1020 or equivalent), differential equations (MA 2051 or equivalent), fluid mechanics (ES 3004 or equivalent), thermodynamics (ES 3001, or equivalent), and Environmental Engineering (CE 3059)."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Basic knowledge of general chemistry (CH 1010, CH 1020 or equivalent), differential equations (MA 2051 or equivalent), fluid mechanics (ES 3004 or equivalent), thermodynamics (ES 3001, or equivalent), and Environmental Engineering (CE 3059)."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: basic knowledge of general chemistry
+              satisfiedBy:
+                kind: anyOf
+                of:
+                  - kind: course
+                    course: CH|1010
+                    orEquivalent: true
+                  - kind: course
+                    course: CH|1020
+                    orEquivalent: true
+            - kind: topic
+              topic: differential equations
+              satisfiedBy:
+                kind: course
+                course: MA|2051
+                orEquivalent: true
+            - kind: topic
+              topic: fluid mechanics
+              satisfiedBy:
+                kind: course
+                course: ES|3004
+                orEquivalent: true
+            - kind: topic
+              topic: thermodynamics
+              satisfiedBy:
+                kind: course
+                course: ES|3001
+                orEquivalent: true
+            - kind: topic
+              topic: environmental engineering
+              satisfiedBy:
+                kind: course
+                course: CE|3059
+    noCreditWith: []
+  - courseId: CE|5303
+    description: This course is devoted to the numerical solution of partial differential equations encountered in engineering sciences. Finite element methods are introduced and developed in a logical progression of complexity. Topics covered include matrix structural analysis variation form of differential equations, Ritz and weighted residual approximations, and development of the discretized domain solution. Techniques are developed in detail for the one- and twodimensional equilibrium and transient problems. These numerical strategies are used to solve actual problems in heat flow, diffusion, wave propagation, vibrations, fluid mechanics, hydrology and solid mechanics. Weekly computer exercises are required to illustrate the concepts discussed in class. Students cannot receive credit for this course if they have taken the Special Topics (ME 593E) version of the same course or ME 533 or CE 524.
+    clauses: []
+    noCreditWith:
+      - ME|533
+      - CE|524
+    needsReview: The no-credit rule also names 'Special Topics (ME 593E)', which the course-id pattern cannot store. Not recorded.
+  - courseId: CE|580
+    description: "This course develops an understanding of the managerial principles and techniques used throughout a construction project as they are applied to its planning, preconstruction and construction phases. The course emphasizes the integrative challenges of the human, physical and capital resources as experienced from the owner’s point of view in the preconstruction phase of a project. Through assignments and case studies, the course reviews the complex environment of the construction industry and processes, project costing and economic evaluation, project organization, value engineering, time scheduling, contracting and risk allocation alternatives, contract administration, and cost and time control techniques. (Prerequisites: CE 3020, CE 3025, or equivalent.)"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "(Prerequisites: CE 3020, CE 3025, or equivalent.)"
+        requirement:
+          kind: anyOf
+          of:
+            - kind: course
+              course: CE|3020
+              orEquivalent: true
+            - kind: course
+              course: CE|3025
+              orEquivalent: true
+    noCreditWith: []
+  - courseId: CE|587
+    description: "This course introduces the concept of Building Information Modeling (BIM) which is a relatively new approach in planning, design, construction and operation of constructed facilities in a technologically enabled and collaborative fashion. The course reviews fundamental concepts for collaboration and integration; it also reviews technologies that support the BIM approach and provides discipline specific as well as global perspectives on BIM. The course format includes formal lectures, computer laboratory sessions, student presentations based on assigned readings and a project developed collaboratively by the students throughout the course. Guest speakers may be invited based on the topics covered and discussed in class. Prerequisites: Basic knowledge of computers. Exposure to professional practice in any area of the Architecture / Engineering / Construction / Facilities Management (A/E/C/FM) industry is desirable. Students are not permitted to receive credit for CE 587 if they have previously received credit for CE 585 or CE 590A-BIM."
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "Prerequisites: Basic knowledge of computers."
+        requirement:
+          kind: topic
+          topic: basic knowledge of computers
+    noCreditWith: []
+  - courseId: CE|590
+    description: "Individual investigations or studies of any phase of civil engineering as may be selected by the student and approved by the faculty member who supervises the work. This course introduces students to principles and practices of bridge design and construction. The course covers aspects of structural engineering, materials science, geotechnical principles, construction management, all with a focus on the design of bridges that are safe, cost-effective, and durable. Students will explore bridge types, load distribution methods, material selection, foundation systems, and safety considerations. Students will learn how to apply fundamental design principles to create functional and efficient bridge structures while considering factors such as site conditions, environmental impacts, and construction constraints. Prerequisites: Students enrolling in this course should have earned a Bachelor of Science in Civil Engineering. Students must seek instructor approval based on relevant professional experience or equivalent academic backgroundI"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "Prerequisites: Students enrolling in this course should have earned a Bachelor of Science in Civil Engineering."
+        requirement:
+          kind: standing
+          text: a Bachelor of Science in Civil Engineering
+      - strength: required
+        timing: prior
+        sourceText: Students must seek instructor approval based on relevant professional experience or equivalent academic background
+        requirement:
+          kind: permission
+          text: instructor approval based on relevant professional experience or equivalent academic background
+    noCreditWith: []
+  - courseId: CE|2030
+    description: This course covers educational and professional opportunities in Civil Engineering and Environmental Engineering, including professional skills necessary for success, as both a student in the program and as a future practicing engineer. Topics include pathways of study; career options; ethics and professional responsibilities; professional licensure; networking and professional societies; communication; teamwork; and software skills. The role of engineers in addressing contemporary issues through innovation, and the importance of life-long learning, are explored.
+    clauses: []
+    noCreditWith: []
+  - courseId: CE|3022
+    description: Cat. I The course focuses on the legal underpinnings that regulate the design and execution of construction projects and the relations between their participants. The subject is presented according to the various phases of a construction project, from inception to handover. The overall objective is to develop an awareness of the legal aspects that regulate the exercise of the architectural and civil engineering profession and of the environmental constraints of construction. Topics such as permitting process, design/engineering services and ethical issues are included. Some sections of this course may be offered as Writing Intensive (WI).
+    clauses: []
+    noCreditWith: []
+  - courseId: CE|3050
+    description: Cat. I This course provides an introduction to the field of transportation engineering with particular emphasis on traffic engineering. Principles, such as traffic studies, highway safety, traffic flow, intersection design and control, capacity analysis, and level of service analysis are included. In addition, basic highway design parameters associated with curves and sight distance are covered. Regional transportation systems and sustainable development are also discussed and analyzed; and concepts associated with parking, public transportation, and travel demand modeling are introduced.
+    clauses: []
+    noCreditWith: []
+  - courseId: CE|501
+    description: Professional practices in engineering and architecture . Legal issues of business organizations, contracts and liability; business practice of staffing, fee structures, accounts receivable, negotiation and dispute resolution, and loss prevention; marketing and proposal development; project management involving organizing and staffing, budgeting, scheduling, performance and monitoring, and presentation of deliverables; professionalism, ethics and responsibilities.
+    clauses: []
+    noCreditWith: []
+  - courseId: CE|510
+    description: "Analysis of structural components: uniform and nonuniform torsion of structural shapes, analysis of determinate and indeterminate beams (including elastic foundation conditions) by classical methods, finite difference equations, numerical integrations, series approximation, elastic stability of beams and frames, lateral stability of beams, beams-columns, analysis of frames including the effect of axial compression."
+    clauses: []
+    noCreditWith: []
+  - courseId: CE|531
+    description: Advanced design of steel members and connections; ultimate strength design in structural steel; codes and specifications; loads and working stresses; economic proportions; and buckling of slender elements and built-up sections, torsion, lateral-torsional buckling, beam-columns, design for lateral forces, and connections for building frames.
+    clauses: []
+    noCreditWith: []
+  - courseId: CE|560
+    description: Theory and practice of drinking water treatment. Water quality and regulations; physical and chemical unit processes including disinfection, coagulation, clarification, filtration, membranes, air stripping, adsorption, softening, corrosion control, and other advanced processes.
+    clauses: []
+    noCreditWith: []
+  - courseId: CE|566
+    description: This course provides a review of the basic principles governing groundwater flow and solute transport, and examines the models available for prediction and analysis including computer models. Topics covered include mechanics of flow in porous media; development of the equations of motion and of conservation of solute mass; analytical solutions; and computer-based numerical approaches and application to seepage, well analysis, artificial recharge, groundwater pollution, salinity intrusion, and regional groundwater analyses.
+    clauses: []
+    noCreditWith: []
+  - courseId: CE|573
+    description: Hydraulic principles of water, domestic wastewater and industrial wastewater systems. Hydraulic analysis and design of collection, distribution and treatment systems and equipment. Topics covered include pipe and channel flow, pump characteristics and selection, friction loss, corrosion and material selection.
+    clauses: []
+    noCreditWith: []
+  - courseId: CE|584
+    description: This course examines cost estimating as a key process in planning, designing and constructing buildings. Topics include the analysis of the elements of cost estimating; database development and management, productivity, unit costs, quantity surveys and pricing, and the application of these tools in business situations; marketing, sales, bidding, negotiating, value engineering, cost control, claims management and cost history. Computerization is evaluated as an enhancement to the process.
+    clauses: []
+    noCreditWith: []
+  - courseId: CE|596
+    description: Seminars on current issues and state-of-the-art research in civil and environmental engineering given by guest speakers, faculty, and students.
+    clauses: []
+    noCreditWith: []

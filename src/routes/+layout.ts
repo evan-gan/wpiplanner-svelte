@@ -16,7 +16,7 @@ export const prerender = true;
  * Directory-style output: `/courses` is written as `courses/index.html`.
  *
  * Plain static hosts serve that for `/courses` without any rewrite rule, which
- * `courses.html` would need. PLAN.md §10 asks how the site is deployed; this is
+ * `courses.html` would need. .claude/PLAN.md §10 asks how the site is deployed; this is
  * the form that works whichever answer comes back.
  */
 export const trailingSlash = 'always';

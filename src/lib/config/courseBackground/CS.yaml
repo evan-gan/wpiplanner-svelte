@@ -1,0 +1,1295 @@
+department: CS
+entries:
+  - courseId: CS|1004
+    description: "Cat. I This course introduces students to the fundamental principles of programming in imperative and scripting languages. Topics include control structures, iterators, functional decomposition, basic data structures (such as records). Students will be expected to implement, test and debug programs. Through the use of compelling applications and lab exercises, students will learn how to interface with external data systems and control devices. Recommended background: none. All Computer Science students and other students wishing to prepare for 3000-level courses in Computer Science should take CS 1101/1102 instead of CS 1004. This course provides sufficient background for CS 2301 Systems Programming for Non-Majors. Undergraduate credit may not be earned both for this course and for CS 1005."
+    clauses: []
+    noCreditWith:
+      - CS|1005
+  - courseId: CS|1005
+    description: This course introduces students to the fundamental principles of programming as it applies to engineering and robotic applications. Topics include data structures, control flow, modularization, state machines, and event-based input/output. Students will be expected to implement, test, and debug programs and apply them to control devices and microcontrollers. Special focus will be given to writing efficient and reusable code. This course provides appropriate programming background for RBE 1001. Undergraduate credit may not be earned for both this course and CS 1004. Undergraduate credit may not be earned for both this course and RBE 100X.
+    clauses: []
+    noCreditWith:
+      - CS|1004
+      - RBE|100X
+  - courseId: CS|1101
+    description: "This course introduces principles of computation and programming with an emphasis on program design. Topics include the design, implementation, and testing of programs that use a variety of data structures (such as structures, lists, and trees), functions, conditionals, recursion, and higher-order functions. Students will be expected to design simple data models, and implement and debug programs in a functional programming language.Recommended background: none. Either CS 1101 or CS 1102 provides sufficient background for further courses in the CS department. Undergraduate credit may not be earned for both this course and CS 1102."
+    clauses: []
+    noCreditWith: []
+  - courseId: CS|2011
+    description: "Cat. I This course introduces students to the structure and behavior of modern digital computers and the way they execute programs. Machine organization topics include the Von Neumann model of execution, functional organization of computer hardware, the memory hierarchy, caching performance, and pipelining. Assembly language topics include representations of numbers in computers, basic instruction sets, addressing modes, stacks and procedures, low-level I/O, and the functions of compilers, assemblers, linkers, and loaders. The course also presents how code and data structures of higher-level languages are mapped into the assembly language and machine representations of a modern processor. Programming projects will be carried out in the C language and the assembly language of a modern processor. Recommended background: CS 2301 or CS 2303, or a significant knowledge of C/C++."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: CS 2301 or CS 2303, or a significant knowledge of C/C++."
+        requirement:
+          kind: anyOf
+          of:
+            - kind: course
+              course: CS|2301
+            - kind: course
+              course: CS|2303
+            - kind: topic
+              topic: a significant knowledge of C/C++
+    noCreditWith: []
+  - courseId: CS|2022
+    description: "Cat. I This course serves as an introduction to some of the more important concepts, techniques, and structures of discrete mathematics providing a bridge between computer science and mathematics. Topics include sets, functions and relations, propositional and predicate calculus, mathematical induction, properties of integers, counting techniques, and graph theory. Students will be expected to develop simple proofs for problems drawn primarily from computer science and applied mathematics. Recommended background: None"
+    clauses: []
+    noCreditWith: []
+  - courseId: CS|2102
+    description: "Cat. IThis course introduces students to an object-oriented model of programming.Building from the design methodology covered in CS 1101/CS 1102, thiscourse shows how programs can be decomposed into classes and objects. Byemphasizing design, this course shows how to implement small defect-freeprograms and evaluate design decisions to select an optimal design under specificassumptions. Topics include inheritance, exceptions, interface, design bycontract, basic design patterns, and reuse. Students will be expected to design,implement, and debug object-oriented programs composed of multiple classesand over a variety of data structures.Recommended background: CS 1101 or CS 1102."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: CS 1101 or CS 1102."
+        requirement:
+          kind: anyOf
+          of:
+            - kind: course
+              course: CS|1101
+            - kind: course
+              course: CS|1102
+    noCreditWith: []
+  - courseId: CS|2103
+    description: "This course covers the data structures and general program-design material from CS 2102, but assumes that students have significant prior experience in object-oriented programming. The course covers object-oriented design principles and data structures more deeply and at a faster pace than in CS 2102. Students will be expected to design, implement, test, debug, and critique programs both for correctness and adherence to good object-oriented design principles. The course is designed to strengthen both the design skills and algorithmic thinking of students who already have a foundation in object-oriented programming. Recommended background: CS 1101 or CS 1102 and significant prior experience writing object-oriented programs from scratch. Advanced Placement Computer Science A courses should provide sufficient background; students from AP CS Principles courses or gentler introductions to Java Programming are advised to take CS 2102 instead. Students may receive credit for only one of the following three courses: CS 2102, CS 210X, CS 2103."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: CS 1101 or CS 1102 and significant prior experience writing object-oriented programs from scratch."
+        requirement:
+          kind: allOf
+          of:
+            - kind: anyOf
+              of:
+                - kind: course
+                  course: CS|1101
+                - kind: course
+                  course: CS|1102
+            - kind: topic
+              topic: significant prior experience writing object-oriented programs from scratch
+    noCreditWith: []
+  - courseId: CS|2119
+    description: Cat. I This course introduces students to an object-oriented model of programming, with an emphasis on the programming approaches useful in creating software applications. Students will be expected to design, implement, and debug object-oriented programs. Topics include inheritance, user interfaces, and database access. This course is for non-CS majors with prior programming experience and an interest in building software applications. Programming experience such as found in CS 1101, CS 1102, CS 1004, or CS 1005.
+    clauses: []
+    noCreditWith: []
+  - courseId: CS|2223
+    description: "Cat. IBuilding on a fundamental knowledge of data structures, data abstraction techniques, and mathematical tools, a number of examples of algorithm design and analysis — worst case and average case — will be developed. Topics include greedy algorithms, divide-and-conquer, dynamic programming, heuristics, and probabilistic algorithms. Problems will be drawn from areas such as sorting, graph theory, and string processing. The influence of the computational model on algorithm design will be discussed. Students will be expected to perform analysis on a variety of algorithms.Recommended background: CS 2102 or CS 2103, and CS 2022."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: CS 2102 or CS 2103, and CS 2022."
+        requirement:
+          kind: allOf
+          of:
+            - kind: anyOf
+              of:
+                - kind: course
+                  course: CS|2102
+                - kind: course
+                  course: CS|2103
+            - kind: course
+              course: CS|2022
+    noCreditWith: []
+  - courseId: CS|2301
+    description: Cat. I This course introduces the C programming language and system programming concepts to non-CS majors who need to program computers in their own fields. The course assumes that students have had previous programming experience. It quickly introduces the major concepts of the C language and covers manual memory management, pointers and basic data structures, the machine stack, 73 and input/output mechanisms. Students will be expected to design, implement, and debug programs in C. All Computer Science students and other students wishing to prepare for upper-level courses in Computer Science should take CS 2303 instead of CS 2301. Students who have credit for CS 2303 may not receive subsequent credit for CS 2301. Recommended Background- Programming experience such as found in CS 1101, CS 1102, CS 1004, or CS 1005.
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: Recommended Background- Programming experience such as found in CS 1101, CS 1102, CS 1004, or CS 1005.
+        requirement:
+          kind: topic
+          topic: programming experience
+          satisfiedBy:
+            kind: anyOf
+            of:
+              - kind: course
+                course: CS|1101
+              - kind: course
+                course: CS|1102
+              - kind: course
+                course: CS|1004
+              - kind: course
+                course: CS|1005
+    noCreditWith:
+      - CS|2303
+    needsReview: The examples are introduced with 'such as', so other programming experience may also qualify.
+  - courseId: CS|2303
+    description: "Cat. IThis course introduces students to a model of programming where the programming language exposes details of how the hardware stores and executes software. Building from the design concepts covered in CS 2102, this course covers manual memory management, pointers, the machine stack, and input/output mechanisms. The course will involve large-scale programming exercises and will be designed to help students confront issues of safe programming with system-level constructs. The course will cover several tools that assist programmers in these tasks. Students will be expected to design, implement, and debug programs in C++ and C. The course presents the material from CS 2301 at a fast pace and also includes C++ and other advanced topics.Recommended background: CS 2102, CS 2103, or CS 2119 and/or substantial object-oriented programming experience."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: CS 2102, CS 2103, or CS 2119 and/or substantial object-oriented programming experience"
+        requirement:
+          kind: anyOf
+          of:
+            - kind: course
+              course: CS|2102
+            - kind: course
+              course: CS|2103
+            - kind: course
+              course: CS|2119
+            - kind: topic
+              topic: substantial object-oriented programming experience
+    noCreditWith: []
+  - courseId: CS|3013
+    description: "Cat. IThis course provides the student with an understanding of the basic components of a general-purpose operating system. Topics include processes, process management, synchronization, input/output devices and their programming, interrupts, memory management, resource allocation, and an introduction to file systems. Students will be expected to design and implement a large piece ofsystem software in the C programming language.Undergraduate credit may not be earned both for this course and for CS 502.Recommended background: CS 2303 or CS 2301, and CS 2011."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: CS 2303 or CS 2301, and CS 2011."
+        requirement:
+          kind: allOf
+          of:
+            - kind: anyOf
+              of:
+                - kind: course
+                  course: CS|2303
+                - kind: course
+                  course: CS|2301
+            - kind: course
+              course: CS|2011
+    noCreditWith:
+      - CS|502
+  - courseId: CS|3041
+    description: "Cat. I This course develops in the student an understanding of the nature and importance of problems concerning the efficiency and effectiveness of human interaction with computer-based systems. Topics include the design and evaluation of interactive computer systems, basic psychological considerations of interaction, interactive language design, interactive hardware design, and special input/output techniques. Students will be expected to complete several projects. A project might be a software evaluation, interface development, or an experiment. Recommended background: CS 2102, CS 2103, or CS 2119."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: CS 2102, CS 2103, or CS 2119."
+        requirement:
+          kind: anyOf
+          of:
+            - kind: course
+              course: CS|2102
+            - kind: course
+              course: CS|2103
+            - kind: course
+              course: CS|2119
+    noCreditWith: []
+  - courseId: CS|3043
+    description: "Cat. I This course makes the student aware of the social, moral, ethical, and philosophical impact of computers and computer-based systems on society, both now and in the future. Topics include major computer-based applications and their impact, human machine relationships, and the major problems of controlling the use of computers. Students will be expected to contribute to classroom discussions and to complete a number of significant writing assignments. This course is recommended for juniors and seniors. The Social Science Requirement cannot be satisfied by this course. Undergraduate credit may not be earned both for this course and for CS 505. Recommended background: a general knowledge of computers and computer systems"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: a general knowledge of computers and computer systems"
+        requirement:
+          kind: topic
+          topic: a general knowledge of computers and computer systems
+    noCreditWith:
+      - CS|505
+  - courseId: CS|3133
+    description: "Cat. I This course introduces the theoretical foundations of computer science. These form the basis for a more complete understanding of the proficiency in computer science. Topics include computational models, formal languages, and an introduction to compatibility and complexity theory, including NP-completeness. Students will be expected to complete a variety of exercises and proofs. Undergraduate credit may not be earned both for this course and for CS 5003. Recommended Background: Discrete mathematics (CS 2022 or equivalent) and algorithms (CS 2223 or equivalent). Students who have credit for CS 4121 may not receive credit for CS 3133."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: Discrete mathematics (CS 2022 or equivalent) and algorithms (CS 2223 or equivalent)."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: discrete mathematics
+              satisfiedBy:
+                kind: course
+                course: CS|2022
+                orEquivalent: true
+            - kind: topic
+              topic: algorithms
+              satisfiedBy:
+                kind: course
+                course: CS|2223
+                orEquivalent: true
+    noCreditWith:
+      - CS|5003
+      - CS|4121
+  - courseId: CS|3404
+    description: "This course provides students with an introduction to security, covering both technical and social aspects. Through a series of exercises and case studies, students will develop an understanding of security that will serve as the foundation for 4K-level security-focused courses. Topics may include foundational security concepts (e.g., access control), common attacks (e.g., social engineering) and defenses, case studies of large-scale attacks and failures (e.g., Heartbleed), and security processes (e.g., software testing and vulnerability disclosure). Recommended Background: This course assumes a basic understanding of program design (CS 1101 or CS 1102) and systems programming concepts (CS 2303)."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: This course assumes a basic understanding of program design (CS 1101 or CS 1102) and systems programming concepts (CS 2303)."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: a basic understanding of program design
+              satisfiedBy:
+                kind: anyOf
+                of:
+                  - kind: course
+                    course: CS|1101
+                  - kind: course
+                    course: CS|1102
+            - kind: topic
+              topic: systems programming concepts
+              satisfiedBy:
+                kind: course
+                course: CS|2303
+    noCreditWith: []
+  - courseId: CS|3431
+    description: "Cat. I This course introduces the student to the design, use, and application of database management systems. Topics include the relational data model, relational query languages, design theory, and conceptual data design and modeling for relational database design. Techniques that provide for data independence and minimal redundancy will be discussed. Students will be expected to design and implement database system applications. Undergraduate credit may not be earned both for this course and for CS 4431 or CS 542. Recommended background: CS 2022 and either CS 2102, CS 2103, or CS 2119."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: CS 2022 and either CS 2102, CS 2103, or CS 2119."
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: CS|2022
+            - kind: anyOf
+              of:
+                - kind: course
+                  course: CS|2102
+                - kind: course
+                  course: CS|2103
+                - kind: course
+                  course: CS|2119
+    noCreditWith:
+      - CS|4431
+      - CS|542
+  - courseId: CS|3516
+    description: "Cat. I This course provides a broad view of computer networks. The course exposes students to all seven layers of OSI Reference Model while providing an introduction into newer topics such as wireless networking and Internet traffic concerns. The objective is to focus on an understanding of fundamental concepts of modern computer network architecture from a design and performance perspective. Topics covered include physical layer considerations, network protocols, wide area networks, local area networks, wireless networks, switches and routing, congestion, Internet traffic, and network security. Students will be expected to do extensive systems/network programming and will be expected to make use of simulation and measurement tools to gain an appreciation of current network design and performance issues. This course is also highly recommended for RBE and IMGD majors. Recommended background: CS 2301 or CS 2303, or a significant knowledge of C/C++."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: CS 2301 or CS 2303, or a significant knowledge of C/C++."
+        requirement:
+          kind: anyOf
+          of:
+            - kind: course
+              course: CS|2301
+            - kind: course
+              course: CS|2303
+            - kind: topic
+              topic: a significant knowledge of C/C++
+    noCreditWith: []
+  - courseId: CS|3733
+    description: "Cat. I This course introduces the fundamental principles of software engineering. Modern software development techniques and life cycles are emphasized. Topics include requirements analysis and specification, analysis and design, architecture, implementation, testing and quality, configuration management, and project management. Students will be expected to complete a project that employs techniques from the topics studied. This course should be taken before any course requiring a large programming project. Undergraduate credit may not be earned both for this course and for CS 509. Recommended background: CS 2102, CS 2103, or CS 2119."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: CS 2102, CS 2103, or CS 2119."
+        requirement:
+          kind: anyOf
+          of:
+            - kind: course
+              course: CS|2102
+            - kind: course
+              course: CS|2103
+            - kind: course
+              course: CS|2119
+    noCreditWith:
+      - CS|509
+  - courseId: CS|4032
+    description: "Cat. I This course provides an introduction to modern computational methods for linear and nonlinear equations and systems and their applications. Topics covered include solution of nonlinear scalar equations, direct and iterative algorithms for the solution of systems of linear equations, solution of nonlinear systems, and the eigenvalue problem for matrices. Error analysis will be emphasized throughout. Recommended background: MA 2071. An ability to write computer programs in a scientific language is assumed."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: MA 2071."
+        requirement:
+          kind: course
+          course: MA|2071
+    noCreditWith: []
+  - courseId: CS|4033
+    description: "Cat. I This course provides an introduction to modern computational methods for differential and integral calculus and differential equations. Topics covered include interpolation and polynomial approximation, approximation theory, numerical differentiation and integration, and numerical solutions of ordinary differential equations. Error analysis will be emphasized throughout. Recommended background: MA 2051. An ability to write computer programs in a scientific language is assumed. Undergraduate credit may not be earned for both this course and for MA 3255/CS 4031."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: MA 2051."
+        requirement:
+          kind: course
+          course: MA|2051
+    noCreditWith:
+      - MA|3255
+      - CS|4031
+  - courseId: CS|411X
+    description: "CS/IMGD 411x Multiplayer Network Games This course provides students with an in-depth exploration of multiplayer networked games, covering both game system architectures and programming. Students will develop an understanding of multiplayer networked games from the Internet Protocol level to game programming (Application) level. Topics may include technologies to synchronize state in a distributed game world system (e.g., serialization), mitigate lag (e.g., latency compensation) and improve scalability (e.g., interest management). Students will complete a series of small- to medium-scale programming projects reinforcing lecture concepts and readings. Recommended background: CS 2301 Systems Programming for Non-Majors or CS 2303 Systems Programming Concepts Suggested background: CS 3013 Operating Systems, CS 3516 Computer Networks, IMGD 3000 Technical Game Development I"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: CS 2301 Systems Programming for Non-Majors or CS 2303 Systems Programming Concepts"
+        requirement:
+          kind: anyOf
+          of:
+            - kind: course
+              course: CS|2301
+            - kind: course
+              course: CS|2303
+    noCreditWith: []
+  - courseId: CS|4233
+    description: "Cat. II This Software Engineering course will focus on the process of Object-Oriented Analysis and Design. Students will be expected to complete a large number of exercises in Domain Modeling, Use Case Analysis, and Object-Oriented Design. In addition, the course will investigate Design Patterns, which are elements of reusable object-oriented software designs. This course will survey a set of design patterns and consider how these patterns are described and used to solve design problems. Recommended Background: CS 2303 and CS 3733. This course will be offered in 2020-21, and in alternating years thereafter."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: CS 2303 and CS 3733."
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: CS|2303
+            - kind: course
+              course: CS|3733
+    noCreditWith: []
+  - courseId: CS|4241
+    description: "Cat. I This course explores the computational aspects of network information systems as embodied by the World Wide Web (WWW). Topics include: languages for document design, programming languages for executable content, scripting languages, design of WWW based human/computer interfaces, client/server network architecture models, high level network protocols (e.g., http), WWW network resource discovery and network security issues. Students in this course will be expected to complete a substantial software project (e.g., Java based user interface, HTML/CGI based information system, WWW search mechanisms). Recommended background: CS 2102, CS 2103, or CS 2119; and CS 3013."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: CS 2102, CS 2103, or CS 2119; and CS 3013."
+        requirement:
+          kind: allOf
+          of:
+            - kind: anyOf
+              of:
+                - kind: course
+                  course: CS|2102
+                - kind: course
+                  course: CS|2103
+                - kind: course
+                  course: CS|2119
+            - kind: course
+              course: CS|3013
+    noCreditWith: []
+  - courseId: CS|4341
+    description: 'Cat. I This course studies the problem of making computers act in ways which we call "intelligent". Topics include major theories, tools and applications of artificial intelligence, aspects of knowledge representation, searching and planning, and natural language understanding. Students will be expected to complete projects which express problems that require search in state spaces, and to propose appropriate methods for solving the problems. Undergraduate credit may not be earned both for this course and for CS 534. Recommended background: CS 2102 or CS 2103; CS 2223; and CS 3133.'
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: CS 2102 or CS 2103; CS 2223; and CS 3133."
+        requirement:
+          kind: allOf
+          of:
+            - kind: anyOf
+              of:
+                - kind: course
+                  course: CS|2102
+                - kind: course
+                  course: CS|2103
+            - kind: course
+              course: CS|2223
+            - kind: course
+              course: CS|3133
+    noCreditWith:
+      - CS|534
+  - courseId: CS|4342
+    description: "Cat.I In this course, students will explore both theoretical and practical aspects of machine learning, including algorithms for regression, classification, dimensionality reduction, clustering, and density estimation. Specific topics may include neural networks and deep learning, Bayesian networks and probabilistic graphical models, principal component analysis, k-means clustering, decision trees and random forests, support vector machines, and kernel methods. Recommended background: Multivariate Calculus (MA 1024 or MA 1034), Linear Algebra (such as MA 2071), Probability (MA 2621 or MA 2631), and Algorithms (CS 2223). Students may not earn credit for both CS 453X and CS 4342. Undergraduate credit may not be earned both for this course and for CS 539."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Multivariate Calculus (MA 1024 or MA 1034), Linear Algebra (such as MA 2071), Probability (MA 2621 or MA 2631), and Algorithms (CS 2223)."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: multivariate calculus
+              satisfiedBy:
+                kind: anyOf
+                of:
+                  - kind: course
+                    course: MA|1024
+                  - kind: course
+                    course: MA|1034
+            - kind: topic
+              topic: linear algebra
+              satisfiedBy:
+                kind: course
+                course: MA|2071
+            - kind: topic
+              topic: probability
+              satisfiedBy:
+                kind: anyOf
+                of:
+                  - kind: course
+                    course: MA|2621
+                  - kind: course
+                    course: MA|2631
+            - kind: topic
+              topic: algorithms
+              satisfiedBy:
+                kind: course
+                course: CS|2223
+    noCreditWith:
+      - CS|453X
+    needsReview: The no-credit sentence after this one was cut off in the snippet. Only CS 453X was recorded, from the start of the sentence.
+  - courseId: CS|4343
+    description: "This course will offer a mathematical and practical perspective on artificial neural networks for machine learning. Students will learn about the most prominent network architectures, such as for example, feedforward, recurrent, convolutional, and attention based neural networks. This course will also teach students optimization and regularization techniques used to train them — such as back-propagation, stochastic gradient descent, dropout, pooling, and batch normalization. Connections to related machine learning techniques and algorithms will be explored. In addition to understanding the mathematics behind deep learning, students will have the opportunity to train neural networks for a wide range of real-world applications. Recommended background: Machine Learning (CS 4342), and knowledge of Linear Algebra (such as MA 2071) and Algorithms (such as CS 2223) Units: 1/3 Category: II"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Machine Learning (CS 4342), and knowledge of Linear Algebra (such as MA 2071) and Algorithms (such as CS 2223)"
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: CS|4342
+            - kind: topic
+              topic: linear algebra
+              satisfiedBy:
+                kind: course
+                course: MA|2071
+            - kind: topic
+              topic: algorithms
+              satisfiedBy:
+                kind: course
+                course: CS|2223
+    noCreditWith: []
+    needsReview: "'such as' examples are not exhaustive."
+  - courseId: CS|4344
+    description: "This course introduces the core principles, models, and real-world applications of Natural Language Processing (NLP) and Large Language Models (LLMs) in the context of modern data science. Students will explore NLP tasks, build deep learning models for language understanding and generation, and apply LLMs to solve problems such as information extraction, conversational AI, summarization, and data querying. Students will interact with state-of-the-art LLMs using industry-standard APIs, gaining practical skills in prompt design, system integration, and application development. The course also includes a critical focus on LLM trust, safety, and ethical deployment, preparing students to responsibly build and evaluate generative AI systems. Through projects, students will emerge with both conceptual understanding and practical fluency in applied NLP and LLM development. Recommended background: Programming skills equivalent to (CS 1004 or CS 1101 or CS 1102) and (CS 2102 or CS2103 or CS 2119); and machine learning equivalent to (DS 3010, CS 4445, or CS4342). Units: 1/3 Category: II"
+    clauses: []
+    noCreditWith: []
+  - courseId: CS|4345
+    description: "This course introduces foundational concepts and solution strategies for designing intelligent systems composed of multiple autonomous agents. Students will learn about agent-based modeling, coordination, communication, and decision-making in cooperative and competitive environments. The course introduces core theories and algorithms for multi-agent decision-making. It also covers how contemporary AI techniques—such as deep learning and generative models—can be applied to enhance multi-agent system capabilities. Through hands-on projects, students will gain practical experience in analyzing and designing multi-agent systems for real-world applications. Recommended background: Basic knowledge of linear algebra, probability theory, and Python programming. Familiarity with machine learning and deep learning equivalent to (DS 3010, CS 4445, CS4342). Familiarity with deep learning equivalent to CS/DS 4343 encouraged. Units: 1/3 Category: II"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Basic knowledge of linear algebra, probability theory, and Python programming."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: basic knowledge of linear algebra
+            - kind: topic
+              topic: probability theory
+            - kind: topic
+              topic: Python programming
+    noCreditWith: []
+  - courseId: CS|4402
+    description: "This course focuses on reverse engineering software and computing systems in the context of cybersecurity. Students will learn how to analyze compiled programs, binaries, and system components to understand their structure, functionality, and potential vulnerabilities. Topics include disassembly, decompilation, debugging, and dynamic analysis, as well as techniques for reconstructing program logic and uncovering hidden or malicious functionality. The course highlights applications such as malware analysis, vulnerability discovery, and security auditing, while also addressing the ethical and legal considerations of reverse engineering. Hands-on labs and projects provide students with practical experience. Recommend Background: This course assumes a substantive understanding of machine organization and assembly language (CS 2011), systems programming concepts (CS 2303), and operating systems (CS 3013)."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommend Background: This course assumes a substantive understanding of machine organization and assembly language (CS 2011), systems programming concepts (CS 2303), and operating systems (CS 3013)."
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: CS|2011
+            - kind: course
+              course: CS|2303
+            - kind: course
+              course: CS|3013
+    noCreditWith: []
+  - courseId: CS|4403
+    description: "This course focuses on securing web applications and the technologies that support them. Students will study common application-layer vulnerabilities such as SQL injection, cross-site scripting (XSS), cross-site request forgery (CSRF), broken authentication, insecure session management, and privilege escalation, along with corresponding defenses including secure coding practices, input validation, proper authentication, session management, and access control. The course emphasizes understanding web application architectures, frameworks, and protocols, rather than lower-level network security. Hands-on labs using virtual machines, containers, and cloud environments provide practical experience in penetration testing and securing real-world web applications. Recommended Background: This course assumes a basic understanding of program design (CS 1101 or CS 1102), systems programming concepts (CS 2303), and web technologies (CS 4241)"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: This course assumes a basic understanding of program design (CS 1101 or CS 1102), systems programming concepts (CS 2303), and web technologies (CS 4241)"
+        requirement:
+          kind: allOf
+          of:
+            - kind: anyOf
+              of:
+                - kind: course
+                  course: CS|1101
+                - kind: course
+                  course: CS|1102
+            - kind: course
+              course: CS|2303
+            - kind: course
+              course: CS|4241
+    noCreditWith: []
+  - courseId: CS|4405
+    description: "This course provides a comprehensive introduction to the principles and techniques of digital forensics. Topics include an overview of legal frameworks and formal procedures that guide digital forensic investigations, digital evidence collection and data recovery, forensic analysis across different operating systems and file systems, data hiding, and mobile forensics. Students will gain practical experience with forensic tools through a sequence of hands-on labs. Recommended Background: This course assumes a basic understanding of operating systems (CS 3013). Cat II"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: This course assumes a basic understanding of operating systems (CS 3013)."
+        requirement:
+          kind: course
+          course: CS|3013
+    noCreditWith: []
+  - courseId: CS|4432
+    description: "Cat. II This course concentrates on the study of the internals of database management systems. Topics include principles and theories of physical storage management, advanced query languages, query processing and optimization, index structures for relational databases, transaction processing, concurrency control, distributed databases, and database recovery, security, client server and transaction processing systems. Students may be expected to design and implement software components that make up modern database systems. Undergraduate credit may not be earned both for this course and CS 542. Recommended background: CS 3431 and CS 3733. This course will be offered in 2019-20, and in alternating years thereafter."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: CS 3431 and CS 3733."
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: CS|3431
+            - kind: course
+              course: CS|3733
+    noCreditWith:
+      - CS|542
+  - courseId: CS|4433
+    description: "This course introduces the emerging techniques and infrastructures for big data management and analytics including parallel and distributed database systems, map-reduce, Spark, and NO-SQL infrastructures, data stream processing systems, scalable analytics and mining, and cloud-based computing. Query processing and optimization, access methods, and storage layouts developed on these infrastructures will be covered. Students are expected to engage in hands-on projects using one or more of these technologies. Recommended background: Knowledge in database systems at the level of CS4432, and programming experience are assumed."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Knowledge in database systems at the level of CS4432, and programming experience are assumed."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: knowledge in database systems
+              satisfiedBy:
+                kind: course
+                course: CS|4432
+            - kind: topic
+              topic: programming experience
+    noCreditWith: []
+  - courseId: CS|4445
+    description: "Cat. II This course provides an introduction to Knowledge Discovery in Databases (KDD) and Data Mining. KDD deals with data integration techniques and with the discovery, interpretation and visualization of patterns in large collections of data. Topics covered in this course include data warehousing and mediation techniques; data mining methods such as rule-based learning, decision trees, association rules and sequence mining; and data visualization. The work discussed originates in the fields of artificial intelligence, machine learning, statistical data analysis, data visualization, databases, and information retrieval. Several scientific and industrial applications of KDD will be studied. Recommended background: MA 2611, CS 2223, and CS 3431, or CS 3733. This course will be offered in 2019-20, and in alternating years thereafter."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: MA 2611, CS 2223, and CS 3431, or CS 3733."
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: MA|2611
+            - kind: course
+              course: CS|2223
+            - kind: anyOf
+              of:
+                - kind: course
+                  course: CS|3431
+                - kind: course
+                  course: CS|3733
+    noCreditWith: []
+  - courseId: CS|4518
+    description: "Cat. II The goal of this course is to acquaint students with fundamental concepts and state-of-the-art computer science literature in mobile and ubiquitous computing. Topics to be covered include mobile systems issues, human activity and emotion sensing, location sensing, mobile human-computer interaction, mobile social networking, mobile health, power saving techniques, energy and mobile performance measurement studies, and mobile security. The course will introduce the programming of mobile devices such as smartphones running the Android operating system. Recommended background: Proficiency in programming in Java, including classes, inheritance, exceptions, interfaces, and polymorphism (CS 2102 or equivalent). Students may not earn credit for both CS 403X and CS 4518."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Proficiency in programming in Java, including classes, inheritance, exceptions, interfaces, and polymorphism (CS 2102 or equivalent)."
+        requirement:
+          kind: topic
+          topic: proficiency in programming in Java, including classes, inheritance, exceptions, interfaces, and polymorphism
+          satisfiedBy:
+            kind: course
+            course: CS|2102
+            orEquivalent: true
+    noCreditWith:
+      - CS|403X
+  - courseId: CS|4533
+    description: "Cat. II This course studies the compiling process for high-level languages. Topics include lexical analysis, syntax analysis, semantic analysis, symbol tables, intermediate languages, optimization, code generation and run-time systems. Students will be expected to use compiler tools to implement the front end, and to write a program to implement the back end, of a compiler for a recursive programming language. Undergraduate credit may not be earned for both this course and for CS 544. Recommended Background: CS 2102 or CS 2103, and CS 3133. This course will be offered in 2020-21, and in alternating years thereafter."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: CS 2102 or CS 2103, and CS 3133."
+        requirement:
+          kind: allOf
+          of:
+            - kind: anyOf
+              of:
+                - kind: course
+                  course: CS|2102
+                - kind: course
+                  course: CS|2103
+            - kind: course
+              course: CS|3133
+    noCreditWith:
+      - CS|544
+  - courseId: CS|4536
+    description: "Cat. II This course covers the design and implementation of programming languages. Topics include data structures for representing programming languages, implementing control structures (such as functions, recursion, and exceptions), garbage collection, and type systems. Students will be expected to implement several small languages using a functional programming language. Recommended background: CS 2303, CS 3133, and experience programming in a functional language (as provided by CS 1101 or CS 1102). Undergraduate credit may not be earned for both this course and CS 536. This course will be offered in 2019-20, and in alternating years thereafter."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: CS 2303, CS 3133, and experience programming in a functional language (as provided by CS 1101 or CS 1102)."
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: CS|2303
+            - kind: course
+              course: CS|3133
+            - kind: topic
+              topic: experience programming in a functional language
+              satisfiedBy:
+                kind: anyOf
+                of:
+                  - kind: course
+                    course: CS|1101
+                  - kind: course
+                    course: CS|1102
+    noCreditWith:
+      - CS|536
+  - courseId: CS|4731
+    description: "Cat. IThis course studies the use of the computer to model and graphically render two- and three-dimensional structures. Topics include graphics devices and languages, 2- and 3-D object representations, and various aspects of rendering realistic images.Students will be expected to implement programs which span all stages of the 3-D graphics pipeline, including clipping, projection, arbitrary viewing, hidden surface removal and shading.Undergraduate credit may not be earned both for this course and for CS 543.Recommended background: CS 2223, CS 2303 and MA 2071."
+    clauses: []
+    noCreditWith: []
+  - courseId: CS|4732
+    description: "Cat. II This course provides an in-depth examination of the algorithms, data structures, and techniques used in modeling and rendering dynamic scenes. Topics include animation hardware and software, parametric blending techniques, modeling physical and articulated objects, forward and inverse kinematics, key-frame, procedural, and behavioral animation, and free-form deformation. Students will be expected to develop programs to implement low-level animation algorithms as well as use commercial animation tools to design and produce small to moderate sized animations. Recommended background: CS 4731. This course will be offered in 2020-21, and in alternating years thereafter."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: CS 4731."
+        requirement:
+          kind: course
+          course: CS|4731
+    noCreditWith: []
+  - courseId: CS|4801
+    description: "Cat. I This course provides an introduction to modern cryptography and communication security. It focuses on how cryptographic algorithms and protocols work and how to use them. The course covers the concepts of block ciphers and message authentication codes, public key encryption, digital signatures, and key establishment, as well as common examples and uses of such schemes, including the AES, RSA-OAEP, and the Digital Signature Algorithm. Basic cryptanalytic techniques and examples of practical security solutions are explored to understand how to design and evaluate modern security solutions. The course is suited for students interested in cryptography or other security related fields such as trusted computing, network and OS security, or general IT security. Recommended background: Experience in expressing algorithms in a modern programming language (e.g., ECE 2049 or CS 2301). Suggested background: Discrete mathematics (CS 2022/MA 2201 or equivalent)."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Experience in expressing algorithms in a modern programming language (e.g., ECE 2049 or CS 2301)."
+        requirement:
+          kind: topic
+          topic: experience in expressing algorithms in a modern programming language
+          satisfiedBy:
+            kind: anyOf
+            of:
+              - kind: course
+                course: ECE|2049
+              - kind: course
+                course: CS|2301
+    noCreditWith: []
+    needsReview: The 'e.g.' example is not exhaustive.
+  - courseId: CS|4804
+    description: "CS4804 Data Visualization Cat.II. This course trains students in data visualization, the graphical communication of data and information for presentation, confirmation, and exploration. Students learn the stages of the visualization pipeline, including data characterization, mapping data attributes to graphical attributes, user task abstraction, visual display techniques, tools, paradigms, and perceptual issues. Students evaluate the effectiveness of visualizations for specific data, task, and user types. Students implement visualization algorithms and undertake projects involving the use of commercial and public-domain visualization tools. Recommended background: CS 2102 or CS 2103, and CS 2223."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: CS 2102 or CS 2103, and CS 2223."
+        requirement:
+          kind: allOf
+          of:
+            - kind: anyOf
+              of:
+                - kind: course
+                  course: CS|2102
+                - kind: course
+                  course: CS|2103
+            - kind: course
+              course: CS|2223
+    noCreditWith: []
+  - courseId: CS|5003
+    description: "This is the study of mathematical foundations of computing, at a slower pace than that of CS 503 and with correspondingly fewer background assumptions. Topics include finite automata and regular languages, pushdown automata and context-free languages, Turing machines and decidability, and an introduction to computational complexity. (Prerequisite: an undergraduate course in discrete mathematics.)"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "(Prerequisite: an undergraduate course in discrete mathematics.)"
+        requirement:
+          kind: topic
+          topic: an undergraduate course in discrete mathematics
+    noCreditWith: []
+  - courseId: CS|5007
+    description: "This is an introductory graduate course teaching core computer science topics typically found in an undergraduate Computer Science curriculum, but at a graduate-level pace. It is primarily intended for students with little formal preparation in Computer Science to gain experience with fundamental Computer Science topics. After a review of programming concepts the focus of the course will be on data structures from the point of view of the operations performed upon the data and to apply analysis and design techniques to non-numeric algorithms that act on data structures. The data structures covered include lists, stacks, queues, trees and graphs. Projects will focus on the writing of programs to appropriately integrate data structures and algorithms for a variety of applications. This course may not be used to satisfy degree requirements for a B.S., M.S., or Ph.D. degree in Computer Science or a minor in Computer Science. It may satisfy the requirements for other degree programs at the discretion of the program review committee for the particular degree. (Prerequisites: Experience with at least one high-level programming language such as obtained in an undergraduate programming course.)"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "Prerequisites: Experience with at least one high-level programming language such as obtained in an undergraduate programming course.)"
+        requirement:
+          kind: topic
+          topic: experience with at least one high-level programming language
+          satisfiedBy:
+            kind: topic
+            topic: an undergraduate programming course
+    noCreditWith: []
+  - courseId: CS|502
+    description: "The design and theory of multi-programmed operating systems, concurrent processes, process communication, input/output supervisors, memory management, resource allocation and scheduling are studied. (Prerequisites: knowledge of computer organization and elementary data structures, and a strong programming background.)"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "(Prerequisites: knowledge of computer organization and elementary data structures, and a strong programming background.)"
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: knowledge of computer organization
+            - kind: topic
+              topic: elementary data structures
+            - kind: topic
+              topic: a strong programming background
+    noCreditWith:
+      - CS|3013
+  - courseId: CS|503
+    description: "This is the study of mathematical foundations of computing. Topics include finite automataand regular languages, pushdown automata and context-free languages, Turing machines and decidability, and an introduction to computational complexity. (Prerequisites: Knowledge of discretemathematics and algorithms at the undergraduate level, and some facility with reading and writingmathematical proofs.)"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "(Prerequisites: Knowledge of discretemathematics and algorithms at the undergraduate level, and some facility with reading and writingmathematical proofs.)"
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: discrete mathematics and algorithms at the undergraduate level
+            - kind: topic
+              topic: some facility with reading and writing mathematical proofs
+    noCreditWith: []
+  - courseId: CS|5084
+    description: "This course is an introduction to the design, analysis and proofs of correctness of algorithms. Examples are drawn from algorithms for many areas. Analysis techniques include asymptotic worst case and average case, as well as amortized analysis. Average case analysis includes the development of a probability model. Techniques for proving lower bounds on complexity are discussed, along with NP-completeness. Prerequisites: an undergraduate knowledge of discrete mathematics and data structures. Note: students with a strong background in design and analysis of computer systems, at the level equal to a BS in computer science, should not take CS 5084 and should consider taking CS 504 or CS 584."
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "Prerequisites: an undergraduate knowledge of discrete mathematics and data structures."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: an undergraduate knowledge of discrete mathematics
+            - kind: topic
+              topic: data structures
+    noCreditWith: []
+  - courseId: CS|509
+    description: "This course introduces students to a methodology and specific design techniques for team-based development of a software system. Against the back-drop of the software engineering life-cycle, this course focuses on the object-oriented paradigm and its supporting processes and tools. Students will be exposed to industrial-accepted standards and tools, such as requirements elicitation, specification, modeling notations, design patterns, software architecture, integrated development environments and testing frameworks. Students will be expected to work together in teams in the complete specification, implementation and testing of a software application. Prerequisites: knowledge of a recursive high-level language and data structures. An undergraduate course in software engineering is desirable."
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "Prerequisites: knowledge of a recursive high-level language and data structures."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: knowledge of a recursive high-level language
+            - kind: topic
+              topic: data structures
+      - strength: suggested
+        timing: prior
+        sourceText: An undergraduate course in software engineering is desirable.
+        requirement:
+          kind: topic
+          topic: an undergraduate course in software engineering
+    noCreditWith:
+      - CS|3733
+  - courseId: CS|513
+    description: "This course provides an introduction to the theory and practice of the design of computer and communications networks, including the ISO seven-layer reference model. Analysis of network topologies and protocols, including performance analysis, is treated. Current network types including local area and wide area networks are introduced, as are evolving network technologies. The theory, design and performance of local area networks are emphasized. The course includes an introduction to queueing analysis and network programming. (Prerequisites: knowledge of the C programming language is assumed. CS 504 or equivalent background in CS 5084 or CS 584.)"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "(Prerequisites: knowledge of the C programming language is assumed."
+        requirement:
+          kind: topic
+          topic: knowledge of the C programming language
+      - strength: required
+        timing: prior
+        sourceText: CS 504 or equivalent background in CS 5084 or CS 584.)
+        requirement:
+          kind: anyOf
+          of:
+            - kind: course
+              course: CS|504
+              orEquivalent: true
+            - kind: course
+              course: CS|5084
+              orEquivalent: true
+            - kind: course
+              course: CS|584
+              orEquivalent: true
+    noCreditWith: []
+  - courseId: CS|521
+    description: "This course is an introduction to mathematical logic from a computer science perspective. Topics covered include the exploration of model theory, proof theory, and decidability for propositional and first-order classical logics, as well as various non-classical logics that provide useful tools for computer science (such as temporal and intuitionistic logics). The course stresses the application of logic to various areas of computer science such as computability, theorem proving, programming languages, specification, and verification. The specific applications included will vary by instructor. (Prerequisites: CS 503, or equivalent background in basic models of computation.)"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "(Prerequisites: CS 503, or equivalent background in basic models of computation.)"
+        requirement:
+          kind: anyOf
+          of:
+            - kind: course
+              course: CS|503
+              orEquivalent: true
+            - kind: topic
+              topic: basic models of computation
+    noCreditWith: []
+  - courseId: CS|522
+    description: "This course provides an introduction to a broad range of modern numerical techniques that are widely used in computational mathematics, science, and engineering. It is suitable for both mathematics majors and students from other departments. It covers introductory-level material for subjects treated in greater depth in MA 512 and MA 514 and also topics not addressed in either of those courses. Subject areas include numerical methods for systems of linear and nonlinear equations, interpolation and approximation, differentiation and integration, and differential equations. Specific topics include basic direct and iterative methods for linear systems; classical rootfinding methods; Newton’s method and related methods for nonlinear systems; fixed-point iteration; polynomial, piecewise polynomial, and spline interpolation methods; least-squares approximation; orthogonal functions and approximation; basic techniques for numerical differentiation; numerical integration, including adaptive quadrature; and methods for initial-value problems for ordinary differential equations. Additional topics may be included at the instructor’s discretion as time permits. Both theory and practice are examined. Error estimates, rates of convergence, and the consequences of finite precision arithmetic are also discussed. Topics from linear algebra and elementary functional analysis will be introduced as needed. These may include norms and inner products, orthogonality and orthogonalization, operators and projections, and the concept of a function space. (Prerequisite: knowledge of undergraduate linear algebra and differential equations is assumed, as is familiarity with MATLAB or a higher-level programming language.)"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "(Prerequisite: knowledge of undergraduate linear algebra and differential equations is assumed, as is familiarity with MATLAB or a higher-level programming language.)"
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: undergraduate linear algebra and differential equations
+            - kind: topic
+              topic: familiarity with MATLAB or a higher-level programming language
+    noCreditWith: []
+  - courseId: CS|525
+    description: "his course presents fundamental concepts and state-of-the-art research in sequential decision making that involves a single decision-making agent as the starting point and ultimately multiple agents that can cooperate or compete strategically. Topics covered include single-agent planning and reinforcement learning and their extensions to multi-agent games. Coursework includes mathematics and programming assignments that analyze and implement the presented single- and multi-agent decision making algorithms, as well as reading and critiquing research papers. Students can choose to do a project that is tailored to their interests and backgrounds. Recommended Background: Basic knowledge of linear algebra and probability theory, and experience with machine learning."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: Basic knowledge of linear algebra and probability theory, and experience with machine learning."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: basic knowledge of linear algebra and probability theory
+            - kind: topic
+              topic: experience with machine learning
+    noCreditWith: []
+  - courseId: CS|526
+    description: "This course focuses on human-robot interaction and social robot learning, exploring the leading research, design principles and technical challenges we face in developing robots capable of operating in real-world human environments. The course will cover a range of multidisciplinary topics, including physical embodiment, mixed-initiative interaction, multi-modal interfaces, human-robot teamwork, learning algorithms, aspects of social cognition, and long-term interaction. These topics will be pursued through independent reading, class discussion, and a final project. (Prerequisites: Mature programming skills and at least undergraduate level knowledge of Artificial Intelligence, such as CS 4341. No hardware experience is required.)"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "(Prerequisites: Mature programming skills and at least undergraduate level knowledge of Artificial Intelligence, such as CS 4341."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: mature programming skills
+            - kind: topic
+              topic: at least undergraduate level knowledge of Artificial Intelligence
+              satisfiedBy:
+                kind: course
+                course: CS|4341
+    noCreditWith: []
+    needsReview: "'such as CS 4341' is an example, so other AI courses may also qualify."
+  - courseId: CS|528
+    description: "This course acquaints participants with the fundamental concepts and state-of-the-art computer science research in mobile and ubiquitous computing. Topics covered include mobile systems issues, human activity and emotion sensing, location sensing, mobile HCI, mobile social networking, mobile health, power saving techniques, energy and mobile performance measurement studies and mobile security. The course consists of weekly presentations on current advanced literature, discussions and a term project. The term project involves implementing research ideas on a mobile device such as a smartphone. Prerequisite: CS 502 or an equivalent graduate level course in Operating Systems, and CS 513 or an equivalent graduate level course in Computer Networks, and proficiency in a high level programming language."
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "Prerequisite: CS 502 or an equivalent graduate level course in Operating Systems, and CS 513 or an equivalent graduate level course in Computer Networks, and proficiency in a high level programming language."
+        requirement:
+          kind: allOf
+          of:
+            - kind: anyOf
+              of:
+                - kind: course
+                  course: CS|502
+                - kind: topic
+                  topic: a graduate level course in Operating Systems
+            - kind: anyOf
+              of:
+                - kind: course
+                  course: CS|513
+                - kind: topic
+                  topic: a graduate level course in Computer Networks
+            - kind: topic
+              topic: proficiency in a high level programming language
+    noCreditWith: []
+  - courseId: CS|534
+    description: "This course gives a broad survey of artificial intelligence. The course will cover methods from search, probabilistic reasoning, and learning, among other topics. Selected topics involving the applications of these tools are investigated. Such topics might include natural language understanding, scene understanding, game playing, and planning. (Prerequisites: familiarity with data structures and a high-level programming language.)"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "(Prerequisites: familiarity with data structures and a high-level programming language.)"
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: familiarity with data structures
+            - kind: topic
+              topic: a high-level programming language
+    noCreditWith: []
+  - courseId: CS|536
+    description: "This course discusses the fundamental concepts and general principles underlying current programming languages and models. Topics include control and data abstractions, language processing and binding, indeterminacy and delayed evaluation, and languages and models for parallel and distributed processing. A variety of computational paradigms are discussed: functional programming, logic programming, object-oriented programming and data flow programming. (Prerequisites: student is expected to know a recursive programming language and to have an undergraduate course in data structures.)"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "(Prerequisites: student is expected to know a recursive programming language and to have an undergraduate course in data structures.)"
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: a recursive programming language
+            - kind: topic
+              topic: an undergraduate course in data structures
+    noCreditWith: []
+  - courseId: CS|539
+    description: "The focus of this course is machine learning for knowledge-based systems. It will include reviews of work on similarity-based learning (induction), explanation-based learning, analogical and case-based reasoning and learning, and knowledge compilation. It will also consider other approaches to automated knowledge acquisition as well as connectionist learning. (Prerequisite: CS 534 or equivalent, or permission of the instructor.)"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "(Prerequisite: CS 534 or equivalent, or permission of the instructor.)"
+        requirement:
+          kind: anyOf
+          of:
+            - kind: course
+              course: CS|534
+              orEquivalent: true
+            - kind: permission
+              text: permission of the instructor
+    noCreditWith: []
+  - courseId: CS|541
+    description: "This course will offer a mathematical and practical perspective on artificial neural networks for machine learning. Students will learn about the most prominent network architectures including multilayer feedforward neural networks, convolutional neural networks (CNNs), auto-encoders, recurrent neural networks (RNNs), and generative-adversarial networks (GANs). This course will also teach students optimization and regularization techniques used to train them -- such as back-propagation, stochastic gradient descent, dropout, pooling, and batch normalization. Connections to related machine learning techniques and algorithms, such as probabilistic graphical models, will be explored. In addition to understanding the mathematics behind deep learning, students will also engage in hands-on course projects. Students will have the opportunity to train neural networks for a wide range of applications, such as object detection, facial expression recognition, handwriting analysis, and natural language processing. Prerequisite: Machine Learning (CS 539), and knowledge of Linear Algebra (such as MA 2071) and Algorithms (such as CS 2223)."
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "Prerequisite: Machine Learning (CS 539), and knowledge of Linear Algebra (such as MA 2071) and Algorithms (such as CS 2223)."
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: CS|539
+            - kind: topic
+              topic: linear algebra
+              satisfiedBy:
+                kind: course
+                course: MA|2071
+            - kind: topic
+              topic: algorithms
+              satisfiedBy:
+                kind: course
+                course: CS|2223
+    noCreditWith: []
+    needsReview: "'such as' examples are not exhaustive."
+  - courseId: CS|542
+    description: "An introduction to the theory and design of database management systems. Topics covered include internals of database management systems, fundamental concepts in database theory, and database application design and development. In particular, logical design and conceptual modeling, physical database design strategies, relational data model and query languages, query optimization, transaction management and distributed databases. Typically there are hands-on assignments and/or a course project. Selected topics from the current database research literature may be touched upon as well. (Prerequisite: CS 5084 would be helpful.)"
+    clauses:
+      - strength: suggested
+        timing: prior
+        sourceText: "(Prerequisite: CS 5084 would be helpful.)"
+        requirement:
+          kind: course
+          course: CS|5084
+    noCreditWith: []
+  - courseId: CS|544
+    description: "A general approach to the design of language processors is presented without regard for either the source language or target machine. All phases of compilation and interpretation are investigated in order to give the student an appreciation for the overall construction of a compiler. Typical projects may include implementation of a small compiler for a recursive or special-purpose language. (Prerequisites: knowledge of several higher-level languages and at least one assembly language. The material in CS 503 is helpful.)"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "(Prerequisites: knowledge of several higher-level languages and at least one assembly language."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: knowledge of several higher-level languages
+            - kind: topic
+              topic: at least one assembly language
+      - strength: suggested
+        timing: prior
+        sourceText: The material in CS 503 is helpful.
+        requirement:
+          kind: course
+          course: CS|503
+    noCreditWith: []
+  - courseId: CS|545
+    description: "This course presents fundamental concepts of digital image processing and an introduction to machine vision. Image processing topics will include visual perception, image formation, imaging geometries, image transform theory and applications, enhancement, restoration, encoding and compression. Machine vision topics will include feature extraction and representation, stereo vision, model-based recognition, motion and image flow, and pattern recognition. Students will be required to complete programming assignments in a high-level language. (Prerequisites: working knowledge of undergraduate level signal analysis and linear algebra; familiarity with probability theory is helpful but not necessary.)"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "(Prerequisites: working knowledge of undergraduate level signal analysis and linear algebra;"
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: working knowledge of undergraduate level signal analysis
+            - kind: topic
+              topic: linear algebra
+      - strength: suggested
+        timing: prior
+        sourceText: familiarity with probability theory is helpful but not necessary.)
+        requirement:
+          kind: topic
+          topic: familiarity with probability theory
+    noCreditWith: []
+  - courseId: CS|546
+    description: "This course prepares graduate students for research in human-computer interaction. Topics include the design and evaluation of interactive computer systems, basic psychological considerations of interaction, interactive language design, interactive hardware design and special input/output techniques. Students are expected to present and review recent research results from the literature, and to complete several projects. (Prerequisites: students are expected to have mature programming skills. Knowledge of software engineering would be an advantage.)"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "(Prerequisites: students are expected to have mature programming skills."
+        requirement:
+          kind: topic
+          topic: mature programming skills
+    noCreditWith: []
+  - courseId: CS|547
+    description: "This course introduces the theory, design, and implementation of text-based and Web-based information retrieval systems. Students learn the key concepts and models relevant to information retrieval and natural language processing on largescale corpus such as the Web and social systems. Topics include vector space model, crawling, indexing, web search, ranking, recommender systems, embedding and language model. Prerequisites: statistical learning at the level of DS 502/MA 543 and programming skills at the level of CS 5007."
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "Prerequisites: statistical learning at the level of DS 502/MA 543 and programming skills at the level of CS 5007."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: statistical learning
+              satisfiedBy:
+                kind: anyOf
+                of:
+                  - kind: course
+                    course: DS|502
+                  - kind: course
+                    course: MA|543
+            - kind: topic
+              topic: programming skills
+              satisfiedBy:
+                kind: course
+                course: CS|5007
+    noCreditWith: []
+  - courseId: CS|548
+    description: "This course presents current research in Knowledge Discovery in Databases (KDD) dealing with data integration, mining, and interpretation of patterns in large collections of data. Topics include data warehousing and data preprocessing techniques; data mining techniques for classification, regression, clustering, deviation detection, and association analysis; and evaluation of patterns minded from data. Industrial and scientific applications are discussed. Recommended background: Background in artificial intelligence, databases, and statistics at the undergraduate level, or permission of the instructor. Proficiency in a high level programming language."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Background in artificial intelligence, databases, and statistics at the undergraduate level, or permission of the instructor."
+        requirement:
+          kind: anyOf
+          of:
+            - kind: topic
+              topic: background in artificial intelligence, databases, and statistics at the undergraduate level
+            - kind: permission
+              text: permission of the instructor
+    noCreditWith: []
+  - courseId: CS|549
+    description: "This course examines current issues in the computer implementation of visual perception. Topics include image formation, edge detection, segmentation, shape-from-shading, motion, stereo, texture analysis, pattern classification and object recognition. We will discuss various representations for visual information, including sketches and intrinsic images. (Prerequisites: CS 534, CS 543, CS 545, or the equivalent of one of these courses.)"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "(Prerequisites: CS 534, CS 543, CS 545, or the equivalent of one of these courses.)"
+        requirement:
+          kind: anyOf
+          of:
+            - kind: course
+              course: CS|534
+              orEquivalent: true
+            - kind: course
+              course: CS|543
+              orEquivalent: true
+            - kind: course
+              course: CS|545
+              orEquivalent: true
+    noCreditWith: []
+  - courseId: CS|551
+    description: "DS 551 Reinforcement Learning (3 credits) Reinforcement Learning (RL) is an area of machine learning concerned with how agents take actions in an environment with a goal of maximizing some notion of “cumulative reward”. The problem, due to its generality, is studied in many disciplines, and applied in many domains, including robotics and industrial automation, marketing, education and training, health and medicine, text, speech, dialog systems, finance, among many others. In this course, we will cover topics including: Markov decision processes, reinforcement learning algorithms, value function approximation, actor-critics, policy gradient methods, representations for reinforcement learning (including deep learning), and inverse reinforcement learning. The course project(s) will require the implementation and application of many of the algorithms discussed in class. Prerequisites: Machine Learning (CS 539), statistical learning at the level of DS 502/MA 543, and programming skills at the level of CS 5007."
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "Prerequisites: Machine Learning (CS 539), statistical learning at the level of DS 502/MA 543, and programming skills at the level of CS 5007."
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: CS|539
+            - kind: topic
+              topic: statistical learning
+              satisfiedBy:
+                kind: anyOf
+                of:
+                  - kind: course
+                    course: DS|502
+                  - kind: course
+                    course: MA|543
+            - kind: topic
+              topic: programming skills
+              satisfiedBy:
+                kind: course
+                course: CS|5007
+    noCreditWith: []
+  - courseId: CS|552
+    description: "CS 552 / DS552. Generative Artificial Intelligence (3 credits) Generative Artificial Intelligence (Gen-AI) is a class of machine learning models that generate new data (text, images, faces, voice, artwork) that is near indistinguishable from the equivalent real data typically generated by humans. These models are trained based on realistic example data sets from the real world. This course covers the underlying fundamentals of generative models. It also introduces the design and modeling of some of the modern generative models: Variational Autoencoders (VAEs), Generative Adversarial Networks (GANs), Diffusion models, ChatGPT, Large Language Models, to name a few. Several applications will be discussed, ranging from image generation for engineering or science applications to the utilization of generated data for data augmentation in AI systems. Ethical concerns related to the danger of these generative technologies concerning issues from misinformation, bias, to data ownership are reviewed. Recommended Background: Core artificial intelligence classes, such as machine learning and deep learning, or equivalent background is highly recommended."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: Core artificial intelligence classes, such as machine learning and deep learning, or equivalent background is highly recommended."
+        requirement:
+          kind: topic
+          topic: core artificial intelligence classes, such as machine learning and deep learning, or equivalent background
+    noCreditWith: []
+    needsReview: The examples are introduced with 'such as', so the course list is not exhaustive.
+  - courseId: CS|553
+    description: "CS 553 / DS 553: Machine Learning Development and Operations (MLOps) (3 credits) This course teaches students the computational skills required in the fields of Artificial Intelligence (AI) and Data Science. As data-driven decision-making and AI applications continue to transform industries, proficiency in programming and machine learning tools is important. In this course, you will develop a strong foundation in programming languages commonly used in AI and Data Science (such as Python). This course will cover the development, debugging, deployment, and subsequent monitoring phases of models in end-to-end pipelines core to machine learning systems. You will also familiarize yourself with popular libraries, frameworks and debugging on IDEs, such as PyCharm, PyTorch, scikit-learn, and/or pandas. Possible topics may include practice code development with a copilot as well as deployment of models on a cloud computing environment The student will engage in hands-on projects to practice their programming skills to solve realworld AI and Data Science problems. Recommended Background: Basic understanding of programming concepts, and preferably some python knowledge."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: Basic understanding of programming concepts, and preferably some python knowledge."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: basic understanding of programming concepts
+            - kind: topic
+              topic: some Python knowledge
+    noCreditWith: []
+    needsReview: Says 'preferably' for the Python knowledge, so that item is not strictly required. Treated as required here.
+  - courseId: CS|554
+    description: "CS 554 / DS 554: Natural Language Processing (3 credits) Natural Language Processing (NLP) is an interdisciplinary field at the intersection of artificial intelligence, linguistics, and computer science, dedicated to enabling computers to understand, interpret, and generate human language. NLP underpins advancements in human-computer interaction, information retrieval, sentiment analysis, chatbots, and a multitude of other applications. The course may cover a wide range of topics, including language modeling, sequence-to-sequence architectures, sentiment analysis, machine translation, and advanced techniques for natural language understanding and generation, providing a comprehensive foundation for NLP expertise. Recommended Background: Programming skills at the level of CS 5007."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: Programming skills at the level of CS 5007."
+        requirement:
+          kind: topic
+          topic: programming skills
+          satisfiedBy:
+            kind: course
+            course: CS|5007
+    noCreditWith: []
+  - courseId: CS|555
+    description: "CS 555 / DS 555: Responsible Artificial Intelligence (3 credits) Artificial Intelligence (AI) algorithms have a significant impact on people’s lives. In this course, we discuss social responsibility around data privacy, bias in data and decision making, policies as guardrails, fairness and transparency in the context of applying AI algorithms. Case studies considering societal challenges caused by AI technologies may include AI-based hiring recommendations stemming from societal biases present in training datasets, AI-empowered selfdriving cars behaving in a dangerous manner when encountering atypical road conditions, digital health applications inadvertently revealing private patient information, or large language models like chat-GPT generating incorrect or harmful responses. This course also studies AI-based algorithmic solutions to some of these challenges. These include the design of robust machine learning algorithms with constraints to ensure fairness, privacy, and safety. Strategies for how to apply these methods to design safe and fair AI are introduced. Topics may include min-max optimization with applications to training machine learning models robust to adversarial attacks, stochastic methods for preserving privacy of sensitive data, and multi-agent machine learning models for reducing algorithmic bias and polarization in recommender systems. Recommended Background: Machine Learning at the graduate level, undergraduate level (CS 4342), or equivalent knowledge."
+    clauses: []
+    noCreditWith: []
+  - courseId: CS|556
+    description: "eep Learning, a core of modern Artificial Intelligence, is rapidly expanding to resourceconstrained devices, including smartphones, wearables, and intelligent embedded systems for improving response time, privacy, and reliability. This course focuses on bringing these powerful deep-learning applications from central data centers and large GPUs to distributed ubiquitous systems. On-Device Deep Learning is an interdisciplinary topic at the intersection of artificial intelligence and ubiquitous systems, dedicated to enabling computing on edge devices. This course includes a wide range of topics related to deep learning in resource constrained settings including pruning and sparsity, quantization, neural architecture search, knowledge distillation, on-device training and transfer learning, distributed training, gradient compression, federated learning, efficient data movement and accelerator design, dynamic network inference, and advanced compression and approximation techniques for enabling on-device deep neural network inference and training. This course provides a comprehensive foundation for cutting-edge “tinyML” expertise. Recommended background: The students should have an introductory undergraduate-level or graduate-level introductory background in machine learning and deep neural networks."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: The students should have an introductory undergraduate-level or graduate-level introductory background in machine learning and deep neural networks."
+        requirement:
+          kind: topic
+          topic: an introductory undergraduate-level or graduate-level background in machine learning and deep neural networks
+    noCreditWith: []
+  - courseId: CS|557
+    description: "Software is responsible for enforcing many central security goals in computer systems. These goalsinclude authenticating users and other external principals, authorizing their actions, and ensuringthe integrity and confidentiality of their data. This course studies how to design, implement,and analyze mechanisms to enforce these goals in both web systems and programs in traditional languages. Topics include: identifying programming choices that lead to reliable or flawed securityoutcomes, successful and unsuccessful strategies for incorporating cryptography into software,and analysis techniques that identify security vulnerabilities. The course will cover both practical and theoretical aspects of secure software, and will include a substantial secure software designproject. (Prerequisites: Programming and software engineering experience (commensurate with anundergraduate Computer Science major), and background in foundational models of computingsystems (on par with CS 5003 or CS 503).)"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "(Prerequisites: Programming and software engineering experience (commensurate with anundergraduate Computer Science major), and background in foundational models of computingsystems (on par with CS 5003 or CS 503).)"
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: programming and software engineering experience (commensurate with an undergraduate Computer Science major)
+            - kind: topic
+              topic: background in foundational models of computing systems
+              satisfiedBy:
+                kind: anyOf
+                of:
+                  - kind: course
+                    course: CS|5003
+                    orEquivalent: true
+                  - kind: course
+                    course: CS|503
+                    orEquivalent: true
+    noCreditWith: []
+  - courseId: CS|558
+    description: "This course covers core security threats and mitigations at the network level. Topics include: denial-of-service, network capabilities, intrusion detection and prevention systems, worms, botnets, Web attacks, anonymity, honeypots, cybercrime (such as phishing), and legality and ethics. The course prepares students to think broadly and concretely about network security; it is not designed to teach students low-level tools for monitoring or maintaining system security. Assignments and projects will assess each student’s ability to think both conceptually and practically about network security. (Prerequisites: a strong background in computer networking and systems, either at the undergraduate or graduate level, and moderate programming experience.)"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "(Prerequisites: a strong background in computer networking and systems, either at the undergraduate or graduate level, and moderate programming experience.)"
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: a strong background in computer networking and systems, at the undergraduate or graduate level
+            - kind: topic
+              topic: moderate programming experience
+    noCreditWith: []
+  - courseId: CS|571
+    description: "This course examines security challenges and failures holistically, taking into account technical concerns, human behavior, and business decisions. Using a series of detailed case studies, students will explore the interplay among these dimensions in creating secure computing systems and infrastructure. Students will also apply lessons from the case studies to emerging secure-systems design problems. The course requires active participation in class discussions, presentations, and writing assignments. It does not involve programming, but assumes that students have substantial prior experience with security protocols, attacks, and mitigations at the implementation level. This course satisfies the behavioral component of the MS specialization in computer security. (Prerequisites: A prior course or equivalent experience in technical aspects of computer security, at either the software or systems level.)"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "Prerequisites: A prior course or equivalent experience in technical aspects of computer security, at either the software or systems level.)"
+        requirement:
+          kind: topic
+          topic: a prior course or equivalent experience in technical aspects of computer security, at either the software or systems level
+    noCreditWith: []
+  - courseId: CS|573
+    description: "This course exposes students to the field of data visualization, i.e., the graphical display of data and information for the purposes of communication exploration, and analytics. The course introduces the stages of the visualization pipeline. This includes data shaping, mapping data to graphical attributes, key visualization techniques, modern tools, paradigms, and the perceptual, cognitive, and social dimensions of visualization. Students learn to evaluate the effectiveness of visualizations for specific data, task, and user types. Students' complete visualization design activities, prototypes, and undertake projects that use both commercial and open-source visualization tools, complete a final project which builds on state-of-the-art research in visualization as it intersects with their field of interest. Recommended Background: Students are expected to have programming skills. Examples include CS 5007 at the graduate level, or similar department specific introductory programming courses."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: Students are expected to have programming skills."
+        requirement:
+          kind: topic
+          topic: programming skills
+    noCreditWith: []
+  - courseId: CS|578
+    description: "This course gives a comprehensive introduction to the field of cryptography and data security. The course begins with the introduction of the concepts of data security, where classical algorithms serve as an example. Different attacks on cryptographic systems are classified. Some pseudo-random generators are introduced. The concepts of public and private key cryptography are developed. As important representatives for secret key schemes, DES and IDEA are described. The public key schemes RSA and ElGamal, and systems based on elliptic curves are then developed. Signature algorithms, hash functions, key distribution and identification schemes are treated as advanced topics. Some advanced mathematical algorithms for attacking cryptographic schemes are discussed. Application examples will include a protocol for security in a LAN and a secure smart card system for electronic banking. Special consideration will be given to schemes which are relevant for network environments. For all schemes, implementation aspects and up-to-date security estimations will be discussed. (Prerequisites: Working knowledge of C; an interest in discrete mathematics and algorithms is highly desirable. Students interested in a further study of the underlying mathematics may register for MA 4891 [B term], where topics in modern algebra relevant to cryptography will be treated.)"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "(Prerequisites: Working knowledge of C;"
+        requirement:
+          kind: topic
+          topic: working knowledge of C
+      - strength: suggested
+        timing: prior
+        sourceText: an interest in discrete mathematics and algorithms is highly desirable.
+        requirement:
+          kind: topic
+          topic: an interest in discrete mathematics and algorithms
+    noCreditWith: []
+  - courseId: CS|583
+    description: "This course will investigate computational techniques for discovering patterns in and across complex biological and biomedical sources, including genomic and proteomic databases, clinical databases, digital libraries of scientific articles, and ontologies. Techniques covered will be drawn from several areas including sequence mining, statistical natural language processing and text mining, and data mining. (Prerequisite: Strong programming skills, an undergraduate or graduate course in algorithms, an undergraduate course in statistics, and one or more undergraduate biology courses.)"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "(Prerequisite: Strong programming skills, an undergraduate or graduate course in algorithms, an undergraduate course in statistics, and one or more undergraduate biology courses.)"
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: strong programming skills
+            - kind: topic
+              topic: an undergraduate or graduate course in algorithms
+            - kind: topic
+              topic: an undergraduate course in statistics
+            - kind: topic
+              topic: one or more undergraduate biology courses
+    noCreditWith: []
+  - courseId: CS|584
+    description: This covers the same material as CS 5084 though at a more advanced level. As background, students should have experience writing programs in a recursive, high-level language and should have the background in mathematics that could be expected from a BS in Computer Science.
+    clauses:
+      - strength: suggested
+        timing: prior
+        sourceText: As background, students should have experience writing programs in a recursive, high-level language and should have the background in mathematics that could be expected from a BS in Computer Science.
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: experience writing programs in a recursive, high-level language
+            - kind: topic
+              topic: the background in mathematics expected from a BS in Computer Science
+    noCreditWith: []
+    needsReview: No lead word; the background is recorded as suggested.
+  - courseId: CS|585
+    description: "Big Data Management deals with emerging applications in science and engineering disciplines that generate and collect data at unprecedented speed, scale, and complexity that need to be managed and analyzed efficiently. This course introduces the latest techniques and infrastructures developed for big data management including parallel and distributed database systems, map-reduce infrastructures, scalable platforms for complex data types, stream processing systems, and cloud-based computing. Query processing, optimization, access methods, storage layouts, and energy management techniques developed on these infrastructures will be covered. Students are expected to engage in hands-on projects using one or more of these technologies. Prerequisites: A beginning course in databases at the level of CS 4432 or equivalent knowledge, and programming experience."
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "Prerequisites: A beginning course in databases at the level of CS 4432 or equivalent knowledge, and programming experience."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: a beginning course in databases
+              satisfiedBy:
+                kind: course
+                course: CS|4432
+                orEquivalent: true
+            - kind: topic
+              topic: programming experience
+    noCreditWith: []
+  - courseId: CS|586
+    description: "Big Data Analytics addresses the obstacle that innovation and discoveries are no longer hindered by the ability to collect data, but by the ability to summarize, analyze, and discover knowledge from the collected data in a scalable fashion. This course covers computational techniques and algorithms for analyzing and mining patterns in large-scale datasets. Techniques studied address data analysis issues related to data volume (scalable and distributed analysis), data velocity (high-speed data streams), data variety (complex, heterogeneous, or unstructured data), and data veracity (data uncertainty). Techniques include mining and machine learning techniques for complex data types, and scale-up and scale-out strategies that leverage big data infrastructures. Real-world applications using these techniques, for instance social media analysis and scientific data mining, are selectively discussed. Students are expected to engage in hands-on projects using one or more of these technologies. Prerequisites: A beginning course in databases and a beginning course in data mining, or equivalent knowledge, and programming experience."
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "Prerequisites: A beginning course in databases and a beginning course in data mining, or equivalent knowledge, and programming experience."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: a beginning course in databases
+            - kind: topic
+              topic: a beginning course in data mining
+            - kind: topic
+              topic: programming experience
+    noCreditWith: []
+  - courseId: CS|587
+    description: To reduce cyber security theory to practice, the capstone project has students apply security concepts to real-world problems. The capstone represents a substantial evaluation of the student’s cyber security experience. Students are encouraged to select projects with practical experience relevant to their career goals and personal development. In the capstone, students will propose a project idea in writing with concrete milestones, receive feedback, and pursue the proposal objectives. Since cyber security is a collaborative discipline, students are encouraged to work in teams. This course is a degree requirement for the Professional Master’s in Cyber Security (PM-SEC) and may not be taken before completion of 21 credits in the program. Given its particular role, this course may not be used to satisfy degree requirements for a B.S., M.S., or Ph.D. degree in Computer Science or a minor in Computer Science. Students outside the PM-SEC program must get the instructor’s approval before taking this course for credit.
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: may not be taken before completion of 21 credits in the program.
+        requirement:
+          kind: standing
+          text: completion of 21 credits in the Professional Master’s in Cyber Security program
+    noCreditWith: []
+  - courseId: CS|588
+    description: The capstone represents a substantial evaluation of the student’s computer science experience. Students are encouraged to select projects with practical experience relevant to their career goals and personal development. In the capstone, students will propose a project idea in writing with concrete milestones, receive feedback, and pursue the proposal objectives. Students are encouraged to work in teams. This course is a degree requirement for the Master of Computer Science (MCS) and may not be taken after completing 18 credits in the program. Given its particular role, this course may not be used to satisfy degree requirements for a BS, MS, or PhD degree in Computer Science or a minor in Computer Science. It may not be taken by students in other degree programs.
+    clauses: []
+    noCreditWith: []
+    needsReview: The restriction is 'may not be taken after completing 18 credits' in the MCS program, which is a timing rule rather than a prerequisite. Not recorded.
+  - courseId: CS|594
+    description: This 3-credit graduate qualifying project, typically done in teams, provides a capstone experience in applying Artificial Intelligence skills to a real-world problem. It will be carried out in cooperation with an industrial sponsor and is approved and overseen by a core or collaborative faculty member in the Artificial Intelligence Program. This offering integrates theory and practice of Artificial Intelligence and includes the utilization of tools and techniques acquired in the Artificial Intelligence Program to a real-world problem. In addition to a written report, this project must be presented in a formal presentation to faculty of the AI program and sponsors. Professional development skills, such as communication, teamwork, leadership, and collaboration, will be practiced. This course is a degree requirement for the Master of Science in Artificial Intelligence (MS-AI) Students outside the MS-AI program must get the instructor’s approval before. Prerequisites Completion of at least 24 credits of the AI degree, or consent of the instructor. With permission of the instructor, the GQP can be taken a 2nd time for a total of 6 credits.
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: Prerequisites Completion of at least 24 credits of the AI degree, or consent of the instructor.
+        requirement:
+          kind: anyOf
+          of:
+            - kind: standing
+              text: completion of at least 24 credits of the AI degree
+            - kind: permission
+              text: consent of the instructor
+    noCreditWith: []
+  - courseId: CS|4099
+    description: "CS 4099: Special Topics in Computer Science. (Cat III, 1/3 unit) Instances of this course will explore advanced and emerging topics that are not covered by the current regular CS offerings. Content and format will vary to suit the interests and needs of the faculty and students. This course may be repeated for credit as topics change."
+    clauses: []
+    noCreditWith: []

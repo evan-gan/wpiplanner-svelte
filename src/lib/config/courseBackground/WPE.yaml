@@ -1,0 +1,748 @@
+department: WPE
+entries:
+  - courseId: WPE|1614
+    description: "This course is designed to introduce and educate its participants on multiple facets of nutrition and explore varied current topics of nutrition today. Students will understand how food and beverage choices impact their everyday lives and the environment. Over the term, multiple current nutritional trends will be addressed and discussion on how to become an educated consumer while navigating the complex world of nutritional messaging. Each class will involve interactive activities to highlight the topic of that class. CAT I Recommended Background: None"
+    clauses: []
+    noCreditWith: []
+  - courseId: WPE|1711
+    description: "Mindfulness 2.0 builds on the foundation established in Intro to Mindfulness. In this course, you’ll revisit core practices while exploring new ways to deepen your experience, including Seated Movement Practice, Loving-Kindness meditation, and a meaningful silent retreat. Together, we’ll also read Real Happiness by Sharon Salzberg, using it as a guide for reflection and discussion. Throughout the course, you’ll be encouraged to extend your meditation sessions and strengthen the habit of bringing mindfulness into daily life. Open to students who have completed WPE 1611 Intro to Mindfulness or who maintain regular meditation practice. CAT I Recommended Background: Foundation knowledge of meditation practice (e.g.. WPE1611 or a regular meditation practice)"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: Foundation knowledge of meditation practice (e.g.. WPE1611 or a regular meditation practice)"
+        requirement:
+          kind: topic
+          topic: foundation knowledge of meditation practice
+          satisfiedBy:
+            kind: anyOf
+            of:
+              - kind: course
+                course: WPE|1611
+              - kind: topic
+                topic: a regular meditation practice
+    noCreditWith: []
+    needsReview: "'(e.g.. WPE1611 ...)' reads as an example, so WPE 1611 may not be the only accepted route. Modelled as one of two alternatives."
+  - courseId: WPE|1712
+    description: "This class deepens the connection between mind, body, and spirit through intentional breath and mindful movement. Building on foundational postures, we explore longer holds, more complex sequences, and refined alignment to enhance strength, flexibility, balance, and focus. Participants will develop greater body awareness and inner stillness while cultivating resilience and relaxation. CAT I Recommended Background: Foundation knowledge of yoga practice (e.g. WPE1612 or regular Yoga practice)"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: Foundation knowledge of yoga practice (e.g. WPE1612 or regular Yoga practice)"
+        requirement:
+          kind: topic
+          topic: foundation knowledge of yoga practice
+          satisfiedBy:
+            kind: anyOf
+            of:
+              - kind: course
+                course: WPE|1612
+              - kind: topic
+                topic: regular yoga practice
+    noCreditWith: []
+    needsReview: "'(e.g. WPE1612 ...)' reads as an example, so WPE 1612 may not be the only accepted route. Modelled as one of two alternatives."
+  - courseId: WPE|1003
+    description: Cat. I (1/12 unit) Introduction to the sports through skill development and play.
+    clauses: []
+    noCreditWith: []
+  - courseId: WPE|1008
+    description: Cat. I This course will teach basic rowing training techniques and principles with the goal for students to develop and implement an individualized conditioning program for themselves. All classes will be conducted on-campus through the use of rowing machines located in the Sports and Recreation Center.
+    clauses: []
+    noCreditWith: []
+  - courseId: WPE|1009
+    description: Cat. I This course will teach basic walking techniques and principles with the goal for students to develop and implement an individualized conditioning program for themselves.
+    clauses: []
+    noCreditWith: []
+  - courseId: WPE|1011
+    description: Cat. I (1/12 unit) Introduction to basic rules and individual/team skill development with practical application through game competition.
+    clauses: []
+    noCreditWith: []
+  - courseId: WPE|1012
+    description: Cat. I (1/12 unit) Introduction to basic rules and individual/team skill development with practical application through game competition.
+    clauses: []
+    noCreditWith: []
+  - courseId: WPE|1018
+    description: Cat. I (1/12 unit) Introduction to basic rules and individual/team skill development with practical application through game competition.
+    clauses: []
+    noCreditWith: []
+  - courseId: WPE|1019
+    description: Cat. I Introduction to basic rules and individual/team skill development with practical application through game competition.
+    clauses: []
+    noCreditWith: []
+  - courseId: WPE|1054
+    description: Cat. I (1/12 units) This course will teach the use of bodyweight to develop personal strength and conditioning.
+    clauses: []
+    noCreditWith: []
+  - courseId: WPE|1055
+    description: Cat. I (1/12 unit) This course will teach basic strength training principles and techniques. Students will develop and implement an individualized conditioning program.
+    clauses: []
+    noCreditWith: []
+  - courseId: WPE|1070
+    description: Cat. I (1/12 unit) Introductory course designed to explore various leisure education alternatives.
+    clauses: []
+    noCreditWith: []
+  - courseId: WPE|1099
+    description: Cat. I (1/12 unit) In each term, specific PE courses are offered to provide a variety of wellness, dance and healthy alternatives to traditional PE sport-based classes . The specific courses are subject to change on a yearly basis in order to provide flexibility in the PE offerings based upon the latest trends in wellness and dance . The focus of these classes is more on individual fitness, wellness and education, with instruction provided to all students in the classes.
+    clauses: []
+    noCreditWith: []
+  - courseId: WPE|1221
+    description: Cat. I Running is an activity that helps to develop good health, well-being and discipline through goal setting. This club and course will offer runners of all levels the opportunity to participate, develop and learn how running can benefit them now and into the future.
+    clauses: []
+    noCreditWith: []
+  - courseId: WPE|1601
+    description: "WPE 1601: Insight Program. Cat I (1/12 unit) The Insight Program provides students with skills, knowledge, and experiences that help them thrive in their transition to WPI. In collaboration with their Insight Team, students create a personalized first year experience that incorporates relationship building with their Insight Advisor as well as programmatic participation in five key areas: Academic Growth, Personal Development, Mental Health and Well Being, Diversity, Equity, and Belonging, and Social Engagement"
+    clauses: []
+    noCreditWith: []
+  - courseId: WPE|1610
+    description: "WPE 1610: Approaches to Holistic Well-Being Cat. I (1/12 Units) Introductory course designed to acquaint students with knowledge and skills necessary to make choices that foster health and well-being."
+    clauses: []
+    noCreditWith: []
+  - courseId: WPE|1611
+    description: WPE 1611 Introduction to Mindfulness (Cat. I, 1/12 unit) Introduction to Mindfulness is an evidence-based mindfulness curriculum designed for college aged adults by the Mindfulness Institute for Emerging Adults (MIEA). During this course, you will learn useful, practical tools to help manage your stress and increase self-compassion. Students will practice a variety of meditation skills, engage with the MIEA Mobile App, read the companion book, and participate in class discussion.
+    clauses: []
+    noCreditWith: []
+  - courseId: WPE|1612
+    description: WPE 1612 Introductory Yoga Cat. I (1/12 unit) This yoga class focuses on connecting the mind, body, and spirit through an awareness of breath. Participating in yoga can improve core strength, flexibility, balance, mindfulness, and relaxation and decrease stress. Those with any level of yoga experience (including first timers) are welcome.
+    clauses: []
+    noCreditWith: []
+  - courseId: WPE|1613
+    description: "WPE 1613: Succeeding as an Introvert (Pass/NR; 1/12units; Cat I) Does spending time in crowds or at a party wear you out? Do you enjoy time alone? Does the thought of working on a team make you nervous? Are you quiet around your classmates? Do you tend to avoid small talk or get tongue-tied in large groups? Would you rather think about a problem than discuss it with others? If you answered “yes” to several of these questions, this course is for you. Society puts a strong emphasis on extroversion, and those who frequently speak up get more attention and often advance professionally more quickly than their more reserved peers. Yet some of our greatest thinkers and leaders have been introverts. While the teamwork culture of WPI and most professions can present challenges to introverts, career success depends on the ability to work with others. This course will help introverted students learn to thrive at college and throughout their careers. Students will learn about the nature of introversion, including the strengths and challenges of being an introvert. Students will also learn personal and professional skills, such as how to successfully work on a team, present to an audience, manage their energy levels, and have difficult conversations with others. Grades will be Pass/NR."
+    clauses: []
+    noCreditWith: []
+  - courseId: WPE|1699
+    description: WPE 1699 Special Topics in Holistic Well-Being, Cat. I (1/12 unit) This course provides an opportunity for students to learn about a special topic in holistic wellbeing. The topics are subject to change on a rotating basis to provide flexibility in the offerings based upon student interest and the latest practice and science of well-being.
+    clauses: []
+    noCreditWith: []
+  - courseId: WPE|2001
+    description: ""
+    clauses: []
+    noCreditWith: []
+  - courseId: WPE|2002
+    description: ""
+    clauses: []
+    noCreditWith: []
+  - courseId: WPE|2003
+    description: ""
+    clauses: []
+    noCreditWith: []
+  - courseId: WPE|2004
+    description: ""
+    clauses: []
+    noCreditWith: []
+  - courseId: WPE|2005
+    description: ""
+    clauses: []
+    noCreditWith: []
+  - courseId: WPE|2006
+    description: ""
+    clauses: []
+    noCreditWith: []
+  - courseId: WPE|2007
+    description: ""
+    clauses: []
+    noCreditWith: []
+  - courseId: WPE|2008
+    description: ""
+    clauses: []
+    noCreditWith: []
+  - courseId: WPE|2009
+    description: ""
+    clauses: []
+    noCreditWith: []
+  - courseId: WPE|2010
+    description: ""
+    clauses: []
+    noCreditWith: []
+  - courseId: WPE|2011
+    description: ""
+    clauses: []
+    noCreditWith: []
+  - courseId: WPE|2012
+    description: ""
+    clauses: []
+    noCreditWith: []
+  - courseId: WPE|2013
+    description: ""
+    clauses: []
+    noCreditWith: []
+  - courseId: WPE|2014
+    description: ""
+    clauses: []
+    noCreditWith: []
+  - courseId: WPE|2015
+    description: ""
+    clauses: []
+    noCreditWith: []
+  - courseId: WPE|2016
+    description: ""
+    clauses: []
+    noCreditWith: []
+  - courseId: WPE|1077
+    description: Cat. I (1/12 unit) For the intermediate to advanced swimmer. This class is geared toward swimming for fitness purposes. Workouts will be administered each class period with students developing the knowledge to create workouts for themselves.
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: For the intermediate to advanced swimmer.
+        requirement:
+          kind: topic
+          topic: swimming at an intermediate to advanced level
+    noCreditWith: []
+  - courseId: WPE|1200
+    description: Club Sports are activities in various sports and wellness that are organized and recognized by SGA as Class II organizations and open to any undergraduate student. Students who are properly registered in advance for the club activity in their interest area (more information regarding Club Sports can be found at wpi.edu/+techsync) and meet the established criteria for participation by the club as well as by PERA department policy, may be eligible for WPE course credit. Practice and/or competition times vary but are generally in the evenings and weekends. Participating students may incur additional fees for equipment, travel, and/or uniforms
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: open to any undergraduate student
+        requirement:
+          kind: standing
+          text: open to any undergraduate student
+      - strength: required
+        timing: prior
+        sourceText: Students who are properly registered in advance for the club activity in their interest area
+        requirement:
+          kind: other
+          text: properly registered in advance for the club activity and meeting the club and PERA participation criteria
+    noCreditWith: []
+  - courseId: WPE|1201
+    description: Club Sports are activities in various sports and wellness that are organized and recognized by SGA as Class II organizations and open to any undergraduate student. Students who are properly registered in advance for the club activity in their interest area (more information regarding Club Sports can be found at wpi.edu/+techsync) and meet the established criteria for participation by the club as well as by PERA department policy, may be eligible for PE course credit. Practice and/or competition times vary but are generally in the evenings and weekends. Participating students may incur additional fees for equipment, travel, and/or uniforms
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: open to any undergraduate student
+        requirement:
+          kind: standing
+          text: open to any undergraduate student
+      - strength: required
+        timing: prior
+        sourceText: Students who are properly registered in advance for the club activity in their interest area
+        requirement:
+          kind: other
+          text: properly registered in advance for the club activity and meeting the club and PERA participation criteria
+    noCreditWith: []
+  - courseId: WPE|1202
+    description: Club Sports are activities in various sports and wellness that are organized and recognized by SGA as Class II organizations and open to any undergraduate student. Students who are properly registered in advance for the club activity in their interest area (more information regarding Club Sports can be found at wpi.edu/+techsync) and meet the established criteria for participation by the club as well as by PERA department policy, may be eligible for WPE course credit. Practice and/or competition times vary but are generally in the evenings and weekends. Participating students may incur additional fees for equipment, travel, and/or uniforms.
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: open to any undergraduate student
+        requirement:
+          kind: standing
+          text: open to any undergraduate student
+      - strength: required
+        timing: prior
+        sourceText: Students who are properly registered in advance for the club activity in their interest area
+        requirement:
+          kind: other
+          text: properly registered in advance for the club activity and meeting the club and PERA participation criteria
+    noCreditWith: []
+  - courseId: WPE|1203
+    description: Club Sports are activities in various sports and wellness that are organized and recognized by SGA as Class II organizations and open to any undergraduate student. Students who are properly registered in advance for the club activity in their interest area (more information regarding Club Sports can be found at wpi.edu/+techsync) and meet the established criteria for participation by the club as well as by PERA department policy, may be eligible for WPE course credit. Practice and/or competition times vary but are generally in the evenings and weekends. Participating students may incur additional fees for equipment, travel, and/or uniforms
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: open to any undergraduate student
+        requirement:
+          kind: standing
+          text: open to any undergraduate student
+      - strength: required
+        timing: prior
+        sourceText: Students who are properly registered in advance for the club activity in their interest area
+        requirement:
+          kind: other
+          text: properly registered in advance for the club activity and meeting the club and PERA participation criteria
+    noCreditWith: []
+  - courseId: WPE|1204
+    description: Club Sports are activities in various sports and wellness that are organized and recognized by SGA as Class II organizations and open to any undergraduate student. Students who are properly registered in advance for the club activity in their interest area (more information regarding Club Sports can be found at wpi.edu/+techsync) and meet the established criteria for participation by the club as well as by PERA department policy, may be eligible for WPE course credit. Practice and/or competition times vary but are generally in the evenings and weekends. Participating students may incur additional fees for equipment, travel, and/or uniforms
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: open to any undergraduate student
+        requirement:
+          kind: standing
+          text: open to any undergraduate student
+      - strength: required
+        timing: prior
+        sourceText: Students who are properly registered in advance for the club activity in their interest area
+        requirement:
+          kind: other
+          text: properly registered in advance for the club activity and meeting the club and PERA participation criteria
+    noCreditWith: []
+  - courseId: WPE|1205
+    description: Club Sports are activities in various sports and wellness that are organized and recognized by SGA as Class II organizations and open to any undergraduate student. Students who are properly registered in advance for the club activity in their interest area (more information regarding Club Sports can be found at wpi.edu/+techsync) and meet the established criteria for participation by the club as well as by PERA department policy, may be eligible for WPE course credit. Practice and/or competition times vary but are generally in the evenings and weekends. Participating students may incur additional fees for equipment, travel, and/or uniforms
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: open to any undergraduate student
+        requirement:
+          kind: standing
+          text: open to any undergraduate student
+      - strength: required
+        timing: prior
+        sourceText: Students who are properly registered in advance for the club activity in their interest area
+        requirement:
+          kind: other
+          text: properly registered in advance for the club activity and meeting the club and PERA participation criteria
+    noCreditWith: []
+  - courseId: WPE|1206
+    description: "For club sports, we have a general statement within the catalog with the listing of the corresponding activity courses: Club Sports are activities in various sports and wellness that are organized and recognized by SGA as Class II organizations and open to any undergraduate student. Students who are properly registered in advance for the club activity in their interest area (more information regarding Club Sports can be found at wpi.edu/+techsync) and meet the established criteria for participation by the club as well as by PERA department policy, may be eligible for WPE course credit. Practice and/or competition times vary but are generally in the evenings and weekends. Participating students may incur additional fees for equipment, travel, and/or uniforms."
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: open to any undergraduate student
+        requirement:
+          kind: standing
+          text: open to any undergraduate student
+      - strength: required
+        timing: prior
+        sourceText: Students who are properly registered in advance for the club activity in their interest area
+        requirement:
+          kind: other
+          text: properly registered in advance for the club activity and meeting the club and PERA participation criteria
+    noCreditWith: []
+  - courseId: WPE|1207
+    description: Club Sports are activities in various sports and wellness that are organized and recognized by SGA as Class II organizations and open to any undergraduate student. Students who are properly registered in advance for the club activity in their interest area (more information regarding Club Sports can be found at wpi.edu/+techsync) and meet the established criteria for participation by the club as well as by PERA department policy, may be eligible for WPE course credit. Practice and/or competition times vary but are generally in the evenings and weekends. Participating students may incur additional fees for equipment, travel, and/or uniforms
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: open to any undergraduate student
+        requirement:
+          kind: standing
+          text: open to any undergraduate student
+      - strength: required
+        timing: prior
+        sourceText: Students who are properly registered in advance for the club activity in their interest area
+        requirement:
+          kind: other
+          text: properly registered in advance for the club activity and meeting the club and PERA participation criteria
+    noCreditWith: []
+  - courseId: WPE|1209
+    description: Club Sports are activities in various sports and wellness that are organized and recognized by SGA as Class II organizations and open to any undergraduate student. Students who are properly registered in advance for the club activity in their interest area (more information regarding Club Sports can be found at wpi.edu/+techsync) and meet the established criteria for participation by the club as well as by PERA department policy, may be eligible for WPE course credit. Practice and/or competition times vary but are generally in the evenings and weekends. Participating students may incur additional fees for equipment, travel, and/or uniforms
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: open to any undergraduate student
+        requirement:
+          kind: standing
+          text: open to any undergraduate student
+      - strength: required
+        timing: prior
+        sourceText: Students who are properly registered in advance for the club activity in their interest area
+        requirement:
+          kind: other
+          text: properly registered in advance for the club activity and meeting the club and PERA participation criteria
+    noCreditWith: []
+  - courseId: WPE|1210
+    description: Club Sports are activities in various sports and wellness that are organized and recognized by SGA as Class II organizations and open to any undergraduate student. Students who are properly registered in advance for the club activity in their interest area (more information regarding Club Sports can be found at wpi.edu/+techsync) and meet the established criteria for participation by the club as well as by PERA department policy, may be eligible for WPE course credit. Practice and/or competition times vary but are generally in the evenings and weekends. Participating students may incur additional fees for equipment, travel, and/or uniforms
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: open to any undergraduate student
+        requirement:
+          kind: standing
+          text: open to any undergraduate student
+      - strength: required
+        timing: prior
+        sourceText: Students who are properly registered in advance for the club activity in their interest area
+        requirement:
+          kind: other
+          text: properly registered in advance for the club activity and meeting the club and PERA participation criteria
+    noCreditWith: []
+  - courseId: WPE|1211
+    description: Club Sports are activities in various sports and wellness that are organized and recognized by SGA as Class II organizations and open to any undergraduate student. Students who are properly registered in advance for the club activity in their interest area (more information regarding Club Sports can be found at wpi.edu/+techsync) and meet the established criteria for participation by the club as well as by PERA department policy, may be eligible for WPE course credit. Practice and/or competition times vary but are generally in the evenings and weekends. Participating students may incur additional fees for equipment, travel, and/or uniforms
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: open to any undergraduate student
+        requirement:
+          kind: standing
+          text: open to any undergraduate student
+      - strength: required
+        timing: prior
+        sourceText: Students who are properly registered in advance for the club activity in their interest area
+        requirement:
+          kind: other
+          text: properly registered in advance for the club activity and meeting the club and PERA participation criteria
+    noCreditWith: []
+  - courseId: WPE|1212
+    description: Club Sports are activities in various sports and wellness that are organized and recognized by SGA as Class II organizations and open to any undergraduate student. Students who are properly registered in advance for the club activity in their interest area (more information regarding Club Sports can be found at wpi.edu/+techsync) and meet the established criteria for participation by the club as well as by PERA department policy, may be eligible for WPE course credit. Practice and/or competition times vary but are generally in the evenings and weekends. Participating students may incur additional fees for equipment, travel, and/or uniforms
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: open to any undergraduate student
+        requirement:
+          kind: standing
+          text: open to any undergraduate student
+      - strength: required
+        timing: prior
+        sourceText: Students who are properly registered in advance for the club activity in their interest area
+        requirement:
+          kind: other
+          text: properly registered in advance for the club activity and meeting the club and PERA participation criteria
+    noCreditWith: []
+  - courseId: WPE|1213
+    description: Club Sports are activities in various sports and wellness that are organized and recognized by SGA as Class II organizations and open to any undergraduate student. Students who are properly registered in advance for the club activity in their interest area (more information regarding Club Sports can be found at wpi.edu/+techsync) and meet the established criteria for participation by the club as well as by PERA department policy, may be eligible for WPE course credit. Practice and/or competition times vary but are generally in the evenings and weekends. Participating students may incur additional fees for equipment, travel, and/or uniforms
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: open to any undergraduate student
+        requirement:
+          kind: standing
+          text: open to any undergraduate student
+      - strength: required
+        timing: prior
+        sourceText: Students who are properly registered in advance for the club activity in their interest area
+        requirement:
+          kind: other
+          text: properly registered in advance for the club activity and meeting the club and PERA participation criteria
+    noCreditWith: []
+  - courseId: WPE|1214
+    description: Club Sports are activities in various sports and wellness that are organized and recognized by SGA as Class II organizations and open to any undergraduate student. Students who are properly registered in advance for the club activity in their interest area (more information regarding Club Sports can be found at wpi.edu/+techsync) and meet the established criteria for participation by the club as well as by PERA department policy, may be eligible for WPE course credit. Practice and/or competition times vary but are generally in the evenings and weekends. Participating students may incur additional fees for equipment, travel, and/or uniforms
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: open to any undergraduate student
+        requirement:
+          kind: standing
+          text: open to any undergraduate student
+      - strength: required
+        timing: prior
+        sourceText: Students who are properly registered in advance for the club activity in their interest area
+        requirement:
+          kind: other
+          text: properly registered in advance for the club activity and meeting the club and PERA participation criteria
+    noCreditWith: []
+  - courseId: WPE|1216
+    description: Club Sports are activities in various sports and wellness that are organized and recognized by SGA as Class II organizations and open to any undergraduate student. Students who are properly registered in advance for the club activity in their interest area (more information regarding Club Sports can be found at wpi.edu/+techsync) and meet the established criteria for participation by the club as well as by PERA department policy, may be eligible for WPE course credit. Practice and/or competition times vary but are generally in the evenings and weekends. Participating students may incur additional fees for equipment, travel, and/or uniforms
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: open to any undergraduate student
+        requirement:
+          kind: standing
+          text: open to any undergraduate student
+      - strength: required
+        timing: prior
+        sourceText: Students who are properly registered in advance for the club activity in their interest area
+        requirement:
+          kind: other
+          text: properly registered in advance for the club activity and meeting the club and PERA participation criteria
+    noCreditWith: []
+  - courseId: WPE|1217
+    description: Club Sports are activities in various sports and wellness that are organized and recognized by SGA as Class II organizations and open to any undergraduate student. Students who are properly registered in advance for the club activity in their interest area (more information regarding Club Sports can be found at wpi.edu/+ techsync) and meet the established criteria for participation by the club as well as by PERA department policy, may be eligible for WPE course credit. Practice and/or competition times vary but are generally in the evenings and weekends. Participating students may incur additional fees for equipment, travel, and/or uniforms
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: open to any undergraduate student
+        requirement:
+          kind: standing
+          text: open to any undergraduate student
+      - strength: required
+        timing: prior
+        sourceText: Students who are properly registered in advance for the club activity in their interest area
+        requirement:
+          kind: other
+          text: properly registered in advance for the club activity and meeting the club and PERA participation criteria
+    noCreditWith: []
+  - courseId: WPE|1219
+    description: Club Sports are activities in various sports and wellness that are organized and recognized by SGA as Class II organizations and open to any undergraduate student. Students who are properly registered in advance for the club activity in their interest area (more information regarding Club Sports can be found at wpi.edu/+techsync) and meet the established criteria for participation by the club as well as by PERA department policy, may be eligible for WPE course credit. Practice and/or competition times vary but are generally in the evenings and weekends. Participating students may incur additional fees for equipment, travel, and/or uniforms
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: open to any undergraduate student
+        requirement:
+          kind: standing
+          text: open to any undergraduate student
+      - strength: required
+        timing: prior
+        sourceText: Students who are properly registered in advance for the club activity in their interest area
+        requirement:
+          kind: other
+          text: properly registered in advance for the club activity and meeting the club and PERA participation criteria
+    noCreditWith: []
+  - courseId: WPE|1222
+    description: Club Sports are activities in various sports and wellness that are organized and recognized by SGA as Class II organizations and open to any undergraduate student. Students who are properly registered in advance for the club activity in their interest area (more information regarding Club Sports can be found at wpi.edu/+techsync) and meet the established criteria for participation by the club as well as by PERA department policy, may be eligible for WPE course credit. Practice and/or competition times vary but are generally in the evenings and weekends. Participating students may incur additional fees for equipment, travel, and/or uniforms
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: open to any undergraduate student
+        requirement:
+          kind: standing
+          text: open to any undergraduate student
+      - strength: required
+        timing: prior
+        sourceText: Students who are properly registered in advance for the club activity in their interest area
+        requirement:
+          kind: other
+          text: properly registered in advance for the club activity and meeting the club and PERA participation criteria
+    noCreditWith: []
+  - courseId: WPE|1223
+    description: Club Sports are activities in various sports and wellness that are organized and recognized by SGA as Class II organizations and open to any undergraduate student. Students who are properly registered in advance for the club activity in their interest area (more information regarding Club Sports can be found at wpi.edu/+techsync) and meet the established criteria for participation by the club as well as by PERA department policy, may be eligible for WPE course credit. Practice and/or competition times vary but are generally in the evenings and weekends. Participating students may incur additional fees for equipment, travel, and/or uniforms
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: open to any undergraduate student
+        requirement:
+          kind: standing
+          text: open to any undergraduate student
+      - strength: required
+        timing: prior
+        sourceText: Students who are properly registered in advance for the club activity in their interest area
+        requirement:
+          kind: other
+          text: properly registered in advance for the club activity and meeting the club and PERA participation criteria
+    noCreditWith: []
+  - courseId: WPE|1224
+    description: Club Sports are activities in various sports and wellness that are organized and recognized by SGA as Class II organizations and open to any undergraduate student. Students who are properly registered in advance for the club activity in their interest area (more information regarding Club Sports can be found at wpi.edu/+techsync) and meet the established criteria for participation by the club as well as by PERA department policy, may be eligible for WPE course credit. Practice and/or competition times vary but are generally in the evenings and weekends. Participating students may incur additional fees for equipment, travel, and/or uniforms
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: open to any undergraduate student
+        requirement:
+          kind: standing
+          text: open to any undergraduate student
+      - strength: required
+        timing: prior
+        sourceText: Students who are properly registered in advance for the club activity in their interest area
+        requirement:
+          kind: other
+          text: properly registered in advance for the club activity and meeting the club and PERA participation criteria
+    noCreditWith: []
+  - courseId: WPE|1225
+    description: Club Sports are activities in various sports and wellness that are organized and recognized by SGA as Class II organizations and open to any undergraduate student. Students who are properly registered in advance for the club activity in their interest area (more information regarding Club Sports can be found at wpi.edu/+techsync) and meet the established criteria for participation by the club as well as by PERA department policy, may be eligible for WPE course credit. Practice and/or competition times vary but are generally in the evenings and weekends. Participating students may incur additional fees for equipment, travel, and/or uniforms
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: open to any undergraduate student
+        requirement:
+          kind: standing
+          text: open to any undergraduate student
+      - strength: required
+        timing: prior
+        sourceText: Students who are properly registered in advance for the club activity in their interest area
+        requirement:
+          kind: other
+          text: properly registered in advance for the club activity and meeting the club and PERA participation criteria
+    noCreditWith: []
+  - courseId: WPE|1226
+    description: Club Sports are activities in various sports and wellness that are organized and recognized by SGA as Class II organizations and open to any undergraduate student. Students who are properly registered in advance for the club activity in their interest area (more information regarding Club Sports can be found at wpi.edu/+techsync) and meet the established criteria for participation by the club as well as by PERA department policy, may be eligible for WPE course credit. Practice and/or competition times vary but are generally in the evenings and weekends. Participating students may incur additional fees for equipment, travel, and/or uniforms
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: open to any undergraduate student
+        requirement:
+          kind: standing
+          text: open to any undergraduate student
+      - strength: required
+        timing: prior
+        sourceText: Students who are properly registered in advance for the club activity in their interest area
+        requirement:
+          kind: other
+          text: properly registered in advance for the club activity and meeting the club and PERA participation criteria
+    noCreditWith: []
+  - courseId: WPE|1227
+    description: Club Sports are activities in various sports and wellness that are organized and recognized by SGA as Class II organizations and open to any undergraduate student. Students who are properly registered in advance for the club activity in their interest area (more information regarding Club Sports can be found at wpi.edu/+techsync) and meet the established criteria for participation by the club as well as by PERA department policy, may be eligible for WPE course credit. Practice and/or competition times vary but are generally in the evenings and weekends. Participating students may incur additional fees for equipment, travel, and/or uniforms
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: open to any undergraduate student
+        requirement:
+          kind: standing
+          text: open to any undergraduate student
+      - strength: required
+        timing: prior
+        sourceText: Students who are properly registered in advance for the club activity in their interest area
+        requirement:
+          kind: other
+          text: properly registered in advance for the club activity and meeting the club and PERA participation criteria
+    noCreditWith: []
+  - courseId: WPE|1228
+    description: Club Sports are activities in various sports and wellness that are organized and recognized by SGA as Class II organizations and open to any undergraduate student. Students who are properly registered in advance for the club activity in their interest area (more information regarding Club Sports can be found at wpi.edu/+techsync) and meet the established criteria for participation by the club as well as by PERA department policy, may be eligible for WPE course credit. Practice and/or competition times vary but are generally in the evenings and weekends. Participating students may incur additional fees for equipment, travel, and/or uniforms
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: open to any undergraduate student
+        requirement:
+          kind: standing
+          text: open to any undergraduate student
+      - strength: required
+        timing: prior
+        sourceText: Students who are properly registered in advance for the club activity in their interest area
+        requirement:
+          kind: other
+          text: properly registered in advance for the club activity and meeting the club and PERA participation criteria
+    noCreditWith: []
+  - courseId: WPE|1229
+    description: Club Sports are activities in various sports and wellness that are organized and recognized by SGA as Class II organizations and open to any undergraduate student. Students who are properly registered in advance for the club activity in their interest area (more information regarding Club Sports can be found at wpi.edu/+techsync) and meet the established criteria for participation by the club as well as by PERA department policy, may be eligible for WPE course credit. Practice and/or competition times vary but are generally in the evenings and weekends. Participating students may incur additional fees for equipment, travel, and/or uniforms
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: open to any undergraduate student
+        requirement:
+          kind: standing
+          text: open to any undergraduate student
+      - strength: required
+        timing: prior
+        sourceText: Students who are properly registered in advance for the club activity in their interest area
+        requirement:
+          kind: other
+          text: properly registered in advance for the club activity and meeting the club and PERA participation criteria
+    noCreditWith: []
+  - courseId: WPE|1230
+    description: Club Sports are activities in various sports and wellness that are organized and recognized by SGA as Class II organizations and open to any undergraduate student. Students who are properly registered in advance for the club activity in their interest area (more information regarding Club Sports can be found at wpi.edu/+techsync) and meet the established criteria for participation by the club as well as by PERA department policy, may be eligible for WPE course credit. Practice and/or competition times vary but are generally in the evenings and weekends. Participating students may incur additional fees for equipment, travel, and/or uniforms
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: open to any undergraduate student
+        requirement:
+          kind: standing
+          text: open to any undergraduate student
+      - strength: required
+        timing: prior
+        sourceText: Students who are properly registered in advance for the club activity in their interest area
+        requirement:
+          kind: other
+          text: properly registered in advance for the club activity and meeting the club and PERA participation criteria
+    noCreditWith: []
+  - courseId: WPE|1231
+    description: Club Sports are activities in various sports and wellness that are organized and recognized by SGA as Class II organizations and open to any undergraduate student. Students who are properly registered in advance for the club activity in their interest area (more information regarding Club Sports can be found at wpi.edu/+techsync) and meet the established criteria for participation by the club as well as by PERA department policy, may be eligible for WPE course credit. Practice and/or competition times vary but are generally in the evenings and weekends. Participating students may incur additional fees for equipment, travel, and/or uniforms
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: open to any undergraduate student
+        requirement:
+          kind: standing
+          text: open to any undergraduate student
+      - strength: required
+        timing: prior
+        sourceText: Students who are properly registered in advance for the club activity in their interest area
+        requirement:
+          kind: other
+          text: properly registered in advance for the club activity and meeting the club and PERA participation criteria
+    noCreditWith: []
+  - courseId: WPE|1232
+    description: Club Sports are activities in various sports and wellness that are organized and recognized by SGA as Class II organizations and open to any undergraduate student. Students who are properly registered in advance for the club activity in their interest area (more information regarding Club Sports can be found at wpi.edu/+techsync) and meet the established criteria for participation by the club as well as by PERA department policy, may be eligible for WPE course credit. Practice and/or competition times vary but are generally in the evenings and weekends. Participating students may incur additional fees for equipment, travel, and/or uniforms
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: open to any undergraduate student
+        requirement:
+          kind: standing
+          text: open to any undergraduate student
+      - strength: required
+        timing: prior
+        sourceText: Students who are properly registered in advance for the club activity in their interest area
+        requirement:
+          kind: other
+          text: properly registered in advance for the club activity and meeting the club and PERA participation criteria
+    noCreditWith: []
+  - courseId: WPE|1233
+    description: Club Sports are activities in various sports and wellness that are organized and recognized by SGA as Class II organizations and open to any undergraduate student. Students who are properly registered in advance for the club activity in their interest area (more information regarding Club Sports can be found at wpi.edu/+techsync) and meet the established criteria for participation by the club as well as by PERA department policy, may be eligible for WPE course credit. Practice and/or competition times vary but are generally in the evenings and weekends. Participating students may incur additional fees for equipment, travel, and/or uniforms
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: open to any undergraduate student
+        requirement:
+          kind: standing
+          text: open to any undergraduate student
+      - strength: required
+        timing: prior
+        sourceText: Students who are properly registered in advance for the club activity in their interest area
+        requirement:
+          kind: other
+          text: properly registered in advance for the club activity and meeting the club and PERA participation criteria
+    noCreditWith: []
+  - courseId: WPE|1234
+    description: "For club sports, we have a general statement within the catalog with the listing of the corresponding activity courses: Club Sports are activities in various sports and wellness that are organized and recognized by SGA as Class II organizations and open to any undergraduate student. Students who are properly registered in advance for the club activity in their interest area (more information regarding Club Sports can be found at wpi.edu/+techsync) and meet the established criteria for participation by the club as well as by PERA department policy, may be eligible for WPE course credit. Practice and/or competition times vary but are generally in the evenings and weekends. Participating students may incur additional fees for equipment, travel, and/or uniforms."
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: open to any undergraduate student
+        requirement:
+          kind: standing
+          text: open to any undergraduate student
+      - strength: required
+        timing: prior
+        sourceText: Students who are properly registered in advance for the club activity in their interest area
+        requirement:
+          kind: other
+          text: properly registered in advance for the club activity and meeting the club and PERA participation criteria
+    noCreditWith: []
+  - courseId: WPE|1235
+    description: "For club sports, we have a general statement within the catalog with the listing of the corresponding activity courses: Club Sports are activities in various sports and wellness that are organized and recognized by SGA as Class II organizations and open to any undergraduate student. Students who are properly registered in advance for the club activity in their interest area (more information regarding Club Sports can be found at wpi.edu/+techsync) and meet the established criteria for participation by the club as well as by PERA department policy, may be eligible for WPE course credit. Practice and/or competition times vary but are generally in the evenings and weekends. Participating students may incur additional fees for equipment, travel, and/or uniforms."
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: open to any undergraduate student
+        requirement:
+          kind: standing
+          text: open to any undergraduate student
+      - strength: required
+        timing: prior
+        sourceText: Students who are properly registered in advance for the club activity in their interest area
+        requirement:
+          kind: other
+          text: properly registered in advance for the club activity and meeting the club and PERA participation criteria
+    noCreditWith: []
+  - courseId: WPE|1236
+    description: "For club sports, we have a general statement within the catalog with the listing of the corresponding activity courses: Club Sports are activities in various sports and wellness that are organized and recognized by SGA as Class II organizations and open to any undergraduate student. Students who are properly registered in advance for the club activity in their interest area (more information regarding Club Sports can be found at wpi.edu/+techsync) and meet the established criteria for participation by the club as well as by PERA department policy, may be eligible for WPE course credit. Practice and/or competition times vary but are generally in the evenings and weekends. Participating students may incur additional fees for equipment, travel, and/or uniforms."
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: open to any undergraduate student
+        requirement:
+          kind: standing
+          text: open to any undergraduate student
+      - strength: required
+        timing: prior
+        sourceText: Students who are properly registered in advance for the club activity in their interest area
+        requirement:
+          kind: other
+          text: properly registered in advance for the club activity and meeting the club and PERA participation criteria
+    noCreditWith: []
+  - courseId: WPE|1237
+    description: "WPE 1237: Club Sport – Outing Club: Climbing (1/12 unit; Cat. I) (This is the generic listing for all current club sports) Club Sports are activities in various sports and wellness that are organized and recognized by SGA as Class II organizations and open to any undergraduate student. Students who are properly registered in advance for the club activity in their interest area (more information regarding Club Sports can be found at wpi.edu/+techsync) and meet the established criteria for participation by the club as well as by PERA department policy, may be eligible for WPE course credit. Practice and/or competition times vary but are generally in the evenings and weekends. Participating students may incur additional fees for equipment, travel, and/or uniforms"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: open to any undergraduate student
+        requirement:
+          kind: standing
+          text: open to any undergraduate student
+      - strength: required
+        timing: prior
+        sourceText: Students who are properly registered in advance for the club activity in their interest area
+        requirement:
+          kind: other
+          text: properly registered in advance for the club activity and meeting the club and PERA participation criteria
+    noCreditWith: []
+  - courseId: WPE|1238
+    description: "WPE 1238 Club Sport – Rangeela: Bollywood Bhangra Fusion (1/12 unit; Cat. I) (This is the generic listing for all current club sports) Club Sports are activities in various sports and wellness that are organized and recognized by SGA as Class II organizations and open to any undergraduate student. Students who are properly registered in advance for the club activity in their interest area (more information regarding Club Sports can be found at wpi.edu/+techsync) and meet the established criteria for participation by the club as well as by PERA department policy, may be eligible for WPE course credit. Practice and/or competition times vary but are generally in the evenings and weekends. Participating students may incur additional fees for equipment, travel, and/or uniforms."
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: open to any undergraduate student
+        requirement:
+          kind: standing
+          text: open to any undergraduate student
+      - strength: required
+        timing: prior
+        sourceText: Students who are properly registered in advance for the club activity in their interest area
+        requirement:
+          kind: other
+          text: properly registered in advance for the club activity and meeting the club and PERA participation criteria
+    noCreditWith: []
+  - courseId: WPE|1239
+    description: WPE 1239 Club Sport – Powerlifting (1/12 unit; Cat. I) (This is the generic listing for all current club sports) Club Sports are activities in various sports and wellness that are organized and recognized by SGA as Class II organizations and open to any undergraduate student. Students who are properly registered in advance for the club activity in their interest area (more information regarding Club Sports can be found at wpi.edu/+techsync) and meet the established criteria for participation by the club as well as by PERA department policy, may be eligible for WPE course credit. Practice and/or competition times vary but are generally in the evenings and weekends. Participating students may incur additional fees for equipment, travel, and/or uniforms.
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: open to any undergraduate student
+        requirement:
+          kind: standing
+          text: open to any undergraduate student
+      - strength: required
+        timing: prior
+        sourceText: Students who are properly registered in advance for the club activity in their interest area
+        requirement:
+          kind: other
+          text: properly registered in advance for the club activity and meeting the club and PERA participation criteria
+    noCreditWith: []

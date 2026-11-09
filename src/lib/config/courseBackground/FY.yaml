@@ -1,0 +1,20 @@
+department: FY
+entries:
+  - courseId: FY|1100
+    description: Cat. I The Great Problems Seminars (GPS) are a two course sequence designed to engage Worcester Polytechnic Institute's first-year students with current events, societal problems, and human needs. Each seminar starts with an important problem and introduces some of the key disciplinary tools that could be used to attack the problem. The focus for most of the second course will be a research project related to the GPS theme. Students will present their project work in a poster session at the end of the second term. Each seminar is developed and presented by an interdisciplinary pair of faculty. To participate, students must enroll in the two course sequence. Academic credit for the GPS will depend on the theme and the faculty who develop the seminar.
+    clauses: []
+    noCreditWith: []
+  - courseId: FY|1101
+    description: Cat. IThe Great Problems Seminars (GPS) are a two course sequence designed to engage WorcesterPolytechnic Institute's first-year students with current events, societal problems,and human needs. Each seminar starts with an important problem andintroduces some of the key disciplinary tools that could be used to attack theproblem. The focus for most of the second course will be a researchproject related to the GPS theme. Students will present their project work in aposter session at the end of the second term. Each seminar is developed and presentedby an interdisciplinary pair of faculty. To participate, students must enroll inthe two course sequence. Academic credit for the GPS will depend on the themeand the faculty who develop the seminar.
+    clauses: []
+    noCreditWith: []
+  - courseId: FY|1800
+    description: (1/12 unit) This course is open to all students who are undecided about or are thinking about changing their academic major. Students will conduct a self-assessment utilizing career assessment tools, research majors of interest and career paths, attend major panels, speak to students/faculty in majors of interest, and participate in informational interviews with alumni. Students will meet individually with Peer Advisors and/or a CDC staff member at least three times throughout the course.
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: This course is open to all students who are undecided about or are thinking about changing their academic major.
+        requirement:
+          kind: standing
+          text: open to students who are undecided about or are thinking about changing their academic major
+    noCreditWith: []

@@ -1,0 +1,46 @@
+department: ID
+entries:
+  - courseId: ID|3530
+    description: "This course explores Spanish cinema, tracing its evolution from the early 20th century to contemporary works. Students will study a range of films that reflect Spain's rich cultural, political, and social landscapes, analyzing themes such as identity, history, gender, and memory. Through Spanish cinema and other media sources, this course studies images, topics, and cultural and historical issues that have impacted the creation of a modern Spanish nation. This course focuses on current political and ideological issues (after 1936), the importance of the Spanish Civil War, gender identity, and class, cultural, and power relationships. Through screenings, discussions, and critical analysis, students will learn to interpret film as a medium of artistic expression and cultural commentary, developing an understanding of the historical contexts that shaped Spanish cinema. They will also engage in group projects, presentations, and written assignments to deepen their appreciation and understanding of Spain’s cinematic heritage. This course satisfies the Inquiry Seminar to complete the HUA requirement in Spanish and would also count toward International and Global Studies. In addition, this course would benefit students interested in WPI’s Project Centers in Spain. This course is taught at an advanced level of Spanish. This course will be offered in 2025-2026, and in alternating years thereafter. Recommended Background: SP 3521 and SP 3522."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: SP 3521 and SP 3522."
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: SP|3521
+            - kind: course
+              course: SP|3522
+    noCreditWith: []
+  - courseId: ID|500
+    description: The purpose of this zero credit course is to familiarize pre-doctoral and postdoctoral trainees with basic ethical issues in research confronting scientists and engineers. The course includes five lectures and five student-led discussion sessions on topics such as experimental design best practices, research involving animal subjects, authorship, and research misconduct. Student learning will be assessed through in-class formative assessments as well as small group presentations during the discussion sessions. The course is recommended for all graduate students and postdocs who are engaged in research and will be offered in 2018 and each year thereafter.
+    clauses: []
+    noCreditWith: []
+  - courseId: ID|1000
+    description: Offered during A and C terms, this online, module-based course supports students in developing the skills and learning strategies necessary to confidently navigate academic challenges and succeed in a rigorous academic environment. Students will explore key topics central to college success, including time management, effective study strategies, test‑taking skills, motivation, goal setting, organization, self‑reflection, and the effective use of campus academic and wellness resources. Students are encouraged to evaluate their academic habits, practice new strategies, and create a personalized plan for continued improvement. The course is coordinated by the Office of Academic Advising.
+    clauses: []
+    noCreditWith: []
+  - courseId: ID|2050
+    description: Cat. I This course is open to students accepted to off-campus IQP centers and programs . The course introduces students to research design, methods for social science research, and analysis . It also provides practice in specific research and field skills using the project topics students have selected in conjunction with sponsoring agencies . Students learn to develop social science hypotheses based upon literature reviews in their topic areas and apply concepts drawn from social psychology, anthropology, sociology, economics and other areas as appropriate . Students make presentations, write an organized project proposal, and develop a communication model for reporting their project findings . Some sections of this course may be offered as Writing Intensive (WI).
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: This course is open to students accepted to off-campus IQP centers and programs .
+        requirement:
+          kind: standing
+          text: open to students accepted to off-campus IQP centers and programs
+    noCreditWith: []
+  - courseId: ID|2314
+    description: Cat. II Rapidly developing technologies for computing, information management and communications have been quickly adopted in schools, businesses and homes. The growth of the Internet and of e-commerce, in particular, have given rise to an entirely new set of legal issues as the courts, Congress and international bodies struggle to keep pace with changing technology. This course addresses the government's role in the development of these technologies and the legal issues that result including questions regarding privacy rights, speech and defamation, and the application of patent and copyright law. Policy questions such as surveillance of e-mail, regulation of content, mandates on the use of filters, and the responsibilities and liability of internet service providers are also discussed. Additional policies studied include attempts to control Internet content and enforce international judgments (resulting from e-commerce or cyber-crime) by foreign states and/or international organizations. Students are expected to integrate knowledge of technology with law, politics, economics and international affairs.
+    clauses: []
+    noCreditWith: []
+  - courseId: ID|3531
+    description: "Contemporary U.S. Latino Literature and Culture aims to introduce you to the field of Latino Studies, which emerged around the 1990s. We’ll pay particular attention to the English-language cultural production—literature, autobiography, film, music, and criticism—of Latinos linked to four main territories: Mexico, Cuba, Puerto Rico, and the Dominican Republic. While our transnational framework will help us understand the continuum between U.S. Latinos and Latin American/Caribbean communities, we will also closely examine more U.S.-based arguments supporting and contesting the use of Latino as an ethnic racial term uniting all U.S. Latino communities. Indeed, part of our challenge will be to define what the label “Latino” even means. What is Latino literature? In what language do Latinos write? What makes a work Latino? We will thus examine the ways in which U.S. Latinos have manufactured identities within dominant as well as counter-cultural registers. Using identity as a base, we will grapple with collective concerns regarding race, gender, place, exile, immigration, and language. Our readings and discussions will be in English and Spanglish. This course satisfies the Inquiry Seminar to complete the HUA requirement in Spanish and would also count toward International and Global Studies and Latin American and Caribbean studies. In addition, this course would benefit students interested in WPI’s Project Centers in Latin America and the Caribbean. This course will be offered in 2026-2027, and in alternating years thereafter"
+    clauses: []
+    noCreditWith: []
+  - courseId: ID|527
+    description: A ten session course run each summer for graduate students and postdocs to bolster teaching proficiency through in depth and interactive sessions on the science behind student learning, scientific teaching, assessments and rubrics, active learning, project based learning, teaching technology, inclusive teaching and universal design, classroom and course management, and course design. Participants will learn through both lecture and practicum sessions each week, and will work in small groups to develop a short teachable unit incorporating the techniques learned throughout the course, which they will ultimately present at the conclusion of the series. Students will also individually develop their own statement of teaching philosophy and receive feedback on this document, a required document for most faculty job applications.
+    clauses: []
+    noCreditWith: []

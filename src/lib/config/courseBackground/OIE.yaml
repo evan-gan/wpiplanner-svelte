@@ -1,0 +1,236 @@
+department: OIE
+entries:
+  - courseId: OIE|2081
+    description: "Cat. I This course provides an introduction to prescriptive analytics, which involves the application of mathematical and computational sciences, such as linear optimization and simulation, to recommend optimal courses of action for decision making. The course will feature decision problems arising from a variety of contexts such as capacity management, finance, healthcare, humanitarian relief, inventory management, production planning, staffing, and supply chain. The emphasis of the course is the application of such techniques to recommend a best strategy or course of action for the particular context. Recommended background: Basic statistics, equivalent to that in MA 2611 and MA 2612."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Basic statistics, equivalent to that in MA 2611 and MA 2612."
+        requirement:
+          kind: topic
+          topic: basic statistics
+          satisfiedBy:
+            kind: allOf
+            of:
+              - kind: course
+                course: MA|2611
+                orEquivalent: true
+              - kind: course
+                course: MA|2612
+                orEquivalent: true
+    noCreditWith: []
+  - courseId: OIE|2850
+    description: Cat. I To aid all engineering students in understanding economics and business constraints on engineering decision making. Topics include evaluation of alternative; the six time-value-of-money factors; present worth, annual cash flow and rate-of-return analysis; incremental analysis; depreciation and income taxes; replacement analysis; inflation; handling probabilistic events; public economy; break-even and minimum cost points; and foreign exchange.
+    clauses: []
+    noCreditWith: []
+  - courseId: OIE|3405
+    description: "This course covers the fundamentals of developing efficient layouts for production and service facilities. Methods analysis, work measurement, material handling and material flow analysis are also covered. Mathematical models and computer tools are used to assist decision-making. Recommended background: BUS 3020 and OIE 2081"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: BUS 3020 and OIE 2081"
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: BUS|3020
+            - kind: course
+              course: OIE|2081
+    noCreditWith: []
+  - courseId: OIE|3410
+    description: "This course in an introduction to the planning and controlling the material flow into, through, and out of an organization. It explains fundamental relationships among the activities that occur in the supply chain from suppliers to customers. In particular, the course addresses types of manufacturing systems, demand management and forecasting, master production scheduling, materials requirements planning, capacity management, inventory management, distribution resource planning, JIT and lean principles, and other current topics that are pertinent to managing the material flow of supply chains. Recommended background: MA 1020, MA 1021, MA 2611 and BUS 3020."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: MA 1020, MA 1021, MA 2611 and BUS 3020."
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: MA|1020
+            - kind: course
+              course: MA|1021
+            - kind: course
+              course: MA|2611
+            - kind: course
+              course: BUS|3020
+    noCreditWith: []
+  - courseId: OIE|3420
+    description: "Cat. I This course provides students with the analytical and management tools necessary to solve manufacturing and service quality problems. Topics include customer needs and quality, quality and cost relationships, process capability analysis, statistical process control, control charts for variables and attributes, design of experiments, and other Six Sigma problem solving methodology. Recommended background: BUS 3020 and MA 2612 or consent of the instructor."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: BUS 3020 and MA 2612 or consent of the instructor."
+        requirement:
+          kind: anyOf
+          of:
+            - kind: allOf
+              of:
+                - kind: course
+                  course: BUS|3020
+                - kind: course
+                  course: MA|2612
+            - kind: permission
+              text: consent of the instructor
+    noCreditWith: []
+    needsReview: "'BUS 3020 and MA 2612 or consent' read as (both courses) or consent."
+  - courseId: OIE|3460
+    description: "Cat. I This course covers the application of simulation to a variety of managerial problems with examples from operations management, industrial engineering and manufacturing engineering. It introduces the student to the concepts of computer simulation, with an emphasis on the design of a simulation experiment and statistical interpretation of its results. It will discuss simulation of queueing models, inventory and industrial dynamics, and gaming situations. The role and use of computers for the execution of simulations will also be highlighted. A commercial simulation language such as Arena will be used to solve problems from the manufacturing and service industries. Recommended background: CS 1004 and MA 2612."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: CS 1004 and MA 2612."
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: CS|1004
+            - kind: course
+              course: MA|2612
+    noCreditWith: []
+  - courseId: OIE|3510
+    description: "This is an introductory course in probabilistic models and decision-making under risk, with applications to engineering and management decision making. The course first covers quantitative methods for assessing and evaluating risks and how they are used in decision making. Decision making under risk is examined across a wide set of management and engineering problems. The course then introduces a set of probabilistic models commonly used in decision making and operations improvement; specifically, emphasis is placed on Markov chains, Poisson processes, and queuing theory, and their applications in manufacturing and service systems are illustrated. Recommended background: Knowledge of calculus and introductory probability and statistics."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Knowledge of calculus and introductory probability and statistics."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: calculus
+            - kind: topic
+              topic: introductory probability and statistics
+    noCreditWith: []
+  - courseId: OIE|4460
+    description: "This case-based course will examine methods and strategies for managing andcontrolling material movement, with particular emphasis on internationaloperations, from the purchase of production materials to the control of work inprocess to the distribution of the finished product. Strategies that will bediscussed include the design of international distribution networks, the use ofthird-party logistics providers, and the creation of links between logistic systemsand marketing to create competitive advantage. The course will also exploretactical issues that must be managed to pursue a logistics strategy successfully,including choices regarding means of transportation, packaging, and inventorypolicies. Underlying themes of the course will be the use of informationtechnologies (such as electronic data interchange and bar coding) andmathematical models to support logistics decision-making.Recommended background: BUS 3020 and one of the following: BUS 2070 or OIE 2850 or consent of the professor."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: BUS 3020 and one of the following: BUS 2070 or OIE 2850 or consent of the professor."
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: BUS|3020
+            - kind: anyOf
+              of:
+                - kind: course
+                  course: BUS|2070
+                - kind: course
+                  course: OIE|2850
+                - kind: permission
+                  text: consent of the professor
+    noCreditWith: []
+  - courseId: OIE|511
+    description: "This graduate course is designed to equip the next generation of supply chain leaders with the technical fluency and strategic vision required to manage and leverage the powerful digital forces that are the foundation of the emerging \"tech-heavy world of supply chain management\". The intellectual foundation of this curriculum is framed by the concept of \"technology clock speed”. This model provides a valuable lens for understanding the different rates at which technologies like AI, blockchain, and digital twins are being adopted and integrated into a business's operations to transform supply chain management. The course combines theory with practical approaches such as case studies, guest speakers, software demos, or projects. Students will learn the strategic opportunities and operational challenges of implementing these technologies in supply chains. Recommended background: introduction to operations and supply chain management equivalent to OIE 501: Operations Management or OIE 544: Supply Chain Analytics"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: introduction to operations and supply chain management equivalent to OIE 501: Operations Management or OIE 544: Supply Chain Analytics"
+        requirement:
+          kind: topic
+          topic: introduction to operations and supply chain management
+          satisfiedBy:
+            kind: anyOf
+            of:
+              - kind: course
+                course: OIE|501
+                orEquivalent: true
+              - kind: course
+                course: OIE|544
+                orEquivalent: true
+    noCreditWith: []
+  - courseId: OIE|542
+    description: "Risk management deals with decision making under uncertainty. It is interdisciplinary, drawing upon management science and managerial decision-making, along with material from negotiation and cognitive psychology. Classic methods from decision analysis are first covered and then applied, from the perspective of business process improvement, to a broad set of applications in operations risk management and design including: quality assurance, supply chains, information security, fire protection engineering, environmental management, projects and new products. A course project is required (and chosen by the student according to his/her interest) to develop skills in integrating subjective and objective information in modeling and evaluating risk. (Prerequisite: OIE 501 or equivalent content, or instructor consent.) (Students cannot get credit for both OIE 542 and OIE 541.)"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "(Prerequisite: OIE 501 or equivalent content, or instructor consent.)"
+        requirement:
+          kind: anyOf
+          of:
+            - kind: course
+              course: OIE|501
+              orEquivalent: true
+            - kind: permission
+              text: instructor consent
+    noCreditWith:
+      - OIE|541
+  - courseId: OIE|544
+    description: "This course studies the decisions, strategies and analytical methods in designing, analyzing, evaluating, and managing supply chains. Concepts, techniques, and frameworks for better supply chain performance are discussed, and how digital technologies enable companies to be more efficient and flexible in their internal and external operations are explored. The major content of the course is divided into three modules: supply chain integration, supply chain decisions, and supply chain management and control tools. Students will learn how to apply some of the techniques in Operations Research such as linear programming, dynamic programming, and decision tree to aid decision-making. A variety of instructional tools including lectures, case discussions, guest speakers, games, videos, and group projects and presentations are employed. (Prerequisite: OIE 501 or equivalent content, or instructor consent)"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "(Prerequisite: OIE 501 or equivalent content, or instructor consent)"
+        requirement:
+          kind: anyOf
+          of:
+            - kind: course
+              course: OIE|501
+              orEquivalent: true
+            - kind: permission
+              text: instructor consent
+    noCreditWith: []
+  - courseId: OIE|548
+    description: "Productivity management and analysis techniques and applications are covered from engineering and management perspectives. Topics include benchmarking, production functions, and the concept of relative efficiency and its measurement by data envelopment analysis. Application examples include efficiency evaluations of bank branches, sales outlets, hospitals, schools and others. (Prerequisite: OIE 501, or equivalent content, or consent of the instructor.)"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "(Prerequisite: OIE 501, or equivalent content, or consent of the instructor.)"
+        requirement:
+          kind: anyOf
+          of:
+            - kind: course
+              course: OIE|501
+              orEquivalent: true
+            - kind: permission
+              text: consent of the instructor
+    noCreditWith: []
+  - courseId: OIE|549
+    description: The environmental implications and responsibilities of organizations begin at an organization’s boundaries with management of their operations, but also extend to incorporate interorganizational relationships and networks, the supply chain. We will investigate the practice and theory of sustainable supply chains and operations management in organizations throughout the world. This course is intended to provide students with understanding the intra- and interorganizational implications of environmental sustainability practices and policies. The role of organizational supply chain management functions, activities, tools and methods and their relationship to the natural environment will be introduced and discussed. The goals are for students to grasp the scope of general supply chain/operations management and environmental sustainability as they relate to the firm; to be able to relate to the manners in which management may respond and collaborate internally and with suppliers, customers, and various other stakeholders influencing and influenced by operational and supply chain activities from practical and theoretical case studies; able to evaluate various factors and understand tradeoffs in management decisions as they pertain to environmental supply chain management.
+    clauses: []
+    noCreditWith: []
+  - courseId: OIE|553
+    description: This course aims to develop an in-depth understanding of the decisions and challenges related to the design and implementation of a firm’s purchasing strategy within a context of an integrated, global supply chain. Topics centering on operational purchasing, strategic sourcing, and strategic cost management will be covered. The global logistics systems that support the purchasing process will be analyzed, and the commonly used techniques for designing and evaluating an effective logistics network will be studied.
+    clauses: []
+    noCreditWith: []
+  - courseId: OIE|559
+    description: "This course provides an in-depth focus on prescriptive analytics, which involves the use of data, assumptions, and mathematical modeling of real-world decision problems to ascertain and recommend optimal courses of action. Starting from conceptualization of the problem, to using theory for translational modeling and techniques, to computational solving, and finally interpretation – likely in an iterative manner – students will gain knowledge of tools and practical skills in transforming real-world decision problems into actionable insights. Advanced topics in the prescriptive analytics domain will be covered, such as the use of integer variables to represent important logical constructs, using nonlinear functions to represent real-world decision aspects, the incorporation of stochasticity and uncertainty, and corresponding solution methods. Real-world problems will be selected from a variety of contexts that may include capacity management, data science, finance, healthcare, humanitarian operations, inventory management, production planning, routing, staffing, and supply chain. Students will complete an individual project that includes a report in the style of a technical report or research paper, as well as an oral presentation. (Prerequisite: OIE 552, equivalent knowledge about optimization and linear programming, or consent of the instructor. Students may not receive credit for both OIE 4430 and OIE 559)."
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "(Prerequisite: OIE 552, equivalent knowledge about optimization and linear programming, or consent of the instructor."
+        requirement:
+          kind: anyOf
+          of:
+            - kind: course
+              course: OIE|552
+            - kind: topic
+              topic: equivalent knowledge about optimization and linear programming
+            - kind: permission
+              text: consent of the instructor
+    noCreditWith:
+      - OIE|4430
+  - courseId: OIE|597
+    description: "This capstone course serves as a practical integration of the operations and supply chain theories, practices, tools and techniques that students learned in their MS program. The medium is a major team-based project, sponsored by an external organization. The course goals are: (1) to enrich students’ experiential learning and support the acquisition of the skills and capabilities to tackle real-world problems; and (2) to enhance students’ teamwork, interpersonal and consulting skills. Students will produce a written report documenting their solutions, and providing the financial, organizational, and technical rationale for their approach. They will also formally present their results to the project sponsors. Students are expected to have completed (or be currently completing) all the course requirements for their MS in Operations and Supply Chain Analytics prior to taking the capstone project."
+    clauses: []
+    noCreditWith: []
+    needsReview: Says students are expected to have completed (or be completing) all MS course requirements before the capstone. Not labelled as a prerequisite, so no clause recorded.
+  - courseId: OIE|3020
+    description: Cat. I Operations are embedded in a constantly changing network of relationships with various stakeholders including customers and suppliers. Within the organization, scarce resources (including financial, human, and technological) need to be allocated and aligned with strategic goals. External to the organization, consideration is given to sustainability and environmentally responsible use of resources. This course focuses on process analysis, engineering design thinking and process implementation within the constraints of stakeholder networks. Professional engineering ethics and the consequences of management decision making are discussed in detail. The course includes a process analysis project and a one-piece-flow hands on laboratory experience. Course assignments follow one-piece-flow principles in education, allowing individual students to complete the course at their own pace. Students cannot receive credit for both BUS 3020 and OIE 3020.
+    clauses: []
+    noCreditWith:
+      - BUS|3020
+  - courseId: OIE|501
+    description: This course focuses on the data-driven decision-making that matches supply to demand in an organization and its supply chain, emphasizing the strategic impact of operations on competitiveness and sustainability. Emergent technologies are explored as opportunities for innovation. Descriptive, predictive, and prescriptive analytical techniques are introduced to structure and evaluate key operational decisions. Skills required to model a system’s operations, to address uncertainty and mitigate risk, to effectively evaluate resource needs, to integrate components into a coordinated system, and to efficiently develop and manage capacity and inventory are honed during the course.
+    clauses: []
+    noCreditWith: []
+  - courseId: OIE|552
+    description: This course is designed to provide students with a variety of quantitative tools and techniques useful in modeling, evaluating and optimizing operation processes. Students are oriented toward the creation and use of spreadsheet models to support decision-making in industry and business.
+    clauses: []
+    noCreditWith: []
+  - courseId: OIE|558
+    description: "This course teaches Six-Sigma as an organizational quality system and a set of statistical tools that have helped the world’s leading companies save millions of dollars and improve customer satisfaction. This course is organized in three parts: part one covers the essentials of Six-Sigma, including fundamental concepts, the advantages of Six-Sigma over Total Quality Management, and a five-phase model for building a Six-Sigma organization; part two of the course covers the Six-Sigma training, including technical topics such as capability and experimental design as well as how to train “Black Belts” and other key roles; part three describes the major activities of the SixSigma Roadmap, from identifying core processes to executing improvement projects to sustaining Six-Sigma gains."
+    clauses: []
+    noCreditWith: []

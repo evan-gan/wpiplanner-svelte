@@ -1,0 +1,811 @@
+department: BB
+entries:
+  - courseId: BB|1001
+    description: "BB 1001. Introduction to Biology (Cat. I; 1/3 unit) This course is designed for students seeking a broad overview of biologic concepts, especially at the cell and organism level. It is conducted in an active style including the use of case studies, class discussion/participation, and classroom polling systems. The major goal of this course is to help students become more informed citizens, skeptical when presented with data in the media, and knowledgeable enough to question and make informed decisions about scientific advances and science policy. It will primarily focus on current topics which may include genetic engineering, viruses and vaccines, antibiotic resistant bacteria, the evolution of infectious diseases. This course is intended for non-life science majors. Recommended background: High School Biology"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: High School Biology"
+        requirement:
+          kind: topic
+          topic: high school biology
+    noCreditWith: []
+  - courseId: BB|1002
+    description: "Cat. I This course is designed for students seeking a broad overview of ecological systems and the effect of humans on the ecosystems. It provides an introduction to natural ecosystems, population growth, and the interaction between human populations and our environment. It is conducted in an active style including the use of case studies, class discussion/participation, and classroom polling systems. The major goal of this course is to help students become more informed environmental citizens, skeptical when presented with data in the media, and knowledgeable enough to question and make informed decisions about the environment. It will primarily focus on current topics but areas of discussion likely to be covered include ecosystems, populations, biodiversity, pollution, environmental economics and climate change. This course is intended for non- life science majors. Recommended background: High School Biology"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: High School Biology"
+        requirement:
+          kind: topic
+          topic: high school biology
+    noCreditWith: []
+  - courseId: BB|1003
+    description: "Life scientists are generating huge amounts of data on many different scales, from DNA and protein sequence, to information on biological systems such as protein interaction networks, brain circuitry, and ecosystems . Analyzing these kinds of data requires quantitative knowledge and approaches using computer science and mathematics . In this project-based course, students will use case studies to learn about both important biological problems and the computational tools and algorithms used to study them . Students will study a sampling of topics in the field; recent topics included complex disease genetics, HIV evolution, antibiotic resistance, and animal migration behavior . In addition, students will hear from several guest speakers about their interdisciplinary research . Computational tools explored will include both freely-available tools to analyze sequences and build phylogenetic trees (e .g . BLAST, MUSCLE, MEGA) as well as guided programming using languages such as Python, R, and Netlogo . Students may not receive credit for both BCB / BB 100X and BCB / BB 1003 . BBT majors may count this course as fulfilling part of their quantitative science and engineering requirement, but not as part of their BB 1000 level course requirement . Recommended background: High school biology . Programming experience is not required ."
+    clauses: []
+    noCreditWith:
+      - BCB|1003
+      - BB|100X
+      - BCB|100X
+  - courseId: BB|1004
+    description: "BB 1004 Human Biology This course is designed for students seeking an introduction to general concepts of human biology, with particular focus on human structure and function. Concepts such as homeostasis, structure/function, and regulatory systems will be introduced. Discussion of current topics related to human health, such as personalized medicine and recent advances in cancer research and autoimmune disease will be integrated throughout the course. This course is intended for non-BBT majors. Students may not receive credit for both BB 1004 and BB 1025. Units: 1/3 Category: Category I Recommended Background: high school biology"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: high school biology"
+        requirement:
+          kind: topic
+          topic: high school biology
+    noCreditWith:
+      - BB|1025
+  - courseId: BB|1101
+    description: "BB 1101: Foundations of Cellular and Molecular Biotechnology. In this foundational course, students will explore the cellular and molecular basis of life through lectures, discussion, and project work. Students will gain an understanding of how genetic information is stored and used, as well as how the structures of cells underlie their functions. There will be a focus on the application of these topics to genetic engineering and biotechnology. This course is designed for BBT majors and minors, as well as others who plan further study in topics such as cell biology, molecular biology, and genetics. Credit cannot be received for both BB 1101 and BB 1035. Units: 1/3 Category: Category I Recommended Background: a solid working knowledge of biological principles such as would be learned in a rigorous high school biology course."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: a solid working knowledge of biological principles such as would be learned in a rigorous high school biology course"
+        requirement:
+          kind: topic
+          topic: a solid working knowledge of biological principles such as would be learned in a rigorous high school biology course
+    noCreditWith:
+      - BB|1035
+  - courseId: BB|1102
+    description: "BB 1102: Foundations of Ecology and Environmental Biology In this foundational course, students will explore our planet’s diversity of organisms and environments and the interactions among them. Lectures, discussion, and project work will address topics such as biodiversity, ecology, evolution, and animal behavior. Students will develop their communication skills and gain experience using primary literature to understand the process of biological research. This course is designed for BBT majors and minors, as well as others who plan further study in topics such as environmental biology, conservation, ecology, and evolution. Credit cannot be received for both BB 1102 and BB 1045. Units: 1/3 Category: Category I Recommended Background: a solid working knowledge of biological principles such as would be learned in a rigorous high school biology course"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: a solid working knowledge of biological principles such as would be learned in a rigorous high school biology course"
+        requirement:
+          kind: topic
+          topic: a solid working knowledge of biological principles such as would be learned in a rigorous high school biology course
+    noCreditWith:
+      - BB|1045
+  - courseId: BB|1801
+    description: "BB 1801 Foundations of Biology and Biotechnology Laboratory (Cat. I; 1/3 unit) This course will provide a foundational experience by exposing students to how research questions are identified and addressed via biological experimentation. Importantly, the lab will also serve as a unifying experience for biology majors, providing a framework that will allow them to identify as contributing members of a scientific community. This lab will convey the breadth of biological systems from organismal to molecular scales, and the overarching principles of evolution and effects of environment on behavior. Focus areas may include how resistance to antibiotics arises, how ecosystems and organisms are adversely affected by pollution, and how experiments can be designed to identify strategies to overcome global problems. This introductory biology lab experience is intended for first-year Biology & Biotechnology majors, and anyone intending to take 3800 level biology laboratories. Recommended background: High school biology. No previous laboratory experience is assumed."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: High school biology."
+        requirement:
+          kind: topic
+          topic: high school biology
+    noCreditWith: []
+  - courseId: BB|2003
+    description: "BB 2003 Fundamentals of Microbiology (Cat. I; 1/3 unit) This course will introduce the basic principles of microbiology through lectures, discussion, readings, and projects. The course will explore both the fundamental biology of microbes and the ways in which microbes influence society and the world. Topics will include the morphology, physiology, and genetics of unicellular organisms with a primary focus on bacteria. Special attention will be given to organisms known to have important roles in health, research, industry, and the environment. This course is designed for life sciences majors. Students may not receive credit for both BB 2002 and BB 2003. Recommended background: A working knowledge of concepts of cellular and molecular biology (BB 1101 or equivalent), and knowledge of chemical properties and reactions (CH 1010 and CH 1020 or equivalent). Suggested background: a working knowledge of chemical kinetics, equilibrium, and thermodynamics (CH 1030 or equivalent)"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: A working knowledge of concepts of cellular and molecular biology (BB 1101 or equivalent), and knowledge of chemical properties and reactions (CH 1010 and CH 1020 or equivalent)."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: concepts of cellular and molecular biology
+              satisfiedBy:
+                kind: course
+                course: BB|1101
+                orEquivalent: true
+            - kind: topic
+              topic: chemical properties and reactions
+              satisfiedBy:
+                kind: allOf
+                of:
+                  - kind: course
+                    course: CH|1010
+                    orEquivalent: true
+                  - kind: course
+                    course: CH|1020
+                    orEquivalent: true
+      - strength: suggested
+        timing: prior
+        sourceText: "Suggested background: a working knowledge of chemical kinetics, equilibrium, and thermodynamics (CH 1030 or equivalent)"
+        requirement:
+          kind: topic
+          topic: chemical kinetics, equilibrium, and thermodynamics
+          satisfiedBy:
+            kind: course
+            course: CH|1030
+            orEquivalent: true
+    noCreditWith:
+      - BB|2002
+  - courseId: BB|2030
+    description: "BB 2030 Plant Diversity (Cat. I; 1/3 unit) This course focuses on general concepts as they relate to the vast array of plant species and their taxonomic links. Current uses of major plant phyla in both society and the biotechnology industry will be explored. Some emphasis will be given to economically important species chosen from agronomic and non-agronomic situations with examples related to society and climate change. Recommended background: a working knowledge of concepts in biodiversity ( BB1102, BB1002, or equivalent). Students may not receive credit for both BB 2030 and BB 1040 (no longer offered)."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: a working knowledge of concepts in biodiversity ( BB1102, BB1002, or equivalent)."
+        requirement:
+          kind: topic
+          topic: a working knowledge of concepts in biodiversity
+          satisfiedBy:
+            kind: anyOf
+            of:
+              - kind: course
+                course: BB|1102
+                orEquivalent: true
+              - kind: course
+                course: BB|1002
+                orEquivalent: true
+    noCreditWith:
+      - BB|1040
+  - courseId: BB|2040
+    description: "Cat. I This course is intended to help students understand ecological concepts at different levels of integration, from individuals to ecosystems, and the linkages among them. Students will also practice the application of qualitative and quantitative models to ecological systems and processes, as well as hypothesis generation, experimental design, and analysis and interpretation of data. In a format that includes team-based case studies, discussion and presentations, and ecological simulations, students will explore topics in both basic and applied ecology, which may include population ecology, host-parasite ecology and epidemiology, climate change, and sustainable agriculture, among others. Recommended background: A foundational knowledge of concepts in ecology and biodiversity (BB 1102 or equivalent) -Suggested background: integral and differential calculus."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: A foundational knowledge of concepts in ecology and biodiversity (BB 1102 or equivalent)"
+        requirement:
+          kind: topic
+          topic: a foundational knowledge of concepts in ecology and biodiversity
+          satisfiedBy:
+            kind: course
+            course: BB|1102
+            orEquivalent: true
+      - strength: suggested
+        timing: prior
+        sourceText: "Suggested background: integral and differential calculus."
+        requirement:
+          kind: topic
+          topic: integral and differential calculus
+    noCreditWith: []
+  - courseId: BB|2550
+    description: "BB 2550 Cell Biology (Cat. I; 1/3 unit) The goal of this course is to help students to develop a working understanding of the unifying concepts that define cell structure and function including replication, metabolism, regulation, communication, and transport. Applications in therapeutics, molecular medicine, and genetic engineering will be introduced. Classic and current research examples will provide practice in hypothesis generation and testing as well as making clear the importance of a working knowledge of cell biology to support advances in biotechnology and medicine. The course serves as the foundation of all fields of modern biology and is recommended for all BBT and other life science majors. Recommended background: Foundational knowledge of cell and molecular biotechnology (BB 1101 or equivalent)."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Foundational knowledge of cell and molecular biotechnology (BB 1101 or equivalent)."
+        requirement:
+          kind: topic
+          topic: foundational knowledge of cell and molecular biotechnology
+          satisfiedBy:
+            kind: course
+            course: BB|1101
+            orEquivalent: true
+    noCreditWith: []
+  - courseId: BB|2802
+    description: "BB 2802 Enzymes, Proteins, and Purification Laboratory (Cat. I; 1/6 unit) This course gives basic practical experimental experience in how enzymes work and how to purify proteins for later use. These techniques are foundational for the design and production of many therapeutic products. Examples of the types of techniques and experiences included in this course are: The action and optima of enzyme catalysis, induction of protein production, quantification and detection techniques for proteins, extraction and purification of proteins from biological material using column chromatography, and assessing the efficacy of a purification process. Recommended background: at least one college-level biology course. Students may not receive credit for this course and BB 2902."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: at least one college-level biology course."
+        requirement:
+          kind: topic
+          topic: at least one college-level biology course
+    noCreditWith:
+      - BB|2902
+  - courseId: BB|2803
+    description: "BB2803 Anatomy and Physiology Laboratory (Cat. I; 1/6 unit) This course is an active exploration of topics in anatomy and physiology through the use of simulations, measurements, and hands-on discovery. It will be particularly relevant to any student considering a health-related career, doing work where body structure is central, or has interest in how body systems connect. A significant portion of this discovery will be accomplished by a hands-on dissection. Examples of the specific types of experiences and techniques included in this course are comparative and general anatomy of several organisms; physiology and function of body systems, processes, and organs; Enzyme Linked Immunosorbent Assay (ELISA); and microscopy. Students may not receive credit for this course and BB 2903. Recommended background: at least one college-level biology course."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: at least one college-level biology course."
+        requirement:
+          kind: topic
+          topic: at least one college-level biology course
+    noCreditWith:
+      - BB|2903
+  - courseId: BB|2804
+    description: "BB 2804 Ecology, Environment, and Animal Behavior Laboratory (Cat. I; 1/6 unit) This course examines topics in ecology and animal behavior through hands on experimentation and simulation. Activities in this course include interactions and observation of live animals as well as some outdoor activities and environmental sampling. This course will be relevant to students who have an interest in biology at more than the individual organism level as well as those majors studying environmental and ecological concerns. Examples of the specific types of techniques and experience included in this course are observing, recording, understanding, and analyzing animal behaviors; handling of organisms; environmental and ecological assessment and sampling; and observations of population dynamics. Recommended background: at least one college-level biology course. Students may not receive credit for this course and BB 2904, BB 294X, or BB 292X."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: at least one college-level biology course."
+        requirement:
+          kind: topic
+          topic: at least one college-level biology course
+    noCreditWith:
+      - BB|2904
+      - BB|294X
+      - BB|292X
+  - courseId: BB|2920
+    description: "Cat. 1 Through interactive lectures, group problem solving, and analysis of primary scientific literature, this course will help students understand the gene concept and its application in modern biological analysis. This course will cover patterns of inheritance, the relationship between genotype and phenotype, and the transmission, coding, and expression of genetic information contained in DNA in both model systems and humans. Students will gain an understanding of the modern tools of genetic analysis, including genomics creation of transgenic organisms, CRISPR editing and RNA interference. Applications of genetic analysis to current advancements in human health, such as gene therapy and personalized medicine, will be explored. Recommended background: Foundational knowledge of concepts in biology and biotechnology (BB 1101 and BB 1102 or equivalent)"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Foundational knowledge of concepts in biology and biotechnology (BB 1101 and BB 1102 or equivalent)"
+        requirement:
+          kind: topic
+          topic: foundational knowledge of concepts in biology and biotechnology
+          satisfiedBy:
+            kind: allOf
+            of:
+              - kind: course
+                course: BB|1101
+                orEquivalent: true
+              - kind: course
+                course: BB|1102
+                orEquivalent: true
+    noCreditWith: []
+  - courseId: BB|3010
+    description: "Cat. II Computer simulations are becoming increasingly important in understanding and predicting the behavior of a wide variety of biological systems, ranging from metastasis of cancer cells, to spread of disease in an epidemic, to management of natural resources such as fisheries and forests. In this course, students will learn to use a technique classed 'agent-based modeling (ABM)' to simulate biological systems. Most of the classroom time will be spent working individually or in groups, first learning a language (either the block-based language Starlogo Nova, or the text-based language Netlogo), and then creating simulation projects. We will also discuss several papers on biological simulations from the primary scientific literature. In constructing and comparing their simulations, students will demonstrate for themselves how relatively simple behavioral rules followed by individual molecules, cells, or organisms can result in complex system behaviors. Recommended background: Students taking this course should have background in a biological area they would like to simulate, at about the depth provided by a BB 2000 or BB 3000 level class. No programming experience is assumed. This course will be offered in 2023-24, and in alternating years thereafter."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: Students taking this course should have background in a biological area they would like to simulate, at about the depth provided by a BB 2000 or BB 3000 level class.
+        requirement:
+          kind: topic
+          topic: background in a biological area at about the depth of a BB 2000 or BB 3000 level class
+    noCreditWith: []
+    needsReview: The BB 2000 / BB 3000 level is a depth, not named courses, so no course ids were recorded.
+  - courseId: BB|3060
+    description: "BB 3060 Animal Behavior This course will provide an introduction to the scientific study of animal behavior. A combination of lecture, reading, and videos will be used to illustrate how proximate and ultimate forces interact to shape animal behavior in complex and fascinating ways. Behavioral phenomena in all members of the animal kingdom will be discussed and analyzed from ecological, evolutionary, cognitive, and neurobiological perspectives to highlight how the use of an integrative approach has greatly accelerated our ability to solve complex behavioral problems. Primary scientific literature will be used to outline experimental tools and techniques used to investigate behavior in different contexts, including communication, foraging, navigation, mate choice, predation, and social behavior. Students may not earn credit for both BB2050 and BB3060. Units: 1/3 Category: Category I Recommended Background: A thorough understanding of ecology (BB 2040 Ecology or equivalent)."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: A thorough understanding of ecology (BB 2040 Ecology or equivalent)."
+        requirement:
+          kind: topic
+          topic: a thorough understanding of ecology
+          satisfiedBy:
+            kind: course
+            course: BB|2040
+            orEquivalent: true
+    noCreditWith:
+      - BB|2050
+  - courseId: BB|3080
+    description: "BB 3080 Neurobiology (Cat. I; 1/3 unit) The nervous system underlies every aspect of our behavior, including sensation, movement, emotion, and cognition. In this course, students will develop an understanding of neurobiology at several levels, from the physiology of individual neurons, through the functioning of neural circuits, and finally to the behavior of neural systems such as vision, motion, and memory. The class will be based on lectures accompanied by in-class activities and will include weekly discussion of a paper from the scientific literature. Each year, the class papers will focus on a guiding theme, (e.g. neurotransmitter systems) with emphasis on research that is relevant for human health such as neurodevelopmental conditions (e.g. autism), psychiatric disorders (e.g. schizophrenia), addiction, or neurodegenerative diseases (e.g. Parkinson’s, ALS, Alzheimer’s, etc.). Recommended background: A working knowledge of concepts in cell biology (BB 2550 or equivalent), genetics or molecular biology (BB2920, BB3950 or equivalent), and physiology (BB 2101 or equivalent)."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: A working knowledge of concepts in cell biology (BB 2550 or equivalent), genetics or molecular biology (BB2920, BB3950 or equivalent), and physiology (BB 2101 or equivalent)."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: concepts in cell biology
+              satisfiedBy:
+                kind: course
+                course: BB|2550
+                orEquivalent: true
+            - kind: topic
+              topic: genetics or molecular biology
+              satisfiedBy:
+                kind: anyOf
+                of:
+                  - kind: course
+                    course: BB|2920
+                    orEquivalent: true
+                  - kind: course
+                    course: BB|3950
+                    orEquivalent: true
+            - kind: topic
+              topic: physiology
+              satisfiedBy:
+                kind: course
+                course: BB|2101
+                orEquivalent: true
+    noCreditWith: []
+  - courseId: BB|3102
+    description: "Cat. I The form and function of the systems of the human body that provide for the intake, distribution, and processing of nutrients, water, and oxygen, and the systems that safeguard health by elimination of wastes, regulation of metabolism, and surveillance against disease will be presented and discussed. Digestive, Respiratory, Circulatory, Lymphatic, Urinary, and Reproductive. Recommended Background: A working knowledge of concepts in physiology and cell biology (BB 2101 and BB 2550 or equivalent), and a working knowledge of chemical properties and reactions (CH 1010 and CH 1020 or equivalent). Suggested background: Concurrent Laboratory: BB 3815. Students who have received credit for BB 3110 may not take BB 3102 for credit ."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: A working knowledge of concepts in physiology and cell biology (BB 2101 and BB 2550 or equivalent), and a working knowledge of chemical properties and reactions (CH 1010 and CH 1020 or equivalent)."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: concepts in physiology and cell biology
+              satisfiedBy:
+                kind: allOf
+                of:
+                  - kind: course
+                    course: BB|2101
+                    orEquivalent: true
+                  - kind: course
+                    course: BB|2550
+                    orEquivalent: true
+            - kind: topic
+              topic: chemical properties and reactions
+              satisfiedBy:
+                kind: allOf
+                of:
+                  - kind: course
+                    course: CH|1010
+                    orEquivalent: true
+                  - kind: course
+                    course: CH|1020
+                    orEquivalent: true
+      - strength: suggested
+        timing: concurrent
+        sourceText: "Suggested background: Concurrent Laboratory: BB 3815."
+        requirement:
+          kind: course
+          course: BB|3815
+    noCreditWith:
+      - BB|3110
+  - courseId: BB|3140
+    description: "BB 3140 Evolution: Pattern and Process (Cat. II; 1/3 unit) In this course, students will explore the foundations of micro- and macro-evolutionary theory and will learn to apply these fundamental evolutionary principles through critical analysis of the primary scientific literature. In a course format that emphasizes case studies and, critical analysis of the primary scientific literature, students will explore the evolutionary foundations of a wide range of biological disciplines, and will gain experience in critical evaluation of approaches, arguments, and points of view in the field. Topics may include the history of life on Earth; biogeography and the origins of biodiversity; host-pathogen coevolution; and genomic and molecular evolution, among others. This course will be offered in 2023-24, and in alternating years thereafter. Recommended background: A working knowledge of the principles of ecology (BB2040 or equivalent) and molecular biology & genetics (either or both BB2920 and BB3950 or equivalent). Suggested background: integral and differential calculus (MA 1020 or 1021, and MA 1022, or equivalent)"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: A working knowledge of the principles of ecology (BB2040 or equivalent) and molecular biology & genetics (either or both BB2920 and BB3950 or equivalent)."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: principles of ecology
+              satisfiedBy:
+                kind: course
+                course: BB|2040
+                orEquivalent: true
+            - kind: topic
+              topic: molecular biology and genetics
+              satisfiedBy:
+                kind: anyOf
+                of:
+                  - kind: course
+                    course: BB|2920
+                    orEquivalent: true
+                  - kind: course
+                    course: BB|3950
+                    orEquivalent: true
+      - strength: suggested
+        timing: prior
+        sourceText: "Suggested background: integral and differential calculus (MA 1020 or 1021, and MA 1022, or equivalent)"
+        requirement:
+          kind: topic
+          topic: integral and differential calculus
+          satisfiedBy:
+            kind: allOf
+            of:
+              - kind: anyOf
+                of:
+                  - kind: course
+                    course: MA|1020
+                    orEquivalent: true
+                  - kind: course
+                    course: MA|1021
+                    orEquivalent: true
+              - kind: course
+                course: MA|1022
+                orEquivalent: true
+    noCreditWith: []
+  - courseId: BB|3813
+    description: "BB 3813 Animal Cell Culture Techniques Laboratory (Cat. I; 1/6 unit) Basic laboratory skills in mammalian cell culture including cell counting, freezing and thawing cell lines, and culture of suspension and attached cells. Recommended background: knowledge of aseptic technique (BB 1801 or 2815 or equivalent) and cell biology (BB 2550 or equivalent). Students may not receive credit for this course and BB 3513."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: knowledge of aseptic technique (BB 1801 or 2815 or equivalent) and cell biology (BB 2550 or equivalent)."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: knowledge of aseptic technique
+              satisfiedBy:
+                kind: anyOf
+                of:
+                  - kind: course
+                    course: BB|1801
+                    orEquivalent: true
+                  - kind: course
+                    course: BB|2815
+                    orEquivalent: true
+            - kind: topic
+              topic: cell biology
+              satisfiedBy:
+                kind: course
+                course: BB|2550
+                orEquivalent: true
+    noCreditWith:
+      - BB|3513
+  - courseId: BB|3815
+    description: "BB 3815: Physiologic Systems Laboratory (Cat. I; 1/3 unit) Exercises in this course focus on computer and wet laboratory studies of nervous, musculoskeletal, circulatory, and respiratory systems structures, functions, and physiology. Students will gain experience in hypothesis generation and testing and will be introduced to an interactive biomedical/physiological data acquisition and analysis system. Recommended Background: a working knowledge of laboratory skills and concepts in anatomy and physiology (BB 2803, BB 3101, or BB 3102 or equivalent) and general biology lab practices (BB 1801 or equivalent). Students may not receive credit for this course and BB 3515, BB 3511, or BB 3514"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: a working knowledge of laboratory skills and concepts in anatomy and physiology (BB 2803, BB 3101, or BB 3102 or equivalent) and general biology lab practices (BB 1801 or equivalent)."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: laboratory skills and concepts in anatomy and physiology
+              satisfiedBy:
+                kind: anyOf
+                of:
+                  - kind: course
+                    course: BB|2803
+                    orEquivalent: true
+                  - kind: course
+                    course: BB|3101
+                    orEquivalent: true
+                  - kind: course
+                    course: BB|3102
+                    orEquivalent: true
+            - kind: topic
+              topic: general biology lab practices
+              satisfiedBy:
+                kind: course
+                course: BB|1801
+                orEquivalent: true
+    noCreditWith:
+      - BB|3515
+      - BB|3511
+      - BB|3514
+  - courseId: BB|3825
+    description: "BB 3825 Plant Physiology Laboratory (Cat. I; 1/6 unit) Basic studies in the biochemical and physical systems plants use to sustain life; includes an introduction to plant cell culture techniques. Some sections of this course may be offered as Writing Intensive (WI). Recommended background: BB 1102, BB 2803, or equivalent. Concurrent or prior registration in BB 3120 is recommended. Students may not receive credit for this course and BB 3525."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: BB 1102, BB 2803, or equivalent."
+        requirement:
+          kind: anyOf
+          of:
+            - kind: course
+              course: BB|1102
+              orEquivalent: true
+            - kind: course
+              course: BB|2803
+              orEquivalent: true
+      - strength: recommended
+        timing: priorOrConcurrent
+        sourceText: Concurrent or prior registration in BB 3120 is recommended.
+        requirement:
+          kind: course
+          course: BB|3120
+    noCreditWith:
+      - BB|3525
+  - courseId: BB|3830
+    description: "BB 3830 Immunotherapies Laboratory (Cat. I; 1/3 unit) The clinical use of monoclonal antibodies as human therapeutics represents an increasingly popular and promising application. Beginning with a hybridoma cell line and using a discovery-based approach, students in this course will explore the processes involved in the production and purification of monoclonal antibodies. Using cells in culture to produce the antibody, students will explore the efficacy and cost of a purification scheme involving separation techniques such as ion exchange and affinity chromatography to produce a purified product. Purification will be assessed using typical analytical techniques such as spectroscopy, electrophoresis, and immunological methods. Recommended background: a working knowledge of laboratory skills in protein purification (BB 2802 and BB 1801, or equivalent) and concepts in cell biology (BB 2550 or equivalent) and biochemistry (CH 4110 or equivalent). Some knowledge of immunology may be beneficial. Students may not receive credit for this course and BB 3530."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: a working knowledge of laboratory skills in protein purification (BB 2802 and BB 1801, or equivalent) and concepts in cell biology (BB 2550 or equivalent) and biochemistry (CH 4110 or equivalent)."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: laboratory skills in protein purification
+              satisfiedBy:
+                kind: allOf
+                of:
+                  - kind: course
+                    course: BB|2802
+                    orEquivalent: true
+                  - kind: course
+                    course: BB|1801
+                    orEquivalent: true
+            - kind: topic
+              topic: cell biology
+              satisfiedBy:
+                kind: course
+                course: BB|2550
+                orEquivalent: true
+            - kind: topic
+              topic: biochemistry
+              satisfiedBy:
+                kind: course
+                course: CH|4110
+                orEquivalent: true
+    noCreditWith:
+      - BB|3530
+  - courseId: BB|3840
+    description: "BB 3840 Design and Expression of Biomolecules Laboratory Students will gain experience in several fundamental skills applicable to academic and industrial research and development. Producing a biologic product is of paramount interest in both basic and applied research and requires the ability to both design and produce a functional product. There are numerous potential variables that influence the amount, quality, and cost of producing these molecules. This course will explore some of those variables which allow students to design, test, and evaluate strategies for product and process optimizations. Students will learn how DNA sequences are designed, constructed, and analyzed. A model organism will be grown and induced to express a protein product using common fermentation principles and techniques. Students will evaluate efficiency of the fermentation and output of the gene product through an original research project of their design. Students may not receive credit for BB 3840 and either BB 3512 or BB 3517. Units: 1/3 Category I Recommended background: Working knowledge of the principles of molecular biology (BB 1101, BB 2920, or 3950 or equivalent) and cell biology (BB 2550 or equivalent), as well as relevant biology laboratory experience (BB 1801, 3827, or equivalent)."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Working knowledge of the principles of molecular biology (BB 1101, BB 2920, or 3950 or equivalent) and cell biology (BB 2550 or equivalent), as well as relevant biology laboratory experience (BB 1801, 3827, or equivalent)."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: principles of molecular biology
+              satisfiedBy:
+                kind: anyOf
+                of:
+                  - kind: course
+                    course: BB|1101
+                    orEquivalent: true
+                  - kind: course
+                    course: BB|2920
+                    orEquivalent: true
+                  - kind: course
+                    course: BB|3950
+                    orEquivalent: true
+            - kind: topic
+              topic: cell biology
+              satisfiedBy:
+                kind: course
+                course: BB|2550
+                orEquivalent: true
+            - kind: topic
+              topic: relevant biology laboratory experience
+              satisfiedBy:
+                kind: anyOf
+                of:
+                  - kind: course
+                    course: BB|1801
+                    orEquivalent: true
+                  - kind: course
+                    course: BB|3827
+                    orEquivalent: true
+    noCreditWith:
+      - BB|3512
+      - BB|3517
+  - courseId: BB|3870
+    description: "BB 3870 Cell Culture Models Laboratory (Cat. I: 1/3 unit) This course is an intensive hands-on laboratory that explores mammalian cells as building blocks of complex tissues in vitro. In addition to learning standard cell culture skills, students will have the opportunity to examine cell survival, proliferation, differentiation, and function under different culture conditions. The course culminates with design and development of a cell-based system for an application in regenerative medicine (e.g., wound healing and fibrosis). Students will synthesize and present their work in the form of a research manuscript. This course carries the writing-intensive designation. Recommended background: a working knowledge of the principles of cell biology (BB 2550 or equivalent) as well as a foundational lab experience such as that offered in BB 1801 and BB 3813. Students may not receive credit for this course and BB 3570."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: a working knowledge of the principles of cell biology (BB 2550 or equivalent) as well as a foundational lab experience such as that offered in BB 1801 and BB 3813."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: principles of cell biology
+              satisfiedBy:
+                kind: course
+                course: BB|2550
+                orEquivalent: true
+            - kind: topic
+              topic: a foundational lab experience
+              satisfiedBy:
+                kind: allOf
+                of:
+                  - kind: course
+                    course: BB|1801
+                  - kind: course
+                    course: BB|3813
+    noCreditWith:
+      - BB|3570
+    needsReview: "'such as that offered in BB 1801 and BB 3813' is an example, so the lab requirement may be met other ways."
+  - courseId: BB|3920
+    description: "Cat. I Through lecture, reading, and discussion, this course will help students understand the origin of immune cells in bone marrow development, the distinction between innate and adaptive immunity, and the function of the immune system in health and disease. The mechanisms responsible for the exquisite specificity of the adaptive immune system will be described. Throughout the course, the probable paths of evolution of the immune system will be stressed. As examples of major genetic diseases of immunity, case studies will be discussed on a weekly basis. Recommended background: a working knowledge of the concepts in cell biology, genetics and biochemistry (BB 2550, BB 2920, CH 4110 and 4120 or equivalent)"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: a working knowledge of the concepts in cell biology, genetics and biochemistry (BB 2550, BB 2920, CH 4110 and 4120 or equivalent)"
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: cell biology
+              satisfiedBy:
+                kind: course
+                course: BB|2550
+                orEquivalent: true
+            - kind: topic
+              topic: genetics
+              satisfiedBy:
+                kind: course
+                course: BB|2920
+                orEquivalent: true
+            - kind: topic
+              topic: biochemistry
+              satisfiedBy:
+                kind: allOf
+                of:
+                  - kind: course
+                    course: CH|4110
+                    orEquivalent: true
+                  - kind: course
+                    course: CH|4120
+                    orEquivalent: true
+    noCreditWith: []
+  - courseId: BB|3950
+    description: "BB 3950 Molecular Biology Through lectures, discussion, and other activities, students will learn the essential concepts of molecular biology, including the mechanisms by which genetic information is stored, replicated, and used to produce RNA and proteins. The theory behind major molecular biology laboratory techniques such as recombinant DNA technology, nucleic acid sequencing, and genetic engineering will also be covered. Basic mechanisms by which gene expression is regulated will be addressed. The themes of structure/function relationships, evolution, and intersections of molecular biology and human disease will run throughout the course. The concepts learned in this course will provide a foundation for further study and work in this rapidly expanding field. Students may not earn credit for both BB 2950 and BB 3950. Units: 1/3 Category: Category I Recommended Background: A thorough understanding of genetics (BB 2920 or equivalent) and cell biology (BB 2550 or equivalent) and an understanding of organic chemistry (CH 2310 or equivalent)."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: A thorough understanding of genetics (BB 2920 or equivalent) and cell biology (BB 2550 or equivalent) and an understanding of organic chemistry (CH 2310 or equivalent)."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: genetics
+              satisfiedBy:
+                kind: course
+                course: BB|2920
+                orEquivalent: true
+            - kind: topic
+              topic: cell biology
+              satisfiedBy:
+                kind: course
+                course: BB|2550
+                orEquivalent: true
+            - kind: topic
+              topic: organic chemistry
+              satisfiedBy:
+                kind: course
+                course: CH|2310
+                orEquivalent: true
+    noCreditWith:
+      - BB|2950
+  - courseId: BB|402X
+    description: "This course will introduce quantitative approaches to address outstanding questions from various biological disciplines. A combination of lectures, readings, and computational exercises will be used to illustrate how to use simple mathematical models to understand complex biological phenomena. We will discuss and examine different biological problems from diverse areas of biological research, including cell biology, genetics, and public health to highlight the broad applicability of these approaches. Primary scientific literature will be used to introduce these topics, as well as the quantitative experimental techniques used to test these models. Units: 1/3 Recommended Background: A strong background in cell biology and genetics ( BB 2 5 50 , BB2920 , or equivalent) ."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: A strong background in cell biology and genetics ( BB 2 5 50 , BB2920 , or equivalent) ."
+        requirement:
+          kind: topic
+          topic: a strong background in cell biology and genetics
+          satisfiedBy:
+            kind: anyOf
+            of:
+              - kind: course
+                course: BB|2550
+                orEquivalent: true
+              - kind: course
+                course: BB|2920
+                orEquivalent: true
+    noCreditWith: []
+    needsReview: The text writes BB 2550 with spaces ('BB 2 5 50'); read as BB|2550.
+  - courseId: BB|4050
+    description: "BB4050: Cancer Biology In this course, students will learn and apply advanced cellular and molecular biology concepts to understand causes and consequences of cancer cell transformation. Through an integration of primary literature and lecture material students will explore how research into basic mechanisms of cancer biology is used to identify therapeutic targets and inform drug design. This course will cover discussion of the hallmarks of cancer including the deregulation of cell growth, cell death, and metabolism; corruption of genome stability; evasion of immune response; and metastatic potential. Students may not earn credit for both BB3050 and BB4050. Units: 1/3 Category: Category I Recommended Background: A thorough understanding of genetics (BB 2920 or equivalent), cell biology (BB 2550 or equivalent), and molecular biology (BB 3950 or equivalent)."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: A thorough understanding of genetics (BB 2920 or equivalent), cell biology (BB 2550 or equivalent), and molecular biology (BB 3950 or equivalent)."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: genetics
+              satisfiedBy:
+                kind: course
+                course: BB|2920
+                orEquivalent: true
+            - kind: topic
+              topic: cell biology
+              satisfiedBy:
+                kind: course
+                course: BB|2550
+                orEquivalent: true
+            - kind: topic
+              topic: molecular biology
+              satisfiedBy:
+                kind: course
+                course: BB|3950
+                orEquivalent: true
+    noCreditWith:
+      - BB|3050
+  - courseId: BB|4190
+    description: "Cat. I Through lectures, problem sets, reading and discussion, and presentations this course will help elucidate for students the processes that allow regulated gene expression, mechanisms used in each type of regulation, and methods and techniques used for investigation of regulatory mechanisms . Readings from the current original research literature will explore the growing use of model systems and “omics” level approaches to enhance our ever expanding understanding of the gene regulatory mechanisms. The development of cell-based therapeutics and genetic engineering as they relate to gene regulation will be introduced. Recommended background: a working knowledge of concepts in biochemistry and molecular genetics (CH 4110 and 4120, or equivalent, and CH 4130 or BB 3950 or equivalent)"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: a working knowledge of concepts in biochemistry and molecular genetics (CH 4110 and 4120, or equivalent, and CH 4130 or BB 3950 or equivalent)"
+        requirement:
+          kind: topic
+          topic: a working knowledge of concepts in biochemistry and molecular genetics
+          satisfiedBy:
+            kind: allOf
+            of:
+              - kind: allOf
+                of:
+                  - kind: course
+                    course: CH|4110
+                    orEquivalent: true
+                  - kind: course
+                    course: CH|4120
+                    orEquivalent: true
+              - kind: anyOf
+                of:
+                  - kind: course
+                    course: CH|4130
+                    orEquivalent: true
+                  - kind: course
+                    course: BB|3950
+                    orEquivalent: true
+    noCreditWith: []
+  - courseId: BB|4260
+    description: "Cat.II Do we yet have the technology to engineer life? Can we control gene expression to create organisms that function in useful ways? Do we understand the tenets of genetic regulation as well as we think we do? These important questions and more are investigated by the emerging field of Synthetic Biology. In this course, students will explore this exciting new realm of biology through in-depth analysis and discussion of primary literature. Topics to be covered include the design and construction of synthetic gene circuits, synthesis of new genes and genomes, logic gate regulation of gene expression, and the latest applications of synthetic biology to advances in medicine, information processing, and the environment. Recommended Background: Students should have a strong foundational knowledge of cell biology, molecular biology, and genetics, as would be obtained from BB2550, BB2920, and BB3950. This course will be offered in 2020-21, and in alternating years thereafter."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: Students should have a strong foundational knowledge of cell biology, molecular biology, and genetics, as would be obtained from BB2550, BB2920, and BB3950."
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: BB|2550
+            - kind: course
+              course: BB|2920
+            - kind: course
+              course: BB|3950
+    noCreditWith: []
+    needsReview: "'as would be obtained from' lists the courses that give the knowledge; read as all three."
+  - courseId: BB|4900
+    description: "BB 4900 Advanced Topics in Biology and Biotechnology (Cat. I; 1/3 unit) These classes will serve as integrative experiences for students majoring in Biology & Biotechnology. The course will help students integrate concepts from other courses in the curriculum, practice skills of critical analysis, and evaluate and communicate scientific information effectively. The specific theme of each offering will center around a current topic of biological interest, and may include such areas as genomics, cancer, environmental problems, and synthetic biology. Recommended Background: Prior to enrolling in the course, a student should have completed all of the BB course distribution requirements for BBT majors at the 1000 and 2000 level, or should seek advice from the course instructor. Topics will be announced prior to registration in the year preceding the course offering. Only one offering of BB 4900 can count toward BBT major distribution requirements, although additional offerings may be taken as free electives."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: Prior to enrolling in the course, a student should have completed all of the BB course distribution requirements for BBT majors at the 1000 and 2000 level, or should seek advice from the course instructor.
+        requirement:
+          kind: other
+          text: completed all of the BB course distribution requirements for BBT majors at the 1000 and 2000 level, or seek advice from the course instructor
+    noCreditWith:
+      - BB|590
+  - courseId: BB|504
+    description: "This course will facilitate a student’s functional knowledge of living cells from a biological, biochemical and technological perspective. Topics covered will include the structure, organization, growth, regulation, movements, and interaction of cells, as well as details of cellular metabolism and molecular biology. Emphasis will be placed on visualizing cellular architecture, describing the structure of DNA, describing the fate of various cellular RNAs, articulating information flow in cells, and describing protein outcomes. This course is intended to achieve a homogenous level of student understanding and can be used as a foundation course for the program. This course is designed to familiarize students with basic concepts of molecular biology including structure, organization, growth, regulation, movements, and interactions within a cell. Details of metabolism and molecular biology will be covered through projects and study of the primary literature to achieve a homogenous level of student understanding and rigor. Weekly online assessments are designed to ensure understanding. Note: Students may not receive credit for BB 504 and BB 570-196."
+    clauses: []
+    noCreditWith: []
+  - courseId: BB|508
+    description: "Animal cell culture technology is about maintaining cells in vitro under controlled conditions. In recent decades this technology has advanced significantly, and animal cells are used in variety of application both in research and product development. The students in this course will be exposed to the different methodologies utilized to grow cells and how this technology is becoming critical in production of many of the health care products used to control human diseases. The course is covers four general skills (1) Basic techniques for culturing and sub-culturing animal cells and growth parameters, (2) Quality control of a cell culture laboratory/How to control contamination, (3) Primary cell culture and development of cell lines, and (4) Scale-up of cell culture from a T-Flask to a bioreactor. Note: Students may not receive credit for BB508 and BB570-198"
+    clauses: []
+    noCreditWith: []
+    needsReview: Says students may not receive credit for BB508 and BB570-198. 'BB570-198' is not a valid course id, so it is not recorded.
+  - courseId: BB|550
+    description: BB 550 Cancer Biology In this course, students will learn and apply advanced cellular and molecular biology concepts to understand causes and consequences of cancer cell transformation. Through an integration of primary literature and lecture material students will explore how research into basic mechanisms of cancer biology is used to identify therapeutic targets and inform drug design. This course will cover discussion of the hallmarks of cancer including the deregulation of cell growth, cell death, and metabolism; corruption of genome stability; evasion of immune response; and metastatic potential. Students may not earn credit for both BB 4050 and BB 550. Credits 2
+    clauses: []
+    noCreditWith:
+      - BB|4050
+  - courseId: BB|552
+    description: (3 credits) This course will cover key elements to writing successful grant proposals and manuscripts. This includes project development, identification of funding agencies or journals, proposal and manuscript writing and editing, as well as aspects of the submission and review process. Students will be expected to develop a NIH/NSF style postdoctoral proposal outside their dissertation field and participate in a mock proposal review panel. Students are expected to complete this course prior to their Qualifying Exam. Students may receive credit for either BB552 or a BB570 course entitled Scientific Writing and Proposal Development but not both .
+    clauses: []
+    noCreditWith: []
+    needsReview: Says students are expected to complete this course before their Qualifying Exam. Not labelled as a prerequisite, so no clause recorded.
+  - courseId: BB|560
+    description: "(3 credits) This course provides a detailed hands-on survey of state-of-the-art methods employed by the biotechnology industry for the purification of products, proteins in particular, from fermentation processes. Focus is on methods that offer the best potential for scale-up. Included is the theory of the design, as well as the operation of these methods both at the laboratory scale and scaled up. It is intended for biology, biotechnology, chemical engineering and biochemistry students. (Prerequisite: knowledge of basic biochemistry is assumed.)"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "(Prerequisite: knowledge of basic biochemistry is assumed.)"
+        requirement:
+          kind: topic
+          topic: knowledge of basic biochemistry
+    noCreditWith: []
+  - courseId: BB|562
+    description: (3 credits) This course focuses on molecular events that regulate cell cycle transitions and their relevance to mammalian differentiated and undifferentiated cells. Topics include control of the G1/S and G2/M transitions, relationships between tumor suppressor genes such as p16, Rb, p53 or oncogenes such as cyclin D, cdc25A, MDM2 or c-myc and cell cycle control. Where appropriate, the focus is on understanding regulation of cell cycle control through transcriptional induction of gene expression, protein associations, posttranslational modifications like phosphorylation or regulation of protein stability like ubiquitin degradation. Students may receive credit for either BB562 or a BB570 course entitled Cell Cycle Regulation but not both .
+    clauses: []
+    noCreditWith: []
+  - courseId: BB|575
+    description: "(3 credits) Topics in this course focus on the basic building blocks of life: molecules, genes and cells. The course will address areas of the organization, structure, function and analysis of the genome and of cells. (Prerequisite: A familiarity with fundamentals of recombinant DNA and molecular biological techniques as well as cell biology .)"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "(Prerequisite: A familiarity with fundamentals of recombinant DNA and molecular biological techniques as well as cell biology .)"
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: fundamentals of recombinant DNA and molecular biological techniques
+            - kind: topic
+              topic: cell biology
+    noCreditWith: []
+  - courseId: BB|581
+    description: "This course will provide an overview of bioinformatics, covering a broad selection of the most important techniques used to analyze biological sequence and expression data. Students will acquire a working knowledge of bioinformatics applications through hands-on use of software to ask and answer biological questions. In addition, the course will provide students with an introduction to the theory behind some of the most important algorithms used to analyze sequence data (for example, alignment algorithms and the use of hidden Markov models). Topics covered will include protein and DNA sequence alignments, evolutionary analysis and phylogenetic trees, obtaining protein secondary structure from sequence, and analysis of gene expression including clustering methods. Students may not receive credit for both BCB 4001 and BCB 501. (Prerequisite: knowledge of genetics, molecular biology, and statistics at the undergraduate level.)"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "(Prerequisite: knowledge of genetics, molecular biology, and statistics at the undergraduate level.)"
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: genetics at the undergraduate level
+            - kind: topic
+              topic: molecular biology at the undergraduate level
+            - kind: topic
+              topic: statistics at the undergraduate level
+    noCreditWith:
+      - BCB|4001
+      - BCB|501
+  - courseId: BB|590
+    description: "BB 590 Advanced Topics in Biology and Biotechnology (2 credits) These classes will serve as integrative experiences for graduate students who are early in their doctoral training. The course will help students integrate concepts from other courses in the curriculum, practice skills of critical analysis, and evaluate and communicate scientific information effectively. The specific theme of each offering will center around a current topic of biological interest, and may include such areas as genomics, cancer, environmental problems, and synthetic biology. NOTE: Students may not earn credit for both BB 4900 and BB 590 that bear the same course description."
+    clauses: []
+    noCreditWith:
+      - BB|4900
+  - courseId: BB|501
+    description: ""
+    clauses: []
+    noCreditWith: []
+  - courseId: BB|526
+    description: BB 526 Synthetic Biology Do we yet have the technology to engineer life? Can we control gene expression to create organisms that function in useful ways? Do we understand the tenets of genetic regulation as well as we think we do? These important questions and more are investigated by the emerging field of Synthetic Biology. In this course, students will explore this exciting new realm of biology through in-depth analysis and discussion of primary literature. Topics to be covered include the design and construction of synthetic gene circuits, synthesis of new genes and genomes, logic gate regulation of gene expression, and the latest applications of synthetic biology to advances in medicine, information processing, and the environment. Credits 2
+    clauses: []
+    noCreditWith: []
+  - courseId: BB|554
+    description: (1 credit) This course is offered every semester covering different topics, both basic and applied, in Biology and Biotechnology and rotates among the faculty. Students read and discuss the literature in relevant topics.
+    clauses: []
+    noCreditWith: []
+  - courseId: BB|561
+    description: "(2 credit) The course is intended to introduce students to the use of model experimental systems in modern biological research. The course covers prokaryotic and eukaryotic systems including microbial (Escherichia coli) and single cells eukaryotes (fungi); invertebrate (Caenorhabditis elegans, Drosophila melanogaster) and vertebrate (mice, zebra fish) systems and plants (moss, algae and Arabidopsis thaliana). Use of these systems in basic and applied research will be examined. Students may receive credit for either BB561 or a BB570 course entitled Model Systems: Experimental Approaches and Applications but not both ."
+    clauses: []
+    noCreditWith:
+      - BB|570
+    needsReview: The BB 570 named is the Special Topics offering titled Model Systems; catalog id BB|570 is shared by all BB special topics, so the exclusion may be narrower.
+  - courseId: BB|570
+    description: (variable credit) Speciality subject courses are offered based on the expertise of the department faculty such as Stem Cell Biology.
+    clauses: []
+    noCreditWith: []

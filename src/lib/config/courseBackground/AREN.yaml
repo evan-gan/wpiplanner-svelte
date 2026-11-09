@@ -1,0 +1,161 @@
+department: AREN
+entries:
+  - courseId: AREN|2004
+    description: "This course aims to develop an understanding of the role of light and lighting in the perception of architecture and human well-being. Studio: The studio component of the course will explore the interactions between light, materials, spaces, and people. Students will engage these topics through architectural design studies for a project with well- specified lighting and architectural needs. Modeling, visualization and simulation software, orthographic drawings, and physical models are used to explore and analyze architectural design concepts. Lectures: The lecture components of the course focuses on the design of illumination systems in buildings. A general introduction to the visual environment is provided, including subjective and objective scales of measurement, visual perception, photometry, brightness, luminance, illumination, natural and artificial lighting. Other topics include photometric units, light sources, daylight luminaries, lighting quality, light loss factors, average luminance calculations (lumen method), point-by-point calculations, performance impacts, and ethics. Field measurements and computer simulations are used to explore some major aspects of architectural illumination systems. Design problems are solved by considering economic evaluation, energy saving criteria and applicable standards and building codes. Students will be introduced to the use of computer tools for the design, analysis, and visualization of natural and artificial lighting in buildings. This course uses studio and lecture based teaching methods Recommended background: Introductory architectural design (AREN 2002 or equivalent). Students may not receive credit for both AREN 2004 and AREN 3005"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Introductory architectural design (AREN 2002 or equivalent)."
+        requirement:
+          kind: topic
+          topic: introductory architectural design
+          satisfiedBy:
+            kind: course
+            course: AREN|2002
+            orEquivalent: true
+    noCreditWith:
+      - AREN|3005
+  - courseId: AREN|2025
+    description: "Cat. IThe principles of electrical system design in buildings are introduced in this course. Starting with an overview of electrical fundamentals and related laws, it covers circuit design, power distribution and service equipment, communication systems and special electrical systems that meet the requirements of the national electric code as well as building occupants. Other topics include single-phase and three-phase circuits, electrical and lighting loads, panel-board design, switching, system sizing, grounding, fault calculations, and over-current protection. The design criteria and calculation procedures for developing simple layouts of building electrical systems are illustrated. Work includes study of applicable NFPA 70 (NEC) and related building codes.Recommended background: electricity and magnetism (PH 1120/1121 or equivalent)"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: electricity and magnetism (PH 1120/1121 or equivalent)"
+        requirement:
+          kind: topic
+          topic: electricity and magnetism
+          satisfiedBy:
+            kind: anyOf
+            of:
+              - kind: course
+                course: PH|1120
+                orEquivalent: true
+              - kind: course
+                course: PH|1121
+                orEquivalent: true
+    noCreditWith: []
+  - courseId: AREN|3002
+    description: "This course aims to further a student’s knowledge of the architectural design process through study of ideas, principles and methods of design and construction. Studio: Architectural concepts are developed with the completion of a project of expanded scope and complexity. The course emphasizes the development of form, space, spatial relationships, materials, context, program, and architectural presentation techniques. Hand drawing and sketching, modeling and visualization software, orthographic drawings, detail drawings, and physical models are used to explore, develop, and communicate architectural design concepts. Lectures: The lecture/lab component of the course focuses on three-dimensional modeling and architectural representation techniques. Students are introduced to advanced modeling software in engineering and architectural design practice. Topics include three dimensional modeling, rendering, animation, and parametric design. This course uses studio, lecture, and lab based teaching methods Recommended background: Intermediate architectural design (AREN 2002 and AREN 2004 or equivalent)"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Intermediate architectural design (AREN 2002 and AREN 2004 or equivalent)"
+        requirement:
+          kind: topic
+          topic: intermediate architectural design
+          satisfiedBy:
+            kind: allOf
+            of:
+              - kind: course
+                course: AREN|2002
+                orEquivalent: true
+              - kind: course
+                course: AREN|2004
+                orEquivalent: true
+    noCreditWith: []
+  - courseId: AREN|3003
+    description: "The course introduces principles and applications of mechanical systems that are required for environmental comfort, health, and safety of building occupants with a focus on energy efficiency and conservation. Topics include psychometrics, thermal comfort, building heating and cooling loads, fluid flow basics, HVAC components and systems, building envelop heat transfer, and energy requirements. In the course, students develop the ability to design and conduct computational modelling experiments and to analyze and interpret output data for selection between system alternatives in order to optimize energy use. Recommended background: Thermodynamics. Some sections of this course may be offered as Writing Intensive (WI)"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Thermodynamics."
+        requirement:
+          kind: topic
+          topic: thermodynamics
+    noCreditWith: []
+  - courseId: AREN|3006
+    description: "Cat. I Analysis of heating and cooling load requirements, considering building construction type, geometry, infiltration, occupancy effects, and daily load variations. Heating design addresses water heating systems, electrical heating, central heating, heating of low and high-rise buildings, selection of heaters, boilers, pumps, piping design. Cooling design addresses refrigerants, refrigeration cycle, evaporator, compressor, condenser, thermostatic expansion valves, refrigeration system control equipment, motor and motor control equipment, refrigeration accessories, calculation of refrigeration piping and absorption systems. Computer applications for heating and cooling load analysis will be introduced to develop energy saving solutions. Analytical techniques and building codes are discussed through case studies and design projects. Recommended background: AREN 3003, ES 3004."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: AREN 3003, ES 3004."
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: AREN|3003
+            - kind: course
+              course: ES|3004
+    noCreditWith: []
+  - courseId: AREN|3022
+    description: "Cat. I This course aims to develop an understanding of the architectural design development process with special focus on the design and detailing of building envelopes. Studio: Through an iterative process, students will advance the architectural and technical development of an architectural project of increased complexity. Modeling and simulation software, orthographic drawings, detail drawings, and physical models are used to advance the development of architectural design concepts. Lectures: The lecture component of the course covers the basic principles of building envelope design, focusing primarily on functional performance requirements and practical constructability aspects. Various building envelope systems are reviewed, including façade and roofing systems made of masonry, stone, concrete, timber, glass, and various metals. More elaborate building envelope strategies will also be reviewed; such as double skin facades and passive solar design approaches. Students will be introduced to computer tools and other methods for the analysis of heat and moisture transfer within building envelopes and components thereof. This course uses studio and lecture based teaching methods Recommended background: Building Physics and HVAC system design (AREN 3024 and AREN 3003) and Architectural Design (AREN 2002, AREN 2004, and AREN 3002 or equivalent). Students may not receive credit for both AREN 3022 and AREN 3026"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Building Physics and HVAC system design (AREN 3024 and AREN 3003) and Architectural Design (AREN 2002, AREN 2004, and AREN 3002 or equivalent)."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: Building Physics and HVAC system design
+              satisfiedBy:
+                kind: allOf
+                of:
+                  - kind: course
+                    course: AREN|3024
+                  - kind: course
+                    course: AREN|3003
+            - kind: topic
+              topic: Architectural Design
+              satisfiedBy:
+                kind: allOf
+                of:
+                  - kind: course
+                    course: AREN|2002
+                    orEquivalent: true
+                  - kind: course
+                    course: AREN|2004
+                    orEquivalent: true
+                  - kind: course
+                    course: AREN|3002
+                    orEquivalent: true
+    noCreditWith:
+      - AREN|3026
+  - courseId: AREN|3024
+    description: "Cat. IThe course introduces the principles of building physics, as they are applied to various building design situations and performance requirements. Covered topics include heat transfer, moisture control, condensation, cold bridging, external and internal gains, and air flows, as they pertain to building envelopes (external walls, windows and doors, and roofs) and the requirements of environmental comfortof space occupants. Design exercises take into account pertinent building and energy codes as well as comfort standards. The course gives students the tools to integrate engineering science fundamentals and physics principles in developing building design solutions. Thermal measurements in building components are performed.Recommended background: thermodynamics and heat transfer (ES 3001, ES 3003 or equivalent)."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: thermodynamics and heat transfer (ES 3001, ES 3003 or equivalent)."
+        requirement:
+          kind: topic
+          topic: thermodynamics and heat transfer
+          satisfiedBy:
+            kind: anyOf
+            of:
+              - kind: course
+                course: ES|3001
+                orEquivalent: true
+              - kind: course
+                course: ES|3003
+                orEquivalent: true
+    noCreditWith: []
+  - courseId: AREN|402X
+    description: "This course explores the integration of AI technologies into design thinking process es across a wide range of technical and creative disciplines. Students will learn how AI can assist engineers and designers in ideation, prototyping, optimization, and innovation, while emphasizing the indispensable human role in understanding customer needs, problem framing, and strategic decision-making. The course combines a lecture and workshop format, with a majority of the class time devoted to hands-on design tutoring and project work. Students will have the opportunity to propose their own design problems. Special emphasis will be placed on ideation and innovation in an interdisciplinary context, encouraging students to explore creative solutions that bridge traditional technical boundaries. Through case studies, hands-on projects, and exposure to state-of-the-art AI tools, students will critically examine how AI enhances creativity, accelerates iteration, and improves design outcomes. The course emphasizes not only technical application but also addresses ethical considerations, human-AI collaboration, and the challenges of balancing speed, quality, and cost-effectiveness in today's global economy. By the end of the course, students will develop skills to leverage AI in the design process, making them more innovative, efficient, and impactful contributors to modern engineering challenges. Recommended background: This course is open to students from all majors who are passionate about exploring innovative and emerging design approaches. While prior experience in architecture, urban design, user interface design, product design, or related fields is helpful, it is not required . Familiarity with basic drafting software such as Rhino, CAD, or SolidWorks, as well as a foundational understanding of programming concepts, is advantageous but optional."
+    clauses:
+      - strength: suggested
+        timing: prior
+        sourceText: prior experience in architecture, urban design, user interface design, product design, or related fields is helpful, it is not required
+        requirement:
+          kind: topic
+          topic: prior experience in architecture, urban design, user interface design, product design, or related fields
+      - strength: suggested
+        timing: prior
+        sourceText: Familiarity with basic drafting software such as Rhino, CAD, or SolidWorks, as well as a foundational understanding of programming concepts, is advantageous but optional.
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: basic drafting software such as Rhino, CAD, or SolidWorks
+            - kind: topic
+              topic: foundational understanding of programming concepts
+    noCreditWith: []
+    needsReview: Lead phrase is 'Recommended background', but the text says the experience is helpful but not required and the software/programming is optional. Recorded as suggested, not recommended.
+  - courseId: AREN|2023
+    description: Cat. IThe objective of this course is to introduce the functional parts and systems thatmake up a building as well as their interactions in delivering required sustainableperformance. It encompasses foundations, structures, building enclosures,heating and air conditioning, electrical, plumbing and fire safety systems as wellas concepts of building performance and aspects of pertinent building codes andstandards. This course, in addition, incorporates basic principles of buildingscience and green construction.
+    clauses: []
+    noCreditWith: []
+  - courseId: AREN|4010
+    description: This seminar course broadens awareness of current topics, innovations, and professional practices within the architecture, engineering, and construction (AEC) professions. Students attend and participate in guest lectures by industry leaders, including architects, engineers, contractors, and allied design professionals. These lectures introduce emerging technologies, current challenges, and contemporary practice models in the AEC industry. Students also participate in a Day-inThis seminar course broadens awareness of current topics, innovations, and professional practices within the architecture, engineering, and construction (AEC) professions. Students attend and participate in guest lectures by industry leaders, including architects, engineers, contractors, and allied design professionals. These lectures introduce emerging technologies, current challenges, and contemporary practice models in the AEC industry. Students also participate in a Day-in-Practice experience, spending a day at a partner firm to observe professional workflows and interact with practicing professionals. The course facilitates the development of professional networks, exploration of career pathways, and insight into professional opportunities in the AEC fields. This course may be taken multiple times.
+    clauses: []
+    noCreditWith: []

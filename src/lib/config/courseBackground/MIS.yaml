@@ -1,0 +1,148 @@
+department: MIS
+entries:
+  - courseId: MIS|2300
+    description: "MIS 2300 Business Applications of Blockchain (Cat. I) This course introduces the fundamental concepts and functionality of blockchain technology. It explores how that technology records, organizes, and verifies information and how it implements smart contracts. The various financial and non-financial applications of blockchain technology are reviewed. Students will demonstrate their knowledge through exercises, exams, and a final project that designs and develops a basic blockchain application for a business problem. The course concludes by examining the legal and regulatory framework, along with potential risks and hurdles faced by those implementing and using blockchain technologies for financial and other business contexts. Recommended background: Basic knowledge of programming (Equivalent to CS 1004 or other introductory programming courses)"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Basic knowledge of programming (Equivalent to CS 1004 or other introductory programming courses)"
+        requirement:
+          kind: topic
+          topic: basic knowledge of programming
+          satisfiedBy:
+            kind: course
+            course: CS|1004
+            orEquivalent: true
+    noCreditWith: []
+    needsReview: "'other introductory programming courses' names no catalog id, so only CS 1004 is modelled."
+  - courseId: MIS|3720
+    description: "Cat. I This course introduces students to the theory and practice of database management and the application of database software to implement business information systems that support managerial and operational decision making. Special topics covered include relational data models, query languages, normalization, locking, concurrency control and recovery. The course covers data administration and the design of data tables for computerized databases. Students will use a commercial database package to design and implement a small business database application. Recommended background: CS 2119 or equivalent knowledge."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: CS 2119 or equivalent knowledge."
+        requirement:
+          kind: course
+          course: CS|2119
+          orEquivalent: true
+    noCreditWith: []
+  - courseId: MIS|4084
+    description: "Cat. I This course provides an introduction to the technologies and techniques for organizing, analyzing, visualizing, and presenting data about business operations in a way that creates business value, and prepares students to be knowledgeable producers and consumers of business intelligence. During the course, students will study a variety of business decisions that can be improved by analyzing large volumes of data about customers, sales, operations, and business performance. Students will employ commercially available business intelligence software to organize, summarize, visualize, and analyze data sets and make recommendations to decision makers based on the results. The course explores the technical challenges of conducting analytics on various forms of data including social media data and the managerial challenges of creating value from business intelligence expertise deployed in organizations. The course includes business cases, in-class discussion, hands-on analyses of business data, and methods for presenting results to decision makers. It is designed for any student interested in analyzing data to support business decision-making, including students whose primary focus is Management Information Systems, Marketing, Operations and Industrial Engineering, Business, Management Engineering, Data Science, or Computer Science. Recommended background: Previous knowledge in data management, such as that provided by MIS 3720 Business Data Management or CS 3431 Database Systems I."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Previous knowledge in data management, such as that provided by MIS 3720 Business Data Management or CS 3431 Database Systems I."
+        requirement:
+          kind: topic
+          topic: data management
+          satisfiedBy:
+            kind: anyOf
+            of:
+              - kind: course
+                course: MIS|3720
+              - kind: course
+                course: CS|3431
+    noCreditWith: []
+  - courseId: MIS|4720
+    description: "Cat. I This course integrates students’ background in MIS in a one-term project focusing on development of creative solutions to open-ended business and manufacturing problems. The project will utilize systems analysis and design tools such as systems development life cycle, feasibility study, cost-benefit analysis, structured analysis and design. Students will acquire the skills necessary to analyze, develop, implement, and document real-life information systems. Students must be able to organize themselves and the project to complete their work within a seven week term. It is recommended that MIS majors take this course in preparation for their MQP. Recommended background: MIS 3720."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: MIS 3720."
+        requirement:
+          kind: course
+          course: MIS|3720
+    noCreditWith: []
+  - courseId: MIS|4741
+    description: "Cat. I This course focuses on the newest developments in the field of user experience (UX) (e.g., the use of physiological measures such as eye tracking in UX design) and provides an introduction to various methods used in cutting-edge research laboratories to study user experience. Both theoretical concepts and practical skills with appropriate development tools will be addressed within the scope of the class through hands-on projects and assignments. Students will develop a plan to innovate with user experience and will implement a simple prototype of their plan. Recommended background: BUS 3010, CS 2102 (or CS 2103) or ability to program in a higher level programming language."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: BUS 3010, CS 2102 (or CS 2103) or ability to program in a higher level programming language."
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: BUS|3010
+            - kind: anyOf
+              of:
+                - kind: course
+                  course: CS|2102
+                - kind: course
+                  course: CS|2103
+                - kind: topic
+                  topic: ability to program in a higher level programming language
+    noCreditWith: []
+    needsReview: Unclear whether BUS 3010 is required in every case or only one of the listed options. Read as always required.
+  - courseId: MIS|571
+    description: This course introduces students to the theory and practice of computer-based data management, including the delivery of high quality data in information processing and analysis. The course focuses on the design of database systems to meet an organization’s needs for data analytics. The course also covers data security, data integrity, data quality, as well as backup and recovery procedures. Students will be exposed to commercially available database management systems, such as Microsoft Access and Oracle. As a project during the course, students will design and implement a small database application that meets the data needs of some real-world business opportunity. The project report will include recommendations for ensuring data security, data integrity, and data quality.
+    clauses: []
+    noCreditWith: []
+  - courseId: MIS|573
+    description: "This course introduces students to the concepts and principles of systems analysis and design. It covers all aspects of the systems development life cycle from project identification through project planning and management, requirements identification and specification, process and data modeling, system architecture and security, interface design, and implementation and change management. Object-oriented analysis techniques are introduced. Students will learn to use an upper level CASE (computer-aided software engineering) tool, which will be employed in completing a real-world systems analysis and design project. (Prerequisite: MIS 571 or equivalent content, or instructor consent)"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "(Prerequisite: MIS 571 or equivalent content, or instructor consent)"
+        requirement:
+          kind: anyOf
+          of:
+            - kind: course
+              course: MIS|571
+              orEquivalent: true
+            - kind: permission
+              text: instructor consent
+    noCreditWith: []
+  - courseId: MIS|582
+    description: This course introduces students to the fundamentals of Information Security Management. It is designed to develop in students an understanding of and appreciation for the importance of information security to all enterprises, and to enable current and future managers to understand the important role that they must play in securing the enterprise. This course is appropriate for any student interested in gaining a managerial-level understanding of information security. A combination of readings, lectures, case studies, guest speakers, and discussion of real world events will be used to bridge the gap between theory and practice. The course will primarily explore the Common Body of Knowledge (CBK) of information security, along with other related topics. It will also explore the interaction between People, Process and Technology as the cornerstone of any effective information security program. Upon completion of this course, the student will have an in-depth understanding of the essential components of a comprehensive information security program, as well as an understanding of the technology at work behind the scenes.
+    clauses: []
+    noCreditWith: []
+  - courseId: MIS|3010
+    description: Cat. I This course focuses on the ways value can be created and captured through innovation. Focusing on the assessment of customers, organizational capabilities, and competition, students will consider a variety of different types of innovations and their associated ethical and financial value propositions. Students will learn analytic tools to successfully assess and commercialize technology, product, and service innovations in a variety of contexts. Students cannot receive credit for both BUS 3010 and MIS 3010.
+    clauses: []
+    noCreditWith:
+      - BUS|3010
+  - courseId: MIS|3787
+    description: Cat. I This course offers a business focused data analytics introduction. Using cutting-edge tools and approaches to the analysis of data through supervised machine learning, the course teaches how to utilize “big data” for effective decision-making. The course creates data analytics skills through hands-on exposure to data and analytic techniques embedded in Automated Machine Learning tools. Application areas covered include Marketing (pricing and marketing of luxury shoes), Supply Chain (predicting parts backorders), Finance (predicting safe loans), Talent Management (predicting and explaining attrition), Service Delivery (predicting hospital readmissions), as well as student-centric topics (college grades and starting salaries). This course provides foundations required to successfully apply the machine learning approaches to many of the most common business problems.
+    clauses: []
+    noCreditWith: []
+  - courseId: MIS|500
+    description: This course focuses on information technology and innovation. Topics covered are information technology and organizations, information technology and individuals (privacy, ethics, job security, job changes), information technology and information security, information technology within the organization (technology introduction, and implementation, and data analytics for competitive analysis), business process engineering and information technology between organizations (electronic data interchange and electronic commerce). This course provides the knowledge and skills to utilize existing and emerging information technology innovatively to create business opportunities.
+    clauses: []
+    noCreditWith: []
+  - courseId: MIS|502
+    description: This course develops the skills business students need for handling data. It focuses on student skills in (1) cleaning and preparing data for analysis, (2) writing SQL queries to access and manipulate data, and (3) ethical uses of data and data privacy issues. It also covers the types of data typically found in organizations, e.g., employee, customer, product, marketing, operations, and financial data.
+    clauses: []
+    noCreditWith: []
+  - courseId: MIS|510
+    description: Business Applications of Blockchain Technology provides students with a foundation of blockchain technology examining its applications across various disciplines such as engineering, law, and economics. Throughout the course, students will delve into diverse blockchain and distributed ledger technologies, popular cryptocurrencies such as Bitcoin and Ethereum, and the implementation and security concerns surrounding them. Students will learn how these systems work, explore the regulatory challenges associated with blockchain technology, and assess its impact on financial services and other industries. The course will also provide students with the component and structures of blockchain business networks such as smart contracts, consensus, certificate authorities, security protocols, role of nodes, transaction processes, participants, and underlying frameworks. Furthermore, the course will examine the Bitcoin (BTC) ecosystem, Ripple (XRP), Ethereum (ETH), tokens (e.g., NFT’s), Initial Coin Offerings (ICOs), and Central Bank Digital Currencies (CBDC). Students will also gain hands-on experience, such as creating basic Blockchain contracts, enabling them to discuss the practical capabilities and limitations of blockchain technology.
+    clauses: []
+    noCreditWith: []
+  - courseId: MIS|520
+    description: MIS 520 – Artificial Intelligence and its Ethical Applications in Business (3 credits) This course provides students with a comprehensive introduction to the recent developments in AI, with a focus on their current and potential practical applications in business. The course covers fundamental AI concepts such as search methods, logic, knowledge representation, and natural language processing in sufficient detail to understand how these concepts and associated tools can be applied to solve practical business problems in ways that create fair and ethical solutions. Students will learn about bias in data, algorithms, and human decision making, and methods of avoiding the transfer of those biases to AI-based solutions. They will gain practical experience though a project about the opportunities of AI-based solutions to assist with making decisions and predictions and transforming business and work, as well as the challenges of doing so in a fair and ethical manner that benefits individuals, the environment, and society at large.
+    clauses: []
+    noCreditWith: []
+  - courseId: MIS|576
+    description: This course presents the specific concepts, techniques and tools for managing projects effectively. The role of the project manager as team leader is examined, together with important techniques for controlling cost, schedules and performance parameters. Lectures, case studies and projects are combined to develop skills needed by project managers in today’s environment.
+    clauses: []
+    noCreditWith: []
+  - courseId: MIS|581
+    description: This course focuses on the core IS capabilities that IS managers must consider when managing technology within an organization, such as IT strategy, policy development, management, and IT’s role in data analytics. Fast-paced changes in technology require IT managers to quickly understand, adapt, and apply technology. Successful companies are those that can react quickly by introducing innovative technologies and respond to market demands using data driven solutions. Students will learn how IT managers engage data to develop and enhance their departments’ strategies.
+    clauses: []
+    noCreditWith: []
+  - courseId: MIS|583
+    description: The UX Applications course provides an introduction to using UX methods to study user experience. The course teaches students how to use the newest research tools, including eye tracking and emotion detection, to study user experiences of technological products and services. Students will learn how businesses can benefit from these techniques. Both theoretical concepts and practical skills will be addressed within the scope of the class through hands-on projects, class exercises, and assignments.
+    clauses: []
+    noCreditWith: []
+  - courseId: MIS|584
+    description: This course provides students with the knowledge and skills to design, develop, and use business dashboards for monitoring organizational performance and making data-driven decisions. On the technical side, students will learn and apply business intelligence software to organize, represent, and analyze data about customers, products, sales, marketing, operations, and financials. They will learn to create strategic, operational, and analytical dashboards displaying key performance indicators (KPIs) for managerial decision-making. On the business side, students will learn the connections between business strategy and plans, the KPIs that measure performance compared to those plans, and how to use dashboards to manage organizational performance. Students will also learn the technical and managerial challenges of creating and deploying these business intelligence best practices so that organizations gain value from their data. The course includes business cases and hands-on analyses of business data. It is designed for any student interested in learning about data-driven business performance management, including students whose primary focus is Business Management, Data Science, IT, Marketing, or Operations.
+    clauses: []
+    noCreditWith: []
+  - courseId: MIS|585
+    description: Designing positive user experiences is becoming increasingly important in staying competitive in the marketplace. This UX Design course offers students hands-on experiences, through the use of real-world projects, that provide them with a strong portfolio of work that showcases their skills in UX/UI, visual, service, experience, and product design. Throughout this course, students will create innovative experiences that enrich their technical fluency in both web and interactive development. The course provides a foundation in art and design in order to help students articulate their work to stakeholders and translate outcomes as business value.
+    clauses: []
+    noCreditWith: []
+  - courseId: MIS|587
+    description: This course explores how Machine Learning (ML) and Artificial Intelligence (AI) is applied to solve business problems, to satisfy specific business needs, or to discover new opportunities for businesses. Applications of ML and AI are constantly evolving across many industries. This course utilizes existing AutoML solutions to address issues identified in business case studies (e.g. predicting hospital readmissions, loans likely to default, customer churn). The course covers the machine learning project life cycle starting with defining ML project objectives, acquiring and exploring data, modeling using AutoML tools, interpretation of models and communication of outcomes, and implementation and deployment of predictive models in organizations.
+    clauses: []
+    noCreditWith: []

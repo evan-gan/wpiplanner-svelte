@@ -1,0 +1,287 @@
+department: AR
+entries:
+  - courseId: AR|1101
+    description: "Cat. I This course focuses on the methods, procedures and techniques of creating and manipulating images through electronic and digital means. Students will develop an understanding of image alteration. Topics may include color theory, displays, modeling, shading, and visual perception. Recommended background: AR 1100."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: AR 1100."
+        requirement:
+          kind: course
+          course: AR|1100
+    noCreditWith: []
+  - courseId: AR|1400
+    description: "AR 1400 Digital Photography (1/3 units; Cat. II) This course teaches students the use of DSLR cameras to capture high quality images. Students will learn to produce images with correct exposure by using camera controls such as f/stops, shutter speeds, film speeds. The application of principles and elements of design in photography will be explored, and students will learn to create effective compositions by the use of depth of field, action motion, shadows and light, and camera angles. Projects may include still life, portraits, architectural and landscape, product and industrial photography as well as postproduction techniques. Recommended Background: None"
+    clauses: []
+    noCreditWith: []
+  - courseId: AR|174X
+    description: This course introduces students to the fundamental principles of three-dimensional visual organization through contemporary 3D modeling practices. Students will explore the technological foundations of digital modeling, including 3D scanning, retopology, UV mapping, and prop modeling. The course emphasizes visual perception, graphic expression, and rendering within digital environments. Students gain hands-on experience with industry tools while learning to create and manipulate digital assets suitable for games, 3D printing, interactive media, animation, and visual storytelling. Core skills include modeling, shading, and the presentation of visual ideas through 3D forms. The course also highlights current sculpting, modeling, and workflow technologies, preparing students to adapt to evolving tools and practices in digital art and design. By the end of the course, students will understand how to create shaders, work in 3D dimensional space, have foundational design principles, and develop their ability to translate concepts into digital form. Recommended Background No prerequisites are suggested or recommended
+    clauses: []
+    noCreditWith: []
+  - courseId: AR|2048
+    description: "This course will focus on making digital art functional in a video game environment. Students will learn the skills necessary to create and optimize their art assets through several creative and technical solutions that are all geared towards making high quality game art. This course will allow students to form a greater understanding of the bridge between pure art creation and interactive art implementation into a game engine. The course explores the many problems and technical restrictions one is faced with when trying to implement anything from animated characters to textures and focuses on how one can creatively apply technology to achieve high quality results. Topics covered include: creating complex character rigs, optimizing character meshes for rigging, shader creation, optimizing UV space and baking texture files and lighting. Recommended background: Basic knowledge of 3D modeling, texturing and animation (IMGD 2101 and IMGD 2201 or equivalent). Students may not receive credit for both IMGD 204X and AR/IMGD 2048."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Basic knowledge of 3D modeling, texturing and animation (IMGD 2101 and IMGD 2201 or equivalent)."
+        requirement:
+          kind: topic
+          topic: basic knowledge of 3D modeling, texturing and animation
+          satisfiedBy:
+            kind: allOf
+            of:
+              - kind: course
+                course: IMGD|2101
+                orEquivalent: true
+              - kind: course
+                course: IMGD|2201
+                orEquivalent: true
+    noCreditWith:
+      - IMGD|204X
+      - IMGD|2048
+  - courseId: AR|2101
+    description: "Cat. I 3D modeling is concerned with how to render created forms in a virtual environment. This course covers 3D modeling applications in video game development, film production, product design and fine art. Topics may include creating and armature, modeling organic and hard surfaces and sculpting using traditional techniques applied to a 3D model. Students will create works suitable for presentation in professional quality portfolio. Recommended background: AR1100 and AR1101."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: AR1100 and AR1101."
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: AR|1100
+            - kind: course
+              course: AR|1101
+    noCreditWith: []
+  - courseId: AR|2115
+    description: "This course offers a detailed overview of the history of architecture between the consolidation of modern architecture in standard architectural practice and the present period of pluralism. Topics covered will include: modernism and its critique in the developing world; Louis I. Kahn’s and Robert Venturi’s critiques of modernist architecture culture; the High-Tech movement; utopian alternatives to the modernist city; the return of pre-modern urbanism; Critical Regionalism; the rise of Postmodernism 1970-80; the developer-led architectural boom of the 1980s; “Deconstructivism” and critical dissolution of rationalist form; the introduction of CAD in architectural design and its impact on the “blob architecture” of Frank Gehry and others; the development of global models of architectural practice; sustainable architecture and urbanism; global developments in other, related design fields and their consumer culture. Recommended background: AR 2114."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: AR 2114."
+        requirement:
+          kind: course
+          course: AR|2114
+    noCreditWith: []
+  - courseId: AR|2202
+    description: "The focus of this course is in study of representational figure drawing. This course will cover drawing techniques, applied to study from a live model. Topics covered will be sight size measurement, study of form and light, copying from master drawings and applying these lessons to weekly sessions with a live model. Each class will feature a demonstration on the topic followed by individual critique and study.Recommended Background: AR1100"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: AR1100"
+        requirement:
+          kind: course
+          course: AR|1100
+    noCreditWith: []
+  - courseId: AR|2222
+    description: "Cat. I. 2D Animation I teaches students how to draw, pose, breakdown and in-between characters for 2D animation, focusing on weight, balance, timing, and movement to achieve well-structured and fluid animation. Lectures and projects are conducted to train students in the twelve classical animation principles using digital 2D media. Projects and lectures are designed to practice the fundamentals of traditional frame-by-frame and hand-drawn character animation. Recommended background: Basic knowledge of figure drawing (AR 2202) and digital art software (AR 1101) is recommended."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Basic knowledge of figure drawing (AR 2202) and digital art software (AR 1101) is recommended."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: figure drawing
+              satisfiedBy:
+                kind: course
+                course: AR|2202
+            - kind: topic
+              topic: digital art software
+              satisfiedBy:
+                kind: course
+                course: AR|1101
+    noCreditWith: []
+  - courseId: AR|2333
+    description: "Cat. I 3D Animation I teaches students how to use 3D animation software to apply classical animation principles into 3D work . Lectures focus on creating organic and compelling character animation through body mechanics, weight, and dynamic posing in addition to exposing students to learning how to think about character acting and staging within a 3D environment . Recommended background: Basic knowledge digital art software (AR 1101) is recommended. Suggested background: Basic knowledge of animation (IMGD/AR 2222)."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Basic knowledge digital art software (AR 1101) is recommended."
+        requirement:
+          kind: topic
+          topic: digital art software
+          satisfiedBy:
+            kind: course
+            course: AR|1101
+      - strength: suggested
+        timing: prior
+        sourceText: "Suggested background: Basic knowledge of animation (IMGD/AR 2222)."
+        requirement:
+          kind: topic
+          topic: animation
+          satisfiedBy:
+            kind: anyOf
+            of:
+              - kind: course
+                course: IMGD|2222
+              - kind: course
+                course: AR|2222
+    noCreditWith: []
+  - courseId: AR|2401
+    description: "This course will introduce students to concepts and techniques for live action digital filmmaking. Topics will include constructing a visual narrative, principles of cinematography, visual and audio editing, working with actors, and the stylistic elements of various genres of filmmaking.Recommended background: Basic knowledge of the history and theory of film (HU 2251 or equivalent)."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Basic knowledge of the history and theory of film (HU 2251 or equivalent)."
+        requirement:
+          kind: topic
+          topic: history and theory of film
+          satisfiedBy:
+            kind: course
+            course: HU|2251
+            orEquivalent: true
+    noCreditWith: []
+  - courseId: AR|2700
+    description: "Cat. I This course covers painting techniques as applied to texturing a 3D asset or illustration/conceptual art. Topics include are color theory, study of form, lighting, applying traditional painting ideas to the digital format, character design, generation of ideas and a history of digital painting. Each class features a demonstration on the topic followed by individual critique and study. Students work towards a final project that may be suitable for an Art portfolio. Recommended background: AR 1101, AR 2202"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: AR 1101, AR 2202"
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: AR|1101
+            - kind: course
+              course: AR|2202
+    noCreditWith: []
+  - courseId: AR|3101
+    description: "Cat. I This course will build upon the skills learned in 3D MODELING with studies in life drawing/anatomy study and application towards completed character models. Students will create high resolution sculpts for real-time game environments and animation. Topics covered will be character design as it applies to 3D MODELING, creating realistic design sculpts and incorporating them into a game environment as well as the study of anatomy as it applies to organic modeling. Recommended background: AR 1101, IMGD/AR 2101, AR 2202"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: AR 1101, IMGD/AR 2101, AR 2202"
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: AR|1101
+            - kind: anyOf
+              of:
+                - kind: course
+                  course: IMGD|2101
+                - kind: course
+                  course: AR|2101
+            - kind: course
+              course: AR|2202
+    noCreditWith: []
+  - courseId: AR|3200
+    description: "Cat. I This course introduces students to techniques and processes for the creation of real-time, interactive works of art. Students learn to use electronic sensors and other tools for audio, graphics, and video processing, as well as design customized software interfaces to create interactive artworks that respond to users and their environment. The course also introduces students to the work of significant contemporary arts practitioners as well as their historical precedents, with a special emphasis on inter-media works that bridge visual art, music composition, and the performing arts. Topics may include electronic musical instruments and performance interfaces, computer vision, VJing, electronically augmented dance, controller hacking, wired clothing, networked collaboration and mobile media, and algorithmic and generative art. Recommended background: Animation (AR/IMGD 2101 or equivalent), and exposure to digital audio or music and introductory programming."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Animation (AR/IMGD 2101 or equivalent), and exposure to digital audio or music and introductory programming."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: animation
+              satisfiedBy:
+                kind: anyOf
+                of:
+                  - kind: course
+                    course: AR|2101
+                    orEquivalent: true
+                  - kind: course
+                    course: IMGD|2101
+                    orEquivalent: true
+            - kind: topic
+              topic: exposure to digital audio or music
+            - kind: topic
+              topic: introductory programming
+    noCreditWith: []
+  - courseId: AR|3210
+    description: "This course offers in-depth analysis of the human figure in action. Motion is analyzed and studied through drawing and sketching of live models, video clips, performance and pantomime, studying not only the physical exterior but also how thoughts and emotion are expressed through gesture. Students will develop skill in figure posing and staging for applications in animation, storyboards, comics, and illustration. Recommended background: Observational and gesture drawing and color (AR 1101), experience drawing live model (AR 2202), composition skills and color (AR/IMGD 2700)."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Observational and gesture drawing and color (AR 1101), experience drawing live model (AR 2202), composition skills and color (AR/IMGD 2700)."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: observational and gesture drawing and color
+              satisfiedBy:
+                kind: course
+                course: AR|1101
+            - kind: topic
+              topic: experience drawing live model
+              satisfiedBy:
+                kind: course
+                course: AR|2202
+            - kind: topic
+              topic: composition skills and color
+              satisfiedBy:
+                kind: anyOf
+                of:
+                  - kind: course
+                    course: AR|2700
+                  - kind: course
+                    course: IMGD|2700
+    noCreditWith: []
+  - courseId: AR|3222
+    description: "Cat. I This course will build upon the techniques learned in IMGD/AR 2222. Students will learn to apply the animation principles to character animation. Students are taught how to tell a compelling, character-driven story through a focus on character acting techniques such as body language, lip-syncing, facial animation, and micro-expressions. Additional topics covered may include sprites for games, biped and quadruped animation, and 2D animation pipelines. Students will create animated sequences that are intended to serve as a narrative structure for games and other media. Recommended background: Knowledge of digital 2D animation techniques and classical animation principles (IMGD/AR 2222)."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Knowledge of digital 2D animation techniques and classical animation principles (IMGD/AR 2222)."
+        requirement:
+          kind: topic
+          topic: digital 2D animation techniques and classical animation principles
+          satisfiedBy:
+            kind: anyOf
+            of:
+              - kind: course
+                course: IMGD|2222
+              - kind: course
+                course: AR|2222
+    noCreditWith: []
+  - courseId: AR|3700
+    description: "Cat. I This course covers drawing as it applies to concept art and illustration. The course begins with study of a human model and representational drawing. Following this, students work on drawing from the mind and applying the lessons learned from the figure drawing to creating concept art and illustration. Topics covered are shape recognition and recalling, inventing from the mind, creative starters, study of form and light, visual composition and developing a personal approach, working with individual strengths to create a compelling visual design. Students create a series of concept art exercises and apply these skills towards a personal project of their own. Recommended background: AR 2202, IMGD/AR 2700"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: AR 2202, IMGD/AR 2700"
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: AR|2202
+            - kind: anyOf
+              of:
+                - kind: course
+                  course: IMGD|2700
+                - kind: course
+                  course: AR|2700
+    noCreditWith: []
+  - courseId: AR|1100
+    description: Cat. IThis course provides an introduction to the basic principles of two and three-dimensionalvisual organization. The course focuses on graphic expression, ideadevelopment, and visual literacy. Students will be expected to master basicrendering skills, perspective drawing, concept art, and storyboarding throughtraditional and/or computer-based tools.
+    clauses: []
+    noCreditWith: []
+  - courseId: AR|1111
+    description: Cat. I How do we understand a work of art? Through readings and the study of objects at the Worcester Art Museum, the student will survey the major developments in world art and be introduced to various critical perspectives in art history. Students will learn how art historians work with primary materials and formulate arguments. No previous knowledge of art is required. (Formerly HU 1014.)
+    clauses: []
+    noCreditWith: []
+  - courseId: AR|2111
+    description: "The successive phases of modern art, especially painting, are examined in light of the late-19th-century break with the 600-year old tradition of representation. Topics covered include: non-objective art and abstraction—theory and practice, primitivism in modern art, surrealism and the irrational, the impact of photography on modern painting, cubism and collage, regionalism and abstract expressionism as American art forms, Pop art and popular culture, and the problem of concept versus representation in art. (Formerly AR 2300.)"
+    clauses: []
+    noCreditWith: []
+  - courseId: AR|2114
+    description: This course studies, in a non-technical way, America’s buildings and places, in the context of world architecture in modern times. The history of American architecture was shaped by the forces that shaped America, from its political emergence in the eighteenth century to the post-9/11 era. These forces include dreams of social and spiritual perfection; a tight and conflicted relation with nature; and the rise and spread of industrial capitalism. The same forces created the Modern Movement in architecture. How are modernism and American architecture interrelated? Illustrated lectures, films, and tours of Worcester architecture explore the question while training students in the methods of architectural history and criticism. Students who have taken AR 2113, Topics in 19th- and 20th-Century Architecture, since the 2000-2001 academic year MAY NOT take AR 2114 for credit.
+    clauses: []
+    noCreditWith:
+      - AR|2113
+  - courseId: AR|2301
+    description: "This course introduces design principles and their application to create effective forms of graphic communication. The students will learn the fundamentals of visual communication and will work on projects to analyze, organize, and solve design problems. Topics may include: the design process; figure/ground; shape; dynamic balance; Gestalt principles; typography; layout and composition; color; production and presentation in digital formats."
+    clauses: []
+    noCreditWith: []
+  - courseId: AR|2750
+    description: Explore how art and science might overlap by combining engineering principles with traditional sculpture and 3D design. Use readily available technology like hobby motors, LEDs, and microcontrollers to produce new works that whir, sway, spin, stagger, cast shadows, and scatter light. Utilizing various materials like foam core, wire, string, plastic containers, wood, and acrylic paint, students will prototype new designs for kinetic and robotic sculptures. The course will examine kinetic art history and theory, mechanical engineering, and electronics with the goal of solving conceptual, aesthetic, and technical problems.
+    clauses: []
+    noCreditWith: []
+  - courseId: AR|3112
+    description: "What is the role of art to be in the modern world? Can art be a vehicle for social change, or should art be a self-critical discipline that pursues primarily aesthetic ends? What is the relationship between art and mass culture? Using primary sources, this course focuses on some of the theorists and artistic trends since the mid-nineteenth century that have sought to resolve this dilemma. These include: Ruskin, Morris and the Arts and Crafts Movement; Art for Art’s Sake; the German Werkbund and the Bauhaus; American industrial design"
+    clauses: []
+    noCreditWith: []

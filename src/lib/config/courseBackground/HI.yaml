@@ -1,0 +1,141 @@
+department: HI
+entries:
+  - courseId: HI|1001
+    description: This course introduces students to the purpose and methods of historical thinking through the exploration of a specific topic situated in time, space, and theme. Through rigorous engagement with primary documents as well as secondary historical interpretations and arguments, students develop their understanding of the nature and limits of historical evidence, their ability to make persuasive claims about change over time, and their capacity to balance the complexity of perspectives and voices. Among the central historical concepts introduced are chronology, context, causation, contingency, agency, and scale. HI 1001 cannot be repeated for different topics.
+    clauses: []
+    noCreditWith: []
+  - courseId: HI|2316
+    description: Cat II. This survey of American diplomatic history begins with World War I and World War II, continues through the early and later Cold War periods, including the Vietnam War, and concludes with an overview of 9/11 and wars in Iraq and Afghanistan. It includes traditional political and diplomatic history, but also broader conceptions of American foreign relations such as culture, economic development, and environment. It addresses the question of American empire, and stresses understanding U.S. policy and actions through a broad international perspective. This course is excellent preparation for any of WPI overseas project centers. Some sections of this course may be offered as Writing Intensive (WI).
+    clauses: []
+    noCreditWith: []
+  - courseId: HI|2320
+    description: "Cat I. A survey of the major developments in European history from the nineteenth century to the present. The course will focus upon those factors and events that led to the formation of modern European society: revolutions, nationalism, industrialization, world wars, the Cold War, the creation of the European Union. No prior knowledge of European history is required. Especially appropriate for students interested in WPI's global Project Centers in Europe. Students may not receive credit for HI 2320 and HI 2322."
+    clauses: []
+    noCreditWith:
+      - HI|2322
+  - courseId: HI|2335
+    description: Cat. I This course surveys the interplay of science, technology and culture in American national development. Emphasis is placed upon building chronological narratives while attending to the themes, approaches, and sources historians use to explore Americans' enthusiastic but sometimes controversial embrace of science and technology. Chronologies and themes will vary across sections covering topics such as Science, Technology and Culture in Early America; Science, Technology in Industrializing America; Science and Technology in Post-1945 America; and Technology and Culture in the Rise of Urban America. This course may be repeated for different topics. No prior coursework or background in the history of science and technology is required.
+    clauses: []
+    noCreditWith: []
+  - courseId: HI|2341
+    description: "Cat. II This course examines the historical origins of contemporary global crises and political transformations. Students keep abreast of ongoing current events through periodical literature and explore the underlying long-term causes of these events as analyzed by scholarly historical texts. Topics will vary each time the course is taught but may include such topics as the following: The Israeli-Palestinian Conflict, Democratization in Africa, the Developing World and Globalization. No prior knowledge of world history is required. This course will be offered in 2021-22, and in alternating years thereafter."
+    clauses: []
+    noCreditWith: []
+  - courseId: HI|2350
+    description: "Cat. I This course surveys the major developments, research enterprise, controversies and cultural contexts of particular scientific fields while also engaging students in examining the questions, methods and sources that inform the history of science. Sections will vary in topic, focusing on the history of a subset selected from among the following fields: astronomy, cosmology, mathematics, biology, medicine, ecology, evolutionary ideas, the earth sciences, chemistry, physics, or the human sciences. This course may be repeated for different topics. No prior coursework or background in the history of science is required."
+    clauses: []
+    noCreditWith: []
+  - courseId: HI|2400
+    description: "Cat. I This course surveys the methods and sources that historians adopt to answer three questions central to environmental history: How have constantly changing natural environments shaped the patterns of human life in different regions? How have different human cultures perceived and attached meanings to the natural and built worlds around them, and how have those attitudes shaped their social, economic political, and cultural lives? Finally, how have people altered the world around them, and what have been the consequences of change for natural and human communities alike? Sections will vary in content and emphases alternating between North American, regional, or global approaches. This course may be repeated for different topics. No prior coursework or background in environmental history is required."
+    clauses: []
+    noCreditWith: []
+  - courseId: HI|2517
+    description: "This course examines topics in the cultural history of German-speaking spaces and peoples, from the time of German Unification (1871) to today. Each course offering may focus on a different historical period (e.g. Imperial Germany, the Weimar Republic) or theme (e.g. migration, fascism and authoritarianism, student activism). Readings will include primary sources (e.g. memoirs, radio broadcasts, manifestos, songs) and secondary sources (e.g. documentary films, scholarly book chapters, articles). Students who have taken German courses will have opportunities to work with source material in German. This course is taught in English and may be repeated for different topics. Especially appropriate for students in German, History, International and Global Studies, and those interested in WPI’s global project centers in Europe. Recommended background: none This course will be offered in academic years ending in odd numbers."
+    clauses: []
+    noCreditWith: []
+  - courseId: HI|2900
+    description: "Cat. II This seminar course examines topics related to gender and history. It seeks to examine gender-related theories and analytical concepts in the context of the historical periods and social movements from which contemporary ideas about gender emerge. Specific themes and topics will vary by section and instructor, and may include: gender and war, cultural history of gender, gender and intersectionality, gender and colonialism/decolonization, issues of sexuality, women’s history, and issues of masculinity, among others. No prior background is required. This course may be repeated for different topics."
+    clauses: []
+    noCreditWith: []
+  - courseId: HI|2921
+    description: "Cat. II This seminar course examines topics in the cultural, socio-economic and political history of modern Europe. Topics may vary each year among the following: sport and society, film and history, nationalism, gender and class, political economy, environmental history. Readings will include primary and secondary sources. No prior background is required. Students may not receive credit for both HI 3321 and HI 2921. This course will be offered in 2021-22, and in alternating years thereafter."
+    clauses: []
+    noCreditWith:
+      - HI|3321
+  - courseId: HI|3310
+    description: "This seminar course actively engages students in the critical appraisal and application of urban historical methods to explore economic, demographic, political, and cultural configurations of built environments from urban cores to suburban and ex-urban sprawl. Particular attention is paid to competing urban and architectural theories, their physical manifestations on the landscape, and their historical legacies in enhancing or undermining the functioning of metropolitan areas. Geographies will vary across sections, and topics will take up Politics of Housing, Smart Growth and Urban Resiliency, the Suburban Crisis, or Urban Ecology and Environmental Justice. Students can receive credit only once for HI 3310. This course will be offered in academic years ending in even numbers. Recommended background: None."
+    clauses: []
+    noCreditWith: []
+  - courseId: HI|3317
+    description: "HI 3317 Topics in Environmental History (Cat. II) In this seminar course, students will explore one aspect of U.S. or global environmental history in more depth. Topics vary each year but may include environmental thought, environmental reform movements, comparative environmental movements, natural disasters, the history of ecology, built environments, environmental justice, New England environmental history, or the environmental history of South Asia or another region of the world. The course will require substantial reading and writing. This course may be repeated for different topics . This course will be offered in 2022- 23, and in alternating years thereafter. Recommended Background: HI 2400 Topics in Environmental History."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: HI 2400 Topics in Environmental History."
+        requirement:
+          kind: course
+          course: HI|2400
+    noCreditWith: []
+  - courseId: HI|3331
+    description: "HI 3331 Topics in the History of European Science and Technology (Cat. II) A seminar course on the relationships among science, technology, and society in European culture, examined through a series of case studies. Topics from which the case studies might be drawn include: global scientific expeditions, mapmaking, and European imperialism; the harnessing of science for industrial purposes; the role of the physical sciences in war and international relations; the function of the science advisor in government; the political views and activities of major scientists such as Einstein. Students will use primary sources and recently published historical scholarship to analyze the case studies. This course may be repeated for different topics . This course will be offered in 2022-23, and in alternating years thereafter. Recommended Background: Courses in European history and the history of science and technology"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: Courses in European history and the history of science and technology"
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: courses in European history
+            - kind: topic
+              topic: courses in the history of science and technology
+    noCreditWith: []
+  - courseId: HI|3334
+    description: "HI 3334 Topics in the History of American Science and Technology (Cat. I) This seminar will examine a particular issue or theme in the history of American science and technology. Topics will vary from year to year, but may include: technology and the built environment; science, technology and the arts; communications of science and scientific issues with the larger public; technology and scientific illustration; science in popular culture; science and the law; or close examination of episodes in the history of American science and technology such as the American Industrial Revolution; science and technology in the years between the world wars; the Manhattan Project; science and the culture of the Cold War; or science, technology and war in American history. This course will require significant reading and writing. This course may be repeated for different topics . Recommended Background: Some familiarity with history of science or history of technology, and with United States history."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: Some familiarity with history of science or history of technology, and with United States history."
+        requirement:
+          kind: allOf
+          of:
+            - kind: anyOf
+              of:
+                - kind: topic
+                  topic: history of science
+                - kind: topic
+                  topic: history of technology
+            - kind: topic
+              topic: United States history
+    noCreditWith: []
+  - courseId: HI|3343
+    description: "This course examines topics in the cultural, socio-economic, and political history of East Asia. Topics can vary each year and may include the following: nationalism, travel narratives, cross-cultural contact, the role of religion and/or ideology in political history, development and the environment, film and history, China’s global footprint, and the place of minorities and women in Asian societies. This course may be repeated for different topics. No background in Asian history necessary"
+    clauses: []
+    noCreditWith: []
+  - courseId: HI|3510
+    description: "In this seminar course, students will explore one aspect of U.S. political history in more depth. Topics will vary each year but may include liberalism, conservatism, fascism and the far Right, left-wing traditions, transformations in the political-economic order, legal history, the party system, or protest movements. Students will have the opportunity to complete self-directed research projects. This course may be repeated for different topics. This course will be offered in academic years ending in odd numbers. Recommended background: No prerequisites. One previous course in history or U.S. history is strongly recommended."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: No prerequisites. One previous course in history or U.S. history is strongly recommended."
+        requirement:
+          kind: topic
+          topic: one previous course in history or U.S. history
+    noCreditWith: []
+  - courseId: HI|3515
+    description: "This course examines key periods in German history from unification to the present in order to understand how history is presented, contested, and remembered through visual media. The primary medium will be film, but the course will include various media including television, painting, photography, graphic novels, posters, and social media. Each offering may focus on different historical periods (e.g. Weimar Germany, the Third Reich, divided Germany) and themes (e.g. propaganda, identity, memory). Students will engage in close readings of visual texts alongside historical sources to develop skills in medium-specific analysis and historical contextualization. Students who have taken German courses will have opportunities to work with source material in German. This course is taught in English and may be repeated for different topics. Especially appropriate for students interested in German, History, International and Global Studies, Film Studies, and WPI’s global Project Centers in Europe. Recommended background: Familiarity with modern European history or film studies (a course in one of these fields). This course will be offered in academic years ending in odd numbers."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Familiarity with modern European history or film studies (a course in one of these fields)."
+        requirement:
+          kind: topic
+          topic: familiarity with modern European history or film studies
+          satisfiedBy:
+            kind: anyOf
+            of:
+              - kind: topic
+                topic: modern European history
+              - kind: topic
+                topic: film studies
+    noCreditWith: []
+  - courseId: HI|1314
+    description: Cat. IAn introduction to historical analysis through selected periods or themes in thehistory of America before the Civil War. A variety of readings will reflect thevarious ways that historians have attempted to understand the development ofAmerica.
+    clauses: []
+    noCreditWith: []
+  - courseId: HI|2310
+    description: Cat. I This course surveys the interplay of social, economic, demographic, political and cultural forces in shaping the growth, decline and occasional rebirth of urban spaces. Emphasis is placed upon building chronological narratives while attending to the themes, approaches, and sources historians use to reconstruct the tangled infrastructures, stratified economies, segregated spaces and political/administrative structures of cities. Geographies will vary across sections and topics may include Industrializing Cities, Race and Urban Space, Post-Industrial Cities, Urban Technological Infrastructures, or Social Justice in the City. Students can receive credit only once for HI 2310.
+    clauses: []
+    noCreditWith: []
+  - courseId: HI|2313
+    description: Cat. IThis course surveys American history from the Presidency of George Washington to the Civil War and its aftermath. Topics include the rise of American democracy, the emergence of middle-class culture, and the forces that pulled apart the Union and struggled to put it back together.
+    clauses: []
+    noCreditWith: []
+  - courseId: HI|2314
+    description: Cat. IThis course surveys the transformation of the United States into an urban and industrial nation. Topics will include changes in the organization of business and labor, immigration and the development of cities, the peripheral role of theSouth and West in the industrial economy, politics and government in the age of "laissez-faire," and the diverse sources and nature of late 19th- and early 20th century reform movements.
+    clauses: []
+    noCreditWith: []
+  - courseId: HI|2315
+    description: Cat I. This course surveys the major political, social, and economic changes of American history from 1920 to the present. Emphasis will be placed on the Great Depression, the New Deal, suburbanization, McCarthyism, the persistence of poverty, the domestic effects of the Vietnam war, and recent demographic trends.
+    clauses: []
+    noCreditWith: []

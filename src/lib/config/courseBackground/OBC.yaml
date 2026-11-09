@@ -1,0 +1,20 @@
+department: OBC
+entries:
+  - courseId: OBC|533
+    description: This course focuses on improving the student's understanding of the negotiation process and effectiveness as a negotiator. Emphasizes issues related to negotiating within and on behalf of organizations, the role of third parties, the sources of power within negotiation, and the impact of gender, culture and other differences. Conducted in workshop format, combining theory and practice.
+    clauses: []
+    noCreditWith: []
+  - courseId: OBC|1010
+    description: Cat. I Leadership is a critical role in any global, technological organization. This course explores how the concepts of creativity, entrepreneurial and critical thinking, emotional and self-awareness, passion, diversity, communication, and ethics inform and affect leadership practice. The course considers a variety of contemporary leadership challenges including how leaders work effectively across cultural, technological, and disciplinary boundaries, how leaders foster new ideas and bring them to fruition, how they communicate effectively and persuasively to diverse stakeholders, and how they make decisions that are both ethical and effective. The course is designed to 1) increase students’ awareness of their own leadership styles, 2) examine the responsibilities of leadership, and 3) determine best practices in leadership. Students cannot receive credit for both BUS 1010 and OBC 1010.
+    clauses: []
+    noCreditWith:
+      - BUS|1010
+  - courseId: OBC|505
+    description: How do we navigate complex human systems in organizations? How do we foster innovation within organizations? In this course, we explore the paradoxes, opportunities, and hidden systemic challenges that arise on teams and projects, and in working across networks and within innovative organizations. Students will learn to more deftly manage the inherent challenges and opportunities of cross-cultural and multi-disciplinary teams; work through or avoid dysfunctional team and organizational conflicts; wrestle with ambiguity and uncertainty; negotiate change by learning to work with networks of power and influence; and analyze the individual, group, organizational and contextual dynamics that enable and constrain productive and innovative work in organizations. (Students cannot get credit for OBC 505 and OBC 500)
+    clauses: []
+    noCreditWith:
+      - OBC|500
+  - courseId: OBC|506
+    description: How do we mobilize our own and others’ energy toward developing sustainable outcomes and meaningful change—when the path ahead is unclear, when our business environment is rapidly changing, when we do not have full authority over those involved? This course embraces a human-centered design approach to leading others with integrity, empathy, and curiosity—with a specific focus on the unique challenges and opportunities of working within project-based networks and Industry 4.0/STEM contexts. Students will build their capacity to navigate complex human and technical systems as they work in teams to develop and pilot a solution to a real-life organizational or social problem.
+    clauses: []
+    noCreditWith: []

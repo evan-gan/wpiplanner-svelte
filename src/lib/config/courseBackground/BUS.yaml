@@ -1,0 +1,166 @@
+department: BUS
+entries:
+  - courseId: BUS|1020
+    description: Cat. I The global nature of business is indisputable. This course introduces the students to the complexity of the global environment and adopts a multi-dimensional view (cultural, economic, social, legal, political, and technological) of world economy. It promotes understanding the global environment as integrative forces affecting the success or failure of today’s businesses and fosters a global perspective. Topics may include an overview of the world economy, comparative advantage and international trade, cultural distance, FDI/ globalization theory, outsourcing and global supply chain coordination, political and country risk, the global monetary system and currency risk, legal and ethical issues, and risk management.
+    clauses: []
+    noCreditWith: []
+  - courseId: BUS|2001
+    description: "This course is designed to broaden student perspectives on business through experiential learning in entrepreneurship, finance, strategy and marketing, organizational behavior, and operations. By exposing students to various business disciplines and a wide range of firms and business models, we intend to accelerate student impact through an engaging, immersive experience. During onand off-site situation workshops, students will engage with practitioners to discuss business challenges and decisions in a small-group format. Students will also be matched with alumni to de-brief topics related to cases and prepare a learning portfolio as a culminating assignment. By the end of the course students will have a broader understanding of business domains, increased business fluency, and a better understanding of decision-making within a relevant business context. Recommended background: None Anticipated"
+    clauses: []
+    noCreditWith: []
+  - courseId: BUS|2080
+    description: "Cat. I This course builds upon students’ understanding of statistics and introduces them to the concepts and methods for analyzing data to support business decision-making. Students will explore data sets using data mining and analytics techniques to create business intelligence, to be used for understanding and improving customers’ experiences, supply chain operations, product management, etc. During the course, students will develop an understanding of the uses of business data analytics and associated models for business decision-making, forecasting, and obtaining and maintaining a competitive advantage. Students will learn a comprehensive set of advanced spreadsheet skills, including how to design, build, test, and use spreadsheets for analyzing business decisions. Recommended background: Basic statistics, equivalent to that in MA 2611 and MA 2612."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Basic statistics, equivalent to that in MA 2611 and MA 2612."
+        requirement:
+          kind: topic
+          topic: basic statistics
+          satisfiedBy:
+            kind: allOf
+            of:
+              - kind: course
+                course: MA|2611
+                orEquivalent: true
+              - kind: course
+                course: MA|2612
+                orEquivalent: true
+    noCreditWith: []
+  - courseId: BUS|500
+    description: "This course combines analysis of the structure, function and development of the law most important to the conduct of business with an examination of the ethical and social context in which managers make decisions. Emphasizing the social responsibility considerations of all business stakeholders, the course focuses on practical applications via extensive use of case studies. Students will gain a sound understanding of the basic areas of U.S. and international law including: intellectual property law; business formation and organization; international business law; securities regulation; cyber law and e-commerce; antitrust law; employment law and environmental law."
+    clauses: []
+    noCreditWith: []
+  - courseId: BUS|596
+    description: This course is the capstone course for the STEM-based, specialty MS programs in the School of Business. This course serves as a practical integration of the STEM-based tools, techniques, and skills and the related business theories and practices that students learned in their MS program. The medium is a major team based project in the form of an actual corporate STEM-based business need for which students will develop solutions. Students will produce a written report that documents and provides the financial, organizational, and technical rationale for the solutions. They will also formally present their results to the project sponsors. Students are expected to have completed (or are currently completing) all the courses requirements for their MS program prior to taking the capstone project. While the capstone requirements are the same for all STEM-based, specialty MS programs in the School of Business, the actual content of the project will differ by sponsor and by MS program. Students must take the appropriate section of BUS 596 for each MS program they complete.
+    clauses: []
+    noCreditWith: []
+    needsReview: Says students are expected to have completed (or be completing) all MS program course requirements before the capstone. Not labelled as a prerequisite, so no clause recorded.
+  - courseId: BUS|599
+    description: "This capstone course integrates management theory and practice, and incorporates a number of skills and tools acquired in the M.B.A. curriculum. The medium is a major team-based project in the form of a corporate venture or green field venture. In addition to a written report, the project is formally presented to a panel of outside experts including serial entrepreneurs and investors. (Prerequisites: ACC 500, ACC 502, ACC 505, BUS 500, BUS 590, FIN 503, FIN 504, MIS 500, MKT 500, OBC 505, OBC 506 and OIE 501 or equivalent content, or instructor consent) (Students cannot get credit for BUS 599 and BUS 517)"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "Prerequisites: ACC 500, ACC 502, ACC 505, BUS 500, BUS 590, FIN 503, FIN 504, MIS 500, MKT 500, OBC 505, OBC 506 and OIE 501 or equivalent content, or instructor consent"
+        requirement:
+          kind: anyOf
+          of:
+            - kind: allOf
+              of:
+                - kind: course
+                  course: ACC|500
+                  orEquivalent: true
+                - kind: course
+                  course: ACC|502
+                  orEquivalent: true
+                - kind: course
+                  course: ACC|505
+                  orEquivalent: true
+                - kind: course
+                  course: BUS|500
+                  orEquivalent: true
+                - kind: course
+                  course: BUS|590
+                  orEquivalent: true
+                - kind: course
+                  course: FIN|503
+                  orEquivalent: true
+                - kind: course
+                  course: FIN|504
+                  orEquivalent: true
+                - kind: course
+                  course: MIS|500
+                  orEquivalent: true
+                - kind: course
+                  course: MKT|500
+                  orEquivalent: true
+                - kind: course
+                  course: OBC|505
+                  orEquivalent: true
+                - kind: course
+                  course: OBC|506
+                  orEquivalent: true
+                - kind: course
+                  course: OIE|501
+                  orEquivalent: true
+            - kind: permission
+              text: instructor consent
+    noCreditWith:
+      - BUS|517
+    needsReview: Twelve-course list read as all required, or instructor consent instead. The scope of 'or equivalent content' (whole list or each course) is taken as each course.
+  - courseId: BUS|631
+    description: "This course introduces PhD students to business problems and the nature, scope, and purpose of research and research methodologies to study those problems. Topics include research approaches and designs, data types and their collection, measurement approaches, testing procedures, and interpreting and presenting findings. The ethics of various methods and data collection procedures are covered, as is the Institutional Review Board (IRB) process. Students will investigate applications of research methods to specific problems within their interest area, using qualitative and quantitative designs. They will also read example articles that use the research approaches covered. (Prerequisite: Admission to the Business School PhD program or to another WPI PhD program.)"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "(Prerequisite: Admission to the Business School PhD program or to another WPI PhD program.)"
+        requirement:
+          kind: anyOf
+          of:
+            - kind: standing
+              text: Admission to the Business School PhD program
+            - kind: standing
+              text: Admission to another WPI PhD program
+    noCreditWith: []
+  - courseId: BUS|633
+    description: "Developing predictive behavioral models, which heavily rely on quantitative (numeric) data, are a major success factor in helping businesses develop competitive products and services. This course focuses on methods for collecting and analyzing quantitative research data with the purpose of enabling students to make the novel discoveries that characterize PhD research in business. Students will become familiar with one or more internationally utilized statistical software packages and with the array of statistical analysis techniques in them. They will understand which statistical analysis techniques to use in which situations, how to interpret the output from these packages, and how data collection and analysis methods affect research results. In our increasingly data intensive business environment, these skills are critical for understanding business data and using that understanding to design better processes and systems and to make better decisions within and across industries. (Prerequisite: Admission to the Business School PhD program or to another WPI PhD program, BUS 631 or equivalent knowledge)"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "(Prerequisite: Admission to the Business School PhD program or to another WPI PhD program, BUS 631 or equivalent knowledge)"
+        requirement:
+          kind: allOf
+          of:
+            - kind: anyOf
+              of:
+                - kind: standing
+                  text: Admission to the Business School PhD program
+                - kind: standing
+                  text: Admission to another WPI PhD program
+            - kind: course
+              course: BUS|631
+              orEquivalent: true
+    noCreditWith: []
+  - courseId: BUS|651
+    description: "This course is offered every semester for cohort students as they start their research studies. It bridges between students’ methods courses and the start of their 30 dissertation credits. It is conducted in seminar format with a focus on students presenting the progress on their research studies and discussion among the class about appropriate research designs and analyses. This course can be taken multiple times. (Prerequisite: Admission to the Business School PhD program or to another WPI PhD program, BUS 631 or equivalent knowledge, BUS 632 or BUS 633 or equivalent knowledge.)"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "(Prerequisite: Admission to the Business School PhD program or to another WPI PhD program, BUS 631 or equivalent knowledge, BUS 632 or BUS 633 or equivalent knowledge.)"
+        requirement:
+          kind: allOf
+          of:
+            - kind: anyOf
+              of:
+                - kind: standing
+                  text: Admission to the Business School PhD program
+                - kind: standing
+                  text: Admission to another WPI PhD program
+            - kind: course
+              course: BUS|631
+              orEquivalent: true
+            - kind: anyOf
+              of:
+                - kind: course
+                  course: BUS|632
+                  orEquivalent: true
+                - kind: course
+                  course: BUS|633
+                  orEquivalent: true
+    noCreditWith: []
+  - courseId: BUS|2020
+    description: Cat. I This course addresses the impact of law on business. The course covers fundamental areas of business law, such as torts, contracts, intellectual property, and legal forms of business organizations, and their effects on business decisions. Particular attention is paid to technology-based enterprises where global business issues intersect with law.
+    clauses: []
+    noCreditWith: []
+  - courseId: BUS|546
+    description: This course studies successful innovations and how firms must enhance their ability to develop and introduce new products and processes. The course will discuss a practical model of the dynamics of industrial innovation. Cases and examples will be discussed for products in which cost and product performance are commanding factors. The important interface among R&D/ manufacturing/marketing is discussed. International technology transfer and joint venture issues are also considered.
+    clauses: []
+    noCreditWith: []
+  - courseId: BUS|594
+    description: BUS 594 Data-driven Business Strategy (3 credits) This is the Capstone project course for the STEM MBA program. The course content will introduce students to business strategy and integrate it with data-driven decision making. The course will involve a major team-based analytics project with an organizational sponsor. The project will involve both technical analytical skills and strategic thinking for formulating and implementing effective business strategies.
+    clauses: []
+    noCreditWith: []
+  - courseId: BUS|691
+    description: (0 credits) Seminars on current issues related to entrepreneurship, information technology and operations management are presented by authorities in their fields. All full-time Ph.D. students in Business Administration are required to register and attend.
+    clauses: []
+    noCreditWith: []

@@ -102,7 +102,7 @@ not anticipate, each noted inline: `lib/state/app.svelte.ts`,
 
 ```
 wpiplanner-svelte/
-├── PLAN.md                                 ← this document
+├── .claude/PLAN.md                         ← this document
 ├── package.json                            ← scripts: dev/build/test/data:build
 ├── tsconfig.json                           ←
 ├── svelte.config.js                          adapter-static, prerender all
@@ -246,7 +246,7 @@ wpiplanner-svelte/
 ## 4. The XML → JSON mapper (done)
 
 Built, tested, and run against the real export. See
-[`tools/schedb-to-json/README.md`](tools/schedb-to-json/README.md) for full detail.
+[`tools/schedb-to-json/README.md`](../tools/schedb-to-json/README.md) for full detail.
 
 ```
 $ pnpm run data:build
@@ -406,6 +406,7 @@ ledger above covers.
 | **Live catalog** — seat counts at most ten minutes old, with no cron job | `server/catalogHandler.ts` (Web-standard handler), `server/refreshingCache.ts`, `api/catalog.ts` (Vercel mount), `server/viteCatalogPlugin.ts` (the same handler under `pnpm dev`/`preview`), `tools/workday-to-schedb/src/refresh.ts` (the conversion as a function) | The first request after ten minutes refetches and reconverts the Workday feed (a few seconds, mostly the download); `s-maxage` lets the CDN serve everyone else. The app loads `/api/catalog/schedb.json` and falls back to the committed `/schedb.json` if the endpoint is down or absent. The handler knows nothing about Vercel — see `server/README.md` to host it elsewhere. |
 | **Header search** — live search by class code/title and by professor, in the crimson bar | `lib/model/catalogSearch.ts` (index built once, held as `AppState.search`), `components/search/` (`HeaderSearch` → `SearchResults` → `SearchResultCourse`) | Two result boxes, classes and professors, in a crimson panel that hangs from the header with filleted corners and opens over 250 ms. Opening a result ticks its department and selects it on the Courses tab; "+" adds it in place. |
 | **Lecture-then-lab section rail** — replaced the flat list of combined `AL01/AX03` sections *and* the professor filter funnel: each lecture is one row (label · professor · times, columns aligned across the rail), with its own labs/discussions nested beneath it | `lib/model/sectionComponents.ts`, `components/schedules/SectionPicker.svelte` → `CourseComponentList.svelte` → `ComponentRow.svelte` | Stores nothing: a row is ticked while any section containing it is on, and a tick writes through `setSectionsDenied`. A professor teaching two lectures appears twice, each with that lecture's labs. The rail defaults to the width that leaves the calendar square (`lib/ui/fitPaneSize.ts`). Every course starts collapsed (the old app opened the first); which ones the student opened, and the rail's scroll, survive a tab switch via `lib/state/railView.svelte.ts`. |
+| **Course background** — a "Background" block under each course description: prerequisites, corequisites, restrictions, recommended/suggested background, and courses that cannot both be taken for credit | `lib/config/courseBackground/<DEPT>.yaml` (data, edited as YAML), `vite/courseBackgroundPlugin.ts` (validates and compacts it at build time), `lib/model/courseBackground.ts` (shape + validator), `lib/model/courseBackgroundText.ts` (display text), `lib/data/courseBackground.ts` (lazy loader), `components/catalog/CourseBackground.svelte`, `tools/course-background/` (`pnpm background status / todo / check`) | Not in the Workday feed in structured form: read by hand (an agent did the first pass) from the free-text descriptions, which are too inconsistent to parse. Every catalog course has an entry (empty when it states none), so a course added later reports `unchecked` rather than passing for "no prerequisites". Each entry keeps the description it was read from and **is shown only while that still equals the catalog's**, so a changed description hides its background until `pnpm background todo <DEPT>` is worked through again. One lazily loaded chunk per department, shipped with descriptions replaced by a hash (~1.6 KB gzipped for AE). |
 | **Courses box fits its list**, and "+" flies a copy of the row into it | `lib/ui/fitPaneSize.ts`, `lib/ui/flyToTarget.ts`, `routes/courses/+page.svelte` | The box grows past its 250 px default only into space the description is not using, and shrinks to its rows (min 100 px). |
 | **Tabs keep their layout** — switching away and back leaves each list scrolled where it was, the Courses-tab panes at the size the student dragged, and the rail's open courses open | `lib/ui/rememberScroll.ts`, `lib/state/coursesView.svelte.ts`, `lib/state/railView.svelte.ts` | Held on `AppState` because SvelteKit unmounts a route on every tab switch. Session-only, not persisted. A course opened from the header search still scrolls the table to it. |
 

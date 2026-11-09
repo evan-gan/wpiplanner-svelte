@@ -1,5 +1,5 @@
 /**
- * PLAN.md §7.1 — the highest-value test in the suite.
+ * .claude/PLAN.md §7.1 — the highest-value test in the suite.
  *
  * The ported depth-first search and the brute-force oracle must agree on the
  * exact *set* of schedules for randomly generated course sets. The DFS prunes

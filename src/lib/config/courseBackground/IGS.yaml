@@ -1,0 +1,82 @@
+department: IGS
+entries:
+  - courseId: IGS|210X
+    description: "How can you integrate environmental knowledge and leadership into your future career, regardless of your major? This foundational course in environmental leadership introduces students to the core concepts, skills, and professional fields central to addressing present and future environmental challenges. Students will explore environmental ethics, ecological foundations, government systems and institutions, policymaking, and community engagement. Through a combination of instructor-led discussions, expert guest lectures, and action-oriented excursions, students will begin their journey towards environmental literacy. In addition, during the Foundations I course, students will begin to develop an Individualized Environmental Leadership Plan (IELP). The IELP will provide students with a structured yet flexible framework for curating their own environmental leadership journey, tailored to their interests, strengths, and professional goals. Through the IELP, students will begin to adopt a sustainability lens that they can apply across their academic, personal, and professional journeys. This course serves as the first in a sequence of environmental leadership courses, followed by IGS 220X (Environmental Leadership Foundations II), IGS 310X (Environmental Leadership Applications), and IGS 410X (Environmental Leadership Practicum). Recommended Background: A strong desire to expand environmental literacy and action from an interdisciplinary perspective and some leadership experience. NOTE: This course is part of the Leaders in Environmental Action for the Future (LEAF) Initiative."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: A strong desire to expand environmental literacy and action from an interdisciplinary perspective and some leadership experience."
+        requirement:
+          kind: other
+          text: A strong desire to expand environmental literacy and action from an interdisciplinary perspective and some leadership experience
+    noCreditWith: []
+  - courseId: IGS|220X
+    description: "During this course, students will build on the foundational knowledge they gained in Environmental Leadership Foundations I (IGS210X). Through guest lectures, in-class activities, and discussions, students will learn how professionals have applied environmental literacy in their fields. Students will evaluate their growing environmental literacy skills, knowledge, and behaviors as they progress in their professional path. Environmental Leadership Foundations II is an action-oriented class that enables students to develop an environmental stewardship and social responsibility lens they can apply to their discipline. During this class, students will refine their Individualized Environmental Leadership Plan (IELP). Additionally, students will be introduced to methods for applying environmental literacy content to specific issues, with the issue changing annually. For example, we may use the Massachusetts Municipal Vulnerability Preparedness Program (MVP I.0 and MVP 2.0) to connect advocacy, ecology, policy, and leadership concepts across classes. The MVP program supports Massachusetts communities in identifying and addressing climate-related vulnerabilities. In Foundations II (IGS220X), students will learn from professional guest speakers who specialize in environmental governance, regulatory frameworks, and the integration of sustainability principles across engineering, conservation, and related fields. Throughout the course, students will have opportunities to participate in hands-on experiential nature immersion and visit sites. Required Background: Environmental Leadership Foundations I (IGS210X). NOTE: This course is part of the Leaders in Environmental Action for the Future (LEAF) Initiativ"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "Required Background: Environmental Leadership Foundations I (IGS210X)."
+        requirement:
+          kind: course
+          course: IGS|210X
+    noCreditWith: []
+  - courseId: IGS|310X
+    description: "In Environmental Leadership Applications (IGS310X), students will apply the knowledge gained in the previous two courses (Environmental Leadership Foundations I and II, IGS210X and IGS220X). Students will choose how to apply their knowledge and leadership skills by completing a range of activities, including community projects, earning additional credentials (e.g., external badges and certifications), career exploration, networking, mentorship, and disseminating their work. Students will also choose how to disseminate their work, including delivering conference and poster presentations, developing professional publications, engaging in community organizing, and working on environmental justice initiatives. Classes will include guest speakers, discussions, action-oriented work, leadership training, and peer-to-peer mentoring. Assignments outside the classroom will include a mix of activities, such as attending regulatory hearings, attending town committee meetings (e.g., sustainability committee meetings), attending lectures and conference presentations, and organizing volunteer activities. During this course, students will have additional experiential, hands-on nature immersion opportunities. Required Background: Environmental Leadership Foundations I (IGS210X) and II (IGS220X). NOTE: This course is part of the Leaders in Environmental Action for the Future (LEAF) Initiative."
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "Required Background: Environmental Leadership Foundations I (IGS210X) and II (IGS220X)."
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: IGS|210X
+            - kind: course
+              course: IGS|220X
+    noCreditWith: []
+  - courseId: IGS|410X
+    description: "During IGS410X, students will utilize their newfound environmental literacy and leadership abilities. Students will serve as peer mentors to students enrolled in IGS220X and IGS310X [i.e., new participants in the LEAF (Leaders in Environmental Action for the Future) Initiative], and will be paired with a local environmental organization or on-campus sustainability initiative to develop a long-term executable project. Once developed, the IGS410X students will work with students in Environmental Leadership Foundations II (IGS220X) and Environmental Leadership Applications (IGS310X) to execute the project. IGS410X students will be responsible for managing, overseeing, and completing the project. At the conclusion of this IGS410X course, students may give a conference presentation or contribute to a publication on their project work. Required Background: Completion of Environmental Leadership Foundations I (IGS210X) and II (IGS220X), and Environmental Leadership Applications (IGS310X). NOTE: This course is part of the Leaders in Environmental Action for the Future (LEAF) Initiative."
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "Required Background: Completion of Environmental Leadership Foundations I (IGS210X) and II (IGS220X), and Environmental Leadership Applications (IGS310X)."
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: IGS|210X
+            - kind: course
+              course: IGS|220X
+            - kind: course
+              course: IGS|310X
+    noCreditWith: []
+  - courseId: IGS|502
+    description: 'IGS 502: Perspectives in Global Health (Cat. I, 3 credits) The concept of "global health" has diverse meanings in different contexts. This graduate course will introduce students to multiple perspectives on global health and examine the debates and contestations that define this nascent field. Throughout the course, students will be in conversation with different disciplines—anthropology, public health, development studies and gender studies— and will critically examine global health as ideology and practice. Case studies and examples will primarily be drawn from Africa, North America, and internationally to facilitate cross-cultural comparisons and will focus, inter alia, on recent pandemic outbreaks (e.g., HIV/AIDS, COVID and Ebola) and long-standing global health challenges like maternal mortality and water, sanitation and hygiene (WASH). The key topics to be covered in the course will include: history of global health, interdisciplinary perspectives on global health; (de)coloniality and global health architecture, social determinants of health, global health interventions and their successes and failures, and planetary health. This course engages substantially with the following Sustainable Development Goals: no poverty, good health and wellbeing, gender equality, clean water and sanitation, reduced inequalities and partnerships for the goals. Recommended background: Acceptance into the Global Health Graduate program or permission of instructor.'
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Acceptance into the Global Health Graduate program or permission of instructor."
+        requirement:
+          kind: anyOf
+          of:
+            - kind: standing
+              text: acceptance into the Global Health Graduate program
+            - kind: permission
+              text: permission of instructor
+    noCreditWith: []
+  - courseId: IGS|590
+    description: "This seminar analyzes core themes in climate adaptation and action from a comparative perspective, bridging geography, anthropology, and the built & natural environmental design disciplines. Through a combination of readings, case studies, and an individual depth project, the course provides an opportunity for students to explore theoretical frameworks for climate adaptation strategies in a way that is informed by diverse places and practices, both locally and globally. We work across scales to consider explore similarities and differences observed in different regions to foster skills and perspectives essential for empirically grounded, comparative, and holistic analysis of community engaged climate adaptation in urban and rural contexts. In doing so, we investigate both positive resonances between theoretical frameworks and demonstrated outcomes in discrete places, while we also critically probing any gaps or tensions, that may emerge from site or project specific considerations. Guests will provide additional content for consideration. Suggested background: Undergraduate students interested in this course should have junior standing. Recommended background: Completion of 12 credits in 3 Core CCA courses and 8 credits of GQP."
+    clauses:
+      - strength: suggested
+        timing: prior
+        sourceText: "Suggested background: Undergraduate students interested in this course should have junior standing."
+        requirement:
+          kind: standing
+          text: junior standing
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Completion of 12 credits in 3 Core CCA courses and 8 credits of GQP."
+        requirement:
+          kind: other
+          text: Completion of 12 credits in 3 Core CCA courses and 8 credits of GQP
+    noCreditWith: []

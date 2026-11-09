@@ -1,0 +1,993 @@
+department: ME
+entries:
+  - courseId: ME|1800
+    description: Cat. I This course introduces students to manufacturing science and engineering and prototype part production. It emphasizes CNC (computer-controlled) machining. Students will learn how to go from a solid (CAD, computer-aided design) model to a machined part, using CAM software (computer-aided manufacturing) and CNC machining. They will also be exposed to associated issues in manufacturing process analysis, engineering design, material science, and in dimensional and surface metrology. Using machining as an example, the science of manufacturing processes is developed in a combination of class work and laboratory experience. The laboratory experience includes an experimental component that relates process variables in machining with performance and machined part quality. Students whose project work will necessitate fabrication of parts and those who want a background in manufacturing process science and engineering should take this course.
+    clauses: []
+    noCreditWith: []
+  - courseId: ME|2300
+    description: "Cat. I This project based course introduces students to the engineering design process including; identifying the need, benchmarking, writing design specifications, evaluating alternative designs and selecting a final design. Student groups will construct and evaluate a working prototype of their design. Additional topics include; creativity, product liability, reverse engineering, patents, and codes of ethics for engineers. Extensive written reports and oral presentations are required. Recommended background: computer-aided design (ES 1310), mechanics (ES 2501, ES 2502), and manufacturing (ME 1800)."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: computer-aided design (ES 1310), mechanics (ES 2501, ES 2502), and manufacturing (ME 1800)."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: computer-aided design
+              satisfiedBy:
+                kind: course
+                course: ES|1310
+            - kind: topic
+              topic: mechanics
+              satisfiedBy:
+                kind: allOf
+                of:
+                  - kind: course
+                    course: ES|2501
+                  - kind: course
+                    course: ES|2502
+            - kind: topic
+              topic: manufacturing
+              satisfiedBy:
+                kind: course
+                course: ME|1800
+    noCreditWith: []
+  - courseId: ME|2312
+    description: "Cat. I The purpose of this course is to introduce concepts of programming and numerical methods using Matlab within an engineering framework. The course will review basic linear algebra, statics, stress analysis, and engineering governing equations with solution pathways developed and presented as numerical programming problems. The fundamental programming techniques cover a variety of input and output formats typically encountered in engineering situations. Control and conditional loops, recognizing and controlling numerical error, numerical integration and differentiation will be introduced and developed within an engineering framework. Recommended background: Statics (ES 2501), Stress Analysis (ES 2502), General Physics-Mechanics (PH 1110), Differential and Integral Calculus (MA 1021, MA 1022) or equivalents."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Statics (ES 2501), Stress Analysis (ES 2502), General Physics-Mechanics (PH 1110), Differential and Integral Calculus (MA 1021, MA 1022) or equivalents."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: statics
+              satisfiedBy:
+                kind: course
+                course: ES|2501
+                orEquivalent: true
+            - kind: topic
+              topic: stress analysis
+              satisfiedBy:
+                kind: course
+                course: ES|2502
+                orEquivalent: true
+            - kind: topic
+              topic: general physics-mechanics
+              satisfiedBy:
+                kind: course
+                course: PH|1110
+                orEquivalent: true
+            - kind: topic
+              topic: differential and integral calculus
+              satisfiedBy:
+                kind: allOf
+                of:
+                  - kind: course
+                    course: MA|1021
+                    orEquivalent: true
+                  - kind: course
+                    course: MA|1022
+                    orEquivalent: true
+    noCreditWith: []
+  - courseId: ME|2810
+    description: "This course serves a societal need for educating engineers about intelligent, sustainable, human centric, and resilient manufacturing, comprising our current industrial revolutions, Industries 4.0 and 5.0. Manufacturing is essential to our economy as the primary way of creating value in industrialized societies. Earlier industrial revolutions created environmental, social, and health issues along with wealth. Sustainable manufacturing is essential to the survival of our planet. Manufacturing realizes the value created by product design engineers. In addition to production, an understanding of manufacturing engineering enables superior product design. Furthermore, principles from manufacturing engineering can be applied to advantage in a wide variety of fields, like healthcare, education, construction, service industries, sports, and management. Historical foundations for current manufacturing engineering are established and connected to digital technologies, cyber physical production systems, and collaborative robots. Students are introduced to Suh’s axiomatic design, a systematic design method based on a scientific theory, which can be applied to solving all kinds of engineering design problems. Students learn how to apply design theory and AI to solve manufacturing related design problems. Students learn ethical design methods for value production and cost management. Through lectures, quizzes, homework, and in-class exercises students learn fundamental conceptual frameworks that can be adapted and applied as artificial intelligence, technologies, needs, and methods develop throughout their careers. Students cannot receive credit for both ME281x and ME2810. Recommended Background: none"
+    clauses: []
+    noCreditWith:
+      - ME|281X
+  - courseId: ME|2820
+    description: "Cat. I An introduction to material processing in manufacturing. This course provides important background for anyone interested in manufacturing, design engineering design, sales, or management. Processing of polymers, ceramics, metals and composites is discussed. Processes covered include: rolling, injection molding, forging, powder metallurgy, joining and machining. The relationships between materials, processes, processing parameters and the properties of manufactured parts are developed. During the course the students should develop the ability to choose materials, processes, and processing parameters for designing manufacturing procedures to take a prototype part to production. Recommended background: ME 1800 Materials Selection and Manufacturing Processes, and ES 2001 Introduction to Materials Science."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: ME 1800 Materials Selection and Manufacturing Processes, and ES 2001 Introduction"
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: ME|1800
+            - kind: course
+              course: ES|2001
+    noCreditWith: []
+  - courseId: ME|3310
+    description: "Cat. I An introduction to the synthesis and analysis of linkages, cams and gear trains is presented. The design process is introduced and used to solve unstructured design problems in linkage and cam design. Algebraic and graphical techniques to analyze the displacement, velocity and acceleration of linkages and cams are developed. Computer programs for the design and analysis of linkages are used by students. Results of student design projects are presented in professional engineering reports. Recommended background: Ordinary Differential Equations (MA 2051), statics (ES 2501), dynamics (ES 2503)."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Ordinary Differential Equations (MA 2051), statics (ES 2501), dynamics (ES 2503)."
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: MA|2051
+            - kind: course
+              course: ES|2501
+            - kind: course
+              course: ES|2503
+    noCreditWith: []
+  - courseId: ME|3320
+    description: "Cat. I This is an introductory course in mechanical design analysis, and it examines stress and fatigue in many machine elements. Common machine elements are studied and methods of selection and design are related to the associated hardware. Topics covered include: combined stresses, fatigue analysis, design of shafts, springs, gears, bearings and miscellaneous machine elements. Recommended background: mechanics (ES 2501, ES 2502, ES 2503), materials (ME 1800, ME 2820), computer programming (CS 1101 or CS 1102)."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: mechanics (ES 2501, ES 2502, ES 2503), materials (ME 1800, ME 2820), computer programming (CS 1101 or CS 1102)."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: mechanics
+              satisfiedBy:
+                kind: allOf
+                of:
+                  - kind: course
+                    course: ES|2501
+                  - kind: course
+                    course: ES|2502
+                  - kind: course
+                    course: ES|2503
+            - kind: topic
+              topic: materials
+              satisfiedBy:
+                kind: allOf
+                of:
+                  - kind: course
+                    course: ME|1800
+                  - kind: course
+                    course: ME|2820
+            - kind: topic
+              topic: computer programming
+              satisfiedBy:
+                kind: anyOf
+                of:
+                  - kind: course
+                    course: CS|1101
+                  - kind: course
+                    course: CS|1102
+    noCreditWith: []
+  - courseId: ME|3411
+    description: "Cat. I This course provides a mixture of theory and applications and covers topics not found in the introductory course in fluid mechanics. Topics include kinematics of fluid flow, potential flow, Navier-Stokes and the theory of viscous flow, basic turbulence, boundary layer theory, and introduction to compressible flow. Recommended background: Introductory fluid mechanics (ES 3004, or equivalent)."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Introductory fluid mechanics (ES 3004, or equivalent)."
+        requirement:
+          kind: topic
+          topic: introductory fluid mechanics
+          satisfiedBy:
+            kind: course
+            course: ES|3004
+            orEquivalent: true
+    noCreditWith: []
+  - courseId: ME|3501
+    description: "Cat. II In typical mathematics courses, students learn principles and techniques by solving many short and specially prepared problems. They rarely gain experience in formulating and solving mathematical equations that apply to real life engineering problems. This course will give students this type of applied mathematical experience. The course emphasizes the application of basic laws of nature as they apply to differential elements which lead to differential equations that need to be solved; all of these ideas are used in higher level engineering science courses such as fluid mechanics, heat transfer, elasticity, etc. Emphasis will be placed on understanding the physical concepts in a problem, selecting appropriate differential elements, developing differential equations, and finding ways to solve these equations. Limitations on the mathematical solutions due to assumptions made will be considered. Recommended background: Ordinary Differential Equations (MA 2051), statics (ES 2501), dynamics (ES 2503). This course will be offered in 2020-21, and in alternating years thereafter."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Ordinary Differential Equations (MA 2051), statics (ES 2501), dynamics (ES 2503)."
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: MA|2051
+            - kind: course
+              course: ES|2501
+            - kind: course
+              course: ES|2503
+    noCreditWith: []
+  - courseId: ME|3506
+    description: "Cat. I This project based design course focuses on the design and use of devices to aid persons with disabilities. Human factors and ergonomics are integrated into all phases of the design process with particular emphasis on the user interface. Topics include: defining the problem, developing design specifications, development of preliminary designs, selecting, realization and evaluation of a final design. Students will also learn how physical and cognitive parameters, safety, economics, reliability and aesthetics need to be incorporated into the design process. Recommended background: mechanics (ES 2501, ES 2502, ES 2503), design (ME 2300), materials (ME 1800) and electrical engineering (ECE 2010)."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: mechanics (ES 2501, ES 2502, ES 2503), design (ME 2300), materials (ME 1800) and electrical engineering (ECE 2010)."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: mechanics
+              satisfiedBy:
+                kind: allOf
+                of:
+                  - kind: course
+                    course: ES|2501
+                  - kind: course
+                    course: ES|2502
+                  - kind: course
+                    course: ES|2503
+            - kind: topic
+              topic: design
+              satisfiedBy:
+                kind: course
+                course: ME|2300
+            - kind: topic
+              topic: materials
+              satisfiedBy:
+                kind: course
+                course: ME|1800
+            - kind: topic
+              topic: electrical engineering
+              satisfiedBy:
+                kind: course
+                course: ECE|2010
+    noCreditWith: []
+  - courseId: ME|3820
+    description: "Cat. I This introductory course in modern control systems will give students an understanding of the basic techniques, and the range of equipment used in most computer controlled manufacturing operations. The class work is reinforced by hands-on laboratories in the Robotics/CAM lab. Modeling and analysis of machining processes, and applications of PLC (programmable logic control) are included. Class topics include: Manufacturing Automation, Microcomputers for Process Monitoring and Control, Computer Numerical Control, Switching Theory and Ladder Logic, Transducers and Signal Conditioning, and Closed Loop Digital Control. The laboratories allow students to program and implement several types of the controllers, and will provide an introduction to the topic of industrial robotics. Recommended background: manufacturing (ME 1800), materials processing (ME 2820), elementary computer/logic device programming."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: manufacturing (ME 1800), materials processing (ME 2820), elementary computer/logic device programming."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: manufacturing
+              satisfiedBy:
+                kind: course
+                course: ME|1800
+            - kind: topic
+              topic: materials processing
+              satisfiedBy:
+                kind: course
+                course: ME|2820
+            - kind: topic
+              topic: elementary computer/logic device programming
+    noCreditWith: []
+  - courseId: ME|3902
+    description: "Cat. I This course is designed to develop experimental skills in engineering measurement methods, based on electronic instrumentation and computerbased data acquisition systems, such as the Raspberry Pi (a primarily digital microprocessor) and an Arduino (a primarily analog microcontroller). The lectures are concerned with the engineering design requirements as well as the principles of instrumentation, whereas the laboratory modules afford the student an opportunity to use these devices in actual experiments. Lecture topics include: discussions of standards, measurement and sensing devices, experiment planning, data acquisition, analysis of experimental data, and report writing. Laboratory experiments address mechanical (force/torque/strain measurements, motion/vibration measurements), energy (heat transfer, temperature, flow measurements), materials measurements (materials processing, measurement of strain and position in mechanical testing of materials), and instrumentation. The course culminates with an open-ended project of the students choosing. This open-ended project will illuminate the skills gained by the student to utilize multiple sensors and equipment to monitor and/or control physical situations. Recommended background: introductory heat transfer (ES3003 or equivalent), introductory stress and dynamic mechanics (ES 2502 & ES 2503 or equivalents), introductory electrical and computer engineering (ES2010 or equivalent) and introductory materials (such as ES 2001 or equivalent)."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: introductory heat transfer (ES3003 or equivalent), introductory stress and dynamic mechanics (ES 2502 & ES 2503 or equivalents), introductory electrical and computer engineering (ES2010 or equivalent) and introductory materials (such as ES 2001 or equivalent)."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: introductory heat transfer
+              satisfiedBy:
+                kind: course
+                course: ES|3003
+                orEquivalent: true
+            - kind: topic
+              topic: introductory stress and dynamic mechanics
+              satisfiedBy:
+                kind: allOf
+                of:
+                  - kind: course
+                    course: ES|2502
+                    orEquivalent: true
+                  - kind: course
+                    course: ES|2503
+                    orEquivalent: true
+            - kind: topic
+              topic: introductory electrical and computer engineering
+              satisfiedBy:
+                kind: course
+                course: ES|2010
+                orEquivalent: true
+            - kind: topic
+              topic: introductory materials
+              satisfiedBy:
+                kind: course
+                course: ES|2001
+                orEquivalent: true
+    noCreditWith: []
+  - courseId: ME|4320
+    description: "Cat. IThis course integrates students’ background in ME in a one-term designproject that is usually taken from a local company. Students must organizethemselves and the project to successfully realize a product that meets customerneeds. Activities include problem definition, design analysis, mathematicalmodelling, CAD modelling, manufacturing, testing, liaison to vendors,customer relations, marketing, technical management, purchasing, reportwriting, and oral presentations.Recommended background: mechanisms (ME 3310, ME 3311), stressanalysis (ES 3502), design (ME 3320), thermo-fluids (ES 3001, ES 3003,ES 3004), materials (ES 2001), manufacturing (ME 1800)."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: mechanisms (ME 3310, ME 3311), stressanalysis (ES 3502), design (ME 3320), thermo-fluids (ES 3001, ES 3003,ES 3004), materials (ES 2001), manufacturing (ME 1800)."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: mechanisms
+              satisfiedBy:
+                kind: allOf
+                of:
+                  - kind: course
+                    course: ME|3310
+                  - kind: course
+                    course: ME|3311
+            - kind: topic
+              topic: stress analysis
+              satisfiedBy:
+                kind: course
+                course: ES|3502
+            - kind: topic
+              topic: design
+              satisfiedBy:
+                kind: course
+                course: ME|3320
+            - kind: topic
+              topic: thermo-fluids
+              satisfiedBy:
+                kind: allOf
+                of:
+                  - kind: course
+                    course: ES|3001
+                  - kind: course
+                    course: ES|3003
+                  - kind: course
+                    course: ES|3004
+            - kind: topic
+              topic: materials
+              satisfiedBy:
+                kind: course
+                course: ES|2001
+            - kind: topic
+              topic: manufacturing
+              satisfiedBy:
+                kind: course
+                course: ME|1800
+    noCreditWith: []
+    needsReview: The text says 'stressanalysis (ES 3502)', which may be a typo for ES 2502. Recorded as written.
+  - courseId: ME|4322
+    description: "Cat. I This course introduces students to the modeling and analysis of mechatronic systems. Creation of dynamic models and analysis of model response using the bond graph modeling language are emphasized. Lecture topics include energy storage and dissipation elements, transducers, transformers, formulation of equations for dynamic systems, time response of linear systems, and system control through open and closed feedback loops. Computers are used extensively for system modeling, analysis, and control. Hands-on projects will include the reverse engineering and modeling of various physical systems. Physical models may sometimes also be built and tested. Recommended background: mathematics (MA 2051, MA 2071), fluids (ES 3004), thermodynamics (ES 3001), mechanics (ES 2501, ES 2503)."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: mathematics (MA 2051, MA 2071), fluids (ES 3004), thermodynamics (ES 3001), mechanics (ES 2501, ES 2503)."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: mathematics
+              satisfiedBy:
+                kind: allOf
+                of:
+                  - kind: course
+                    course: MA|2051
+                  - kind: course
+                    course: MA|2071
+            - kind: topic
+              topic: fluids
+              satisfiedBy:
+                kind: course
+                course: ES|3004
+            - kind: topic
+              topic: thermodynamics
+              satisfiedBy:
+                kind: course
+                course: ES|3001
+            - kind: topic
+              topic: mechanics
+              satisfiedBy:
+                kind: allOf
+                of:
+                  - kind: course
+                    course: ES|2501
+                  - kind: course
+                    course: ES|2503
+    noCreditWith: []
+  - courseId: ME|4323
+    description: "ME 4323. Fundamentals of Vehicle Drivetrain Systems. Cat I This product-oriented course focuses on engineering fundamentals of ground vehicle drivetrain systems with application to automobiles, commercial and off-road vehicles as well as autonomous and electrically driven ground vehicles. The course focuses on “theory and practice” aspects of engineering design of vehicle transmissions, transfer cases, open and limited slip differentials, etc. A term project integrates design principles with materials selection to improve a drivetrain component for a given vehicle. Project steps include: problem definition and analysis, development of design specifications, development and analysis of alternative designs, conceptual design and material analysis, and a CAE design. Recommended Background: materials science (ES 2001), stress analysis (ES 2502), dynamics (ES 2503) or equivalents."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: materials science (ES 2001), stress analysis (ES 2502), dynamics (ES 2503) or equivalents."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: materials science
+              satisfiedBy:
+                kind: course
+                course: ES|2001
+                orEquivalent: true
+            - kind: topic
+              topic: stress analysis
+              satisfiedBy:
+                kind: course
+                course: ES|2502
+                orEquivalent: true
+            - kind: topic
+              topic: dynamics
+              satisfiedBy:
+                kind: course
+                course: ES|2503
+                orEquivalent: true
+    noCreditWith: []
+  - courseId: ME|4324
+    description: "ME 4324 Integrated Design of Mechanical System. Cat I This course develops student capabilities to conduct the detailed design of mechanical components integrated into a complete mechanical system. Topics covered include kinematic syntheses and analysis and detailed design of mechanical components under dynamic loading using the fatigue-life method. These topics are developed through a guided design project. Computer software packages such as Mathcad and Linkages are used. Recommended Background: ES 2001 (Introduction to Materials Science), ES 1310 (Introduction to Computer Aided Design), ES2501 (Introduction to Static Systems), ES2502 (Stress Analysis), and ES2503 (Introduction to Dynamic Systems)."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: ES 2001 (Introduction to Materials Science), ES 1310 (Introduction to Computer Aided Design), ES2501 (Introduction to Static Systems), ES2502 (Stress Analysis), and ES2503 (Introduction to Dynamic Systems)."
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: ES|2001
+            - kind: course
+              course: ES|1310
+            - kind: course
+              course: ES|2501
+            - kind: course
+              course: ES|2502
+            - kind: course
+              course: ES|2503
+    noCreditWith: []
+  - courseId: ME|4422
+    description: "Cat. I This course introduces students to design of small and large scale optimal thermal systems. The hardware associated with thermal systems includes fans, pumps, compressors, engines, expanders, turbines, heat and mass exchangers, and reactors, all interconnected with some form of conduits. Generally, the working substances are fluids. These types of systems appear in such industries as power generation, electric and gas utilities, refrigeration and cryogenics, air conditioning and heating, food, chemical, petroleum, and other process industries. This course is intended for mechanical engineering students, especially those seeking a concentration in Thermal-Fluids. Additionally, this course might be of interest to students in Aerospace Engineering and Chemical Engineering. Recommended Background: Knowledge in thermodynamics (ES 3001), fluid mechanics (ES 3004), heat transfer (ES 3003), and introduction to design (ME 2300)"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: Knowledge in thermodynamics (ES 3001), fluid mechanics (ES 3004), heat transfer (ES 3003), and introduction to design (ME 2300)"
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: thermodynamics
+              satisfiedBy:
+                kind: course
+                course: ES|3001
+            - kind: topic
+              topic: fluid mechanics
+              satisfiedBy:
+                kind: course
+                course: ES|3004
+            - kind: topic
+              topic: heat transfer
+              satisfiedBy:
+                kind: course
+                course: ES|3003
+            - kind: topic
+              topic: introduction to design
+              satisfiedBy:
+                kind: course
+                course: ME|2300
+    noCreditWith: []
+  - courseId: ME|4429
+    description: "Cat. I This course integrates thermodynamics, fluid mechanics and heat transfer through the use of design projects involving modern technologies, such as electronic cooling, vapor compression power and refrigeration cycles. Activities include problem definition, design creation and analysis, mathematical modeling, cost analysis and optimization. Recommended background: knowledge in thermodynamics, fluid mechanics, heat transfer and introduction to design (ES 3001, ES 3004 and ES 3003, ME 2300 or equivalent)."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: knowledge in thermodynamics, fluid mechanics, heat transfer and introduction to design (ES 3001, ES 3004 and ES 3003, ME 2300 or equivalent)."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: thermodynamics
+              satisfiedBy:
+                kind: course
+                course: ES|3001
+                orEquivalent: true
+            - kind: topic
+              topic: fluid mechanics
+              satisfiedBy:
+                kind: course
+                course: ES|3004
+                orEquivalent: true
+            - kind: topic
+              topic: heat transfer
+              satisfiedBy:
+                kind: course
+                course: ES|3003
+                orEquivalent: true
+            - kind: topic
+              topic: introduction to design
+              satisfiedBy:
+                kind: course
+                course: ME|2300
+                orEquivalent: true
+    noCreditWith: []
+  - courseId: ME|4503
+    description: CAT I, This course will focus on using computational modeling approaches, particularly, finite element models, to simulate, validate, and analyze the biomechanics involved in soft and hard tissue deformation and stress/strain analysis in quasi-static or impact conditions. First, students will be introduced to the process of setting specific analytical goals and establishing the need for a specific quantitative biomechanical model. Then, basic underlying principles of forward and inverse static/dynamics simulations are covered. Finally, multi-scale and multi-step models will be introduced. During the process, material models and property assignment will also be covered. Model building, testing, optimization and validation with experimental data will be discussed. An introduction to tools and techniques used in computational biomechanics will be provided. Recommended Background - Basic knowledge of solid mechanics (ES 2501, ES 2502, ES 2503, ME 3501 or equivalent), differential and integral calculus (i.e., MA 2051 or equivalent), MATLAB programming (BME 2211 Data Analysis).
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: Recommended Background - Basic knowledge of solid mechanics (ES 2501, ES 2502, ES 2503, ME 3501 or equivalent), differential and integral calculus (i.e., MA 2051 or equivalent), MATLAB programming (BME 2211 Data Analysis).
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: basic knowledge of solid mechanics
+              satisfiedBy:
+                kind: anyOf
+                of:
+                  - kind: course
+                    course: ES|2501
+                    orEquivalent: true
+                  - kind: course
+                    course: ES|2502
+                    orEquivalent: true
+                  - kind: course
+                    course: ES|2503
+                    orEquivalent: true
+                  - kind: course
+                    course: ME|3501
+                    orEquivalent: true
+            - kind: topic
+              topic: differential and integral calculus
+              satisfiedBy:
+                kind: course
+                course: MA|2051
+                orEquivalent: true
+            - kind: topic
+              topic: MATLAB programming
+              satisfiedBy:
+                kind: course
+                course: BME|2211
+    noCreditWith: []
+  - courseId: ME|4504
+    description: "Cat. I This course emphasizes the applications of mechanics to describe the material properties of living tissues. It is concerned with the description and measurements of these properties as related to their physiological functions. Emphasis on the interrelationship between biomechanics and physiology in medicine, surgery, body injury and prostheses. Topics covered include: review of basic mechanics, stress, strain, constitutive equations and the field equations, viscoelastic behavior, and models of material behavior. The measurement and characterization of properties of tendons, skin, muscles and bone. Biomechanics as related to body injury and the design of prosthetic devices. Recommended background: Mechanics (ES 2501, ES 2502, ES 2503, ME 3501), Mathematics (MA 2051)."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Mechanics (ES 2501, ES 2502, ES 2503, ME 3501), Mathematics (MA 2051)."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: mechanics
+              satisfiedBy:
+                kind: anyOf
+                of:
+                  - kind: course
+                    course: ES|2501
+                  - kind: course
+                    course: ES|2502
+                  - kind: course
+                    course: ES|2503
+                  - kind: course
+                    course: ME|3501
+            - kind: topic
+              topic: mathematics
+              satisfiedBy:
+                kind: course
+                course: MA|2051
+    noCreditWith: []
+  - courseId: ME|4512
+    description: "Cat. I This course serves as an introduction to finite element analysis (FEA) for stress analysis problems. Finite element equations are developed for several element types from stiffness and energy approaches and used to solve simple problems. Element types considered include spring, truss, beam, two-dimensional (plane stress/strain and axisymmetric solid), three-dimensional and plates. Stress concentrations, static failures, and fatigue failures are considered for each element type. Emphasis will be placed on knowing the behavior and usage of each element type, being able to select a suitable finite element model for a given problem, and being able to interpret and evaluate the solution quality. A commercial, general-purpose finite element computer program is used to solve problems that are more complex. Projects are used to introduce the use of FEA in the iterative design process. Recommended background: Mathematics (MA 2051, MA 2071), Mechanics (ES 2501 & ES 2502 or CE 2000 & CE 2001)."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Mathematics (MA 2051, MA 2071), Mechanics (ES 2501 & ES 2502 or CE 2000 & CE 2001)."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: mathematics
+              satisfiedBy:
+                kind: allOf
+                of:
+                  - kind: course
+                    course: MA|2051
+                  - kind: course
+                    course: MA|2071
+            - kind: topic
+              topic: mechanics
+              satisfiedBy:
+                kind: anyOf
+                of:
+                  - kind: allOf
+                    of:
+                      - kind: course
+                        course: ES|2501
+                      - kind: course
+                        course: ES|2502
+                  - kind: allOf
+                    of:
+                      - kind: course
+                        course: CE|2000
+                      - kind: course
+                        course: CE|2001
+    noCreditWith: []
+  - courseId: ME|4606
+    description: "Cat. II This course emphasizes the applications of fluid mechanics to biological problems. The course concentrates primarily on the human circulatory and respiratory systems. Topics covered include: blood flow in the heart, arteries, veins and microcirculation and air flow in the lungs and airways. Mass transfer across the walls of these systems is also presented. Recommended background: ME 3501 and fluid mechanics equivalent to ES 3004. This course will be offered in 2020-21, and in alternating years thereafter."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: ME 3501 and fluid mechanics equivalent to ES 3004."
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: ME|3501
+            - kind: topic
+              topic: fluid mechanics
+              satisfiedBy:
+                kind: course
+                course: ES|3004
+                orEquivalent: true
+    noCreditWith: []
+  - courseId: ME|4821
+    description: "Cat. II This course develops the processing, structure, property, performance relationships in plastic materials. The topics covered include polymerization processes, chain structure and configuration, molecular weights and distributions, amorphous and crystalline states and glass-rubber transition. The principles of various processing techniques including injection molding, extrusion, blow molding, thermoforming and calendaring will be discussed. The physical and mechanical properties of polymers and polymer melts will be described with specific attention to rheology and viscoelasticity. Pertinent issues related to environmental degradation and recyclability will be highlighted. Recommended Background: ES 2001 or equivalent. This course will be offered in 2019-20, and in alternating years thereafter."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: ES 2001 or equivalent."
+        requirement:
+          kind: course
+          course: ES|2001
+          orEquivalent: true
+    noCreditWith: []
+  - courseId: ME|4829
+    description: "This course establishes a framework for analysis of processes to convert waste streams or raw materials from the ground or ocean into refined metal ingots and related products. It covers pyrometallurgy, hydrometallurgy, electrometallurgy, and related processes at scales from kilograms of osmium to megatonnes of steel and aluminum (60-70% of each is made from recycled scrap in the US and EU). For each, it establishes the fundamentals of thermodynamics, kinetics, and scaling behavior, as well as process economics and life cycle emissions. Team projects conduct deep dives into an existing process in each of the three categories (pyro/hydro/electrometallurgy), discussing the fundamentals of its operation, and exploring how it is changing to improve cost and sustainability. This course is co-located with graduate course MTE 5849; students may not receive credit for both the undergraduate and graduate versions of the course. This course will be offered in academic years ending in odd numbers. Recommended background: chemical properties, molecular bonding, chemical reaction order and kinetics (CH 1010); materials processing-structure-property fundamentals, and binary phase diagrams (ES 2001); enthalpy and entropy (ES 3001); electrical voltage, resistance, current, magnetic field basics (PH 1121)."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: chemical properties, molecular bonding, chemical reaction order and kinetics (CH 1010); materials processing-structure-property fundamentals, and binary phase diagrams (ES 2001); enthalpy and entropy (ES 3001); electrical voltage, resistance, current, magnetic field basics (PH 1121)."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: chemical properties, molecular bonding, chemical reaction order and kinetics
+              satisfiedBy:
+                kind: course
+                course: CH|1010
+            - kind: topic
+              topic: materials processing-structure-property fundamentals, and binary phase diagrams
+              satisfiedBy:
+                kind: course
+                course: ES|2001
+            - kind: topic
+              topic: enthalpy and entropy
+              satisfiedBy:
+                kind: course
+                course: ES|3001
+            - kind: topic
+              topic: electrical voltage, resistance, current, magnetic field basics
+              satisfiedBy:
+                kind: course
+                course: PH|1121
+    noCreditWith:
+      - MTE|5849
+  - courseId: ME|4832
+    description: "Cat. I An introductory course designed to acquaint the student with the different forms of corrosion and the fundamentals of oxidation and electro-chemical corrosion. Topics covered include: corrosion principles, environmental effects, metallurgical aspects, galvanic corrosion, crevice corrosion, pitting, intergranular corrosion, erosion corrosion, stress corrosion, cracking and hydrogen embrittlement, corrosion testing, corrosion prevention, oxidation and other high-temperature metal-gas reactions. Recommended background: materials (ES 2001). This course will be offered in 2019-20, and in alternating years thereafter."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: materials (ES 2001)."
+        requirement:
+          kind: topic
+          topic: materials
+          satisfiedBy:
+            kind: course
+            course: ES|2001
+    noCreditWith: []
+  - courseId: ME|4840
+    description: "Cat. I Fundamental relationships between the structure and properties of engineering materials are studied. Principles of diffusion and phase transformation are applied to the strengthening of commercial alloy systems. Role of crystal lattice defects on material properties and fracture are presented. Strongly recommended as a senior-graduate level course for students interested in pursuing a graduate program in materials or materials engineering at WPI, or other schools. Recommended background: materials (ES 2001, ME 2820)."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: materials (ES 2001, ME 2820)."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: materials
+              satisfiedBy:
+                kind: course
+                course: ES|2001
+            - kind: course
+              course: ME|2820
+    noCreditWith: []
+  - courseId: ME|4875
+    description: "Cat. I This course introduces students to current developments in nanoscale science and technology. The current advance of materials and devices constituting of building blocks of metals, semiconductors, ceramics or polymers that are nanometer size (1-100 nm) are reviewed. The profound implications for technology and science of this research field are discussed. The differences of the properties of matter on the nanometer scale from those on the macroscopic scale due to the size confinement, predominance of interfacial phenomena and quantum mechanics are studied. The main issues and techniques relevant to science and technologies on the nanometer scale are considered. New developments in this field and future perspectives are presented. Topics covered include: fabrication of nanoscale structures, characterization at nanoscale, molecular electronics, nanoscale mechanics, new architecture, nano-optics and societal impacts. Recommended background: ES 2001 Introduction to Materials or equivalent Some sections of this course may be offered as Writing Intensive (WI)."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: ES 2001 Introduction to Materials or equivalent"
+        requirement:
+          kind: course
+          course: ES|2001
+          orEquivalent: true
+    noCreditWith: []
+  - courseId: ME|500
+    description: "The emphasis of this course is on the modeling of physical phenomena encountered in typical engineering problems, and on interpreting solutions in terms of the governing physics. In this manner, the course will expose students to a range of techniques that are useful to practicing engineers and researchers. Physical examples will be drawn from fluid mechanics, dynamics, stability problems, and structural mechanics. The course will introduce analytical techniques as they are required to study such phenomena. Depending on the examples chosen, the techniques covered may include partial differential equations, power series, Fourier series, Fourier integrals, including cases of sustained nonperiodic processes which require incorporating probabilistic approach into dynamics, Green’s Functions, Sturm-Liouville theory and linear algebra. (Prerequisites: differential equations at the undergraduate level.) Students cannot receive credit for this course if they have taken ME 5000."
+    clauses: []
+    noCreditWith: []
+  - courseId: ME|514
+    description: "This course is an introduction to graduate-level fluid dynamics. Specific learning outcomes include deriving and understanding the governing equations of fluid mechanics; applying basic equations of fluid motion to understand inviscid fluids, Newtonian fluids, and incompressible fluids; analyzing potential flows using stream functions and potential functions; deriving exact solutions of fluid equations for special flow cases; and introducing the concept of boundary layers and deriving similarity solutions for boundary layer equations. (Prerequisites: undergraduate-level fluid dynamics.) Students cannot receive credit for this course if they have received credit for AE/ME 5101 or AE/ME 5107."
+    clauses: []
+    noCreditWith: []
+  - courseId: ME|516
+    description: "Review of governing differential equations and boundary conditions for heat transfer analysis. Multidimensional and unsteady conduction, including effects of variable material properties. Analytical and numerical solution methods. Forced and free convection with laminar and turbulent flow in internal and external flows. Characteristics of radiant energy spectra and radiative properties of surfaces. Radiative heat transfer in absorbing and emitting media. Systems with combined conduction, convection and radiation. Condensation, evaporation, and boiling phenomena. (Prerequisite: Background in thermodynamics, fluid dynamics, ordinary and partial differential equations, and basic undergraduate physics.)"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "(Prerequisite: Background in thermodynamics, fluid dynamics, ordinary and partial differential equations, and basic undergraduate physics.)"
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: thermodynamics
+            - kind: topic
+              topic: fluid dynamics
+            - kind: topic
+              topic: ordinary and partial differential equations
+            - kind: topic
+              topic: basic undergraduate physics
+    noCreditWith: []
+  - courseId: ME|5220
+    description: "(2 credits) This course covers analysis and synthesis of control laws for linear dynamical systems. Fundamental concepts including canonical representations, the state transition matrix, and the properties of controllability and observability will be discussed. The existence and synthesis of stabilizing feedback control laws using pole placement and linear quadratic optimal control will be discussed. The design of Luenberger observers and Kalman filters will be introduced. Examples pertaining to aerospace engineering, such as stability analysis and augmentation of longitudinal and lateral aircraft dynamics, will be considered. Assignments and term project (if any) will focus on the design, analysis, and implementation of linear control for current engineering problems. The use of Matlab®/Simulink® for analysis and design will be emphasized. (Recommended background: Familiarity with ordinary differential equations, introductory control theory, fundamentals of linear algebra, and the analysis of signals and systems is recommended. Familiarity with Matlab® is strongly recommended.)"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Familiarity with ordinary differential equations, introductory control theory, fundamentals of linear algebra, and the analysis of signals and systems is recommended."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: ordinary differential equations
+            - kind: topic
+              topic: introductory control theory
+            - kind: topic
+              topic: fundamentals of linear algebra
+            - kind: topic
+              topic: the analysis of signals and systems
+      - strength: suggested
+        timing: prior
+        sourceText: Familiarity with Matlab® is strongly recommended.
+        requirement:
+          kind: topic
+          topic: familiarity with Matlab
+    noCreditWith: []
+  - courseId: ME|5221
+    description: "(2 credits) Overview of stability concepts and examination of various methods for assessing stability such as linearization and Lyapunov methods. Introduction to various design methods based on linearization, sliding modes, adaptive control, and feedback linearization. Demonstration and performance analysis on engineering systems such as flexible robotic manipulators, mobile robots, spacecraft attitude control and aircraft control systems. Control synthesis and analysis is performed using Matlab®/Simulink®. (Prerequisites: Familiarity with ordinary differential equations, introductory control theory at the undergraduate level, fundamentals of linear algebra. Familiarity with Matlab® is strongly recommended.)"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "(Prerequisites: Familiarity with ordinary differential equations, introductory control theory at the undergraduate level, fundamentals of linear algebra."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: ordinary differential equations
+            - kind: topic
+              topic: introductory control theory at the undergraduate level
+            - kind: topic
+              topic: fundamentals of linear algebra
+      - strength: suggested
+        timing: prior
+        sourceText: Familiarity with Matlab® is strongly recommended.)
+        requirement:
+          kind: topic
+          topic: familiarity with Matlab
+    noCreditWith: []
+  - courseId: ME|5225
+    description: "This course is designed to introduce students to the field of fiber optics, with an emphasis on design and working principles of fiber optical sensors for mechanical, biological, and chemical measurements. Students will be able to learn the basic knowledge and working principles of optical fibers and fiber optical components, as well as practical design guidelines and applications of fiber optical sensing systems. The first half of the course will introduce the fundamentals of fiber optics, including working principles of optical fibers, single-mode and multimode fibers, properties of optical fibers, passive fiber optical devices, light sources, and optical detectors. The second half will focus on practical fiber optical sensors and sensing systems, including working principles of fiber optical sensors, intensitybased and interferometer-based fiber optical sensors, fiber Bragg gratings, and low-coherence fiber optical interferometers. Specifically, design and implementation of fiber optical sensors and sensing systems for strain and pressure measurements will be discussed in detail. Measurement characteristics and signal processing of fiber optical sensing systems for different applications will be introduced. Recommended Background: Undergraduate level stress analysis and wave fundamentals, such as ES 2502, PH 1140. Knowledge of vibrations such as ME 4506 is preferred but not required."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: Undergraduate level stress analysis and wave fundamentals, such as ES 2502, PH 1140."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: undergraduate level stress analysis
+              satisfiedBy:
+                kind: course
+                course: ES|2502
+            - kind: topic
+              topic: wave fundamentals
+              satisfiedBy:
+                kind: course
+                course: PH|1140
+      - strength: suggested
+        timing: prior
+        sourceText: Knowledge of vibrations such as ME 4506 is preferred but not required.
+        requirement:
+          kind: topic
+          topic: knowledge of vibrations
+          satisfiedBy:
+            kind: course
+            course: ME|4506
+    noCreditWith: []
+    needsReview: "'such as' examples are not exhaustive."
+  - courseId: ME|527
+    description: "ME 527/RBE 500 Foundations of Robotics (3 Credits) Fundamentals of robotics engineering. Topics include forward and inverse kinematics, velocity kinematics, introduction to dynamics and control theory, sensors, actuators, basic probabilistic robotics concepts, fundamentals of computer vision, and robot ethics. In addition, modular robot programming will be covered, and the concepts learned will be applied using realistic simulators. Prerequisites: Differential Equations (MA 2051 or equivalent), Linear Algebra (MA 2071 or equivalent) and the ability to program in a high-level language"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "Prerequisites: Differential Equations (MA 2051 or equivalent), Linear Algebra (MA 2071 or equivalent) and the ability to program in a high-level language"
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: MA|2051
+              orEquivalent: true
+            - kind: course
+              course: MA|2071
+              orEquivalent: true
+            - kind: topic
+              topic: the ability to program in a high-level language
+    noCreditWith: []
+  - courseId: ME|528
+    description: "ME 528/RBE 501 Robot Dynamics (3 Credits) Foundations and principles of robot dynamics. Topics include system modeling including dynamical modeling of serial arm robots using Newton and Lagrange’s techniques, dynamical modeling of mobile robots, introduction to dynamics-based robot control, as well as advanced techniques for serial arm forward kinematics, trajectory planning, singularity and manipulability, and vision-based control. In addition, dynamic simulation techniques will be covered to apply the concepts learned using realistic simulators. An end of term team project would allow students to apply mastery of the subject to real-world robotic platforms. Prerequisites: RBE 500 or equivalent"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "Prerequisites: RBE 500 or equivalent"
+        requirement:
+          kind: course
+          course: RBE|500
+          orEquivalent: true
+    noCreditWith: []
+  - courseId: ME|5304
+    description: "Demands for increased performance and efficiency of components in the nano/micro-, meso-, and macro-scales, impose challenges to their engineering design, study, and optimization. These challenges are compounded by multidisciplinary applications to be developed inexpensively in short time while satisfying stringent design objectives. As a consequence, effective quantitative engineering methodologies, such as optical techniques, are frequently used in the study and optimization of advanced components and systems. In this course, modern laser metrology techniques are discussed and their practical applications to solve problems, with emphasis on nondestructive testing (NDT), are illustrated with laboratory demonstrations. Topics covered include wave and Fourier optics, classic and holographic interferometry, speckle techniques, solid-state lasers, fiber optics, CCD cameras, computer vision, camera calibration methods, and image processing and data reduction algorithms as required in quantitative fringe analysis. Detail examples of nondestructive testing and coherent optical metrology in solid mechanics, vibrations, heat transfer, electromagnetics, and reverse engineering are given. Students are required to work on projects depending on their background and interests. Recommended background: mechanics, materials, physics, knowledge of a high-level computer programming language. Students cannot receive credit for this course if they have taken the Special Topics (ME 593J) version of the same course or ME 534."
+    clauses: []
+    noCreditWith: []
+  - courseId: ME|5311
+    description: "(2 credits) This course, (along with its companion course MTE 512 Properties and Performance of Engineering Materials), is designed to provide a comprehensive review of the fundamental principles of Materials Science and Engineering for incoming graduate students . In the first part of this 2 course sequence, the structure in materials ranging from the sub-atomic to the macroscopic including nano, micro and macromolecular structures will be discussed to highlight bonding mechanisms, crystallinity and defect patterns . Representative thermodynamic and kinetic aspects such as diffusion, phase diagrams, nucleation and growth and TTT diagrams will be discussed . Major structural parameters that effect of performance in materials including plastics, metallic alloys, ceramics and glasses will be emphasized . The principal processing techniques to shape materials and the effects of processing on structure will be highlighted. (Prerequisites: senior or graduate standing or consent of the instructor.) Note: Students cannot receive credit for this course if they have taken the Special Topics version of the same course (MTE 594S)."
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "(Prerequisites: senior or graduate standing or consent of the instructor.)"
+        requirement:
+          kind: anyOf
+          of:
+            - kind: standing
+              text: senior or graduate standing
+            - kind: permission
+              text: consent of the instructor
+    noCreditWith: []
+    needsReview: The special-topics no-credit rule names 'MTE 594S' / 'MTE 594P', which the course-id pattern cannot store. Not recorded.
+  - courseId: ME|5312
+    description: "(2 credits) The two introductory classes on materials science (MTE 511 and MTE 512) describe the structure property relationships in materials. The purpose of this class is to provide a basic knowledge of the principles pertaining to the physical, mechanical and chemical properties of materials. The primary focus of this class will be on mechanical properties. The thermal, tensile, compressive, flexural and shear properties of metallic alloys, ceramics and glasses and plastics will be discussed. Fundamental aspects of fracture mechanics and viscoelasticity will be presented. An overview of dynamic properties such as fatigue, impact and creep will be provided. The relationship between the structural parameters and the preceding mechanical properties will be described. Basic composite theories will be presented to describe fiber-reinforced composites and nanocomposites. Various factors associated with material degradation during use will be discussed. Some introductory definitions of electrical and optical properties will be outlined. (Prerequisites: senior or graduate standing or consent of the instructor.) Note: Students cannot receive credit for this course if they have taken the Special Topics version of the same course (MTE 594P)."
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "(Prerequisites: senior or graduate standing or consent of the instructor.)"
+        requirement:
+          kind: anyOf
+          of:
+            - kind: standing
+              text: senior or graduate standing
+            - kind: permission
+              text: consent of the instructor
+    noCreditWith: []
+    needsReview: The special-topics no-credit rule names 'MTE 594S' / 'MTE 594P', which the course-id pattern cannot store. Not recorded.
+  - courseId: ME|5361
+    description: "(2 credits) The failure and wear-out mechanisms for a variety of materials (metals, ceramics, polymers, composites and microelectronics) and applications will be presented and discussed. Multi-axial failure theories and fracture mechanics will be discussed. The methodology and techniques for reliability analysis will also be presented and discussed. A materials systems approach will be used. (Prerequisites: ES 2502 and ME 3023 or equivalent, and senior or graduate standing in engineering or science.) Note: Students cannot receive credit for this course if they have taken the Special Topics version of the same course (MTE 593C/MTE 594C)."
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "(Prerequisites: ES 2502 and ME 3023 or equivalent, and senior or graduate standing in engineering or science.)"
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: ES|2502
+            - kind: course
+              course: ME|3023
+              orEquivalent: true
+            - kind: standing
+              text: senior or graduate standing in engineering or science
+    noCreditWith: []
+    needsReview: The special-topics no-credit rule names 'MTE 593C' style codes, which the course-id pattern cannot store. Not recorded.
+  - courseId: ME|5370
+    description: (3 credits) This course emphasizes research applications of advanced surface metrology, including the measurement and analysis of surface roughness. Surface metrology can be important in a wide variety of situations including adhesion, friction, catalysis, heat transfer, mass transfer, scattering, biological growth, wear and wetting. These situations impact practically all the engineering disciplines and sciences. The course begins by considering basic principles and conventional analyses, and methods. Measurement and analysis methods are critically reviewed for utility. Students learn advanced methods for differentiating surface textures that are suspected of being different because of their performance or manufacture. Students will also learn methods for making correlations between surface textures and behavioral and manufacturing parameters. The results of applying these methods can be used to support the design and manufacture of surface textures, and to address issues in quality assurance. Examples of research from a broad range of applications are presented, including, food science, pavements, friction, adhesion, machining and grinding. Students do a major project of their choosing, which can involve either an in-depth literature review, or surface measurement and analysis. The facilities of WPI’s Surface Metrology Laboratory are available for making measurements for selected projects. Software for advanced analysis methods is also available for use in the course. No previous knowledge of surface metrology is required. Students should have some background in engineering, math or science. Students cannot receive credit for this course if they have received credit for ME 5371/MTE 5843/MFE 5843 Fundamentals of Surface Metrology or the Special Topics (ME 593/MTE 594/MFE 594) version of Fundamentals of Surface Metrology.
+    clauses:
+      - strength: suggested
+        timing: prior
+        sourceText: Students should have some background in engineering, math or science.
+        requirement:
+          kind: topic
+          topic: some background in engineering, math or science
+    noCreditWith:
+      - ME|5371
+      - MTE|5843
+      - MFE|5843
+      - ME|593
+      - MTE|594
+      - MFE|594
+    needsReview: No lead word; 'should have some background' recorded as suggested.
+  - courseId: ME|5385
+    description: (2 Credits) Additive Manufacturing (AM), popularly known as 3D printing, is a technique in which parts are fabricated in a layer-by-layer fashion. The focus of this course is on direct metal AM processes that are used in aerospace, automobile, medical, and energy industries. The objective of the course is to enable students to understand the working principles of various additive manufacturing processes, assess the suitability of metal AM processes for different designs and applications, apply process design concepts to metal AM processes via analytical and finite element modeling approaches, and have an introductory-level understanding of design for AM. Through the course project, students will have the opportunity to experience hands-on design, manufacturing, and characterization of additively manufactured materials, and will work in an interdisciplinary team of mechanical, materials, and manufacturing engineers. The economics of the manufacturing process will also be addressed, with an emphasis on determining the major cost drivers and discussing cost minimization strategies. Students cannot receive credit for this course if they have received credit for the Special Topics (ME 593/MTE 594) version of the same course.
+    clauses: []
+    noCreditWith:
+      - ME|593
+      - MTE|594
+  - courseId: ME|5503
+    description: The goal of this course is to introduce medical device innovation strategies, design and development processes, and provide students with an understanding of how medical device innovations are brought from concept to clinical adoption. Students will have opportunities to practice medical device innovation through a team-based course project. Specific learning outcomes include describing and applying medical device design and development concepts such as value proposition, iterative design, concurrent design and manufacturing, intellectual property, and FDA regulation; demonstrating an understanding of emerging themes that are shaping medical device innovation; demonstrating familiarity with innovation and entrepreneurship skills, including customer discovery, market analysis, development planning, and communicating innovation; and gaining capability and confidence as innovators, problem solvers, and communicators, particularly in the medical device industry but transferable to any career path.
+    clauses: []
+    noCreditWith: []
+  - courseId: ME|552
+    description: "This biomechanics course focuses on advanced techniques for the characterization of the structure and function of hard and soft tissues and their relationship to physiological processes. Applications include tissue injury, wound healing, the effect of pathological conditions upon tissue properties, and design of medical devices and prostheses. (Prerequisite: An understanding of basic continuum mechanics.)"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "(Prerequisite: An understanding of basic continuum mechanics.)"
+        requirement:
+          kind: topic
+          topic: an understanding of basic continuum mechanics
+    noCreditWith: []
+  - courseId: ME|5847
+    description: "(2 credits) An introductory course on electrochemical engineering, fuel cells and batteries. With escalating oil prices and increasing environmental concerns, increasing attention is being paid to the development of electrochemical devices to replace traditional energy. Here several types of batteries and fuel cells will be discussed. Topics covered include: basic electrochemistry, lithium ion battery, proton exchange membrane fuel cell, solid oxide fuel cell, electrochemical method. Recommended background: ES2001 or equivalent. Note: Students cannot receive credit for this course if they have taken the Special Topics version of the same course."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: ES2001 or equivalent."
+        requirement:
+          kind: course
+          course: ES|2001
+          orEquivalent: true
+    noCreditWith: []
+  - courseId: ME|593
+    description: "(credits TBD) Arranged by individual faculty with special expertise, these courses survey fundamentals in areas that are not covered by the regular mechanical engineering course offerings. Exact course descriptions are disseminated by the Mechanical Engineering Department well in advance of the offering. (Prerequisite: Consent of instructor.)"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "(Prerequisite: Consent of instructor.)"
+        requirement:
+          kind: permission
+          text: Consent of instructor
+    noCreditWith: []
+  - courseId: ME|1520
+    description: "Cat. IIThis course explores science and engineering issues associated with equipment andtechnique for alpine skiing, particularly racing. A diverse group of technical subjectsrelated to engineering mechanics are discussed: tribology, beams, rigid body motion,material science, machining and biomechanics. Specifically we will examine:ski-snow interactions, technique for gliding, turning and stepping, selection of linein racing; equipment design, testing and performance; and ski injuries. We will alsoaddress issues in the epidemiology of skiing injuries, the calculation of the cost of skiinjuries to society, the impact of ski equipment technology on litigation and theimpact of litigation on equipment and trail design.This course will be offered in 2020-21, and in alternating years thereafter."
+    clauses: []
+    noCreditWith: []
+  - courseId: ME|5001
+    description: A study of important numerical and computational methods for solving engineering science problems. The course will include methods for solving linear and nonlinear equations, interpolation strategies, evaluating integrals, and solving ordinary and partial differential equations. Finite difference methods will be developed in full for the solution of partial differential equations. The course materials emphasize the systematic generation of numerical methods for elliptic, parabolic, and hyperbolic problems, and the analysis of their stability, accuracy, and convergence properties. The student will be required to write and run computer programs. Students cannot receive credit for this course if they have taken the Special Topics (ME 593M) version of the same course or ME 515.
+    clauses: []
+    noCreditWith:
+      - ME|515
+  - courseId: ME|5108
+    description: "(2 credits) The course provides the theory and practice of computational fluid dynamics at an entry graduate level. Topics covered include: classification of partial differential equations (PDEs) in fluid dynamics and characteristics; finite difference schemes on structured grids; temporal discretization schemes; consistency, stability and error analysis of finite difference schemes; explicit and implicit finite differencing schemes for linear hyperbolic, parabolic, elliptic, and non-linear PDEs in fluid dynamics; direct and iterative solution methods for algebraic systems. The course requires completion of several projects using MATLAB."
+    clauses: []
+    noCreditWith: []
+  - courseId: ME|5200
+    description: The course provides fundamentals for vibration analysis of linear discrete and continuous dynamic systems, A vibrating system is first modeled mathematically as an initial value problem (IVP) or a boundary-initial value problem (BIVP) by the Newton-D’Alembert method and/or the Lagrange energy approach and then solved for various types of system. Explicit solutions for dynamic response of a linear single-degree-of-freedom (SDOF) system, both damped and undamped, is derived for free-vibration caused by the initial conditions and forced vibration caused by different excitations. Modal analysis is presented to solve for vibration response of both multi-degreeof-freedom (MDOF) systems and continuous systems with distributed parameters. As the basis of modal analysis, the natural frequencies and vibration modes of a linear dynamic system are obtained in advance by solving an associated generalized eigenvalue problem and the orthogonal properties of the vibration modes with respect to the stiffness and mass matrices are strictly proved. Computational methods for vibration analysis are introduced. Applications include but are not limited to cushion design of falling packages, vehicles traveling on a rough surface, multi-story building subjected to seismic and wind loading, and vibration analysis of bridges subjected to traffic loading. Students cannot receive credit for this course if they have taken the Special Topics (ME 593V) version of the same course or ME522.
+    clauses: []
+    noCreditWith:
+      - ME|522
+  - courseId: ME|5202
+    description: "Basic concepts and general principles of classical kinematics and dynamics of particles, systems of particles and rigid bodies are presented with application to engineering problems with complicated three-dimensional kinematics and dynamics. Derivation of the governing equations of motion using Principle of Virtual Work and Lagrange equations is described together with the direct Newton approach. Applications include: swings-effect and its use in engineering, illustrating in particular limit cycles and their stability and reversed-swings control of vibrations of pendulum; various examples of gyroscopic effects; and especially introductory rotor dynamics including transverse vibrations (whirling) and potential instability of rotating shafts. Students cannot receive credit for this course if they have taken the Special Topics (ME 593D) version of the same cours"
+    clauses: []
+    noCreditWith: []
+    needsReview: No credit with the Special Topics version (ME 593D); that code has a letter suffix, which the course-id pattern cannot store, so noCreditWith omits it.
+  - courseId: ME|5303
+    description: This course is devoted to the numerical solution of partial differential equations encountered in engineering sciences. Finite element methods are introduced and developed in a logical progression of complexity. Topics covered include matrix structural analysis variation form of differential equations, Ritz and weighted residual approximations, and development of the discretized domain solution. Techniques are developed in detail for the one- and twodimensional equilibrium and transient problems. These numerical strategies are used to solve actual problems in heat flow, diffusion, wave propagation, vibrations, fluid mechanics, hydrology and solid mechanics. Weekly computer exercises are required to illustrate the concepts discussed in class. Students cannot receive credit for this course if they have taken the Special Topics (ME 593E) version of the same course or ME 533 or CE 524.
+    clauses: []
+    noCreditWith:
+      - ME|533
+      - CE|524
+  - courseId: ME|5358
+    description: "(2 credits) This course will provide an integrated overview of the design, selection and use of synthetic plastics. The basic chemistry associated with polymerization and the structure of commercial plastics will be described. Various aspects of polymer crystallization and glass transition will be outlined. Salient aspects of fluid flow and heat transfer during the processing of plastics will be highlighted. Fundamentals of the diverse processing operations used to shape plastics and the resulting structures that develop after processing will be discussed. The mechanical behavior of plastics including elastic deformation, rubber elasticity, yielding, viscoelasticity, fracture and creep will be discussed. Plastic 164 Mechanical Engineering Return to Table of Contents Mechanical Engineering 165 degradation and environmental issues associated with recycling and disposal of plastics will be examined. Typical techniques used in the analysis and testing of plastics will be described and a working knowledge of various terminologies used in commercial practice will be provided. Note: Students cannot receive credit for this course if they have taken the Special Topics version of the same course (MTE 594A)."
+    clauses: []
+    noCreditWith: []
+    needsReview: No credit with the Special Topics version (MTE 594A); that code has a letter suffix, which the course-id pattern cannot store, so noCreditWith omits it.
+  - courseId: ME|5371
+    description: (2 Credits) Surface Metrology is about measuring, characterizing, and analyzing surface topographies or textures. This course covers conventional and developing measurement and characterization of roughness. It emphasizes research and covers a wide variety of applications, including, adhesion, friction, fatigue life, mass transfer, scattering, wear, manufacturing, food science, wetting, physical anthropology, and archeology. Surface metrology has applications in practically all engineering disciplines and sciences. Research principles are applied to critical evaluations of research methods. Students learn multiscale methods for discovering correlations between processing, textures, and behavior , and for discriminating surface textures supposed to be different because of their performance or manufacture. Results support product and process design, and quality assurance. Students create detailed project proposals on topics of their choosing, including literature reviews, preparation and testing of surfaces, measurements, characterizations, and analyses. Students cannot receive credit for this course if they have received credit for the Special Topics (ME 593/MTE 594/MFE 594) version of this course, or for ME 5370/MTE 5841/MFE 5841 Surface Metrology.
+    clauses: []
+    noCreditWith:
+      - ME|5370
+      - MTE|5841
+      - MFE|5841
+  - courseId: ME|5380
+    description: "(2 credits) This course is suitable as an introductory graduate level course. Topics will be chosen from the following: three-dimensional states of stress; measures of strain; thick-walled cylinders, disks and spheres; plane stress and plane strain; thermoelasticity; Airy stress function; energy methods, and exact theory for torsion of noncircular cross sections. This course may be taken independent of ME 5302."
+    clauses: []
+    noCreditWith: []
+  - courseId: ME|5381
+    description: "(2 credits) This course is suitable as an introductory graduate level course. Topics covered will be chosen from the following: bending and shear stresses in unsymmetric beams; bending of composite beams; bending of curved beams; torsion of thin-walled noncircular cross sections; beams on elastic foundations; stress concentrations; failure criteria; stability of columns; and bending of plates. This course may be taken independent of ME 5301."
+    clauses: []
+    noCreditWith: []
+  - courseId: ME|5420
+    description: (2 credits) The course starts with an in-depth study of axiomatic design. Applications of axiomatic design are considered primarily, although not exclusively, for the design of manufacturing processes and tools. Axiomatic design is a design methodology based on the premise that there are two axioms that apply to all good designs. These axioms facilitate the teaching and practice of engineering design as a scientific discipline. Manufacturing process analysis is considered from the perspective of supporting design. Methods of analysis of manufacturing processes with broad applicability are sought. Special attention is given to examples in machining (traditional, nontraditional and grinding), additive manufacturing, and to the production of surfaces. The ability to find commonalities across applications and generalize is emphasized to facilitate further development of principles with broad applicability. The content is delivered in video lectures and in readings from the technical literature. Homework and quizzes are given and delivered online. There is a project to design a manufacturing process. The topics can be from work or dissertations that can be interpreted as manufacturing processes and tools. Credit cannot be given for this course and any of the similar, in-class versions for 3 credits, MFE 520, MTE 520 and ME 543.
+    clauses: []
+    noCreditWith:
+      - MFE|520
+      - MTE|520
+      - ME|543
+  - courseId: ME|543
+    description: "(3 credits) This course begins with elements axiomatic design, the theory and practice. Design applications are considered primarily, although not exclusively, for the design of manufacturing processes and tools. Axiomatic design is based on the premise that there are common aspects to all good designs. These commons aspects, stated in the independence and information axioms, facilitate the teaching and practice of engineering design as a scientific discipline. Analysis of processes and products is considered from the perspective of supporting product and process design. Fundamental methods of engineering analysis of manufacturing processes with broad applicability are developed. Attention is given to examples from one or more of the following: machining (traditional, nontraditional and grinding), additive manufacturing, and to the production of surface topographies. The ability to generalize from detailed examples is emphasized in order to facilitate the students’ ability to development analyses and design methods with broader applicability"
+    clauses: []
+    noCreditWith: []
+  - courseId: ME|5441
+    description: "(2 Credits) The problems of cost determination and evaluation of processing alternatives in the designmanufacturing interface are discussed. Approaches for introducing manufacturing capability knowledge into the product design process are covered. An emphasis is placed on part and process simplification, and analysis of alternative manufacturing methods based on such parameters as: anticipated volume, product life cycle, lead time, customer requirements, and quality yield. Lean manufacturing and Six-Sigma concepts and their influence on design quality are included as well. Note: Students cannot receive credit for this course if they have taken the Special Topics version of the same course (MFE594M)."
+    clauses: []
+    noCreditWith: []
+    needsReview: No credit with the Special Topics version (MFE594M); that code has a letter suffix, which the course-id pattern cannot store, so noCreditWith omits it.
+  - courseId: ME|591
+    description: Seminars on current issues related to various areas of mechanical engineering are presented by authorities in their fields. All full-time mechanical engineering students are required to register and attend.
+    clauses: []
+    noCreditWith: []
+  - courseId: ME|621
+    description: A laboratory-based course which applies Fourier and cepstral signal analysis techniques to mechanical engineering problems. The theory and application of the Fourier series, Fast Fourier Transform (FFT) and the cepstrum to the analysis of mechanical and acoustical systems is presented. Digital sampling theory, windowing, aliasing, filtering, noise averaging and deconvolution are discussed. Limitations of and errors in implementation of these techniques are demonstrated. Students will perform weekly experiments in the Structural Dynamics and Vibration Laboratory, which reinforce the theories presented in lectures. Application will include structures, acoustics, rotating machinery and cams.
+    clauses: []
+    noCreditWith: []

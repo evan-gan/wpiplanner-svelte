@@ -1,0 +1,224 @@
+department: WR
+entries:
+  - courseId: WR|1011
+    description: Cat. I This course will examine the appropriate dissemination of scientific information in common science writing genres such as science journalism, consulting reports and white papers, and policy and procedure documents . In a workshop setting, students will write and revise documents that promote broad understanding of scientific research and analysis of specialized knowledge . Course lectures and discussions investigate ethics of scientific reporting and teach students how to recognize deceptive texts and arguments (both quantitative and qualitative) . The course is reading and writing intensive and is intended for students with backgrounds in a scientific discipline who are interested in applying their disciplinary knowledge .
+    clauses: []
+    noCreditWith: []
+  - courseId: WR|2010
+    description: "Cat. I This course will cover basic principles of prose style for expository and argumentative writing. Students will learn to evaluate writing for stylistic problems and will learn revision strategies for addressing those problems. The ultimate goal of the course is to help students write sentences and paragraphs that are clear, concise, and graceful. In the first part of the course, students will review parts of speech, basic sentence types, and sentence and paragraph structure in order to understand how sentences are put together and the impact their construction has on readers. Then, through hands-on writing exercises and extensive revision of their own and others’ writing, students will learn strategies for tightening their prose (concision), achieving “flow” (cohesion and coherence) and improving usage (language specificity and precision). Recommended background: Basic knowledge of rhetorical writing (e.g., WR 1010, Elements of Writing, WR 1011, Writing About Science & Technology, or WR 1020, Introduction to Rhetoric."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Basic knowledge of rhetorical writing (e.g., WR 1010, Elements of Writing, WR 1011, Writing About Science & Technology, or WR 1020, Introduction to Rhetoric."
+        requirement:
+          kind: topic
+          topic: basic knowledge of rhetorical writing
+          satisfiedBy:
+            kind: anyOf
+            of:
+              - kind: course
+                course: WR|1010
+              - kind: course
+                course: WR|1011
+              - kind: course
+                course: WR|1020
+    noCreditWith: []
+    needsReview: The examples are introduced with 'e.g.', so other rhetorical writing courses may also qualify. The text has an unclosed parenthesis.
+  - courseId: WR|2020
+    description: "This course explores a variety of timely themes and topics related to rhetoric and public culture. Students will refine their understanding of classical and contemporary rhetorical concepts and their application of rhetorical research methods by analyzing and engaging with topics of professional and cultural significance. This course is designed to build on and further develop skills from first-year rhetoric studies (WR1020) and to prepare students for more advanced coursework in this discipline and in the Professional Writing program (e.g., WR3112, inquiry seminars, MQPs). This course may be repeated for different topics. Offering Schedule: This course will be offered in academic years ending in odd numbers. Recommended Background: fundamentals of rhetoric and rhetorical analysis (WR1020)"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: fundamentals of rhetoric and rhetorical analysis (WR1020)"
+        requirement:
+          kind: topic
+          topic: fundamentals of rhetoric and rhetorical analysis
+          satisfiedBy:
+            kind: course
+            course: WR|1020
+    noCreditWith: []
+  - courseId: WR|2111
+    description: WR 2111 Designing Effective and Ethical Research Studies Category I What does it mean to explain science and technology through the lens of writing practices? Or, politics through the prism of social media communication? Or, medicine as a discourse between clinicians and patients? This course equips students with tools to interpret and explain their worlds by introducing research approaches commonly used in rhetoric, professional writing, and literacy studies. By experimenting with a range of methods for collecting and analyzing data (such as interviewing, archival work, grounded theory, ethnography), students develop and refine their own research project. In the process, students gain practice evaluating others’ research designs, as well as their own. Although this course focuses on topics central to the discipline of Writing & Rhetoric, it will be useful to any student whose future coursework or project work (e.g. IQP/MQP) will require critical reflection on the ethical and practical dimensions of conducting research. Students may not receive credit for both WR 2111 and WR 4111
+    clauses: []
+    noCreditWith:
+      - WR|4111
+  - courseId: WR|2200
+    description: "WR 2200/IMGD 2200: AI in Writing and Communication (Cat. II) Generative AI is transforming the practices of writing and communication. It also generates new questions about authorship, responsibility, creativity, authenticity, and other rhetorical constructs that affect us equally as citizens and professionals. This course offers the foundations of critical AI literacy. It aims to help students develop a robust understanding of what this transformation means, and what kind of new sensibilities and skills are needed in response to an AI-led transformation. The course focuses on: 1) technological and cultural trends that shape the perception of generative AI, 2) ethical concerns emerging from the use of generative AI in professional and nonprofessional contexts, and 3) effective and responsible practices of using generative AI in writing and other forms of communication. In addition to reading assignments, students will have the opportunity to experiment with generative AI and assess its limits and possibilities. The assignments include critical annotations, fact-checking procedures, creative workflow processes, ethical analyses, and interaction design inquiries. Recommended Background: None"
+    clauses: []
+    noCreditWith: []
+  - courseId: WR|2210
+    description: "This course emphasizes the standard written genres of professional, workplace communication. Students will analyze the history, purposes, conventions, and social consequences of a variety of business communications, focusing on digital and print correspondence, reports, and proposals directed to internal and external audiences. Students will learn about the culture of a professional environment and the role of writing in structuring identity and relationships within that context. Classes will be conducted as interactive writing workshops in which students assess and respond to rhetorical scenarios and sample texts from a variety of professional worksites. Students will create portfolios, producing professional writing samples they may use on the job market. Recommended Background: WR 1010, WR 1011, or equivalent"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: WR 1010, WR 1011, or equivalent"
+        requirement:
+          kind: anyOf
+          of:
+            - kind: course
+              course: WR|1010
+              orEquivalent: true
+            - kind: course
+              course: WR|1011
+              orEquivalent: true
+    noCreditWith: []
+  - courseId: WR|2310
+    description: "Cat. I This course explores how visual design is used for purposes of identification, information, and persuasion . It looks at many modes of visual communication, such as icons, logos, trademarks, signs, product packaging, infographics, posters, billboards, ads, exhibits, graffiti, page layout, films, television, videogames, and web sites . The course provides an overview of the history of graphic design movements, as well as analytical tools to understand how visual design encodes messages and the role visual communication plays in contemporary culture . Students will write about and create a number of visual media in this project centered class. Suggested background: WR 1010"
+    clauses:
+      - strength: suggested
+        timing: prior
+        sourceText: "Suggested background: WR 1010"
+        requirement:
+          kind: course
+          course: WR|1010
+    noCreditWith: []
+  - courseId: WR|2410
+    description: "Feature films are at the heart of a motion picture industry that requires a partnership of multiple disciplines working in unison: acting, directing, filming, and producing. But none of this can happen without the first step—screenwriting. In this course, students will learn to write for mainstream feature and short films, from ideation to synopses and beat sheets to the pages of an original screenplay. While this course will focus on short and feature film screenplays, the knowledge can also apply to other screenwriting forms such as documentaries and web series. Students will combine the creative with the technical, not only studying storytelling through film but also applying the structured authoring required by film producers and screenplay competitions for a feature or short film script. Students may not receive credit for both EN/WR 2410 and EN/WR 241X. Suggested Background: Previous coursework in storytelling (such as creative writing or film courses) or structured authoring (such as WR 3210: Technical Writing)."
+    clauses:
+      - strength: suggested
+        timing: prior
+        sourceText: "Suggested Background: Previous coursework in storytelling (such as creative writing or film courses) or structured authoring (such as WR 3210: Technical Writing)."
+        requirement:
+          kind: anyOf
+          of:
+            - kind: topic
+              topic: previous coursework in storytelling (such as creative writing or film courses)
+            - kind: topic
+              topic: structured authoring
+              satisfiedBy:
+                kind: course
+                course: WR|3210
+    noCreditWith:
+      - EN|2410
+      - EN|241X
+      - WR|241X
+  - courseId: WR|2450
+    description: "IMGD/WR 2450: Narrative Design for Interactive Media and Games Course description: This course will introduce key narrative concepts and skills necessary to craft linear and branching experiences in games and interactive media. These lessons can be of fundamental value to all interactive media and any development role. Topics covered may include world-building, writing within intellectual property, lore creation, environmental storytelling, and quest design. Students will work in small groups throughout the course to provide feedback and practice reciprocal creative roles in narrative creation. Recommended background: design and development fundamentals. Students may not receive credit for both 2450 and IMGD/WR 3400."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: design and development fundamentals."
+        requirement:
+          kind: topic
+          topic: design and development fundamentals
+    noCreditWith:
+      - WR|3400
+      - IMGD|3400
+  - courseId: WR|2500
+    description: "Cat. II Writing in the Life Sciences will provide students with an introduction to academic writing within the disciplines that comprise the Life Sciences. Topics will include: • Ethics and research integrity as it pertains to research design, documentation, reporting, and communicating results to specialist and non-specialist audiences • Fundamentals of writing in the Life Sciences including definitions and technical vocabulary, technical style, documentation, revising and editing • Human factors that influence health including social determinants of health and health disparities • Important documents in the Life Sciences including literature reviews and synopses, laboratory reports, proposals, and research presentations. The course will also include writing for non-specialist audiences and newer methods of science communication including social media. Students may not receive credit for both WR 2500 and WR 250X. Recommended background: One introductory course (1000 level) in professional writing in which students have translated scientific writing for diverse audiences (e.g.: WR 1011, Writing about Science & Technology). Foundational life sciences courses with emphasis in anatomy and physiology are also recommended."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: One introductory course (1000 level) in professional writing in which students have translated scientific writing for diverse audiences (e.g.: WR 1011, Writing about Science & Technology)."
+        requirement:
+          kind: topic
+          topic: one introductory (1000 level) course in professional writing that translates scientific writing for diverse audiences
+          satisfiedBy:
+            kind: course
+            course: WR|1011
+      - strength: recommended
+        timing: prior
+        sourceText: Foundational life sciences courses with emphasis in anatomy and physiology are also recommended.
+        requirement:
+          kind: topic
+          topic: foundational life sciences courses with emphasis in anatomy and physiology
+    noCreditWith:
+      - WR|250X
+    needsReview: The WR 1011 example is introduced with 'e.g.', so other introductory professional writing courses may also qualify.
+  - courseId: WR|3011
+    description: "Cat. II. Teaching Writing introduces students to the theory and practice of written composition . Students research and read about the writing process and how best to support it through the practice of explicit teaching and tutoring . They learn specific strategies that can support writers as they plan, draft, and revise written work in a number of genres, and they study effective ways to provide helpful feedback on drafts . They also learn about and practice navigating the social, political and interpersonal dynamics of the teacher/tutor-student relationship through a tutoring internship at the Writing Center and through assignments prompting them to develop lesson plans and instructional handouts . This course will help students improve their own writing and read their own and others’ writing more critically . It will be especially useful for those who plan to teach or tutor writing in the future . Recommended background: WR 1010 Elements of Writing This course will be offered in 2019-20, and in alternating years thereafter ."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: WR 1010 Elements of Writing"
+        requirement:
+          kind: course
+          course: WR|1010
+    noCreditWith: []
+  - courseId: WR|3210
+    description: "Technical writing combines technical knowledge with writing skills to communicate technology to the world. This course introduces the fundamental principles of technical communication and the tools commonly used in the technical writing profession. Topics include user and task analysis, information design, instructional writing, and usability testing. Students learn to use the technical writing process to create user-centered documents that combine text, graphics, and visual formatting to meet specific information needs. Students create a portfolio of user documentation appropriate for both hardcopy and online delivery. Recommended Background: WR 1010, or equivalent writing course."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: WR 1010, or equivalent writing course."
+        requirement:
+          kind: course
+          course: WR|1010
+          orEquivalent: true
+    noCreditWith: []
+  - courseId: WR|3214
+    description: "Cat. I This writing workshop focuses on the purposed and genres of writing about disease and public health . We will consider how biomedical writers communicate technical information about disease and public health to general audiences; how writers capture the human experience of disease and health care; how writers treat the public policy implications of disease; and how writers design publicity to promote public health . We will examine such genres as the experimental article, news reports, medical advice, profiles, commentary, and public health messages . Recommended background: WR 1010 Elements of Writing or equivalent writing courses."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: WR 1010 Elements of Writing or equivalent writing courses."
+        requirement:
+          kind: course
+          course: WR|1010
+          orEquivalent: true
+    noCreditWith: []
+  - courseId: WR|3450
+    description: "IMGD/WR 3450 - Writing Characters for Interactive Media & Games Course description: This writing-intensive course reinforces narrative skills to achieve proficiency in character creation and dialogue for interactive media, including a survey of character writing techniques across different media and an examination of what changes when interactivity is added. Coursework will involve major forms of game writing, suitable for inclusion in a portfolio. Topics covered may include character exposition, development of rich playable and non-playable characters, short voice-over audio, interactive dialogue and interactive character arcs, and game character design. Recommended background: previous experience with story structure and writing for interactive media, such as that provided by IMGD/WR 2450 (formerly numbered IMGD/WR 3400). Students may not receive credit for both IMGD/WR 3450 and IMGD/WR 2400"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: previous experience with story structure and writing for interactive media, such as that provided by IMGD/WR 2450 (formerly numbered IMGD/WR 3400)."
+        requirement:
+          kind: topic
+          topic: previous experience with story structure and writing for interactive media
+          satisfiedBy:
+            kind: anyOf
+            of:
+              - kind: course
+                course: WR|2450
+              - kind: course
+                course: IMGD|2450
+    noCreditWith:
+      - IMGD|2400
+      - WR|2400
+    needsReview: "'such as that provided by' gives an example, so IMGD/WR 2450 may not be the only route."
+  - courseId: WR|4210
+    description: "Cat. II Medical Writing will provide students with advanced opportunities to create clinically-oriented documents about disease, treatment, and medical research. Students will learn how to develop, structure, and present medical reports that integrate anatomy and physiology, disease history (including associated human and environmental factors), epidemiology, clinical presentation, differential diagnosis, and prognosis. The course will operate as a series of student projects in which students create scientific documents from major disease categories. The course will be focused on disease characterization for more advanced audiences and preparation for future graduate and professional writing in medicine or the life sciences. Students may not receive credit for both WR 4210 and WR 421X. Recommended background: Prior courses or projects (GPS, IQP) in health, medicine, or science writing. Exposure to anatomy and physiology would be helpful. The course is designed for 3rd and 4th year students with a strong interest in pursuing careers or continued education in medicine or public health."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Prior courses or projects (GPS, IQP) in health, medicine, or science writing."
+        requirement:
+          kind: topic
+          topic: prior courses or projects (GPS, IQP) in health, medicine, or science writing
+      - strength: suggested
+        timing: prior
+        sourceText: Exposure to anatomy and physiology would be helpful.
+        requirement:
+          kind: topic
+          topic: exposure to anatomy and physiology
+    noCreditWith:
+      - WR|421X
+  - courseId: WR|4500
+    description: "WR 4500 Senior Seminar in Writing and Rhetoric Category I The Senior Seminar engages students more deeply with questions that arise from their study of writing, rhetoric, and communication. It may include an exploration of current research in the instructor's area of specialization, emphasizing theoretical and methodological issues. While each seminar focuses on a thematic inquiry and interpretive problem, students will be able to develop general skills that connect the study of writing and rhetoric to their long-term intellectual aspirations after graduation. This course is required for Professional Writing majors, who should enroll during their senior year, and is optional for Writing and Rhetoric minors. Recommended Background: WR 2111 Designing Effective and Ethical Research Studies and WR 3112 Rhetorical Theory, or equivalent."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: WR 2111 Designing Effective and Ethical Research Studies and WR 3112 Rhetorical Theory, or equivalent."
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: WR|2111
+              orEquivalent: true
+            - kind: course
+              course: WR|3112
+              orEquivalent: true
+    noCreditWith: []
+  - courseId: WR|1010
+    description: Cat. I This course is designed for students who wish to work intensively on their writing . The course will emphasize the processes of composing and revising, the rhetorical strategies of written exposition and argumentation, and the reading and citation practices central to academic inquiry . In a workshop setting, students will write a sequence of short papers and complete one longer writing project based on multiple source texts; learn to read critically and respond helpfully to each other’s writing; and make oral presentations from written texts . Where applicable, the topical theme of the class will be provided via the Registrar’s office .
+    clauses: []
+    noCreditWith: []
+  - courseId: WR|1020
+    description: Cat. I This course will apply classical and modern rhetorical concepts to analyze various texts and speeches in order to identify the means of persuasion to a particular end . Students will write short analytical papers that critically assess various rhetorical and communicative approaches . The goal of this course is to enable students to see rhetoric in action in order to both engage with the material critically as well as produce effective discourse to meet various situations .
+    clauses: []
+    noCreditWith: []
+  - courseId: WR|513
+    description: Engineers and other technologists are increasingly more aware of the ethical, legal, and social impacts of robotics and artificial intelligence. Some of them actively contribute to the creation and communication of new sets of ethical standards, such as the work done by IEEE’s Global Initiative on Ethics of Autonomous and Intelligent Systems. What are the ethical principles that underpin these new standards? Since robots and AI systems are designed to work with or alongside humans, do people have a right to understand what autonomous systems are doing and why? How can roboticists and AI designers ensure that these systems are transparent and explainable? This course focuses on the communication of ethical and social impacts of scientific research and technology development. After learning about major debates in robot/AI/data ethics, students will cultivate skills to (1) conceptualize ethical inquiries in technology design and (2) articulate them in writing and other forms of scholarly communication . As part of this course, students will learn to apply the National Science Foundation’s (NSF) broader impacts framework to their writing projects (dissertation, thesis, journal publication, grant application, etc.).
+    clauses: []
+    noCreditWith: []

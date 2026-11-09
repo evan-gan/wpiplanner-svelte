@@ -1,0 +1,171 @@
+department: EDU
+entries:
+  - courseId: EDU|2200
+    description: "This course provides an opportunity for students to learn about the local community and engage with community-based organizations (CBOs) that support PreK-12 students and their families in the context of STEM education. Recommended background: PSY 1401Developmental Psychology, PSY 2401 Psychology of Education, or PSY 2410 School Psychology"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: PSY 1401Developmental Psychology, PSY 2401 Psychology of Education, or PSY 2410 School Psychology"
+        requirement:
+          kind: anyOf
+          of:
+            - kind: course
+              course: PSY|1401
+            - kind: course
+              course: PSY|2401
+            - kind: course
+              course: PSY|2410
+    noCreditWith: []
+  - courseId: EDU|2300
+    description: "This course provides an opportunity for students to gain practice in developing and facilitating hands-on, culturally relevant STEM learning activities in an informal setting for K-12 students within an out-of-school time program at a local school or community-based organization. Advancing equity and justice through STEM teaching is highlighted. Recommended background: PSY 1401Developmental Psychology, PSY 2401 Psychology of Education, or PSY 2410 School Psychology"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: PSY 1401Developmental Psychology, PSY 2401 Psychology of Education, or PSY 2410 School Psychology"
+        requirement:
+          kind: anyOf
+          of:
+            - kind: course
+              course: PSY|1401
+            - kind: course
+              course: PSY|2401
+            - kind: course
+              course: PSY|2410
+    noCreditWith: []
+  - courseId: EDU|3300
+    description: "This interdisciplinary course integrates educational psychology and cognitive science to equip pre-service STEM educators with strategies that support diverse learners in K-12 settings. Students will explore cognitive load theory, differentiated instruction and Universal Design for Learning (UDL), applying these concepts to enhance student engagement and outcomes for students with disabilities. The course emphasizes the role of social learning theory and cognitive developmental theory in shaping student behavior and motivation. Culturally responsive teaching practices, traumainformed approaches and collaboration with families and communities are also key components that will be explored through case studies, classroom observations, and scenario-based role plays. Students will develop practical skills in instructional lesson design and implementation and demonstrate their knowledge and understanding of course learning objectives through a final project that aligns coursework to real-world teaching scenarios. Recommended background: EDU 2200, EDU 2300"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: EDU 2200, EDU 2300"
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: EDU|2200
+            - kind: course
+              course: EDU|2300
+    noCreditWith: []
+  - courseId: EDU|4000
+    description: "EDU 4000 Topics in Teacher Preparation: Practicum Seminar (Cat. I, 1/6 unit) This course provides teacher candidates with guidance, support, and best practices to successfully complete the Massachusetts state requirements for initial licensure in a STEM field of their choice. The seminar accompanies the student-teaching experience in a local school and may not be repeated. It is an essential element in the process of completing the seven (7) essential core competencies of the Department of Elementary and Secondary Education’s (DESE) Candidate Assessment of Performance (CAP) portfolio. Recommended background: Teaching Methods EDU4100 or equivalent, Sheltered English Immersion EDU3200 or equivalent, PSY2401 Psychology of Education, completion of pre-practicum fieldwork experiences 1 and 2. Students must be doing their student teaching practicum concurrently to enroll in this course. Students who took ID 4000 for credit are not eligible to take EDU 4000 for credit."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Teaching Methods EDU4100 or equivalent, Sheltered English Immersion EDU3200 or equivalent, PSY2401 Psychology of Education, completion of pre-practicum fieldwork experiences 1 and 2."
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: EDU|4100
+              orEquivalent: true
+            - kind: course
+              course: EDU|3200
+              orEquivalent: true
+            - kind: course
+              course: PSY|2401
+            - kind: topic
+              topic: completion of pre-practicum fieldwork experiences 1 and 2
+      - strength: required
+        timing: concurrent
+        sourceText: Students must be doing their student teaching practicum concurrently to enroll in this course.
+        requirement:
+          kind: topic
+          topic: student teaching practicum
+    noCreditWith:
+      - ID|4000
+  - courseId: EDU|4100
+    description: "EDU 4100: Teaching Methods in Science, Technology, Engineering, and Mathematics (Cat. I, 1/3-unit) This course provides students with skills and instructional strategies necessary for success in teaching Science (biology, chemistry, physics), Technology (computer science), Engineering, and Mathematics in middle and high school classrooms. Students are introduced to the seven elements of the Candidate Assessment of Performance (CAP), which is the evaluative tool used to obtain teaching licensure within the Commonwealth of Massachusetts. Course topics include: a brief history of education; curriculum and course guidelines (Massachusetts Education Reform and regulations 603 CMR 7 .00, state curricular frameworks, national standards); legal issues; developing unit and lesson plans; and evidence-based teaching methods. Students learn about the elements of an engaging and inclusive lesson, create and design series of lessons to form a unit plan using backward design, how to manage a classroom, group work, and how to develop a classroom management plan, and how to assess student understanding using formative and summative techniques. A portion of the course requires students to complete field work in a local classroom to prepare for the student teaching practicum. Students who took ID 3100 for credit are not eligible to take EDU 4200 for credit. Recommended background: PSY 1401 or 2401 or 2410, EDU 2200, EDU 2300, EDU 3200"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: PSY 1401 or 2401 or 2410, EDU 2200, EDU 2300, EDU 3200"
+        requirement:
+          kind: allOf
+          of:
+            - kind: anyOf
+              of:
+                - kind: course
+                  course: PSY|1401
+                - kind: course
+                  course: PSY|2401
+                - kind: course
+                  course: PSY|2410
+            - kind: course
+              course: EDU|2200
+            - kind: course
+              course: EDU|2300
+            - kind: course
+              course: EDU|3200
+    noCreditWith: []
+    needsReview: Text says 'Students who took ID 3100 for credit are not eligible to take EDU 4200 for credit', which names a different course (EDU 4200) and a different ID (ID 3100). Not recorded.
+  - courseId: EDU|4200
+    description: "EDU 4200 Senior Seminar (Cat I, 0 credits) As an essential component of the Teacher Preparation Program, this seminar addresses current issues that impact the field of education to encourage discourse and deepen understanding of K12 school culture and classroom environments experienced during the student-teaching practicum. Other topics include career coaching, resume and cover letter development, navigating a job search and interview preparation skills for K-12 educators. Recommended background: Completion of Student Teaching practicum of the Teacher Preparation Program Only students in their last year of the Teacher Preparation Program should register for this course every term (A, B, C, D)."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Completion of Student Teaching practicum of the Teacher Preparation Program"
+        requirement:
+          kind: topic
+          topic: completion of Student Teaching practicum of the Teacher Preparation Program
+    noCreditWith: []
+  - courseId: EDU|500
+    description: "EDU 500: Foundations of Integrated STEM Education (3 credits) This introductory online synchronous course surveys the landscape of PK-12 STEM education at the school, classroom, and learner levels. Students analyze research and STEM education frameworks to determine the critical elements of high-quality STEM related to teaching & learning, learner’s mindset, agency, and identity. Students consider their own teaching & learning experience, learning theories, and best practices as they synthesize a personalized framework of high-quality STEM education pertaining to their own educational setting. A special emphasis is given to the problem-solving process (otherwise known as the “engineering design process”), stewardship to community & earth, and classroom climate, as students consider the desired outcomes of integrated STEM pedagogy. Recommended Background: This course is intended for practicing PK-12 educators. Students who are aspiring educators or with prior teaching experience should consult with the program director prior to registration."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: This course is intended for practicing PK-12 educators.
+        requirement:
+          kind: standing
+          text: practicing PK-12 educators
+    noCreditWith: []
+    needsReview: Audience statement rather than a course prerequisite. Aspiring educators or those with teaching experience are told to consult the program director; not modelled.
+  - courseId: EDU|510
+    description: "EDU 510: Classroom Climate that Supports Diverse STEM Learners (3 credits) This online synchronous course addresses several elements of high-quality teaching, as well as laying the foundation for the variety of teaching & learning styles in different contexts (PreK-12 classrooms, out of school time settings, etc.). Students will discuss research related to family & community, culturally & linguistically sustaining practices, social & emotional learning, Universal Design for Learning, and engaging all learners in STEM. The course will also address different ways of knowing & learning and connecting STEM learning to learners’ culture and place. Students will develop concrete plans to apply course topics into their practice, aligned with professional standards. Recommended Background: This course is intended for practicing PK-12 educators. Students who are aspiring educators or with prior teaching experience should consult with the program director prior to registration."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: This course is intended for practicing PK-12 educators.
+        requirement:
+          kind: standing
+          text: practicing PK-12 educators
+    noCreditWith: []
+    needsReview: Audience statement rather than a course prerequisite. Aspiring educators or those with teaching experience are told to consult the program director; not modelled.
+  - courseId: EDU|530
+    description: "EDU 530: Performance Assessments in STEM Education (3 credits) In this online synchronous course, students unpack the elements of high-quality performance assessments that allow learners to demonstrate the knowledge and skills they have gained through a variety of methods. Approaches to grading and feedback to learners through an asset-based framework will be discussed. Students will analyze different types of rubrics and develop a standard-aligned rubric for a STEM project of their choice. Recommended Background: This course is intended for practicing PK-12 educators. Students who are aspiring educators or with prior teaching experience should consult with the program director prior to registration. Students enrolled in the MS for Integrated STEM program should take EDU 500 before or concurrent to this course."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: This course is intended for practicing PK-12 educators.
+        requirement:
+          kind: standing
+          text: practicing PK-12 educators
+      - strength: suggested
+        timing: priorOrConcurrent
+        sourceText: Students enrolled in the MS for Integrated STEM program should take EDU 500 before or concurrent to this course.
+        requirement:
+          kind: course
+          course: EDU|500
+    noCreditWith: []
+    needsReview: The EDU 500 clause applies to MS for Integrated STEM students only, not every student. The program-director audience note is not modelled.
+  - courseId: EDU|550
+    description: "EDU 550: Collaboration & Teamwork in STEM Education (3 credits) In this online synchronous course students will review several theories related to teamwork and collaboration and the translation of these theories into successful practices in STEM education classes and the school as a workplace. Theories and strategies for improving team dynamics will be introduced, and participants will learn what factors are shown to lead to greater innovation and creativity on teams. We will also discuss implicit bias and stereotyping on teams, and how to prevent and minimize their negative impacts on participants. Multiple strategies for team formation in the classroom will be discussed, and we will explore how to teach students teamwork skills during project-based classes. The course will include an opportunity to apply some of the theories and strategies for effective and equitable teamwork in the classroom and to reflect on the utility of different approaches. Recommended Background: None."
+    clauses: []
+    noCreditWith: []
+  - courseId: EDU|4500
+    description: The purpose of this course is to offer opportunities to students to explore issues related to education. The course content and format may vary to suit the interests and needs of the faculty and students. Topics may include education policy, comparative educational systems, and current issues in education
+    clauses: []
+    noCreditWith: []
+  - courseId: EDU|580
+    description: This course guides educators through the shift toward student-centered science teaching & learning, where students ‘figure-out' and explain a real-world phenomenon, as well as the implementation of high-quality instructional materials (HQIM). Throughout the course, participants will experience the different routines & pedagogies associated with the storyline model of teaching science, as well as work with colleagues to review a grade-specific storyline-based unit and plan for adaptation or implementation in their classrooms. (3 credits) This is a graduate credit extension course for science teachers, available *only* to teachers who completed the Storyline/OpenSciED Launch training during summer or fall 2026.
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: available *only* to teachers who completed the Storyline/OpenSciED Launch training during summer or fall 2026.
+        requirement:
+          kind: standing
+          text: available only to teachers who completed the Storyline/OpenSciED Launch training during summer or fall 2026
+    noCreditWith: []
+  - courseId: EDU|597
+    description: Students enrolled in this online synchronous course complete an individual capstone project for the Integrated STEM program. This course serves as a practical integration of knowledge and skills. Students will define a STEM education related problem within their educational setting (e.g. own classroom, school, after school program), conduct a literature review related to the problem, draw on field-specific professional standards, engage with community members and/or key stakeholders, and propose a solution to the problem that weaves together theory and best-practices related to integrated STEM education. A public presentation is required.
+    clauses: []
+    noCreditWith: []

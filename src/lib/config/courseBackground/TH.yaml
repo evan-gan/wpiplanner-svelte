@@ -1,0 +1,87 @@
+department: TH
+entries:
+  - courseId: TH|1221
+    description: Introduction to Theatre on Page and Stage. Cat I (1/3 units) This introductory course gives students a basic understanding of theatrical productions and theatre vocabulary through an investigation of how a play moves from the page to the stage. By touching on the various sub-disciplines of theatre (including playwriting, design, performance, and more), this course explores the role of theatre and art in the world. Students may not receive credit for EN 1221 & TH 1221
+    clauses: []
+    noCreditWith:
+      - EN|1221
+  - courseId: TH|205X
+    description: "TH205X: Dance for Musical Theatre This course builds dance skills related to musical theatre. Topics may include jazz, contemporary, and other styles, reflecting the wide range of choreography used onstage both historically and today. Emphasis will be placed on stage presence, body awareness, musicality, acting, and character development. (This course may count toward either the HUA requirement [for 1/6 unit] or the WPE requirement [for 1/12 unit], but may not count toward both. It may not be repeated for credit.) Recommended Background : (none)"
+    clauses: []
+    noCreditWith: []
+  - courseId: TH|2100
+    description: "Cat. I This course is designed to give students fundamental tools and techniques for acting in the theatre. These include concentration, relaxation, imagination, observation, communication, sensory awareness, and basic script analysis. Drawing on the “Stanislavski Method,” and using character analysis and scene study, it will include exploration of objectives, tactics, obstacles, action, conflict, subtext, and characterization. It will do this through in-class exercises, as well as monologue and scene work from a variety of plays. Beyond acting skills, the student will learn valuable skills in public speaking and in conveying clear, complex ideas. Recommended background: Some theatre or acting experience is desirable but the course is suitable for anyone with interest in the subject. Students may not receive credit for TH 2100 and TH 1100."
+    clauses:
+      - strength: suggested
+        timing: prior
+        sourceText: Some theatre or acting experience is desirable but the course is suitable for anyone with interest in the subject.
+        requirement:
+          kind: topic
+          topic: some theatre or acting experience
+    noCreditWith:
+      - TH|1100
+    needsReview: Lead phrase is 'Recommended background', but the text says the experience is desirable and the course suits anyone. Recorded as suggested.
+  - courseId: TH|2400
+    description: "This course will explore the principles and practices of theatrical design, including script analysis, research, concept development, and collaboration. Students will learn to engage in theatrical storytelling through a variety of design disciplines (scenery, costumes, lighting, sound), and will develop a basic understanding of how these elements fit together. Students may not receive credit for TH 2400 and TH 111X. Recommended background: (none)"
+    clauses: []
+    noCreditWith:
+      - TH|111X
+  - courseId: TH|2520
+    description: "This course introduces students to the technical side of theatre, exploring how design choices are brought to life in the various production shops—specifically through props, costumes, scenic painting, and hair & makeup. Students will explore each technical element through a combination of lectures, demonstrations, and workshops, and will demonstrate their learning through group and individual projects and other hands-on activities. (Students interested in technical theatre may also consider taking TH2510. The two courses may be taken in any order.) Students may not receive credit for TH 2520 and either TH 2500 or EN/TH 2222. Units: 1/3 Category: Cat I. Recommended Background: (none)"
+    clauses: []
+    noCreditWith:
+      - TH|2500
+      - EN|2222
+      - TH|2222
+  - courseId: TH|3240
+    description: "TH 3240: Playwriting. Cat. II (1/3 units) Playwright. Wright – a maker. She creates a world on the stage through action, dialogue, and character. In this course, students will learn to write for the theatre – to make plays – through study, discussion, and practice. Working from foundational ideas of the well-made play, it will draw upon various analytic theories of theater to examine the structure of plays. Through exercises and studio-type critique, students will create and develop their own plays. Students may not receive credit for TH 3240 and TH 2219 . Recommended Background: (none)"
+    clauses: []
+    noCreditWith:
+      - TH|2219
+  - courseId: TH|3400
+    description: "TH 3400: Lighting Design (Units: 1/3; Cat. II) This course examines the principles and practice of theatrical lighting design. Students will develop skills in all parts of the design process, from play analysis and visual research to system design and cueing. Through class discussion, hands-on activities, and creative design projects, students will develop their abilities to recognize, develop, communicate, and execute lighting design ideas. Though primarily focused on live performance (theatre, dance, opera, music, etc.), this course will also teach ideas and skills applicable to other mediums (architecture, film/TV, animation, etc.). Students may not receive credit for TH 3400 and TH340X. Recommended background: This course is suitable for anyone interested in environmental/performance design. TH 2400: Fundamentals of Theatrical Production Design provides useful (though not essential) preparation for this course"
+    clauses:
+      - strength: suggested
+        timing: prior
+        sourceText: "TH 2400: Fundamentals of Theatrical Production Design provides useful (though not essential) preparation for this course"
+        requirement:
+          kind: course
+          course: TH|2400
+    noCreditWith:
+      - TH|340X
+  - courseId: TH|343X
+    description: "This course examines the principles and practices of theatrical scenic design (including props). Through class discussion, hands-on activities, and creative design projects, students will acquire skills in all parts of the design process, including play analysis, visual/historical research, design development, and visual communication (which may include drafting, rendering, and/or model building). This course may also touch on adjacent fields, such as projections. Though primarily focused on live performance (theatre, dance, opera, etc.), this course will also teach ideas and skills applicable to other entertainment styles & mediums (film/TV, comedy, video games, theme parks, etc.) Recommended Background : This course is suitable for anyone interested in theatre, performance, or other forms of entertainment design. TH 2400: Fundamentals of Theatrical Design provides useful (though not essential) preparation for this course."
+    clauses:
+      - strength: suggested
+        timing: prior
+        sourceText: "TH 2400: Fundamentals of Theatrical Design provides useful (though not essential) preparation for this course."
+        requirement:
+          kind: course
+          course: TH|2400
+    noCreditWith: []
+  - courseId: TH|3500
+    description: "This course provides an in-depth look at a specific field or topic in theatrical design/production, such as props, projections, audio, electrics, millinery, stage makeup, scenic painting, puppetry, automation, etc. Through reading/viewing, discussion, and hands-on activities, students will learn about goals, applications, and mechanisms of the chosen topic, as well as the purpose and values of theatrical design & production more broadly. Students may repeat this course for credit with different topics. Units: 1/3 Category: Cat III. Recommended background: Students should have some background in theatrical design and/or production, either from taking a Theatre class (such as Fundamentals of Design or Technical Theatre) or working on a show."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Students should have some background in theatrical design and/or production, either from taking a Theatre class (such as Fundamentals of Design or Technical Theatre) or working on a show."
+        requirement:
+          kind: topic
+          topic: some background in theatrical design and/or production
+          satisfiedBy:
+            kind: anyOf
+            of:
+              - kind: topic
+                topic: a Theatre class (such as Fundamentals of Design or Technical Theatre)
+              - kind: topic
+                topic: working on a show
+    noCreditWith: []
+  - courseId: TH|3510
+    description: "This course will immerse students in the scenic fabrication process for a department theatre production. As members of the show’s crew, students will plan, build, paint, install, and eventually remove all scenic elements, in collaboration with the show’s technical staff and design team. Additionally, students may learn about the design process and other related activities. Students will demonstrate their learning by participating in the build process and other assigned projects. Students may not receive credit for TH 3510 and TH 320X. Recommended background: (none)"
+    clauses: []
+    noCreditWith:
+      - TH|320X
+  - courseId: TH|201X
+    description: "TH201X: Ballet I This course teaches ballet fundamentals and is appropriate for all students interested in learning or strengthening ballet technique. Students will develop a basic knowledge of ballet terminology and performance through barre and center exercises. The course will focus on alignment, whole body movement, musicality, and embodiment of performance style. (This course may count toward either the HUA requirement [for 1/6 unit] or the WPE requirement [for 1/12 unit], but may not count toward both. It may not be repeated for credit.)"
+    clauses: []
+    noCreditWith: []

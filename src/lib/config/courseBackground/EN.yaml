@@ -1,0 +1,127 @@
+department: EN
+entries:
+  - courseId: EN|1219
+    description: "Cat. I In this introductory course, students will learn about the craft of writing poetry, creative nonfiction, and fiction. They will study contemporary published poems, essays, and stories written by international masters and use these texts as inspiration for their own creative work across genres. They will also read and respond to the work of their peers. Through an equally balanced studio/research approach, this course will develop students’ skills as literary critics and creative writers. Students may not receive credit for both EN1219 and EN121X. Recommended Background: None"
+    clauses: []
+    noCreditWith:
+      - EN|121X
+  - courseId: EN|1251
+    description: Cat. I This course introduces the student to a variety of critical perspectives necessary to an understanding and appreciation of the major forms, or genres, of literary expression (e.g., novel, short story, poetry, drama, and essay). Writing and class discussion will be integral parts of this course.
+    clauses: []
+    noCreditWith: []
+  - courseId: EN|1259
+    description: "EN1259: Introduction to Contemporary Chicana/o Literature. Cat. II This course examines literary works of multiple genres produced by Chicana/o writers from WWII to today, with particular emphasis on the Mexican American Civil Rights Movement of the 1960s and the contemporary relevance of issues such as land and education rights for immigrants. Writers studied may include the novelist Sandra Cisneros, the cultural critic Gloria Anzaldúa, the memoirist JP Brammer, and the short-story writer Silvia Moreno-Garcia. This course will emphasize civic involvement and will offer students the opportunity to engage with political activists and other public groups involved with immigration in America. Students cannot receive credit for both this class (EN 1259) and EN125x, Intro to Contemporary Chicana/o Literature. This course will be first offered in 2024-2025 and alternate years thereafter. Recommended Background: None, though introductory coursework in English (e.g. EN1251 Introduction to Literature), History (e.g. HI1312 Introduction to American Social History), or SP courses that stress literature and culture could be useful preparation."
+    clauses:
+      - strength: suggested
+        timing: prior
+        sourceText: "Recommended Background: None, though introductory coursework in English (e.g. EN1251 Introduction to Literature), History (e.g. HI1312 Introduction to American Social History), or SP courses that stress literature and culture could be useful preparation."
+        requirement:
+          kind: anyOf
+          of:
+            - kind: course
+              course: EN|1251
+            - kind: course
+              course: HI|1312
+            - kind: topic
+              topic: SP courses that stress literature and culture
+    noCreditWith:
+      - EN|125X
+    needsReview: "Lead phrase says 'Recommended Background: None'; the examples are offered as useful preparation and recorded as suggested. The examples are introduced with 'e.g.'."
+  - courseId: EN|1439
+    description: "This course surveys the aesthetics, forms, histories, and politics of poetic expression from ancient, modern, and contemporary periods, focusing primarily on English-language examples while simultaneously incorporating works across world literatures, in original texts or in English translations. Attention may be given to epic, dramatic, and lyric modes, to elegies, odes, repeating forms (sonnet, villanelle), and short forms (epigram, haiku), and to specific architectures of poetry including address, assonance and consonance, closure, lineation, meter, rhyme, rhythm, and stanzaic structure. Recommended background: None."
+    clauses: []
+    noCreditWith: []
+  - courseId: EN|2219
+    description: "EN2219 Creative Writing (Cat. I) This writing workshop aims to help students develop or improve the skills of written expression, emphasizing presentation and discussion of original work. Offerings may include themed courses covering multiple genres or specialized workshops in single genres of focus such as fiction, poetry, or creative nonfiction. This course may be repeated for different genres . Recommended Background: Introductory level creative writing (EN1219: Introduction to Creative Writing)"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: Introductory level creative writing (EN1219: Introduction to Creative Writing)"
+        requirement:
+          kind: topic
+          topic: introductory level creative writing
+          satisfiedBy:
+            kind: course
+            course: EN|1219
+    noCreditWith: []
+  - courseId: EN|2271
+    description: "EN 2271 American Literary Histories (Cat. I) An investigation into one or more major movements or periods in American literature, focusing on aesthetic formations such as sentimentalism, realism, modernism, or postmodernism, on cultural formations from Transcendentalism and Regionalism through the Lost Generation and the Harlem Renaissance to the Beat Generation and the Native American Renaissance, or delivered through chronological engagements by century, by decade, or by other suitable framings attending to specific communities or sets of writers. This course may be repeated for different topics . Recommended Background: None, though coursework in English (e.g. EN 1251, Introduction to Literature) or any subsequent EN offering will be helpful."
+    clauses:
+      - strength: suggested
+        timing: prior
+        sourceText: "Recommended Background: None, though coursework in English (e.g. EN 1251, Introduction to Literature) or any subsequent EN offering will be helpful."
+        requirement:
+          kind: anyOf
+          of:
+            - kind: course
+              course: EN|1251
+            - kind: topic
+              topic: any subsequent EN offering
+    noCreditWith: []
+    needsReview: "Lead phrase says 'Recommended Background: None'; the helpful coursework is recorded as suggested. The example is introduced with 'e.g.'."
+  - courseId: EN|2410
+    description: "Feature films are at the heart of a motion picture industry that requires a partnership of multiple disciplines working in unison: acting, directing, filming, and producing. But none of this can happen without the first step—screenwriting. In this course, students will learn to write for mainstream feature and short films, from ideation to synopses and beat sheets to the pages of an original screenplay. While this course will focus on short and feature film screenplays, the knowledge can also apply to other screenwriting forms such as documentaries and web series. Students will combine the creative with the technical, not only studying storytelling through film but also applying the structured authoring required by film producers and screenplay competitions for a feature or short film script. Students may not receive credit for both EN/WR 2410 and EN/WR 241X. Suggested Background: Previous coursework in storytelling (such as creative writing or film courses) or structured authoring (such as WR 3210: Technical Writing)."
+    clauses:
+      - strength: suggested
+        timing: prior
+        sourceText: "Suggested Background: Previous coursework in storytelling (such as creative writing or film courses) or structured authoring (such as WR 3210: Technical Writing)."
+        requirement:
+          kind: anyOf
+          of:
+            - kind: topic
+              topic: previous coursework in storytelling (such as creative writing or film courses)
+            - kind: topic
+              topic: structured authoring
+              satisfiedBy:
+                kind: course
+                course: WR|3210
+    noCreditWith:
+      - WR|2410
+      - EN|241X
+      - WR|241X
+  - courseId: EN|3219
+    description: "Cat. II This advanced seminar in creative writing includes sustained attention to the writing of fiction, poetry, and short prose forms among other genres, culminating in final projects (essay, play, poem, story, or some combination thereof) determined by individual interest and in consultation with the instructor. Investigation will also focus on the reading and discussion of exemplary works across genres, with an emphasis on contemporary practice. In the process, regular writing exercises and class visits from established authors will help to create a community of writers grounded in diverse methods. Suggested background: Introductory level creative writing (EN 2219 (formerly EN 3217) or equivalent). This course will be offered in 2019-20, and in alternating years thereafter."
+    clauses:
+      - strength: suggested
+        timing: prior
+        sourceText: "Suggested background: Introductory level creative writing (EN 2219 (formerly EN 3217) or equivalent)."
+        requirement:
+          kind: topic
+          topic: introductory level creative writing
+          satisfiedBy:
+            kind: anyOf
+            of:
+              - kind: course
+                course: EN|2219
+                orEquivalent: true
+              - kind: course
+                course: EN|3217
+                orEquivalent: true
+    noCreditWith: []
+  - courseId: EN|3271
+    description: "EN 3271 American Literary Topics (Cat. I) This course investigates American literature as it relates to a specific theme, issue, controversy, or question. Attention might center upon topics from childhood and friendship to captivity and freedom, and from immigration and labor to law and war, drawing on or even focusing more decidedly upon aspects of identity including but not limited to class, ethnicity, gender, race, religion, and sexuality Authors might extend from nineteenth century exemplars including Emily Dickinson, Herman Melville, Henry David Thoreau, and Walt Whitman to twentieth and twenty first century figures such as Philip K. Dick, Toni Morrison, Thomas Pynchon, Leslie Marmon Silko, and Richard Wright. This course may be repeated for different topics . Recommended Background: None, though coursework in English (e.g. EN 1251, Introduction to Literature) or any subsequent EN offering will be helpful."
+    clauses:
+      - strength: suggested
+        timing: prior
+        sourceText: "Recommended Background: None, though coursework in English (e.g. EN 1251, Introduction to Literature) or any subsequent EN offering will be helpful."
+        requirement:
+          kind: anyOf
+          of:
+            - kind: course
+              course: EN|1251
+            - kind: topic
+              topic: any subsequent EN offering
+    noCreditWith: []
+    needsReview: "Lead phrase says 'Recommended Background: None'; the helpful coursework is recorded as suggested. The example is introduced with 'e.g.'."
+  - courseId: EN|2225
+    description: Cat. II This course begins with selections from John Milton’s provocative version of Adam and Eve’s original sin in Paradise Lost. Focusing on Milton, John Donne and others, we will examine the theme of sin—political, religious, and sexual— in early modern literature. The events of the English Reformation profoundly influenced these writers, and their personal struggles against societal institutions have greatly influenced subsequent literary expressions of rage and rebellion. Students will also be reading texts by contemporary writers such as David Mamet which address the theme of sin in the modern city. This course will be offered in 2020-21, and in alternating years thereafter.
+    clauses: []
+    noCreditWith: []
+  - courseId: EN|2251
+    description: Cat. I This course focuses on the problem of how to live in the modern world. Emphasis will be placed on the way moral issues evolve within the complications of individual lives, as depicted in fiction. Such authors as Conrad, Kesey, Camus and Ellison show characters struggling with the questions of moral responsibility raised by love, religion, death, money, conformity.
+    clauses: []
+    noCreditWith: []
+  - courseId: EN|3226
+    description: Cat. II This course examines the concept of “strange” and the figure of the “stranger” in a wide range of written and visual texts, from Shakespeare to Albert Camus to the 2017 horror/comedy film Get Out. We will focus on depictions of religious, racial, gendered, and other forms of alienation and otherness, from both an insider’s and outsider’s perspective. This course will be offered in 2020-21, and in alternating years thereafter.
+    clauses: []
+    noCreditWith: []

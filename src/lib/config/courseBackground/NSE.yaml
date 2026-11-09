@@ -1,0 +1,28 @@
+department: NSE
+entries:
+  - courseId: NSE|530
+    description: "This course builds on fundamental concepts introduced in NSE 510 and applies them to key topics in health physics and radiation protection . Health physics topics include man-made and natural sources of radiation, dose, radiation biology, radiation measurement, and radiation safeguards . Radiation protection concepts are explored as they apply to existing and advanced nuclear power generators, including reactor safety, nuclear waste and byproducts, regulatory constraints, and accident case studies . Prerequisites: graduate standing or consent of the instructor."
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "Prerequisites: graduate standing or consent of the instructor."
+        requirement:
+          kind: anyOf
+          of:
+            - kind: standing
+              text: graduate standing
+            - kind: permission
+              text: consent of the instructor
+    noCreditWith: []
+  - courseId: NSE|515
+    description: This course will introduce the student to fundamental concepts in radiation biology. Initially, theories will be developed concerning the effects of radiation exposure on basic biological systems, such as a virus or a cell. These theories will be based on our knowledge of radiation interaction mechanisms at the atomic/molecular level coupled with our knowledge of cell biology. Once developed, these theories will be compared against experimental observations and expanded to include cellular kinetic responses to radiation. Focus will then shift from the simple cell to more complex biological organisms. Ultimately, the student will be expected to appreciate the practical aspects and consequences of human radiation exposure and to properly apply this information in a radiation safety or medical physics environment.
+    clauses: []
+    noCreditWith: []
+  - courseId: NSE|570
+    description: "Students will be introduced to the fields of diagnostic medical imaging with a focus on the fundamental imaging physics. Basic concepts, including: matter and energy, x-ray production, and photon interactions, will lead to topics in x-ray generation, nuclear magnetic resonance, and sound-wave propagation. The course will then focus on the different diagnostic imaging modalities including X-ray radiography, Computed Tomography, Nuclear Magnetic Resonance, Gamma Scintillation, and ultrasound imaging. Credits: 3"
+    clauses: []
+    noCreditWith: []
+  - courseId: NSE|580
+    description: "Students will learn the theory, practice, and application of radiation oncology and therapy. Using the basic concepts of matter and energy, the production of x-rays, and photon interactions in tissue, the student will be introduced to linear accelerator (LINAC) physics, radiation treatment planning, and photon and electron dosimetry. In addition, this course will cover topics of current interest in radiation therapy such as: intensity-modulated radiation therapy, calibration of electron and photon beams, brachytherapy, hyper-fractionation therapy, and charged particle therapy. Credits: 3"
+    clauses: []
+    noCreditWith: []

@@ -1,0 +1,680 @@
+department: RBE
+entries:
+  - courseId: RBE|1001
+    description: "Cat. I Multidisciplinary introduction to robotics, involving concepts from the fields of electrical engineering, mechanical engineering and computer science. Topics covered include sensor performance and integration, electric and pneumatic actuators, power transmission, materials and static force analysis, controls and programmable embedded computer systems, system integration and robotic applications. Laboratory sessions consist of hands-on exercises and team projects where students design and build mobile robots. Undergraduate credit may not be earned for both this course and for ES 2201. Recommended background: CS 1004 or significant experience with programming in python. PH 1120 or PH 1121."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: CS 1004 or significant experience with programming in python."
+        requirement:
+          kind: anyOf
+          of:
+            - kind: course
+              course: CS|1004
+            - kind: topic
+              topic: significant experience with programming in python
+      - strength: recommended
+        timing: prior
+        sourceText: PH 1120 or PH 1121.
+        requirement:
+          kind: anyOf
+          of:
+            - kind: course
+              course: PH|1120
+            - kind: course
+              course: PH|1121
+    noCreditWith:
+      - ES|2201
+  - courseId: RBE|2001
+    description: "RBE 2001: Unified Robotics I: Mechanical Applications in Robotics (Units: 1/3, Cat. I) This course focuses on mechanical concepts in the design, construction, and actuation of a robot. Topics include the effective conversion of electrical power to mechanical power, power transmission and control for locomotion and payload manipulation, and the application of kinematic principles for the design of planar manipulators. The course will present the physical operation and common robotic applications of different types of actuators, including solenoids, electrical motors, and pneumatic, hydraulic, and soft actuators. The course will address the design of mechanical systems for a robot to meet requirements including chassis strength, durability, reliability, and robustness. gripper Laboratory sessions consist of hands-on exercises and team projects where students design and test mechanical systems for specific tasks. Recommended background: Knowledge of Embedded Systems, such as covered in ECE 2049. Knowledge of statics, such as covered in ES 2501. Ability to use CAD to design parts, such as found in ES 1310."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Knowledge of Embedded Systems, such as covered in ECE 2049."
+        requirement:
+          kind: topic
+          topic: knowledge of embedded systems
+          satisfiedBy:
+            kind: course
+            course: ECE|2049
+      - strength: recommended
+        timing: prior
+        sourceText: Knowledge of statics, such as covered in ES 2501.
+        requirement:
+          kind: topic
+          topic: knowledge of statics
+          satisfiedBy:
+            kind: course
+            course: ES|2501
+      - strength: recommended
+        timing: prior
+        sourceText: Ability to use CAD to design parts, such as found in ES 1310.
+        requirement:
+          kind: topic
+          topic: ability to use CAD to design parts
+          satisfiedBy:
+            kind: course
+            course: ES|1310
+    noCreditWith: []
+    needsReview: The examples are introduced with 'such as', so other courses may also qualify.
+  - courseId: RBE|2002
+    description: "RBE 2002: Unified Robotics II: Sensing and Perception in Robotics (Units: 1/3, Cat. I) This course focuses on how robot control and decision processes are informed through sensors. The course covers the operation and integration of simple and complex sensors, including signal transduction, interface circuitry, and physical integration. Themes include how functionality guides sensor selection; how decision-making is affected by uncertainty, and how performance can be improved through signal conditioning, digital filtering, calibration, parameter selection, and sensor fusion. The course will address how sensor inputs can be used to generate representations of the environment, and how a robot uses information to achieve goals within its environment. Laboratory sessions consist of hands-on exercises and team projects where students specify and test a variety of sensors to accomplish specific tasks. Recommended background: Knowledge of Embedded Systems, such as covered in ECE 2049."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Knowledge of Embedded Systems, such as covered in ECE 2049."
+        requirement:
+          kind: topic
+          topic: knowledge of embedded systems
+          satisfiedBy:
+            kind: course
+            course: ECE|2049
+    noCreditWith: []
+    needsReview: The example is introduced with 'such as', so other courses may also qualify.
+  - courseId: RBE|2020
+    description: "1/3 Unit. This course delves into the core aspects of microcontrollers and electronic circuits for robotic systems management and design. Students will engage with interrupt service routines, state machines, and event-driven programming, crucial for process and state management in robotics. The course emphasizes the implementation of both software and hardware timers for robotic control and scheduling. A key focus of the course is on the electronic components of robots, including studies of op-amps and power/control circuits, equipping students with the skills to design and manage robot electronics. The course includes analog-to-digital and digital-to-analog converters, essential for converting sensory data between analog and digital formats. Students will explore communication techniques (SPI, I2C, PWM, etc.), vital for data exchange in robotic systems, and gain comprehensive knowledge of digital and analog electronics for effective sensor and actuator interfacing. The course also covers DC motors and DC motor control (speed, torque, and direction), analog filters for signal processing, sensor calibration, and an introduction to control systems, focusing on PID controllers. Laboratory sessions consist of hands-on exercises where students design and test electronic subsystems interfacing a robot for specific tasks. Compared to ECE 2049, this course explores more peripherals' practical applications in robotics systems but does not dive as deeply into microcontroller architecture. Students may apply RBE 2020 to the Embedded Systems requirement in Robotics Engineering. Credit is not permitted for both RBE 2020 and ECE 2049, regardless of major. Additionally, students cannot receive credit for both RBE 2020 and RBE 200X. Recommended Background: RBE 1001; fundamentals of electronics, such as found in ECE 2010; and programming experience, such as covered in CS 2119, CS 2102/3, CS 2301/3, or ECE 2039."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: RBE 1001; fundamentals of electronics, such as found in ECE 2010; and programming experience, such as covered in CS 2119, CS 2102/3, CS 2301/3, or ECE 2039."
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: RBE|1001
+            - kind: topic
+              topic: fundamentals of electronics
+              satisfiedBy:
+                kind: course
+                course: ECE|2010
+            - kind: topic
+              topic: programming experience
+              satisfiedBy:
+                kind: anyOf
+                of:
+                  - kind: course
+                    course: CS|2119
+                  - kind: course
+                    course: CS|2102
+                  - kind: course
+                    course: CS|2103
+                  - kind: course
+                    course: CS|2301
+                  - kind: course
+                    course: CS|2303
+                  - kind: course
+                    course: ECE|2039
+    noCreditWith:
+      - RBE|200X
+    needsReview: "'CS 2102/3' and 'CS 2301/3' read as CS 2102, CS 2103, CS 2301 and CS 2303. The 'such as' examples may not be exhaustive."
+  - courseId: RBE|3001
+    description: "Cat. IThird of a four-course sequence introducing foundational theory and practice ofrobotics engineering from the fields of computer science, electrical engineeringand mechanical engineering. The focus of this course is actuator design,embedded computing and complex response processes. Concepts of dynamicresponse as relates to vibration and motion planning will be presented. Theprinciples of operation and interface methods various actuators will be discussed,including pneumatic, magnetic, piezoelectric, linear, stepper, etc. Complexfeedback mechanisms will be implemented using software executing in anembedded system. The necessary concepts for real-time processor programming,re-entrant code and interrupt signaling will be introduced. Laboratory sessionswill culminate in the construction of a multi-module robotic system thatexemplifies methods introduced during this course.Recommended background: RBE 2002, ECE 2049, CS 2102, MA 2051, andMA 2071."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: RBE 2002, ECE 2049, CS 2102, MA 2051, andMA 2071."
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: RBE|2002
+            - kind: course
+              course: ECE|2049
+            - kind: course
+              course: CS|2102
+            - kind: course
+              course: MA|2051
+            - kind: course
+              course: MA|2071
+    noCreditWith: []
+  - courseId: RBE|3002
+    description: "Cat. I Fourth of a four-course sequence introducing foundational theory and practice of robotics engineering from the fields of computer science, electrical engineering and mechanical engineering. The focus of this course is navigation, position estimation and communications. Concepts of dead reckoning, landmark updates, inertial sensors, and radio location will be explored. Control systems as applied to navigation will be presented. Communication, remote control and remote sensing for mobile robots and tele-robotic systems will be introduced. Wireless communications including wireless networks and typical local and wide area networking protocols will be discussed. Considerations will be discussed regarding operation in difficult environments such as underwater, aerospace, hazardous, etc. Laboratory sessions will be directed towards the solution of an open-ended problem over the course of the entire term. Recommended background: RBE 3001, ES 3011, MA 2621, or MA 2631."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: RBE 3001, ES 3011, MA 2621, or MA 2631."
+        requirement:
+          kind: anyOf
+          of:
+            - kind: course
+              course: RBE|3001
+            - kind: course
+              course: ES|3011
+            - kind: course
+              course: MA|2621
+            - kind: course
+              course: MA|2631
+    noCreditWith: []
+  - courseId: RBE|300X
+    description: "This course introduces students to the concepts, techniques, and technologies involved with designing real-world systems software for robotics. Software for robot systems presents unique challenges, because of its inherent real-time, asynchronous, and distributed nature, as well as robots' interaction with the physical world. The course can be understood as a “build your own Robot Operating System (ROS) ”, in that its philosophy is to expose the students to the design and implementation challenges involved in creating systems software of this kind. In the first part of the course, the students will be introduced to foundational software architectures for robotics such as finite state machines, behavior trees, the subsumption architecture, and publish-subscribe architectures. The students will explore how to implement and combine these architectures into a coherent software framework. The second part of the course deals with fault and error management, specifically on the impact of these adverse events on architecture design. The final project will challenge the students to deploy and demonstrate their own software platform for navigation on a real robotic platform. RBE majors may use this course to fulfill their Software Engineering requirement. RBE/CS double majors should consider taking CS 3733 as it counts towards both majors. Recommended Background: Significant programming experience with an object-oriented language, such as Python or C++ , as found in CS 2102 . Fundamentals of robot motion and control, for example as found in RBE 2001 and RBE 2002 ."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: Significant programming experience with an object-oriented language, such as Python or C++ , as found in CS 2102 ."
+        requirement:
+          kind: topic
+          topic: significant programming experience with an object-oriented language
+          satisfiedBy:
+            kind: course
+            course: CS|2102
+    noCreditWith: []
+    needsReview: The language examples and the 'as found in CS 2102' pointer are read as one route; other preparation may also qualify.
+  - courseId: RBE|3100
+    description: "Cat.IThis course introduces students to the social, moral, ethical, legal, and current or future philosophical issues within the context of robotic systems and related emerging technology. Students will be expected to contribute to classroom presentations, discussions and debates, and to complete a number of significant writing assignments. This course is recommended for juniors and seniors.Recommended background: A general knowledge of robots and robotic systems.Students may not receive credit for both RBE 3100 and RBE 310X."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: A general knowledge of robots and robotic systems."
+        requirement:
+          kind: topic
+          topic: a general knowledge of robots and robotic systems
+    noCreditWith:
+      - RBE|310X
+  - courseId: RBE|400X
+    description: "Introduction to Robot Control, introduces the principles and applications of linear systems in the context of robotic systems, with a focus on time-domain modeling, state-space representation, and feedback control. Students will learn to model dynamic systems using ordinary differential equations and represent them in state-space form, analyze system response and stability, and apply fundamental algebra and linear algebra tools to control design. The course covers core concepts such as regulation of time response, time-to-set-point, stability, controllability, observability, and observer-based state estimation for robotic systems using sensing modalities such as cameras, GPS, and inertial sensors. Emphasis is placed on robotic system dynamics, including mechanical subsystems commonly encountered in manipulators and mobile robots. Students will complete a project by applying modeling, control, and estimation techniques to a robotic manipulator. Numerical analysis and simulation tools such as MATLAB and/or Python will be used throughout the course. Recommended Background: Knowledge of classical control as covered in ES 3011, Linear algebra as covered in MA 2073, Ordinary Differential Equations as covered in MA 2051, and Fundamental principles of programming to program microcontrollers as covered in CS 1005, RBE 2020, or ECE 2049."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: Knowledge of classical control as covered in ES 3011, Linear algebra as covered in MA 2073, Ordinary Differential Equations as covered in MA 2051, and Fundamental principles of programming to program microcontrollers as covered in CS 1005, RBE 2020, or ECE 2049."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: classical control
+              satisfiedBy:
+                kind: course
+                course: ES|3011
+            - kind: topic
+              topic: linear algebra
+              satisfiedBy:
+                kind: course
+                course: MA|2073
+            - kind: topic
+              topic: ordinary differential equations
+              satisfiedBy:
+                kind: course
+                course: MA|2051
+            - kind: topic
+              topic: fundamental principles of programming to program microcontrollers
+              satisfiedBy:
+                kind: anyOf
+                of:
+                  - kind: course
+                    course: CS|1005
+                  - kind: course
+                    course: RBE|2020
+                  - kind: course
+                    course: ECE|2049
+    noCreditWith: []
+  - courseId: RBE|4322
+    description: "Cat. I This course introduces students to the modeling and analysis of mechatronic systems. Creation of dynamic models and analysis of model response using the bond graph modeling language are emphasized. Lecture topics include energy storage and dissipation elements, transducers, transformers, formulation of equations for dynamic systems, time response of linear systems, and system control through open and closed feedback loops. Computers are used extensively for system modeling, analysis, and control. Hands-on projects will include the reverse engineering and modeling of various physical systems. Physical models may sometimes also be built and tested. Recommended background: mathematics (MA 2051, MA 2071), fluids (ES 3004), thermodynamics (ES 3001), mechanics (ES 2501, ES 2503)."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: mathematics (MA 2051, MA 2071), fluids (ES 3004), thermodynamics (ES 3001), mechanics (ES 2501, ES 2503)."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: mathematics
+              satisfiedBy:
+                kind: allOf
+                of:
+                  - kind: course
+                    course: MA|2051
+                  - kind: course
+                    course: MA|2071
+            - kind: topic
+              topic: fluids
+              satisfiedBy:
+                kind: course
+                course: ES|3004
+            - kind: topic
+              topic: thermodynamics
+              satisfiedBy:
+                kind: course
+                course: ES|3001
+            - kind: topic
+              topic: mechanics
+              satisfiedBy:
+                kind: allOf
+                of:
+                  - kind: course
+                    course: ES|2501
+                  - kind: course
+                    course: ES|2503
+    noCreditWith: []
+  - courseId: RBE|455X
+    description: "Motion Planning is the study of algorithms that reason about the movement of physical or virtual entities. These algorithms can be used to generate sequences of motions for many kinds of robots, robot teams, animated characters, and even molecules. This course will cover the major topics of motion planning including (but not limited to) planning for manipulation with robot arms, mobile robot path planning with kinodynamic constraints, multi-robot path planning, and high-dimensional sampling-based planning. Students will implement motion planning algorithms in open-source frameworks such as OMPL, and complete projects that draw on the course material. Students may not receive credit for both the undergraduate (RBE 455X) and the graduate version of this course (RBE 550). Recommended Background: Undergraduate Linear Algebra as covered in MA 2071 , Ordinary differential equations as covered in MA 2051 , knowledge of algorithmic principles, kinematics, and significant programming experience, as covered in RBE3001 and RBE3002."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: Undergraduate Linear Algebra as covered in MA 2071 , Ordinary differential equations as covered in MA 2051 , knowledge of algorithmic principles, kinematics, and significant programming experience, as covered in RBE3001 and RBE3002."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: undergraduate linear algebra
+              satisfiedBy:
+                kind: course
+                course: MA|2071
+            - kind: topic
+              topic: ordinary differential equations
+              satisfiedBy:
+                kind: course
+                course: MA|2051
+            - kind: topic
+              topic: knowledge of algorithmic principles
+            - kind: topic
+              topic: kinematics
+            - kind: topic
+              topic: significant programming experience
+              satisfiedBy:
+                kind: allOf
+                of:
+                  - kind: course
+                    course: RBE|3001
+                  - kind: course
+                    course: RBE|3002
+    noCreditWith:
+      - RBE|550
+  - courseId: RBE|4601
+    description: "RBE 4601 Human Factors and Human-Robot Interface This is an introductory course on human-robot interaction. It will introduce the behavior and preference of human motor control and motor learning, and how they influence the design of human-robot interface and the dynamics of human-robot interaction. Students will also learn how to conduct human movement studies and social science studies for the design and evaluation of human-robot interfaces. Students in this course will work on interdisciplinary projects, which may involve working with experts in robotics, social science, nursing, and education. Recommended Background: RBE 1001, RBE 3100"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: RBE 1001, RBE 3100"
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: RBE|1001
+            - kind: course
+              course: RBE|3100
+    noCreditWith: []
+  - courseId: RBE|4744
+    description: "This course exposes the students to the mathematical foundations of deep learning applied to images . Perception stacks in state-of-the-art robots are rapidly adapting the latest advancements in deep learning due to their efficacy and high accuracy. These deep learning - based methods are also accelerable using parallelized hardware such as GPUs that can enable low latency operations of complex tasks such as real-time scene segmentation. T he students will be train ed in formulat ion , develop ment and implement ation of deep learning solutions for common computer vision problems in the context of robot perception. The course will cover advanced and state-of-the-art topics such as sim2real, adversarial attacks on neural networks, vision transformers and d iffusion m odels. Additional topics explored in this course include image formation, linear classifiers, n eural networks and backpropagation, Convolutional Neural Networks (CNNs), CNN a rchitectures, d ata generation for sim2real, black - and w hit e-box a ttacks on n eural n etworks as applied to build state-of-the-art robotic stack . S tudents will gain knowledge about the considerations required to enable a robotic system with the state-of-the-art deep learning toolkit. The course is designed to balance theory with applications through projects. Recommended Background: Proficiency in p rogramming (Preferably in Python ) , multi-variate c alculus (MA1024) , l inear a lgebra (MA2071/2072) , and p robability (MA 2621/2631 ) ."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: Proficiency in p rogramming (Preferably in Python ) , multi-variate c alculus (MA1024) , l inear a lgebra (MA2071/2072) , and p robability (MA 2621/2631 ) ."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: proficiency in programming (preferably Python)
+            - kind: topic
+              topic: multi-variate calculus
+              satisfiedBy:
+                kind: course
+                course: MA|1024
+            - kind: topic
+              topic: linear algebra
+              satisfiedBy:
+                kind: anyOf
+                of:
+                  - kind: course
+                    course: MA|2071
+                  - kind: course
+                    course: MA|2072
+            - kind: topic
+              topic: probability
+              satisfiedBy:
+                kind: anyOf
+                of:
+                  - kind: course
+                    course: MA|2621
+                  - kind: course
+                    course: MA|2631
+    noCreditWith: []
+  - courseId: RBE|4815
+    description: "RBE 4815. Industrial Robotics Throughout this course, students will be introduced to industrial robots and their applications. The course covers both industrial serial arm robots, such as those equipped with spherical wrist, and industrial parallel manipulators, such as the Stewart-Gough platform and Delta manipulator. Topics include mechanisms’ degrees of freedom, inverse and forward kinematics (position and velocity), workspace, singularity, and manipulability analysis of industrial manipulators. Topics may extend to end effectors, motion accuracy, robot control and automation. This course is a combination of lecture, laboratory and project work. Students will engage in practical, hands-on learning experiences through the use of an industrial robot to apply theoretical knowledge to real-world scenarios, fostering comprehensive mastery of industrial robotics principles. Through the laboratory work, students will become familiar with industrial robotic programming while acquiring skills in working with industrial controllers such as Programmable Logic Controllers (PLC). Recommended background: RBE 3001, ES 3011, and computer programming"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: RBE 3001, ES 3011, and computer programming"
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: RBE|3001
+            - kind: course
+              course: ES|3011
+            - kind: topic
+              topic: computer programming
+    noCreditWith: []
+  - courseId: RBE|500
+    description: "ME 527/RBE 500 Foundations of Robotics (3 Credits) Fundamentals of robotics engineering. Topics include forward and inverse kinematics, velocity kinematics, introduction to dynamics and control theory, sensors, actuators, basic probabilistic robotics concepts, fundamentals of computer vision, and robot ethics. In addition, modular robot programming will be covered, and the concepts learned will be applied using realistic simulators. Prerequisites: Differential Equations (MA 2051 or equivalent), Linear Algebra (MA 2071 or equivalent) and the ability to program in a high-level language"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "Prerequisites: Differential Equations (MA 2051 or equivalent), Linear Algebra (MA 2071 or equivalent) and the ability to program in a high-level language"
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: MA|2051
+              orEquivalent: true
+            - kind: course
+              course: MA|2071
+              orEquivalent: true
+            - kind: topic
+              topic: the ability to program in a high-level language
+    noCreditWith: []
+  - courseId: RBE|501
+    description: "ME 528/RBE 501 Robot Dynamics (3 Credits) Foundations and principles of robot dynamics. Topics include system modeling including dynamical modeling of serial arm robots using Newton and Lagrange’s techniques, dynamical modeling of mobile robots, introduction to dynamics-based robot control, as well as advanced techniques for serial arm forward kinematics, trajectory planning, singularity and manipulability, and vision-based control. In addition, dynamic simulation techniques will be covered to apply the concepts learned using realistic simulators. An end of term team project would allow students to apply mastery of the subject to real-world robotic platforms. Prerequisites: RBE 500 or equivalent"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "Prerequisites: RBE 500 or equivalent"
+        requirement:
+          kind: course
+          course: RBE|500
+          orEquivalent: true
+    noCreditWith: []
+  - courseId: RBE|502
+    description: "This course demonstrates the synergy between the control theory and robotics through applications and provides an in-depth coverage of control of manipulators and mobile robots. Topics may include kinematic and dynamic models, trajectory and motion planning, feedback control, compliance and force control, impedance control, control of redundant manipulators, control of underactuated robots, adaptive robot control, integrated force and motion control, digital implementation of control laws, model identification and parameter estimation techniques. Course projects will emphasize modeling, simulation and practical implementation of control systems for robotic applications. (Prerequisites: Linear algebra; Differential equations; Linear systems and control theory as in ECE 504 or consent of the instructor.)"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "(Prerequisites: Linear algebra; Differential equations; Linear systems and control theory as in ECE 504 or consent of the instructor.)"
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: linear algebra
+            - kind: topic
+              topic: differential equations
+            - kind: anyOf
+              of:
+                - kind: topic
+                  topic: linear systems and control theory
+                  satisfiedBy:
+                    kind: course
+                    course: ECE|504
+                - kind: permission
+                  text: consent of the instructor
+    noCreditWith: []
+  - courseId: RBE|510
+    description: "RBE 510. Multi-Robot Systems (2 credits) This course covers the foundation and principles of multi-robot systems. The course will cover the development of the field and provide an overview of different control architectures (centralized, decentralized, distributed, and hybrid), control topologies, and system configurations (cellular automata, modular robotic systems, mobile sensor networks, swarms, heterogeneous systems). Topics may include, but are not limited to, multirobot control and connectivity, path planning and localization, sensor fusion and robot informatics, task-level control, communication protocols, distributed decision-making, and robot software system design and implementation. Prerequisites: RBE 502 or equivalent, Linear algebra, differential equations, and mature programming skills, or consent of the instructor."
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "Prerequisites: RBE 502 or equivalent, Linear algebra, differential equations, and mature programming skills, or consent of the instructor."
+        requirement:
+          kind: anyOf
+          of:
+            - kind: allOf
+              of:
+                - kind: course
+                  course: RBE|502
+                  orEquivalent: true
+                - kind: topic
+                  topic: linear algebra
+                - kind: topic
+                  topic: differential equations
+                - kind: topic
+                  topic: mature programming skills
+            - kind: permission
+              text: consent of the instructor
+    noCreditWith: []
+  - courseId: RBE|511
+    description: "RBE 511: Swarm Intelligence (3 credits) This course will cover a wide range of topics in swarm intelligence, including mathematical, computational, and biological aspects. The course is organized in four parts. In the first part, the students will learn about complex systems and the basic concepts of self-organization, such as positive and negative feedback, symmetry breaking, and emergence. The second part concerns several types of network models, such as information cascades, epidemics, and voting. The instructor will illustrate a diverse collection of self-organized systems in nature, finance, and technology that concretize these concepts. The third part is dedicated to swarm robotics, and will cover common swarm algorithms for task allocation, collective motion, and collective decisionmaking. The fourth and final part covers optimization algorithms inspired by swarm intelligence, namely ant colony optimization and particle swarm optimization. The course will blend theory and practice, challenging the students to learn by implementing the algorithms discussed in class through a final project in swarm robotics. Recommended Background: C++/Python/Matlab programming; Linear algebra; Probability and statistics; Calculus."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: C++/Python/Matlab programming; Linear algebra; Probability and statistics; Calculus."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: C++/Python/Matlab programming
+            - kind: topic
+              topic: linear algebra
+            - kind: topic
+              topic: probability and statistics
+            - kind: topic
+              topic: calculus
+    noCreditWith: []
+  - courseId: RBE|520
+    description: 'This course introduces Biomechanics and Robotics as a unified subject addressing living and man-made "organisms". It draws deep connections between the natural and the synthetic, showing how the same principles apply to both, starting from sensing, through control, to actuation. Those principles are illustrated in several domains, including locomotion, prosthetics, and medicine. The following topics are addressed: Biological and Artificial sensors, actuators and control, Orthotics Biomechanics and Robotics, Prosthetic Biomechanics and Robotics: Artificial Organs and Limbs, Rehabilitation Robotics and Biomechanics: Therapy, Assistance and Clinical Evaluation, Human-Robot Interaction and Robot Aided Living for Healthier Tomorrow, Sports, Exercise and Games: Biomechanics and Robotics, Robot-aided Surgery, Biologically Inspired Robotics and Micro- (bio)robotics, New Technologies and Methodologies in Medical Robotics and Biomechanics, Neural Control of Movement and Robotics Applications, Applied Musculoskeletal Models and Human Movement Analysis. This course meshes physics, biology, medicine and engineering and introduce students to subject that holds a promise to be one of the most influential innovative research directions defining the 21st century. Recommended background: foundation of physics, linear algebra and differential equations; basic programming skills e.g. using MATLAB, undergraduate level biomechanics, robotics.'
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: foundation of physics, linear algebra and differential equations; basic programming skills e.g. using MATLAB, undergraduate level biomechanics, robotics."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: foundation of physics
+            - kind: topic
+              topic: linear algebra
+            - kind: topic
+              topic: differential equations
+            - kind: topic
+              topic: basic programming skills (e.g. MATLAB)
+            - kind: topic
+              topic: undergraduate level biomechanics
+            - kind: topic
+              topic: robotics
+    noCreditWith: []
+  - courseId: RBE|521
+    description: "RBE 521 Legged Robotics (3 Credits) Foundations and principles of parallel manipulators and legged robots. Topics include advanced spatial/3D kinematics and dynamics of parallel manipulators and legged robots including workspace analysis, inverse and forward kinematics and dynamics, motion analysis and control, and gait and stability/balance analysis of legged robots. The course will be useful for solving problems dealing with parallel manipulators as well as multilegged robots including, but not limited to, quadruped robots, hexapod robots and any other types of multilegged robots. A final term project allows students to show mastery of the subject by designing, analyzing, and simulating parallel and/or legged robots of their choice. Recommended Background: RBE 500, RBE 501"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: RBE 500, RBE 501"
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: RBE|500
+            - kind: course
+              course: RBE|501
+    noCreditWith: []
+  - courseId: RBE|526
+    description: "This course focuses on human-robot interaction and social robot learning, exploring the leading research, design principles and technical challenges we face in developing robots capable of operating in real-world human environments. The course will cover a range of multidisciplinary topics, including physical embodiment, mixed-initiative interaction, multi-modal interfaces, human-robot teamwork, learning algorithms, aspects of social cognition, and long-term interaction. These topics will be pursued through independent reading, class discussion, and a final project. (Prerequisites: Mature programming skills and at least undergraduate level knowledge of Artificial Intelligence, such as CS 4341. No hardware experience is required.)"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "(Prerequisites: Mature programming skills and at least undergraduate level knowledge of Artificial Intelligence, such as CS 4341."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: mature programming skills
+            - kind: topic
+              topic: at least undergraduate level knowledge of Artificial Intelligence
+              satisfiedBy:
+                kind: course
+                course: CS|4341
+    noCreditWith: []
+    needsReview: "'such as CS 4341' is an example, so other AI courses may also qualify."
+  - courseId: RBE|530
+    description: "RBE 530 Soft Robotics (2 Credits) Soft robotics studies “intelligent” machines and devices that incorporate some form of compliance in their mechanics. Elasticity is not a byproduct but an integral part of these systems, responsible for inherent safety, adaptation and part of the computation in this class of robots. This course will cover a number of major topics of soft robotics including but not limited to design and fabrication of soft systems, elastic actuation, embedded intelligence, soft robotic modeling and control, and fluidic power. Students will implement new design and fabrication methodologies of soft robots, read recent literature in the field, and complete a project to supplement the course material. Existing soft robotic platforms will be available for experimental work. Prerequisites: Differential equations, linear algebra, stress analysis, kinematics, embedded programming"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "Prerequisites: Differential equations, linear algebra, stress analysis, kinematics, embedded programming"
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: differential equations
+            - kind: topic
+              topic: linear algebra
+            - kind: topic
+              topic: stress analysis
+            - kind: topic
+              topic: kinematics
+            - kind: topic
+              topic: embedded programming
+    noCreditWith: []
+  - courseId: RBE|533
+    description: "While most traditional robots are constructed from rigid materials, there has been growing interest in developing soft robots whose bodies deform in response to external forces, enabling greater adaptability and safety. Mathematical modeling of these deformations, however, can be challenging. This course covers the rich field of nonlinear material mechanics through the lens of robotic applications. Topics covered include: the theory of nonlinear solid mechanics; finiteelement simulations; modeling of elastic, hyperelastic, viscoelastic, hysteretic, and stimulusresponsive materials (e.g., dielectric elastomers, shape-memory materials, liquid-crystal elastomers, and piezoelectric materials); compliant mechanisms and micro-electromechanical systems (MEMS); and mechanical metamaterials. Students will synthesize their knowledge through a course project in which they will develop and validate a model of a deformable robot using either numerical or analytical techniques. Recommended Background: Mature programming skills and undergraduate-level knowledge of differential equations and linear algebra, undergraduate-level knowledge of stress/strain in materials."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: Mature programming skills and undergraduate-level knowledge of differential equations and linear algebra, undergraduate-level knowledge of stress/strain in materials."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: mature programming skills
+            - kind: topic
+              topic: undergraduate-level knowledge of differential equations
+            - kind: topic
+              topic: undergraduate-level knowledge of linear algebra
+            - kind: topic
+              topic: undergraduate-level knowledge of stress/strain in materials
+    noCreditWith: []
+  - courseId: RBE|549
+    description: "This course examines current issues in the computer implementation of visual perception. Topics include image formation, edge detection, segmentation, shape-from-shading, motion, stereo, texture analysis, pattern classification and object recognition. We will discuss various representations for visual information, including sketches and intrinsic images. (Prerequisites: CS 534, CS 543, CS 545, or the equivalent of one of these courses.)"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "(Prerequisites: CS 534, CS 543, CS 545, or the equivalent of one of these courses.)"
+        requirement:
+          kind: anyOf
+          of:
+            - kind: course
+              course: CS|534
+              orEquivalent: true
+            - kind: course
+              course: CS|543
+              orEquivalent: true
+            - kind: course
+              course: CS|545
+              orEquivalent: true
+    noCreditWith: []
+  - courseId: RBE|550
+    description: "Motion planning is the study of algorithms that reason about the movement of physical or virtual entities. These algorithms can be used to generate sequences of motions for many kinds of robots, robot teams, animated characters, and even molecules. This course will cover the major topics of motion planning including (but not limited to) planning for manipulation with robot arms, mobile robot path planning with kinodynamic constraints, multi-robot path planning, highdimensional sampling-based planning, learning and planning, and task and motion planning. Students will implement motion planning algorithms in open-source frameworks such as OMPL and complete projects that draw on the course material. Recommended Background: Undergraduate Linear Algebra, knowledge of algorithmic principles, kinematics, and significant programming experience."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: Undergraduate Linear Algebra, knowledge of algorithmic principles, kinematics, and significant programming experience."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: undergraduate linear algebra
+            - kind: topic
+              topic: knowledge of algorithmic principles
+            - kind: topic
+              topic: kinematics
+            - kind: topic
+              topic: significant programming experience
+    noCreditWith: []
+  - courseId: RBE|575
+    description: "RBE 575. Safety and Guarantees for Autonomous Robots (3 credits) Robotic and AI systems have strong potential to directly impact our well-being, from self-driving cars to medical robots. Therefore, it is important to consider strong guarantees on the correctness and safety of their behavior. These guarantees ensure the robot will execute the desired behavior and will not execute undesired behavior. The course will define formal notions of system properties such as safety and liveness, explain how to model and analyze those properties in systems that make decisions and act on them, and understand the specific challenges related to making guarantees on embodied AI systems. This course will cover many topics related to formal guarantees of safety and correctness in robotic and AI systems, including temporal logicbased planning, safe control via invariants and control barrier functions, neural net verification, closed loop control with machine learning components, safe reinforcement learning, and other state-of-the-art topics at the intersection of safety, guarantees, AI, and robotics. Prerequisites: RBE 500. Recommended Background: RBE 502 or equivalent, Machine Learning or Intro to AI."
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "Prerequisites: RBE 500."
+        requirement:
+          kind: course
+          course: RBE|500
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: RBE 502 or equivalent, Machine Learning or Intro to AI."
+        requirement:
+          kind: anyOf
+          of:
+            - kind: course
+              course: RBE|502
+              orEquivalent: true
+            - kind: topic
+              topic: machine learning
+            - kind: topic
+              topic: intro to AI
+    noCreditWith: []
+  - courseId: RBE|577
+    description: "RBE 577: Machine Learning for Robotics (3 credits) This graduate-level course delves into the intersection of machine learning and robotics. The curriculum will explore the integration of contemporary learning techniques in robotic areas such as manipulation, navigation, planning, control, decision-making, and other pertinent challenges in robotics. Advanced deep learning techniques and their applications in robotics will be covered, including supervised learning (e.g., behavioral cloning, state prediction), reinforcement learning (e.g., actor-critic, visual foresight), and unsupervised/self-supervised methods (e.g., world model construction, learning forward dynamic models). In addition, the generalizability of these methods will be discussed, recent, and experimental studies will be conducted, examining the challenges of applying these techniques on physical systems. Prerequisites: RBE 500 or equivalent Recommended Background: RBE 501 and RBE 502"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "Prerequisites: RBE 500 or equivalent"
+        requirement:
+          kind: course
+          course: RBE|500
+          orEquivalent: true
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: RBE 501 and RBE 502"
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: RBE|501
+            - kind: course
+              course: RBE|502
+    noCreditWith: []
+  - courseId: RBE|580
+    description: "RBE 580/BME 580/ME 5205 Biomedical Robotics (2 Credits) This course will provide an overview of a multitude of biomedical applications of robotics. Applications covered include: image-guided surgery, percutaneous therapy, localization, robotassisted surgery, simulation and augmented reality, laboratory and operating room automation, robotic rehabilitation, and socially assistive robots. Specific subject matter includes: medical imaging, coordinate systems and representations in 3D space, robot kinematics and control, validation, haptics, teleoperation, registration, calibration, image processing, tracking, and humanrobot interaction.Topics will be discussed in lecture format followed by interactive discussion of related literature. The course will culminate in a team project covering one or more of the primary course focus areas. Recommended Background: Linear algebra, ME/RBE 3001 or equivalent Students cannot receive credit for this course if they have taken the Special Topics (ME 593U) version of the same course."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: Linear algebra, ME/RBE 3001 or equivalent"
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: linear algebra
+            - kind: anyOf
+              of:
+                - kind: course
+                  course: ME|3001
+                  orEquivalent: true
+                - kind: course
+                  course: RBE|3001
+                  orEquivalent: true
+    noCreditWith: []
+    needsReview: The special-topics no-credit rule names 'ME 593U', which the course-id pattern cannot store. Not recorded.
+  - courseId: RBE|594
+    description: "This project-based course integrates robotics engineering theory and practice, and provides the opportunity to apply the skills and knowledge acquired in the Robotics Engineering curriculum. The project is normally conducted in teams of two to four students. Students are encouraged to select projects with practical significance to their current and future professional responsibilities. The projects are administered, advised, and evaluated by WPI faculty as part of the learning experience, but students are also encouraged to seek mentorship from experienced colleagues in the Robotics Engineering profession. The project will include substantial analysis and/or design and conclude with a written report and a public presentation. Prerequisites: The student must have completed the 9-credit RBE Foundations and additional 6 credits including any combination of RBE core, electives, and Engineering Context before enrolling in RBE 594."
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: The student must have completed the 9-credit RBE Foundations and additional 6 credits including any combination of RBE core, electives, and Engineering Context before enrolling in RBE 594.
+        requirement:
+          kind: other
+          text: completed the 9-credit RBE Foundations and additional 6 credits including any combination of RBE core, electives, and Engineering Context
+    noCreditWith: []
+  - courseId: RBE|595
+    description: "Arranged by individual faculty with special expertise, these courses survey fundamentals in areas that are not covered by the regular Robotics Engineering course offerings. Exact course descriptions are disseminated by the Robotics Engineering Program well in advance of the offering. (Prerequisite: Consent of instructor.)"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "(Prerequisite: Consent of instructor.)"
+        requirement:
+          kind: permission
+          text: Consent of instructor
+    noCreditWith: []
+  - courseId: RBE|101X
+    description: "This course provides an introduction to robotics and Robotics Engineering through completion of a topical, hands-on project in modern robotics. Students will work on teams and draw from material presented in lecture, consultations with experts, and individual research to develop and test novel solutions to a problem drawn from active research in the discipline. Students will develop skills in mechanics, electronics, controls, and algorithms and the ability to integrate those concepts through an active design project. Undergraduate credit may not be earned for both this course and RBE 1001. Recommended background : Programming experience in Python or C/C++ (such as found in CS 1005). Experience with fundamentals of mechanics (such as found in PH 1110 or 1111)."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background : Programming experience in Python or C/C++ (such as found in CS 1005)."
+        requirement:
+          kind: topic
+          topic: programming experience in Python or C/C++
+          satisfiedBy:
+            kind: course
+            course: CS|1005
+      - strength: recommended
+        timing: prior
+        sourceText: "Experience with fundamentals of mechanics (such as found in PH 1110 or 1111)."
+        requirement:
+          kind: topic
+          topic: experience with fundamentals of mechanics
+          satisfiedBy:
+            kind: anyOf
+            of:
+              - kind: course
+                course: PH|1110
+              - kind: course
+                course: PH|1111
+    noCreditWith:
+      - RBE|1001
+    needsReview: The examples are introduced with 'such as', so other courses may also qualify.

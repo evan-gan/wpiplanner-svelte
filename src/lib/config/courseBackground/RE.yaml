@@ -1,0 +1,44 @@
+department: RE
+entries:
+  - courseId: RE|2721
+    description: "Cat. I The purpose of this course is to examine how the two institutions of religion and culture interact and mutually influence one another. To do this a variety of definitions of religion and culture will be presented as well as an analysis of how religion interacts with such cultural phenomena as economics, politics, the state, war and the basic problem of social change. The purpose of this is to obtain a variety of perspectives on both religion and culture so that one can begin to articulate more clearly the different influences that occur in the development of one's own personal history and the culture in which one lives. Suggested background: knowledge of key terms and concepts as given in PY/RE 1731."
+    clauses:
+      - strength: suggested
+        timing: prior
+        sourceText: "Suggested background: knowledge of key terms and concepts as given in PY/RE 1731."
+        requirement:
+          kind: topic
+          topic: knowledge of key terms and concepts
+          satisfiedBy:
+            kind: anyOf
+            of:
+              - kind: course
+                course: PY|1731
+              - kind: course
+                course: RE|1731
+    noCreditWith: []
+  - courseId: RE|2726
+    description: "RE 2726 Global Religions (Cat. II) This course will consider, from historical, doctrinal, spiritual and/or philosophical perspectives, either one religious tradition (Islam, Daoism or indigenous traditions, for example) or a constellation of traditions in the same time period or place. Attention will be given to the social context in which these traditions developed and their continuing influence. This course may be repeated for different topics. Recommended background: None."
+    clauses: []
+    noCreditWith: []
+  - courseId: RE|3711
+    description: "PY 3711/RE 3711 Topics in Philosophy (Cat. I) This course is organized around an advanced or specialized topic in philosophy and provides preparation for HU 3900 Inquiry Seminars in philosophy and religion. Emphasis on topics and authors will vary with instructor, but will typically involve the study of: a particular philosopher (e.g., Plato, Marx, Dewey, Arendt); a particular philosophical tradition (e.g., Pragmatism, Analytic Philosophy, Buddhism, Feminism); a particular philosophical problem or topic (free will, globalization, consciousness, social movement, justice); or a particular philosophical classic (Aristotle’s Ethics, Hobbes’s The Leviathan, Beauvoir’s The Second Sex). The topical theme of the course will be provided as a modified course title in the course description posted online. This course may be repeated for different topics. Recommended Background: None."
+    clauses: []
+    noCreditWith: []
+  - courseId: RE|3721
+    description: "Cat. I This course is organized around an advanced or specialized topic in religion and provides preparation for HU 3900 Inquiry Seminars in philosophy and religion. The focus will vary, but the material will be drawn from a particular religious thinker, a particular religious tradition or a particular historical or contemporary problem. The topical theme of the class will be provided as a modified course title in the course description posted online. Recommended background: none"
+    clauses: []
+    noCreditWith: []
+  - courseId: RE|3723
+    description: "Cat. II Patriarchal religious traditions are often characterized by masculine images of the Divine, cisgendered male religious authority, male-authored scriptures and a heteronormative gendered division of religious practices. As a result, men and cultural masculinity are differently valued than women and cultural femininity; this male-female binary leaves little room for practitioners who identify as nonbinary. In this discussion-focused course, we will engage representations of gender and sexuality in different traditions and their impact on larger social contexts from philosophical, theological and ethnographic perspectives. Among the questions we will explore: Why does the idea of a female or feminine YHWH, God or Allah bother us? Can feminine representations (such as the Devi, Shakti or Shekhinah) or nonbinary representations (such as two-spirit people in indigenous communities) facilitate gender equity? Do mystical traditions (such as the Zohar or Sufism) encourage gender fluidity? How do religions influence sexuality; how does sexuality intersect with creation myths and cosmogonies? Why is a Buddhist nun expected to bow to a Buddhist monk; why does the Catholic Church not recognize women, nonbinary and / or queer priests? This combination of theoretical and methodological conversations will offer students a forum in which to recast assumptions about individual and collective identity that permeate our cultural systems and structures. Recommended background: None. Students cannot receive credit for both RE 3723 and 2019-2020 and 2020-2021 Sections of RE 3721."
+    clauses: []
+    noCreditWith:
+      - RE|3721
+  - courseId: RE|1731
+    description: Cat. IThis course provides an overview of key concepts, methods and authors in both fields. These introduce the student to the types of reasoning required for the pursuit of in-depth analysis in each discipline.Emphasis on topics and authors varies with the particular instructor.
+    clauses: []
+    noCreditWith: []
+  - courseId: RE|2731
+    description: Cat. I This course offers a general introduction to modern moral theory. What makes one action wrong, and another right? What are our moral duties towards others? Do moral values change over time, making beliefs about right and wrong simply "relative," or are moral values objective, holding true for all people, everywhere, at all times? Should emotions play a role in ethical deliberation, or should we aspire to be purely rational when engaged in moral thought and action? Is it okay to cheat on an exam, so long as everybody else does it? Do we have a right to use animals in laboratory experiments? Is eating meat ethical? Is it wrong to share a racist or sexist joke? Should abortion be legal? Students will learn how to apply key moral concepts to real-world problems and situations after closely studying several moral theories, including utilitarianism, Kantianism, and feminist care ethics. Other topics covered include moral relativism, psychological hedonism, and ethical egoism.
+    clauses: []
+    noCreditWith: []

@@ -5,7 +5,8 @@
  * "9:00AM mon,wed,fri in A Term" and nothing about when A Term runs, so the
  * calendar export has no way to turn a weekly pattern into real dates without
  * it. Everything here is transcribed from the Registrar's published calendar
- * and has to be re-transcribed once a year — see the checklist at the bottom.
+ * and has to be re-transcribed once a year — the steps are in `updating.md`
+ * ("Academic calendar").
  *
  * Source: https://www.wpi.edu/academics/calendar
  */
@@ -99,14 +100,3 @@ export const ACADEMIC_CALENDAR: AcademicCalendar = {
     { name: 'C/D-Term break', firstDay: '2027-03-06', lastDay: '2027-03-14' },
   ],
 };
-
-/**
- * Rolling the calendar over to a new academic year:
- *
- * 1. Replace `academicYear`, the four term ranges, every exception and every
- *    break above from the Registrar's calendar.
- * 2. Keep only entries that change what days classes meet — a "Follow X
- *    schedule" day needs `followsDay`, everything else is `null`.
- * 3. `pnpm test` — `tests/calendar/academicCalendar.test.ts` checks the ranges
- *    are ordered, non-overlapping, and that every exception lands inside a term.
- */

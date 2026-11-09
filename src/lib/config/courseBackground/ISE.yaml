@@ -1,0 +1,67 @@
+department: ISE
+entries:
+  - courseId: ISE|1800
+    description: The goal of this course is to provide international students for whom English is not their native language the necessary skills for academic success through reading and writing assignments . Students will focus on developing vocabulary, critical reading, paragraph, and essay writing skills . Emphasis is also given to a review of English grammar through intensive written and oral practice to promote accurate and appropriate language use . Strongly recommended for first-year international non-native English speakers . Admission determined by Writing Placement or consent of the instructor.
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: Strongly recommended for first-year international non-native English speakers
+        requirement:
+          kind: standing
+          text: first-year international non-native English speakers
+      - strength: required
+        timing: prior
+        sourceText: Admission determined by Writing Placement or consent of the instructor.
+        requirement:
+          kind: anyOf
+          of:
+            - kind: other
+              text: admission determined by Writing Placement
+            - kind: permission
+              text: consent of the instructor
+    noCreditWith: []
+  - courseId: ISE|1801
+    description: "This course is for international students who want to develop their academic writing skills through a sequence of essay assignments, with emphasis on rhetorical and grammatical issues particular to second language learners (ESL) . Students will concentrate on producing coherent paragraphs, developing short essays in a variety of rhetorical modes, and improving mechanics (grammar and punctuation) and vocabulary usage. Both personal and academic writing assignments provide practice in the process of writing and revising work for content and form . Recommended Background: ISE 1800 or equivalent skills (determined by Writing Placement or consent of the instructor) ."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: ISE 1800 or equivalent skills (determined by Writing Placement or consent of the instructor) ."
+        requirement:
+          kind: anyOf
+          of:
+            - kind: course
+              course: ISE|1800
+              orEquivalent: true
+            - kind: other
+              text: equivalent skills determined by Writing Placement
+            - kind: permission
+              text: consent of the instructor
+    noCreditWith: []
+  - courseId: ISE|2800
+    description: "In this course students will practice analytical reading, writing, and thinking intensively, through a variety of exercises and assignments . Emphasis is placed on using various methods of organization appropriate to the writer’s purpose and audience . Students will read and discuss a selection of non-fiction texts; these readings will form the basis for writing assignments in summary, critique, synthesis, and persuasion . The course also stresses the ability to understand, use, and document college-level non-fiction readings as evidence for effectively formulating and accurately supporting a thesis . This course is for international students who have already studied grammar extensively and need to refine the ability to produce acceptable academic English . Recommended Background: ISE 1801 or equivalent skills (determined by Writing Placement or consent of the instructor) ."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: ISE 1801 or equivalent skills (determined by Writing Placement or consent of the instructor) ."
+        requirement:
+          kind: anyOf
+          of:
+            - kind: course
+              course: ISE|1801
+              orEquivalent: true
+            - kind: other
+              text: equivalent skills determined by Writing Placement
+            - kind: permission
+              text: consent of the instructor
+    noCreditWith: []
+  - courseId: ISE|2820
+    description: "ISE 2820 Critical Reading of Our World for English Language Learners (1/3 Unit; Cat. II) The goal of this course is to provide non-native English language students the skills to work with the highest levels of academic and professional reading. Students will develop active and critical reading skills by annotating self-selected academic journal articles, research reports, current news reports and autobiographical literature. Students will create annotated bibliographies, summaries, literature reviews, and critical reaction papers. Students will learn to analyze, synthesize and cite multiple sources when doing academic work. Students will also increase their vocabulary of high-level academic and professional terms. This course will be offered in 2021-22, and in alternate years thereafter. Recommended Background: ISE 1801 or equivalent skills."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: ISE 1801 or equivalent skills."
+        requirement:
+          kind: course
+          course: ISE|1801
+          orEquivalent: true
+    noCreditWith: []

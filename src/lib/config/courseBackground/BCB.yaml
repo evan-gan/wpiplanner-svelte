@@ -1,0 +1,100 @@
+department: BCB
+entries:
+  - courseId: BCB|1003
+    description: "Life scientists are generating huge amounts of data on many different scales, from DNA and protein sequence, to information on biological systems such as protein interaction networks, brain circuitry, and ecosystems . Analyzing these kinds of data requires quantitative knowledge and approaches using computer science and mathematics . In this project-based course, students will use case studies to learn about both important biological problems and the computational tools and algorithms used to study them . Students will study a sampling of topics in the field; recent topics included complex disease genetics, HIV evolution, antibiotic resistance, and animal migration behavior . In addition, students will hear from several guest speakers about their interdisciplinary research . Computational tools explored will include both freely-available tools to analyze sequences and build phylogenetic trees (e .g . BLAST, MUSCLE, MEGA) as well as guided programming using languages such as Python, R, and Netlogo . Students may not receive credit for both BCB / BB 100X and BCB / BB 1003 . BBT majors may count this course as fulfilling part of their quantitative science and engineering requirement, but not as part of their BB 1000 level course requirement . Recommended background: High school biology . Programming experience is not required ."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: High school biology ."
+        requirement:
+          kind: topic
+          topic: high school biology
+    noCreditWith:
+      - BCB|100X
+      - BB|100X
+      - BB|1003
+  - courseId: BCB|3010
+    description: "Cat. II Computer simulations are becoming increasingly important in understanding and predicting the behavior of a wide variety of biological systems, ranging from metastasis of cancer cells, to spread of disease in an epidemic, to management of natural resources such as fisheries and forests. In this course, students will learn to use a technique classed 'agent-based modeling (ABM)' to simulate biological systems. Most of the classroom time will be spent working individually or in groups, first learning a language (either the block-based language Starlogo Nova, or the text-based language Netlogo), and then creating simulation projects. We will also discuss several papers on biological simulations from the primary scientific literature. In constructing and comparing their simulations, students will demonstrate for themselves how relatively simple behavioral rules followed by individual molecules, cells, or organisms can result in complex system behaviors. Recommended background: Students taking this course should have background in a biological area they would like to simulate, at about the depth provided by a BB 2000 or BB 3000 level class. No programming experience is assumed. This course will be offered in 2023-24, and in alternating years thereafter."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: Students taking this course should have background in a biological area they would like to simulate, at about the depth provided by a BB 2000 or BB 3000 level class.
+        requirement:
+          kind: topic
+          topic: background in a biological area at about the depth of a BB 2000 or BB 3000 level class
+    noCreditWith: []
+    needsReview: The BB 2000 / BB 3000 level is a depth, not named courses, so no course ids were recorded.
+  - courseId: BCB|402X
+    description: "This course will introduce quantitative approaches to address outstanding questions from various biological disciplines. A combination of lectures, readings, and computational exercises will be used to illustrate how to use simple mathematical models to understand complex biological phenomena. We will discuss and examine different biological problems from diverse areas of biological research, including cell biology, genetics, and public health to highlight the broad applicability of these approaches. Primary scientific literature will be used to introduce these topics, as well as the quantitative experimental techniques used to test these models. Units: 1/3 Recommended Background: A strong background in cell biology and genetics ( BB 2 5 50 , BB2920 , or equivalent) ."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: A strong background in cell biology and genetics ( BB 2 5 50 , BB2920 , or equivalent) ."
+        requirement:
+          kind: topic
+          topic: a strong background in cell biology and genetics
+          satisfiedBy:
+            kind: anyOf
+            of:
+              - kind: course
+                course: BB|2550
+                orEquivalent: true
+              - kind: course
+                course: BB|2920
+                orEquivalent: true
+    noCreditWith: []
+    needsReview: The text writes BB 2550 with spaces ('BB 2 5 50'); read as BB|2550.
+  - courseId: BCB|501
+    description: "This course will provide an overview of bioinformatics, covering a broad selection of the most important techniques used to analyze biological sequence and expression data. Students will acquire a working knowledge of bioinformatics applications through hands-on use of software to ask and answer biological questions. In addition, the course will provide students with an introduction to the theory behind some of the most important algorithms used to analyze sequence data (for example, alignment algorithms and the use of hidden Markov models). Topics covered will include protein and DNA sequence alignments, evolutionary analysis and phylogenetic trees, obtaining protein secondary structure from sequence, and analysis of gene expression including clustering methods. Students may not receive credit for both BCB 4001 and BCB 501. (Prerequisite: knowledge of genetics, molecular biology, and statistics at the undergraduate level.)"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "(Prerequisite: knowledge of genetics, molecular biology, and statistics at the undergraduate level.)"
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: genetics at the undergraduate level
+            - kind: topic
+              topic: molecular biology at the undergraduate level
+            - kind: topic
+              topic: statistics at the undergraduate level
+    noCreditWith:
+      - BCB|4001
+  - courseId: BCB|503
+    description: "This course will investigate computational techniques for discovering patterns in and across complex biological and biomedical sources, including genomic and proteomic databases, clinical databases, digital libraries of scientific articles, and ontologies. Techniques covered will be drawn from several areas including sequence mining, statistical natural language processing and text mining, and data mining. (Prerequisite: Strong programming skills, an undergraduate or graduate course in algorithms, an undergraduate course in statistics, and one or more undergraduate biology courses.)"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "(Prerequisite: Strong programming skills, an undergraduate or graduate course in algorithms, an undergraduate course in statistics, and one or more undergraduate biology courses.)"
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: strong programming skills
+            - kind: topic
+              topic: an undergraduate or graduate course in algorithms
+            - kind: topic
+              topic: an undergraduate course in statistics
+            - kind: topic
+              topic: one or more undergraduate biology courses
+    noCreditWith: []
+  - courseId: BCB|555
+    description: This course is offered every other semester, discussing topics on quantitative cell biology that advance our understanding of the function of cellular systems. The focus is on reading, presenting, and discussing the most recent literature in the field. Graduate students and advanced undergraduate students with an interest in quantitative biology are encouraged to participate. Topics covered change with each offering of this course and students may register and receive credit for more than one offering.
+    clauses: []
+    noCreditWith: []
+  - courseId: BCB|590
+    description: An offering of this course will cover a topic of current interest in detail. See the Supplement section of the online catalog at www.wpi.edu/+gradcat for descriptions of courses to be offered in this academic year. Prerequisites will vary with topic.
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: Prerequisites will vary with topic.
+        requirement:
+          kind: other
+          text: Prerequisites will vary with topic.
+    noCreditWith: []
+    needsReview: Prerequisites depend on the topic offered that term; check the online supplement for each offering.
+  - courseId: BCB|510
+    description: (0 credits; pass/fail grading) This seminar provides an opportunity for students in the BCB program to present their research work, as well as hear research talks from guest speakers.
+    clauses: []
+    noCreditWith: []

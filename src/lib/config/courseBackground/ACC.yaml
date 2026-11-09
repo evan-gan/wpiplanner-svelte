@@ -1,0 +1,7 @@
+department: ACC
+entries:
+  - courseId: ACC|2060
+    description: Cat. 1 This course provides students with an understanding of the primary financial statements used for internal and external business decision- making in start-up firms and large corporations. It emphasizes underlying accounting concepts captured in financial statements, while highlighting the interdependence among these statements. The course will cover analytical techniques, such as ratio analyses and sensitivity analyses to assess the impact of changes in strategy and outcomes on efficiency and effectiveness measures. It also describes the various users of internal and external financial statements, and the potential conflicts between these various stakeholders. Students cannot receive credit for both BUS 2060 and ACC 2060.
+    clauses: []
+    noCreditWith:
+      - BUS|2060

@@ -1,5 +1,5 @@
 /**
- * PLAN.md §6, Phase 1 gate: whatever catalog the app is about to ship has to
+ * .claude/PLAN.md §6, Phase 1 gate: whatever catalog the app is about to ship has to
  * hold together when the app's own index reads it.
  *
  * These are invariants, not pinned counts. `pnpm updateData` replaces

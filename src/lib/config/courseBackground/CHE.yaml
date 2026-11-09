@@ -1,0 +1,311 @@
+department: CHE
+entries:
+  - courseId: CHE|1011
+    description: Cat. I. This course provides an introduction to the broad and vital discipline of chemical engineering including conventional and developing chemical technologies. An introduction is provided to the first principles of chemical engineering, as well as environmental, health, safety and ethical issues in chemical engineering practice. An overview is provided of the chemical engineering profession, career choices, the course of study, and a survey of the chemical industry, e.g., polymer, pharmaceutical, food processing, microelectronic, electrochemical, biotechnology, process control, energy, and petroleum refining. Course activities include guest speakers and plant trips. Recommended for first-year students with a basic knowledge of chemistry.
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: Recommended for first-year students with a basic knowledge of chemistry.
+        requirement:
+          kind: topic
+          topic: basic knowledge of chemistry
+    noCreditWith: []
+  - courseId: CHE|2012
+    description: "Cat. I This course aims to build a strong foundation in analysis of chemical processes via a project-based approach. Topics covered include analysis and design of stagewise separation processes such as distillation, 1st and 2nd law (of thermodynamics) analysis of power and refrigeration cycles, and application of material and energy balances in industrial chemical processes, including those with recycle and non-ideal systems. Recommended background: Elementary college chemistry and calculus and some familiarity with the topics listed in CHE 2011. Students may not receive credit towards CHE distribution requirements for both CHE 2012 and ES 3000."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Elementary college chemistry and calculus and some familiarity with the topics listed in CHE 2011."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: elementary college chemistry
+            - kind: topic
+              topic: calculus
+            - kind: topic
+              topic: familiarity with the topics listed in CHE 2011
+              satisfiedBy:
+                kind: course
+                course: CHE|2011
+    noCreditWith:
+      - ES|3000
+  - courseId: CHE|2013
+    description: "Cat. IThis course uses a project-based approach to build confidence and competence in the use of chemical engineering thermodynamics for the analysis and design of chemical processes. Topics covered include extractive separation systems, solution thermodynamics and nonreacting multicomponent mixtures, phase equilibria and property changes on mixing.Recommended background: Elementary college chemistry and calculus and some familiarity with the topics listed in CHE 2011 and CHE 2012.Students may not receive credit towards CHE distribution requirements for both CHE 2013 and CM 2102."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Elementary college chemistry and calculus and some familiarity with the topics listed in CHE 2011 and CHE 2012."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: elementary college chemistry
+            - kind: topic
+              topic: calculus
+            - kind: topic
+              topic: familiarity with the topics listed in CHE 2011 and CHE 2012
+              satisfiedBy:
+                kind: anyOf
+                of:
+                  - kind: course
+                    course: CHE|2011
+                  - kind: course
+                    course: CHE|2012
+    noCreditWith:
+      - CM|2102
+  - courseId: CHE|2014
+    description: "Cat. I This course builds on prior work in material and energy balances, chemical engineering thermodynamics, and stagewise separation processes to facilitate student mastery and design of more complex processes. Topics covered include chemical reaction equilibria, material and energy balances for non-steady state systems, combined material and energy balances, humidification, and batch distillation. Recommended background: Elementary college chemistry and calculus and some familiarity with the topics listed in CHE 2011, CHE 2012, and CHE 2013. Students may not receive credit towards CHE distribution requirements for both CHE 2014 and CM 2002. Some sections of this course may be offered as Writing Intensive (WI)."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Elementary college chemistry and calculus and some familiarity with the topics listed in CHE 2011, CHE 2012, and CHE 2013."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: elementary college chemistry
+            - kind: topic
+              topic: calculus
+            - kind: topic
+              topic: familiarity with the topics listed in CHE 2011, CHE 2012, and CHE 2013
+              satisfiedBy:
+                kind: anyOf
+                of:
+                  - kind: course
+                    course: CHE|2011
+                  - kind: course
+                    course: CHE|2012
+                  - kind: course
+                    course: CHE|2013
+    noCreditWith:
+      - CM|2002
+  - courseId: CHE|3201
+    description: "Cat. ITechniques for experimentally determining rate laws for simple and complex chemical reactions, the mechanisms and theories of chemical reactions, the function of catalysts, and the design of isothermal, adiabatic, batch and flow reactors. The course is intended to provide chemists and chemical engineers with the conceptual base needed to study reactions and perform in the design and analysis of reactors.Recommended background: differential equations, thermodynamics and someorganic chemistry."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: differential equations, thermodynamics and someorganic chemistry."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: differential equations
+            - kind: topic
+              topic: thermodynamics
+            - kind: topic
+              topic: some organic chemistry
+    noCreditWith: []
+  - courseId: CHE|3301
+    description: "Cat. II This course is an introduction to the chemical engineering principles involved in modern applications of biological engineering. Topics may include: an introduction to biology, biochemistry, physiology, and genomics; biological process engineering including fermentation, mammalian cell culture, biocatalysis, and downstream bioseparations; drug discovery, development, and delivery; environmental biotechnology; and chemical engineering aspects of biomedical devices. Recommended background: material and energy balances, thermodynamics, organic chemistry, and differential equations. This course will be offered in 2019-20, and in alternating years thereafter."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: material and energy balances, thermodynamics, organic chemistry, and differential equations."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: material and energy balances
+            - kind: topic
+              topic: thermodynamics
+            - kind: topic
+              topic: organic chemistry
+            - kind: topic
+              topic: differential equations
+    noCreditWith: []
+  - courseId: CHE|3501
+    description: "Cat. IThe consolidation of the methods of mathematics into a form that can be used for setting up and solving chemical engineering problems. Mathematical formulation of problems corresponding to specific physical situations such as momentum, energy and mass transfer, and chemical reactions. Analytical and numerical techniques for handling the resulting ordinary and partial differential equations and finite difference equations.Recommended background: ordinary differential equations, partial derivatives and vectors, momentum heat and mass transfer."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: ordinary differential equations, partial derivatives and vectors, momentum heat and mass transfer."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: ordinary differential equations
+            - kind: topic
+              topic: partial derivatives and vectors
+            - kind: topic
+              topic: momentum, heat and mass transfer
+    noCreditWith: []
+  - courseId: CHE|3702
+    description: "Cat. II The goal of this course is to prepare students for future work in energy-related fields by providing an overview of the challenges related to energy production. Students will study several major energy systems. The details of such energy systems will be examined using engineering principles, particularly focusing on relevant chemical processes. For example, the details and processes of a typical power plant or a refinery will be examined. Students will also become familiar with environmental and economic issues related to energy production. Topics to be covered may include: fossil fuels, the hydrogen economy, biofuels, nuclear energy, fuel cells, batteries, and the electricity grid. Recommended background: knowledge of chemistry (CH 1010, 1020, 1030), differential and integral calculus, and chemical processes (CHE 2011). Students may not receive credit for both CHE 3702 and CHE 320X. This course will be offered in 2019-20, and in alternating years thereafter."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: knowledge of chemistry (CH 1010, 1020, 1030), differential and integral calculus, and chemical processes (CHE 2011)."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: knowledge of chemistry
+              satisfiedBy:
+                kind: anyOf
+                of:
+                  - kind: course
+                    course: CH|1010
+                  - kind: course
+                    course: CH|1020
+                  - kind: course
+                    course: CH|1030
+            - kind: topic
+              topic: differential and integral calculus
+            - kind: topic
+              topic: chemical processes
+              satisfiedBy:
+                kind: course
+                course: CHE|2011
+    noCreditWith:
+      - CHE|320X
+    needsReview: "'CH 1010, 1020, 1030' read as alternatives (anyOf) because the sentence gives a list of chemistry courses without 'and'; this could be read as all three."
+  - courseId: CHE|4063
+    description: "Cat. II In this course, students will learn to make quantitative relationships between human activities and the effects on water, soil, and air in the environment. Students will learn the scientific and engineering principles that are needed to understand how contaminants enter and move in the environment, how compounds react in the environment, how to predict their concentrations in the environment, and how to develop solutions to environmental problems. Topics to be covered may include water quality engineering (including microbial interactions), air quality engineering, and hazardous waste management. Recommended Background: familiarity with transport phenomena, such as in ES 3004 (Fluid Mechanics) and ES 3002 (Mass Transfer), and familiarity with reaction kinetics and reactor design, such as through CHE 3201 (Kinetics and Reactor Design). Background such as CE 3059 (Environmental Engineering), CE 3060 (Water Treatment), or CE3061 (Wastewater Treatment) is suggested. This course will be offered in 2020-21, and in alternating years thereafter"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: familiarity with transport phenomena, such as in ES 3004 (Fluid Mechanics) and ES 3002 (Mass Transfer), and familiarity with reaction kinetics and reactor design, such as through CHE 3201 (Kinetics and Reactor Design)."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: familiarity with transport phenomena
+              satisfiedBy:
+                kind: anyOf
+                of:
+                  - kind: course
+                    course: ES|3004
+                  - kind: course
+                    course: ES|3002
+            - kind: topic
+              topic: familiarity with reaction kinetics and reactor design
+              satisfiedBy:
+                kind: course
+                course: CHE|3201
+      - strength: suggested
+        timing: prior
+        sourceText: Background such as CE 3059 (Environmental Engineering), CE 3060 (Water Treatment), or CE3061 (Wastewater Treatment) is suggested.
+        requirement:
+          kind: anyOf
+          of:
+            - kind: course
+              course: CE|3059
+            - kind: course
+              course: CE|3060
+            - kind: course
+              course: CE|3061
+    noCreditWith: []
+    needsReview: "'such as' examples are not exhaustive."
+  - courseId: CHE|4402
+    description: "Cat. I Overall format and procedure are essentially the same as in Unit Operations of Chemical Engineering I. Laboratory projects include experiments in heat and mass transfer such as: heat transfer in two heaters and a cooler, climbing film evaporation, multiple effect evaporation, absorption, extraction, distillation and rotary drying of solids. Recommended background: familiarity with techniques and procedures emphasized in CHE 4401."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: familiarity with techniques and procedures emphasized in CHE 4401."
+        requirement:
+          kind: topic
+          topic: familiarity with techniques and procedures emphasized in CHE 4401
+          satisfiedBy:
+            kind: course
+            course: CHE|4401
+    noCreditWith: []
+  - courseId: CHE|4404
+    description: "Cat. I Application of Chemical Engineering design principles to the design of a major chemical plant. Students work in groups to produce a preliminary practical process flowsheet, equipment and plant design, and economic analysis. Recommended background: familiarity with techniques and procedures emphasized in CHE 4403."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: familiarity with techniques and procedures emphasized in CHE 4403."
+        requirement:
+          kind: topic
+          topic: familiarity with techniques and procedures emphasized in CHE 4403
+          satisfiedBy:
+            kind: course
+            course: CHE|4403
+    noCreditWith: []
+  - courseId: CHE|4405
+    description: "Cat. IThis course is intended to provide laboratory application of fundamental principles of chemical process dynamics and feedback control. This includes open-loop dynamics of typical chemical engineering processes such as distillation, fluid flow, chemical reactors and heated stirred tanks. Closed-loop experiments will involve control loop design, controller tuning, multivariable, and computer control.Students will be required to design and execute their own experiments based on supplied objectives. Analysis and presentation of the results will be done through oral and written reports.Recommended background: knowledge of fluid flow and heat transfer, mathematics and chemical engineering principles."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: knowledge of fluid flow and heat transfer, mathematics and chemical engineering principles."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: fluid flow and heat transfer
+            - kind: topic
+              topic: mathematics
+            - kind: topic
+              topic: chemical engineering principles
+    noCreditWith: []
+  - courseId: CHE|501
+    description: "CHE 501: Professional Development for Chemical Engineering Doctoral Students (0 Credits) This course provides professional development for chemical engineering students in the Ph.D. program. Topics covered may include: developing professional identities and networks, exploring chemical engineering career paths, setting career goals, improving technical and non-technical communication skills, analyzing ethical challenges in chemical engineering, and supporting diversity, equity, inclusion, and wellness in professional environments. Must be taken for eight semesters during Ph.D. program."
+    clauses: []
+    noCreditWith: []
+  - courseId: CHE|502
+    description: "CHE 502: Professional Development for Chemical Engineering Master’s Students (0 Credits) This course provides professional development for chemical engineering graduate students in the M.S. program. Topics covered may include: developing professional identities and networks, exploring chemical engineering career paths, setting career goals, improving technical and nontechnical communication skills, analyzing ethical challenges in chemical engineering, and supporting diversity, equity, inclusion, and wellness in professional environments. Must be taken for two semesters during M.S. program."
+    clauses: []
+    noCreditWith: []
+  - courseId: CHE|504
+    description: An essential skill of an engineer is to provide analytical and numerical solutions to relevant problems. This course will provide students with a solid mathematical background required to solve chemical engineering problems in fields such as fluid mechanics, reactor design, thermodynamics, and process design. Methods of mathematical analysis relevant to engineering will be selected from such topics as vector analysis, matrices, eigenvalue problems, Fourier analysis, Fourier transforms, Laplace transformation, solution of ordinary and partial differential equations, integral equations, calculus of variation, optimization methods, and numerical methods. Students should have a background in undergraduate calculus and differential equations.
+    clauses:
+      - strength: suggested
+        timing: prior
+        sourceText: Students should have a background in undergraduate calculus and differential equations.
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: undergraduate calculus
+            - kind: topic
+              topic: differential equations
+    noCreditWith: []
+    needsReview: No lead word; 'should have a background' recorded as suggested.
+  - courseId: CHE|509
+    description: This course includes a review of prototypical chemical reactors, including design of batch, stirred tank, and tubular reactors. Theories of reaction kinetics and catalysis for simple and complex reactions are addressed. Reactor design is discussed within the context of complex transport phenomena and reaction kinetics, including effects of bulk and pore diffusion and multiphase reactions/reactors. Techniques for experimentation, reaction data treatment, catalyst preparation and characterization, and computational tools are also included. Students cannot receive credit for this course and CHE 506 or CHE 507, which this class replaces.
+    clauses: []
+    noCreditWith:
+      - CHE|506
+      - CHE|507
+  - courseId: CHE|565
+    description: "Advanced topics in process synthesis, optimization and process control are examined. Optimization topics include objective functions, multivariable optimization, constrained optimization, mixed integer linear programming and applications of optimization to process industries. Control topics include model predictive control, adaptive control,batch process control, and plant-wide control.Recommended background: Undergraduate degree in Chemical Engineering"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Undergraduate degree in Chemical Engineering"
+        requirement:
+          kind: standing
+          text: Undergraduate degree in Chemical Engineering
+    noCreditWith: []
+  - courseId: CHE|571
+    description: "Transport rates of mass, energy, and momentum are key to the design of many chemical technologies. This class adopts a unified approach to transport phenomena, providing the fundamental background required for analysis ofcomplex problems. Students will use mathematical techniques for analytic and approximate solutions such as: separation of variables, similarity solutions, perturbation theory, and Laplace and Fourier transform methods. Methods involvingnon-dimensionalization and scaling will be emphasized. Special problems to be covered may include the lubrication approximation, creeping flow, and potential and laminar boundary-layer flows, as well as heat and mass transport in multicomponent systems. Students are expected to have taken previous courses on transport processesand have mathematical background that includes solution of differential equations."
+    clauses:
+      - strength: suggested
+        timing: prior
+        sourceText: have mathematical background that includes solution of differential equations.
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: previous courses on transport processes
+            - kind: topic
+              topic: solution of differential equations
+    noCreditWith: []
+    needsReview: No lead word; 'expected to have taken' recorded as suggested.
+  - courseId: CHE|503
+    description: Presentations on scientific advances by recognized experts in various fields of chemical engineering and related disciplines. The course will be graded on a Pass/Fail basis.
+    clauses: []
+    noCreditWith: []
+  - courseId: CHE|521
+    description: The course emphasizes the basic concepts of biological systems which are relevant to study by chemical engineers. Topics covered include Ligand binding and membrane transport processes, growth kinetics of animal cells and micro-organisms, kinetics of interacting multiple populations, biological reactor design and analysis, soluble immobilized enzyme kinetics, optimization and control of fermentation, biopolymer structure and function, properties of biological molecules, biological separation processes, scale-up of bioprocesses; laboratory work may be included when possible.
+    clauses: []
+    noCreditWith: []
+  - courseId: CHE|561
+    description: Thermodynamics is at the heart of many systems of interest to chemical engineers, from the efficiency of simple mechanical processes to the equilibria of complex reactions. This course is a rigorous treatment of classicalthermodynamics, with reference to the field of statistical thermodynamics. Key modules include First and Second Law analysis; behavior and interrelationships of thermodynamic properties; and fluid phase and chemical equilibria. Exampletopics may include analysis of open and dynamic systems; fundamental relationships; Legendre transforms and generalized potentials; Maxwell relationships; stability theory; thermodynamics of mixtures; fugacity, activity, and chemical potential; phase equilibria of systems containing two or more components; and generalized treatment of chemical equilibria.
+    clauses: []
+    noCreditWith: []
+  - courseId: CHE|580
+    description: This course will focus on various topics of current interest related to faculty research experience.
+    clauses: []
+    noCreditWith: []

@@ -1,0 +1,12 @@
+department: IDG
+entries:
+  - courseId: IDG|598
+    description: "This project-based course is an interdisciplinary exercise that integrates the technical aspects of systems engineering with the challenges of meeting business goals within the framework of the organizational structure. It allows students to apply the skills and knowledge acquired throughout the Systems Engineering Leadership curriculum. Students are encouraged to select projects with practical significance to their current and future professional responsibilities. Each project is normally conducted in teams of two to four students. They are administered, advised, and evaluated by WPI faculty as part of the learning experience, but students are also encouraged to seek mentorship from experienced systems engineers. (Prerequisites: Since the Capstone Project will draw on knowledge obtained throughout the degree program, it is expected that the student will have completed most or all of the coursework within their plan of study before undertaking the engineering leadership project.)"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "Prerequisites: Since the Capstone Project will draw on knowledge obtained throughout the degree program, it is expected that the student will have completed most or all of the coursework within their plan of study before undertaking the engineering leadership project."
+        requirement:
+          kind: other
+          text: Since the Capstone Project will draw on knowledge obtained throughout the degree program, it is expected that the student will have completed most or all of the coursework within their plan of study before undertaking the engineering leadership project.
+    noCreditWith: []

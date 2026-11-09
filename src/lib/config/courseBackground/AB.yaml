@@ -1,0 +1,57 @@
+department: AB
+entries:
+  - courseId: AB|1532
+    description: "Cat. I This course continues students’ exposure to and development of Modern Standard Arabic and Darija, the Arabic dialect spoken in Morocco; it is for students who can read and write using the Arabic script but have very basic understanding of vocabulary and syntax. New language structures, vocabulary and cultural concepts will be presented in communicative activities/materials in class and homework assignments; these activities will focus on receptive (reading & listening) and productive (writing & speaking) skills in Arabic. Recommended background: AB1531 or instructor approval; this course is closed to native speakers of Arabic and heritage speakers except with written permission from the instructor."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: AB1531 or instructor approval;"
+        requirement:
+          kind: anyOf
+          of:
+            - kind: course
+              course: AB|1531
+            - kind: permission
+              text: instructor approval
+      - strength: required
+        timing: prior
+        sourceText: this course is closed to native speakers of Arabic and heritage speakers except with written permission from the instructor.
+        requirement:
+          kind: standing
+          text: closed to native speakers of Arabic and heritage speakers except with written permission from the instructor
+    noCreditWith: []
+  - courseId: AB|1533
+    description: "Cat. I This course is a continuation of AB 1532. Emphasis will be on building and strengthening receptive and productive skills in both Modern Standard Arabic and Darija, the Arabic dialect spoken in Morocco. Grammatical structures covered in the previous courses along with new structures will be part of class activities as well as homework assignments. Cultural aspects of Arabic-speaking countries will be introduced through course materials including commonly used vocabulary and expressions. Recommended background: AB1531 & AB1532 or instructor approval; this course is closed to native speakers of Arabic and heritage speakers except with written permission from the instructor."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: AB1531 & AB1532 or instructor approval;"
+        requirement:
+          kind: anyOf
+          of:
+            - kind: allOf
+              of:
+                - kind: course
+                  course: AB|1531
+                - kind: course
+                  course: AB|1532
+            - kind: permission
+              text: instructor approval
+      - strength: required
+        timing: prior
+        sourceText: this course is closed to native speakers of Arabic and heritage speakers except with written permission from the instructor.
+        requirement:
+          kind: standing
+          text: closed to native speakers of Arabic and heritage speakers except with written permission from the instructor
+    noCreditWith: []
+  - courseId: AB|1600
+    description: AB 1600 Moroccan Colloquial Arabic (1/3 Unit; Cat. III) This course presents the rudiments of the spoken Moroccan Colloquial Arabic (MCA) with an emphasis on speaking and listening skills and functional aspects of the language. The course will be taught using phonetic transliteration and Modern Standard Arabic (MSA) script. By the end of the course, students are expected to master a set of social and communicative functions, including introductions, asking for and receiving information, describing persons, objects, and places, requests, describing events with respect to tense, and more. To help students grasp the various functions of MCA, class materials such as songs, film clips, and Moroccan TV series will be used in class and assignments. This course is open to students with no Arabic language background; this course is closed to native speakers of Arabic and heritage speakers except with written permission from the instructor.
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: this course is closed to native speakers of Arabic and heritage speakers except with written permission from the instructor.
+        requirement:
+          kind: standing
+          text: closed to native speakers of Arabic and heritage speakers except with written permission from the instructor
+    noCreditWith: []
+    needsReview: Also says 'This course is open to students with no Arabic language background'; that is an eligibility condition with no clause here. Left unmodelled.

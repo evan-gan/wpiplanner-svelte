@@ -7,7 +7,7 @@
  * department parsed first, and the 18-digit values exceed
  * `Number.MAX_SAFE_INTEGER`. Codes carry section ids, which are unique.
  *
- * Old hex-CRN links are **not** migrated — PLAN.md says so explicitly. A version
+ * Old hex-CRN links are **not** migrated — .claude/PLAN.md says so explicitly. A version
  * prefix makes such a link fail loudly instead of decoding into the wrong schedule.
  *
  * Two id formats are read:

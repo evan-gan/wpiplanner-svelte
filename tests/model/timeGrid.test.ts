@@ -19,7 +19,7 @@ import {
 } from '$lib/model/timeGrid';
 
 describe('grid constants', () => {
-  // PLAN.md §5 requires these to stay identical to TimeCell.java, with the one
+  // .claude/PLAN.md §5 requires these to stay identical to TimeCell.java, with the one
   // documented exception of NUM_HOURS.
   it('match the legacy TimeCell constants exactly', () => {
     expect(START_DAY).toBe(1);

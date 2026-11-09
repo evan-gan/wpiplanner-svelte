@@ -5,7 +5,7 @@
  * rewrite — courses are keyed by id rather than by `{dept, name}`, chosen times
  * are cell indexes rather than clock strings, favourites are section ids rather
  * than hex CRNs — so the legacy keys are ignored rather than half-migrated.
- * PLAN.md §5 records that as a deliberate decision.
+ * .claude/PLAN.md §5 records that as a deliberate decision.
  *
  * Every function here is total: a corrupt or hand-edited payload yields the
  * default rather than an exception, because a bad saved schedule must not stop

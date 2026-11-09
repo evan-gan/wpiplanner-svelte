@@ -8,7 +8,7 @@ sections and renders them as weekly grids. Fully client-side and static — ther
 is no server and no API.
 
 This is a ground-up rewrite of the GWT/Java app in `../wpiplanner-master`, which
-is deployed at https://planner.wpi.edu/. **Read [`PLAN.md`](../PLAN.md) first** —
+is deployed at https://planner.wpi.edu/. **Read [`PLAN.md`](PLAN.md) first** —
 it holds the audit findings, the target structure, and the file-by-file parity
 ledger against the old app.
 
@@ -24,13 +24,13 @@ The search has been checked against the original GWT algorithm itself — see
 chosen-times boundary question (PLAN.md §10.5) is settled in the old app's
 favour, so there is no known behavioural difference in the search.
 
-**Picking this up? Read [PLAN.md §11](../PLAN.md) — it is the handoff: what
+**Picking this up? Read [PLAN.md §11](PLAN.md) — it is the handoff: what
 exists, what is left in priority order, and what to know before changing the
 search.** §6 has the per-phase gates, §8 lists the four places the rewrite
 deliberately departs from the old app, and §10.5 is the one open question that
 blocks cutover.
 
-`pnpm test` runs 129 tool tests and 517 app tests.
+`pnpm test` runs 129 tool tests and 629 app tests.
 
 ## Structure
 
@@ -47,6 +47,12 @@ Files that carry the most weight, and what to change where.
 | `src/lib/data/loadCatalog.ts` | Fetches and validates `schedb.json`, reporting byte progress (`onProgress`) and the current step (`onStage`: connecting/downloading/parsing). Takes a `fallbackUrl`: the layout loads `LIVE_CATALOG_URL` (`/api/catalog/schedb.json`) and falls back to the static `CATALOG_URL`. Replaces `Scheduler.java` + `LoadSchedule.java`. |
 | `src/lib/data/yearHeader.ts` | The two-line `yearHeader.txt` (academic year, whether to show the `/old` link). `loadYearHeader(fetch, ...urls)` tries live then static the same way. |
 | `data/` | `new.schedb`, the pinned February 2025 export, and the generated anomaly report. Not served. |
+| `src/lib/model/courseBackground.ts` | Types + validator for **structured prerequisites / recommended background / corequisites / no-credit-with**, read by hand (or agent) out of course descriptions. A `Requirement` tree (`course`, `allOf`, `anyOf`, `countOf`, `topic`, `permission`, `standing`, `other`) per clause, each clause with `strength` (required/recommended/suggested) and `timing` (prior/concurrent/priorOrConcurrent). Also `hashDescription`, `toShippedFile` and the `Shipped*` types (what the browser gets), and **`courseBackgroundStatus(shippedFile, courseId, description)`** → `unchecked` (no entry: a course new since the last read) / `stale` (description changed) / `none` / `hasBackground`. **Features must treat `unchecked` and `stale` as unknown, never as "no prerequisites".** |
+| `src/lib/config/courseBackground/<DEPT>.yaml` | **Hand/agent-maintained, YAML for editing.** The extracted data, one file per department (under `src/`, not `data/`, because `/data/` is in `.vercelignore` and the app imports these). **Every catalog course has an entry**, `clauses: []` when it states no background, so "read, none" differs from "never read". Each entry stores the exact description it was read from. Entries for courses that leave the catalog are kept. Never shipped as-is — see `vite/courseBackgroundPlugin.ts`. |
+| `vite/courseBackgroundPlugin.ts` | Vite plugin (registered in `vite.config.ts`) that compiles each `courseBackground/<DEPT>.yaml` import: validates it (a bad file fails `pnpm build`/`dev`) and emits `toShippedFile`'s output — descriptions → 8-hex `hashDescription`, `sourceText`/`needsReview` dropped. ~10× smaller than the YAML's data. Tested in `tests/vite/`. Not in `.vercelignore`, since the Vercel build needs it. |
+| `src/lib/model/courseBackgroundText.ts` | Entry → display text: `describeRequirement`, `describeRequirementLines` (top-level `allOf` → one line each), `clauseLabel` (Prerequisite / Corequisite / Restriction / Recommended / Suggested), `clauseTimingNote`. |
+| `src/lib/data/courseBackground.ts` | `loadCourseBackground(courseId, description)` → `CourseBackgroundStatus`; the Courses tab shows only `hasBackground`. Lazy `import.meta.glob`, one chunk per department, cached; a failed load is logged and retried next time. |
+| `tools/course-background/` | `pnpm background status` (per department: done / stale / unchecked, over every catalog course), `todo <DEPT>` (courses needing an entry, with descriptions), `check` (validate). Its [README](../tools/course-background/README.md) is the reading guide. Tested by `tests/model/courseBackground.test.ts`, which also validates every stored file. |
 | `static/` | Served verbatim, including the generated `schedb.json`. |
 
 ### Live catalog endpoint — refresh on request, no cron
@@ -95,7 +101,7 @@ files stay as the fallback. `pnpm dev` and `pnpm preview` refresh the same way:
 
 | Path | What lives there |
 |---|---|
-| `src/lib/config/academicCalendar.ts` | **Hand-maintained.** Term start/end dates, no-class days, "follow X schedule" days, and breaks. None of this is in the Workday export, so it is transcribed from the Registrar's calendar and must be redone every academic year — the rollover checklist is at the bottom of the file. |
+| `src/lib/config/academicCalendar.ts` | **Hand-maintained.** Term start/end dates, no-class days, "follow X schedule" days, and breaks. None of this is in the Workday export, so it is transcribed from the Registrar's calendar and must be redone every academic year — the rollover steps are in `updating.md`. |
 | `src/lib/calendar/dates.ts` | `YYYY-MM-DD` arithmetic through UTC, plus `zonedTimeToUtcMillis` (wall clock in an IANA zone → instant, via `Intl`). Never touches the host's local zone. |
 | `src/lib/calendar/ics.ts` | RFC 5545 serialisation: escaping, 75-octet folding, VEVENT/RRULE/EXDATE/VALARM. Knows nothing about courses. |
 | `src/lib/calendar/timeZones.ts` | The VTIMEZONE block for `America/New_York`. A `TZID` with no VTIMEZONE is rejected by Outlook; writing meetings in UTC instead would shift them an hour at the DST change. |
@@ -145,7 +151,7 @@ left out with a reason rather than guessed at.
 | `src/lib/components/search/` | `HeaderSearch` (the box in the crimson bar and the filleted crimson panel that drops from it; live, 250 ms open), `SearchResults` (the Classes and Professors boxes), `SearchResultCourse` (one row: add/remove button, opens the course on the Courses tab). |
 | `src/lib/ui/` | DOM helpers with no app knowledge: `flyToTarget` (animates a copy of an element onto another — "+" flying into the Courses box), `rememberScroll` (an action that restores an element's scroll offset from a store and records it back — how both tabs keep their scroll across tab switches), and `fitPaneSize` (how tall the Courses box should be — fit the list, never crowd the description — and how wide the Schedules rail should be so the calendar is square). |
 | `src/lib/components/primitives/` | `SplitPane`, `ScrollArea`, `Modal`, `ToggleButton`, `WarningIcon`. Generic, no app knowledge. |
-| `src/lib/components/catalog/` | The Courses tab: `DepartmentPicker` (the six academic groups live here), `CourseTable`, `CourseRow`, `TermBadges`, `CourseDetails`, `SelectedCourseList`. |
+| `src/lib/components/catalog/` | The Courses tab: `DepartmentPicker` (the six academic groups live here), `CourseTable`, `CourseRow`, `TermBadges`, `CourseDetails` (loads the course's background after the description), `CourseBackground` (the "Background" block: one labelled line or bullet list per clause, plus "No credit for both"), `SelectedCourseList`. |
 | `src/lib/components/times/` | `TermTimeTabs`, `TimeGrid`, `TimeGridCell`. |
 | `src/lib/components/schedules/` | `SchedulePane` (the view-mode switch), `SectionPicker` (the rail — see "The section rail" below), `CourseComponentList` (one course: each lecture with its own labs/discussions nested under it), `ComponentRow` (one single-line row), `ScheduleThumbnailList` / `ScheduleThumbnail` (canvas), `FavoriteNameField` (click-to-edit favourite name, used by both the toolbar and the strip), `QuarterGrid`, `WeekGrid`, `WeekGridColumn`, `PeriodBlock`, `DetailedView`, `SectionDetailsDialog`, `ConflictResolver`, `GenerationProgress` (canvas), `ShareLink`, `CalendarExport` (the third toolbar view, "Export to Calendar"), `WorkdayImport` (the fourth toolbar view: the step-by-step instructions, the file picker, and the review dialog — it overrides the progress/conflict-resolver state so it stays reachable with no schedule on screen), `WorkdayInstructions` (the six steps for producing the export, including a drawn SVG of Workday's whole top-right icon bank with the unlabelled export button circled). |
 | `src/lib/styles/` | `tokens.css` (every colour and size lifted from the old app) and `reset.css`. |
@@ -187,6 +193,15 @@ Reach for it whenever a change to the search could alter which schedules exist:
 [README](../tools/parity-oracle/README.md) lists which files are original, which
 are stubs, and why no stub can change a count.
 
+## Maintenance guide
+
+[`updating.md`](../updating.md) (linked from `readme.md`) is the one place for
+everything maintained by hand, each in a `<details>` dropdown: course
+background (`pnpm background`), the fallback catalog, the academic calendar,
+the converter's department and special-topics lists, and the old-planner link.
+**When a hand-maintained part is added or its steps change, update that file**,
+not a comment at the bottom of the source file.
+
 ## Commands
 
 ```bash
@@ -198,6 +213,7 @@ pnpm build             # static site into build/ (refresh the data first)
 pnpm test              # tool tests (node --test) + app tests (vitest)
 pnpm run test:tools    # tool tests only — no install needed, uses Node type stripping
 pnpm run check         # svelte-check; must stay at 0 errors, 0 warnings
+pnpm background status # course-background progress; also `todo <DEPT>`, `check`
 
 tools/parity-oracle/run.sh data/new.schedb CS2102,MA1021   # legacy search, needs a JDK
 ```

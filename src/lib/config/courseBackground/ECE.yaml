@@ -1,0 +1,959 @@
+department: ECE
+entries:
+  - courseId: ECE|2010
+    description: "Cat. I The objective of this course is to introduce students to the broad field of electrical and computer engineering within the context of real world applications. This course is designed for first-year students who are considering ECE as a possible major or for non-ECE students fulfilling an out-of-major degree requirement. The course will introduce basic electrical circuit theory as well as analog and digital signal processing methods currently used to solve a variety of engineering design problems in areas such as entertainment and networking media, robotics, renewable energy and biomedical applications. Laboratory experiments based on these applications are used to reinforce basic concepts and develop laboratory skills, as well as to provide system-level understanding. Circuit and system simulation analysis tools are also introduced and emphasized. Topics: Basic concepts of AC/DC and Digital electrical circuits, power, linear circuit simulation and analysis, op-amp circuits, transducers, feedback, circuit equivalents and system models, first order transients, the description of sinusoidal signals and system response, analog/digital conversion, basic digital logic gates and combinatorial circuits. Recommended Background: high school physics, and MA 1022 (concurrent)."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: high school physics, and MA 1022 (concurrent)."
+        requirement:
+          kind: topic
+          topic: high school physics
+      - strength: recommended
+        timing: concurrent
+        sourceText: MA 1022 (concurrent)
+        requirement:
+          kind: course
+          course: MA|1022
+    noCreditWith: []
+  - courseId: ECE|2019
+    description: "Cat. I This course investigates commonly used sensors such as resistive temperature sensors, capacitive touch sensors, and inductive motion sensors and actuators. Numerous applications are presented to motivate coverage of fundamental operating principles of circuit elements such as resistors, capacitors, and inductors; model the signals produced by these sensors; and analyze the circuits and systems used to amplify and process these signals. After a review of Kirchhoff ‘s current and voltage laws, fundamental analysis techniques such as Thevenin and Norton’s theorems and the superposition principle are used to model and analyze sensors, circuits, and systems. Concepts from analysis of linear, time-invariant continuous-time signals and systems are introduced as necessary, including Fourier series and characterization of systems such as filters in both the frequency domain (bandwidth, transfer function) and time domain (rise time, step response). Capacitance, inductance and mutual inductance are explored as energy storage elements, including consideration of resonance and energy losses in power systems. Concepts will be reinforced with the use of laboratory exercises and computer simulation. Recommended background: ECE 2010, MA 1024 (or equivalent), PH 1120/21 and MA 2051 (concurrent). Note: Students who have received credit for ECE 2111 may not receive credit for ECE 2019."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: ECE 2010, MA 1024 (or equivalent), PH 1120/21"
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: ECE|2010
+            - kind: course
+              course: MA|1024
+              orEquivalent: true
+            - kind: anyOf
+              of:
+                - kind: course
+                  course: PH|1120
+                - kind: course
+                  course: PH|1121
+      - strength: recommended
+        timing: concurrent
+        sourceText: MA 2051 (concurrent)
+        requirement:
+          kind: course
+          course: MA|2051
+    noCreditWith: []
+  - courseId: ECE|2029
+    description: "Cat. I Digital circuits are the foundation upon which the computers, cell phones, and calculators we use every day are built. This course explores these foundations by using modern digital design techniques to design, implement and test digital circuits ranging in complexity from basic logic gates to state machines that perform useful functions like calculations, counting, timing, and a host of other applications. Students will learn modern design techniques, using a hardware description language (HDL) such as Verilog to design, simulate and implement logic systems consisting of basic gates, adders, multiplexers, latches, and counters. The function and operation of programmable logic devices, such as field programmable gate arrays (FPGAs), will be described and discussed in terms of how an HDL logic design is mapped and implemented. Experiments involving the design of combinational and sequential circuits will provide students a hands-on introduction to basic digital electrical engineering concepts and the skills needed to gain more advanced skills. In the laboratory, students will construct, troubleshoot, and test the digital circuits that they have developed using a hardware description language. These custom logic designs will be implemented using FPGAs and validated using test equipment. Topics: Number representations, Boolean algebra, design and simplification of combinational circuits, arithmetic circuits, analysis and design of sequential circuits, and synchronous state machines. Lab exercises: Design, analysis and construction of combinational and sequential circuits; use of hardware description languages to implement, test, and verify digital circuits; function and operation of FPGAs. Recommended background: Introductory Electrical and Computer Engineering concepts covered in a course such as ECE 2010 or RBE 1001, and MA 1022. Note: Students who have received credit for ECE 2022 may not receive credit for ECE 2029."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Introductory Electrical and Computer Engineering concepts covered in a course such as ECE 2010 or RBE 1001, and MA 1022."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: introductory Electrical and Computer Engineering concepts
+              satisfiedBy:
+                kind: anyOf
+                of:
+                  - kind: course
+                    course: ECE|2010
+                  - kind: course
+                    course: RBE|1001
+            - kind: course
+              course: MA|1022
+    noCreditWith: []
+    needsReview: "'such as ECE 2010 or RBE 1001' is an example list, so other courses may also qualify. Note says ECE 2022 is also excluded; not recorded."
+  - courseId: ECE|2039
+    description: "ECE 2039: Computational Engineering (1/3 Units; Cat. I) Computational Engineering describes the methods and practices of software programming in the context of electrical and computer engineering (ECE), specifically, the construction of programs to be efficiently implemented on hardware. In this regard, the course covers programming design and methodology, developing efficient code using C programming language, hardware device abstraction, and modeling. In doing so, starting with basic programming techniques in the high-level programming language C, the course describes the relevant software and hardware device abstraction levels. Additionally, program analysis, debugging methods, issues encountered when interfacing with signals to/from external devices, and computer engineering models, such as finite state machines and timing in computing hardware, are explained. The course uses assignments/projects to provide hands-on experience with software programming to solve problems in electrical and computer engineering practice. Recommended Background: A prior course in computer programming, such as CS 1004, CS 1101/2, or BME 1004."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: A prior course in computer programming, such as CS 1004, CS 1101/2, or BME 1004."
+        requirement:
+          kind: topic
+          topic: a prior course in computer programming
+          satisfiedBy:
+            kind: anyOf
+            of:
+              - kind: course
+                course: CS|1004
+              - kind: course
+                course: CS|1101
+              - kind: course
+                course: CS|1102
+              - kind: course
+                course: BME|1004
+    noCreditWith: []
+    needsReview: "'such as' examples are not exhaustive."
+  - courseId: ECE|2049
+    description: "ECE 2049 Embedded Computing in Engineering Design (1/3 Units; Cat. I) Embedded computers are literally everywhere in modern life. On any given day we interact with and depend on dozens of small computers to make coffee, run cell phones, take pictures, play music, control elevators, manage the emissions and antilock brakes in our automobile, control a home security system, and so on. Using popular everyday devices as case studies, students in this course are introduced to the unique computing and design challenges posed by embedded systems. Students will then solve real-world design problems using small, resource constrained (time/memory/power) computing platforms. The hardware and software structure of modern embedded devices and basic interactions between embedded computers and the physical world will also be covered in lecture and as part of laboratory experiments. In the laboratory, emphasis is placed on interfacing embedded processors with common sensors and devices (e.g. temperature sensors, keypads, LCD displays, SPI ports, pulse width modulated motor controller outputs) while developing the skills needed to use embedded processors in systems design. This course is also appropriate for RBE and other engineering and CS students interested in learning about embedded system theory and design. Topics: Number/data representations, embedded system design using C, microprocessor and microcontroller architecture, program development and debugging tools for a small target processor, hardware/software dependencies, use of memory mapped peripherals, design of event driven software, time and resource management, applications case studies. Lab Exercises: Students will solve commonly encountered embedded processing problems to implement useful systems. Starting with a requirements list students will use the knowledge gained during the lectures to implement solutions to problems which explore topics such as user interfaces and interfacing with the physical world, logic flow, and timing and time constrained programming. Exercises will be performed on microcontroller and/or microprocessor based embedded systems using cross platform development tools appropriate to the target platform. Note: Students who have received credit for ECE 2801 may not receive credit for ECE 2049. Students may not receive credit for both RBE 2020 and ECE 2049. Recommended Background ECE 2039 (preferred for ECE majors) or a course in C language programming such as CS 2301/3 or equivalent; and ECE 2010 or equivalent knowledge in basic circuits, devices and analysis. Suggested Background: ECE 2029 or equivalent knowledge of digital logic, logic signals, and logic operations."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: Recommended Background ECE 2039 (preferred for ECE majors) or a course in C language programming such as CS 2301/3 or equivalent; and ECE 2010 or equivalent knowledge in basic circuits, devices and analysis.
+        requirement:
+          kind: allOf
+          of:
+            - kind: anyOf
+              of:
+                - kind: course
+                  course: ECE|2039
+                - kind: topic
+                  topic: a course in C language programming
+                  satisfiedBy:
+                    kind: anyOf
+                    of:
+                      - kind: course
+                        course: CS|2301
+                        orEquivalent: true
+                      - kind: course
+                        course: CS|2303
+                        orEquivalent: true
+            - kind: anyOf
+              of:
+                - kind: course
+                  course: ECE|2010
+                  orEquivalent: true
+                - kind: topic
+                  topic: basic circuits, devices and analysis
+    noCreditWith:
+      - RBE|2020
+  - courseId: ECE|2112
+    description: "Cat. I The object of this course is a comprehensive treatment of electromagnetic engineering principles covering the entire application spectrum from static to dynamic field phenomena. The starting point will be the basic electric and magnetic field definitions of Coulomb and Biot-Savart leading to Gauss’s and Ampere’s laws. They form the foundation of electro- and magnetostatics fields. Students will examine capacitive and inductive systems and relate them to lumped element circuit models. By introducing temporal and spatial magnetic flux variations, Faraday’s law is established. The engineering implications of this law are investigated in terms of transformer and motor actions. Incorporation of the displacement current density into Ampere’s law and combining it with Faraday’s law will then culminate in the complete set of Maxwell’s field equations. As a result of these equations, students will develop the concept of wave propagation in the time and frequency domain with practical applications such as wireless communication, radar, Global Positioning Systems, and microwave circuits. Recommended background: ECE 2019."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: ECE 2019."
+        requirement:
+          kind: course
+          course: ECE|2019
+    noCreditWith: []
+  - courseId: ECE|2201
+    description: "Cat. I This course is the first of a two-course sequence in electronic circuit design. It begins with a substantive treatment of the fundamental behavior of semiconductor materials and moves on to the semiconductor diode, the bipolar transistor, and the field-effect transistor. Laboratory exercises are provided to reinforce the theory of operation of these devices. Numerous circuit applications are considered, including: power supplies, transistor amplifiers, and FET switches. Topics include: the pn junction, diode operation, transducers, rectification, voltage regulation, limiting and clamping circuits, transistor operation, biasing, small-signal and large-signal models, transistors amplifiers, and switching applications. Recommended background: ECE 2019."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: ECE 2019."
+        requirement:
+          kind: course
+          course: ECE|2019
+    noCreditWith: []
+  - courseId: ECE|2305
+    description: "Cat. I This course provides an introduction to the broad area of communications and networking, providing the context and fundamental knowledge appropriate for all electrical and computer engineers, as well as for further study in this area. The course is organized as a systems approach to communications and networking. Topics include key concepts and terminology (delay, loss, throughput, bandwidth, etc.), types of transmission media, addressing, switching, routing, networking principles and architectures, networking protocols, regulatory and applications issues. Recommended background: ECE 2010"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: ECE 2010"
+        requirement:
+          kind: course
+          course: ECE|2010
+    noCreditWith: []
+  - courseId: ECE|2311
+    description: "ECE 2311: Continuous-Time Signal and System Analysis This course provides an introduction to time and frequency domain analysis of continuous time signals and linear systems. Topics include signal characterization and operations; singularity functions; impulse response and convolution; Fourier series; the Fourier transform and its applications; frequency-domain characterization of linear, time-invariant systems such as filters; and the Laplace transform and its applications. Department Electrical and Computer Engineering Category Category I (offered at least 1x per Year) Units 1/3 Recommended Background ECE 2039 (preferred for ECE majors) or a prior course in computer programming such as CS 2301/3, CS 1004 or CS 1101/2; MA 2051; and ECE 2010."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: Recommended Background ECE 2039 (preferred for ECE majors) or a prior course in computer programming such as CS 2301/3, CS 1004 or CS 1101/2; MA 2051; and ECE 2010.
+        requirement:
+          kind: allOf
+          of:
+            - kind: anyOf
+              of:
+                - kind: course
+                  course: ECE|2039
+                - kind: topic
+                  topic: a prior course in computer programming
+                  satisfiedBy:
+                    kind: anyOf
+                    of:
+                      - kind: course
+                        course: CS|2301
+                      - kind: course
+                        course: CS|2303
+                      - kind: course
+                        course: CS|1004
+                      - kind: course
+                        course: CS|1101
+                      - kind: course
+                        course: CS|1102
+            - kind: course
+              course: MA|2051
+            - kind: course
+              course: ECE|2010
+    noCreditWith: []
+  - courseId: ECE|2312
+    description: "ECE 2312: Discrete-Time Signal and System Analysis (1/3 Units; Cat. I) This course provides an introduction to the time and frequency domain analysis of discrete-time signals and linear systems. Topics include sampling and quantization, characterization of discrete-time sequences, the discrete-time Fourier transform, the discrete Fourier transform and its applications, the Z transform and its applications, convolution, characterization of FIR and IIR discrete-time systems, and the analysis and design of discrete-time filters. The course will include a focus on applications such as sampling and quantization, audio processing, navigation systems, and communications. Extensive use will be made of simulation tools, including Matlab. Recommended Background: ECE 2039 (preferred for ECE majors) or a prior course in computer programming such as CS 2301/3, CS 1004 or CS 1101/2; MA 2051; and ECE 2311."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: ECE 2039 (preferred for ECE majors) or a prior course in computer programming such as CS 2301/3, CS 1004 or CS 1101/2; MA 2051; and ECE 2311."
+        requirement:
+          kind: allOf
+          of:
+            - kind: anyOf
+              of:
+                - kind: course
+                  course: ECE|2039
+                - kind: topic
+                  topic: a prior course in computer programming
+                  satisfiedBy:
+                    kind: anyOf
+                    of:
+                      - kind: course
+                        course: CS|2301
+                      - kind: course
+                        course: CS|2303
+                      - kind: course
+                        course: CS|1004
+                      - kind: course
+                        course: CS|1101
+                      - kind: course
+                        course: CS|1102
+            - kind: course
+              course: MA|2051
+            - kind: course
+              course: ECE|2311
+    noCreditWith: []
+  - courseId: ECE|2799
+    description: "Cat. I The goal of this course is to provide experience with the design of a system, component, or process. Basic sciences, mathematics, and engineering sciences are applied to convert resources to meet a stated objective. Fundamental steps of the design process are practiced, including the establishment of objectives and criteria, synthesis, analysis, manufacturability, testing, and evaluation. Student work in small teams and are encouraged to use creativity to solve specific but open-ended problems, and then present their results. ECE 2799 is strongly recommended for all students as a preparation for the design element of the MQP. It is anticipated that ECE 2799 will be of most benefit to students when taken well in advance of the MQP (late sophomore year or early junior year). Recommended background: At least three of ECE 2019, ECE 2029, ECE 2049, ECE 2311."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: At least three of ECE 2019, ECE 2029, ECE 2049, ECE 2311."
+        requirement:
+          kind: countOf
+          count: 3
+          of:
+            - kind: course
+              course: ECE|2019
+            - kind: course
+              course: ECE|2029
+            - kind: course
+              course: ECE|2049
+            - kind: course
+              course: ECE|2311
+    noCreditWith: []
+  - courseId: ECE|3012
+    description: "Cat. I This course provides an introduction to the analysis and design of continuoustime control systems. Topics covered in the course include: modeling in the frequency and time domain, characteristics of control systems time response, reduction of multiple subsystems, analysis of systems transient response, stability, steady-state errors, root locus techniques, design of PI, PD, and PID controllers via root locus, frequency response techniques, and design via frequency response. The course will not have a formal laboratory. It will include projects which will require the use of software such as MATLAB, Simulink, or LabVIEW for analysis and design of control systems. Recommended Background: Ordinary Differential Equations (MA 2051), Sensors, Circuits, and Systems (ECE 2019), and Continuous-time Signal and System Analysis (ECE 2311). Students may not receive credit for both ES 3011 and ECE 3012."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: Ordinary Differential Equations (MA 2051), Sensors, Circuits, and Systems (ECE 2019), and Continuous-time Signal and System Analysis (ECE 2311)."
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: MA|2051
+            - kind: course
+              course: ECE|2019
+            - kind: course
+              course: ECE|2311
+    noCreditWith:
+      - ES|3011
+  - courseId: ECE|3204
+    description: "Cat. I This course is the second of a two-course sequence in electronic circuit design. More complex circuits are analyzed and the effects of frequency and feedback are considered in detail. The course provides a comprehensive treatment of operational amplifier operation and limitations. The use of Bode plots to describe the amplitude and phase performance of circuits as a function of operating frequency is also presented. In addition, the concepts of analog signal sampling, analog-to-digital conversion and digital-to-analog conversion are presented along with techniques for interfacing analog and digital circuitry. Laboratory exercises are provided to reinforce student facility with the application of these concepts to the design of practical circuits. Topics include: transducers; differential amplifiers, inverting/non-inverting amplifiers, summers, differentiators, integrators, passive and active filers, the Schmitt trigger, monostable and a-stable oscillators, timers, sample-and-hold circuits, A/D converters, and D/A converters. Recommended background: Introductory electronic-circuit design and analog-signal analysis as found in ECE 2201 and ECE 2311."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Introductory electronic-circuit design and analog-signal analysis as found in ECE 2201 and ECE 2311."
+        requirement:
+          kind: topic
+          topic: introductory electronic-circuit design and analog-signal analysis
+          satisfiedBy:
+            kind: allOf
+            of:
+              - kind: course
+                course: ECE|2201
+              - kind: course
+                course: ECE|2311
+    noCreditWith: []
+  - courseId: ECE|331X
+    description: "ECE 33 1 X Software Radio Design , 1/3 Unit, Category I Today’s society is dependent on reliable , efficient , and seamless information exchange to support a wide range of applications such as financial transactions , telecommuting , remote learning, social interactions , gaming , and e-health . At the core of these vast and complex networks is digital communications, which maps our digital world of binary information to electromagnetic transmissions that need to travel from point A to point B. The primary objective of this course is two-fold: (1) To learn about the variety of different digital modulation schemes that leverage signal characteristics to communicate binary information over a transmission medium; and (2) To gain insight into the practical design considerations of implementing these digital modulation techniques on a programmable radio platform via hands-on experimentation. Topics to be covered in this course include amplitude, phase, and frequency-based digital transmission techniques, radio frequency front-end implementations, complex baseband representation, spectrum access and frequency regulations, transceiver design , frequency compensation, software radio architectures, and communication system design trade-offs. All concepts are taught via a combination of lecture s and h ands-on learning modules assigned throughout the course , where students apply what they learn in class to actual software radio hardware and perform over-the-air experimentation. Students will not be able to receive credit for both ECE4305 and ECE331X. Recommended Background: ECE 2312 “ Discrete-Time Signal and System Analysis ” ; ECE 2305 “Introduction to Communications and Networks” . Suggested Background: ECE 2049 “Embedded Computing in Engineering Design” ."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: ECE 2312 “ Discrete-Time Signal and System Analysis ” ; ECE 2305 “Introduction to Communications and Networks” ."
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: ECE|2312
+            - kind: course
+              course: ECE|2305
+      - strength: suggested
+        timing: prior
+        sourceText: "Suggested Background: ECE 2049"
+        requirement:
+          kind: course
+          course: ECE|2049
+    noCreditWith: []
+  - courseId: ECE|3405
+    description: "ECE 3405 Foundations and Trends in Machine Learning for Engineering 1/3 Unit, Category I Machine learning has achieved huge success in many engineering applications such as computer vision, gene discovery, financial forecasting, credit card fraud detection, autonomous vehicle navigation, biomedical signal modeling, wireless/radar/aerospace systems and others. The course will briefly review discrete-time signals and systems, including convolution and Fourier transforms. This course will introduce the fundamental concepts, algorithms, and theories in machine learning, including linear models, projection/nonlinear embedding methods, neural networks/deep learning, parametric/non-parametric methods, kernel machines, mixture models, and pattern recognition/classification. Also, the lectures will briefly summarize recent trends in the field to provide students with cutting-edge knowledge for engineering. The course will give the student the basic ideas and intuition behind these methods, as well as a more formal understanding of how and why they work. Students will have an opportunity to experiment with machine learning techniques and apply them in one or more application-based projects. Recommended Background: ECE 2312, Discrete-Time Signal and System Analysis; ECE 2039 Computational Engineering. Students who have taken ECE 340X may not get credit for ECE 3405. Suggested Background: Linear Algebra (MA 2071) and Probability (MA 2621 or MA 2631)"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: ECE 2312, Discrete-Time Signal and System Analysis; ECE 2039 Computational Engineering."
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: ECE|2312
+            - kind: course
+              course: ECE|2039
+    noCreditWith: []
+    needsReview: The source text has a no-credit sentence that was cut off in the snippet; not checked.
+  - courseId: ECE|3501
+    description: "Cat. I This course is designed to provide a cohesive presentation of the principles of electric energy conversion for industrial applications and design. The generation, transmission and conversion of electric energy, as well as basic instrumentation and equipment associated with electric energy flow and conversion are analyzed. Topics: Review of poly-phase circuits. Transducers and instrumentation for power and energy measurements. Rotating machines. Electromechanical transients and stability. Switchgear equipment. Selected laboratory experiments. Recommended background: ECE 2019."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: ECE 2019."
+        requirement:
+          kind: course
+          course: ECE|2019
+    noCreditWith: []
+  - courseId: ECE|3829
+    description: "Cat. I This course covers the systematic design of advanced digital systems using FPGAs. The emphasis is on top-down design starting with high level models using a hardware description language (such as VHDL or Verilog) as a tool for the design, synthesis, modeling, test bench development, and testing and verification of complete digital systems. These types of systems include the use of embedded soft core processors as well as lower level modules created from custom logic or imported IP blocks. Interfaces will be developed to access devices external to the FPGA such as memory or peripheral communication devices. The integration of tools and design methodologies will be addressed through a discussion of system on a chip (SOC) integration, methodologies, design for performance, and design for test. Topics: Hardware description languages, system modeling, synthesis, simulation and testing of digital circuits; Design integration to achieve specific system design goals including architecture, planning and integration, and testing; Use of soft core and IP modules to meet specific architecture and design goals. Laboratory exercises: Students will design and implement a complete sophisticated embedded digital system on an FPGA. HDL design of digital systems including lower level components and integration of higher level IP cores, simulating the design with test benches, and synthesizing and implementing these designs with FPGA development boards including interfacing to external devices. Recommended background: ECE 2029 and ECE 2049 Students who have received credit for ECE 3810 may not receive credit for ECE 3829."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: ECE 2029 and ECE 2049"
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: ECE|2029
+            - kind: course
+              course: ECE|2049
+    noCreditWith:
+      - ECE|3810
+  - courseId: ECE|3849
+    description: "Cat. I This course continues the embedded systems sequence by expanding on the topics of real-time software and embedded microprocessor system architecture. The software portion of this course focuses on solving real-world problems that require an embedded system to meet strict real-time constraints with limited resources. On the hardware side, this course reviews and expands upon all the major components of an embedded microprocessor system, including the CPU, buses, memory devices and peripheral interfaces. New IO standards and devices are introduced and emphasized as needed to meet system design, IO and performance goals in both the lecture and laboratory portion of the course. Topics: Cross-compiled software development, embedded system debugging, multitasking, real-time scheduling, inter-task communication, software design for deterministic execution time, software performance analysis and optimization, device drivers, CPU architecture and organization, bus interface, memory management unit, memory devices, memory controllers, peripheral interfaces, interrupts and interrupt controllers, direct memory access. Laboratory exercises: Programming real-time applications on an embedded platform running a real-time operating system (RTOS), configuring hardware interfaces to memory and peripherals, bus timing analysis, device drivers. Recommended background: ECE 2029 and ECE 2049."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: ECE 2029 and ECE 2049."
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: ECE|2029
+            - kind: course
+              course: ECE|2049
+    noCreditWith: []
+  - courseId: ECE|4011
+    description: "Cat. II Introduction to biomedical signal processing and analysis. Fundamental techniques to analyze and process signals that originate from biological sources: ECGs, EMGs, EEGs, blood pressure signals, etc. Course integrates physiological knowledge with the information useful for physiologic investigation and medical diagnosis and processing. Biomedical signal characterization, time domain analysis techniques (transfer functions, convolution, auto- and cross-correlation), frequency domain (Fourier analysis), continuous and discrete signals, deterministic and stochastic signal analysis methods. Analog and digital filtering. Recommended background: ECE 2311, ECE 2312, or equivalent. This course will be offered in 2020-21, and in alternating years thereafter."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: ECE 2311, ECE 2312, or equivalent."
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: ECE|2311
+              orEquivalent: true
+            - kind: course
+              course: ECE|2312
+              orEquivalent: true
+    noCreditWith: []
+    needsReview: Two-course list with 'or equivalent' read as both courses. It could also mean either one.
+  - courseId: ECE|4503
+    description: "The availability of electric power in a variety of forms is integral to modern society. Very often, electric power must be converted from one form to another to meet a specific application need – this conversion process is accomplished through the use and efficient management of power electronics. Design of power electronics is introduced first by examining the performance characteristics of basic switching devices, which enable critical management functions that include pulse width modulation (PWM) and output power regulation. Half and full-wave AC source rectification and techniques for improving the resulting DC power characteristics are covered, including polyphase AC sources. AC voltage control with applications for induction motors is studied. DC-DC power conversion is examined, covering a variety of circuit architectures, with applications in feedback control. DC to AC power inversion and resulting power quality considerations are explored. The impacts of design decisions on power electronics systems, from micro- to megawatts, are demonstrated through numerical simulation. This course includes guest lectures, project work including case-studies and selected power system demonstrations. Recommended background: ECE 3204, ECE 3501. Students who have previously received credit for ECE 3503 may not receive credit for ECE 4503."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: ECE 3204, ECE 3501."
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: ECE|3204
+            - kind: course
+              course: ECE|3501
+    noCreditWith: []
+    needsReview: A no-credit sentence about previously received credit was cut off in the snippet; not checked.
+  - courseId: ECE|4576
+    description: "This course introduces the foundational concepts and practical considerations of hardware security, a rapidly evolving field at the intersection of electrical engineering, computer architecture, and cybersecurity. The course focuses on how computing systems can be compromised or protected at the hardware level. The threats across the hardware/software boundary are covered, highlighting the importance of abstraction layers in both exposing and mitigating security flaws. Particular attention will be given to vulnerabilities that arise in hardware/software co-design processes, such as insecure IP integration, misconfigured logic, and timing-related side effects that propagate across system layers. Further topics include risks in the electronics supply chain. Special attention is given to emerging threats in AI accelerators and reconfigurable platforms. The course combines lectures with hands-on lab exercises using hardware platforms to reinforce practical skills. Category: Cat I Recommended Background: A prior course in computer programming, such as ECE 2039 (preferred for ECE majors), CS 2301, or CS 2303; a course in embedded computing (e.g., ECE 2049); and a course in digital circuit design (e.g., ECE 2029)."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: A prior course in computer programming, such as ECE 2039 (preferred for ECE majors), CS 2301, or CS 2303; a course in embedded computing (e.g., ECE 2049); and a course in digital circuit design (e.g., ECE 2029)."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: a prior course in computer programming
+              satisfiedBy:
+                kind: anyOf
+                of:
+                  - kind: course
+                    course: ECE|2039
+                  - kind: course
+                    course: CS|2301
+                  - kind: course
+                    course: CS|2303
+            - kind: topic
+              topic: a course in embedded computing
+              satisfiedBy:
+                kind: course
+                course: ECE|2049
+            - kind: topic
+              topic: a course in digital circuit design
+              satisfiedBy:
+                kind: course
+                course: ECE|2029
+    noCreditWith: []
+    needsReview: The 'e.g.' examples are not exhaustive.
+  - courseId: ECE|4703
+    description: "Cat. I This course provides an introduction to the principles of real-time digital signal processing (DSP). The focus of this course is hands-on development of real-time signal processing algorithms using audio-based DSP kits in a laboratory environment. Basic concepts of DSP systems including sampling and quantization of continuous time signals are discussed. Tradeoffs between fixed-point and floating-point processing are exposed. Real-time considerations are discussed and efficient programming techniques leveraging the pipelined and parallel processing architecture of modern DSPs are developed. Using the audio-based DSP kits, students will implement real-time algorithms for various filtering structures and compare experimental results to theoretical predictions. Recommended background: ECE 2049, ECE 2312, some prior experience in C programming. Suggested background: ECE 3311."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: ECE 2049, ECE 2312, some prior experience in C programming."
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: ECE|2049
+            - kind: course
+              course: ECE|2312
+            - kind: topic
+              topic: some prior experience in C programming
+      - strength: suggested
+        timing: prior
+        sourceText: "Suggested background: ECE 3311."
+        requirement:
+          kind: course
+          course: ECE|3311
+    noCreditWith: []
+  - courseId: ECE|4801
+    description: "Cat. I This course focuses on the computer organization and architectural design of standalone embedded and high-performance microprocessor systems. This course covers performance metrics, machine level representation of information, the assembly level interface, memory system organization and architecture, computer input/output, instruction set architecture (ISA) design, single cycle and multicycle CPU datapath and controlpath design as well as more advanced level topics such as pipelining, interrupts, cache and memory system design. Special attention will be paid into measuring architectural performance and into improving computer architectures at various levels of the design hierarchy to reach optimal performance. The course will include several hands-on projects and laboratory components where students will be required to perform simulations of CPU designs using architectural simulation tools such as MIPS Simulators and SimpleScalar. Recommended Background: ECE 3849 Suggested Background: ECE 3829"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: ECE 3849"
+        requirement:
+          kind: course
+          course: ECE|3849
+      - strength: suggested
+        timing: prior
+        sourceText: "Suggested Background: ECE 3829"
+        requirement:
+          kind: course
+          course: ECE|3829
+    noCreditWith: []
+  - courseId: ECE|4802
+    description: "Cat. I This course provides an introduction to modern cryptography and communication security. It focuses on how cryptographic algorithms and protocols work and how to use them. The course covers the concepts of block ciphers and message authentication codes, public key encryption, digital signatures, and key establishment, as well as common examples and uses of such schemes, including the AES, RSA-OAEP, and the Digital Signature Algorithm. Basic cryptanalytic techniques and examples of practical security solutions are explored to understand how to design and evaluate modern security solutions. The course is suited for students interested in cryptography or other security related fields such as trusted computing, network and OS security, or general IT security. Recommended background: Experience in expressing algorithms in a modern programming language (e.g., ECE 2049 or CS 2301). Suggested background: Discrete mathematics (CS 2022/MA 2201 or equivalent)."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Experience in expressing algorithms in a modern programming language (e.g., ECE 2049 or CS 2301)."
+        requirement:
+          kind: topic
+          topic: experience in expressing algorithms in a modern programming language
+          satisfiedBy:
+            kind: anyOf
+            of:
+              - kind: course
+                course: ECE|2049
+              - kind: course
+                course: CS|2301
+      - strength: suggested
+        timing: prior
+        sourceText: "Suggested background: Discrete mathematics (CS 2022/MA 2201 or equivalent)."
+        requirement:
+          kind: topic
+          topic: discrete mathematics
+          satisfiedBy:
+            kind: anyOf
+            of:
+              - kind: course
+                course: CS|2022
+                orEquivalent: true
+              - kind: course
+                course: MA|2201
+                orEquivalent: true
+    noCreditWith: []
+    needsReview: The 'e.g.' example is not exhaustive.
+  - courseId: ECE|4803
+    description: "Machine Learning has proven immensely effective in a diverse set of applications. This trend has reached a new high with the application of Deep Learning virtually in any application domain. This course studies the applications of Machine Learning in the sub domain of Cybersecurity by introducing a plethora of case studies including anomaly detection in networks and computing, side-channel analysis, user authentication and biometrics, etc. These case studies are discussed in detail in class, and further examples of potential applications of Machine Learning techniques including Deep Learning are outlined. The course has a strong hands-on component, i.e., students are given datasets of specific security applications and are required to perform simulations. Recommended Background: basic knowledge of machine learning techniques (e.g. regression, support vector machines, clustering algorithms, and neural networks). Cat I"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: basic knowledge of machine learning techniques (e.g. regression, support vector machines, clustering algorithms, and neural networks)."
+        requirement:
+          kind: topic
+          topic: basic knowledge of machine learning techniques
+    noCreditWith: []
+  - courseId: ECE|4902
+    description: "Cat. II This course introduces students to the design and analysis of analog integrated circuits such as operational amplifiers, phase-locked loops, and analog multipliers. Topics: integrated circuit building blocks: current mirrors and sources, differential amplifiers, voltage references and multipliers, output circuits. Computer-aided simulation of circuits. Layout of integrated circuits. Design and analysis of such circuits as operational amplifiers, phase-locked loops, FM detectors, and analog multipliers. Laboratory exercises. Recommended background: familiarity with the analysis of linear circuits and with the theory of bipolar and MOSFET transistors. Such skills are typically acquired in ECE 3204. Suggested background: ECE 4904. This course will be offered in 2019-20, and in alternating years thereafter"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: familiarity with the analysis of linear circuits and with the theory of bipolar and MOSFET transistors."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: familiarity with the analysis of linear circuits
+              satisfiedBy:
+                kind: course
+                course: ECE|3204
+            - kind: topic
+              topic: familiarity with the theory of bipolar and MOSFET transistors
+              satisfiedBy:
+                kind: course
+                course: ECE|3204
+      - strength: suggested
+        timing: prior
+        sourceText: "Suggested background: ECE 4904."
+        requirement:
+          kind: course
+          course: ECE|4904
+    noCreditWith: []
+  - courseId: ECE|502
+    description: "Applications of probability theory and its engineering applications. Random variables, distribution and density functions. Functions of random variables, moments and characteristic functions. Sequences of random variables, stochastic convergence and the central limit theorem. Concept of a stochastic process, stationary processes and ergodicity. Correlation functions, spectral analysis and their application to linear systems. Mean square estimation. Prerequisite: Undergraduate course in signals and systems."
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "Prerequisite: Undergraduate course in signals and systems."
+        requirement:
+          kind: topic
+          topic: undergraduate course in signals and systems
+    noCreditWith: []
+  - courseId: ECE|503
+    description: "Discrete-time signals and systems, frequency analysis, sampling of continuous time signals, the z-transform, implementation of discrete time systems, the discrete Fourier transform, fast Fourier transform algorithms, filter design techniques. Prerequisites: Courses in complex variables, basic signals and systems."
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "Prerequisites: Courses in complex variables, basic signals and systems."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: courses in complex variables
+            - kind: topic
+              topic: basic signals and systems
+    noCreditWith: []
+  - courseId: ECE|504
+    description: "Review of Fourier series and linear algebra. Fourier transforms, Laplace transforms, Z transforms and their interrelationship. State space modeling of continuous-time and discrete-time systems. Canonical forms, solution of state equations, controllability, observability and stability of linear systems. Pole placement via state feedback, observer design, Lyapunov stability analysis. Prerequisite: Undergraduate course in signals and systems."
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "Prerequisite: Undergraduate course in signals and systems."
+        requirement:
+          kind: topic
+          topic: undergraduate course in signals and systems
+    noCreditWith: []
+  - courseId: ECE|505
+    description: "This course introduces the fundamentals of computer system architecture and organization. Topics include CPU structure and function, addressing modes, instruction formats, memory system organization, memory mapping and hierarchies, concepts of cache and virtual memories, storage systems, standard local buses, high-performance I/O, computer communication, basic principles of operating systems, multiprogramming, multiprocessing, pipelining and memory management. The architecture principles underlying RISC and CISC processors are presented in detail. The course also includes a number of design projects, including simulating a target machine, architecture using a high-level language (HLL). Prerequisites: Undergraduate course in logic circuits and microprocessor system design, as well as proficiency in assembly language and a structured high-level language such as C or Pascal."
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "Prerequisites: Undergraduate course in logic circuits and microprocessor system design, as well as proficiency in assembly language and a structured high-level language such as C or Pascal."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: undergraduate course in logic circuits and microprocessor system design
+            - kind: topic
+              topic: proficiency in assembly language
+            - kind: topic
+              topic: a structured high-level language such as C or Pascal
+    noCreditWith: []
+  - courseId: ECE|506
+    description: "This course provides an introduction to the theory and practice of the design of computer communications networks according to IEEE 802 standard model for lower layers and IETF standard for TCP/IP higher layers. Analysis of network topologies and protocols, including performance analysis, is treated. Current network types including local area and wide area networks are introduced, as are evolving network technologies. The theory, design and performance of local area networks are emphasized. The course includes application of queueing analysis to performance analysis of medium access control (MAC) and application of communication theory in design of physical layer (PHY). Prerequisites: familiarity to MATLAB programming is assumed. Background in undergraduate level courses in networking, probability, statistic, and signal processing."
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "Prerequisites: familiarity to MATLAB programming is assumed."
+        requirement:
+          kind: topic
+          topic: familiarity with MATLAB programming
+      - strength: required
+        timing: prior
+        sourceText: Background in undergraduate level courses in networking, probability, statistic, and signal processing.
+        requirement:
+          kind: topic
+          topic: undergraduate level courses in networking, probability, statistics, and signal processing
+    noCreditWith: []
+  - courseId: ECE|5106
+    description: "This course is intended for graduate and seniorlevel undergraduate students. Modern numerical methods and major software packages are reviewed in application to modeling electrical and biomedical sensors, bioelectromagnetics, wireless communications (including wireless body area networks), and power electronics. The course begins with an introduction to computational mesh generation. Triangular surface meshes, volumetric tetrahedral meshes, voxel meshes, and computational human phantoms are studied. The boundary element method or the methodof-moments is introduced and detailed, followed by a review of the finite element method for electromagnetic problems. The finite-difference time-domain method is another major topic of the course. The course also covers ray tracing algorithms in application to wireless networks. Prerequisites: college MATLAB, differential and integral calculus."
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "Prerequisites: college MATLAB, differential and integral calculus."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: college MATLAB
+            - kind: topic
+              topic: differential and integral calculus
+    noCreditWith: []
+  - courseId: ECE|514
+    description: "This introductory course develops a comprehensive understanding of Maxwell’s field theory as applied to high-frequency radiation, propagation and circuit phenomena. Topics include radiofrequency (RF) and microwave (MW) propagation modes, transmission line aspects, Smith Chart, scattering parameter analysis, microwave filters, matching networks, power flow relations, unilateral and bilateral amplifier designs, stability analysis, oscillators circuits, mixers and microwave antennas for wireless communication systems. Prerequisites: ECE 504 or equivalent, undergraduate course in electromagnetic field analysis."
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "Prerequisites: ECE 504 or equivalent, undergraduate course in electromagnetic field analysis."
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: ECE|504
+              orEquivalent: true
+            - kind: topic
+              topic: undergraduate course in electromagnetic field analysis
+    noCreditWith: []
+  - courseId: ECE|5204
+    description: "The ability to see the simplicity in a complex design problem is a skill that is not usually taught in engineering classes. Some engineers, when faced with design problems, immediately fill up pages and pages of calculations, or do complex circuit simulations or finite-element analyses. One problem with this approach is that if you get an answer, you do not know if it is correct unless you have an intuitive “feel” for what the answer should be. The application of some simple rules of thumb and design techniques is a possible first step to developing intuition into the behavior of complex electrical systems. This course outlines some ways of thinking about analog circuits and systems that are intended will help to develop intuition and guide design. The lectures are a mixture of instructional sessions covering new background material, and design case studies. Prerequisites: Undergraduate background in device physics, microelectronics, control systems, electromagnetism."
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "Prerequisites: Undergraduate background in device physics, microelectronics, control systems, electromagnetism."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: undergraduate background in device physics
+            - kind: topic
+              topic: microelectronics
+            - kind: topic
+              topic: control systems
+            - kind: topic
+              topic: electromagnetism
+    noCreditWith: []
+  - courseId: ECE|523
+    description: "The application of electronics to energy conversion and control. Electrical and thermal characteristics of power semiconductor devices— diodes, bipolar transistors and thyristors. Magnetic components. State-space averaging and sampleddata models. Emphasis is placed on circuit techniques. Application examples include dc-dc conversion, controlled rectifiers, high-frequency inverters, resonant converters and excitation of electric machines. Prerequisites: ECE 3204 and undergraduate courses in modern signal theory and control theory; ECE 504 is recommended."
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "Prerequisites: ECE 3204 and undergraduate courses in modern signal theory and control theory;"
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: ECE|3204
+            - kind: topic
+              topic: undergraduate courses in modern signal theory
+            - kind: topic
+              topic: undergraduate courses in control theory
+      - strength: suggested
+        timing: prior
+        sourceText: ECE 504 is recommended.
+        requirement:
+          kind: course
+          course: ECE|504
+    noCreditWith: []
+  - courseId: ECE|524
+    description: "This course is an advanced introduction to the design of analog and mixed analog-digital integrated circuits for communication and instrumentation applications. An overview of bipolar and CMOS fabrication processes shows the differences between discrete and integrated circuit design. The bipolar and MOS transistors are reviewed with basic device physics and the development of circuit models in various operating regions. The use of SPICE simulation in the design process will be covered. Integrated amplifier circuits are developed with an emphasis on understanding performance advantages and limitation in such areas as speed, noise and power dissipation. Simple circuits are combined to form the basic functional building blocks such as the op-amp, comparator, voltage reference, etc. These circuit principles will be explored in an IC design project, which may be fabricated in a commercial analog process. Examples of possible topics include sample-and-hold (S/H) amplifier, analogto-digital (A/D) and digital-to-analog (D/A) converters, phase-locked loop (PLL), voltagecontrolled oscillator, phase detector, switched capacitor and continuous-time filters, and sampled current techniques. Prerequisite: Background in analog circuits both at the transistor and functional block [op-amp, comparator, etc.] level. Also familiarity with techniques such as small-signal modeling and analysis in the s-plane using Laplace transforms. Undergraduate course equivalent background ECE 3204; ECE 4902 helpful but not essential."
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "Prerequisite: Background in analog circuits both at the transistor and functional block [op-amp, comparator, etc.] level."
+        requirement:
+          kind: topic
+          topic: background in analog circuits at the transistor and functional block level
+      - strength: suggested
+        timing: prior
+        sourceText: ECE 4902 helpful but not essential.
+        requirement:
+          kind: course
+          course: ECE|4902
+    noCreditWith: []
+  - courseId: ECE|531
+    description: "Detection of signals in noise, optimum receiver principles, M-ary detection, matched filters, orthogonal signals and representations of random processes. MAP and maximum likelihood estimation. Wiener filtering and Kalman filtering. Channel considerations: prewhitening, fading and diversity combining. Prerequisites: ECE 502 and ECE 504 or equivalent."
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "Prerequisites: ECE 502 and ECE 504 or equivalent."
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: ECE|502
+            - kind: course
+              course: ECE|504
+              orEquivalent: true
+    noCreditWith: []
+  - courseId: ECE|5311
+    description: "This course introduces the fundamentals of information theory and discusses applications in compression and transmission of data. Measures of information, including entropy, and their properties are derived. The limits of lossless data compression are derived and practical coding schemes approaching the theoretical limits are presented. Lossy data compression tradeoffs are discussed in terms of the rate-distortion framework. The concept of reliable communication through noisy channels (channel capacity) is developed. Techniques for practical channel coding, including block and convolutional codes, are also covered. Prerequisite: background in probability and random processes such as in ECE502 or equivalent."
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "Prerequisite: background in probability and random processes such as in ECE502 or equivalent."
+        requirement:
+          kind: topic
+          topic: background in probability and random processes
+          satisfiedBy:
+            kind: course
+            course: ECE|502
+            orEquivalent: true
+    noCreditWith: []
+  - courseId: ECE|5312
+    description: "This course introduces a rigorous analytical treatment of modern digital communication systems, including digital modulation, demodulation, and optimal receiver design. Error performance analysis of these communication systems when operating over either noisy or band-limited channels will be conducted. Advanced topics to be covered include a subset of the following: MIMO, fading channels, multiuser communications, spread spectrum systems, and/or multicarrier transmission. Prerequisites: An understanding of probability and random processes theory (ECE 502 or equivalent); an understanding of various analog and digital (de)modulation techniques (ECE 3311 or equivalent); familiarity with MATLAB programming."
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "Prerequisites: An understanding of probability and random processes theory (ECE 502 or equivalent); an understanding of various analog and digital (de)modulation techniques (ECE 3311 or equivalent); familiarity with MATLAB programming."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: probability and random processes theory
+              satisfiedBy:
+                kind: course
+                course: ECE|502
+                orEquivalent: true
+            - kind: topic
+              topic: analog and digital (de)modulation techniques
+              satisfiedBy:
+                kind: course
+                course: ECE|3311
+                orEquivalent: true
+            - kind: topic
+              topic: familiarity with MATLAB programming
+    noCreditWith: []
+  - courseId: ECE|539
+    description: BME 595-ST/ECE 539-ST Wearable/Mobile Sensors and Systems (3 credits) This course explores the design and application of small-size, low-power wearable sensors, with a focus on medical- and health-related uses. Students will begin by learning about sensor technologies and electronic circuits that transduce common physiologic signals, including the electrocardiogram (ECG), electromyogram (EMG), electroencephalogram (EEG), photoplethysmogram (PPG; for pulse oximetry), transcutaneous oxygen measurement, temperature, and inertial measurement units (IMUs). The course then delves into modern system-on-chip (SoC) microcontroller units, which serve as small edge devices equipped with analog-to-digital converters (ADC), processors and integrated wireless connectivity via Bluetooth Low Energy (BLE). Students will study the architecture and programming of these systems. Additionally, the course covers how a secondary BLE receiver on a more powerful device collects sensor data for display, storage and processing; including as part of the Internet of Things (IoT). Key topics in signal processing include online or off-line techniques such as heart rate estimation from ECG/PPG data and EMG-based control of prosthetic devices. Through hands-on labs, students will design, build and program functional sensor systems. Students should have a working knowledge of MATLAB (or Python) and C programming and an undergraduate background in analog circuits and computer engineering. Undergraduate background in digital signal processing and/or wireless signals would be helpful, but not necessary. This special topics course may be repeated for credit if different topics are covered.
+    clauses:
+      - strength: suggested
+        timing: prior
+        sourceText: Students should have a working knowledge of MATLAB (or Python) and C programming and an undergraduate background in analog circuits and computer engineering.
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: working knowledge of MATLAB (or Python) and C programming
+            - kind: topic
+              topic: undergraduate background in analog circuits and computer engineering
+    noCreditWith: []
+    needsReview: No lead word; 'should have' recorded as suggested.
+  - courseId: ECE|545
+    description: "This course presents fundamental concepts of digital image processing and an introduction to machine vision. Image processing topics will include visual perception, image formation, imaging geometries, image transform theory and applications, enhancement, restoration, encoding and compression. Machine vision topics will include feature extraction and representation, stereo vision, model-based recognition, motion and image flow, and pattern recognition. Students will be required to complete programming assignments in a high-level language. (Prerequisites: working knowledge of undergraduate level signal analysis and linear algebra; familiarity with probability theory is helpful but not necessary.)"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "(Prerequisites: working knowledge of undergraduate level signal analysis and linear algebra;"
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: working knowledge of undergraduate level signal analysis
+            - kind: topic
+              topic: linear algebra
+      - strength: suggested
+        timing: prior
+        sourceText: familiarity with probability theory is helpful but not necessary.)
+        requirement:
+          kind: topic
+          topic: familiarity with probability theory
+    noCreditWith: []
+  - courseId: ECE|5500
+    description: "This graduate level course examines the principles of Power System Analysis. It will begin with a review of AC circuit analysis. The course will then cover the topics of transmission line parameter calculation, symmetrical component analysis, transformer and load modeling, symmetrical and unsymmetrical fault analysis, power flow, and power systems stability. Prerequisites: Knowledge of circuit analysis, basic calculus and differential equations, elementary matrix analysis and basic computer programming."
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "Prerequisites: Knowledge of circuit analysis, basic calculus and differential equations, elementary matrix analysis and basic computer programming."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: circuit analysis
+            - kind: topic
+              topic: basic calculus and differential equations
+            - kind: topic
+              topic: elementary matrix analysis
+            - kind: topic
+              topic: basic computer programming
+    noCreditWith: []
+  - courseId: ECE|5511
+    description: "This graduate level course introduces the student to the effects of electromagnetic transients in distribution systems. Topics include transient analysis, lightning and switching surges, mechanisms of transient generation, insulation coordination, grounding, surge protection devices, and shielding. Prerequisite: ECE 5500 Power System Analysis."
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "Prerequisite: ECE 5500 Power System Analysis."
+        requirement:
+          kind: course
+          course: ECE|5500
+    noCreditWith: []
+  - courseId: ECE|5521
+    description: "This graduate level course is the first of a two course sequence that covers both the principles and practices of power system protective relaying. The course seeks to provide an understanding of how interconnected power systems and their components are protected from abnormal events such as faults (short circuits), over-voltages, off-nominal frequency and unbalanced phase conditions. This subject is presented from a theoretical viewpoint, however, many practical examples are included that emphasize the limitations of existing protective equipment. Course content is not specific to any particular manufacturer’s equipment. The course begins with a brief review of the nature of power system operation, power system faults and other abnormal conditions. The nature and objectives of protective relaying are covered next with emphasis on how the power system can be monitored to detect abnormal conditions. The computational tools needed to analyze system operation and apply protective relaying are covered next, including the per-unit system, phasors and symmetrical components. The modeling of current transformers under steady-state and transient conditions is presented with emphasis on the impact on protective devices. A unit on system grounding and its impact on protective device operation is included. Course emphasis then shifts to protective devices and their principles of operation. Both electromechanical and numeric relay designs are covered. Prerequisite: ECE 5500 Power System Analysis or equivalent background experience is suggested. Familiarity with phasors, derivatives, transfer functions, poles and zeros, block diagram and the notion of feedback with basic understanding power system analysis or similar background is recommended. Note: Credit cannot be awarded for this course if credit has already been received for ECE 5520 Power System Protection and Control."
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "Prerequisite: ECE 5500 Power System Analysis or equivalent background experience is suggested."
+        requirement:
+          kind: course
+          course: ECE|5500
+          orEquivalent: true
+    noCreditWith: []
+    needsReview: The source says the equivalent background is 'suggested'; the prerequisite is recorded as required.
+  - courseId: ECE|5522
+    description: "This graduate level course covers advanced topics in the principles and practices of power system protective relaying. The course seeks to provide an understanding of how protective relays are applied to protect power system components. While the subject is presented from a theoretical viewpoint, many practical examples are included. Examples specific to both new installations and existing, older facilities will be included. Course content is not specific to any particular manufacturer’s equipment. The course begins with applications of protective devices to generators. This will include distributed generation as well as wind-turbine and inverter-connected sources. Transformer protection is covered next, including application procedures for older, electromechanical relays as well as modern numeric relay designs. A unit on bus protection is covered next, including all typical high-speed and time backup bus protection schemes. Transmission line and distribution feeder protection is covered in detail including both conventional and communications-assisted schemes. The course ends with a unit on other protection applications such as under frequency load shedding, reclosing and out-of-step relaying. Prerequisite: ECE 5521 Protective Relaying. Note: Credit cannot be awarded for this course if credit has already been received for ECE 5520 Power System Protection and Control."
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "Prerequisite: ECE 5521 Protective Relaying."
+        requirement:
+          kind: course
+          course: ECE|5521
+    noCreditWith:
+      - ECE|5520
+  - courseId: ECE|5523
+    description: "This graduate level course is concerned with modeling, analyzing and mitigating power system stability and control problems. The course seeks to provide an understanding of the electromechanical dynamics of the interconnected electric power grid. This subject is presented from a theoretical viewpoint; however, many practical examples are included. The course begins with a description of the physics of the power system, frequency regulation during “steady-state” operation, dynamic characteristics of modern power systems, a review of feedback control systems, power system frequency regulation, and a review of protective relaying. This is followed by material on synchronous machine theory and modeling. Simulation of power system dynamic response, small signal stability, transient stability analysis using SIMULINK and effects of non-traditional power sources on systems dynamics will also be covered. Power system stabilizers, load modeling and under frequency load shedding are covered in the final lectures. Prerequisite: ECE 5500 Power System Analysis and ECE 5511 Transients in Power Systems or equivalent background experience is suggested. Familiarity with the basics of Laplace Transforms, derivatives, transfer functions, poles and zeros, block diagram and the notion of feedback with basic understanding power system analysis topics recommended."
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "Prerequisite: ECE 5500 Power System Analysis and ECE 5511 Transients in Power Systems or equivalent background experience is suggested."
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: ECE|5500
+            - kind: course
+              course: ECE|5511
+              orEquivalent: true
+    noCreditWith: []
+    needsReview: The source says the equivalent background is 'suggested'; the prerequisites are recorded as required.
+  - courseId: ECE|5532
+    description: "This course introduces the characteristics and challenges of interconnecting increasing numbers of Distributed Energy Resources (DERs) to the Electric Power System (EPS). Topics include: challenges to distribution and transmission system protection; local voltage control; ride through; optimal interconnection transformer configurations; and practical engineering approaches to maintain system reliability and protection. The current and evolving interconnection standard (IEEE 1547) is included. Prerequisites: Since the course material builds on power system analysis capabilities, including system protection and controls, ECE 5500 Power System Analysis and either ECE 5520 Power System Protection & Control or ECE 5521 Protective Relaying are required. Also, it is recommended that students take this course after completing ECE 5530 Power Distribution."
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "Prerequisites: Since the course material builds on power system analysis capabilities, including system protection and controls, ECE 5500 Power System Analysis and either ECE 5520 Power System Protection & Control or ECE 5521 Protective Relaying are required."
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: ECE|5500
+            - kind: anyOf
+              of:
+                - kind: course
+                  course: ECE|5520
+                - kind: course
+                  course: ECE|5521
+    noCreditWith: []
+  - courseId: ECE|5540
+    description: "This graduate level course focuses on the theory and current professional practice in problems of electric power transmission. It begins with a review of the theory of AC electric power transmission networks and addresses a range of challenges related to reactive power and voltage control as well as steady-state and transients stability. Students will learn in detail the principles of traditional reactive power compensation (shunt reactors and capacitors); series compensation and modern static reactive compensation like SVC, STATCOM and other Flexible AC Transmission Systems (FACTS) devices. The effects of each of these types of compensation on static and dynamic voltage control, reactive power requirement and steady-state and transient stability problems are covered from theoretical as well as practical aspects. Particular attention is given to the mathematical models and principles of operation of many types of compensation systems. Basic principles of operation and control of High-Voltage DC (HVDC) systems and their impact on steady-state and dynamics of power system will be covered as well. Prerequisite: ECE 5500 Power System Analysis."
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "Prerequisite: ECE 5500 Power System Analysis."
+        requirement:
+          kind: course
+          course: ECE|5500
+    noCreditWith: []
+  - courseId: ECE|556
+    description: "eep Learning, a core of modern Artificial Intelligence, is rapidly expanding to resourceconstrained devices, including smartphones, wearables, and intelligent embedded systems for improving response time, privacy, and reliability. This course focuses on bringing these powerful deep-learning applications from central data centers and large GPUs to distributed ubiquitous systems. On-Device Deep Learning is an interdisciplinary topic at the intersection of artificial intelligence and ubiquitous systems, dedicated to enabling computing on edge devices. This course includes a wide range of topics related to deep learning in resource constrained settings including pruning and sparsity, quantization, neural architecture search, knowledge distillation, on-device training and transfer learning, distributed training, gradient compression, federated learning, efficient data movement and accelerator design, dynamic network inference, and advanced compression and approximation techniques for enabling on-device deep neural network inference and training. This course provides a comprehensive foundation for cutting-edge “tinyML” expertise. Recommended background: The students should have an introductory undergraduate-level or graduate-level introductory background in machine learning and deep neural networks."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: The students should have an introductory undergraduate-level or graduate-level introductory background in machine learning and deep neural networks."
+        requirement:
+          kind: topic
+          topic: an introductory undergraduate-level or graduate-level background in machine learning and deep neural networks
+    noCreditWith: []
+  - courseId: ECE|571
+    description: "ECE 571: Machine Learning for Engineering Applications (Cat. I; 3 credits) This is an introductory course for engineering students to gain basic knowledge of machine learning and its applications. This course's objective is to learn machine learning theory and then apply it in engineering practice. A major emphasis of the course is to foster the capability of combining multiple machine learning techniques in complex problem solving, such as the detection of deepfake media. Topics include supervised learning, linear regression, kernel methods, support vector machine, neural networks, unsupervised learning, clustering, principal component analysis, deep learning with convolutional neural networks, and reinforcement learning. Students will develop software to implement machine learning and deep learning algorithms for practical engineering applications. Prerequisites: Basic knowledge of probability and computer programming."
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "Prerequisites: Basic knowledge of probability and computer programming."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: basic knowledge of probability
+            - kind: topic
+              topic: computer programming
+    noCreditWith: []
+  - courseId: ECE|574
+    description: "ECE 574 ADVANCED DIGITAL SYSTEMS DESIGN (3 credits) This course introduces digital systems design using hardware description languages and their associated tooling to capture, integrate, verify, simulate, and synthesize digital hardware. The course will examine modern hardware design flows using high-level synthesis and register-transfer-level (RTL) synthesis. The course covers the role of hardware description languages in the verification, simulation, and integration process of hardware modules in large digital systems. The course projects offer an integrated experience in advanced digital systems design combining hardware description languages, hardware design methodologies, and hardware design practice on a programmable target such as a Field Programmable Gate Array, or on a chip-level target such as a standard-cell Application-Specific Integrated Circuit. (Prerequisites: Basic digital design, Experience with programming in a high-level language)."
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "(Prerequisites: Basic digital design, Experience with programming in a high-level language)."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: basic digital design
+            - kind: topic
+              topic: experience with programming in a high-level language
+    noCreditWith: []
+  - courseId: ECE|578
+    description: "This course gives a comprehensive introduction to the field of cryptography and data security. The course begins with the introduction of the concepts of data security, where classical algorithms serve as an example. Different attacks on cryptographic systems are classified. Some pseudo-random generators are introduced. The concepts of public and private key cryptography are developed. As important representatives for secret key schemes, DES and IDEA are described. The public key schemes RSA and ElGamal, and systems based on elliptic curves are then developed. Signature algorithms, hash functions, key distribution and identification schemes are treated as advanced topics. Some advanced mathematical algorithms for attacking cryptographic schemes are discussed. Application examples will include a protocol for security in a LAN and a secure smart card system for electronic banking. Special consideration will be given to schemes which are relevant for network environments. For all schemes, implementation aspects and up-to-date security estimations will be discussed. (Prerequisites: Working knowledge of C; an interest in discrete mathematics and algorithms is highly desirable. Students interested in a further study of the underlying mathematics may register for MA 4891 [B term], where topics in modern algebra relevant to cryptography will be treated.)"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "Prerequisites: Working knowledge of C;"
+        requirement:
+          kind: topic
+          topic: working knowledge of C
+      - strength: suggested
+        timing: prior
+        sourceText: an interest in discrete mathematics and algorithms is highly desirable.
+        requirement:
+          kind: topic
+          topic: an interest in discrete mathematics and algorithms
+    noCreditWith: []
+  - courseId: ECE|579
+    description: '"This course introduces the physical and cyber threats in the microelectronics supply chain. Topics include IC- and PCB-level tampering, hardware Trojan insertion, and counterfeiting. Moreover, this course explores how various detection- and prevention-based countermeasures can avert such supply chain attacks. The topics for detection-based countermeasures include physical verification using passive side-channel analysis (e.g., power, EM, and timing), semi- and fully-invasive failure analysis tools (e.g., photon emission, optical probing, and scanning electron microscopy), and RF methods (e.g., power integrity, signal integrity, and EMC). Moreover, various sensors will be discussed for tamper detection. The topics for prevention-based countermeasures include secure enclosures, Physically Unclonable Functions, etc. Prerequisite: General knowledge on cryptography and communication security typically offered in ECE 4802 - Introduction to Cryptography and Communication Security"'
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "Prerequisite: General knowledge on cryptography and communication security typically offered in ECE 4802"
+        requirement:
+          kind: topic
+          topic: general knowledge on cryptography and communication security
+          satisfiedBy:
+            kind: course
+            course: ECE|4802
+    noCreditWith: []
+  - courseId: ECE|588
+    description: To reduce cyber security theory to practice, the capstone project has students apply security concepts to real-world problems. The capstone represents a substantial evaluation of the student’s cyber security experience. Students are encouraged to select projects with practical experience relevant to their career goals and personal development. In the capstone, students will propose a project idea in writing with concrete milestones, receive feedback, and pursue the proposal objectives. Since cyber security is a collaborative discipline, students are encouraged to work in teams. This course is a degree requirement for the Professional Master’s in Cyber Security (PM-SEC) and may not be taken before completion of 21 credits in the program. Given its particular role, this course may not be used to satisfy degree requirements for a B.S., M.S., or Ph.D. degree in Computer Science or a minor in Computer Science. Students outside the PM-SEC program must get the instructor’s approval before taking this course for credit.
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: may not be taken before completion of 21 credits in the program.
+        requirement:
+          kind: standing
+          text: completion of 21 credits in the Professional Master’s in Cyber Security program
+    noCreditWith: []
+  - courseId: ECE|596
+    description: "The presentations in the graduate seminar series will be of tutorial nature and will be presented by recognized experts in various fields of electrical and computer engineering. All full-time graduate students will be required to take both seminar courses, ECE 596A and ECE 596B, once during their graduate studies in the Electrical and Computer Engineering Department. The course will be given Pass/Fail. (Prerequisite: Graduate standing.)"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "(Prerequisite: Graduate standing.)"
+        requirement:
+          kind: standing
+          text: graduate standing
+    noCreditWith: []
+  - courseId: ECE|598
+    description: "Each student will work under the direct supervision of a member of the department staff on an experimental or theoretical problem which may involve an extensive literature search, experimental procedures and analysis. A comprehensive report in the style of a technical report or paper and an oral presentation are required. (A maximum of two registrations in ECE 598 is permitted.) (Prerequisite: Graduate standing.)"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "(Prerequisite: Graduate standing.)"
+        requirement:
+          kind: standing
+          text: graduate standing
+    noCreditWith: []
+  - courseId: ECE|5512
+    description: This graduate level course will further explore alternating current circuits, three phase circuits, basics of electromagnetic field theory, magnetic circuits, inductance, and electromechanical energy conversion. Topics also include ideal transformer, iron-core transformer, voltage regulation, efficiency equivalent circuit, and three phase transformers. Induction machine construction, equivalent circuit, torque speed characteristics, and single phase motors, synchronous machine construction, equivalent circuit, power relationships phasor diagrams, and synchronous motors will be covered. Direct current machine construction, types, efficiency, power flow diagram, and external characteristics will be discussed
+    clauses: []
+    noCreditWith: []
+  - courseId: ECE|576
+    description: ECE 576 Applied Cryptography and Physical Attacks (3 credits) In this course, we aim to study security and trust from the hardware perspective. The three main objectives of hardware security that we will cover are secure key generation and storage as well as secure execution. Specifically, we will learn how cryptographic algorithms can become susceptible to physical attacks and how this can be prevented. Topics to be covered in this course include basics of hardware security and its objectives; random number generation; physically unclonable functions; invasive and non-invasive attacks, e.g., side-channel analysis and fault injection; counterfeit detection; semiconductor IP (Intellectual Property) protection.
+    clauses: []
+    noCreditWith: []
+  - courseId: ECE|577
+    description: Machine Learning has proven immensely effective in a diverse set of applications. This trend has reached a new high with the application of Deep Learning virtually in any application domain. This course studies the applications of Machine Learning in the sub domain of Cybersecurity by introducing a plethora of case studies including anomaly detection in networks and computing, side-channel analysis, user authentication and biometrics etc. These case studies are discussed in detail in class, and further examples of potential applications of Machine Learning techniques including Deep Learning are outlined. The course has a strong hands-on component, i.e. students are given datasets of specific security applications and are required to perform simulations.
+    clauses: []
+    noCreditWith: []

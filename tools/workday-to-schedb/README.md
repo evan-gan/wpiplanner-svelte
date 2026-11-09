@@ -133,10 +133,5 @@ sections, and nothing else.
 
 ## Yearly checklist
 
-1. `pnpm updateData`, and read the summary: department, course, and section
-   counts should be in the same range as last year.
-2. Any `unknown-subject` anomaly means a new subject code — add it to
-   `src/departments.ts`, or its courses stay filed under "Other".
-3. Check `src/rules.ts` against the new catalog's special-topics courses.
-4. Update `src/lib/config/academicCalendar.ts` — term dates and no-class days are
-   not in the feed. Its own rollover checklist is at the bottom of that file.
+Moved to [`updating.md`](../../updating.md) at the repo root, under "Fallback
+catalog" and "Converter rules", alongside the other hand-maintained parts.

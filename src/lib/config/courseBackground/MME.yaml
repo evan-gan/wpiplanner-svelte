@@ -1,0 +1,16 @@
+department: MME
+entries:
+  - courseId: MME|522
+    description: "There are three major goals for this course: to establish the underlying principles of calculus, to reinforce students’ calculus skills through investigation of applications involving those skills, and to give students the opportunity to develop projects and laboratory assignments for use by first-year calculus students. The course will focus heavily on the use of technology to solve problems involving applications of calculus concepts. In addition, MME students will be expected to master the mathematical rigor of these calculus concepts so that they will be better prepared to develop their own projects and laboratory assignments. For example, if an MME student chose to develop a lab on convergence of sequence, he/she would be expected to understand the rigorous definition of convergence and how to apply it to gain sufficient and/or necessary conditions for convergence. The process of developing these first-year calculus assignments will enable the MME students to increase their own mathematical understanding of concepts while learning to handle mathematical and computer issues which will be encountered by their own calculus students. Their understanding of the concepts and applications of calculus will be further reinforced through computer laboratory assignments and group projects. Applications might include exponential decay of drugs in the body, optimal crankshaft design, population growth, or development of cruise control systems. (Prerequisite: MME 532)"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "(Prerequisite: MME 532)"
+        requirement:
+          kind: course
+          course: MME|532
+    noCreditWith: []
+  - courseId: MME|532
+    description: (2 credits) This course would have concepts and techniques for both Ordinary and Partial Differential Equations. Topics from ordinary differential equations include existence and uniqueness for first order, single variable problems as well as separation of variables and linear methods for first order problems. Second order, linear equations would be solved for both the homogeneous and non homogeneous cases. The phenomena of beats and resonance would be analyzed. The Laplace Transform would be introduced for appropriate second order nonhomogeneous problems. Partial Differential Equations would focus on boundary value problems arising from the Heat and Wave equations in one variable. Fourier Series expansions would be used to satisfy initial conditions and the concepts of orthogonality and convergence addressed.
+    clauses: []
+    noCreditWith: []

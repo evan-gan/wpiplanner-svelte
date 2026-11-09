@@ -1,0 +1,558 @@
+department: PH
+entries:
+  - courseId: PH|1110
+    description: "Cat. I Introductory calculus-based course with laboratory in Newtonian mechanics. Topics include: kinematics of motion, vectors, Newton’s laws, friction, work-energy, impulse-momentum, for both translational and rotational motion. Students may not receive credit for both PH 1110 and PH 1111. Recommended Background Working knowledge of differential calculus (MA 1021), and concurrent study of MA 1022 (integral calculus) or higher."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: Recommended Background Working knowledge of differential calculus (MA 1021),
+        requirement:
+          kind: topic
+          topic: differential calculus
+          satisfiedBy:
+            kind: course
+            course: MA|1021
+      - strength: recommended
+        timing: concurrent
+        sourceText: concurrent study of MA 1022 (integral calculus) or higher.
+        requirement:
+          kind: topic
+          topic: integral calculus
+          satisfiedBy:
+            kind: anyOf
+            of:
+              - kind: course
+                course: MA|1022
+              - kind: topic
+                topic: higher calculus
+    noCreditWith:
+      - PH|1111
+  - courseId: PH|1120
+    description: "Cat. I A calculus-based introduction with laboratory to the theory of electricity and magnetism. Topics include: Coulomb’s law, electric and magnetic fields, capacitance, electrical current and resistance, and electromagnetic induction. Students may not receive credit for both PH 1120 and PH 1121. Recommended Background Working knowledge of the material presented in PH 1110 or PH 1111, of differential and integral calculus (MA 1021 and MA 1022)."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: Working knowledge of the material presented in PH 1110 or PH 1111,
+        requirement:
+          kind: anyOf
+          of:
+            - kind: course
+              course: PH|1110
+            - kind: course
+              course: PH|1111
+      - strength: recommended
+        timing: prior
+        sourceText: of differential and integral calculus (MA 1021 and MA 1022).
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: MA|1021
+            - kind: course
+              course: MA|1022
+    noCreditWith:
+      - PH|1121
+  - courseId: PH|1121
+    description: "Cat. I A calculus-based introduction with laboratory to electricity and magnetism, at a somewhat higher mathematical level than PH 1120. Topics include: Coulomb’s Law, electric fields and potentials, capacitance, electric current and resistance, magnetism, and electromagnetic induction. Students may not receive credit for both PH 1121 and PH 1120. Recommended Background - Working knowledge of material covered in PH 1110 or PH 1111, of differential and integral calculus (MA 1021 and MA 1022), and vector algebra (MA 1023). Students concurrently taking MA 1023 are advised to take PH 1120."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: Working knowledge of material covered in PH 1110 or PH 1111,
+        requirement:
+          kind: anyOf
+          of:
+            - kind: course
+              course: PH|1110
+            - kind: course
+              course: PH|1111
+      - strength: recommended
+        timing: prior
+        sourceText: of differential and integral calculus (MA 1021 and MA 1022), and vector algebra (MA 1023).
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: MA|1021
+            - kind: course
+              course: MA|1022
+            - kind: course
+              course: MA|1023
+    noCreditWith:
+      - PH|1120
+  - courseId: PH|1130
+    description: "Cat. I An introduction to the pivotal ideas and developments of twentieth-century physics. Topics include: special relativity, photoelectric effect, X-rays, Compton scattering, blackbody radiation, DeBroglie waves, uncertainty principle, Bohr theory of the atom, atomic nuclei, radioactivity, and elementary particles. Recommended background: familiarity with material covered in PH 1110 and PH 1120 (or PH 1111 and PH 1121) and completion of MA 1021 and MA 1022."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: familiarity with material covered in PH 1110 and PH 1120 (or PH 1111 and PH 1121) and completion of MA 1021 and MA 1022."
+        requirement:
+          kind: allOf
+          of:
+            - kind: anyOf
+              of:
+                - kind: allOf
+                  of:
+                    - kind: course
+                      course: PH|1110
+                    - kind: course
+                      course: PH|1120
+                - kind: allOf
+                  of:
+                    - kind: course
+                      course: PH|1111
+                    - kind: course
+                      course: PH|1121
+            - kind: course
+              course: MA|1021
+            - kind: course
+              course: MA|1022
+    noCreditWith: []
+  - courseId: PH|1140
+    description: "Cat. I An introduction to oscillating systems and waves. Topics include: free, clamped forced, and coupled oscillations of physical systems, traveling waves and wave packets, reflection, and interference phenomena. Recommended background: working knowledge of the material covered in PH 1110 and PH 1120 (or PH 1111 and PH 1121) and completion of MA 1021, MA 1022 and MA 1023."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: working knowledge of the material covered in PH 1110 and PH 1120 (or PH 1111 and PH 1121) and completion of MA 1021, MA 1022 and MA 1023."
+        requirement:
+          kind: allOf
+          of:
+            - kind: anyOf
+              of:
+                - kind: allOf
+                  of:
+                    - kind: course
+                      course: PH|1110
+                    - kind: course
+                      course: PH|1120
+                - kind: allOf
+                  of:
+                    - kind: course
+                      course: PH|1111
+                    - kind: course
+                      course: PH|1121
+            - kind: course
+              course: MA|1021
+            - kind: course
+              course: MA|1022
+            - kind: course
+              course: MA|1023
+    noCreditWith: []
+  - courseId: PH|1150
+    description: "Cat. I This course introduces a selection of physics topics (Thermodynamics, Optics, Fluid Dynamics, Waves, and Atomic and Nuclear Physics) that are critical to students pursuing degrees in Life Sciences, Pre- Med, and Pre-Health. Recommended Background: General Physics - Mechanics (PH1110) or Principles of Physics - Mechanics (PH1111), General Physics Electricity and Magnetism (PH1120) or Introductory Physics – Electricity and Magnetism (PH1121), completion or concurrent study of Calculus I (MA 1021) or Calculus II (MA 1022)"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: General Physics - Mechanics (PH1110) or Principles of Physics - Mechanics (PH1111)
+        requirement:
+          kind: anyOf
+          of:
+            - kind: course
+              course: PH|1110
+            - kind: course
+              course: PH|1111
+      - strength: recommended
+        timing: prior
+        sourceText: General Physics Electricity and Magnetism (PH1120) or Introductory Physics – Electricity and Magnetism (PH1121)
+        requirement:
+          kind: anyOf
+          of:
+            - kind: course
+              course: PH|1120
+            - kind: course
+              course: PH|1121
+      - strength: recommended
+        timing: priorOrConcurrent
+        sourceText: completion or concurrent study of Calculus I (MA 1021) or Calculus II (MA 1022)
+        requirement:
+          kind: anyOf
+          of:
+            - kind: course
+              course: MA|1021
+            - kind: course
+              course: MA|1022
+    noCreditWith: []
+  - courseId: PH|2101
+    description: "Cat. I The course provides fundamental preparation for any specialized application of thermodynamics. The material covered includes a general description of large number systems, states, canonical state variables, state functions, response functions, and equations of state. Focus will be given to the physical meanings of free-energies, enthalpy, chemical potential, and entropy. Connections will be made to equilibrium states, reversible versus irreversible processes, phases and phase transformation, as well as the arrow of time as applied across disciplines. Recommended background: introductory mechanics and multi-variable calculus"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: introductory mechanics and multi-variable calculus"
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: introductory mechanics
+            - kind: topic
+              topic: multi-variable calculus
+    noCreditWith: []
+  - courseId: PH|2501
+    description: Cat. II An introduction to the use of optics for transmission and processing of information. The emphasis is on understanding principles underlying practical photonic devices. Topics include lasers, light emitting diodes, optical fiber communications, fiber lasers and fiber amplifiers, planar optical waveguides, light modulators and photodetectors. Recommended background is PH 1110, PH 1120, PH 1130 and PH 1140 (or their equivalents). This course will be offered in 2020-21, and in alternating years thereafter.
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: Recommended background is PH 1110, PH 1120, PH 1130 and PH 1140 (or their equivalents).
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: PH|1110
+              orEquivalent: true
+            - kind: course
+              course: PH|1120
+              orEquivalent: true
+            - kind: course
+              course: PH|1130
+              orEquivalent: true
+            - kind: course
+              course: PH|1140
+              orEquivalent: true
+    noCreditWith: []
+  - courseId: PH|2540
+    description: "Cat. II This course covers physics of the solar system and exo-planetary systems. Topics introduced will include the sun, moons and planets; the interplanetary space environment; gravitational interplay, planet atmospheres, surfaces and interiors; interplanetary travel, exploration and habitation; challenges of terraforming, comparison of planetary environments to Earth’s biosphere; and the conditions required to support life. Recommended background: a working knowledge of mechanics (PH 1110 or 1111), electrodynamics (PH 1120 or 1121), modern physics (PH 1130), and differential and integral calculus (MA 1021 and MA 1022).This course will be offered in 2020-21, and in alternating years thereafter."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: a working knowledge of mechanics (PH 1110 or 1111), electrodynamics (PH 1120 or 1121), modern physics (PH 1130), and differential and integral calculus (MA 1021 and MA 1022)."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: mechanics
+              satisfiedBy:
+                kind: anyOf
+                of:
+                  - kind: course
+                    course: PH|1110
+                  - kind: course
+                    course: PH|1111
+            - kind: topic
+              topic: electrodynamics
+              satisfiedBy:
+                kind: anyOf
+                of:
+                  - kind: course
+                    course: PH|1120
+                  - kind: course
+                    course: PH|1121
+            - kind: topic
+              topic: modern physics
+              satisfiedBy:
+                kind: course
+                course: PH|1130
+            - kind: topic
+              topic: differential and integral calculus
+              satisfiedBy:
+                kind: allOf
+                of:
+                  - kind: course
+                    course: MA|1021
+                  - kind: course
+                    course: MA|1022
+    noCreditWith: []
+  - courseId: PH|2550
+    description: "Cat I This course introduces the ambient atmospheric and space environments encountered by aerospace vehicles. Topics include: the sun and solar activity; the solar wind; planetary magnetospheres; planetary atmospheres; radiation environments; galactic cosmic rays; meteoroids; and space debris. Recommended background: mechanics (PH1110 / 1111 or equivalent), electromagnetism (PH 1120 / 1121 or equivalent), and ordinary differential equations (MA 2051 or equivalent)."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: mechanics (PH1110 / 1111 or equivalent), electromagnetism (PH 1120 / 1121 or equivalent), and ordinary differential equations (MA 2051 or equivalent)."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: mechanics
+              satisfiedBy:
+                kind: anyOf
+                of:
+                  - kind: course
+                    course: PH|1110
+                    orEquivalent: true
+                  - kind: course
+                    course: PH|1111
+                    orEquivalent: true
+            - kind: topic
+              topic: electromagnetism
+              satisfiedBy:
+                kind: anyOf
+                of:
+                  - kind: course
+                    course: PH|1120
+                    orEquivalent: true
+                  - kind: course
+                    course: PH|1121
+                    orEquivalent: true
+            - kind: topic
+              topic: ordinary differential equations
+              satisfiedBy:
+                kind: course
+                course: MA|2051
+                orEquivalent: true
+    noCreditWith: []
+  - courseId: PH|2601
+    description: "Cat. II This course provides an experimental approach to concepts covered in Photonics (PH 2501), Lasers (PH 2502), and Optics (PH 3504). Through a series of individually tailored experiments, students will reinforce their knowledge in one or more of these areas, while at the same time gaining exposure to modern photonics laboratory equipment. Experiments available include properties of optical fibers, optical fiber diagnostics, optical communications systems, properties of photodetectors, mode structure and threshold behavior of lasers, coherence properties of laser light, characterization of fiber amplifiers, diffraction of light, polarization of light, interferometry. Recommended background: PH 1110/1111, PH 1120/1121. PH 1130, PH 1140, and one or more of the courses PH 2501, PH 2502, or PH 3504. No prior laboratory background is expected. This course will be offered in 2020-21, and in alternating years thereafter."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: PH 1110/1111, PH 1120/1121. PH 1130, PH 1140, and one or more of the courses PH 2501, PH 2502, or PH 3504."
+        requirement:
+          kind: allOf
+          of:
+            - kind: anyOf
+              of:
+                - kind: course
+                  course: PH|1110
+                - kind: course
+                  course: PH|1111
+            - kind: anyOf
+              of:
+                - kind: course
+                  course: PH|1120
+                - kind: course
+                  course: PH|1121
+            - kind: course
+              course: PH|1130
+            - kind: course
+              course: PH|1140
+            - kind: anyOf
+              of:
+                - kind: course
+                  course: PH|2501
+                - kind: course
+                  course: PH|2502
+                - kind: course
+                  course: PH|3504
+    noCreditWith: []
+  - courseId: PH|2651
+    description: "Cat. I This course offers experience in experimentation and observation for students of the sciences and others. In a series of subject units, students learn or review the physical principles underlying the phenomena to be observed and the basis for the measurement techniques employed. Principles and uses of laboratory instruments including the cathode-ray oscilloscope, meters for frequency, time, electrical and other quantities are stressed. In addition to systematic measurement procedures and data recording, strong emphasis is placed on processing of the data, preparation and interpretation of graphical presentations, and analysis of precision and accuracy, including determination and interpretation of best value, measures of error and uncertainty, linear best fit to data, and identification of systematic and random errors. Preparation of high-quality experiment reports is also emphasized. Representative experiment subjects are: mechanical motions and vibrations; free and driven electrical oscillations; electric fields and potential; magnetic materials and fields; electron beam dynamics; optics; diffractiongrating spectroscopy; radioactive decay and nuclear energy measurements. Recommended background: the Introductory Physics course sequence or equivalent. No prior laboratory background beyond that experience is required. Students who have received credit for PH 2600 or PH 3600 may not receive credit for PH 2651."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: the Introductory Physics course sequence or equivalent."
+        requirement:
+          kind: topic
+          topic: the Introductory Physics course sequence
+          satisfiedBy:
+            kind: topic
+            topic: equivalent
+    noCreditWith:
+      - PH|2600
+      - PH|3600
+  - courseId: PH|3206
+    description: "Cat. I An introduction to the basic principles of thermodynamics and statistical physics. Topics covered include: basic ideas of probability theory, statistical description of systems of particles, thermodynamic laws, entropy, microcanonical and canonical ensembles, ideal and real gases, ensembles of weakly interacting spin 1/2 systems. Recommended background: knowledge of quantum mechanics and thermodynamics at the level of ES 3001."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: knowledge of quantum mechanics and thermodynamics at the level of ES 3001."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: quantum mechanics
+            - kind: topic
+              topic: thermodynamics
+              satisfiedBy:
+                kind: course
+                course: ES|3001
+    noCreditWith: []
+  - courseId: PH|3301
+    description: "A continuation of PH 3300, this course deals with more advanced subjects in electromagnetism, as well as study of basic subjects with a more advanced level of mathematical analysis. Fundamentals of electric and magnetic fields, dielectric and magnetic properties of matter, quasi-static time-dependent phenomena, and generation and propagation of electromagnetic waves are investigated from the point of view of the classical Maxwells equations. Recommended background: Electric fields and potentials, electrostatics, magnetic fields from currents and dipoles, as covered in PH 3300. Students should be comfortable with vector algebra and vector calculus, including gradients, divergence, and curl, as typically covered in MA 2251."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Electric fields and potentials, electrostatics, magnetic fields from currents and dipoles, as covered in PH 3300."
+        requirement:
+          kind: topic
+          topic: electric fields and potentials, electrostatics, magnetic fields from currents and dipoles
+          satisfiedBy:
+            kind: course
+            course: PH|3300
+      - strength: suggested
+        timing: prior
+        sourceText: Students should be comfortable with vector algebra and vector calculus, including gradients, divergence, and curl, as typically covered in MA 2251.
+        requirement:
+          kind: topic
+          topic: vector algebra and vector calculus
+          satisfiedBy:
+            kind: course
+            course: MA|2251
+    noCreditWith: []
+    needsReview: The text says this course is 'a continuation of PH 3300' without a prerequisite label; PH 3300 is recorded only through the recommended background.
+  - courseId: PH|3401
+    description: "Cat. I This course includes a study of the basic postulates of quantum mechanics, its mathematical language and applications to one-dimensional problems. The course is recommended for physics majors and other students whose future work will involve the application of quantum mechanics. Topics include wave packets, the uncertainty principle, introduction to operator algebra, application of the Schroedinger equation to the simple harmonic oscillator, barrier penetration and potential wells. Recommended background: Junior standing, MA 4451, and completion of the introductory physics sequence, including the introduction to the 20th century physics. Suggested background: knowledge (or concurrent study) of linear algebra, Fourier series, and Fourier transforms."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Junior standing, MA 4451, and completion of the introductory physics sequence, including the introduction to the 20th century physics."
+        requirement:
+          kind: allOf
+          of:
+            - kind: standing
+              text: Junior standing
+            - kind: course
+              course: MA|4451
+            - kind: topic
+              topic: completion of the introductory physics sequence, including the introduction to the 20th century physics
+      - strength: suggested
+        timing: priorOrConcurrent
+        sourceText: "Suggested background: knowledge (or concurrent study) of linear algebra, Fourier series, and Fourier transforms."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: linear algebra
+            - kind: topic
+              topic: Fourier series
+            - kind: topic
+              topic: Fourier transforms
+    noCreditWith: []
+  - courseId: PH|3402
+    description: "Cat. I This course represents a continuation of PH 3401 and includes a study of three-dimensional systems and the application of quantum mechanics in selected fields. Topics include: the hydrogen atom, angular momentum, spin, perturbation theory and examples of the application of quantum mechanics in fields such as atomic and molecular physics, solid state physics, optics, and nuclear physics. Recommended background: PH 3401."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: PH 3401."
+        requirement:
+          kind: course
+          course: PH|3401
+    noCreditWith: []
+  - courseId: PH|3501
+    description: "Cat. II This course is designed to help the student acquire an understanding of the formalism and concepts of relativity as well as its application to physical problems. Topics include the Lorentz transformation, 4-vectors and tensors, covariance of the equations of physics, transformation of electromagnetic fields, particle kinematics and dynamics. Recommended background: knowledge of mechanics and electrodynamics at the intermediate level. This course will be offered in 2020-21, and in alternating years thereafter."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: knowledge of mechanics and electrodynamics at the intermediate level."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: mechanics at the intermediate level
+            - kind: topic
+              topic: electrodynamics at the intermediate level
+    noCreditWith: []
+  - courseId: PH|3502
+    description: "Cat. II An introduction to solid state physics. Topics include: crystallography, lattice vibrations, electron band structure, metals, semiconductors, dielectric and magnetic properties. Recommended background: prior knowledge of quantum mechanics at an intermediate level. Suggested background: knowledge of statistical physics is helpful. This course will be offered in 2020-21, and in alternating years thereafter."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: prior knowledge of quantum mechanics at an intermediate level."
+        requirement:
+          kind: topic
+          topic: quantum mechanics at an intermediate level
+      - strength: suggested
+        timing: prior
+        sourceText: "Suggested background: knowledge of statistical physics is helpful."
+        requirement:
+          kind: topic
+          topic: statistical physics
+    noCreditWith: []
+  - courseId: PH|4500
+    description: This course provides advanced study in topics not addressed in the regular Physics curriculum. Offerings may include areas such as General Relativity, Particle Physics, or advanced topics building upon current courses. Exact course descriptions will be published in advance by the instructor. Students may receive credit for multiple instances of PH 4500 provided each covers a different topic. Recommended Background will be published along with the specific course description.
+    clauses: []
+    noCreditWith: []
+    needsReview: The text says the recommended background is published with each offering, so none is recorded.
+  - courseId: PH|4601
+    description: "This course provides students with hands-on laboratory experience in experimental quantum optics. Students investigate the quantum nature of light through a series of fiber-optic and free-space optics experiments. Key topics include photon counting and detection, the diffraction of light in the single-photon limit, the generation of correlated and entangled photon pairs, single photon and coincidence detection, photon bunching and indistinguishability, the Hong-Ou-Mandel effect, and the observation of Bell states, as well as special topics. Students will work with single-photon experiments, lasers, various optical components, and photon detectors. Students will also perform data and error analysis and gain experience in scientific communication. This course will be offered in academic years ending in odd numbers. Recommended Background: Students should have basic knowledge of quantum physics at the level of an undergraduate course in quantum mechanics, such as PH3401 Quantum Mechanics I or equivalent. Students should have basic physics laboratory skills at the level of an undergraduate physics course that has a laboratory component, such as PH1130 Modern Physics, PH2510 Atomic Force Microscopy, PH2601 Photonics Laboratory, PH2651 Intermediate Physics Laboratory, or equivalent."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: Students should have basic knowledge of quantum physics at the level of an undergraduate course in quantum mechanics, such as PH3401 Quantum Mechanics I or equivalent.
+        requirement:
+          kind: topic
+          topic: basic knowledge of quantum physics at the level of an undergraduate course in quantum mechanics
+          satisfiedBy:
+            kind: course
+            course: PH|3401
+            orEquivalent: true
+      - strength: recommended
+        timing: prior
+        sourceText: Students should have basic physics laboratory skills at the level of an undergraduate physics course that has a laboratory component, such as PH1130 Modern Physics, PH2510 Atomic Force Microscopy, PH2601 Photonics Laboratory, PH2651 Intermediate Physics Laboratory, or equivalent.
+        requirement:
+          kind: topic
+          topic: basic physics laboratory skills
+          satisfiedBy:
+            kind: anyOf
+            of:
+              - kind: course
+                course: PH|1130
+                orEquivalent: true
+              - kind: course
+                course: PH|2510
+                orEquivalent: true
+              - kind: course
+                course: PH|2601
+                orEquivalent: true
+              - kind: course
+                course: PH|2651
+                orEquivalent: true
+    noCreditWith: []
+    needsReview: Both 'such as' lists give examples, so the course lists are not exhaustive.
+  - courseId: PH|561
+    description: Atomic force microscopes (AFMs) are instruments that allow three-dimensional imaging of surfaces with nanometer resolution and are important enabling tools for nanoscience and technology. The student who successfully completes this course will understand the functional principles of AFMs, be able to run one, and interpret the data that are collected. The recommended background for this course is a bachelor’s degree in science or engineering. Students who have successfully completed PH 2510, the undergraduate version of this course, may not earn credit for PH 561.
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: The recommended background for this course is a bachelor’s degree in science or engineering.
+        requirement:
+          kind: standing
+          text: a bachelor’s degree in science or engineering
+    noCreditWith:
+      - PH|2510
+  - courseId: PH|571
+    description: "Students interested in Biophysics/ Soft Condensed Matter read journal articles, prepare presentations and give short talks, engage in critical discussion, and provide feedback to fellow students. The objectives of the course are for students to learn about current topics in the broad area Biophysics/ Soft Condensed Matter and biotechnology and to improve their professional skills. This course is repeatable for additional credit. Students may take up to 5 credits of PH571 as elective course credit to meet graduate program distribution requirements. Credit: 1.0 Recommended background: A bachelor’s degree in science, technology, engineering, or mathematics"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: A bachelor’s degree in science, technology, engineering, or mathematics"
+        requirement:
+          kind: standing
+          text: a bachelor’s degree in science, technology, engineering, or mathematics
+    noCreditWith: []
+  - courseId: PH|2202
+    description: "Cat. IThis course is a continuation of the treatment of mechanics started in PH 2201.Topics covered include: rigid-body dynamics, rotating coordinate systems,Newton’s law of gravitation, central-force problem, driven harmonic oscillator,an introduction to generalized coordinates, and the Lagrangian and Hamiltonianformulation of mechanics."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: This course is a continuation of the treatment of mechanics started in PH 2201.
+        requirement:
+          kind: course
+          course: PH|2201
+    noCreditWith: []
+  - courseId: PH|511
+    description: Lagrangian formulation Kinematics and dynamics of rigid bodies. Small oscillations. Motion in non-inertial frames, Hamiltonian mechanics. Canonical transformations. Hamilton-Jacobi theory.
+    clauses: []
+    noCreditWith: []
+  - courseId: PH|514
+    description: Schrodinger equation, potential wells and barriers, Hilbert space formulation of quantum mechanics and applications, Central potentials, hydrogen atom, isotropic oscillator, angular momentum and spin.
+    clauses: []
+    noCreditWith: []
+  - courseId: PH|515
+    description: Time independent perturbation theory, variational method and WKB method, time-dependent perturbation theory, partial wave theory of scattering, integral approach to scattering theory and Born approximation.
+    clauses: []
+    noCreditWith: []
+  - courseId: PH|533
+    description: Classical electrodynamics including boundary value problems using Green’s functions, Maxwell’s equations, electromagnetic properties of matter, wave propagation and radiation theory.
+    clauses: []
+    noCreditWith: []
+  - courseId: PH|541
+    description: The emphasis of the course is on mathematical techniques needed by physicists. The course covers functions of complex variable, special functions, Fourier and Laplace transforms, linear algebra and tensor analysis.
+    clauses: []
+    noCreditWith: []
+  - courseId: PH|548
+    description: The course offers an overview of basic sensor physics and technologies to provide practical working knowledge of sensors. The course will include basic sensor operating principles, the physics of sensors, electrical interfacing to sensors, measurement principles, and applications. A wide range of sensors could be covered, such as temperature, photonic, acoustic, chemical, biological, electromagnetic, pressure, position and motion sensors. There will also be a laboratory component to the course.
+    clauses: []
+    noCreditWith: []
+  - courseId: PH|554
+    description: Phonons and specific heat of solids; electronic conductivity and band theory of solids; Fermi and Bose gases, Optical properties of materials. Magnetic interactions.
+    clauses: []
+    noCreditWith: []
+  - courseId: PH|580
+    description: (0 credits) Students attend Physics Colloquia by WPI faculty and invited scientists on current research topics in different areas of physics. They discuss results and ideas presented in those talks. In addition, students give presentations on their research or on problems of current interest to physics community. The course therefore will provide opportunities for students to develop their presentation skills, broaden their perspectives and provide networking opportunities. All full-time physics graduate students are required to register and attend.
+    clauses: []
+    noCreditWith: []
+  - courseId: PH|597
+    description: (1-3 credits) Arranged by physics faculty for individual or groups of students, these offerings cover topics that are not covered by the regular Physics course offerings. Exact course descriptions are posted by the faculty in advance of the offering.
+    clauses: []
+    noCreditWith: []
+  - courseId: PH|101X
+    description: "This is a seminar-based course intended for students that seek to understand the breadth of activities, opportunities, and career pathways that are available to students in areas related to physics. Students at any academic level considering Physics or Applied Physics as a major, both those who are decided as well as those who are undecided, should enroll in PH 101X. This course will not substitute for a PH course in the distribution requirements."
+    clauses: []
+    noCreditWith: []

@@ -5,7 +5,7 @@
  * `getStyle().setBackgroundColor(...)` calls scattered through the widgets) so
  * the rewrite can be re-skinned from one file instead of hunting through
  * components. Do not change these without a side-by-side check against the old
- * app — §8 of PLAN.md lists the only intended visual changes, and there are none.
+ * app — §8 of .claude/PLAN.md lists the only intended visual changes, and there are none.
  */
 :root {
   /* Brand */

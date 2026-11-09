@@ -1,0 +1,308 @@
+department: MU
+entries:
+  - courseId: MU|1000
+    description: "MU 1000: Music and Its Makers (1/3 unit; Cat. I) This course will introduce students to interdisciplinary music studies by focusing on the people who create musical meaning: performers, composers, listeners, patrons, writers, and more. As we analyze significant musical works, we will also learn about the broader cultural, historical, and social contexts in which they appeared, and the people involved in their creation – including women and people of color, who are often minimized in discussions of music history. Historical examples will be juxtaposed with contemporary musical works from an array of genres, allowing students to compare today’s musical cultures to past ones. Students will also analyze the role of music in their own lives. Recommended background: No prerequisites. A basic reading knowledge of music is helpful, but not required."
+    clauses:
+      - strength: suggested
+        timing: prior
+        sourceText: A basic reading knowledge of music is helpful, but not required.
+        requirement:
+          kind: topic
+          topic: a basic reading knowledge of music
+    noCreditWith: []
+    needsReview: Lead phrase is 'Recommended background', but the text says there are no prerequisites and reading knowledge is helpful but not required. Recorded as suggested.
+  - courseId: MU|1100
+    description: "MU 1100 Foundations of Music Theory and Aural Skills (1/3 unit; Cat. I) This course introduces basic music theory concepts and helps students develop aural skills. Course topics include scales, intervals, chords, harmonic progressions, and rhythm. Activities include both written work in music notation and ear training exercises. Recommended Background: some basic knowledge of reading music"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: some basic knowledge of reading music"
+        requirement:
+          kind: topic
+          topic: some basic knowledge of reading music
+    noCreditWith: []
+  - courseId: MU|2002
+    description: "MU 2002: History of Western Art Music After 1750 This course provides a historical survey of Western music from the Classical period to the present with an emphasis on understanding stylistic traits and theoretical concepts of the eras. Topics include the development of genres such as sonata, string quartet, concerto, symphony, symphonic poem, character piece, Lied, and opera; and 20th century trends of impressionism, primitivism, atonality, serialism, minimalism, aleatoric music, and electronic music. No prior background in music is necessary. Students may not receive credit for both MU 2721 and MU 2002"
+    clauses: []
+    noCreditWith:
+      - MU|2721
+  - courseId: MU|2100
+    description: "Cat. I This course will investigate the sonic organization of musical works and performances, focusing on fundamental questions involved in the process of composition: How do I connect different ideas? How can I make a larger work out of smaller parts? How can I vary statements to create interest without compromising coherence? Where do I start? A progressive series of composition projects will build techniques in relevant areas including rhythm, harmony, melody, and form. Exercises in mechanics will be complemented by contemplation and discussion of artistic, aesthetic and philosophical ideas that are equally important in the compositional process. We will examine the relationship between musical works and how they are communicated as instructions to others (e.g. orally, as symbols, prose, graphic images, or computer programs). Weekly listening, reading, and composition assignments draw on a broad range of musical styles and intellectual traditions from various cultures and historical periods. Recommended background: understanding of basic music theory through coursework (e.g. MU 1511, Introduction to Music or MU 1611, Fundamentals of Music) or equivalent experience."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: understanding of basic music theory through coursework (e.g. MU 1511, Introduction to Music or MU 1611, Fundamentals of Music) or equivalent experience."
+        requirement:
+          kind: topic
+          topic: understanding of basic music theory
+          satisfiedBy:
+            kind: anyOf
+            of:
+              - kind: course
+                course: MU|1511
+              - kind: course
+                course: MU|1611
+              - kind: topic
+                topic: equivalent experience
+    noCreditWith: []
+    needsReview: The examples are introduced with 'e.g.', so other coursework may also qualify.
+  - courseId: MU|2101
+    description: "MU 2101: Arranging and Orchestration (1/3 Unit; Cat. I) Students will study specific characteristics of instruments and the voice to enable them to successfully arrange vocal and instrumental music. Students will need to possess a basic knowledge of music theory. Students may not receive credit for both MU 3002 and MU 2101 Suggested background for this course is MU 1100 (Foundations of Music Theory and Aural Skills) or its equivalent"
+    clauses:
+      - strength: suggested
+        timing: prior
+        sourceText: Suggested background for this course is MU 1100 (Foundations of Music Theory and Aural Skills) or its equivalent
+        requirement:
+          kind: course
+          course: MU|1100
+          orEquivalent: true
+    noCreditWith:
+      - MU|3002
+  - courseId: MU|2300
+    description: "Cat. II This course will present ways to facilitate musicianship through the use of technology. Course topics include an introduction to music notation software, MIDI and audio recording, signal processing, and interactive music system programming. The course will address past, current, and emerging trends in music technology as they relate to facilitating an understanding of musical concepts. Students may not receive credit for both MU 2300 and MU 230X. Suggested background: a basic understanding of music notation and the fundamentals of music. This course will be offered in 2020-21, and in alternating years thereafter."
+    clauses:
+      - strength: suggested
+        timing: prior
+        sourceText: "Suggested background: a basic understanding of music notation and the fundamentals of music."
+        requirement:
+          kind: topic
+          topic: a basic understanding of music notation and the fundamentals of music
+    noCreditWith:
+      - MU|230X
+  - courseId: MU|2403
+    description: Cat. I The Chamber Choir is WPI’s smaller, audition-based, choral ensemble. This ensemble explores specific stylistic techniques as pertains to the music of the Renaissance, Baroque, twentieth century, jazz, and extended vocal techniques (electronic, digital and experimental). The ensemble meets weekly. Students are expected to be of the highest vocal caliber and should possess advanced sight-reading techniques. Open to all who are interested. Permission of the instructor is necessary to register.
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: Permission of the instructor is necessary to register.
+        requirement:
+          kind: permission
+          text: Permission of the instructor
+    noCreditWith: []
+  - courseId: MU|2410
+    description: Cat. I The Jazz Combo is a small ensemble that performs frequently on campus and on tour, playing jazz arrangements written for a small ensemble with major emphasis on improvisation. Rehearsals are held weekly. Students are expected to perform with the ensemble, know how to read music, and have experience with improvisation. This is an auditioned group. Permission of the instructor is necessary to register.
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: Permission of the instructor is necessary to register.
+        requirement:
+          kind: permission
+          text: Permission of the instructor
+    noCreditWith: []
+  - courseId: MU|2411
+    description: Cat. I The Jazz Ensemble is an intermediate level ensemble that performs traditional and contemporary big band literature with an emphasis on stylistically appropriate interpretation and performance practice. The ensemble performs frequently on campus and on tour. Rehearsals are held weekly. Students are expected to perform with the ensemble and to know how to read music. This is an auditioned group. Permission of the instructor is necessary to register.
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: Permission of the instructor is necessary to register.
+        requirement:
+          kind: permission
+          text: Permission of the instructor
+    noCreditWith: []
+  - courseId: MU|2412
+    description: The Stage Band is an advanced level ensemble that performs traditional and contemporary big band literature with an emphasis on stylistically appropriate interpretation and performance practice. The ensemble performs frequently on campus and on tour. Rehearsals are held weekly. Students are expected to perform with the ensemble and to know how to read music. This is an auditionedgroup. Permission of the instructor is necessary to register.
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: Permission of the instructor is necessary to register.
+        requirement:
+          kind: permission
+          text: Permission of the instructor
+    noCreditWith: []
+  - courseId: MU|2421
+    description: Cat. I The String Quartet is an audition-based, select ensemble. Members are required to also participate in Orchestra. The quartet meets weekly and performs both on campus and on tour. Students are expected to be of the highest caliber of string players and know how to read music. Permission of the instructor is necessary to register.
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: Permission of the instructor is necessary to register.
+        requirement:
+          kind: permission
+          text: Permission of the instructor
+    noCreditWith: []
+  - courseId: MU|2431
+    description: Cat. I The Brass Ensemble performs frequently on campus and on tour and is open to students who perform on trumpet, trombone, euphonium, French horn, tuba, or tympani. Renaissance antiphonal music is included in the repertoire. Rehearsals are held weekly. Students are expected to perform with the ensemble and to know how to read music. Permission of the instructor is necessary to register.
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: Permission of the instructor is necessary to register.
+        requirement:
+          kind: permission
+          text: Permission of the instructor
+    noCreditWith: []
+  - courseId: MU|2440
+    description: Cat. I The Percussion Ensemble is an audition-based, select ensemble. The Percussion Ensemble performs a wide stylistic range of music from opera overtures to twentieth century minimalist compositions, to Caribbean songs. The ensemble meets weekly and performs on campus during the school year. Students must know how to read music. Permission of the instructor is necessary to register.
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: Permission of the instructor is necessary to register.
+        requirement:
+          kind: permission
+          text: Permission of the instructor
+    noCreditWith: []
+  - courseId: MU|2450
+    description: "ISU Students electing to complete their Humanities and Arts Requirement in music may, for one of their five courses, undertake 1/3 unit (normally at 1/12 unit per term) of private vocal or instrumental instruction. (Supplemental ensemble work is also strongly recommended.) The student must receive prior approval by a member of the WPI music faculty, and the instruction must be beyond the elementary level. Lessons involve a separate fee. Note that the maximum of 1/3 unit credit for lessons may be earned in addition to 1/3 unit credit for performance (see condition A or B below). Additional work, either in performance or lessons, may be acknowledged on the WPI transcript but will carry no WPI credit. Private lessons: voice, piano, organ, winds, brass, strings, and percussion."
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: The student must receive prior approval by a member of the WPI music faculty, and the instruction must be beyond the elementary level.
+        requirement:
+          kind: allOf
+          of:
+            - kind: permission
+              text: prior approval by a member of the WPI music faculty
+            - kind: other
+              text: instruction beyond the elementary level
+    noCreditWith: []
+  - courseId: MU|2451
+    description: "MU 2501: Conducting (1/6 unit or 0 unit per semester depending on grading option; Cat. I) This course will introduce students to the basic elements of conducting, such as gesture, music analysis, score preparation, and rehearsal techniques. Each section of the course is paired with a large ensemble to provide practical experience and opportunities between the areas of choral, band, orchestral, and jazz music. Course meeting times include during and outside of these set rehearsal times. Recommended Background: A basic reading knowledge of music and simultaneous enrollment in the corresponding large music ensemble"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: A basic reading knowledge of music"
+        requirement:
+          kind: topic
+          topic: a basic reading knowledge of music
+      - strength: recommended
+        timing: concurrent
+        sourceText: simultaneous enrollment in the corresponding large music ensemble
+        requirement:
+          kind: topic
+          topic: the corresponding large music ensemble
+    noCreditWith: []
+    needsReview: "The course header in the source says 'MU 2501: Conducting'; the catalog id MU|2451 is used here."
+  - courseId: MU|2501
+    description: "Cat. I How are we able to distinguish instruments, timbres and rhythms from the intertwined sonic stream presented by the world? How do we organize these elements in time to create rhythms, melodies, phrases and pieces? How do perception and memory interact to allow us navigate a musical work? We will explore these questions by considering the cognitive and perceptual processes that shape our musical experience. Topics will include event distinction, temporal perception, hierarchical organization, perceptual grouping, expertise, memory and categorization . We will illustrate these ideas in musical contexts by listening to a variety of musical works . We will consider how psychological principles are applied to music technologies, such as compression algorithms, mixing methodologies and the field of music information retrieval . We will consider experiments that focus on some of these topics to further our understanding about how we experience music . Note: Students that received credit for MU 202X may not receive credit for MU 2501 . Students also may not receive credit for both MU 2501 and PSY 2501 . This course can count for either the HUA or the SSPS requirement, but it cannot double count for both the HUA and SSPS graduation requirements . Recommended background: Fundamentals of Music I and/or Fundamentals of Music II."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Fundamentals of Music I and/or Fundamentals of Music II."
+        requirement:
+          kind: anyOf
+          of:
+            - kind: topic
+              topic: Fundamentals of Music I
+            - kind: topic
+              topic: Fundamentals of Music II
+    noCreditWith:
+      - PSY|2501
+  - courseId: MU|2502
+    description: "What are the connections between music and science, and what can be achieved when they come together? This course will teach students to create science-inspired musical compositions, providing the opportunity to explore the humanistic side of their STEM experiences at WPI. Students will learn interdisciplinary techniques such as data sonification, analyze works of science-art in society, and explore the philosophical questions that arise when differing disciplines are brought together. These activities will culminate in the creation of multimedia compositions performed live in a concert of instrumental and electronic music. Those with a science focus at WPI will have the opportunity to explore their work in a musical context, and those with a humanities background will be empowered to compose works inspired by science. Recommended Background: some background in musical performance and/or composing. Cat II"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: some background in musical performance and/or composing."
+        requirement:
+          kind: topic
+          topic: some background in musical performance and/or composing
+    noCreditWith: []
+  - courseId: MU|3230
+    description: Cat. II This course introduces students to selected musical cultures of the world, e.g., Africa, Asia, the Middle East, and Latin America, from the ethnomusicological perspective by examining their musical styles as well as cultural and social contexts. Students will be expected to read materials in interdisciplinary areas, including musical ethnographies. No prior background in music is necessary. This course will be offered in 2019-20, and in alternating years thereafter.
+    clauses: []
+    noCreditWith: []
+  - courseId: MU|3301
+    description: "Cat. II This course examines topics in Music Technology in which the application of MIDI and MIDI systems play a significant role. Topics may vary each year among the following areas: sequencing, live performance, composition, and film scoring. Students can take MU 3614 only one time for credit, but a student interested in taking another version can take a second one as an ISU. Recommended background: MU 1611 (Fundamentals of Music) This course will be offered in 2020-21, and in alternating years thereafter."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: MU 1611 (Fundamentals of Music)"
+        requirement:
+          kind: course
+          course: MU|1611
+    noCreditWith: []
+  - courseId: MU|3302
+    description: "Cat. II This course examines topics in Music Technology in which Digital Sound plays a significant role. Topics may vary each year among the following areas: digital editing, audio recording, film scoring, game audio, sound effects, audio production, theatrical sound, and surround sound. Students can take MU 3302 only one time for credit, but a student interested in taking another version can take a second one as an ISU. Recommended background: MU 1611 (Fundamentals of Music) This course will be offered in 2020-21, and in alternating years thereafter"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: MU 1611 (Fundamentals of Music)"
+        requirement:
+          kind: course
+          course: MU|1611
+    noCreditWith: []
+  - courseId: MU|3303
+    description: "Cat. II This course examines topics in Music Technology in which Interactive Programming plays a significant role. Topics may vary each year among the following areas: real time performance controllers, algorithmic composition, interface design, sensor technology, and gesture detection. Students can take MU 3616 only one time for credit, but a student interested in taking another version can take a second one as an ISU. Recommended background: MU 1611 (Fundamentals of Music) This course will be offered in 2020-21, and in alternating years thereafter."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: MU 1611 (Fundamentals of Music)"
+        requirement:
+          kind: course
+          course: MU|1611
+    noCreditWith: []
+  - courseId: MU|2010
+    description: Cat. II Through an introduction to the musical contributions of Louis Armstrong, Duke Ellington, Charlie Parker, Miles Davis and others, students are exposed to the chronological development of the language of jazz. Each jazz era is examined in detail including the musical and social contexts which helped define it. Participants are expected to build aural skills with the goal of identifying specific historical periods through the recognition of particular musical characteristics. Students examine in depth one artist of their choice. This course will be offered in 2020-21, and in alternating years thereafter. [This replaces MU 4623. Credit is not allowed for both MU 4623 and MU 2719.]
+    clauses: []
+    noCreditWith:
+      - MU|4623
+      - MU|2719
+    needsReview: Bracketed replacement note says credit is not allowed for both MU 4623 and MU 2719; read as no credit with either, since this course replaces MU 4623.
+  - courseId: MU|2020
+    description: Cat. I This course will explore the uniqueness of America’s popular music and its origins in the music of Africa and the folk music of Europe. Particular emphasis will be given to the origins and history of rock ‘n’ roll examining its roots in blues and early American popular music. [This replaces MU 4625. Credit is not allowed for both MU 4625 and MU 2722.]
+    clauses: []
+    noCreditWith:
+      - MU|4625
+      - MU|2722
+    needsReview: Bracketed replacement note says credit is not allowed for both MU 4625 and MU 2722; read as no credit with either, since this course replaces MU 4625.
+  - courseId: MU|2401
+    description: Cat. I The Glee Club is one of WPI’s choral ensembles and the oldest student organization on campus. Glee Club performs many styles and periods of the vast repertoire of music featuring tenor and bass voices. Several times each year the Glee Club and Alden Voices (soprano and alto voices) join forces as the WPI Festival Chorus to perform major works of the repertoire. The Glee Club regularly performs on campus, throughout the Worcester area, and takes international and domestic tours. Rehearsals are held weekly. No audition is required. The course is open to all who are interested and sing in the tenor and bass range.
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: The course is open to all who are interested and sing in the tenor and bass range.
+        requirement:
+          kind: standing
+          text: open to those who sing in the tenor and bass range
+    noCreditWith: []
+  - courseId: MU|2402
+    description: Cat. I Alden Voices is one of WPI’s choral ensembles and also functions as a student organization on campus. Alden Voices performs many styles and periods of the vast repertoire of music featuring soprano and alto voices. Several times each year the Alden Voices and the Glee Club (tenor and bass voices) join forces as the WPI Festival Chorus to perform major works of the repertoire. Alden Voices regularly performs on campus, throughout the Worcester area, and takes international and domestic tours. Rehearsals are held weekly. No audition is required. The course is open to all who are interested and sing in the soprano and alto range.
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: The course is open to all who are interested and sing in the soprano and alto range.
+        requirement:
+          kind: standing
+          text: open to those who sing in the soprano and alto range
+    noCreditWith: []
+  - courseId: MU|2413
+    description: Cat. I The African Drumming Ensemble meets weekly and performs both on campus and at community venues. Students of all experience levels are welcome to join. Auditions are not required for this ensemble, nor is the ability to read music. Traditional West African percussion styles are the primary focus of the ensemble, but other styles of music are also part of the ensemble’s repertory.
+    clauses: []
+    noCreditWith: []
+  - courseId: MU|2420
+    description: Cat. I The String Ensemble performs music for string orchestra both on campus and on tour. Members of the string ensemble also comprise the string section for the full orchestra. Rehearsals are held weekly. Students are expected to perform with the ensemble and to know how to read music.
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: Students are expected to perform with the ensemble and to know how to read music.
+        requirement:
+          kind: topic
+          topic: knowing how to read music
+    noCreditWith: []
+  - courseId: MU|2430
+    description: Cat. I The Concert Band is a large ensemble that performs several concerts a year as well as on tour. Membership is open to those who play traditional wind, brass or percussion instruments. Rehearsals are held weekly. Students are expected to perform with the ensemble and to know how to read music.
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: Membership is open to those who play traditional wind, brass or percussion instruments.
+        requirement:
+          kind: standing
+          text: open to those who play traditional wind, brass or percussion instruments
+      - strength: recommended
+        timing: prior
+        sourceText: Students are expected to perform with the ensemble and to know how to read music.
+        requirement:
+          kind: topic
+          topic: knowing how to read music
+    noCreditWith: []
+  - courseId: MU|3110
+    description: Cat. I This course examines harmonic and melodic relationships as applied to jazz and popular music composition. Students are introduced to a wide range of jazz improvisational performance practices. Topics include compositional forms, harmonic structures, major and minor keys, blues, modal jazz, and re-harmonization techniques. Students are expected to have a basic knowledge of reading music. Credit is not allowed for MU 4624 or MU 2730 and MU 3730.]
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: Students are expected to have a basic knowledge of reading music.
+        requirement:
+          kind: topic
+          topic: basic knowledge of reading music
+    noCreditWith:
+      - MU|4624
+      - MU|2730
+      - MU|3730

@@ -1,0 +1,110 @@
+department: SP
+entries:
+  - courseId: SP|1523
+    description: This intensive course, through a communicative approach, introduces students to the structures, essential vocabulary, and knowledge of the language and cultures of the Spanish-speaking world. Using the interpretive, interpersonal, and presentational communication modes at a basic level, students will start to build their Spanish language proficiency and their intercultural communicative competence by completing simple tasks in speaking, writing, reading, and listening using basic level content and contexts. By the end of this course, students will be able to ask questions and communicate short messages to describe themselves and their immediate environment. The course is designed for students with little or no previous knowledge of Spanish and is closed to native and heritage speakers of Spanish. To enroll in this course, you must obtain written permission from one of the Spanish professors. Students with previous knowledge of Spanish are encouraged to take the Spanish Placement Test offered by a WPI Spanish faculty member via CANVAS.
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: To enroll in this course, you must obtain written permission from one of the Spanish professors.
+        requirement:
+          kind: permission
+          text: written permission from one of the Spanish professors
+      - strength: required
+        timing: prior
+        sourceText: is closed to native and heritage speakers of Spanish.
+        requirement:
+          kind: standing
+          text: closed to native and heritage speakers of Spanish
+    noCreditWith: []
+  - courseId: SP|1524
+    description: This course is designed to further develop basic Spanish language proficiency at the sentence level in meaningful real-life contexts. It will introduce new forms of Spanish grammar, vocabulary, and different aspects of Hispanic culture in the U.S. and Spanishspeaking countries while emphasizing language skills in the interpersonal, interpretative, and presentational communicative modes. Upon completing this course, students will be able to communicate with short sentences to describe present and past experiences. This course is closed to native speakers and heritage speakers of Spanish, except with written permission from the instructor. Recommended Backgrounds Spanish 1523 or 3 years of Spanish in high school.
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: This course is closed to native speakers and heritage speakers of Spanish, except with written permission from the instructor.
+        requirement:
+          kind: standing
+          text: closed to native speakers and heritage speakers of Spanish, except with written permission from the instructor
+      - strength: recommended
+        timing: prior
+        sourceText: Recommended Backgrounds Spanish 1523 or 3 years of Spanish in high school.
+        requirement:
+          kind: anyOf
+          of:
+            - kind: course
+              course: SP|1523
+            - kind: topic
+              topic: 3 years of Spanish in high school
+    noCreditWith: []
+  - courseId: SP|2522
+    description: Intermediate Spanish II will provide students with the structures, vocabulary, and cultural context to help them elevate their communication skills in Spanish from the intermediate to advanced levels. By interacting with authentic materials, students will be prepared to perform more complex and diverse linguistic tasks, such as interpreting and discussing literary and cultural readings, and short films to recognize and celebrate the contributions of artists, writers, and filmmakers to the cultural diversity of the Spanish-speaking world. Students will be able to use the language creatively in longer sentences to express preferences and opinions and exchange information in conversations and presentations. This course is closed to native speakers of Spanish and heritage speakers except with written permission from the instructor. Recommended background 2522
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: This course is closed to native speakers of Spanish and heritage speakers except with written permission from the instructor.
+        requirement:
+          kind: standing
+          text: closed to native speakers of Spanish and heritage speakers except with written permission from the instructor
+    noCreditWith: []
+    needsReview: Says 'Recommended background 2522', which names this course itself. No other background is given, so no recommended clause was recorded; check the source text.
+  - courseId: SP|3521
+    description: Students at the Advanced level will explore a wider variety of literature (poetry, biographies, short stories), cultural readings, and short films produced in Spanish-speaking contexts to study critical historical, cultural, and social events related to the Hispanic world. Students will also review advanced vocabulary and grammar structures to connect and express ideas into a paragraph length in both oral and written discourses. At the end of the course, students will be able to produce basic academic texts and presentations to summarize, narrate, describe, and express their opinions about different topics and social issues. This course is closed to native speakers of Spanish and heritage speakers except with written permission from the instructor. Recommended background SP 2522
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: This course is closed to native speakers of Spanish and heritage speakers except with written permission from the instructor.
+        requirement:
+          kind: standing
+          text: closed to native speakers of Spanish and heritage speakers except with written permission from the instructor
+      - strength: recommended
+        timing: prior
+        sourceText: Recommended background SP 2522
+        requirement:
+          kind: course
+          course: SP|2522
+    noCreditWith: []
+  - courseId: SP|3522
+    description: Advanced Spanish II will continue expanding students’ interaction with sophisticated and complex texts such as literature, films, news, and reports about social, political, and historical events related to the Spanish-speaking world. Students will practice advanced grammar structures, vocabulary, and critical thinking to discuss, write, and present in academic and professional settings in the target language. This course satisfies the Inquiry Seminar to complete the HUA requirement In addition, this course would benefit students interested in WPI’s Project Centers in Spanish-speaking countries. This course is taught at an advanced level of Spanish. This course is closed to native speakers of Spanish and heritage speakers except with written permission from the instructor. Recommended background SP 3521
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: This course is closed to native speakers of Spanish and heritage speakers except with written permission from the instructor.
+        requirement:
+          kind: standing
+          text: closed to native speakers of Spanish and heritage speakers except with written permission from the instructor
+      - strength: recommended
+        timing: prior
+        sourceText: Recommended background SP 3521
+        requirement:
+          kind: course
+          course: SP|3521
+    noCreditWith: []
+  - courseId: SP|3523
+    description: "An introduction to various aspects of life in Latin American countries from early times to the present. Focusing on Latin America's social and political development, the course will reveal the unity and diversity that characterize contemporary Latin American culture. Typical topics for study include the Pre-Columbian civilizations and their cultural legacy, the conquistadores and the colonial period, the independence movements, the search for and the definition of American identity, the twentieth-century dictatorships, the move toward democracy, gender and race identities, religious practices, etc. This course satisfies the Inquiry Seminar to complete the HUA requirement in Spanish and would also count toward International and Global Studies and Latin American and Caribbean studies. In addition, this course would benefit students interested in WPI’s Project Centers in Latin America and the Caribbean. This course is taught at an advanced level of Spanish. This course will be offered in 2026-2027, and in alternating years thereafter. Recommended background: Intermediate Advanced Spanish I and II"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Intermediate Advanced Spanish I and II"
+        requirement:
+          kind: topic
+          topic: intermediate advanced Spanish I and II
+    noCreditWith: []
+    needsReview: The course codes are not written out (only 'Intermediate Advanced Spanish I and II'), so the topic has no catalog id. Probably SP 2522 and SP 3521/3522, but not guessed.
+  - courseId: SP|3530
+    description: "This course explores Spanish cinema, tracing its evolution from the early 20th century to contemporary works. Students will study a range of films that reflect Spain's rich cultural, political, and social landscapes, analyzing themes such as identity, history, gender, and memory. Through Spanish cinema and other media sources, this course studies images, topics, and cultural and historical issues that have impacted the creation of a modern Spanish nation. This course focuses on current political and ideological issues (after 1936), the importance of the Spanish Civil War, gender identity, and class, cultural, and power relationships. Through screenings, discussions, and critical analysis, students will learn to interpret film as a medium of artistic expression and cultural commentary, developing an understanding of the historical contexts that shaped Spanish cinema. They will also engage in group projects, presentations, and written assignments to deepen their appreciation and understanding of Spain’s cinematic heritage. This course satisfies the Inquiry Seminar to complete the HUA requirement in Spanish and would also count toward International and Global Studies. In addition, this course would benefit students interested in WPI’s Project Centers in Spain. This course is taught at an advanced level of Spanish. This course will be offered in 2025-2026, and in alternating years thereafter. Recommended Background: SP 3521 and SP 3522."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: SP 3521 and SP 3522."
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: SP|3521
+            - kind: course
+              course: SP|3522
+    noCreditWith: []
+  - courseId: SP|3531
+    description: "Contemporary U.S. Latino Literature and Culture aims to introduce you to the field of Latino Studies, which emerged around the 1990s. We’ll pay particular attention to the English-language cultural production—literature, autobiography, film, music, and criticism—of Latinos linked to four main territories: Mexico, Cuba, Puerto Rico, and the Dominican Republic. While our transnational framework will help us understand the continuum between U.S. Latinos and Latin American/Caribbean communities, we will also closely examine more U.S.-based arguments supporting and contesting the use of Latino as an ethnic racial term uniting all U.S. Latino communities. Indeed, part of our challenge will be to define what the label “Latino” even means. What is Latino literature? In what language do Latinos write? What makes a work Latino? We will thus examine the ways in which U.S. Latinos have manufactured identities within dominant as well as counter-cultural registers. Using identity as a base, we will grapple with collective concerns regarding race, gender, place, exile, immigration, and language. Our readings and discussions will be in English and Spanglish. This course satisfies the Inquiry Seminar to complete the HUA requirement in Spanish and would also count toward International and Global Studies and Latin American and Caribbean studies. In addition, this course would benefit students interested in WPI’s Project Centers in Latin America and the Caribbean. This course will be offered in 2026-2027, and in alternating years thereafter"
+    clauses: []
+    noCreditWith: []

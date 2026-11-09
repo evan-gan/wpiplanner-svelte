@@ -1,5 +1,6 @@
 <!--
-  The description panel: title, catalog blurb, and the professors teaching it.
+  The description panel: title, catalog blurb, the structured background (when
+  it was read from this exact description), and the professors teaching it.
 
   `CourseDescriptionInfo` also had a seats readout, but every line of it was
   commented out in the deployed source, so it is not carried over.
@@ -7,6 +8,9 @@
 <script lang="ts">
   import type { Catalog } from '$lib/model/catalog';
   import type { CourseJson } from '$lib/model/schedb';
+  import type { ShippedBackgroundEntry } from '$lib/model/courseBackground';
+  import { loadCourseBackground } from '$lib/data/courseBackground';
+  import CourseBackground from './CourseBackground.svelte';
 
   interface Props {
     catalog: Catalog;
@@ -31,6 +35,22 @@
     }
     return names;
   });
+
+  let background = $state<ShippedBackgroundEntry | null>(null);
+
+  $effect(() => {
+    background = null;
+    if (course === null) return;
+    // Clicking through courses quickly can resolve loads out of order; only the latest may land.
+    let superseded = false;
+    loadCourseBackground(course.id, catalog.description(course.descriptionIndex)).then((known) => {
+      // Only background read from this exact description is shown; unchecked and stale mean "unknown".
+      if (!superseded) background = known.status === 'hasBackground' ? known.entry : null;
+    });
+    return () => {
+      superseded = true;
+    };
+  });
 </script>
 
 <div class="details">
@@ -40,6 +60,9 @@
     {:else}
       <div class="title">{course.name}</div>
       <div class="description">{catalog.description(course.descriptionIndex)}</div>
+      {#if background !== null}
+        <CourseBackground entry={background} />
+      {/if}
       <div class="professors">
         <b>Professors: </b>
         {#if professors.length > 0}

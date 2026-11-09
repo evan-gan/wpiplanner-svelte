@@ -1,0 +1,92 @@
+department: ML
+entries:
+  - courseId: ML|1012
+    description: Cat. I (1/9 unit after completion of 1011 and 1012) This course continues the studies begun in ML 1011. Students make oral presentations on the elements of leadership, enhancing effective communication. Students begin to develop leadership potential by instilling self-confidence and fostering teamwork through basic survival techniques (e.g., water survival). Participation in weekly training leadership laboratories; off campus training sessions (field training exercises) and other special events is required.
+    clauses: []
+    noCreditWith: []
+  - courseId: ML|1021
+    description: "Cat. I (0 units w/grade) ML 1021 expands upon the fundamentals introduced in the previous term by focusing on communications, leadership, and problem solving. “Life skills” lessons in this semester include: problem solving, goal setting, interpersonal communication skills, and assertiveness skills. Participation in weekly training leadership laboratories; off campus training sessions (field training exercises) and other special events is required."
+    clauses: []
+    noCreditWith: []
+  - courseId: ML|1022
+    description: Cat. I (1/9 unit after completion of 1021 and 1022) ML 1022 continues by providing cadets with interesting lessons yielding immediately useful skills. The course also gives accurate information about life in the Army, including the organization of the Army, employment benefits, and work experiences of junior officers. Participation in weekly training leadership laboratories; off campus training sessions (field training exercises) and other special events is required.
+    clauses: []
+    noCreditWith: []
+  - courseId: ML|2012
+    description: "Cat. I (1/12 unit) The curriculum focuses on building character. Where years one, three and four focus on mastering definitions, concepts, ideas and principles, year two focuses on direct, physical experiences. Year two centers on giving cadets the opportunity to apply, practice and experience leadership principles. Cadets are asked to reflect upon their actions and those of others. Participation in weekly training leadership laboratories; off campus training sessions (field training exercises) and other special events is required. Recommended background: ML 2011"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: ML 2011"
+        requirement:
+          kind: course
+          course: ML|2011
+    noCreditWith: []
+  - courseId: ML|2021
+    description: "Cat. I (1/12 unit) Students continue the study of leader principals and are introduced to formal policies such as equal opportunity, ethics, and values. Military communication skills are trained along with the principles of camouflage. Complex cases of risk management are studied. Students will submit a written information paper. Participation in weekly training leadership laboratories; off campus training sessions (field training exercises) and other special events is required. Recommended background: ML 2012"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: ML 2012"
+        requirement:
+          kind: course
+          course: ML|2012
+    noCreditWith: []
+  - courseId: ML|2022
+    description: "Cat. I (1/12 unit) This course covers small unit movement and military tactics. It combines previous study in weapons, movement and communications to teach the combination of firepower and maneuver to the student. This course also teaches the student the elements of how the military trains its personnel. A written decision paper and practical exercise in conducting training is included in this course. Participation in weekly training leadership laboratories; off campus training sessions (field training exercises) and other special events is required. Recommended background: ML 2021"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: ML 2021"
+        requirement:
+          kind: course
+          course: ML|2021
+    noCreditWith: []
+  - courseId: ML|3012
+    description: "Cat. I (1/6 unit) Student learns how to conduct crisis planning and management. Discussion of roles and functions of combat arms, combat support, and combat service support branches. Case studies of small-unit operations are studied. Introduction to Army special operations, military operations other than war, and trends in the military. Students write self-evaluations throughout this course. Students are graded on their performance during leadership practical exercises. Attendance at monthly labs and formal social functions is required. Students write self-evaluations through this course. Students are graded on their performance during leadership practical exercises. Participation in weekly training leadership laboratories; off campus training sessions (field training exercises) and other special events is required. Recommended background: ML 3011"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: ML 3011"
+        requirement:
+          kind: course
+          course: ML|3011
+    noCreditWith: []
+  - courseId: ML|3021
+    description: Cat. I (1/6 unit) ML 3021 is designed to continue the development as leaders by presenting instruction in the three foundational areas of leadership, interpersonal communication, and values and ethics. The leadership module contains an examination of Army leadership doctrine followed by expansion on key leadership concepts and provide feedback for cadet leadership self-development efforts. Participation in weekly training leadership laboratories; off campus training sessions (field training exercises) and other special events is required.
+    clauses: []
+    noCreditWith: []
+  - courseId: ML|3022
+    description: "Cat. I (1/6 unit) The main thrust of the communication module is the opportunity for cadets to present an information briefing and receive feedback from both instructor and fellow students. The last module of the term contains lessons that focus on values, ethics, ethical decision-making, consideration of others, and spiritual needs. Participation in weekly training leadership laboratories; off campus training sessions (field training exercises) and other special events is required. Recommended background: ML 3021"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: ML 3021"
+        requirement:
+          kind: course
+          course: ML|3021
+    noCreditWith: []
+  - courseId: ML|4022
+    description: Cat. I (1/6 unit) This Course focuses on completing the transition from cadet to lieutenant. As an expansion of the Ethics instruction in ML 3021, the course starts with an examination of unit ethical climate and the commander’s role as the moral anchor of the unit. This is followed by a module addressing military law and leadership. The next module reinforces previous instruction on the organization of the Army and introduces how the Army organizes for operations from the tactical to strategic level. This is followed by instruction on administrative and logistical management that focuses on the fundamentals of soldier and unit level support. Next is a short module that focuses on preparing cadets for their forthcoming commissioning and military service. At the core of this semester is the Advanced Course’s Capstone Exercise. This twelve-lesson exercise directly reinforces all modules from this term, and also incorporates and reinforces many learning objectives from modules throughout the entire curriculum. The Capstone Exercise requires cadets, both individually and collectively, to apply their knowledge to solve problems and confront situations commonly faced by junior officers. Upon completion of this course the cadets will be prepared to shoulder the responsibility of being a commissioned officer in the United States Army. Participation in weekly training leadership laboratories; off campus training sessions (field training exercises, Military Staff Ride and other special events is required.
+    clauses: []
+    noCreditWith: []
+  - courseId: ML|4024
+    description: "Cat. I (1/6 unit) Cadets organize and lead all the junior cadets. This course covers the military legal system, personnel actions and personal finances. It certifies fundamental competencies in land navigation, tactics, counseling, and interpersonal communications. This course requires three hours of class work and three hours of physical fitness per week. Participation in weekly training leadership laboratories; off campus training sessions (field training exercises) and other special events is required. Recommended background: ML 4023"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: ML 4023"
+        requirement:
+          kind: course
+          course: ML|4023
+    noCreditWith: []
+  - courseId: ML|4023
+    description: Cat. I (1/6 unit) This course is a continuation of ML 4022.
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: This course is a continuation of ML 4022.
+        requirement:
+          kind: course
+          course: ML|4022
+    noCreditWith: []

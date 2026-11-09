@@ -1,0 +1,119 @@
+department: CN
+entries:
+  - courseId: CN|1542
+    description: "Cat. IContinuation of CN 1541 for non-native, non-heritage speakers. Emphasis on oral communication and vocabulary acquisition continues. Basics of writing system introduced.Recommended background: CN 1541.This course is closed to native speakers of Chinese and heritage speakers except with written permission from the instructor."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: CN 1541."
+        requirement:
+          kind: course
+          course: CN|1541
+      - strength: required
+        timing: prior
+        sourceText: This course is closed to native speakers of Chinese and heritage speakers except with written permission from the instructor.
+        requirement:
+          kind: standing
+          text: closed to native speakers of Chinese and heritage speakers except with written permission from the instructor
+    noCreditWith: []
+  - courseId: CN|1543
+    description: "Cat. IContinuation of CN 1542 Mandarin Chinese. Primary emphasis is on conversational skills, with increased character introduction. Recognition of the most-commonly-used Chinese characters will be required by term end.Recommended background: CN 1542.This course is closed to native speakers of Chinese and heritage speakers except with written permission from the instructor."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: CN 1542."
+        requirement:
+          kind: course
+          course: CN|1542
+      - strength: required
+        timing: prior
+        sourceText: This course is closed to native speakers of Chinese and heritage speakers except with written permission from the instructor.
+        requirement:
+          kind: standing
+          text: closed to native speakers of Chinese and heritage speakers except with written permission from the instructor
+    noCreditWith: []
+  - courseId: CN|2541
+    description: "Cat. IContinuation of CN 1542. Course will focus on practical conversations and recognition of Chinese characters, with greater emphasis placed on reading and writing.Recommended background: CN 1543.This course is closed to native speakers of Chinese and heritage speakers except with written permission from the instructor."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: CN 1543."
+        requirement:
+          kind: course
+          course: CN|1543
+      - strength: required
+        timing: prior
+        sourceText: This course is closed to native speakers of Chinese and heritage speakers except with written permission from the instructor.
+        requirement:
+          kind: standing
+          text: closed to native speakers of Chinese and heritage speakers except with written permission from the instructor
+    noCreditWith: []
+  - courseId: CN|2543
+    description: "Cat. I Continuation of CN 2542. This course continues to build on students’ Chinese conversational skills with a focus on dialogue and mastery of grammatical constructions, as well as character recognition and reading ability. Conversational drills, audio recordings, video, and group interaction will enhance classroom learning. Recommended background: CN 2542 or the equivalent. This course is closed to native speakers of Chinese and heritage speakers except with written permission from the instructor."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: CN 2542 or the equivalent."
+        requirement:
+          kind: course
+          course: CN|2542
+          orEquivalent: true
+      - strength: required
+        timing: prior
+        sourceText: This course is closed to native speakers of Chinese and heritage speakers except with written permission from the instructor.
+        requirement:
+          kind: standing
+          text: closed to native speakers of Chinese and heritage speakers except with written permission from the instructor
+    noCreditWith: []
+  - courseId: CN|2544
+    description: "Cat. IContinuation of CN 2543. Students continue to build their conversational skills through more complex dialogue and more complicated grammatical constructions. Character recognition and reading ability become more central to class assignments. Conversational drills, audio recordings, video, and group interaction will enhance classroom learning.Recommended background: CN 2543 or equivalent.This course is closed to native speakers of Chinese and heritage speakers except with written permission from the instructor."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: CN 2543 or equivalent."
+        requirement:
+          kind: course
+          course: CN|2543
+          orEquivalent: true
+      - strength: required
+        timing: prior
+        sourceText: This course is closed to native speakers of Chinese and heritage speakers except with written permission from the instructor.
+        requirement:
+          kind: standing
+          text: closed to native speakers of Chinese and heritage speakers except with written permission from the instructor
+    noCreditWith: []
+  - courseId: CN|3541
+    description: "Cat. IThis course focuses on increasingly sophisticated conversational patterns as well as acquiring the vocabulary necessary for reading texts. Emphasis is on developing active skills to move students to a high-intermediate level of proficiency in reading, writing, listening, and speaking, with continued attention on grammar, phrases, sentence patterns, and character recognition.Recommended background: CN 2544 or the equivalent.This course is closed to native speakers of Chinese and heritage speakers except with written permission from the instructor."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: CN 2544 or the equivalent."
+        requirement:
+          kind: course
+          course: CN|2544
+          orEquivalent: true
+      - strength: required
+        timing: prior
+        sourceText: This course is closed to native speakers of Chinese and heritage speakers except with written permission from the instructor.
+        requirement:
+          kind: standing
+          text: closed to native speakers of Chinese and heritage speakers except with written permission from the instructor
+    noCreditWith: []
+  - courseId: CN|3543
+    description: "Cat. I This course continues to build on students’ advanced intermediate Chinese skills with increasing emphasis on reading and writing. Writing assignments will be geared towards expressing more complex topics in Chinese that are related to cultural phenomena in contemporary Chinese societies. Not open to native or heritage speakers without written permission of instructor. Recommended background: CN 3542 Advanced Intermediate Chinese II or equivalent. Students may not receive credit for both CN 3543 and CN 355X."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: CN 3542 Advanced Intermediate Chinese II or equivalent."
+        requirement:
+          kind: course
+          course: CN|3542
+          orEquivalent: true
+      - strength: required
+        timing: prior
+        sourceText: Not open to native or heritage speakers without written permission of instructor.
+        requirement:
+          kind: standing
+          text: not open to native or heritage speakers without written permission of instructor
+    noCreditWith:
+      - CN|355X

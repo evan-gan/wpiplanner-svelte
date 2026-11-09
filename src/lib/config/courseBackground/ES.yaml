@@ -1,0 +1,297 @@
+department: ES
+entries:
+  - courseId: ES|1310
+    description: Cat. I This introduction course in engineering graphical communications and design provides a solid background for all engineering disciplines. The ability to visualize, create and apply proper design intent and industry standards for simple parts, assemblies and drawings is a necessity for anyone in a technology environment. Computer Aided Design software is used as a tool to create 2D & 3D sketches, 3D parts, 3D assemblies and 2D drawings per an industry standard. Multiview and pictorial graphics techniques are integrated with ANSI standards for dimensioning and tolerances, sectioning, and generating detailed engineering drawings. Emphasis is placed on relating drawings to the required manufacturing processes. The design process and aids to creativity are combined with graphics procedures to incorporate functional design requirements in the geometric model. No prior engineering graphics or software knowledge is assumed.
+    clauses: []
+    noCreditWith: []
+  - courseId: ES|1500
+    description: "Systems Thinking is a holistic approach to problem solving that recognizes that system behavior and performance are the result of underlying structures. Systems Thinking provides tools that enable program managers, systems engineers, scientists, economists, and business managers to identify, understand, and control systems in order to improve system performance. The Systems Thinking analysis accounts for feedback and resistance to change often exhibited by real world systems. In this course, students will study system identification and delineation, causal loops and feedback diagrams, stock-and-flow diagrams, system leverage points, delays and oscillations, mental models and unintended consequences, and behavior patterns; and use these concepts to improve the performance of engineering, business, and complex social systems. The course will explore great system failures, how they might have been avoided, and how we can learn from them. Finally, students will learn how Systems Thinking explains the occasional irrational behavior of individuals, departments, businesses, and governments. Examples covered in this course may include the failure of strictly technological “fixes” to social issues (as in the government’s installation of wells in Togo in the 1980s,) the 2008 financial meltdown, the failure of the Lockheed L-188 Electra Turboprop Airplane, the failure of the Tacoma Narrows Bridge (“Galloping Gertie”) in 1940, the decline of many commercial fisheries around the world, the failure and success of companies like Research In Motion and Apple, and the unintended consequences of combating drug-related crime. Recommended background: None."
+    clauses: []
+    noCreditWith: []
+  - courseId: ES|2001
+    description: "Cat. I This beginning course provides important background for all science and engineering disciplines regarding the capabilities and limitations of materials in our everyday lives. Students are introduced to the fundamental theme of materials science-- structure-property-processing relationships—in metals, ceramics, and plastics. Aspects of material structure range from the atomic to microstructural and macroscopic scales. In turn, these structural features determine the properties of materials. In particular, this course investigates connections between structure and mechanical properties, and how working and thermal treatments may transform structure and thus alter material properties. This knowledge is then applied to material selection decisions. Recommended background: prior knowledge of college-level chemistry."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: prior knowledge of college-level chemistry."
+        requirement:
+          kind: topic
+          topic: prior knowledge of college-level chemistry
+    noCreditWith: []
+  - courseId: ES|2501
+    description: "Cat. I This is an introductory course in the engineering mechanics sequence that serves as a foundation for other courses in mechanical engineering. The course covers general two- and three-dimensional force and couple systems, distributed loads, resultant forces, moments of forces, free body diagrams, equilibrium of particles and finite sized bodies. Specific topics include friction, trusses, shear forces, bodies subjected to distributed loads, bending moments in beams, and first and second moments of plane areas. Recommended background: Differential (MA 1021) and integral (MA 1022) calculus, vector algebra (MA 1023), and double and triple integration (MA 1024)."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Differential (MA 1021) and integral (MA 1022) calculus, vector algebra (MA 1023), and double and triple integration (MA 1024)."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: differential calculus
+              satisfiedBy:
+                kind: course
+                course: MA|1021
+            - kind: topic
+              topic: integral calculus
+              satisfiedBy:
+                kind: course
+                course: MA|1022
+            - kind: topic
+              topic: vector algebra
+              satisfiedBy:
+                kind: course
+                course: MA|1023
+            - kind: topic
+              topic: double and triple integration
+              satisfiedBy:
+                kind: course
+                course: MA|1024
+    noCreditWith: []
+  - courseId: ES|2502
+    description: Cat. I This is an introductory course that addresses the analysis of basic mechanical and structural elements. Topics include general concepts of stresses, strains, and material properties of common engineering materials. Also covered are two-dimensional stress transformations, principal stresses, Mohr’s circle and deformations due to mechanical and thermal effects. Applications are to uniaxially loaded bars, circular shafts under torsion, bending and shearing and deflection of beams, and buckling of columns. Both statically determinate and indeterminate problems are analyzed. Recommended background; mechanical systems (ES 2501 or equivalent), differential (MA 1021) and integral (MA 1022) calculus, vector algebra (MA 1023), and double and triple integration (MA 1024).
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: Recommended background; mechanical systems (ES 2501 or equivalent), differential (MA 1021) and integral (MA 1022) calculus, vector algebra (MA 1023), and double and triple integration (MA 1024).
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: mechanical systems
+              satisfiedBy:
+                kind: course
+                course: ES|2501
+                orEquivalent: true
+            - kind: topic
+              topic: differential calculus
+              satisfiedBy:
+                kind: course
+                course: MA|1021
+            - kind: topic
+              topic: integral calculus
+              satisfiedBy:
+                kind: course
+                course: MA|1022
+            - kind: topic
+              topic: vector algebra
+              satisfiedBy:
+                kind: course
+                course: MA|1023
+            - kind: topic
+              topic: double and triple integration
+              satisfiedBy:
+                kind: course
+                course: MA|1024
+    noCreditWith: []
+    needsReview: Text has 'Recommended background;' with a semicolon rather than a colon. Read as recommended.
+  - courseId: ES|2503
+    description: "Cat. I Engineers should be able to formulate and solve problems that involve forces that act on bodies which are moving. This course deals with the kinematics and dynamics of particles and rigid bodies which move in a plane. Topics covered will include: kinematics of particles and rigid bodies, equations of motion, work-energy methods, and impulse and momentum. In this course a basic introduction to mechanical vibration is also discussed. Basic equations will be developed with respect to translating and rotating coordinate systems. Recommended background: Statics (ES 2501 or CE 2000)."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Statics (ES 2501 or CE 2000)."
+        requirement:
+          kind: topic
+          topic: statics
+          satisfiedBy:
+            kind: anyOf
+            of:
+              - kind: course
+                course: ES|2501
+              - kind: course
+                course: CE|2000
+    noCreditWith: []
+  - courseId: ES|2800
+    description: "Cat. II Engineering decisions can affect the environment on local and global scales. This course will introduce students to concepts that will make them aware of the ramifications of their engineering decisions, and is intended for engineering students of all disciplines. Specific topics the course will cover include: environmental issues, waste minimization, energy conservation, water conservation and reuse, regulations (OSHA, TSCA, RCRA, etc.), lifecycle assessment, risk assessment, sustainability, design for the environment, and environmental impact statements. Energy and mass balances will be applied to activities that impact the environment. Instruction will be provided through lectures, practitioner seminars, and a term project. Intended audience: all engineering majors desiring a general knowledge of the environmental impacts of engineering decisions. Recommended background: elementary college chemistry; second year students. This course will be offered in 2020-21, and in alternating years thereafter."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: elementary college chemistry; second year students."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: elementary college chemistry
+            - kind: standing
+              text: second year students
+    noCreditWith: []
+  - courseId: ES|3001
+    description: "Cat. I This course emphasizes system and control volume modeling using conservation of mass and the First and Second Laws of Thermodynamics. Topics include an introduction to heat, work, energy, and power, properties of simple substances, and cycle analysis for power production and refrigeration. Recommended background: basic physics, (PH 1110, PH 1111) elementary differential and integral calculus (MA 1021, MA 1022) or equivalents."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: basic physics, (PH 1110, PH 1111) elementary differential and integral calculus (MA 1021, MA 1022) or equivalents."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: basic physics
+              satisfiedBy:
+                kind: allOf
+                of:
+                  - kind: course
+                    course: PH|1110
+                  - kind: course
+                    course: PH|1111
+            - kind: topic
+              topic: elementary differential and integral calculus
+              satisfiedBy:
+                kind: allOf
+                of:
+                  - kind: course
+                    course: MA|1021
+                    orEquivalent: true
+                  - kind: course
+                    course: MA|1022
+                    orEquivalent: true
+    noCreditWith: []
+    needsReview: Parenthetical course lists with no 'or' (PH 1110, PH 1111; MA 1021, MA 1022) were read as all required.
+  - courseId: ES|3002
+    description: "Cat. I This course introduces the student to the phenomena of diffusion and mass transfer. These occur in processes during which a change in chemical composition of one or more phases occurs. Diffusion and mass transfer can take place in living systems, in the environment, and in chemical processes. This course will show how to handle quantitative calculations involving diffusion and/or mass transfer, including design of process equipment. Topics may include: fundamentals of diffusional transport, diffusion in thin films; unsteady diffusion; diffusion in solids; convective mass transfer; dispersion; transport in membranes; diffusion with chemical reaction; simultaneous heat and mass transfer; selected mass transfer operations such as absorption, drying, humidification, extraction, crystallization, adsorption, etc. Recommended background: fundamentals of chemical thermodynamics, fluid flow and heat transfer; ordinary differential equations (MA 2051 or equivalent)."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: fundamentals of chemical thermodynamics, fluid flow and heat transfer; ordinary differential equations (MA 2051 or equivalent)."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: fundamentals of chemical thermodynamics
+            - kind: topic
+              topic: fluid flow
+            - kind: topic
+              topic: heat transfer
+            - kind: topic
+              topic: ordinary differential equations
+              satisfiedBy:
+                kind: course
+                course: MA|2051
+                orEquivalent: true
+    noCreditWith: []
+  - courseId: ES|3003
+    description: "Cat. I This course presents the fundamentals of heat transfer in the three modes of conduction, convection, and radiation. Topics include steady-state and transient heat conduction, forced external and internal convection, natural convection, heat exchanger analysis, radiation properties, and radiative exchange between surfaces. Recommended background: knowledge of thermodynamics, fluid mechanics, and ordinary differential equations (ES 3001, ES 3004, and MA 2051) or equivalents."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: knowledge of thermodynamics, fluid mechanics, and ordinary differential equations (ES 3001, ES 3004, and MA 2051) or equivalents."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: thermodynamics
+              satisfiedBy:
+                kind: course
+                course: ES|3001
+                orEquivalent: true
+            - kind: topic
+              topic: fluid mechanics
+              satisfiedBy:
+                kind: course
+                course: ES|3004
+                orEquivalent: true
+            - kind: topic
+              topic: ordinary differential equations
+              satisfiedBy:
+                kind: course
+                course: MA|2051
+                orEquivalent: true
+    noCreditWith: []
+    needsReview: The parenthetical lists ES 3001, ES 3004 and MA 2051 are mapped in order to thermodynamics, fluid mechanics and ODEs. The text does not label the mapping.
+  - courseId: ES|3004
+    description: "Cat. I A study of the fundamental laws of statics, kinematics, and dynamics applied to fluid mechanics. The course will include fluid properties, conservation of mass, momentum, and energy as applied to real and ideal fluids. Laminar and turbulent flows, fluid resistance, and basic boundary layer theory will also be considered. Recommended background: basic physics, basic differential equations, and vectors."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: basic physics, basic differential equations, and vectors."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: basic physics
+            - kind: topic
+              topic: basic differential equations
+            - kind: topic
+              topic: vectors
+    noCreditWith: []
+  - courseId: ES|3011
+    description: "Cat. I Characteristics of control systems. Mathematical representation of control components and systems. Laplace transforms, transfer functions, block and signal flow diagrams. Transient response analysis. Introduction to the root-locus method and stability analysis. Frequency response techniques including Bode, polar, and Nichols plots. This sequence of courses in the field of control engineering (ES 3011) is generally available to all juniors and seniors regardless of department. A good background in mathematics is required; familiarity with Laplace transforms, complex variables and matrices is desirable but not mandatory. All students taking Control Engineering I should have an understanding of ordinary differential equations (MA 2051 or equivalent) and basic physics through electricity and magnetism (PH 1120/1121). Control Engineering I may be considered a terminal course, or it may be the first course for those students wishing to do extensive work in this field. Students taking the sequence of two courses will be prepared for graduate work in the field. Recommended background: Ordinary Differential Equations (MA 2051) and Electricity and Magnestism (PH 1120, PH 1121). Students may not receive credit for both ES 3011 and ECE 3012"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Ordinary Differential Equations (MA 2051) and Electricity and Magnestism (PH 1120, PH 1121)."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: ordinary differential equations
+              satisfiedBy:
+                kind: course
+                course: MA|2051
+            - kind: topic
+              topic: electricity and magnetism
+              satisfiedBy:
+                kind: allOf
+                of:
+                  - kind: course
+                    course: PH|1120
+                  - kind: course
+                    course: PH|1121
+    noCreditWith:
+      - ECE|3012
+    needsReview: The body text also says students 'should have an understanding of' MA 2051 or equivalent and PH 1120/1121; the recommended clause is taken from the labelled line.
+  - courseId: ES|3323
+    description: "Cat. I This course is intended to strengthen solid modeling and analysis skills with an emphasis on robust modeling strategies that capture design intent. The use of solid models for applications in mechanical design and engineering analysis is emphasized. Topics include: advanced feature-based modeling, variational design, physical properties, assembly modeling, mechanisms, and other analytical methods in engineering design. Recommended background: familiarity with drafting standards (ES 1310), mechanical systems (ES 2501 or CE 2000, ES 2503), strength of materials (ES 2502 or CE 2001) and kinematics (ME 3310) is assumed. Additional background in machine design (ME 2300, ME 3320) is helpful"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: familiarity with drafting standards (ES 1310), mechanical systems (ES 2501 or CE 2000, ES 2503), strength of materials (ES 2502 or CE 2001) and kinematics (ME 3310) is assumed."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: drafting standards
+              satisfiedBy:
+                kind: course
+                course: ES|1310
+            - kind: topic
+              topic: mechanical systems
+              satisfiedBy:
+                kind: allOf
+                of:
+                  - kind: anyOf
+                    of:
+                      - kind: course
+                        course: ES|2501
+                      - kind: course
+                        course: CE|2000
+                  - kind: course
+                    course: ES|2503
+            - kind: topic
+              topic: strength of materials
+              satisfiedBy:
+                kind: anyOf
+                of:
+                  - kind: course
+                    course: ES|2502
+                  - kind: course
+                    course: CE|2001
+            - kind: topic
+              topic: kinematics
+              satisfiedBy:
+                kind: course
+                course: ME|3310
+      - strength: suggested
+        timing: prior
+        sourceText: Additional background in machine design (ME 2300, ME 3320) is helpful
+        requirement:
+          kind: topic
+          topic: machine design
+          satisfiedBy:
+            kind: allOf
+            of:
+              - kind: course
+                course: ME|2300
+              - kind: course
+                course: ME|3320
+    noCreditWith: []

@@ -1,0 +1,120 @@
+department: AS
+entries:
+  - courseId: AS|3002
+    description: Cat. I (1/6 unit) Continuation of AS3001 . Topics include, Bias, Managing Diversity & Inclusion, Cross-Cultural Competence, Managing Competing Priorities, and continued development of communication and leadership skills. A mandatory Leadership Laboratory complements this course by providing advanced leadership experience in officer-type activities, giving students the opportunity to apply the leadership and management principles of this course.
+    clauses: []
+    noCreditWith: []
+    needsReview: Text says 'Continuation of AS3001', which implies AS 3001 comes first, but there is no prerequisite label. Not recorded as background; a human should decide whether to add it.
+  - courseId: AS|1002
+    description: Cat. I (1/9 unit) Continuation of AS100 1. Topics include Air Force core values, leadership principles, group leadership dynamics, and an introduction to communication skills. Leadership Laboratory is mandatory for AFROTC cadets and complements this course by providing cadets with followership experiences.
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: Continuation of AS100 1
+        requirement:
+          kind: course
+          course: AS|1001
+    noCreditWith: []
+    needsReview: Source writes the prior course as 'AS100 1' (space inside the number); read as AS 1001.
+  - courseId: AS|1003
+    description: Cat. I (1/9 unit) Continuation of AS100 2. Topics include Air Force core values, leadership principles, group leadership dynamics, and an introduction to communication skills. Leadership Laboratory is mandatory for AFROTC cadets and complements this course by providing cadets with followership experiences.
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: Continuation of AS100 2
+        requirement:
+          kind: course
+          course: AS|1002
+    noCreditWith: []
+    needsReview: Source writes the prior course as 'AS100 2' (space inside the number); read as AS 1002.
+  - courseId: AS|1004
+    description: Cat. I (1/9 unit) Continuation of AS1003 . Topics include Air Force core values, leadership principles, group leadership dynamics, and an introduction to communication skills. Leadership Laboratory is mandatory for AFROTC cadets and complements this course by providing cadets with followership experiences.
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: Continuation of AS1003 .
+        requirement:
+          kind: course
+          course: AS|1003
+    noCreditWith: []
+  - courseId: AS|2002
+    description: Cat. I (1/9 unit) Continuation of AS2 001 . Topics include full-range leadership, problem solving, motivation, and continued development of communication skills.Leadership Laboratory is mandatory for AFROTC cadets and complements this course by providing cadets with followership experiences.
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: Continuation of AS2 001 .
+        requirement:
+          kind: course
+          course: AS|2001
+    noCreditWith: []
+    needsReview: Source writes the prior course as 'AS2 001' (space inside the number); read as AS 2001.
+  - courseId: AS|2003
+    description: Cat. I (1/9 unit) Continuation of AS2002 . Topics include team building, Human Relations, conflict management, and continued development of communication skills. Leadership Laboratory is mandatory for AFROTC cadets and complements this course by providing cadets with followership experiences.
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: Continuation of AS2002 .
+        requirement:
+          kind: course
+          course: AS|2002
+    noCreditWith: []
+  - courseId: AS|2004
+    description: Cat. I (1/9 unit) Continuation of AS2003 . Topics include ethical decision making, stress management, leadership capstone, and continued development of communication skills. Leadership Laboratory is mandatory for AFROTC cadets and complements this course by providing cadets with followership experiences.
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: Continuation of AS2003 .
+        requirement:
+          kind: course
+          course: AS|2003
+    noCreditWith: []
+  - courseId: AS|3003
+    description: "Cat. I (1/6 unit) Continuation of AS3002 . Topics include, Leadership theory, mentoring, Professionalism is a Decision, Ethical Decision-Making: Boundaries, Self-Awareness, and continued development of communication and leadership skills. A mandatory Leadership Laboratory complements this course by providing advanced leadership experience in officer-type activities, giving students the opportunity to apply the leadership and management principles of this course."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: Continuation of AS3002 .
+        requirement:
+          kind: course
+          course: AS|3002
+    noCreditWith: []
+  - courseId: AS|3004
+    description: Cat. I (1/6 unit) Continuation of AS3003 . Topics include, Creating a Vision, Organizational Climate, Establishing Expectations, Theory and innovation, and continued development of communication and leadership skills. A mandatory Leadership Laboratory complements this course by providing advanced leadership experience in officer-type activities, giving students the opportunity to apply the leadership and management principles of this course.
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: Continuation of AS3003 .
+        requirement:
+          kind: course
+          course: AS|3003
+    noCreditWith: []
+  - courseId: AS|4002
+    description: Cat. I (1/6 unit) Continuation of AS4001. Topics include, Air Force Domains, The Total Force, Defense Support of Civil Authority, Law of War, How the Air Force Deploys, Global Hot Spots, and continued emphasis is given to the refinement of communication and leadership skills. A mandatory Leadership Laboratory complements this course by providing advanced leadership experience in officer-type activities, giving students the opportunity to apply the leadership and management principles of this course.
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: Continuation of AS4001.
+        requirement:
+          kind: course
+          course: AS|4001
+    noCreditWith: []
+  - courseId: AS|4003
+    description: Cat. I (1/6 unit) Continuation of AS4002. Topics include, Base Agencies, Professional/Unprofessional Relationships, Leadership Authority and Responsibility, Religious Accommodation, Suicide Prevention, Military Justice, and continued emphasis is given to the refinement of communication and leadership skills. A mandatory Leadership Laboratory complements this course by providing advanced leadership experience in officer-type activities, giving students the opportunity to apply the leadership and management principles of this course.
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: Continuation of AS4002.
+        requirement:
+          kind: course
+          course: AS|4002
+    noCreditWith: []
+  - courseId: AS|4004
+    description: Cat. I (1/6 unit) Continuation of AS4003. Topics include, Corrective Supervision and Counseling, Blended Retirement System, Enlisted and Officer Evaluation systems, Pay, Allowances and leave, Career Progression, the Oath of Office, and continued emphasis is given to the refinement of communication and leadership skills. A mandatory Leadership Laboratory complements this course by providing advanced leadership experience in officer-type activities, giving students the opportunity to apply the leadership and management principles of this course.
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: Continuation of AS4003.
+        requirement:
+          kind: course
+          course: AS|4003
+    noCreditWith: []

@@ -1,0 +1,458 @@
+department: IMGD
+entries:
+  - courseId: IMGD|174X
+    description: This course introduces students to the fundamental principles of three-dimensional visual organization through contemporary 3D modeling practices. Students will explore the technological foundations of digital modeling, including 3D scanning, retopology, UV mapping, and prop modeling. The course emphasizes visual perception, graphic expression, and rendering within digital environments. Students gain hands-on experience with industry tools while learning to create and manipulate digital assets suitable for games, 3D printing, interactive media, animation, and visual storytelling. Core skills include modeling, shading, and the presentation of visual ideas through 3D forms. The course also highlights current sculpting, modeling, and workflow technologies, preparing students to adapt to evolving tools and practices in digital art and design. By the end of the course, students will understand how to create shaders, work in 3D dimensional space, have foundational design principles, and develop their ability to translate concepts into digital form. Recommended Background No prerequisites are suggested or recommended
+    clauses: []
+    noCreditWith: []
+  - courseId: IMGD|2000
+    description: "Cat I (1/3 units) - This course reinforces critical examination of the spread of ideas and practices through various media, guiding students in explorations of diverse perspectives on political, social, and economic agendas. Games and other interactive media are inherently political and serve as platforms for the creation of cultural identities, social mobilization, and economic ideologies. The course analyzes positive and negative effects of interactive mediums on society with an emphasis on responsibilities of designers and developers. Recommended background: Experience critiquing interactive media and games (IMGD 1000)"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Experience critiquing interactive media and games (IMGD 1000)"
+        requirement:
+          kind: topic
+          topic: experience critiquing interactive media and games
+          satisfiedBy:
+            kind: course
+            course: IMGD|1000
+    noCreditWith: []
+  - courseId: IMGD|2002
+    description: "This course prepares students with the knowledge and critical frameworks necessary to understand the technical, social, and historical underpinnings of contemporary artificial intelligence. Through activities, discussions, and design projects, students will develop a critical AI literacy: the ability to interpret, question, and communicate about AI and its function and future in the designed world. Students will learn about common myths and misconceptions about AI and reflect upon how their understanding of AI shapes their adoption of it personally and professionally. Through project work, students will propose interventions that can develop critical AI literacy in broader society beyond the classroom. Topics include the history of artificial intelligence and how it rose to prominence, human perception and misperceptions of AI, social and environmental impacts of AI, and the origins of data and its implications for AI design. Category: Cat II. Recommended Background: None"
+    clauses: []
+    noCreditWith: []
+  - courseId: IMGD|2030
+    description: "This course serves as an introduction to game audio, where the basics of audio theory and production are discussed along with practical applications for use in game development. Topics may include music, sound effects, dialogue, soundscape design, digital signal processing, basic audio engine principles, and the aesthetic vs. technical considerations in game audio production. Lab exercises may include an introduction to audio editing and mixing, dynamics and effects processing, creating and timing sound effects to character animations, mixing for cinematics, and audio integration using a 3D engine. Recommended background: IMGD 1000 and IMGD 1001. This course assumes no prior knowledge of audio production."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: IMGD 1000 and IMGD 1001."
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: IMGD|1000
+            - kind: course
+              course: IMGD|1001
+    noCreditWith: []
+  - courseId: IMGD|2048
+    description: "This course will focus on making digital art functional in a video game environment. Students will learn the skills necessary to create and optimize their art assets through several creative and technical solutions that are all geared towards making high quality game art. This course will allow students to form a greater understanding of the bridge between pure art creation and interactive art implementation into a game engine. The course explores the many problems and technical restrictions one is faced with when trying to implement anything from animated characters to textures and focuses on how one can creatively apply technology to achieve high quality results. Topics covered include: creating complex character rigs, optimizing character meshes for rigging, shader creation, optimizing UV space and baking texture files and lighting. Recommended background: Basic knowledge of 3D modeling, texturing and animation (IMGD 2101 and IMGD 2201 or equivalent). Students may not receive credit for both IMGD 204X and AR/IMGD 2048."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Basic knowledge of 3D modeling, texturing and animation (IMGD 2101 and IMGD 2201 or equivalent)."
+        requirement:
+          kind: topic
+          topic: basic knowledge of 3D modeling, texturing and animation
+          satisfiedBy:
+            kind: allOf
+            of:
+              - kind: course
+                course: IMGD|2101
+                orEquivalent: true
+              - kind: course
+                course: IMGD|2201
+                orEquivalent: true
+    noCreditWith:
+      - IMGD|204X
+      - AR|2048
+  - courseId: IMGD|2101
+    description: "Cat. I 3D modeling is concerned with how to render created forms in a virtual environment. This course covers 3D modeling applications in video game development, film production, product design and fine art. Topics may include creating and armature, modeling organic and hard surfaces and sculpting using traditional techniques applied to a 3D model. Students will create works suitable for presentation in professional quality portfolio. Recommended background: AR1100 and AR1101."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: AR1100 and AR1101."
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: AR|1100
+            - kind: course
+              course: AR|1101
+    noCreditWith: []
+  - courseId: IMGD|2200
+    description: "WR 2200/IMGD 2200: AI in Writing and Communication (Cat. II) Generative AI is transforming the practices of writing and communication. It also generates new questions about authorship, responsibility, creativity, authenticity, and other rhetorical constructs that affect us equally as citizens and professionals. This course offers the foundations of critical AI literacy. It aims to help students develop a robust understanding of what this transformation means, and what kind of new sensibilities and skills are needed in response to an AI-led transformation. The course focuses on: 1) technological and cultural trends that shape the perception of generative AI, 2) ethical concerns emerging from the use of generative AI in professional and nonprofessional contexts, and 3) effective and responsible practices of using generative AI in writing and other forms of communication. In addition to reading assignments, students will have the opportunity to experiment with generative AI and assess its limits and possibilities. The assignments include critical annotations, fact-checking procedures, creative workflow processes, ethical analyses, and interaction design inquiries. Recommended Background: None"
+    clauses: []
+    noCreditWith: []
+  - courseId: IMGD|2222
+    description: "Cat. I. 2D Animation I teaches students how to draw, pose, breakdown and in-between characters for 2D animation, focusing on weight, balance, timing, and movement to achieve well-structured and fluid animation. Lectures and projects are conducted to train students in the twelve classical animation principles using digital 2D media. Projects and lectures are designed to practice the fundamentals of traditional frame-by-frame and hand-drawn character animation. Recommended background: Basic knowledge of figure drawing (AR 2202) and digital art software (AR 1101) is recommended."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Basic knowledge of figure drawing (AR 2202) and digital art software (AR 1101) is recommended."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: figure drawing
+              satisfiedBy:
+                kind: course
+                course: AR|2202
+            - kind: topic
+              topic: digital art software
+              satisfiedBy:
+                kind: course
+                course: AR|1101
+    noCreditWith: []
+  - courseId: IMGD|2333
+    description: "Cat. I 3D Animation I teaches students how to use 3D animation software to apply classical animation principles into 3D work . Lectures focus on creating organic and compelling character animation through body mechanics, weight, and dynamic posing in addition to exposing students to learning how to think about character acting and staging within a 3D environment . Recommended background: Basic knowledge digital art software (AR 1101) is recommended. Suggested background: Basic knowledge of animation (IMGD/AR 2222)."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Basic knowledge digital art software (AR 1101) is recommended."
+        requirement:
+          kind: topic
+          topic: digital art software
+          satisfiedBy:
+            kind: course
+            course: AR|1101
+      - strength: suggested
+        timing: prior
+        sourceText: "Suggested background: Basic knowledge of animation (IMGD/AR 2222)."
+        requirement:
+          kind: topic
+          topic: animation
+          satisfiedBy:
+            kind: anyOf
+            of:
+              - kind: course
+                course: IMGD|2222
+              - kind: course
+                course: AR|2222
+    noCreditWith: []
+  - courseId: IMGD|2450
+    description: "IMGD/WR 2450: Narrative Design for Interactive Media and Games Course description: This course will introduce key narrative concepts and skills necessary to craft linear and branching experiences in games and interactive media. These lessons can be of fundamental value to all interactive media and any development role. Topics covered may include world-building, writing within intellectual property, lore creation, environmental storytelling, and quest design. Students will work in small groups throughout the course to provide feedback and practice reciprocal creative roles in narrative creation. Recommended background: design and development fundamentals. Students may not receive credit for both 2450 and IMGD/WR 3400."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: design and development fundamentals."
+        requirement:
+          kind: topic
+          topic: design and development fundamentals
+    noCreditWith:
+      - IMGD|3400
+      - WR|3400
+  - courseId: IMGD|2500
+    description: "Cat II (1/3 units) - This course familiarizes students with the history of tabletop games and board games, current trends in board game design, and the fundamentals in game design through the study of and creation of board games. Students will gain critical thinking skills through the playtest and revision process of designing their own board games, and students will be exposed to the realities of publishing board games and the limits the production process imposes on design. Recommended background: None"
+    clauses: []
+    noCreditWith: []
+  - courseId: IMGD|2700
+    description: "Cat. I This course covers painting techniques as applied to texturing a 3D asset or illustration/conceptual art. Topics include are color theory, study of form, lighting, applying traditional painting ideas to the digital format, character design, generation of ideas and a history of digital painting. Each class features a demonstration on the topic followed by individual critique and study. Students work towards a final project that may be suitable for an Art portfolio. Recommended background: AR 1101, AR 2202"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: AR 1101, AR 2202"
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: AR|1101
+            - kind: course
+              course: AR|2202
+    noCreditWith: []
+  - courseId: IMGD|2901
+    description: "This course provides students with the opportunity to examine and apply a variety of interactive media project design methods. Topics include audience-centered and iterative design strategies, playtesting best practices, critique and feedback analysis, professionalization, and the importance of play for both designers and audiences. Course activities range from small group design work to sophisticated analysis and discussion. Units: 1/3 Category: Category I Recommended Background: None"
+    clauses: []
+    noCreditWith: []
+  - courseId: IMGD|2905
+    description: "This course will cover basic concepts of probability and data analysis as they apply to the design and analysis of interactive media and games. Students will study appropriate use of probability distributions in the design of interactive experiences, and the use of data analysis methods to understand user behavior in games and other interactive experiences. Topics will include discrete and continuous probability distributions, programming techniques to produce samples from different distributions, descriptive statistics, exploratory data analysis and using existing tools to collect and analyze data from gameplay. This course counts toward the Quantitative Science component of the university-wide Mathematics and Science Requirement for IMGD majors only. Recommended background: High school algebra"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: High school algebra"
+        requirement:
+          kind: topic
+          topic: high school algebra
+    noCreditWith: []
+  - courseId: IMGD|3030
+    description: "Game Audio II serves as an intermediate level audio design course, where digital recording principles and techniques are studied along with their practical applications for use in game development. Students will also gain deeper insight into 2-D vs. 3-D audio propagation, as well as learn more complex techniques in digital editing, mixing, signal processing, mastering, and playback strategies. Lab exercises may include interactive dialogue scripting and recording; loop-based music production; custom sound effects creation and Foley design; and audio engine integration. A team project will be the creation of a comprehensive game sound effects library over the course of the term. Recommended background: Game Audio (IMGD 2030)"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Game Audio (IMGD 2030)"
+        requirement:
+          kind: topic
+          topic: game audio
+          satisfiedBy:
+            kind: course
+            course: IMGD|2030
+    noCreditWith: []
+  - courseId: IMGD|3100
+    description: "Cat. II This course focuses on the design and evaluation of novel user interfaces that provide greater input and output expressiveness than the keyboard, mouse, or game pad. The course covers the related applications of immersive gaming, teleoperated robotics, and mobile users. Input sensors, such as those providing motion, attitude, and pressure data, are used to explore novel input methods, and how they may be effectively used to design innovative experiences. Through a combination of lecture and hands-on work, students learn to build prototype systems and to critically evaluate different alternatives. Students are expected to program several alternative input/output systems as part of this course. Recommended Background: IMGD 1001, and either CS 2301 or CS 2303 . This course will be offered in 2015-16, and in alternating years thereafter."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: IMGD 1001, and either CS 2301 or CS 2303"
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: IMGD|1001
+            - kind: anyOf
+              of:
+                - kind: course
+                  course: CS|2301
+                - kind: course
+                  course: CS|2303
+    noCreditWith: []
+  - courseId: IMGD|3101
+    description: "Cat. I This course will build upon the skills learned in 3D MODELING with studies in life drawing/anatomy study and application towards completed character models. Students will create high resolution sculpts for real-time game environments and animation. Topics covered will be character design as it applies to 3D MODELING, creating realistic design sculpts and incorporating them into a game environment as well as the study of anatomy as it applies to organic modeling. Recommended background: AR 1101, IMGD/AR 2101, AR 2202"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: AR 1101, IMGD/AR 2101, AR 2202"
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: AR|1101
+            - kind: anyOf
+              of:
+                - kind: course
+                  course: IMGD|2101
+                - kind: course
+                  course: AR|2101
+            - kind: course
+              course: AR|2202
+    noCreditWith: []
+  - courseId: IMGD|3200
+    description: "Cat. I This course introduces students to techniques and processes for the creation of real-time, interactive works of art. Students learn to use electronic sensors and other tools for audio, graphics, and video processing, as well as design customized software interfaces to create interactive artworks that respond to users and their environment. The course also introduces students to the work of significant contemporary arts practitioners as well as their historical precedents, with a special emphasis on inter-media works that bridge visual art, music composition, and the performing arts. Topics may include electronic musical instruments and performance interfaces, computer vision, VJing, electronically augmented dance, controller hacking, wired clothing, networked collaboration and mobile media, and algorithmic and generative art. Recommended background: Animation (AR/IMGD 2101 or equivalent), and exposure to digital audio or music and introductory programming."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Animation (AR/IMGD 2101 or equivalent), and exposure to digital audio or music and introductory programming."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: animation
+              satisfiedBy:
+                kind: anyOf
+                of:
+                  - kind: course
+                    course: AR|2101
+                    orEquivalent: true
+                  - kind: course
+                    course: IMGD|2101
+                    orEquivalent: true
+            - kind: topic
+              topic: exposure to digital audio or music
+            - kind: topic
+              topic: introductory programming
+    noCreditWith: []
+  - courseId: IMGD|3210
+    description: "This course offers in-depth analysis of the human figure in action. Motion is analyzed and studied through drawing and sketching of live models, video clips, performance and pantomime, studying not only the physical exterior but also how thoughts and emotion are expressed through gesture. Students will develop skill in figure posing and staging for applications in animation, storyboards, comics, and illustration. Recommended background: Observational and gesture drawing and color (AR 1101), experience drawing live model (AR 2202), composition skills and color (AR/IMGD 2700)."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Observational and gesture drawing and color (AR 1101), experience drawing live model (AR 2202), composition skills and color (AR/IMGD 2700)."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: observational and gesture drawing and color
+              satisfiedBy:
+                kind: course
+                course: AR|1101
+            - kind: topic
+              topic: experience drawing live model
+              satisfiedBy:
+                kind: course
+                course: AR|2202
+            - kind: topic
+              topic: composition skills and color
+              satisfiedBy:
+                kind: anyOf
+                of:
+                  - kind: course
+                    course: AR|2700
+                  - kind: course
+                    course: IMGD|2700
+    noCreditWith: []
+  - courseId: IMGD|3222
+    description: "Cat. I This course will build upon the techniques learned in IMGD/AR 2222. Students will learn to apply the animation principles to character animation. Students are taught how to tell a compelling, character-driven story through a focus on character acting techniques such as body language, lip-syncing, facial animation, and micro-expressions. Additional topics covered may include sprites for games, biped and quadruped animation, and 2D animation pipelines. Students will create animated sequences that are intended to serve as a narrative structure for games and other media. Recommended background: Knowledge of digital 2D animation techniques and classical animation principles (IMGD/AR 2222)."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Knowledge of digital 2D animation techniques and classical animation principles (IMGD/AR 2222)."
+        requirement:
+          kind: topic
+          topic: digital 2D animation techniques and classical animation principles
+          satisfiedBy:
+            kind: anyOf
+            of:
+              - kind: course
+                course: IMGD|2222
+              - kind: course
+                course: AR|2222
+    noCreditWith: []
+  - courseId: IMGD|3450
+    description: "IMGD/WR 3450 - Writing Characters for Interactive Media & Games Course description: This writing-intensive course reinforces narrative skills to achieve proficiency in character creation and dialogue for interactive media, including a survey of character writing techniques across different media and an examination of what changes when interactivity is added. Coursework will involve major forms of game writing, suitable for inclusion in a portfolio. Topics covered may include character exposition, development of rich playable and non-playable characters, short voice-over audio, interactive dialogue and interactive character arcs, and game character design. Recommended background: previous experience with story structure and writing for interactive media, such as that provided by IMGD/WR 2450 (formerly numbered IMGD/WR 3400). Students may not receive credit for both IMGD/WR 3450 and IMGD/WR 2400"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: previous experience with story structure and writing for interactive media, such as that provided by IMGD/WR 2450 (formerly numbered IMGD/WR 3400)."
+        requirement:
+          kind: topic
+          topic: previous experience with story structure and writing for interactive media
+          satisfiedBy:
+            kind: anyOf
+            of:
+              - kind: course
+                course: IMGD|2450
+              - kind: course
+                course: WR|2450
+    noCreditWith:
+      - IMGD|2400
+      - WR|2400
+    needsReview: "'such as that provided by' gives an example, so IMGD/WR 2450 may not be the only route."
+  - courseId: IMGD|3700
+    description: "Cat. I This course covers drawing as it applies to concept art and illustration. The course begins with study of a human model and representational drawing. Following this, students work on drawing from the mind and applying the lessons learned from the figure drawing to creating concept art and illustration. Topics covered are shape recognition and recalling, inventing from the mind, creative starters, study of form and light, visual composition and developing a personal approach, working with individual strengths to create a compelling visual design. Students create a series of concept art exercises and apply these skills towards a personal project of their own. Recommended background: AR 2202, IMGD/AR 2700"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: AR 2202, IMGD/AR 2700"
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: AR|2202
+            - kind: anyOf
+              of:
+                - kind: course
+                  course: IMGD|2700
+                - kind: course
+                  course: AR|2700
+    noCreditWith: []
+  - courseId: IMGD|3900
+    description: "Cat. II This team-oriented, project-based course will provide opportunities for students to deepen their experience and understanding of digital game design concepts through a combination of thorough design, practical implementation, playtesting and in-class game critique . Students will prepare and present design treatments, develop hands-on expertise with game scripting, and study methods of collecting and analyzing gameplay data . A final project and presentation will test their creativity and demonstrate their practical mastery of game design concepts . Recommended background: IMGD 2900: Digital Game Design I, and basic knowledge of statistical data analysis such as that provided by IMGD 2905: Data Analysis for Game Development."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: IMGD 2900: Digital Game Design I, and basic knowledge of statistical data analysis such as that provided by IMGD 2905: Data Analysis for Game Development."
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: IMGD|2900
+            - kind: topic
+              topic: basic knowledge of statistical data analysis
+              satisfiedBy:
+                kind: course
+                course: IMGD|2905
+    noCreditWith: []
+    needsReview: "'such as that provided by IMGD 2905' is an example, so other data analysis preparation may also qualify."
+  - courseId: IMGD|4000
+    description: "Cat. I This course focuses on the application of advanced Computer Science topics as they impact game development. Networking and distributed systems issues are addressed, including scalability and latency compensation techniques, for designing games for online multi-player environments. AI, graphics and physics techniques specific to game development are discussed. Students will implement games or parts of games that apply advanced Computer Science topics. Recommended background: IMGD 3000."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: IMGD 3000."
+        requirement:
+          kind: course
+          course: IMGD|3000
+    noCreditWith: []
+  - courseId: IMGD|4099
+    description: "Cat. II (1/6 – 1/3 unit) Arranged by individual faculty with special expertise, this course explores emerging and experimental topics that are not covered by the regular IMGD offerings . Content and format varies to suit the interests and needs of the faculty and students . Specific course descriptions are disseminated by IMGD program in advance of the offering . This course may be repeated for different topic offerings . Recommended background: Varies depending on topic."
+    clauses: []
+    noCreditWith: []
+    needsReview: Recommended background 'varies depending on topic' and is not recorded.
+  - courseId: IMGD|411X
+    description: "CS/IMGD 411x Multiplayer Network Games This course provides students with an in-depth exploration of multiplayer networked games, covering both game system architectures and programming. Students will develop an understanding of multiplayer networked games from the Internet Protocol level to game programming (Application) level. Topics may include technologies to synchronize state in a distributed game world system (e.g., serialization), mitigate lag (e.g., latency compensation) and improve scalability (e.g., interest management). Students will complete a series of small- to medium-scale programming projects reinforcing lecture concepts and readings. Recommended background: CS 2301 Systems Programming for Non-Majors or CS 2303 Systems Programming Concepts Suggested background: CS 3013 Operating Systems, CS 3516 Computer Networks, IMGD 3000 Technical Game Development I"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: CS 2301 Systems Programming for Non-Majors or CS 2303 Systems Programming Concepts"
+        requirement:
+          kind: anyOf
+          of:
+            - kind: course
+              course: CS|2301
+            - kind: course
+              course: CS|2303
+    noCreditWith: []
+  - courseId: IMGD|4500
+    description: "Cat. I This course focuses on the integration and organization of the various artistic elements used in game development. The course examines user interaction, interface design, and existing paradigms in current games. Students will combine elements of level design, animation, music, sound, and writing to create an aesthetically appealing game. Recommended background: IMGD 1002, IMGD 3500, MU 1611."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: IMGD 1002, IMGD 3500, MU 1611."
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: IMGD|1002
+            - kind: course
+              course: IMGD|3500
+            - kind: course
+              course: MU|1611
+    noCreditWith: []
+  - courseId: IMGD|4700
+    description: Cat. II Level Design and Environmental Storytelling This course covers the broad topic of designing environments, maps, and spaces for games and interactive media. The course uses a variety of lenses, such as architecture, visual composition, drama, and interactive design, introducing key concepts through texts, analyzing them in designed spaces from digital media and elsewhere, and then applying them through creative work in a range of formats. Interactive spaces embody more than the tools, perspectives, or disciplines they are built from, and this course focuses on mastery of overall design principles as a synthesis of these, including presentation of finished works in document, image, and video capture. Recommended background includes familiarity with 3d art and design software, interactive design fundamentals, such as AR 2101 and IMGD 2740, and experience with the development cycle, such as IMGD 1001 and IMGD 2900.
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: Recommended background includes familiarity with 3d art and design software, interactive design fundamentals, such as AR 2101 and IMGD 2740, and experience with the development cycle, such as IMGD 1001 and IMGD 2900.
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: familiarity with 3d art and design software
+            - kind: topic
+              topic: interactive design fundamentals
+              satisfiedBy:
+                kind: allOf
+                of:
+                  - kind: course
+                    course: AR|2101
+                  - kind: course
+                    course: IMGD|2740
+            - kind: topic
+              topic: experience with the development cycle
+              satisfiedBy:
+                kind: allOf
+                of:
+                  - kind: course
+                    course: IMGD|1001
+                  - kind: course
+                    course: IMGD|2900
+    noCreditWith: []
+    needsReview: "'such as' examples are not exhaustive."
+  - courseId: IMGD|5010
+    description: In this course, students learn foundational theories and gain foundational skills in interactive media, game development, and computational media targeted at the graduate level, for students with a prior undergraduate background in related fields. Students will read about contemporary challenges in application of these fundamentals to IMGD-related projects, and build disciplinary knowledge and practices necessary for the creation of interactive media and/or games. Topics covered in this course alternate each year based on instructor. Different instantiations of the course cover topics in programming and computing in media contexts (computation studio), art asset conceptualization, creation, and iteration (visual arts studio), audio remixing and composition methods (audio lab), and narrative in interactive contexts (narrative design lab). This course will be offered each year, with topic defined by the faculty member teaching it.
+    clauses: []
+    noCreditWith: []
+  - courseId: IMGD|5400
+    description: "This course focuses on the process of creating a set of documents encompassing the design and vision of a piece of interactive media, methods for structuring the implementation of the design, and tools for successfully managing the project . Students will analyze different types of design documents, focusing on form and purpose while also considering audience and publication medium . Students will write design documents, give peer feedback, and revise their own documents based on feedback received . In order to see their design transform from document to product, students will study different project management methods and employ them, defining in detail discrete components, timelines, milestones, players and their responsibilities, and status reports to stakeholders . Tools common to managing interactive media projects (e .g ., source-code revision control, asset management, scheduling) will be used throughout the process . (Prerequisites: Experience working on development projects)"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "(Prerequisites: Experience working on development projects)"
+        requirement:
+          kind: topic
+          topic: experience working on development projects
+    noCreditWith: []
+  - courseId: IMGD|1000
+    description: Cat. I This course introduces non-technical studies of computer-based interactive media and games. The course develops a vocabulary for discussing games and other interactive media, and tools for analyzing them. Students are expected to provide written critiques using the critical approaches presented in the course. The games and other interactive media critiqued may be commercially available or under development.
+    clauses: []
+    noCreditWith: []
+  - courseId: IMGD|1001
+    description: Cat. IThis course discusses the process of game development. It examines the roles ofdifferent participants in the development process and how the technicaldevelopment and the artistic development proceed in tandem. Group work isemphasized, especially the importance of collaboration between technical andartistic efforts. Students are expected to participate in game development usingappropriate game development tools.
+    clauses: []
+    noCreditWith: []
+  - courseId: IMGD|1002
+    description: Cat. IThis course explores different types of story within gaming and other interactivemedia. It delineates between linear, branching, and emergent storytelling,identifies hybrids, and finds new modes of making compelling narrative. Avariety of games are discussed, including early text-based adventures, role-playinggames, shooters, and strategy games. Students will construct characters situations, and narratives through game play and scripted cut scenes. Studentswill explore and use visual storytelling techniques.
+    clauses: []
+    noCreditWith: []
+  - courseId: IMGD|5000
+    description: This is a “studio” course in which the instructor will guide and mentor the students on individual and/or joint projects . The focus of the course will be on the design of interactive media and games, with the students designing (and optionally implementing) one or more games or interactive experiences . There will also be readings and discussion of design theory as it relates to student projects . This course can be taken for M .S . credit twice if desired.
+    clauses: []
+    noCreditWith: []
+  - courseId: IMGD|5100
+    description: Tangible and embodied interaction sees humans at the center of the designed experience . A number of systems continue to emerge to immerse the body into a system, such as virtual reality, augmented reality, mixed reality, alternative controls in the forms of guitars or cockpits, sewing machines, mobile phones and technologies, and even more . Through a combination of traditional lecture, literature review, and hands-on work, students will learn to critically evaluate different alternatives, build prototype systems, and design comparative evaluations to test the effectiveness of various techniques . Students will be expected to implement several techniques as part of this course.
+    clauses: []
+    noCreditWith: []
+  - courseId: IMGD|5600
+    description: This course covers research methods used in computational and interactive media. As an interdisciplinary field, computational media relies on multiple research methods, such as qualitative, quantitative, design-based research, iterative design methodology, player and user-testing, historical and cultural research methods, computational reasoning, data analysis, and visual analysis. Students will read broadly in research methodologies and discuss applicability and adaptability for particular processes and research questions.
+    clauses: []
+    noCreditWith: []

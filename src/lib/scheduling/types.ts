@@ -53,7 +53,7 @@ export interface TimeConflictCell {
    * Whether `row` and `column` address a real cell of the grid.
    *
    * False for a block the grid never covered — an evening or weekend meeting.
-   * Those conflict like any other (PLAN.md §10.5), but no student action can
+   * Those conflict like any other (.claude/PLAN.md §10.5), but no student action can
    * clear them, so the resolver must not offer to.
    */
   insideGrid: boolean;

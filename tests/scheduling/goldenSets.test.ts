@@ -1,5 +1,5 @@
 /**
- * PLAN.md §7.2 — golden fixtures from the real catalog.
+ * .claude/PLAN.md §7.2 — golden fixtures from the real catalog.
  *
  * These pin the behaviour of a handful of real course sets so a later refactor
  * cannot quietly change what students see.

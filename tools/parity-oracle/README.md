@@ -4,7 +4,7 @@ Runs the **original** GWT schedule search off-browser, over the same `.schedb`
 export the Svelte app uses, and prints how many schedules it finds for a given
 set of courses.
 
-PLAN.md §11 lists "verify the search against the deployed old app" as the last
+.claude/PLAN.md §11 lists "verify the search against the deployed old app" as the last
 gate that can find a real port bug. Clicking through the deployed app answers a
 slightly different question than the one that matters: it runs the old algorithm
 over *its own* catalogue, so a disagreement could be a data difference rather
@@ -81,7 +81,7 @@ javac -d classes @sources.txt && java -cp classes oracle.DroppedSections data/ne
 
 The port matches the legacy column on every set.
 
-The last row is how PLAN.md §10.5 got settled. When the port treated out-of-grid
+The last row is how .claude/PLAN.md §10.5 got settled. When the port treated out-of-grid
 cells as available it reported 311 there, and this tool showed the gap was that
 rule alone rather than a port bug: `DroppedSections` finds 20 of MA1021's 79
 open sections carrying a Tue/Thu 6:00–7:50PM lecture, outside the grid. The

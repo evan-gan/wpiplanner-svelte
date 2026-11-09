@@ -1,0 +1,82 @@
+department: SYS
+entries:
+  - courseId: SYS|501
+    description: "Systems Engineering is a multifaceted discipline, involving human, organizational, and various technical variables that work together to create complex systems. This course is an introduction and overview of the methods and disciplines that systems engineers use to define, develop, and deploy systems. It includes specific integrated examples, projects, and team building exercises to aid in understanding and appreciating fundamental principles. Topics covered include; Introduction to Systems Engineering; Requirements Development; Functional Analysis and Requirements Allocation; System Architecture and System Design; Integration, Verification and Validation; Trade Studies; Systems Analysis, Modeling and Simulation; Specialty Engineering; Risk Management; and Technical Planning and Management. (Prerequisite: an undergraduate degree in engineering or science, or permission of the instructor.)"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "(Prerequisite: an undergraduate degree in engineering or science, or permission of the instructor.)"
+        requirement:
+          kind: anyOf
+          of:
+            - kind: standing
+              text: an undergraduate degree in engineering or science
+            - kind: permission
+              text: permission of the instructor
+    noCreditWith: []
+  - courseId: SYS|502
+    description: This course introduces students to the business aspects of Systems Engineering (SE) and is designed to help SE professionals integrate Systems Engineering concepts into a professional business practice environment and to improve systems engineers’ understanding fundamental business practices and their relationship to systems engineering. This course will cover how to prepare and evaluate professional quality business plans, project budgets, financial proposals, timelines and technical outlines. This course will also cover topics such as working with stakeholders; understanding competitive advantage and perceived value of systems engineering; various roles of systems engineers from a business practices perspective; contracting for systems engineering services, how systems engineers impact and are impacted by the various corporate operating divisions, and how to ensure quality control. The course will consist of lectures, case studies, class projects and student presentations.
+    clauses: []
+    noCreditWith: []
+  - courseId: SYS|510
+    description: "This course will study and contrast various important architectural frameworks, representations, tools, and methodologies in order to provide scalable and flexible approaches for enterprises operating in dynamic and complex environments. Enterprise-level system architecting tools will be discussed and demonstrated. At a minimum, the DoDAF, FEAF, Zachman, and TOGAF architectural frameworks will be discussed in depth. Other topics will include analysis of architectural alternatives to meet physical and logical objectives and providing information and systems assurance in an environment that takes people, processes, and technology into account. Modeling tools such as UML/SysML and the use of model-driven architectures will be presented. Validation of the architecture with stakeholders will be discussed. Methods of identifying risks and opportunities associated with the architectural choice will be explored. Practical examples will be included for illustration. (Prerequisite: SYS 501 Concepts of Systems Engineering)"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "(Prerequisite: SYS 501 Concepts of Systems Engineering)"
+        requirement:
+          kind: course
+          course: SYS|501
+    noCreditWith: []
+  - courseId: SYS|511
+    description: "This course examines the use of Systems Engineering principles and best practices with respect to systems and systems-of-systems verification and validation (V&V). V&V processes, activities and methods as they apply across the product lifecycle will be examined. Case studies, papers and exercises will be used to examine the success and failure of verification, validation and test processes. Course topics include 1) How early systems engineering activities and solution sets affect integration, verification, validation and test; 2) V&V activities relative to product development phases; 3) Modeling quality, cost, time and risk; 4) Testing and non-testing methods; 5) V&V planning, execution and reporting; 6) Systems integration; and 7) V&V of critical and complex systems. (Prerequisite: SYS 501 Concepts of Systems Engineering)"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "(Prerequisite: SYS 501 Concepts of Systems Engineering)"
+        requirement:
+          kind: course
+          course: SYS|501
+    noCreditWith: []
+  - courseId: SYS|512
+    description: "Requirements drive system definition and development. Properly managed requirements contribute to project success, while poorly defined and poorly managed requirements often lead to project failure. Modern systems are demanding even more attention to proper requirements definition and management. This course provides processes, techniques, and best practices necessary to develop and manage requirements in today’s complex environments. Prerequisite: SYS 501 Concepts of Systems Engineering"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "Prerequisite: SYS 501 Concepts of Systems Engineering"
+        requirement:
+          kind: course
+          course: SYS|501
+    noCreditWith: []
+  - courseId: SYS|521
+    description: "Model-based systems engineering (MBSE) formalizes the practice of systems engineering through the use of models. This course is intended to answer the why, what and how of MBSE. The course provides background and motivation for transitioning to MBSE from a document centric approach to systems engineering. The course provides a foundation for MBSE by first introducing SysML as a descriptive language for modeling systems in terms of their requirements, structure, behavior, and parametric constraints. The course then introduces the Object-Oriented Systems Engineering Method (OOSEM) as a method for applying SysML to support the specification, architecture design, analysis, and verification of complex systems. A systems modeling tool is also introduced and used throughout the course. Applying MBSE on class projects help the student to grasp the fundamentals. This course is expected to provide the foundations of the systems modeling language, method, and tool to enable the student to get started with MBSE on real projects. (Prerequisite: SYS 501 Concepts of Systems Engineering)"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "(Prerequisite: SYS 501 Concepts of Systems Engineering)"
+        requirement:
+          kind: course
+          course: SYS|501
+    noCreditWith: []
+  - courseId: SYS|585
+    description: "One of the central priorities in WPI’s educational philosophy is the application of academic skills and knowledge to real-world problems . The capstone project represents a substantive evaluation and application of coursework covered in the program. Students are encouraged to select projects with practical significance for the advancement of their company’s competitive position as well as their own personal development. The project is administered, advised, and evaluated by WPI as part of the learning experience, but students are encouraged to seek mentorship from experienced colleagues in the Systems Engineering profession. The presence of or degree of participation from a mentor is made at the discretion of the student or the organization sponsoring the program. (Prerequisite: SYS 501 Concepts of Systems Engineering)"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "(Prerequisite: SYS 501 Concepts of Systems Engineering)"
+        requirement:
+          kind: course
+          course: SYS|501
+    noCreditWith: []
+  - courseId: SYS|540
+    description: Systems Thinking provides an arsenal of tools that enable program managers and systems engineers to better identify, understand, and control systems, and to improve their performance. In this course, we will study system identification and delineation, causal loops and feedback, system leverage points, delays and oscillations, mental models and unintended consequences, emergent properties, patterns, events, and self- organization, and use these tools to improve the performance of engineering, biological, business, and complex social systems. We will explore great system failures, how they might have been avoided, and how we can learn from them in developing and participating in current systems. Finally, we will learn how systems thinking explains the conflicting behavior of individuals, departments, businesses, and countries.
+    clauses: []
+    noCreditWith: []
+  - courseId: SYS|579
+    description: "This course will present reliability, maintainability, and related topics with the breadth of techniques and depth of detail that will benefit the systems engineer by allowing him/her to understand how they relate to the specification, development, testing, and fielding of reliable systems. The reliability of electronics, mechanical equipment, and software will be covered from the component level through their application at the system level. Other key topics will be: reliability prediction; failure modes, effects, and criticality analysis; stress testing; accelerated life testing; and reliability management. In addition, a series of relevant case studies will be studied and discussed."
+    clauses: []
+    noCreditWith: []
+  - courseId: SYS|596
+    description: The graduate seminar series will be presented by recognized experts in various fields of Systems Engineering and related disciplines. All SE Ph.D. students are required to take two offerings of the SE seminar course. Each offering will be graded Pass/Fail.
+    clauses: []
+    noCreditWith: []

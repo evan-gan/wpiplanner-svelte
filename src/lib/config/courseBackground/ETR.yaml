@@ -1,0 +1,71 @@
+department: ETR
+entries:
+  - courseId: ETR|2900
+    description: "Cat. II This course will introduce students to the concept of social entrepreneurship and the ways in which social entrepreneurs are addressing complex social problems with their entrepreneurial ventures. Students will be exposed to the challenges and rewards of running a social enterprise. They will learn valuable business and entrepreneurial tools that can be applied to the design of sustainable social business models. Topics include social opportunity recognition and evaluation, business models in the social sector, social impact assessment, the double-bottom line, scalability of solutions, organizational forms and structures, and social venture financing. Suggested background: Familiarity with concepts of creativity, innovation, entrepreneurial and critical thinking, ethics, cross-cultural relations, and social problems (BUS 1010, BUS 1020, BUS 2060 or equivalent)."
+    clauses:
+      - strength: suggested
+        timing: prior
+        sourceText: "Suggested background: Familiarity with concepts of creativity, innovation, entrepreneurial and critical thinking, ethics, cross-cultural relations, and social problems (BUS 1010, BUS 1020, BUS 2060 or equivalent)."
+        requirement:
+          kind: topic
+          topic: familiarity with concepts of creativity, innovation, entrepreneurial and critical thinking, ethics, cross-cultural relations, and social problems
+          satisfiedBy:
+            kind: anyOf
+            of:
+              - kind: course
+                course: BUS|1010
+                orEquivalent: true
+              - kind: course
+                course: BUS|1020
+                orEquivalent: true
+              - kind: course
+                course: BUS|2060
+                orEquivalent: true
+    noCreditWith: []
+  - courseId: ETR|2910
+    description: "Cat. I This course is designed to provide an introduction to economics, an introduction to entrepreneurship, and an understanding of the linkages between economics and entrepreneurship. Students will apply these concepts to the assessment of opportunities that might arise from participation in WPI projects. Students will engage in exploring how economics and entrepreneurship can inform opportunity assessment within an ambiguous and uncertain context. These decisions are always made with incomplete information and there is typically no single correct answer but rather multiple possible answers -- each with pluses and minuses. Recommended background: None"
+    clauses: []
+    noCreditWith: []
+  - courseId: ETR|4930
+    description: "Cat. I One of the most troublesome aspects of entrepreneurship is running the business once it is started. This course focuses on techniques to grow the new venture and how to manage both the growth and operations. Considerable emphasis will be placed on expanding existing markets, finding new markets, anticipating the next generation of products, and managing cash flow. Recommended background for this course consists of five of the following: ACC 2101, BUS 1010, BUS 1020, BUS 2020, BUS 2060, BUS 3010, BUS 3020, BUS 4030, ETR 3915, OIE 2850."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background for this course consists of five of the following: ACC 2101, BUS 1010, BUS 1020, BUS 2020, BUS 2060, BUS 3010, BUS 3020, BUS 4030, ETR 3915, OIE 2850."
+        requirement:
+          kind: countOf
+          count: 5
+          of:
+            - kind: course
+              course: ACC|2101
+            - kind: course
+              course: BUS|1010
+            - kind: course
+              course: BUS|1020
+            - kind: course
+              course: BUS|2020
+            - kind: course
+              course: BUS|2060
+            - kind: course
+              course: BUS|3010
+            - kind: course
+              course: BUS|3020
+            - kind: course
+              course: BUS|4030
+            - kind: course
+              course: ETR|3915
+            - kind: course
+              course: OIE|2850
+    noCreditWith: []
+  - courseId: ETR|1100
+    description: Cat. I In the modern competitive and global world confronting today’s engineers, innovation and entrepreneurship (I&E) are increasingly important perspectives for every engineering career. Individuals proficient in I&E are likely to possess unique competitive advantage over those who do not. This course develops the foundation for developing such proficiency by examining the functional roles of the business/commercial aspects of engineering disciplines as well as establishing a basis for innovative thinking. Specific cases where I&E has led to new products innovation and new enterprise development will supplement course materials.
+    clauses: []
+    noCreditWith: []
+  - courseId: ETR|500
+    description: Entrepreneurship and Innovation Entrepreneurship involves many activities, including identifying and exploiting opportunities, creating and launching new ventures, introducing new products and new services to new markets. It is based on implementing innovations within existing organizations and creating new opportunities. This course is intended to introduce students to entrepreneurial thinking and methods of executing their ideas. Topics include recognizing and evaluating opportunities, forming new venture teams, preparing business and technology commercialization plans, obtaining resources, identifying execution action scenarios, and developing exit strategies.
+    clauses: []
+    noCreditWith: []
+  - courseId: ETR|593
+    description: In the modern world of global competition the ability to utilize technological innovation is increasingly important. This course will examine the sources of new technology, the tools to evaluate new technologies, the process of intellectual property transfer, and the eventual positioning of the resultant products and services in the commercial market. Its purpose is to improve the probability of success of this discipline in both existing organizational models and early stage ventures. Specific cases studies of successful technology commercialization processes will be used to supplement the course materials.
+    clauses: []
+    noCreditWith: []

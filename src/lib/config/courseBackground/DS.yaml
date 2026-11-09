@@ -1,0 +1,459 @@
+department: DS
+entries:
+  - courseId: DS|1010
+    description: "This course provides an introduction to the core concepts in Data Science and Artificial Intelligence. It covers a broad range of methodologies for working with and making informed decisions based on real-world data. Core topics include Python programming, data cleaning and preparation, statistics, data analytics, machine learning, natural language processing, data modeling, visualization, and business intelligence. In addition, the course emphasizes responsible and ethical considerations in the use of AI. Through hands-on activities and real-world data sets from diverse domains, students will practice using modern tools and techniques to explore data, gain insights, and understand how DS and AI systems are built and applied. Recommended Background: None"
+    clauses: []
+    noCreditWith: []
+  - courseId: DS|2010
+    description: Cat. I, Units 1/3. This course focuses on model- and data-driven approaches in Data Science. It covers methods from applied statistics, optimization, and machine learning to analyze and make predictions and inferences from real-world data sets. Topics covered in this course include a brief overview of statistics and linear algebra, followed by introductory machine learning methods such as linear and nonlinear regression, classification, decision trees, and dimension reduction techniques. Data exploration, data cleaning, feature engineering, and the bias-variance tradeoff will also be covered. Students will utilize various techniques and tools to explore and understand real-world data sets from various domains. Recommended Background Data science basics equivalent to DS 1010, applied statistics and regression equivalent to MA 2611 and MA 2612, and the ability to write computer programs in a scientific language equivalent to a CS programming course at the CS 1000 or CS 2000 level are assumed.
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: Recommended Background Data science basics equivalent to DS 1010, applied statistics and regression equivalent to MA 2611 and MA 2612, and the ability to write computer programs in a scientific language equivalent to a CS programming course at the CS 1000 or CS 2000 level are assumed.
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: data science basics
+              satisfiedBy:
+                kind: course
+                course: DS|1010
+                orEquivalent: true
+            - kind: topic
+              topic: applied statistics and regression
+              satisfiedBy:
+                kind: allOf
+                of:
+                  - kind: course
+                    course: MA|2611
+                    orEquivalent: true
+                  - kind: course
+                    course: MA|2612
+                    orEquivalent: true
+            - kind: topic
+              topic: ability to write computer programs in a scientific language at the CS 1000 or CS 2000 level
+    noCreditWith: []
+  - courseId: DS|3010
+    description: Units 1/3. This course covers a broad range of computational methods to make informed decisions on large and/or high-dimensional data sets following the data science pipeline. Core topics include collecting data via APIs, processing and managing large-scale data, cloud computing, and applying machine learning and deep learning toolkits to extract insights. The goal is to aid decision-making in different domains. Students will learn these skills by working on projects using real-world data sets. Recommended Background Data science basics equivalent to DS 1010, and data analysis principles and modeling equivalent to DS 2010, knowledge of basic statistics equivalent to (MA 2611 and MA 2612), and the ability to program equivalent to (CS 1004 or CS 1101 or CS 1102) and (CS 2102, CS 2103 or CS 2119), as well as understanding of databases equivalent to (CS 3431 or MIS 3720) are assumed.
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: Recommended Background Data science basics equivalent to DS 1010, and data analysis principles and modeling equivalent to DS 2010, knowledge of basic statistics equivalent to (MA 2611 and MA 2612), and the ability to program equivalent to (CS 1004 or CS 1101 or CS 1102) and (CS 2102, CS 2103 or CS 2119), as well as understanding of databases equivalent to (CS 3431 or MIS 3720) are assumed.
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: data science basics
+              satisfiedBy:
+                kind: course
+                course: DS|1010
+                orEquivalent: true
+            - kind: topic
+              topic: data analysis principles and modeling
+              satisfiedBy:
+                kind: course
+                course: DS|2010
+                orEquivalent: true
+            - kind: topic
+              topic: knowledge of basic statistics
+              satisfiedBy:
+                kind: allOf
+                of:
+                  - kind: course
+                    course: MA|2611
+                    orEquivalent: true
+                  - kind: course
+                    course: MA|2612
+                    orEquivalent: true
+            - kind: topic
+              topic: the ability to program
+              satisfiedBy:
+                kind: allOf
+                of:
+                  - kind: anyOf
+                    of:
+                      - kind: course
+                        course: CS|1004
+                      - kind: course
+                        course: CS|1101
+                      - kind: course
+                        course: CS|1102
+                  - kind: anyOf
+                    of:
+                      - kind: course
+                        course: CS|2102
+                      - kind: course
+                        course: CS|2103
+                      - kind: course
+                        course: CS|2119
+            - kind: topic
+              topic: understanding of databases
+              satisfiedBy:
+                kind: anyOf
+                of:
+                  - kind: course
+                    course: CS|3431
+                  - kind: course
+                    course: MIS|3720
+    noCreditWith: []
+  - courseId: DS|4343
+    description: "This course will offer a mathematical and practical perspective on artificial neural networks for machine learning. Students will learn about the most prominent network architectures, such as for example, feedforward, recurrent, convolutional, and attention based neural networks. This course will also teach students optimization and regularization techniques used to train them — such as back-propagation, stochastic gradient descent, dropout, pooling, and batch normalization. Connections to related machine learning techniques and algorithms will be explored. In addition to understanding the mathematics behind deep learning, students will have the opportunity to train neural networks for a wide range of real-world applications. Recommended background: Machine Learning (CS 4342), and knowledge of Linear Algebra (such as MA 2071) and Algorithms (such as CS 2223) Units: 1/3 Category: II"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Machine Learning (CS 4342), and knowledge of Linear Algebra (such as MA 2071) and Algorithms (such as CS 2223)"
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: CS|4342
+            - kind: topic
+              topic: linear algebra
+              satisfiedBy:
+                kind: course
+                course: MA|2071
+            - kind: topic
+              topic: algorithms
+              satisfiedBy:
+                kind: course
+                course: CS|2223
+    noCreditWith: []
+    needsReview: "'such as' examples are not exhaustive."
+  - courseId: DS|4344
+    description: "This course introduces the core principles, models, and real-world applications of Natural Language Processing (NLP) and Large Language Models (LLMs) in the context of modern data science. Students will explore NLP tasks, build deep learning models for language understanding and generation, and apply LLMs to solve problems such as information extraction, conversational AI, summarization, and data querying. Students will interact with state-of-the-art LLMs using industry-standard APIs, gaining practical skills in prompt design, system integration, and application development. The course also includes a critical focus on LLM trust, safety, and ethical deployment, preparing students to responsibly build and evaluate generative AI systems. Through projects, students will emerge with both conceptual understanding and practical fluency in applied NLP and LLM development. Recommended background: Programming skills equivalent to (CS 1004 or CS 1101 or CS 1102) and (CS 2102 or CS2103 or CS 2119); and machine learning equivalent to (DS 3010, CS 4445, or CS4342). Units: 1/3 Category: II"
+    clauses: []
+    noCreditWith: []
+  - courseId: DS|4345
+    description: "This course introduces foundational concepts and solution strategies for designing intelligent systems composed of multiple autonomous agents. Students will learn about agent-based modeling, coordination, communication, and decision-making in cooperative and competitive environments. The course introduces core theories and algorithms for multi-agent decision-making. It also covers how contemporary AI techniques—such as deep learning and generative models—can be applied to enhance multi-agent system capabilities. Through hands-on projects, students will gain practical experience in analyzing and designing multi-agent systems for real-world applications. Recommended background: Basic knowledge of linear algebra, probability theory, and Python programming. Familiarity with machine learning and deep learning equivalent to (DS 3010, CS 4445, CS4342). Familiarity with deep learning equivalent to CS/DS 4343 encouraged. Units: 1/3 Category: II"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Basic knowledge of linear algebra, probability theory, and Python programming."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: basic knowledge of linear algebra
+            - kind: topic
+              topic: probability theory
+            - kind: topic
+              topic: Python programming
+    noCreditWith: []
+  - courseId: DS|4433
+    description: "This course introduces the emerging techniques and infrastructures for big data management and analytics including parallel and distributed database systems, map-reduce, Spark, and NO-SQL infrastructures, data stream processing systems, scalable analytics and mining, and cloud-based computing. Query processing and optimization, access methods, and storage layouts developed on these infrastructures will be covered. Students are expected to engage in hands-on projects using one or more of these technologies. Recommended background: Knowledge in database systems at the level of CS4432, and programming experience are assumed."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Knowledge in database systems at the level of CS4432, and programming experience are assumed."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: knowledge in database systems
+              satisfiedBy:
+                kind: course
+                course: CS|4432
+            - kind: topic
+              topic: programming experience
+    noCreditWith: []
+  - courseId: DS|4635
+    description: "Cat. I The focus of this class will be on statistical learning – the intersection of applied statistics and modeling techniques used to analyze and to make predictions and inferences from complex real-world data. Topics covered include: regression; classification/clustering; sampling methods (bootstrap and cross validation); and decision tree learning. Students may not receive credit for both MA 463X and MA 4635. Recommended background: Linear Algebra (MA 2071 or equivalent), Applied Statistics and Regression (MA 2612 or equivalent), Probability (MA 2631 or equivalent). The ability to write computer programs in a scientific language is assumed."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Linear Algebra (MA 2071 or equivalent), Applied Statistics and Regression (MA 2612 or equivalent), Probability (MA 2631 or equivalent)."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: linear algebra
+              satisfiedBy:
+                kind: course
+                course: MA|2071
+                orEquivalent: true
+            - kind: topic
+              topic: applied statistics and regression
+              satisfiedBy:
+                kind: course
+                course: MA|2612
+                orEquivalent: true
+            - kind: topic
+              topic: probability
+              satisfiedBy:
+                kind: course
+                course: MA|2631
+                orEquivalent: true
+    noCreditWith:
+      - MA|463X
+      - MA|4635
+  - courseId: DS|5002
+    description: "The foci of this class are the essential statistics and linear algebra skills required for Data Science students. The class builds the foundation for theoretical and computational abilities of the students to analyze high dimensional data sets. Topics covered include Bayes’ theorem, the central limit theorem, hypothesis testing, linear equations, linear transformations, matrix algebra, eigenvalues and eigenvectors, and sampling techniques, including Bootstrap and Markov chain Monte Carlo. Students will use these techniques while engaging in hands-on projects with real data. Prerequisites: Some knowledge of integral and differential calculus is recommended."
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "Prerequisites: Some knowledge of integral and differential calculus is recommended."
+        requirement:
+          kind: topic
+          topic: some knowledge of integral and differential calculus
+    noCreditWith: []
+    needsReview: Labelled 'Prerequisites' but the text says the knowledge is recommended. Recorded as required; check.
+  - courseId: DS|5006
+    description: "Machine Learning for Engineering and Science Applications (Cat. I, 3 credits) This course surveys the application of data science (DS) and machine learning (ML) to problems arising in engineering and the sciences. While DS and ML have profoundly affected domains such as image understanding and natural language processing, ML has seen comparatively less impact in chemistry, physics, chemical engineering, electrical engineering, and many other important application domains. Topics covered will include predictive modeling, feature engineering, and model assessment, with a particular focus on the small-data limit. We will analyze and apply algorithms with wide applicability in engineering and sciences including classic techniques such as multiple linear regression and random forests, and state-of-the-art techniques such as deep neural networks. Recommended Background: The intention is for the class to be accessible to a wide audience in disciplines outside of Computer Science and Data Science, though some basic background topics such as statistics or linear algebra, and the ability to learn Python programming at a basic level would be helpful."
+    clauses:
+      - strength: suggested
+        timing: prior
+        sourceText: though some basic background topics such as statistics or linear algebra, and the ability to learn Python programming at a basic level would be helpful.
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: statistics or linear algebra
+            - kind: topic
+              topic: the ability to learn Python programming at a basic level
+    noCreditWith: []
+  - courseId: DS|501
+    description: "Introduction to Data Science provides an overview of Data Science, covering a broad selection of key challenges in and methodologies for working with big data. Topics to be covered include data collection, integration, management, modeling, analysis, visualization, prediction and informed decision making, as well as data security and data privacy. This introductory course is integrative across the core disciplines of Data Science, including databases, data warehousing, statistics, data mining, data visualization, high performance computing, cloud computing, and business intelligence. Professional skills, such as communication, presentation, and storytelling with data, will be fostered. Students will acquire a working knowledge of data science through hands-on projects and case studies in a variety of business, engineering, social sciences, or life sciences domains. Issues of ethics, leadership, and teamwork are highlighted. Prerequisites: None beyond meeting the Data Science admission criteria."
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "Prerequisites: None beyond meeting the Data Science admission criteria."
+        requirement:
+          kind: standing
+          text: meeting the Data Science admission criteria
+    noCreditWith: []
+  - courseId: DS|502
+    description: "Statistical Methods for Data Science surveys the statistical methods most useful in data science applications. Topics covered include predictive modeling methods, including multiple linear regression, and time series, data dimension reduction, discrimination and classification methods, clustering methods, and committee methods. Students will implement these methods using statistical software. Prerequisites: DS 517/ MA 517, Statistics at the level of MA 2611 and MA 2612 and linear algebra at the level of MA 2071."
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "Prerequisites: DS 517/ MA 517, Statistics at the level of MA 2611 and MA 2612 and linear algebra at the level of MA 2071."
+        requirement:
+          kind: allOf
+          of:
+            - kind: anyOf
+              of:
+                - kind: course
+                  course: DS|517
+                - kind: course
+                  course: MA|517
+            - kind: topic
+              topic: statistics
+              satisfiedBy:
+                kind: allOf
+                of:
+                  - kind: course
+                    course: MA|2611
+                  - kind: course
+                    course: MA|2612
+            - kind: topic
+              topic: linear algebra
+              satisfiedBy:
+                kind: course
+                course: MA|2071
+    noCreditWith: []
+  - courseId: DS|503
+    description: "Big Data Management deals with emerging applications in science and engineering disciplines that generate and collect data at unprecedented speed, scale, and complexity that need to be managed and analyzed efficiently. This course introduces the latest techniques and infrastructures developed for big data management including parallel and distributed database systems, map-reduce infrastructures, scalable platforms for complex data types, stream processing systems, and cloud-based computing. Query processing, optimization, access methods, storage layouts, and energy management techniques developed on these infrastructures will be covered. Students are expected to engage in hands-on projects using one or more of these technologies. Prerequisites: A beginning course in databases at the level of CS 4432 or equivalent knowledge, and programming experience."
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "Prerequisites: A beginning course in databases at the level of CS 4432 or equivalent knowledge, and programming experience."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: a beginning course in databases
+              satisfiedBy:
+                kind: course
+                course: CS|4432
+                orEquivalent: true
+            - kind: topic
+              topic: programming experience
+    noCreditWith: []
+  - courseId: DS|504
+    description: "Big Data Analytics addresses the obstacle that innovation and discoveries are no longer hindered by the ability to collect data, but by the ability to summarize, analyze, and discover knowledge from the collected data in a scalable fashion. This course covers computational techniques and algorithms for analyzing and mining patterns in large-scale datasets. Techniques studied address data analysis issues related to data volume (scalable and distributed analysis), data velocity (high-speed data streams), data variety (complex, heterogeneous, or unstructured data), and data veracity (data uncertainty). Techniques include mining and machine learning techniques for complex data types, and scale-up and scale-out strategies that leverage big data infrastructures. Real-world applications using these techniques, for instance social media analysis and scientific data mining, are selectively discussed. Students are expected to engage in hands-on projects using one or more of these technologies. Prerequisites: A beginning course in databases and a beginning course in data mining, or equivalent knowledge, and programming experience."
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "Prerequisites: A beginning course in databases and a beginning course in data mining, or equivalent knowledge, and programming experience."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: a beginning course in databases
+            - kind: topic
+              topic: a beginning course in data mining
+            - kind: topic
+              topic: programming experience
+    noCreditWith: []
+  - courseId: DS|541
+    description: "This course will offer a mathematical and practical perspective on artificial neural networks for machine learning. Students will learn about the most prominent network architectures including multilayer feedforward neural networks, convolutional neural networks (CNNs), auto-encoders, recurrent neural networks (RNNs), and generative-adversarial networks (GANs). This course will also teach students optimization and regularization techniques used to train them -- such as back-propagation, stochastic gradient descent, dropout, pooling, and batch normalization. Connections to related machine learning techniques and algorithms, such as probabilistic graphical models, will be explored. In addition to understanding the mathematics behind deep learning, students will also engage in hands-on course projects. Students will have the opportunity to train neural networks for a wide range of applications, such as object detection, facial expression recognition, handwriting analysis, and natural language processing. Prerequisite: Machine Learning (CS 539), and knowledge of Linear Algebra (such as MA 2071) and Algorithms (such as CS 2223)."
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "Prerequisite: Machine Learning (CS 539), and knowledge of Linear Algebra (such as MA 2071) and Algorithms (such as CS 2223)."
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: CS|539
+            - kind: topic
+              topic: linear algebra
+              satisfiedBy:
+                kind: course
+                course: MA|2071
+            - kind: topic
+              topic: algorithms
+              satisfiedBy:
+                kind: course
+                course: CS|2223
+    noCreditWith: []
+    needsReview: "'such as' examples are not exhaustive."
+  - courseId: DS|547
+    description: "This course introduces the theory, design, and implementation of text-based and Web-based information retrieval systems. Students learn the key concepts and models relevant to information retrieval and natural language processing on largescale corpus such as the Web and social systems. Topics include vector space model, crawling, indexing, web search, ranking, recommender systems, embedding and language model. Prerequisites: statistical learning at the level of DS 502/MA 543 and programming skills at the level of CS 5007."
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "Prerequisites: statistical learning at the level of DS 502/MA 543 and programming skills at the level of CS 5007."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: statistical learning
+              satisfiedBy:
+                kind: anyOf
+                of:
+                  - kind: course
+                    course: DS|502
+                  - kind: course
+                    course: MA|543
+            - kind: topic
+              topic: programming skills
+              satisfiedBy:
+                kind: course
+                course: CS|5007
+    noCreditWith: []
+  - courseId: DS|551
+    description: "DS 551 Reinforcement Learning (3 credits) Reinforcement Learning (RL) is an area of machine learning concerned with how agents take actions in an environment with a goal of maximizing some notion of “cumulative reward”. The problem, due to its generality, is studied in many disciplines, and applied in many domains, including robotics and industrial automation, marketing, education and training, health and medicine, text, speech, dialog systems, finance, among many others. In this course, we will cover topics including: Markov decision processes, reinforcement learning algorithms, value function approximation, actor-critics, policy gradient methods, representations for reinforcement learning (including deep learning), and inverse reinforcement learning. The course project(s) will require the implementation and application of many of the algorithms discussed in class. Prerequisites: Machine Learning (CS 539), statistical learning at the level of DS 502/MA 543, and programming skills at the level of CS 5007."
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "Prerequisites: Machine Learning (CS 539), statistical learning at the level of DS 502/MA 543, and programming skills at the level of CS 5007."
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: CS|539
+            - kind: topic
+              topic: statistical learning
+              satisfiedBy:
+                kind: anyOf
+                of:
+                  - kind: course
+                    course: DS|502
+                  - kind: course
+                    course: MA|543
+            - kind: topic
+              topic: programming skills
+              satisfiedBy:
+                kind: course
+                course: CS|5007
+    noCreditWith: []
+  - courseId: DS|552
+    description: "CS 552 / DS552. Generative Artificial Intelligence (3 credits) Generative Artificial Intelligence (Gen-AI) is a class of machine learning models that generate new data (text, images, faces, voice, artwork) that is near indistinguishable from the equivalent real data typically generated by humans. These models are trained based on realistic example data sets from the real world. This course covers the underlying fundamentals of generative models. It also introduces the design and modeling of some of the modern generative models: Variational Autoencoders (VAEs), Generative Adversarial Networks (GANs), Diffusion models, ChatGPT, Large Language Models, to name a few. Several applications will be discussed, ranging from image generation for engineering or science applications to the utilization of generated data for data augmentation in AI systems. Ethical concerns related to the danger of these generative technologies concerning issues from misinformation, bias, to data ownership are reviewed. Recommended Background: Core artificial intelligence classes, such as machine learning and deep learning, or equivalent background is highly recommended."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: Core artificial intelligence classes, such as machine learning and deep learning, or equivalent background is highly recommended."
+        requirement:
+          kind: topic
+          topic: core artificial intelligence classes, such as machine learning and deep learning, or equivalent background
+    noCreditWith: []
+    needsReview: The examples are introduced with 'such as', so the course list is not exhaustive.
+  - courseId: DS|553
+    description: "CS 553 / DS 553: Machine Learning Development and Operations (MLOps) (3 credits) This course teaches students the computational skills required in the fields of Artificial Intelligence (AI) and Data Science. As data-driven decision-making and AI applications continue to transform industries, proficiency in programming and machine learning tools is important. In this course, you will develop a strong foundation in programming languages commonly used in AI and Data Science (such as Python). This course will cover the development, debugging, deployment, and subsequent monitoring phases of models in end-to-end pipelines core to machine learning systems. You will also familiarize yourself with popular libraries, frameworks and debugging on IDEs, such as PyCharm, PyTorch, scikit-learn, and/or pandas. Possible topics may include practice code development with a copilot as well as deployment of models on a cloud computing environment The student will engage in hands-on projects to practice their programming skills to solve realworld AI and Data Science problems. Recommended Background: Basic understanding of programming concepts, and preferably some python knowledge."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: Basic understanding of programming concepts, and preferably some python knowledge."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: basic understanding of programming concepts
+            - kind: topic
+              topic: some Python knowledge
+    noCreditWith: []
+    needsReview: Says 'preferably' for the Python knowledge, so that item is not strictly required. Treated as required here.
+  - courseId: DS|554
+    description: "CS 554 / DS 554: Natural Language Processing (3 credits) Natural Language Processing (NLP) is an interdisciplinary field at the intersection of artificial intelligence, linguistics, and computer science, dedicated to enabling computers to understand, interpret, and generate human language. NLP underpins advancements in human-computer interaction, information retrieval, sentiment analysis, chatbots, and a multitude of other applications. The course may cover a wide range of topics, including language modeling, sequence-to-sequence architectures, sentiment analysis, machine translation, and advanced techniques for natural language understanding and generation, providing a comprehensive foundation for NLP expertise. Recommended Background: Programming skills at the level of CS 5007."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: Programming skills at the level of CS 5007."
+        requirement:
+          kind: topic
+          topic: programming skills
+          satisfiedBy:
+            kind: course
+            course: CS|5007
+    noCreditWith: []
+  - courseId: DS|555
+    description: "CS 555 / DS 555: Responsible Artificial Intelligence (3 credits) Artificial Intelligence (AI) algorithms have a significant impact on people’s lives. In this course, we discuss social responsibility around data privacy, bias in data and decision making, policies as guardrails, fairness and transparency in the context of applying AI algorithms. Case studies considering societal challenges caused by AI technologies may include AI-based hiring recommendations stemming from societal biases present in training datasets, AI-empowered selfdriving cars behaving in a dangerous manner when encountering atypical road conditions, digital health applications inadvertently revealing private patient information, or large language models like chat-GPT generating incorrect or harmful responses. This course also studies AI-based algorithmic solutions to some of these challenges. These include the design of robust machine learning algorithms with constraints to ensure fairness, privacy, and safety. Strategies for how to apply these methods to design safe and fair AI are introduced. Topics may include min-max optimization with applications to training machine learning models robust to adversarial attacks, stochastic methods for preserving privacy of sensitive data, and multi-agent machine learning models for reducing algorithmic bias and polarization in recommender systems. Recommended Background: Machine Learning at the graduate level, undergraduate level (CS 4342), or equivalent knowledge."
+    clauses: []
+    noCreditWith: []
+  - courseId: DS|556
+    description: "eep Learning, a core of modern Artificial Intelligence, is rapidly expanding to resourceconstrained devices, including smartphones, wearables, and intelligent embedded systems for improving response time, privacy, and reliability. This course focuses on bringing these powerful deep-learning applications from central data centers and large GPUs to distributed ubiquitous systems. On-Device Deep Learning is an interdisciplinary topic at the intersection of artificial intelligence and ubiquitous systems, dedicated to enabling computing on edge devices. This course includes a wide range of topics related to deep learning in resource constrained settings including pruning and sparsity, quantization, neural architecture search, knowledge distillation, on-device training and transfer learning, distributed training, gradient compression, federated learning, efficient data movement and accelerator design, dynamic network inference, and advanced compression and approximation techniques for enabling on-device deep neural network inference and training. This course provides a comprehensive foundation for cutting-edge “tinyML” expertise. Recommended background: The students should have an introductory undergraduate-level or graduate-level introductory background in machine learning and deep neural networks."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: The students should have an introductory undergraduate-level or graduate-level introductory background in machine learning and deep neural networks."
+        requirement:
+          kind: topic
+          topic: an introductory undergraduate-level or graduate-level background in machine learning and deep neural networks
+    noCreditWith: []
+  - courseId: DS|594
+    description: This 3-credit graduate qualifying project, typically done in teams, provides a capstone experience in applying Artificial Intelligence skills to a real-world problem. It will be carried out in cooperation with an industrial sponsor and is approved and overseen by a core or collaborative faculty member in the Artificial Intelligence Program. This offering integrates theory and practice of Artificial Intelligence and includes the utilization of tools and techniques acquired in the Artificial Intelligence Program to a real-world problem. In addition to a written report, this project must be presented in a formal presentation to faculty of the AI program and sponsors. Professional development skills, such as communication, teamwork, leadership, and collaboration, will be practiced. This course is a degree requirement for the Master of Science in Artificial Intelligence (MS-AI) Students outside the MS-AI program must get the instructor’s approval before. Prerequisites Completion of at least 24 credits of the AI degree, or consent of the instructor. With permission of the instructor, the GQP can be taken a 2nd time for a total of 6 credits.
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: Prerequisites Completion of at least 24 credits of the AI degree, or consent of the instructor.
+        requirement:
+          kind: anyOf
+          of:
+            - kind: standing
+              text: completion of at least 24 credits of the AI degree
+            - kind: permission
+              text: consent of the instructor
+    noCreditWith: []
+    needsReview: Students outside the MS-AI program must also get instructor approval, which is not modelled.
+  - courseId: DS|595
+    description: "Special Topics in Data Science is course offering that will cover a topic of current interest in detail. This serves as a flexible vehicle to provide a one-time offering of topics of current interest as well as to offer new topics before they are made into a permanent course. Prerequisites: will vary with topic."
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "Prerequisites: will vary with topic."
+        requirement:
+          kind: other
+          text: Prerequisites will vary with topic.
+    noCreditWith: []
+    needsReview: Prerequisites depend on the topic offered that term; check the offering.
+  - courseId: DS|598
+    description: "The Graduate Qualifying Project, or GQP, is a 3-credit project, typically done in teams that is carried out in cooperation with a sponsor or industrial partner. It will be overseen by a faculty member affiliated with the Data Science Program and will offer integrated theory and practice of Data Science including the utilization of tools and techniques acquired in the Data Science Program. In addition to a written report, this project must be presented in a formal demonstration to the faculty of the Data Science program and sponsors. Professional development skills, such as communication, teamwork, leadership, and collaboration, along with storytelling, will be practiced. Prerequisites: DS 501, completion of at least 24 credits of the DS degree, and consent of the instructor."
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "Prerequisites: DS 501, completion of at least 24 credits of the DS degree, and consent of the instructor."
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: DS|501
+            - kind: standing
+              text: completion of at least 24 credits of the DS degree
+            - kind: permission
+              text: consent of the instructor
+    noCreditWith: []
+  - courseId: DS|577
+    description: Machine Learning has proven immensely effective in a diverse set of applications. This trend has reached a new high with the application of Deep Learning virtually in any application domain. This course studies the applications of Machine Learning in the sub domain of Cybersecurity by introducing a plethora of case studies including anomaly detection in networks and computing, side-channel analysis, user authentication and biometrics etc. These case studies are discussed in detail in class, and further examples of potential applications of Machine Learning techniques including Deep Learning are outlined. The course has a strong hands-on component, i.e. students are given datasets of specific security applications and are required to perform simulations.
+    clauses: []
+    noCreditWith: []

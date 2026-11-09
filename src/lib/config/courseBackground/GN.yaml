@@ -1,0 +1,96 @@
+department: GN
+entries:
+  - courseId: GN|1512
+    description: "Cat. IA continuation of Elementary German I.Recommended background: GN 1511."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: GN 1511."
+        requirement:
+          kind: course
+          course: GN|1511
+    noCreditWith: []
+  - courseId: GN|2511
+    description: "GN 2511: Intermediate German I: Cultural Practices and Products of the German-Speaking World (Cat. I) Builds on the foundation of Elementary German by moving from the level of immediate everyday contexts towards broader cultural phenomena. Students investigate cultural practices, attitudes and products related to a variety of topics such as health and hygiene, environmental protection, travel and transportation, childhood, work, and education. Work with language supports interpretations of short texts (written, viewed, and heard), small-group interactions that navigate real-life situations, and presentations on key cultural products of the German-speaking world. Recommended background: GN 1512"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: GN 1512"
+        requirement:
+          kind: course
+          course: GN|1512
+    noCreditWith: []
+  - courseId: GN|2512
+    description: "Cat. IA continuation of Intermediate German I.Recommended background: GN 2511."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: GN 2511."
+        requirement:
+          kind: course
+          course: GN|2511
+    noCreditWith: []
+  - courseId: GN|2517
+    description: "This course examines topics in the cultural history of German-speaking spaces and peoples, from the time of German Unification (1871) to today. Each course offering may focus on a different historical period (e.g. Imperial Germany, the Weimar Republic) or theme (e.g. migration, fascism and authoritarianism, student activism). Readings will include primary sources (e.g. memoirs, radio broadcasts, manifestos, songs) and secondary sources (e.g. documentary films, scholarly book chapters, articles). Students who have taken German courses will have opportunities to work with source material in German. This course is taught in English and may be repeated for different topics. Especially appropriate for students in German, History, International and Global Studies, and those interested in WPI’s global project centers in Europe. This course will be offered in academic years ending in odd numbers Recommended background: Intermediate-level language proficiency in German and familiarity with cultural perspectives and practices in German-speaking Europe as addressed in GN2512."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Intermediate-level language proficiency in German and familiarity with cultural perspectives and practices in German-speaking Europe as addressed in GN2512."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: intermediate-level language proficiency in German
+            - kind: topic
+              topic: familiarity with cultural perspectives and practices in German-speaking Europe
+              satisfiedBy:
+                kind: course
+                course: GN|2512
+    noCreditWith: []
+  - courseId: GN|3512
+    description: "GN 3512: Advanced German II: National Identities and Stories (Cat. I) How are national identities communicated, contested, and settled? This course foregrounds the diversity of German culture as disseminated through various media. Students will interpret and present on longer texts (e.g. film, music, literature), and discuss these in the form of complex written and oral discourse. At the end of the course students will be able to communicate in German about topics and issues (e.g. history, citizenship, migration) central to cultural discourse in the German-speaking world. Special emphasis on the development of written communication. This course satisfies the Inquiry Practicum Requirement. Recommended background: GN 3511"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: GN 3511"
+        requirement:
+          kind: course
+          course: GN|3511
+    noCreditWith: []
+  - courseId: GN|3513
+    description: "Cat. II Conducted entirely in German, the course presents an overview of the development of modern Germany and its culture since the founding of the Second Empire. Background readings in German and English provide the basis for in-class discussion of selected authentic German texts of various kinds: literary works, official documents, political manifestos, letters, and diaries. At least one film will be shown. A number of recurring themes in German culture will inform the content of the course: authoritarianism versus liberalism, idealism versus practicality, private versus public life. Recommended background: GN 3511 (Advanced German I) and GN 3512 (Advanced German II) or equivalent. This course satisfies the Inquiry Practicum requirement. This course will be offered in 2020-21, and in alternating years thereafter."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: GN 3511 (Advanced German I) and GN 3512 (Advanced German II) or equivalent."
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: GN|3511
+              orEquivalent: true
+            - kind: course
+              course: GN|3512
+              orEquivalent: true
+    noCreditWith: []
+  - courseId: GN|3515
+    description: "This course examines key periods in German history from unification to the present in order to understand how history is presented, contested, and remembered through visual media. The primary medium will be film, but the course will include various media including television, painting, photography, graphic novels, posters, and social media. Each offering may focus on different historical periods (e.g. Weimar Germany, the Third Reich, divided Germany) and themes (e.g. propaganda, identity, memory). Students will engage in close readings of visual texts alongside historical sources to develop skills in medium-specific analysis and historical contextualization. Students who have taken German courses will have opportunities to work with source material in German. This course is taught in English and may be repeated for different topics. Especially appropriate for students interested in German, History, International and Global Studies, Film Studies, and WPI’s global Project Centers in Europe. Recommended background: Advanced-intermediate German language proficiency and familiarity with critical analysis of cultural histories of German-speaking Europe as addressed in GN2512 or GN3511. This course will be offered in academic years ending in odd numbers."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Advanced-intermediate German language proficiency and familiarity with critical analysis of cultural histories of German-speaking Europe as addressed in GN2512 or GN3511."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: advanced-intermediate German language proficiency
+            - kind: topic
+              topic: familiarity with critical analysis of cultural histories of German-speaking Europe
+              satisfiedBy:
+                kind: anyOf
+                of:
+                  - kind: course
+                    course: GN|2512
+                  - kind: course
+                    course: GN|3511
+    noCreditWith: []

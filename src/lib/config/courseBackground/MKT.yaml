@@ -1,0 +1,140 @@
+department: MKT
+entries:
+  - courseId: MKT|1100
+    description: "This course provides a foundational overview of marketing by exploring how firms create, communicate, deliver, and capture value for customers and stakeholders. Students will examine key topics including consumer behavior, market segmentation, the marketing mix (product, price, place, promotion), and the role of strategy within the broader business environment. Through active learning, the class emphasizes ethical, global, and digital marketing trends to prepare students for dynamic decision-making in modern markets. Recommended background: None."
+    clauses: []
+    noCreditWith: []
+  - courseId: MKT|3630
+    description: "The rapid evolution of technology has led to increasingly well-informed buyers who are connected, communicative, and more in control than ever. This course discusses digital technologies and their impact on the marketing mix, branding, communication strategies, and distribution channels. Emphasis is placed on contemporary topics that face today’s marketing managers – with a focus on how analytics can be employed in digital and social media marketing to build brands, conduct business, support causes, rally the masses, and create and maintain customer relationships. Recommended background: Foundational knowledge in Marketing or Consumer Behavior (equivalent to MKT 1100 or MKT 2640) and Knowledge of Statistics (equivalent to that in MA2611 or MA2612). Cat II"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Foundational knowledge in Marketing or Consumer Behavior (equivalent to MKT 1100 or MKT 2640) and Knowledge of Statistics (equivalent to that in MA2611 or MA2612)."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: foundational knowledge in Marketing or Consumer Behavior
+              satisfiedBy:
+                kind: anyOf
+                of:
+                  - kind: course
+                    course: MKT|1100
+                    orEquivalent: true
+                  - kind: course
+                    course: MKT|2640
+                    orEquivalent: true
+            - kind: topic
+              topic: knowledge of statistics
+              satisfiedBy:
+                kind: anyOf
+                of:
+                  - kind: course
+                    course: MA|2611
+                    orEquivalent: true
+                  - kind: course
+                    course: MA|2612
+                    orEquivalent: true
+    noCreditWith: []
+  - courseId: MKT|3640
+    description: "Cat. I This course is based on the hypothesis that high performance firms depend on a sustainable pattern of new and innovative processes and products. Successful companies are examined in regard to their strategies for innovation and technology transfer. Technology alliances among industry, universities, and government are considered in order to increase the leverage of the individual firm. Benchmarking and commercialization from research to actualization is discussed through cases and examples. Recommended background: BUS 2070 or OIE 2850."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: BUS 2070 or OIE 2850."
+        requirement:
+          kind: anyOf
+          of:
+            - kind: course
+              course: BUS|2070
+            - kind: course
+              course: OIE|2850
+    noCreditWith: []
+  - courseId: MKT|3650
+    description: Cat. I Knowing how to manage and interact with customers is a key component for business success. Today, customer needs are continuously evolving as well as how products and services are purchased and consumed. Understanding consumer behavior concepts allows firms to investigate consumption habits and make better informed managerial decisions. The goal of this course is to provide an introduction to various theories and dimensions of consumer behavior, such as the consumer decision-making process, the influence of attitude towards the product, brand, and/or firm, and the impact of culture and subculture. Students will be exposed to how these concepts are linked and applied to marketing, to our roles as consumers, and to everyday decisions.
+    clauses: []
+    noCreditWith: []
+  - courseId: MKT|4040
+    description: "Data and its analysis are at the heart of this new era of marketing. The goal of this course is to provide the skills needed to make intelligent use of marketing data about customers, products purchased, competitors, and the industry. The focus will be on the application of analytics techniques to enhance marketing decision-making in organizations. The course blends the art and science of marketing analytics and prepares students to generate marketing insights from data in areas such as segmentation, targeting, positioning, customer churn prediction, pricing, and customer lifetime value analysis. This will be a hands-on course, in which students apply the concepts and techniques studied in class to solve real-world business problems. Recommended background: Foundational knowledge in Marketing or Consumer Behavior (equivalent to MKT 1100 or MKT 2640) and Knowledge of Statistics (equivalent to that in MA2611 or MA2612). Cat I"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Foundational knowledge in Marketing or Consumer Behavior (equivalent to MKT 1100 or MKT 2640) and Knowledge of Statistics (equivalent to that in MA2611 or MA2612)."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: foundational knowledge in Marketing or Consumer Behavior
+              satisfiedBy:
+                kind: anyOf
+                of:
+                  - kind: course
+                    course: MKT|1100
+                    orEquivalent: true
+                  - kind: course
+                    course: MKT|2640
+                    orEquivalent: true
+            - kind: topic
+              topic: knowledge of statistics
+              satisfiedBy:
+                kind: anyOf
+                of:
+                  - kind: course
+                    course: MA|2611
+                    orEquivalent: true
+                  - kind: course
+                    course: MA|2612
+                    orEquivalent: true
+    noCreditWith: []
+  - courseId: MKT|569
+    description: "The conversion of technology into new products requires an understanding of how to develop a meaningful value proposition and integrate the development of a product with a marketing strategy that creates brand equity. This course will focus on the management of products, the implications of other marketing decisions on product and brand management, the management of product lines within the organization, including introduction, growth, and market exit. (Prerequisite: MKT 500 or equivalent content, or consent of instructor.)"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "(Prerequisite: MKT 500 or equivalent content, or consent of instructor.)"
+        requirement:
+          kind: anyOf
+          of:
+            - kind: course
+              course: MKT|500
+              orEquivalent: true
+            - kind: permission
+              text: consent of instructor
+    noCreditWith: []
+  - courseId: MKT|4030
+    description: Cat. I Every successful business has a strategy for how it provides value and earns profit within its particular industry. Focusing on the contexts of technology, innovation and entrepreneurship, this course develops analytic approaches for assessing the various aspects of strategy such as the competitive environment, the network of stakeholders, ethical implications, investor motivation, operational execution, and financial projections that are necessary to create a complete business plan. Students cannot receive credit for both BUS 4030 and MKT 4030.
+    clauses: []
+    noCreditWith:
+      - BUS|4030
+  - courseId: MKT|500
+    description: This course focuses on the development and marketing of products and services that meet customer needs. Topics covered include management and the development of distinctive competence, segmentation and target marketing, market research, competitor analysis and marketing information systems, product management, promotion, pricing strategy, and channel management. Students will learn how the elements of marketing strategy are combined in a marketing plan based on marketing analytics, and the challenges associated with managing products and services over the life cycle, including strategy modification and market exit.
+    clauses: []
+    noCreditWith: []
+  - courseId: MKT|561
+    description: We are living in a data-driven world. Everything we do from getting our news in the morning, to buying goods, and searching for information leaves trails of data across the Internet. Consumers have changed and companies need to find new ways to engage with consumers in order to stay profitable and relevant. As a working professional, you will be tasked to use data to make business decisions and develop strategy that create value for consumers and your organization. This course will introduce traditional theories of consumer behavior and then take you on a beginning journey through the dynamic practices of how to use consumer data and analytics in the digital age. Topics covered include consumer behavior theory, an examination of attitude formation and value creation, the challenges of consumer protection, market research, and the influence of technology on consumer decision making.
+    clauses: []
+    noCreditWith: []
+  - courseId: MKT|562
+    description: This course is designed to equip students with research methods and tools that are used for marketing decision making. Students will learn to conduct, use, apply, interpret, and present marketing research in order to become effective decision makers. The topics covered in this course include problem formulation, research design, data collection methods, data analysis, and finally presentation of a research plan. This course will be an activity-based course involving design, implementation, and presentation of a marketing research plan. Basic knowledge of marketing and statistical concepts is assumed.
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: Basic knowledge of marketing and statistical concepts is assumed.
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: marketing
+            - kind: topic
+              topic: statistical concepts
+    noCreditWith: []
+  - courseId: MKT|565
+    description: "The rapid evolution of technology has led to increasingly well-informed buyers who are connected, communicative, and more in control than ever. This course discusses digital technologies and their impact on the marketing mix, branding, communication strategies, and distribution channels. Emphasis is placed on contemporary topics that face today’s marketing managers – with a focus on how social media can be employed to build brands, conduct business, support causes, rally the masses, and create and maintain customer relationships. Students who have previously taken MKT 565 (Digital Marketing) or MKT 598 (Special Topics: Social Media Marketing) cannot earn credit for taking MKT 565 (Digital and Social Media Marketing)."
+    clauses: []
+    noCreditWith:
+      - MKT|598
+    needsReview: The excluded MKT 598 is the Special Topics offering titled Social Media Marketing; catalog id MKT|598 covers all MKT special topics, so the exclusion may be narrower.
+  - courseId: MKT|568
+    description: "MKT 568: Marketing Analytics (3 credits) Data is at the heart of this new era of marketing. The goal of this course is to provide the skills needed to make intelligent use of marketing data about customers, competitors, and the industry. The focus will be on the application of analytics techniques to enhance marketing decision-making in organizations. The course blends the art and science of marketing and prepares students to generate marketing insights from data in areas such as segmentation, targeting, positioning, product choice, customer satisfaction, and customer lifetime value analysis. This will be a hands-on course, in which students apply the concepts and techniques studied in class to actual business situations."
+    clauses: []
+    noCreditWith: []

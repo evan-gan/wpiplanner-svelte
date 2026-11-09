@@ -1,0 +1,104 @@
+department: FIN
+entries:
+  - courseId: FIN|2070
+    description: Cat. I This course provides a broad introduction to finance and financial logic, with emphasis on principles, applications and criteria used in decision-making. Core topics to be covered include interest rates, time value of money, bond valuation, yield curves, stock valuation, and risk and return analysis. The course is designed to help build students' financial literacy and provide a solid foundation for later courses in financial management, investments, and financial technology. Prior exposure to business accounting (equivalent to BUS 2060) is beneficial, as well as being comfortable with manipulating and computing financial formulas using mathematics at the level of Calculus I (MA 1020 or MA 1021). Students cannot receive credit for both BUS 2070 and FIN 2070
+    clauses:
+      - strength: suggested
+        timing: prior
+        sourceText: Prior exposure to business accounting (equivalent to BUS 2060) is beneficial
+        requirement:
+          kind: topic
+          topic: business accounting
+          satisfiedBy:
+            kind: course
+            course: BUS|2060
+            orEquivalent: true
+      - strength: suggested
+        timing: prior
+        sourceText: being comfortable with manipulating and computing financial formulas using mathematics at the level of Calculus I (MA 1020 or MA 1021)
+        requirement:
+          kind: topic
+          topic: calculus I
+          satisfiedBy:
+            kind: anyOf
+            of:
+              - kind: course
+                course: MA|1020
+              - kind: course
+                course: MA|1021
+    noCreditWith:
+      - BUS|2070
+    needsReview: Neither sentence has a lead word; both are recorded as suggested because the text calls them beneficial.
+  - courseId: FIN|3300
+    description: "Cat. I This course develops expertise in Finance, Technology, Innovation, leadership, and decision-making by focusing on real-world challenges in the field of FinTech. We will be actively discussing and learning how to analyze, identify, and manage/innovate FinTech across many functional disciplines including Financial, Insurance, Banking, Trading, Information Technology, Regulation, and Budgeting. Students are introduced to the Financial industry and the FinTech ecosystem. The course adopts a decision-maker and leadership perspective (business, operational, functional, and technical leadership) by emphasizing the relationships among financial data, their underlying economic events, risk profiles, challenges/opportunities, and the responses by all stakeholders in a business/corporation. Recommended Background: Introductory business and finance topics such as those found in ACC courses or BUS 2060."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: Introductory business and finance topics such as those found in ACC courses or BUS 2060."
+        requirement:
+          kind: topic
+          topic: introductory business and finance topics
+          satisfiedBy:
+            kind: anyOf
+            of:
+              - kind: topic
+                topic: ACC courses
+              - kind: course
+                course: BUS|2060
+    noCreditWith: []
+  - courseId: FIN|331X
+    description: "The course will cover the theoretical and practical applications of investments . Within this context, students will review various approaches used in the valuation of stocks, bonds, and derivative securities . Students are expected to master both the theoretical constructs of investments and their application to current industry practice . Topics covered include portfolio and diversification theory, short-term investments, long-term investments, investment banking, security trading, international investing, mutual funds versus ETFs, basic derivatives such as stock options and futures contracts, and government and corporate bonds . By the end of the course, students will be proficient in recommending appropriate asset mixes to achieve clients’ investment goals and monitoring the performance of these assets relative to expectations, benchmarks, and overall market behavior. Recommended background : Knowledge of Finance fundamentals (equivalent to that in FIN 2070)"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background : Knowledge of Finance fundamentals (equivalent to that in FIN 2070)"
+        requirement:
+          kind: topic
+          topic: finance fundamentals
+          satisfiedBy:
+            kind: course
+            course: FIN|2070
+            orEquivalent: true
+    noCreditWith: []
+  - courseId: FIN|3330
+    description: "This course provides the foundation for financial data analytics used in business and FinTech applications. The objective of this course is for students to gain experience in analyzing financial data using modern machine learning techniques, statistical methods, and prediction models. Students will develop computational skills to perform data analysis using a modern statistical programming environment and apply these skills to address a range of problems encountered by business firms, including those in the FinTech industry. The topics discussed include an introduction to R language, visualization of financial data, cluster analysis, simple and multiple linear regression, classification models, high dimension data analysis using Lasso, and model assessment and selection using cross validation. Students will have hands-on experience in the development of data analytics applications to analyze real world financial problems. Recommended background: Students should ideally have taken Statistics 2611 and 2612, and FIN 2070."
+    clauses:
+      - strength: suggested
+        timing: prior
+        sourceText: Students should ideally have taken Statistics 2611 and 2612, and FIN 2070.
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: statistics
+              satisfiedBy:
+                kind: allOf
+                of:
+                  - kind: course
+                    course: MA|2611
+                  - kind: course
+                    course: MA|2612
+            - kind: course
+              course: FIN|2070
+    noCreditWith: []
+    needsReview: Text says 'Statistics 2611 and 2612'; mapped to MA|2611 and MA|2612 because other catalog texts call these the statistics courses. Confirm the mapping.
+  - courseId: FIN|540
+    description: FIN 540 Financial Analytics (3 credits) The course introduces advanced methodological tools required for conducting finance and investment analysis research. The course aims to equip students with a working knowledge of important econometric techniques used in financial economics, such as event study, advanced time series analysis, and survival analysis. Substantial emphasis will be placed on developing programming skills in computer programs. The course emphasizes understanding and learning how to apply practitioners' econometric tools in these areas. Students will also cover the basic theory of statistical inference with linear models, general linear models, Heteroskedasticity 4 models, time series models, analysis of variance, discriminate analysis, factor analysis, and nonparametric tests.
+    clauses: []
+    noCreditWith: []
+  - courseId: FIN|1250
+    description: "Cat. I This course is designed to help the student make well-informed judgments when faced with personal financial decisions. Such decisions are growing in number and complexity, and both individuals and families need a considerable degree of financial expertise in order to utilize optimally their limited incomes. Principal topics include: insurance (medical, life, automobile and disability), consumer credit, estate planning, taxation, personal investments (real estate, securities, etc.), social security legislation and personal financial planning."
+    clauses: []
+    noCreditWith: []
+  - courseId: FIN|500
+    description: This course develops expertise in financial decision-making by focusing on frequently used financial accounting information and the conceptual framework for managing financial problems. Students are introduced to the accounting and financial concepts, principles and methods for preparing, analyzing and evaluating financial information, for the purpose of managing financial resources of a business enterprise and investment decisions. The course adopts a decision-maker perspective by emphasizing the relations among financial data, their underlying economic events, and corporate finance issues. The course provides an overview of the financial reporting system, to enable data analysts in building queries for financial analyses and in forecasting possible future financial scenarios.
+    clauses: []
+    noCreditWith: []
+  - courseId: FIN|510
+    description: Business Applications of Blockchain Technology provides students with a foundation of blockchain technology examining its applications across various disciplines such as engineering, law, and economics. Throughout the course, students will delve into diverse blockchain and distributed ledger technologies, popular cryptocurrencies such as Bitcoin and Ethereum, and the implementation and security concerns surrounding them. Students will learn how these systems work, explore the regulatory challenges associated with blockchain technology, and assess its impact on financial services and other industries. The course will also provide students with the component and structures of blockchain business networks such as smart contracts, consensus, certificate authorities, security protocols, role of nodes, transaction processes, participants, and underlying frameworks. Furthermore, the course will examine the Bitcoin (BTC) ecosystem, Ripple (XRP), Ethereum (ETH), tokens (e.g., NFT’s), Initial Coin Offerings (ICOs), and Central Bank Digital Currencies (CBDC). Students will also gain hands-on experience, such as creating basic Blockchain contracts, enabling them to discuss the practical capabilities and limitations of blockchain technology.
+    clauses: []
+    noCreditWith: []
+  - courseId: FIN|598
+    description: "FIN 598: Special Topics This course will engage students at an advanced level in the exploration of special topics that reflect the expertise of the business school’s FIN faculty. It will serve as a flexible vehicle to provide a course offering of topics of current interest as well as to offer new topics before they are made into a permanent course. The course content and format vary to suit the interests and needs of the faculty and students. Department: The Business School Credits: Variable"
+    clauses: []
+    noCreditWith: []

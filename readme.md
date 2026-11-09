@@ -36,7 +36,14 @@ pnpm preview
 pnpm test          # all tests (converter tools + app)
 pnpm run check     # svelte-check; keep it at 0 errors, 0 warnings
 pnpm updateData    # refresh the committed fallback catalog (static/schedb.json) from Workday
+pnpm background status   # courses whose description changed since their prerequisites were read (see updating.md)
 ```
+
+## Updating the planner
+
+Seats and sections refresh themselves. Course prerequisites, term dates and
+holidays, and a few converter lists are maintained by hand. **See
+[`updating.md`](updating.md)** for what to update, when, and how.
 
 ## Deployment
 
@@ -44,10 +51,6 @@ Deployed on Vercel (`vercel.json`). The site is a static bundle plus one
 function, `api/catalog.ts`, which serves the live catalog; if that endpoint is
 down, the app falls back to the committed `static/schedb.json`. See
 [`server/README.md`](server/README.md) to host the endpoint elsewhere.
-
-**Every academic year:** term dates, holidays, and breaks for calendar export
-are hand-maintained in [`src/lib/config/academicCalendar.ts`](src/lib/config/academicCalendar.ts) — they are not in
-the Workday data. The checklist is at the bottom of that file.
 
 ## License
 

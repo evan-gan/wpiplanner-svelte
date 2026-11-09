@@ -1,0 +1,485 @@
+department: CH
+entries:
+  - courseId: CH|1020
+    description: "Cat. I Bonding theories introduced earlier in the sequence are applied to chemical reactions, including reduction/oxidation reactions, to demonstrate patterns in reactivity. Solution thermodynamics, concentration scales, and colligative properties are discussed in the context of balanced chemical reactions both in aqueous solution and in the gas phase. Recommended background: Properties of matter, basic bonding theory, Lewis structures and molecular orbitals, intermolecular forces. See CH1010."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Properties of matter, basic bonding theory, Lewis structures and molecular orbitals, intermolecular forces."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: properties of matter
+            - kind: topic
+              topic: basic bonding theory
+            - kind: topic
+              topic: Lewis structures and molecular orbitals
+            - kind: topic
+              topic: intermolecular forces
+    noCreditWith: []
+  - courseId: CH|1030
+    description: "Cat. IThis course will examine the dynamic nature of solutions at the molecular level, and will develop an understanding of the mathematical aspects of molecular dynamics and equilibrium. Reaction kinetics will be outlined in detail leading into exploration of various fundamentals and examples of equilibrium processes in the gas phase as well as in solution, including acid-base chemistry and precipitation. Principles of thermodynamics will be introduced (entropy, free energy), and relationships with equilibrium will be explored. Case studies in current topics will be emphasized throughout the course.Recommended background: Properties of matter, basic bonding theory, Lewis structures and molecular orbitals, intermolecular forces. Redox reactions, solution thermodynamics, colligative properties, balancing of chemical reactions. See CH1010 and CH1020."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Properties of matter, basic bonding theory, Lewis structures and molecular orbitals, intermolecular forces."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: properties of matter
+            - kind: topic
+              topic: basic bonding theory
+            - kind: topic
+              topic: Lewis structures and molecular orbitals
+            - kind: topic
+              topic: intermolecular forces
+    noCreditWith: []
+  - courseId: CH|2320
+    description: "Cat. I Modern theories of aromaticity, including a general assessment of delocalized bonding. The chemistry of some significant functional groups not surveyed in Organic Chemistry I, and the meaning of acidity and basicity in organic chemistry, will be more fully explored. The course will provide an introduction to the systematic synthesis of polyfunctional organic compounds. Recommended background: CH 2310. The course is intended for chemists, chemical engineers and bio-science majors."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: CH 2310."
+        requirement:
+          kind: course
+          course: CH|2310
+    noCreditWith: []
+  - courseId: CH|2330
+    description: "Cat. IThis course fully explores three most important analytical methods in organic chemistry: infrared spectroscopy, mass spectrometry, and nuclear magnetic resonance spectroscopy. It will continue the coverage of aromatic chemistry. New topics to be introduced include structures, properties, and reactivities of aldehydes and ketones, carboxylic acids and their derivatives, amines, and the interaction among polyfunctional compounds. It reinforces the retrosynthetic analysis and multistep synthesis of organic compounds and revisits reaction mechanisms and stereochemistry of all the new functional groups studied.Recommended background: CH2310 and CH2320. The course is intended for biochemists, chemists, chemical engineers and bioscience majors."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: CH2310 and CH2320."
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: CH|2310
+            - kind: course
+              course: CH|2320
+    noCreditWith: []
+  - courseId: CH|2360
+    description: "Cat. I Laboratory experience in standard methods for the preparation and purification of organic compounds. The course will provide sufficient training in laboratory technique so that no previous laboratory experience beyond that of general chemistry is required. This course may be taken concurrently or following lecture courses in organic chemistry. Recommended for pre-medical students and students majoring in disciplines outside of chemistry and biochemistry that desire laboratory experience in basic methods of organic synthesis. Recommended background: Fundamentals of chemistry, basic chemistry laboratory techniques (e.g., basic synthesis, spectral analysis and chemical separation skills)."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Fundamentals of chemistry, basic chemistry laboratory techniques (e.g., basic synthesis, spectral analysis and chemical separation skills)."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: fundamentals of chemistry
+            - kind: topic
+              topic: basic chemistry laboratory techniques
+    noCreditWith: []
+    needsReview: The lab-technique examples are introduced with 'e.g.'.
+  - courseId: CH|2650
+    description: "Cat. I This laboratory course emphasizes principles, techniques, and instrumentation employed in modern physical chemistry with a view towards applications throughout the molecular sciences. Investigations include chemical thermodynamics and phase equilibria; gas-phase, solution-phase, and interfacial reaction kinetics and dynamics; and molecular modeling of small molecules. Emphasis includes data collection, interpretation, error analysis, and write-up. Recommended background: Fundamentals in chemistry (see CH 1010 – CH 1040), knowledge in thermodynamics (see CH 3510)."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Fundamentals in chemistry (see CH 1010 – CH 1040), knowledge in thermodynamics (see CH 3510)."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: fundamentals in chemistry
+              satisfiedBy:
+                kind: allOf
+                of:
+                  - kind: course
+                    course: CH|1010
+                  - kind: course
+                    course: CH|1020
+                  - kind: course
+                    course: CH|1030
+                  - kind: course
+                    course: CH|1040
+            - kind: topic
+              topic: knowledge in thermodynamics
+              satisfiedBy:
+                kind: course
+                course: CH|3510
+    noCreditWith: []
+  - courseId: CH|2660
+    description: "Cat. I The emphasis in CH 2660 is on fundamental techniques essential for the synthesis, purification, and characterization of organic compounds. These techniques include setting up, running and monitoring reactions, isolation and purification by solvent extraction, crystallization, distillation, and chromatographic techniques, followed by determination of physical properties and characterization by infrared (IR) and nuclear magnetic resonance (NMR) spectroscopy. Micro-synthetic methods and multi-step synthesis are introduced. This course differs from CH 2360 by providing in-depth experience with spectroscopic characterization of molecular structure and hands-on training operating core instruments in addition to methods of organic synthesis. This course is required for students majoring in chemistry, and is recommended for students majoring in biochemistry and disciplines outside of chemistry that desire a strong background in methods of organic synthesis and characterization. Recommended background: Fundamentals of chemistry (see CH 1010, CH 1020, CH 1030) and chemical characterization techniques (see CH1040), basic chemistry laboratory techniques (e.g., basic chemical synthesis, spectral analysis and chemical separation skills)."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Fundamentals of chemistry (see CH 1010, CH 1020, CH 1030) and chemical characterization techniques (see CH1040), basic chemistry laboratory techniques (e.g., basic chemical synthesis, spectral analysis and chemical separation skills)."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: fundamentals of chemistry
+              satisfiedBy:
+                kind: allOf
+                of:
+                  - kind: course
+                    course: CH|1010
+                  - kind: course
+                    course: CH|1020
+                  - kind: course
+                    course: CH|1030
+            - kind: topic
+              topic: chemical characterization techniques
+              satisfiedBy:
+                kind: course
+                course: CH|1040
+            - kind: topic
+              topic: basic chemistry laboratory techniques
+    noCreditWith: []
+    needsReview: The lab-technique examples are introduced with 'e.g.'.
+  - courseId: CH|2670
+    description: "Cat. IThe synthesis, isolation, and characterization of inorganic compounds are emphasized. Syntheses of main group compounds, classical transition metal complexes, and organotransition metal compounds are included. In addition to reinforcing and building on standard techniques of synthesis and characterization, several new techniques are introduced: synthesis under inert atmosphere, measurement of magnetic susceptibility by NMR, and cyclic voltammetry. Some exposure to 13C NMR is also provided. The final experiment of the course requires the student to design a synthesis for a compound selected from a list provided, based on strategies learned in the course.Recommended background: Principles of inorganic chemistry, chemical bonding and reactions, thermodynamic stability of inorganic species, solubility and precipitation of inorganic compounds. Advanced chemistry laboratory skills (see CH 2660)"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Principles of inorganic chemistry, chemical bonding and reactions, thermodynamic stability of inorganic species, solubility and precipitation of inorganic compounds."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: principles of inorganic chemistry
+            - kind: topic
+              topic: chemical bonding and reactions
+            - kind: topic
+              topic: thermodynamic stability of inorganic species
+            - kind: topic
+              topic: solubility and precipitation of inorganic compounds
+    noCreditWith: []
+  - courseId: CH|3520
+    description: "CH 3520 Fundamentals of Applying Mathematical Methods in Chemistry and Biochemistry (Units: 1/3; Cat. II) In this course, selected mathematical methods (such as group theory, Fourier transform, and integration techniques) are used to solve problems in chemistry and biochemistry. The emphasis is not on complete coverage of any specific traditional teaching subject, but rather on the ways each technique can be applied in more than one direction. The main focus is placed on problems relevant in such generally important areas as kinetics and spectroscopy. Students who received credit for the experimental course CH352X are not eligible to receive credit for the permanent course CH 3520. Recommended background: Chemical Thermodynamics and Calculus I – IV or equivalent courses. Anticipated Instructor: Prof. George Kaminsk"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Chemical Thermodynamics and Calculus I – IV or equivalent courses."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: chemical thermodynamics
+            - kind: topic
+              topic: calculus I through IV
+              satisfiedBy:
+                kind: topic
+                topic: equivalent courses
+    noCreditWith:
+      - CH|352X
+    needsReview: "'Calculus I – IV' names no course ids, so only topics were recorded."
+  - courseId: CH|3530
+    description: "Cat. I An introduction to quantum mechanics with applications to atomic and molecular species. The course will be developed systematically beginning with the postulates of quantum mechanics. The Schroedinger equation will be applied to systems such as the particle in a box, the rigid rotor, the harmonic oscillator and the hydrogen atom. Emphasis will be given to a quantum mechanical description of multielectron atoms, molecular bonding and spectroscopy. Recommended background: a solid foundation in elementary physics and calculus. This course is normally for students in their third year."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: a solid foundation in elementary physics and calculus."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: elementary physics
+            - kind: topic
+              topic: calculus
+    noCreditWith: []
+  - courseId: CH|3550
+    description: Cat. I This course deals in a general way with the interactions between energy and molecules, and considers how energetic and structural considerations affect the outcome of molecular interactions. The manipulation of kinetic data and results is stressed. Selected topics from both organic and inorganic chemistry are analyzed in terms of reaction thermodynamics, rates and mechanisms. Students are expected to be familiar with thermodynamics, equilibria, reaction rates and the Periodic Table of the elements. The following three courses, CH 4110, CH 4120, and CH 4130, are a three-term sequence intended to provide a strong emphasis in biochemistry. As background for this sequence, CH 1010, CH 1020, CH 1030, CH 1040, CH 2310, CH 2320, and CH 2330, or their equivalents, are recommended.
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: As background for this sequence, CH 1010, CH 1020, CH 1030, CH 1040, CH 2310, CH 2320, and CH 2330, or their equivalents, are recommended.
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: CH|1010
+              orEquivalent: true
+            - kind: course
+              course: CH|1020
+              orEquivalent: true
+            - kind: course
+              course: CH|1030
+              orEquivalent: true
+            - kind: course
+              course: CH|1040
+              orEquivalent: true
+            - kind: course
+              course: CH|2310
+              orEquivalent: true
+            - kind: course
+              course: CH|2320
+              orEquivalent: true
+            - kind: course
+              course: CH|2330
+              orEquivalent: true
+    noCreditWith: []
+  - courseId: CH|4120
+    description: "Cat. I Oriented around biological membranes, this course begins with a description of lipids and proteins forming biomembranes. Permeability and the mechanism of transmembrane mass transport are presented. Transport of electrons and redox equivalents is explained within the context of aerobic production of ATP and plant photosynthesis. Finally the transport of information across biomembranes in signal transduction and neurotransmission are discussed. Recommended background: Knowledge of organic chemistry fundamentals as well as concepts including protein structure and folding, catalytic mechanics, enzyme kinetics, and ATP synthesis and hydrolysis mechanisms. See CH 2310, BB 2550, and CH 4110 or equivalent."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Knowledge of organic chemistry fundamentals as well as concepts including protein structure and folding, catalytic mechanics, enzyme kinetics, and ATP synthesis and hydrolysis mechanisms."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: organic chemistry fundamentals
+            - kind: topic
+              topic: protein structure and folding, catalytic mechanics, enzyme kinetics, and ATP synthesis and hydrolysis mechanisms
+    noCreditWith: []
+  - courseId: CH|4130
+    description: "Cat. I This course presents the structure and function of DNA. Precursors and biomolecules that give rise to DNA, the mechanism of DNA replication, RNA synthesis, and protein synthesis are described in detail. In addition to mechanistic studies, regulation of these processes is covered as well as those of genetic mutation, DNA repair, and epigenetics. Recommended background: Knowledge of organic chemistry fundamentals as well as concepts including protein structure and folding, catalytic mechanics, enzyme kinetics, and ATP synthesis and hydrolysis mechanisms. See CH 2310, CH 2320, CH 2330, BB 2550, and CH 4110 or equivalent."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Knowledge of organic chemistry fundamentals as well as concepts including protein structure and folding, catalytic mechanics, enzyme kinetics, and ATP synthesis and hydrolysis mechanisms."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: organic chemistry fundamentals
+            - kind: topic
+              topic: protein structure and folding, catalytic mechanics, enzyme kinetics, and ATP synthesis and hydrolysis mechanisms
+    noCreditWith: []
+  - courseId: CH|4140
+    description: "Cat. I This course presents a thorough analysis of the most relevant metabolic processes in cells. The catabolism of sugars and lipids will be presented in the context of energy generation and storage. Nucleotide and amino acid metabolism will discussed as building blocks for large biomolecules. Throughout the course the links between metabolism, hereditary pathologies, as well as risk of metabolic imbalances such as diabetes and obesity will be presented.Recommended background: Familiarity with organic chemistry topics including functional groups, nucleophilic addition and substitution reactions, stereochemistry, and carbonyl chemistry. General knowledge of cellular architecture is also recommended. See CH 2310, CH 2320, CH 2330, and BB2550 or equivalent.Specific concepts that we will discuss are: Glucose and glycogen metabolism; Gluconeogenesis; Citric Acid Cycle; Lipid, amino acid and nucleotide metabolisms; Mammalian Fuel Metabolism: Integration and Regulation."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Familiarity with organic chemistry topics including functional groups, nucleophilic addition and substitution reactions, stereochemistry, and carbonyl chemistry."
+        requirement:
+          kind: topic
+          topic: familiarity with organic chemistry topics including functional groups, nucleophilic addition and substitution reactions, stereochemistry, and carbonyl chemistry
+      - strength: recommended
+        timing: prior
+        sourceText: General knowledge of cellular architecture is also recommended.
+        requirement:
+          kind: topic
+          topic: general knowledge of cellular architecture
+    noCreditWith: []
+  - courseId: CH|4150
+    description: "Cat. I The experiments in this laboratory course have been designed to acquaint the students with the basic skills necessary to perform biochemical studies. The course will cover, for instance, protein purification, subcellular fractionation, enzyme kinetics (Km, Vmax, specific activity, effector-protein interaction, etc.), exclusion and ion exchange chromatography, and electrophoresis. Recommended background: Knowledge of organic chemistry fundamentals as well as concepts including protein structure and folding, catalytic mechanics, enzyme kinetics, and ATP synthesis and hydrolysis mechanisms. See CH 2310, BB 2550, and CH 4110 or equivalent."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Knowledge of organic chemistry fundamentals as well as concepts including protein structure and folding, catalytic mechanics, enzyme kinetics, and ATP synthesis and hydrolysis mechanisms."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: organic chemistry fundamentals
+            - kind: topic
+              topic: protein structure and folding, catalytic mechanics, enzyme kinetics, and ATP synthesis and hydrolysis mechanisms
+    noCreditWith: []
+  - courseId: CH|4170
+    description: "Cat. I This laboratory course focuses on modern DNA technologies and general applications of gene manipulation. Topics include gene amplification and recombination, promoter and plasmid engineering, gene expression and analysis, model systems, CRISPR, genomics and transgenics. Experiments in this course are integrated into an overall genetic engineering project throughout the term that will involve techniques such as electrophoresis, quantitative spectrofluorimetry, and real-time quantitative PCR. Methods of data analysis, common statistical approaches and technical writing will be emphasized throughout the course. Recommended background: Knowledge of organic chemistry fundamentals as well as biochemical concepts including DNA replication and recombination, RNA synthesis and protein synthesis. Familiarity with cellular architecture is also recommended. See CH 2310, BB 2550, BB 4010 and CH 4110 or equivalent."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Knowledge of organic chemistry fundamentals as well as biochemical concepts including DNA replication and recombination, RNA synthesis and protein synthesis."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: organic chemistry fundamentals
+            - kind: topic
+              topic: biochemical concepts including DNA replication and recombination, RNA synthesis and protein synthesis
+      - strength: recommended
+        timing: prior
+        sourceText: Familiarity with cellular architecture is also recommended.
+        requirement:
+          kind: topic
+          topic: familiarity with cellular architecture
+    noCreditWith: []
+  - courseId: CH|4190
+    description: "Cat. I Through lectures, problem sets, reading and discussion, and presentations this course will help elucidate for students the processes that allow regulated gene expression, mechanisms used in each type of regulation, and methods and techniques used for investigation of regulatory mechanisms . Readings from the current original research literature will explore the growing use of model systems and “omics” level approaches to enhance our ever expanding understanding of the gene regulatory mechanisms. The development of cell-based therapeutics and genetic engineering as they relate to gene regulation will be introduced. Recommended background: a working knowledge of concepts in biochemistry and molecular genetics (CH 4110 and 4120, or equivalent, and CH 4130 or BB 3950 or equivalent)"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: a working knowledge of concepts in biochemistry and molecular genetics (CH 4110 and 4120, or equivalent, and CH 4130 or BB 3950 or equivalent)"
+        requirement:
+          kind: topic
+          topic: a working knowledge of concepts in biochemistry and molecular genetics
+          satisfiedBy:
+            kind: allOf
+            of:
+              - kind: allOf
+                of:
+                  - kind: course
+                    course: CH|4110
+                    orEquivalent: true
+                  - kind: course
+                    course: CH|4120
+                    orEquivalent: true
+              - kind: anyOf
+                of:
+                  - kind: course
+                    course: CH|4130
+                    orEquivalent: true
+                  - kind: course
+                    course: BB|3950
+                    orEquivalent: true
+    noCreditWith: []
+  - courseId: CH|4330
+    description: Cat. II Modern synthetic methods as applied to the construction of societally relevant target molecules will be the focus of this course. Discussions may emphasize the logic and strategy in synthetic approaches toward active pharmaceutical ingredients, agrochemicals, fine chemicals, materials, and other targets of interest. The analysis of current examples from the primary literature will draw attention to the most state-of-the-art synthetic tactics. Recommended for graduate students and undergraduates who have a basic understanding of the principles governing organic reactions, such as those covered in CH2310, CH2320, and CH2330. This course will be offered in 2020-21 and alternate years thereafter.
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: Recommended for graduate students and undergraduates who have a basic understanding of the principles governing organic reactions, such as those covered in CH2310, CH2320, and CH2330.
+        requirement:
+          kind: topic
+          topic: a basic understanding of the principles governing organic reactions
+          satisfiedBy:
+            kind: anyOf
+            of:
+              - kind: course
+                course: CH|2310
+              - kind: course
+                course: CH|2320
+              - kind: course
+                course: CH|2330
+    noCreditWith: []
+    needsReview: The organic chemistry courses are given as examples ('such as'), so they are not exhaustive.
+  - courseId: CH|4420
+    description: "Cat. I The principles and applications of group theory as a tool in chemistry are presented with an emphasis on systems in inorganic chemistry. Topics covered include the development of symmetry group representations and character tables, applications of group theory in quantum-mechanical wavefunctions, molecular vibrations, ligand field theory, and molecular orbital theory. Particular emphasis will be placed on transition metal complexes, including classical coordination complexes, metal carbonyl complexes, and organotransition metal complexes. Recommended Background: CH 1010 - CH 1040, CH 2640 - CH 2670, CH 3410, CH 3530, and CH 3550, and a fundamental understanding of atomic, molecular and solid state structures and properties. Thermodynamic stabilities of inorganic species. Acidity, solubility and precipitation of inorganic compounds (see CH3410)."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: CH 1010 - CH 1040, CH 2640 - CH 2670, CH 3410, CH 3530, and CH 3550, and a fundamental understanding of atomic, molecular and solid state structures and properties."
+        requirement:
+          kind: allOf
+          of:
+            - kind: course
+              course: CH|1010
+            - kind: course
+              course: CH|1020
+            - kind: course
+              course: CH|1030
+            - kind: course
+              course: CH|1040
+            - kind: course
+              course: CH|2640
+            - kind: course
+              course: CH|2650
+            - kind: course
+              course: CH|2660
+            - kind: course
+              course: CH|2670
+            - kind: course
+              course: CH|3410
+            - kind: course
+              course: CH|3530
+            - kind: course
+              course: CH|3550
+            - kind: topic
+              topic: a fundamental understanding of atomic, molecular and solid state structures and properties
+    noCreditWith: []
+    needsReview: Course ranges (CH 1010 - CH 1040, CH 2640 - CH 2670) were expanded to each number in the range, assuming every course in between exists.
+  - courseId: CH|520
+    description: Cell signaling defines the way cells respond to changes in their environment including, heat, nutrients, drugs, hormones, and other factors. These external factors allow cells to grow, divide, migrate and proliferate depending on the stimulus, and inappropriate responses lead to cancer and other diseases. This course is directed for advanced undergraduates and graduate level course that is a combination of on-line lectures, discussions, and review of recent literature. Students who previously took the CH 555 version of this course cannot take CH 520 for credit.
+    clauses: []
+    noCreditWith:
+      - CH|555
+  - courseId: CH|538
+    description: "This course will focus on the medicinal chemistry aspects of drug discovery from an industrial pharmaceutical research and development perspective. Topics will include chemotherapeutic agents (such as antibacterial, antiviral and antitumor agents) and pharmacodynamic agents (such as antihypertensive, antiallergic, antiulcer and CNS agents). (Prerequisite: A good foundation in organic chemistry, e.g., CH 2310 Organic Chemistry I and CH 2320 Organic Chemistry II.)"
+    clauses:
+      - strength: required
+        timing: prior
+        sourceText: "(Prerequisite: A good foundation in organic chemistry, e.g., CH 2310 Organic Chemistry I and CH 2320 Organic Chemistry II.)"
+        requirement:
+          kind: topic
+          topic: a good foundation in organic chemistry
+          satisfiedBy:
+            kind: allOf
+            of:
+              - kind: course
+                course: CH|2310
+              - kind: course
+                course: CH|2320
+    noCreditWith: []
+    needsReview: The CH 2310 / CH 2320 pair is given as an example ('e.g.'), so other foundations may also qualify.
+  - courseId: CH|542
+    description: "This class will introduce the concepts of basic neuropharmacology and the action of major neurotransmitter families in the brain. The mechanisms of action of the major psychoactive drugs families including cannabis, opioids, and psychedelics will be covered. The effects of pharmaceutical treatments for anxiety and depression on brain chemistry will be discussed as well. This course will be offered in 2020-2021 and alternating years thereafter. Recommended Background: Fundamental understanding of introductory biochemistry (CH4110, CH4120, and/or CH4130)."
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: Fundamental understanding of introductory biochemistry (CH4110, CH4120, and/or CH4130)."
+        requirement:
+          kind: topic
+          topic: fundamental understanding of introductory biochemistry
+          satisfiedBy:
+            kind: anyOf
+            of:
+              - kind: course
+                course: CH|4110
+              - kind: course
+                course: CH|4120
+              - kind: course
+                course: CH|4130
+    noCreditWith: []
+  - courseId: CH|543
+    description: Organometallic chemistry and catalytic reactions have fundamentally changed the way drugs and polymeric materials are made today. Furthermore, they have enabled the synthesis and application of new electronic materials (e.g. in OLEDs and molecular wires) and materials mimicking natural processes (e.g. self-healing and anti-bacterial coatings). This course will establish principles to understand the reactivity of organometallic compounds of transition and main groups metals. Furthermore, metal-free catalysis will be introduced. Pulling on influences from both inorganic and organic chemistry, the class will provide insight into catalysis approaches that have revolutionized synthetic chemistry, enabling highly efficient, sustainable production of compounds that are used in such different areas as drug discovery, protein analysis, and performance plastics. Case studies will be drawn from the current literature and applications that are widely used in industrial and academic settings and will include work that has led to recent Nobel prizes in the area. Recommended preparation includes the organic chemistry sequence (CH2310, CH2320, and CH2330) and CH3410. The course is recommended for both graduate and advanced undergraduate students. This course will be offered in 2018-2019 and alternate years thereafter.
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: Recommended preparation includes the organic chemistry sequence (CH2310, CH2320, and CH2330) and CH3410.
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: the organic chemistry sequence
+              satisfiedBy:
+                kind: allOf
+                of:
+                  - kind: course
+                    course: CH|2310
+                  - kind: course
+                    course: CH|2320
+                  - kind: course
+                    course: CH|2330
+            - kind: course
+              course: CH|3410
+    noCreditWith: []
+  - courseId: CH|555
+    description: "This course is designed for students to attain a broad and in-depth acquaintance with the mechanism, platform and targets of various sensors, with a focus on biosensors and chemical sensors. Topical concepts covered include: sensor components and characteristics; synthetic, biological and biomimetic materials used in sensor development; miniaturization and nanotechnology involved in sensor fabrication; various sensing modalities, data analysis and device prototyping. Students will be required to partner with others and consult with academic and industrial scientists to design sensors of their own interests as a final project for assessment."
+    clauses: []
+    noCreditWith: []
+  - courseId: CH|562
+    description: How do Food and Drug Administration (FDA) regulations and guidelines drive the drugdevelopment pathway for small-molecule products? We will outline the guidelines and regulations for pharmaceutical products including requirements for non-Good Laboratory Practice (GLP) and GLP safety studies, Absorption, Distribution, Metabolism and Excretion (ADME), Pharmacokinetic-Pharmacodynamic (PK/PD), and other pharmacokinetic and toxicological studies to establish the safety and efficacy of drugs as dictated by FDA regulations. Students will learn how to utilize safety (NOEL/”No Observed Effect Level” and NOAEL/”No Observed Adverse Effect Level”), efficacy, and pharmacokinetic studies to determine first in human doses and a therapeutic index, and requirements for Good Manufacturing Practices (GMP). Students will also learn about small, niche FDA regulatory pathways to include the animal rule (in which humans cannot be included in efficacy studies for safety reasons)/animal model development through discussions of biological warfare and outbreak pathogen therapeutic development.
+    clauses: []
+    noCreditWith: []
+  - courseId: CH|563
+    description: The course describes the evolution of the regulations that govern the pharmaceutical industry and examines how the resultant regulatory framework influences and guides pharmaceutical companies in the development, manufacture, testing and commercial distribution of drugs. Multiple aspects in the drug development process influenced by the regulations including quality system design and operation, regulatory affairs group structure and activities, compliance, good practices (GxPs), and ethics will be covered. The course will explore the global regulatory environment but will focus on the US Food and Drug Administration (FDA) and the European Medicines Agency (EMA) as primary study cases when examining the regulations, processes and controls for clinical development, marketing authorization approvals and post-approval changes for drugs, biologics and vaccines.
+    clauses: []
+    noCreditWith: []
+  - courseId: CH|1010
+    description: Cat. IThe CH1010 course is an introduction to chemistry using the fundamental structures of atoms as a starting point. Emphasis is placed on discussing how all properties of matter as well as bonding mechanisms arise from atomic structure. Lewis structures and molecular orbitals are used to understand bonding, and the intermolecular forces present in chemicals systems are used as a prelude to reactivity patterns covered in future courses.
+    clauses: []
+    noCreditWith: []
+  - courseId: CH|1040
+    description: Cat. I We will examine the nature of molecular motions and their interaction with electromagnetic radiation, which provides us with all our structural information about molecules. In addition, students will be introduced to to important techniques such as the fundamentals of infrared (I.R.), nuclear magnetic resonance (N.M.R.), UV-Vis absorption and fluorescence spectroscopies, and electrochemistry. The concepts of these techniques will be discussed in the context of structural organic chemistry and polymer characterization.
+    clauses: []
+    noCreditWith: []
+  - courseId: CH|2310
+    description: Cat. I A systematic survey of the major reaction types and functional groups in organic chemistry. The course will provide a representative collection of characteristic reactions and transformations of a variety of types of organic molecules. Most of the examples will be drawn from aliphatic chemistry. Some theoretical models will be introduced with a view toward establishing a general overview of the material. The course is intended for chemists, chemical engineers, pre-medical students and all those interested in the biosciences. A familiarity with the material presented in the general chemistry courses is assumed.
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: A familiarity with the material presented in the general chemistry courses is assumed.
+        requirement:
+          kind: topic
+          topic: general chemistry
+    noCreditWith: []
+  - courseId: CH|516
+    description: We will establish fundamental principles of both light-matter interactions and electron spectroscopies. Emphases include rotational, vibrational, and electronic spectroscopies, photoelectron spectroscopies, near-field versus far-field methods, lab versus synchrotron methods, and practical applications.
+    clauses: []
+    noCreditWith: []
+  - courseId: CH|540
+    description: "This course covers the biochemical mechanisms involved in regulation of gene expression: modifications of DNA structures that influence transcription rates, transcriptional regulation, post-transcriptional processing of RNA including splicing and editing, nuclear/cytoplasmic transport, regulation of translation, and factors that control the half-lives of both mRNA and protein. During the course, common experimental methods are explored, including a discussion of the information available from each method."
+    clauses: []
+    noCreditWith: []
+  - courseId: CH|571
+    description: Reports on current advances in the various branches of chemistry.
+    clauses: []
+    noCreditWith: []

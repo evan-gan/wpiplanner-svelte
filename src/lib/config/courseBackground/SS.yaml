@@ -1,0 +1,26 @@
+department: SS
+entries:
+  - courseId: SS|1505
+    description: "Cat. I This course addresses the theory and practice of developing solutions to complex social and environmental problems through interaction with roleplaying games and computer simulations designed to promote learning and improve decision-making. By interacting with a selection of games and case studies, students will learn to recognize the systemic causes of complex social and environmental problems and gain experience developing and using simulations to test policies for creating sustainable futures. Special attention will be given to appropriate modeling practices and the design of simulation experiments. The course is run in a laboratory format in which students work in groups to play games, develop simulation models and present them to the class for feedback before they revise and refine their work iteratively for final evaluation. Recommended background: None Students who completed SS150X cannot receive credit for SS1505."
+    clauses: []
+    noCreditWith:
+      - SS|150X
+  - courseId: SS|3043
+    description: "Cat. I This course makes the student aware of the social, moral, ethical, and philosophical impact of computers and computer-based systems on society, both now and in the future. Topics include major computer-based applications and their impact, human machine relationships, and the major problems of controlling the use of computers. Students will be expected to contribute to classroom discussions and to complete a number of significant writing assignments. This course is recommended for juniors and seniors. The Social Science Requirement cannot be satisfied by this course. Undergraduate credit may not be earned both for this course and for CS 505. Recommended background: a general knowledge of computers and computer systems"
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: a general knowledge of computers and computer systems"
+        requirement:
+          kind: topic
+          topic: a general knowledge of computers and computer systems
+    noCreditWith:
+      - CS|505
+  - courseId: SS|510
+    description: "SS 510 / MA 544: Principles of Epidemiology (Cat. I) 3 credits Epidemiology studies the pattern of disease in populations to describe and identify distributions of diseases and opportunities for intervention. This course serves as a cornerstone for the quantitative aspects of global health and focuses on the distribution and determinants of health in human populations and communities. The goal is to provide a scientific foundation for evaluating both risk factors and interventions to improve health in a population through a strong quantitative analysis of causation, problem-solving, and analytic reasoning. The study of epidemiology evaluates the multifactorial etiology and pathophysiology of noncommunicable and infectious diseases and contributes to public health practice and policy. Specific topics include biomedical study design (i.e., experiment, cohort, case-control, cross sectional, ecological), appropriate measures of disease burden and association (i.e., prevalence, cumulative incidence, rate ratio, odds ratio), and considerations for efficacy and precision (i.e., selection bias, confounding, effect modification, measurement error, and random variation). The course also provides a framework for understanding and evaluating biomedical research publications, causal inference, and basic infectious disease modeling."
+    clauses: []
+    noCreditWith: []
+  - courseId: SS|560
+    description: "SS 560: Artificial Intelligence: Exploring Technology, Ethics and Policy (3 credits) In the rapidly evolving landscape of technology, artificial intelligence (AI) has emerged as a transformative force with significant implications for public policy. This course is designed to provide students with a comprehensive understanding of challenges and opportunities AI brings to society and attendant policy debates. Throughout the course, students will learn both knowledge and tools enabling them to critically analyze and contribute to policy formation, implementation, assessment of AI related polices. The course will prepare students to engage in ongoing policy and emergent policy debates that reflect AI’s impact on society. Students will be able to make ethically informed decisions about the intersection of technology, policy, and society. Prerequisites: None."
+    clauses: []
+    noCreditWith: []

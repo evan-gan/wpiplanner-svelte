@@ -1,9 +1,11 @@
 <!--
-  A floating box opened at a point (normally the cursor), kept fully on
-  screen by `placePopover`. Escape or a press outside it calls `onclose`.
+  A floating box opened at a point (where it was clicked or tapped), kept
+  fully on screen by `placePopover`. It stays until Escape or a press outside
+  it calls `onclose`.
 
-  It knows nothing about what it holds; hover timing belongs to the caller
-  (see `ui/hoverIntent.ts`), which is why pointer enter/leave are passed out.
+  A press on an element marked `data-popover-trigger` is not "outside": the
+  trigger's own click decides (normally toggling it shut). Without that, the
+  press would close it and the click would immediately reopen it.
 -->
 <script lang="ts">
   import type { Snippet } from 'svelte';
@@ -14,6 +16,7 @@
     children: Snippet;
     label: string;
     onclose: () => void;
+    /** Pointer enter/leave, for callers that open it on hover and need to keep it open. */
     onpointerenter?: () => void;
     onpointerleave?: () => void;
   }
@@ -29,7 +32,10 @@
   const position = $derived(placePopover({ anchor, width, height, viewportWidth, viewportHeight }));
 
   function closeOnOutsidePress(event: PointerEvent) {
-    if (element !== null && !element.contains(event.target as Node)) onclose();
+    const target = event.target as Element;
+    if (element === null || element.contains(target)) return;
+    if (target.closest?.('[data-popover-trigger]')) return;
+    onclose();
   }
 
   function closeOnEscape(event: KeyboardEvent) {

@@ -85,28 +85,54 @@
     ).map((clashingId) => app.catalog.courseAbbrev(clashingId));
   }
 
-  /** Where the fix popover opened: the cursor, when the link was hovered or clicked. */
+  /*
+    The fix popover opens two ways:
+    - Hover (mouse only): opens after resting 300 ms and closes 300 ms after the
+      pointer leaves both the link and the popover — quick to peek at.
+    - Click or tap: opens *pinned*, staying until the same link is clicked
+      again, a press outside, Escape, or ✕. Clicking a hover-opened popover's
+      link pins it. Taps never trigger hover, so a phone gets only this.
+    While one is pinned, hovering other rows leaves it alone.
+  */
   let fixAnchor = $state<Point>({ x: 0, y: 0 });
-  // 300ms both ways: long enough to sweep past links without solving each, and
-  // to move the pointer from the link into the popover without it closing.
+  let fixPinned = false;
   const fixHover = new HoverIntent({
     openDelayMs: 300,
     closeDelayMs: 300,
-    onClose: () => app.fixPanel.close(),
+    onClose: () => {
+      if (!fixPinned) app.fixPanel.close();
+    },
   });
 
-  function openFixes(trigger: FixTrigger, point: Point) {
+  function isFixesOpenFor(trigger: FixTrigger): boolean {
+    const open = app.fixPanel.target;
+    return open?.courseId === trigger.courseId && open.componentNumber === trigger.componentNumber;
+  }
+
+  function openFixes(trigger: FixTrigger, point: Point, pinned: boolean) {
+    fixPinned = pinned;
     fixAnchor = point;
     app.openFixPanel(trigger);
   }
 
   function hoverFixes(trigger: FixTrigger, point: Point | null) {
     if (point === null) fixHover.leaveTrigger();
-    else fixHover.enterTrigger(() => openFixes(trigger, point));
+    else if (isFixesOpenFor(trigger)) fixHover.enterSurface();
+    else if (!(fixPinned && app.fixPanel.target !== null)) {
+      fixHover.enterTrigger(() => openFixes(trigger, point, false));
+    }
+  }
+
+  function clickFixes(trigger: FixTrigger, point: Point) {
+    fixHover.reset();
+    if (!isFixesOpenFor(trigger)) openFixes(trigger, point, true);
+    else if (fixPinned) closeFixes();
+    else fixPinned = true;
   }
 
   function closeFixes() {
     fixHover.reset();
+    fixPinned = false;
     app.fixPanel.close();
   }
 
@@ -182,7 +208,7 @@
           onshowDetails={(sectionId) => (detailsSectionId = sectionId)}
           {clashesOf}
           onfixesHover={hoverFixes}
-          onfixesOpen={(trigger, point) => fixHover.openNow(() => openFixes(trigger, point))}
+          onfixesClick={clickFixes}
         />
       </ScrollArea>
     {/snippet}

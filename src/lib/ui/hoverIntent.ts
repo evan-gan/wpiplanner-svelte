@@ -35,7 +35,7 @@ export class HoverIntent {
     this.scheduleClose();
   }
 
-  /** The pointer reached the popover: keep it open. */
+  /** The pointer reached the popover (or its open trigger): keep it open. */
   enterSurface(): void {
     this.cancelClose();
   }
@@ -44,14 +44,7 @@ export class HoverIntent {
     this.scheduleClose();
   }
 
-  /** Open straight away — a click or a keyboard press on the trigger. */
-  openNow(open: () => void): void {
-    this.cancelClose();
-    this.cancelOpen();
-    open();
-  }
-
-  /** Forget any pending open or close, e.g. when the popover was closed some other way. */
+  /** Forget any pending open or close, e.g. when a click took over. */
   reset(): void {
     this.cancelOpen();
     this.cancelClose();

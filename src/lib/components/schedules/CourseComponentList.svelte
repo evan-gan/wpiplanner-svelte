@@ -41,7 +41,7 @@
     onshowDetails: (sectionId: string) => void;
     clashesOf: (sectionIds: readonly string[]) => string[];
     onfixesHover: (trigger: ComponentFixTrigger, point: Point | null) => void;
-    onfixesOpen: (trigger: ComponentFixTrigger, point: Point) => void;
+    onfixesClick: (trigger: ComponentFixTrigger, point: Point) => void;
   }
 
   let {
@@ -54,7 +54,7 @@
     onshowDetails,
     clashesOf,
     onfixesHover,
-    onfixesOpen,
+    onfixesClick,
   }: Props = $props();
 
   const components = $derived(buildCourseComponents(course));
@@ -126,7 +126,7 @@
     onshowDetails={() => onshowDetails(representative(component))}
     {clashLabels}
     onfixesHover={(point) => onfixesHover(fixTriggerOf(component), point)}
-    onfixesOpen={(point) => onfixesOpen(fixTriggerOf(component), point)}
+    onfixesClick={(point) => onfixesClick(fixTriggerOf(component), point)}
   />
 {/snippet}
 

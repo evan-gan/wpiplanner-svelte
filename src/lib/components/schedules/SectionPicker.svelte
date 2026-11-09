@@ -37,10 +37,10 @@
     onshowDetails: (sectionId: string) => void;
     /** Course codes a row's sections clash with on the schedule on screen; empty if it fits. */
     clashesOf: (courseId: string, sectionIds: readonly string[]) => string[];
-    /** The pointer rested on (a point) or left (null) a row's "Clashes" link. */
+    /** A mouse rested on (a point) or left (null) a row's "Clashes" link. */
     onfixesHover: (trigger: FixTrigger, point: Point | null) => void;
-    /** A row's "Clashes" link was clicked or pressed. */
-    onfixesOpen: (trigger: FixTrigger, point: Point) => void;
+    /** A row's "Clashes" link was clicked or tapped. */
+    onfixesClick: (trigger: FixTrigger, point: Point) => void;
   }
 
   let {
@@ -58,7 +58,7 @@
     onshowDetails,
     clashesOf,
     onfixesHover,
-    onfixesOpen,
+    onfixesClick,
   }: Props = $props();
 </script>
 
@@ -96,7 +96,7 @@
           {onshowDetails}
           clashesOf={(sectionIds) => clashesOf(courseId, sectionIds)}
           onfixesHover={(trigger, point) => onfixesHover({ courseId, ...trigger }, point)}
-          onfixesOpen={(trigger, point) => onfixesOpen({ courseId, ...trigger }, point)}
+          onfixesClick={(trigger, point) => onfixesClick({ courseId, ...trigger }, point)}
         />
       {/if}
     </section>

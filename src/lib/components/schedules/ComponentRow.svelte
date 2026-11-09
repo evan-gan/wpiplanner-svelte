@@ -32,10 +32,10 @@
     onshowDetails: () => void;
     /** Courses on screen this row clashes with; empty when it fits as is. */
     clashLabels: string[];
-    /** The pointer rested on (a point) or left (null) the "Clashes" link. */
+    /** A mouse rested on (a point) or left (null) the "Clashes" link. Touch never calls it. */
     onfixesHover: (point: Point | null) => void;
-    /** The link was clicked or pressed: open the fix popover now, at `point`. */
-    onfixesOpen: (point: Point) => void;
+    /** The link was clicked or tapped, at `point`. */
+    onfixesClick: (point: Point) => void;
   }
 
   let {
@@ -50,7 +50,7 @@
     onshowDetails,
     clashLabels,
     onfixesHover,
-    onfixesOpen,
+    onfixesClick,
   }: Props = $props();
 
   /** Where a click opens the popover; a keyboard press (no pointer) uses the link's corner. */
@@ -90,11 +90,14 @@
       <button
         type="button"
         aria-haspopup="dialog"
-        onpointerenter={(event) => onfixesHover({ x: event.clientX, y: event.clientY })}
-        onpointerleave={() => onfixesHover(null)}
-        onclick={(event) => onfixesOpen(clickPoint(event))}
+        data-popover-trigger
+        aria-label="Clashes with {clashLabels.join(', ')}: show ways to fit it"
+        onpointerenter={(event) =>
+          event.pointerType === 'mouse' && onfixesHover({ x: event.clientX, y: event.clientY })}
+        onpointerleave={(event) => event.pointerType === 'mouse' && onfixesHover(null)}
+        onclick={(event) => onfixesClick(clickPoint(event))}
       >
-        Clashes: {clashLabels.join(', ')}
+        Clashes
       </button>
     {/if}
   </span>

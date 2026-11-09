@@ -31,8 +31,7 @@ describe('HoverIntent', () => {
   });
 
   it('stays open while the pointer travels from the trigger into the popover', () => {
-    const { intent, open, onClose } = setup();
-    intent.openNow(open);
+    const { intent, onClose } = setup();
     intent.leaveTrigger();
     vi.advanceTimersByTime(200);
     intent.enterSurface();

@@ -4,7 +4,7 @@
  * Kept apart from `courseBackground.ts` (the stored shape and its validator)
  * because this half only matters to the UI.
  */
-import type { Requirement, ShippedBackgroundClause } from './courseBackground.ts';
+import type { CourseBackgroundStatus, Requirement, ShippedBackgroundClause } from './courseBackground.ts';
 
 /** `MA|2051` → `MA 2051`. */
 export function formatCourseId(courseId: string): string {
@@ -86,5 +86,27 @@ export function clauseLabel(clause: ShippedBackgroundClause): string {
 export function clauseTimingNote(clause: ShippedBackgroundClause): string | null {
   if (clause.timing === 'priorOrConcurrent') return 'before or at the same time';
   if (clause.timing === 'concurrent' && clause.strength !== 'required') return 'at the same time';
+  return null;
+}
+
+/**
+ * The warning shown in place of a Background block when nobody has read this
+ * course's description for prerequisites, so a missing block is not taken to
+ * mean "no prerequisites".
+ *
+ * Args:
+ *   status: the course's `CourseBackgroundStatus['status']`
+ *
+ * Returns:
+ *   The note for `unchecked` and `stale`; null when the course has been read
+ *   (`none` and `hasBackground`), since then the block, or its absence, is accurate.
+ */
+export function uncheckedBackgroundNote(status: CourseBackgroundStatus['status']): string | null {
+  if (status === 'unchecked') {
+    return 'Prerequisites for this course have not been checked yet, so none are listed here. Check the description above before assuming it has none.';
+  }
+  if (status === 'stale') {
+    return 'This description changed after its prerequisites were last checked, so none are listed here. Check the description above before assuming it has none.';
+  }
   return null;
 }

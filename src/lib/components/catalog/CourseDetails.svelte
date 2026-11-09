@@ -8,7 +8,8 @@
 <script lang="ts">
   import type { Catalog } from '$lib/model/catalog';
   import type { CourseJson } from '$lib/model/schedb';
-  import type { ShippedBackgroundEntry } from '$lib/model/courseBackground';
+  import type { CourseBackgroundStatus } from '$lib/model/courseBackground';
+  import { uncheckedBackgroundNote } from '$lib/model/courseBackgroundText';
   import { loadCourseBackground } from '$lib/data/courseBackground';
   import CourseBackground from './CourseBackground.svelte';
 
@@ -36,7 +37,9 @@
     return names;
   });
 
-  let background = $state<ShippedBackgroundEntry | null>(null);
+  // Null while loading, so neither the block nor the "not checked" note flashes up for the wrong course.
+  let background = $state<CourseBackgroundStatus | null>(null);
+  const backgroundNote = $derived(background === null ? null : uncheckedBackgroundNote(background.status));
 
   $effect(() => {
     background = null;
@@ -44,8 +47,7 @@
     // Clicking through courses quickly can resolve loads out of order; only the latest may land.
     let superseded = false;
     loadCourseBackground(course.id, catalog.description(course.descriptionIndex)).then((known) => {
-      // Only background read from this exact description is shown; unchecked and stale mean "unknown".
-      if (!superseded) background = known.status === 'hasBackground' ? known.entry : null;
+      if (!superseded) background = known;
     });
     return () => {
       superseded = true;
@@ -60,8 +62,11 @@
     {:else}
       <div class="title">{course.name}</div>
       <div class="description">{catalog.description(course.descriptionIndex)}</div>
-      {#if background !== null}
-        <CourseBackground entry={background} />
+      <!-- Only background read from this exact description is shown; unchecked and stale get a warning instead. -->
+      {#if background?.status === 'hasBackground'}
+        <CourseBackground entry={background.entry} />
+      {:else if backgroundNote !== null}
+        <p class="unchecked-note">{backgroundNote}</p>
       {/if}
       <div class="professors">
         <b>Professors: </b>
@@ -92,6 +97,12 @@
 
   .professors {
     margin-top: 15px;
+  }
+
+  .unchecked-note {
+    margin: 15px 0 0;
+    font-style: italic;
+    color: var(--text-muted);
   }
 
   .empty {

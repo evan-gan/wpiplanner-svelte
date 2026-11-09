@@ -8,6 +8,7 @@ import {
   clauseTimingNote,
   describeRequirement,
   describeRequirementLines,
+  uncheckedBackgroundNote,
 } from '$lib/model/courseBackgroundText';
 
 const course = (id: string, orEquivalent?: boolean): Requirement => ({ kind: 'course', course: id, orEquivalent });
@@ -85,5 +86,19 @@ describe('clause labels', () => {
   it('labels a required standing rule a Restriction, not a Prerequisite', () => {
     const closed = clause({ strength: 'required', requirement: { kind: 'standing', text: 'closed to native speakers' } });
     expect(clauseLabel(closed)).toBe('Restriction');
+  });
+});
+
+describe('uncheckedBackgroundNote', () => {
+  it('warns that an unchecked course has not been read for prerequisites', () => {
+    expect(uncheckedBackgroundNote('unchecked')).toMatch(/not been checked/);
+  });
+
+  it('warns that a stale course was read from an older description', () => {
+    expect(uncheckedBackgroundNote('stale')).toMatch(/description changed/);
+  });
+
+  it.each(['none', 'hasBackground'] as const)('says nothing for a course that has been read (%s)', (status) => {
+    expect(uncheckedBackgroundNote(status)).toBeNull();
   });
 });

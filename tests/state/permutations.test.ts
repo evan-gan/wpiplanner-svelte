@@ -144,6 +144,15 @@ describe('selection', () => {
     expect(state.selected).toEqual(scheduleA);
   });
 
+  it('shows a preferred schedule straight away and keeps it as batches arrive', () => {
+    const { source, state } = start();
+    state.regenerate(courses, courses, allTimesAvailable(), scheduleB);
+    expect(state.selected).toEqual(scheduleB);
+
+    source.deliver(scheduleA);
+    expect(state.selected).toEqual(scheduleB);
+  });
+
   it('knows which schedule is on screen regardless of section order', () => {
     const { source, state } = start();
     const wide = { sectionIds: ['a', 'b'], problems: [] };

@@ -70,6 +70,23 @@ export function formatClockTime(totalMinutes: number, includeMinutes = true): st
   return `${displayHour}${minuteText}${meridiem}`;
 }
 
+/**
+ * Compact 12-hour clock text: "10am", "10:50am", "12pm".
+ *
+ * Used where space is tight and the full "10:00AM" adds nothing; minutes are
+ * shown only when they are not zero.
+ */
+export function formatShortClockTime(totalMinutes: number): string {
+  const hourOfDay = Math.floor(totalMinutes / MINUTES_PER_HOUR) % 24;
+  const minutes = totalMinutes % MINUTES_PER_HOUR;
+
+  const meridiem = hourOfDay >= HOURS_PER_HALF_DAY ? 'pm' : 'am';
+  const displayHour = hourOfDay % HOURS_PER_HALF_DAY === 0 ? 12 : hourOfDay % HOURS_PER_HALF_DAY;
+  const minuteText = minutes === 0 ? '' : `:${String(minutes).padStart(2, '0')}`;
+
+  return `${displayHour}${minuteText}${meridiem}`;
+}
+
 /** Hours as a fraction, e.g. 9:30 -> 9.5. The old `Time.getValue()`. */
 export function minutesToDecimalHours(totalMinutes: number): number {
   return totalMinutes / MINUTES_PER_HOUR;

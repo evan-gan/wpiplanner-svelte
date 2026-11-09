@@ -7,6 +7,7 @@ import {
   closestSection,
   groupEntriesByTerm,
   describeMeetings,
+  describeMeetingsShort,
   isComponentOn,
   isPlaceholderProfessor,
   sectionsForLinkedToggle,
@@ -178,6 +179,18 @@ describe('isComponentOn', () => {
     const lecture = buildCourseComponents(physics()).primary[0];
     expect(isComponentOn(lecture, deniedSet([lecture.sectionIds[0]]))).toBe(true);
     expect(isComponentOn(lecture, deniedSet(lecture.sectionIds))).toBe(false);
+  });
+});
+
+describe('describeMeetingsShort', () => {
+  it('prints days then a spaced short range, joining distinct patterns', () => {
+    const lecture = makePeriod({ days: parseDayMask('tue,thu'), startMinutes: 600, endMinutes: 650 });
+    const lab = makePeriod({ days: parseDayMask('wed'), startMinutes: 900, endMinutes: 1010 });
+    expect(describeMeetingsShort([lecture, lecture, lab])).toBe('TR 10am - 10:50am, W 3pm - 4:50pm');
+  });
+
+  it('reads unknown days as Days TBA', () => {
+    expect(describeMeetingsShort([makePeriod({ days: 0 })])).toBe('Days TBA 9am - 9:50am');
   });
 });
 

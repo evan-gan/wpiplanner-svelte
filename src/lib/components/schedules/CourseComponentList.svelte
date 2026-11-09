@@ -24,7 +24,12 @@
     type LectureEntry,
     type SectionComponent,
   } from '$lib/model/sectionComponents';
+  import type { FixTrigger } from '$lib/state/fixPanel.svelte';
+  import type { Point } from '$lib/ui/placePopover';
   import ComponentRow from './ComponentRow.svelte';
+
+  /** A fix trigger without the course, which the rail adds. */
+  type ComponentFixTrigger = Omit<FixTrigger, 'courseId'>;
 
   interface Props {
     course: CourseJson;
@@ -34,6 +39,9 @@
     onsetSectionsDenied: (sectionIds: string[], denied: boolean) => void;
     onhighlight: (sectionId: string | null) => void;
     onshowDetails: (sectionId: string) => void;
+    clashesOf: (sectionIds: readonly string[]) => string[];
+    onfixesHover: (trigger: ComponentFixTrigger, point: Point | null) => void;
+    onfixesOpen: (trigger: ComponentFixTrigger, point: Point) => void;
   }
 
   let {
@@ -44,6 +52,9 @@
     onsetSectionsDenied,
     onhighlight,
     onshowDetails,
+    clashesOf,
+    onfixesHover,
+    onfixesOpen,
   }: Props = $props();
 
   const components = $derived(buildCourseComponents(course));
@@ -61,6 +72,14 @@
    */
   function representative(component: SectionComponent): string {
     return closestSection(components, component.sectionIds, scheduledSectionId, isSectionDenied);
+  }
+
+  function fixTriggerOf(component: SectionComponent): ComponentFixTrigger {
+    return {
+      componentNumber: component.number,
+      componentSectionIds: component.sectionIds,
+      pickedSectionId: representative(component),
+    };
   }
 
   function isScheduled(component: SectionComponent): boolean {
@@ -93,6 +112,7 @@
   caption: string,
   nested: boolean,
   ontoggle: (turnOn: boolean) => void,
+  clashLabels: string[],
 )}
   <ComponentRow
     {component}
@@ -104,6 +124,9 @@
     {ontoggle}
     onhighlight={(on) => onhighlight(on ? representative(component) : null)}
     onshowDetails={() => onshowDetails(representative(component))}
+    {clashLabels}
+    onfixesHover={(point) => onfixesHover(fixTriggerOf(component), point)}
+    onfixesOpen={(point) => onfixesOpen(fixTriggerOf(component), point)}
   />
 {/snippet}
 
@@ -115,17 +138,24 @@
     {/if}
     {#each termGroup.entries as entry (entry.lecture.number)}
       {@const lecture = entry.lecture}
+      {@const lectureClashes = clashesOf(lecture.sectionIds)}
       {@render row(
         lecture,
         lecture.professors.join(', ') || 'Unknown',
         false,
         (turnOn) => onsetSectionsDenied(lecture.sectionIds, !turnOn),
+        lectureClashes,
       )}
       {#if isComponentOn(lecture, isSectionDenied)}
         {#each entry.linked as group (group.type)}
           {#each group.components as component (component.number)}
-            {@render row(component, linkedCaption(entry, component), true, (turnOn) =>
-              toggleLinked(entry, component, turnOn),
+            <!-- Under a clashing lecture every lab clashes too; the lecture's link says it once. -->
+            {@render row(
+              component,
+              linkedCaption(entry, component),
+              true,
+              (turnOn) => toggleLinked(entry, component, turnOn),
+              lectureClashes.length > 0 ? [] : clashesOf(component.sectionIds),
             )}
           {/each}
         {/each}

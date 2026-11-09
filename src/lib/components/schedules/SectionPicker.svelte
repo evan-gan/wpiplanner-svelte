@@ -15,6 +15,8 @@
   import type { Catalog } from '$lib/model/catalog';
   import type { TermName } from '$lib/model/schedb';
   import TermBadges from '$lib/components/catalog/TermBadges.svelte';
+  import type { FixTrigger } from '$lib/state/fixPanel.svelte';
+  import type { Point } from '$lib/ui/placePopover';
   import CourseComponentList from './CourseComponentList.svelte';
 
   interface Props {
@@ -33,6 +35,12 @@
     ontoggleTerm: (courseId: string, term: TermName) => void;
     onhighlight: (sectionId: string | null) => void;
     onshowDetails: (sectionId: string) => void;
+    /** Course codes a row's sections clash with on the schedule on screen; empty if it fits. */
+    clashesOf: (courseId: string, sectionIds: readonly string[]) => string[];
+    /** The pointer rested on (a point) or left (null) a row's "Clashes" link. */
+    onfixesHover: (trigger: FixTrigger, point: Point | null) => void;
+    /** A row's "Clashes" link was clicked or pressed. */
+    onfixesOpen: (trigger: FixTrigger, point: Point) => void;
   }
 
   let {
@@ -48,6 +56,9 @@
     ontoggleTerm,
     onhighlight,
     onshowDetails,
+    clashesOf,
+    onfixesHover,
+    onfixesOpen,
   }: Props = $props();
 </script>
 
@@ -83,6 +94,9 @@
             onsetSectionsDenied(courseId, sectionIds, denied)}
           {onhighlight}
           {onshowDetails}
+          clashesOf={(sectionIds) => clashesOf(courseId, sectionIds)}
+          onfixesHover={(trigger, point) => onfixesHover({ courseId, ...trigger }, point)}
+          onfixesOpen={(trigger, point) => onfixesOpen({ courseId, ...trigger }, point)}
         />
       {/if}
     </section>
@@ -96,11 +110,13 @@
 <style>
   /*
     Columns: checkbox + section label (capped so "Interest List-A Term" cannot
-    take over), professor (takes the slack, truncates), meeting times.
+    take over), professor (takes the slack, truncates), the "Clashes" link
+    (empty, so zero-width, while everything fits), and meeting times last so
+    they line up along the right edge whether or not a row clashes.
   */
   .rail {
     display: grid;
-    grid-template-columns: fit-content(9em) minmax(0, 1fr) max-content;
+    grid-template-columns: fit-content(9em) minmax(0, 1fr) max-content max-content;
     column-gap: var(--space-3);
     padding: var(--space-1);
   }

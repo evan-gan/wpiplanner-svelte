@@ -1,8 +1,9 @@
 <!--
   One lecture, lab, or discussion in the section rail, on a single line:
-  checkbox and label, professor, meeting times.
+  checkbox and label, professor, the "Clashes" link (when it has one), meeting
+  times.
 
-  The row is a subgrid of the rail's three columns, so professors and times
+  The row is a subgrid of the rail's four columns, so professors and times
   start at the same x on every row; a long professor name ends in "…". A nested
   row (a lecture's lab) is indented inside the first column.
 
@@ -14,6 +15,7 @@
   import type { Availability } from '$lib/model/availability';
   import { describeMeetings, type SectionComponent } from '$lib/model/sectionComponents';
   import WarningIcon from '$lib/components/primitives/WarningIcon.svelte';
+  import type { Point } from '$lib/ui/placePopover';
 
   interface Props {
     component: SectionComponent;
@@ -28,6 +30,12 @@
     ontoggle: (turnOn: boolean) => void;
     onhighlight: (on: boolean) => void;
     onshowDetails: () => void;
+    /** Courses on screen this row clashes with; empty when it fits as is. */
+    clashLabels: string[];
+    /** The pointer rested on (a point) or left (null) the "Clashes" link. */
+    onfixesHover: (point: Point | null) => void;
+    /** The link was clicked or pressed: open the fix popover now, at `point`. */
+    onfixesOpen: (point: Point) => void;
   }
 
   let {
@@ -40,7 +48,17 @@
     ontoggle,
     onhighlight,
     onshowDetails,
+    clashLabels,
+    onfixesHover,
+    onfixesOpen,
   }: Props = $props();
+
+  /** Where a click opens the popover; a keyboard press (no pointer) uses the link's corner. */
+  function clickPoint(event: MouseEvent): Point {
+    if (event.detail > 0) return { x: event.clientX, y: event.clientY };
+    const box = (event.currentTarget as HTMLElement).getBoundingClientRect();
+    return { x: box.left, y: box.bottom };
+  }
 
   // A component meeting at two patterns (rare) shows both, joined on one line.
   const meetings = $derived(describeMeetings(component.periods).join(', '));
@@ -67,6 +85,19 @@
   >
     {caption}
   </button>
+  <span class="clash">
+    {#if clashLabels.length > 0}
+      <button
+        type="button"
+        aria-haspopup="dialog"
+        onpointerenter={(event) => onfixesHover({ x: event.clientX, y: event.clientY })}
+        onpointerleave={() => onfixesHover(null)}
+        onclick={(event) => onfixesOpen(clickPoint(event))}
+      >
+        Clashes: {clashLabels.join(', ')}
+      </button>
+    {/if}
+  </span>
   <span class="meeting">{meetings}</span>
 </li>
 
@@ -139,6 +170,19 @@
   .scheduled .caption,
   .scheduled .meeting {
     color: var(--text);
+  }
+
+  /* Plain underlined text: it reads as a link to the fix panel, not as a status colour. */
+  .clash button {
+    border: 0;
+    background: none;
+    padding: 0;
+    font: inherit;
+    font-size: var(--font-size-small);
+    color: inherit;
+    text-decoration: underline;
+    white-space: nowrap;
+    cursor: pointer;
   }
 
   .meeting {

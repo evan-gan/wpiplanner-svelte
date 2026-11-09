@@ -30,7 +30,7 @@ search.** §6 has the per-phase gates, §8 lists the four places the rewrite
 deliberately departs from the old app, and §10.5 is the one open question that
 blocks cutover.
 
-`pnpm test` runs 129 tool tests and 629 app tests.
+`pnpm test` runs 129 tool tests and 695 app tests.
 
 ## Structure
 
@@ -93,9 +93,13 @@ files stay as the fallback. `pnpm dev` and `pnpm preview` refresh the same way:
 | `src/lib/scheduling/conflicts.ts` | Pairwise section conflicts and the precomputed index. Replaces `ConflictController`. |
 | `src/lib/scheduling/timeConflicts.ts` | Section × chosen-times cells. **Read the header comment before touching it** — the block snapping and the out-of-grid rule are both load-bearing. |
 | `src/lib/scheduling/generator.ts` | The DFS, ported closely from `ScheduleProducer`. Also `streamPermutations`, the chunked driver the worker runs. |
+| `src/lib/scheduling/scheduleClashes.ts` | `clashingCourseIds` — the cheap check behind the rail's "Clashes: CS2102" link: a course blocks a row when every one of its *baseline* options clashes with it (see `AppState.fixBaselines`). Uses the existing `ConflictIndex`; no searching. |
+| `src/lib/scheduling/fixFinder.ts` | **The fix search.** `findFixes(request)`: pins the clicked component, lets every other course take any section (checked or not, never a blocked time) and returns the least disruptive full schedules, up to 3 per tier. Tiers: 1 same lecture profs & terms → 2 new prof → 3 term move → 4 both; then fewest new profs → term moves → courses moved → time shift → unchecked sections. Branch-and-bound with forward checking, a precomputed clash table and fewest-options-first ordering, stopped by `maxMillis` (a time-out with nothing found is reason `timed-out`, never "no combination"); **read the header comment before changing the ranking or the bound** — `tests/scheduling/fixes/fixFinder.test.ts` checks it against brute force. |
+| `src/lib/scheduling/fixCandidates.ts` | Catalog → `FixRequest`: each candidate's `ChangeCost` (moved, lecture-prof change, term move, time shift, unchecked) against its `nearestBaseline` — the course's on-screen section, or with no schedule the closest checked section (same lecturer, then same terms, then time). The pinned course is charged only for parts that come with the pick. |
+| `src/lib/scheduling/fixDescription.ts` | Fix → panel wording, all plain text, and **tags name only changes** (nothing about what stays, nothing about unchecked sections — "Use this" re-checks them): headline tags `(1 new prof) (1 term change) (2 courses move)`, one line per course `CS1102 (New prof: Donald Knuth, was Grace Hopper) (Moves to B-Term)`, change lines `Lecture  TR 10am - 10:50am AL01 → MWF 1pm - 1:50pm AL03` (times, then section name), lab/discussion instructor notes by full name, "makes room for X" cascade order, folding past 3 courses. Also the panel header, the no-fix reason, and `splitBestPerTier`. |
 | `src/lib/scheduling/problems.ts` | Conflict-resolver suggestions: construction, equality, text, and applying one. |
 | `src/lib/scheduling/referenceGenerator.ts` | Brute-force oracle. **Tests only** — exponential, no pruning. |
-| `src/lib/scheduling/worker/` | `protocol.ts` (message types), `generator.worker.ts` (runs the search off-thread), `client.ts` (typed wrapper, with a synchronous fallback). |
+| `src/lib/scheduling/worker/` | `protocol.ts` (message types), `generator.worker.ts` (runs the search off-thread), `client.ts` (typed wrapper, with a synchronous fallback). `fixFinder.worker.ts` + `fixFinderClient.ts`: the same for the fix search (one request, one result; superseded results dropped). **`cancel()` terminates a busy worker** — the search is one synchronous call, so that is the only way closing the panel can stop it. |
 
 ### Calendar export — dates, no DOM
 
@@ -138,6 +142,7 @@ left out with a reason rather than guessed at.
 | `src/lib/state/timeRange.svelte.ts` | The hours the grids show. |
 | `src/lib/state/coursesView.svelte.ts` | `CoursesViewState`: the Courses tab's dragged pane sizes, its three scroll offsets (departments, course table, chosen list), and which course the table last scrolled to. On `AppState` so a tab switch keeps them; not persisted. |
 | `src/lib/state/railView.svelte.ts` | `RailViewState`: which Schedules-rail courses are expanded and the rail's scroll offset. On `AppState` (not the page) so both survive switching tabs; not persisted, so a fresh visit starts all collapsed. |
+| `src/lib/state/fixPanel.svelte.ts` | `FixPanelState`: the row the fix panel is open for, search status/result, the hover preview, the time limits (`QUICK_SEARCH_MS` 1 s; `searchLonger()` re-asks with `LONG_SEARCH_MS` 30 s), and a per-row cache cleared by `AppState.refresh()` (which also closes the panel). `AppState.selectSchedule` closes it too, since fixes are measured against the schedule on screen. |
 | `src/lib/state/persistence.ts` | All `localStorage` reads and writes. Every function is total: a corrupt payload yields the default. |
 
 ### Routes and components
@@ -149,11 +154,11 @@ left out with a reason rather than guessed at.
 | `src/routes/{courses,info,times,schedules}/+page.svelte` | One route per tab, in `TabList.addTab` order. `courses` auto-sizes the "Courses" box and flies "+" into it. `schedules` renders the Workday import alone when no course has been chosen. |
 | `src/lib/components/shell/` | `AppShell` (creates `AppState`, applies a `?share=` link, renders header + search + tabs + the route body), `AppHeader` (takes `search` and `tabs` snippets), `TabBar` (**Times is dimmed until a course is chosen; Schedules is not** — with nothing chosen it shows the Workday import on its own), `LoadingScreen` (the plain white "Loading scheduler database..." page with the byte counter). |
 | `src/lib/components/search/` | `HeaderSearch` (the box in the crimson bar and the filleted crimson panel that drops from it; live, 250 ms open), `SearchResults` (the Classes and Professors boxes), `SearchResultCourse` (one row: add/remove button, opens the course on the Courses tab). |
-| `src/lib/ui/` | DOM helpers with no app knowledge: `flyToTarget` (animates a copy of an element onto another — "+" flying into the Courses box), `rememberScroll` (an action that restores an element's scroll offset from a store and records it back — how both tabs keep their scroll across tab switches), and `fitPaneSize` (how tall the Courses box should be — fit the list, never crowd the description — and how wide the Schedules rail should be so the calendar is square). |
-| `src/lib/components/primitives/` | `SplitPane`, `ScrollArea`, `Modal`, `ToggleButton`, `WarningIcon`. Generic, no app knowledge. |
+| `src/lib/ui/` | DOM helpers with no app knowledge: `flyToTarget` (animates a copy of an element onto another — "+" flying into the Courses box), `rememberScroll` (an action that restores an element's scroll offset from a store and records it back — how both tabs keep their scroll across tab switches), `placePopover` (where a cursor popover goes so it stays on screen), `HoverIntent` in `hoverIntent.ts` (open-after-rest / close-after-grace timing for a popover the pointer must be able to reach), and `fitPaneSize` (how tall the Courses box should be — fit the list, never crowd the description — and how wide the Schedules rail should be so the calendar is square). |
+| `src/lib/components/primitives/` | `SplitPane`, `ScrollArea`, `Modal`, `Popover` (floating box at a point, kept on screen, closes on Escape/outside press), `ToggleButton`, `WarningIcon`. Generic, no app knowledge. |
 | `src/lib/components/catalog/` | The Courses tab: `DepartmentPicker` (the six academic groups live here), `CourseTable`, `CourseRow`, `TermBadges`, `CourseDetails` (loads the course's background after the description), `CourseBackground` (the "Background" block: one labelled line or bullet list per clause, plus "No credit for both"), `SelectedCourseList`. |
 | `src/lib/components/times/` | `TermTimeTabs`, `TimeGrid`, `TimeGridCell`. |
-| `src/lib/components/schedules/` | `SchedulePane` (the view-mode switch), `SectionPicker` (the rail — see "The section rail" below), `CourseComponentList` (one course: each lecture with its own labs/discussions nested under it), `ComponentRow` (one single-line row), `ScheduleThumbnailList` / `ScheduleThumbnail` (canvas), `FavoriteNameField` (click-to-edit favourite name, used by both the toolbar and the strip), `QuarterGrid`, `WeekGrid`, `WeekGridColumn`, `PeriodBlock`, `DetailedView`, `SectionDetailsDialog`, `ConflictResolver`, `GenerationProgress` (canvas), `ShareLink`, `CalendarExport` (the third toolbar view, "Export to Calendar"), `WorkdayImport` (the fourth toolbar view: the step-by-step instructions, the file picker, and the review dialog — it overrides the progress/conflict-resolver state so it stays reachable with no schedule on screen), `WorkdayInstructions` (the six steps for producing the export, including a drawn SVG of Workday's whole top-right icon bank with the unlabelled export button circled). |
+| `src/lib/components/schedules/` | `SchedulePane` (the view-mode switch), `SectionPicker` (the rail — see "The section rail" below), `CourseComponentList` (one course: each lecture with its own labs/discussions nested under it), `ComponentRow` (one single-line row), `ScheduleThumbnailList` / `ScheduleThumbnail` (canvas), `FavoriteNameField` (click-to-edit favourite name, used by both the toolbar and the strip), `QuarterGrid`, `WeekGrid`, `WeekGridColumn`, `PeriodBlock`, `DetailedView`, `SectionDetailsDialog`, `ConflictResolver`, `GenerationProgress` (canvas), `ShareLink`, `CalendarExport` (the third toolbar view, "Export to Calendar"), `WorkdayImport` (the fourth toolbar view: the step-by-step instructions, the file picker, and the review dialog — it overrides the progress/conflict-resolver state so it stays reachable with no schedule on screen), `FixPanel` / `FixCard` (the "how could I take this?" popover at the cursor — see "The section rail"), `WorkdayInstructions` (the six steps for producing the export, including a drawn SVG of Workday's whole top-right icon bank with the unlabelled export button circled). |
 | `src/lib/styles/` | `tokens.css` (every colour and size lifted from the old app) and `reset.css`. |
 | `src/lib/share/shareCode.ts` | Encode/decode `?share=`. Version-prefixed. Writes v3 (`3.CS2102-BL01.BX01_MA1021-A01`: only characters a query never percent-encodes, `~XX` escapes for the rare odd character); still reads v2 (`02.` + raw ids joined by `~`) so links already shared keep working. Old hex-CRN links are rejected, not migrated. **The header comment is the format spec.** `tests/share/shareCodeRealCatalog.test.ts` round-trips every id in `static/schedb.json`. |
 
@@ -288,6 +293,29 @@ Lectures are grouped under a thin "──── A-Term ────" divider per
 (`groupEntriesByTerm`), in calendar order, with a semester-long lecture's group
 ("A-Term – B-Term") between its two terms. A course that runs in one term gets
 no divider.
+
+**Baselines** (`AppState.fixBaselines`): what counts as "no change" for each
+course — its section in the schedule on screen, or, when the search found no
+schedule at all, every checked section that fits the Times tab. The clash links
+and the fix panel both work from these, so they keep working when nothing fits.
+
+A row that does not fit the baselines ends in a plain underlined
+"Clashes: CS2102" link (its own rail column, between professor and times, empty otherwise; labs under a
+clashing lecture don't repeat it). The check is cheap (`scheduleClashes.ts`).
+Resting the pointer on it for 300 ms (or clicking it) opens the **fix panel**
+as a popover at the cursor (`Popover` → `FixPanel` → `FixCard`); it stays open
+while the pointer moves into it and closes 300 ms after leaving both, or on
+Escape, ✕, or a press outside (`ui/hoverIntent.ts`, `ui/placePopover.ts`). Only
+then is anything solved: `AppState.openFixPanel` builds the
+request, `FixPanelState` runs it in a worker and caches the answer until the
+choices change. The first search gets one second; if it finds nothing in that time the panel
+says "No viable suggestions found." with a "Search longer" button (noting there
+will likely be no results), and closing the popover stops either search. The
+panel shows the best fix of each tier, the rest behind
+"More options"; hovering a card previews it on the calendar
+(`fixPanel.previewSectionIds`), "Use this" (`AppState.applyFix`) re-checks any
+unchecked sections it needs and puts that schedule on screen directly, even if
+it is past the 300 kept. Everything is plain text, no colour — by request.
 
 Hovering a row previews a whole combined section, so the rail picks the one
 closest to the course's scheduled section (`closestSection`): hovering another

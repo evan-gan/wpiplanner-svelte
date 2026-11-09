@@ -14,7 +14,19 @@
   import ScheduleThumbnailList from '$lib/components/schedules/ScheduleThumbnailList.svelte';
   import SchedulePane from '$lib/components/schedules/SchedulePane.svelte';
   import SectionDetailsDialog from '$lib/components/schedules/SectionDetailsDialog.svelte';
+  import Popover from '$lib/components/primitives/Popover.svelte';
+  import FixPanel from '$lib/components/schedules/FixPanel.svelte';
   import SectionPicker from '$lib/components/schedules/SectionPicker.svelte';
+  import {
+    describeFix,
+    describeNoFix,
+    describePanelHeader,
+    type DescribeContext,
+  } from '$lib/scheduling/fixDescription';
+  import { clashingCourseIds } from '$lib/scheduling/scheduleClashes';
+  import type { FixTrigger } from '$lib/state/fixPanel.svelte';
+  import { HoverIntent } from '$lib/ui/hoverIntent';
+  import type { Point } from '$lib/ui/placePopover';
   import WorkdayImport from '$lib/components/schedules/WorkdayImport.svelte';
   import { colorForCourse } from '$lib/state/permutations.svelte';
   import { getAppState } from '$lib/state/app.svelte';
@@ -53,6 +65,75 @@
   const colorOf = (courseId: string) => colorForCourse(courseId, app.selection.courseIds);
 
   const selected = $derived(app.permutations.selected);
+
+  /** A hovered fix replaces the schedule on the calendar until the pointer leaves it. */
+  const shownSchedule = $derived(
+    app.fixPanel.previewSectionIds === null
+      ? selected
+      : { sectionIds: app.fixPanel.previewSectionIds, problems: [] },
+  );
+
+  /** Each course's on-screen section, or its checked sections when nothing fits. */
+  const fixBaselines = $derived(app.fixBaselines());
+
+  function clashesOf(courseId: string, sectionIds: readonly string[]): string[] {
+    const conflicts = app.permutations.conflicts;
+    if (conflicts === null) return [];
+    const others = new Map([...fixBaselines].filter(([otherId]) => otherId !== courseId));
+    return clashingCourseIds(sectionIds, others, (sectionId, otherId) =>
+      conflicts.hasConflict(sectionId, otherId),
+    ).map((clashingId) => app.catalog.courseAbbrev(clashingId));
+  }
+
+  /** Where the fix popover opened: the cursor, when the link was hovered or clicked. */
+  let fixAnchor = $state<Point>({ x: 0, y: 0 });
+  // 300ms both ways: long enough to sweep past links without solving each, and
+  // to move the pointer from the link into the popover without it closing.
+  const fixHover = new HoverIntent({
+    openDelayMs: 300,
+    closeDelayMs: 300,
+    onClose: () => app.fixPanel.close(),
+  });
+
+  function openFixes(trigger: FixTrigger, point: Point) {
+    fixAnchor = point;
+    app.openFixPanel(trigger);
+  }
+
+  function hoverFixes(trigger: FixTrigger, point: Point | null) {
+    if (point === null) fixHover.leaveTrigger();
+    else fixHover.enterTrigger(() => openFixes(trigger, point));
+  }
+
+  function closeFixes() {
+    fixHover.reset();
+    app.fixPanel.close();
+  }
+
+  /** Everything the fix panel's wording needs, measured against the schedule it opened on. */
+  const fixContext: DescribeContext | null = $derived.by(() => {
+    const target = app.fixPanel.target;
+    if (target === null) return null;
+    return {
+      catalog: app.catalog,
+      baselines: target.baselines,
+      pinnedCourseId: target.courseId,
+      pinnedComponent: target.componentNumber,
+    };
+  });
+  const fixHeader = $derived(
+    fixContext === null || app.fixPanel.target === null
+      ? null
+      : describePanelHeader(app.fixPanel.target.pickedSectionId, fixContext),
+  );
+  const fixCards = $derived(
+    fixContext === null ? [] : (app.fixPanel.result?.fixes ?? []).map((fix) => describeFix(fix, fixContext)),
+  );
+  const noFixText = $derived(
+    app.fixPanel.result?.reason == null
+      ? null
+      : describeNoFix(app.fixPanel.result.reason, app.catalog, app.fixPanel.searchedLonger),
+  );
   const isFavorite = $derived(selected !== null && app.favorites.contains(selected));
   const favoriteName = $derived(
     selected === null ? '' : (app.favorites.nameOf(selected) ?? ''),
@@ -99,6 +180,9 @@
             app.setTermDenied(courseId, term, !app.selection.isTermDenied(courseId, term))}
           onhighlight={(sectionId) => (app.permutations.highlightedSectionId = sectionId)}
           onshowDetails={(sectionId) => (detailsSectionId = sectionId)}
+          {clashesOf}
+          onfixesHover={hoverFixes}
+          onfixesOpen={(trigger, point) => fixHover.openNow(() => openFixes(trigger, point))}
         />
       </ScrollArea>
     {/snippet}
@@ -115,7 +199,7 @@
             timeRange={app.timeRange}
             {colorOf}
             isSelected={(permutation) => app.permutations.isSelected(permutation)}
-            onselect={(permutation) => app.permutations.select(permutation)}
+            onselect={(permutation) => app.selectSchedule(permutation)}
             finished={app.permutations.status === 'done'}
           />
         {/snippet}
@@ -123,7 +207,7 @@
         {#snippet flexible()}
           <SchedulePane
             catalog={app.catalog}
-            {selected}
+            selected={shownSchedule}
             status={app.permutations.status}
             errorMessage={app.permutations.errorMessage}
             scheduleCount={app.permutations.count}
@@ -147,6 +231,31 @@
   </SplitPane>
   {/if}
 </div>
+
+{#if fixHeader !== null}
+  <Popover
+    anchor={fixAnchor}
+    label="Ways to fit {fixHeader.title}"
+    onclose={closeFixes}
+    onpointerenter={() => fixHover.enterSurface()}
+    onpointerleave={() => fixHover.leaveSurface()}
+  >
+    <FixPanel
+      header={fixHeader}
+      status={app.fixPanel.status}
+      errorMessage={app.fixPanel.errorMessage}
+      cards={fixCards}
+      {noFixText}
+      complete={app.fixPanel.result?.complete ?? true}
+      canSearchLonger={app.fixPanel.result?.reason?.kind === 'timed-out' && !app.fixPanel.searchedLonger}
+      searchingLonger={app.fixPanel.searchedLonger}
+      onsearchLonger={() => app.fixPanel.searchLonger()}
+      onclose={closeFixes}
+      onpreview={(sectionIds) => (app.fixPanel.previewSectionIds = sectionIds)}
+      onapply={(sectionIds) => app.applyFix(sectionIds)}
+    />
+  </Popover>
+{/if}
 
 <SectionDetailsDialog
   catalog={app.catalog}

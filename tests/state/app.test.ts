@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 import { Catalog } from '$lib/model/catalog';
 import { AppState } from '$lib/state/app.svelte';
 import { PermutationsState } from '$lib/state/permutations.svelte';
@@ -152,5 +152,86 @@ describe('applying conflict fixes', () => {
     ]);
 
     expect(app.chosenTimes.isSelected('A', 2, 0)).toBe(true);
+  });
+
+  const MA1021_A01 = {
+    courseId: 'MA|1021',
+    componentNumber: 'A01',
+    componentSectionIds: ['MA|1021|A01'],
+    pickedSectionId: 'MA|1021|A01',
+  };
+
+  it('solves a clicked row against the schedule on screen when its fix panel opens', () => {
+    const { app } = makeApp();
+    app.addCourse('CS|2102');
+    app.addCourse('MA|1021');
+    app.selectSchedule({ sectionIds: ['CS|2102|A01', 'MA|1021|A02'], problems: [] });
+
+    // MA1021 A01 sits on CS2102 A01 (MWF 9am); moving CS2102 to A02 makes room.
+    app.openFixPanel(MA1021_A01);
+
+    expect(app.fixPanel.target?.courseId).toBe('MA|1021');
+    expect(app.fixPanel.result?.fixes[0].sectionIds).toEqual(['MA|1021|A01', 'CS|2102|A02']);
+  });
+
+  it('applies a fix by switching its unchecked sections back on and showing it', () => {
+    const { app } = makeApp();
+    app.addCourse('CS|2102');
+    app.addCourse('MA|1021');
+    app.setSectionsDenied('CS|2102', ['CS|2102|A02'], true);
+    app.selectSchedule({ sectionIds: ['CS|2102|A01', 'MA|1021|A02'], problems: [] });
+
+    app.openFixPanel(MA1021_A01);
+    const [best] = app.fixPanel.result!.fixes;
+    expect(best.score.unchecked).toBe(1);
+
+    app.applyFix(best.sectionIds);
+
+    expect(app.selection.isSectionDenied('CS|2102', 'CS|2102|A02')).toBe(false);
+    expect(app.permutations.selected?.sectionIds).toEqual(best.sectionIds);
+    // The choices changed, so the panel's answer is stale and it closes.
+    expect(app.fixPanel.target).toBeNull();
+  });
+
+  it('closes the fix panel when another schedule is picked', () => {
+    const { app } = makeApp();
+    app.addCourse('CS|2102');
+    app.addCourse('MA|1021');
+    app.selectSchedule({ sectionIds: ['CS|2102|A01', 'MA|1021|A02'], problems: [] });
+    app.openFixPanel(MA1021_A01);
+
+    app.selectSchedule({ sectionIds: ['CS|2102|A02', 'MA|1021|A01'], problems: [] });
+    expect(app.fixPanel.target).toBeNull();
+  });
+
+  it('still finds clashes and fixes when no schedule fits, measured against the checked sections', async () => {
+    const { app } = makeApp();
+    app.addCourse('CS|2102');
+    app.addCourse('MA|1021');
+    // Only the two 9am sections are left checked, and they clash: nothing fits.
+    app.setSectionsDenied('CS|2102', ['CS|2102|A02'], true);
+    app.setSectionsDenied('MA|1021', ['MA|1021|A02'], true);
+    // InlineSource cannot cancel, so let the earlier searches land, then run one clean search.
+    await new Promise((resolve) => setTimeout(resolve, 0));
+    app.refresh();
+    await vi.waitFor(() => expect(app.permutations.status).toBe('done'));
+    expect(app.permutations.selected).toBeNull();
+
+    expect(app.fixBaselines()).toEqual(
+      new Map([
+        ['CS|2102', ['CS|2102|A01']],
+        ['MA|1021', ['MA|1021|A01']],
+      ]),
+    );
+
+    app.openFixPanel(MA1021_A01);
+    expect(app.fixPanel.result?.fixes[0].sectionIds).toEqual(['MA|1021|A01', 'CS|2102|A02']);
+  });
+
+  it('offers no baselines while a search is still running', () => {
+    const { app } = makeApp();
+    app.addCourse('CS|2102');
+    expect(app.permutations.status).toBe('searching');
+    expect(app.fixBaselines().size).toBe(0);
   });
 });

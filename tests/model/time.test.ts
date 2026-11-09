@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import {
   MINUTES_PER_DAY,
   formatClockTime,
+  formatShortClockTime,
   minutesToDecimalHours,
   parseClockTime,
   snapToBlockStart,
@@ -30,6 +31,16 @@ describe('parseClockTime', () => {
 
   it('rejects an hour outside the 12-hour range', () => {
     expect(() => parseClockTime('13:00PM')).toThrow(/valid 12-hour clock range/);
+  });
+});
+
+describe('formatShortClockTime', () => {
+  it('drops zero minutes and uses lower-case am/pm', () => {
+    expect(formatShortClockTime(10 * 60)).toBe('10am');
+    expect(formatShortClockTime(10 * 60 + 50)).toBe('10:50am');
+    expect(formatShortClockTime(12 * 60)).toBe('12pm');
+    expect(formatShortClockTime(13 * 60 + 5)).toBe('1:05pm');
+    expect(formatShortClockTime(0)).toBe('12am');
   });
 });
 

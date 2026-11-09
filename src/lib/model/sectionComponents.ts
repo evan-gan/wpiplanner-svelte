@@ -16,7 +16,7 @@ import { courseAvailability, type Availability } from './availability.ts';
 import { dayMaskToNames } from './days.ts';
 import type { CourseJson, DayShortName, PeriodJson, SectionJson, TermName } from './schedb.ts';
 import { formatTermLabel, TERM_NAMES } from './terms.ts';
-import { formatClockTime } from './time.ts';
+import { formatClockTime, formatShortClockTime } from './time.ts';
 
 /** Workday's stand-ins for "nobody assigned yet", compared lower-cased. */
 const PLACEHOLDER_PROFESSORS = new Set(['n/a', 'not assigned', 'staff', 'tba', 'unknown']);
@@ -55,8 +55,17 @@ export interface CourseComponents {
   composition: Map<string, { primary: string; secondary: string[] }>;
 }
 
+/** One meeting kind inside a combined section, e.g. the "AX03" lab of `AL01/AX03`. */
+export interface SectionPart {
+  number: string;
+  type: string;
+  periods: PeriodJson[];
+  /** The lecture (or first part, for a course without one) that leads the section. */
+  isLead: boolean;
+}
+
 /** A section's periods grouped by their own label, in the order they appear. */
-function periodsByComponent(section: SectionJson): Map<string, PeriodJson[]> {
+export function periodsByComponent(section: SectionJson): Map<string, PeriodJson[]> {
   const byNumber = new Map<string, PeriodJson[]>();
 
   for (const period of section.periods) {
@@ -67,7 +76,20 @@ function periodsByComponent(section: SectionJson): Map<string, PeriodJson[]> {
   return byNumber;
 }
 
-function distinctProfessors(periods: readonly PeriodJson[]): string[] {
+/** Split a combined section into its lecture and labs/discussions. */
+export function sectionParts(section: SectionJson): SectionPart[] {
+  const parts: SectionPart[] = [...periodsByComponent(section)].map(([number, periods]) => ({
+    number,
+    type: periods[0].type,
+    periods,
+    isLead: false,
+  }));
+  const lead = parts.find((part) => part.type === PRIMARY_TYPE) ?? parts[0];
+  if (lead !== undefined) lead.isLead = true;
+  return parts;
+}
+
+export function distinctProfessors(periods: readonly PeriodJson[]): string[] {
   const names = periods.map((period) => period.professor.trim()).filter((name) => name !== '');
   return [...new Set(names)];
 }
@@ -85,12 +107,8 @@ export function buildCourseComponents(course: CourseJson): CourseComponents {
   const composition: CourseComponents['composition'] = new Map();
 
   for (const section of course.sections) {
-    const parts = [...periodsByComponent(section)].map(([number, periods]) => ({
-      number,
-      type: periods[0].type,
-      periods,
-    }));
-    const lead = parts.find((part) => part.type === PRIMARY_TYPE) ?? parts[0];
+    const parts = sectionParts(section);
+    const lead = parts.find((part) => part.isLead);
     if (lead === undefined) continue;
 
     const secondaryNumbers: string[] = [];
@@ -335,9 +353,7 @@ const DAY_LETTERS: Record<DayShortName, string> = {
  */
 export function describeMeetings(periods: readonly PeriodJson[]): string[] {
   const lines = periods.map((period) => {
-    const days = dayMaskToNames(period.days)
-      .map((day) => DAY_LETTERS[day])
-      .join('');
+    const days = dayLetters(period.days);
     const start = formatClockTime(period.startMinutes);
     const end = formatClockTime(period.endMinutes);
     const sameHalf = start.slice(-2) === end.slice(-2);
@@ -346,4 +362,24 @@ export function describeMeetings(periods: readonly PeriodJson[]): string[] {
   });
 
   return [...new Set(lines)];
+}
+
+/** "MWF" for a day mask; empty for the export's unknown days. */
+export function dayLetters(mask: number): string {
+  return dayMaskToNames(mask)
+    .map((day) => DAY_LETTERS[day])
+    .join('');
+}
+
+/**
+ * The compact form used in the fix panel: "TR 10am - 10:50am", several
+ * patterns joined with ", ".
+ */
+export function describeMeetingsShort(periods: readonly PeriodJson[]): string {
+  const lines = periods.map((period) => {
+    const days = dayLetters(period.days);
+    const range = `${formatShortClockTime(period.startMinutes)} - ${formatShortClockTime(period.endMinutes)}`;
+    return `${days === '' ? 'Days TBA' : days} ${range}`;
+  });
+  return [...new Set(lines)].join(', ');
 }

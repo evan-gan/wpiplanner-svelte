@@ -107,11 +107,14 @@ export class PermutationsState {
    * @param allSections Every section of every chosen course, for the conflict
    *   index the section-details dialog reads
    * @param chosenTimes The availability grid, already snapshotted
+   * @param preferred A schedule known to be valid that should be on screen
+   *   afterwards (an applied fix), even if it falls past the 300-schedule cap
    */
   regenerate(
     courses: CourseSectionLists,
     allSections: CourseSectionLists,
     chosenTimes: ChosenTimes,
+    preferred?: SchedulePermutation,
   ): void {
     this.source.cancel();
 
@@ -127,7 +130,8 @@ export class PermutationsState {
 
     this.status = 'searching';
     const previouslySelected = this.selected;
-    this.selected = null;
+    // A preferred schedule is shown straight away; batches never replace a non-null selection.
+    this.selected = preferred ?? null;
 
     this.source.generate({
       courses,

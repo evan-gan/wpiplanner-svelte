@@ -14,11 +14,14 @@ import { getContext, setContext } from 'svelte';
 import type { Catalog } from '$lib/model/catalog';
 import { CatalogSearch } from '$lib/model/catalogSearch';
 import type { TermName } from '$lib/model/schedb';
+import { buildFixRequest } from '$lib/scheduling/fixCandidates';
+import { hasTimeConflicts } from '$lib/scheduling/timeConflicts';
 import { applyProblem, type SolutionTarget } from '$lib/scheduling/problems';
-import type { Problem } from '$lib/scheduling/types';
+import type { Problem, SchedulePermutation } from '$lib/scheduling/types';
 import { ChosenTimesState } from './chosenTimes.svelte';
 import { CoursesViewState } from './coursesView.svelte';
 import { FavoritesState } from './favorites.svelte';
+import { FixPanelState, type FixTrigger } from './fixPanel.svelte';
 import { PermutationsState } from './permutations.svelte';
 import { RailViewState } from './railView.svelte';
 import { browserStorage, loadSelectedDepartments, saveSelectedDepartments, type StorageLike } from './persistence';
@@ -41,6 +44,8 @@ export class AppState {
   readonly railView: RailViewState;
   /** Courses-tab pane sizes and scroll offsets, kept across tab switches. */
   readonly coursesView: CoursesViewState;
+  /** The "how could I take this?" panel under the Schedules rail. */
+  readonly fixPanel: FixPanelState;
 
   /** Departments ticked in the picker. */
   selectedDepartments = $state<string[]>([]);
@@ -51,7 +56,12 @@ export class AppState {
 
   private readonly storage: StorageLike;
 
-  constructor(catalog: Catalog, storage: StorageLike = browserStorage(), permutations?: PermutationsState) {
+  constructor(
+    catalog: Catalog,
+    storage: StorageLike = browserStorage(),
+    permutations?: PermutationsState,
+    fixPanel?: FixPanelState,
+  ) {
     this.catalog = catalog;
     this.storage = storage;
     this.selection = new SelectionState(catalog, storage);
@@ -62,6 +72,7 @@ export class AppState {
     this.search = new CatalogSearch(catalog);
     this.railView = new RailViewState();
     this.coursesView = new CoursesViewState();
+    this.fixPanel = fixPanel ?? new FixPanelState();
   }
 
   /** Load everything the student had last time, then start the first search. */
@@ -176,18 +187,112 @@ export class AppState {
     this.refresh();
   }
 
-  /** Recompute the visible hours and restart the search. */
-  refresh(): void {
+  /** Show another schedule. An open fix panel was measured against the old one, so it closes. */
+  selectSchedule(permutation: SchedulePermutation | null): void {
+    this.fixPanel.close();
+    this.permutations.select(permutation);
+  }
+
+  /**
+   * What counts as "no change" for each course, for the rail's clash links
+   * and the fix panel.
+   *
+   * With a schedule on screen: each course's section in it. With none (the
+   * search finished and found nothing): every checked section that fits the
+   * Times tab, since any of them is one the student already accepted. Empty
+   * while a search is still running, so links do not flicker in and out.
+   */
+  fixBaselines(): Map<string, string[]> {
+    const baselines = new Map<string, string[]>();
+    const selected = this.permutations.selected;
+
+    if (selected !== null) {
+      for (const sectionId of selected.sectionIds) {
+        const courseId = this.catalog.getCourseIdOfSection(sectionId);
+        if (courseId !== undefined) baselines.set(courseId, [sectionId]);
+      }
+      return baselines;
+    }
+    if (this.permutations.status !== 'done') return baselines;
+
+    const chosenTimes = this.chosenTimes.snapshot();
+    for (const sections of this.selection.generatorCourses()) {
+      const usable = sections.filter((section) => !hasTimeConflicts(section, chosenTimes));
+      if (usable.length > 0) baselines.set(usable[0].courseId, usable.map((section) => section.id));
+    }
+    return baselines;
+  }
+
+  /** Open the fix panel for one rail row and start solving it. */
+  openFixPanel(trigger: FixTrigger): void {
+    const { courseId, componentNumber, componentSectionIds, pickedSectionId } = trigger;
+    const baselines = this.fixBaselines();
+    if (baselines.size === 0) return;
+
+    // A course with nothing checked has no baseline; measure it against the pick itself.
+    const pinnedBaseline = baselines.get(courseId) ?? [pickedSectionId];
+    baselines.set(courseId, pinnedBaseline);
+
+    const isDeniedIn = (id: string) => (sectionId: string) => this.selection.isSectionDenied(id, sectionId);
+    const request = buildFixRequest({
+      pinned: {
+        course: this.catalog.requireCourse(courseId),
+        baselineSectionIds: pinnedBaseline,
+        isDenied: isDeniedIn(courseId),
+        componentNumber,
+        componentSectionIds,
+      },
+      others: [...baselines]
+        .filter(([otherId]) => otherId !== courseId)
+        .map(([otherId, sectionIds]) => ({
+          course: this.catalog.requireCourse(otherId),
+          baselineSectionIds: sectionIds,
+          isDenied: isDeniedIn(otherId),
+        })),
+      chosenTimes: this.chosenTimes.snapshot(),
+    });
+
+    const baselineKey = [...baselines].map(([id, sectionIds]) => `${id}:${sectionIds.join()}`).join(';');
+    const cacheKey = `${courseId}|${componentNumber}|${componentSectionIds.join()}|${baselineKey}`;
+    this.fixPanel.open({ courseId, componentNumber, pickedSectionId, baselines }, request, cacheKey);
+  }
+
+  /**
+   * Take a fix: switch on any of its sections that were unchecked, then show it.
+   *
+   * The fix was built from the same sections and chosen times the search uses,
+   * so it is a valid schedule; it is put on screen directly rather than waiting
+   * to see whether it lands inside the 300 the search keeps.
+   */
+  applyFix(sectionIds: readonly string[]): void {
+    for (const sectionId of sectionIds) {
+      const courseId = this.catalog.getCourseIdOfSection(sectionId);
+      if (courseId !== undefined && this.selection.isSectionDenied(courseId, sectionId)) {
+        this.selection.setSectionsDenied(courseId, [sectionId], false);
+      }
+    }
+    this.refresh({ sectionIds: [...sectionIds], problems: [] });
+  }
+
+  /**
+   * Recompute the visible hours and restart the search.
+   *
+   * @param preferred The schedule to show afterwards, when the caller knows one
+   */
+  refresh(preferred?: SchedulePermutation): void {
+    this.fixPanel.invalidate();
     this.timeRange.update(this.selection.allSections());
     this.permutations.regenerate(
       this.selection.generatorCourses(),
       this.selection.allSections(),
       this.chosenTimes.snapshot(),
+      preferred,
     );
   }
 
   dispose(): void {
     this.permutations.dispose();
+    this.fixPanel.dispose();
   }
 }
 

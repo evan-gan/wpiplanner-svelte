@@ -21,16 +21,8 @@
   const results = $derived(app.search.search(query));
   const open = $derived(focused && query.trim() !== '');
 
-  /**
-   * Show a course on the Courses tab, ticking its department so the course
-   * table actually contains the row being selected.
-   */
   function openCourse(courseId: string) {
-    const department = app.catalog.getDepartmentOfCourse(courseId);
-    if (department !== undefined && !app.selectedDepartments.includes(department.abbrev)) {
-      app.setSelectedDepartments([...app.selectedDepartments, department.abbrev]);
-    }
-    app.selectedCourseId = courseId;
+    app.showCourse(courseId);
     input.blur();
     void goto('/courses/');
   }

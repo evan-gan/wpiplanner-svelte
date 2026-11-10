@@ -30,7 +30,7 @@ search.** §6 has the per-phase gates, §8 lists the four places the rewrite
 deliberately departs from the old app, and §10.5 is the one open question that
 blocks cutover.
 
-`pnpm test` runs 129 tool tests and 699 app tests.
+`pnpm test` runs 129 tool tests and 701 app tests.
 
 ## Structure
 
@@ -134,7 +134,7 @@ left out with a reason rather than guessed at.
 
 | Path | What lives there |
 |---|---|
-| `src/lib/state/app.svelte.ts` | `AppState`, put into context by the layout. Owns the one cross-cutting rule: **a change to the choices calls `refresh()`, which restarts the search.** Start here. `importEnrolledSections` applies a Workday import: it replaces the selection and denies every section but the registered one. |
+| `src/lib/state/app.svelte.ts` | `AppState`, put into context by the layout. Owns the one cross-cutting rule: **a change to the choices calls `refresh()`, which restarts the search.** Start here. `importEnrolledSections` applies a Workday import: it replaces the selection and denies every section but the registered one. `showCourse` is the header search's "open": it switches the department picker to that course's department **alone** (replacing, not adding) and asks the picker to scroll it into view (`coursesView.pendingDepartmentReveal`). |
 | `src/lib/state/selection.svelte.ts` | Chosen courses and denied sections; the 18-course limit. Replaces `StudentSchedule`'s course half plus every `SectionProducer`. |
 | `src/lib/state/chosenTimes.svelte.ts` | The per-term availability grid and its drag semantics. |
 | `src/lib/state/favorites.svelte.ts` | Starred schedules, stored as section ids plus a student-editable name (`Favorite N` by default). Lookup, rename, and removal all match on the section *set*, so a regenerated schedule keeps its name. |

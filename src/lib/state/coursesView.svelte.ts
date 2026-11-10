@@ -28,6 +28,13 @@ export class CoursesViewState {
    */
   revealedCourseId = $state<string | null>(null);
 
+  /**
+   * A department the picker should scroll into view once, then clear. Set when
+   * the header search switches departments, since the remembered scroll offset
+   * would otherwise leave the newly ticked department off screen.
+   */
+  pendingDepartmentReveal = $state<string | null>(null);
+
   departmentScrollTop = $state(0);
   courseTableScrollTop = $state(0);
   chosenListScrollTop = $state(0);

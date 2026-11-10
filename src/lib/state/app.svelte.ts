@@ -93,6 +93,22 @@ export class AppState {
     saveSelectedDepartments(abbrevs, this.storage);
   }
 
+  /**
+   * Open a course on the Courses tab (the header search's "open").
+   *
+   * The department picker switches to the course's department alone rather
+   * than adding it, so the table shows that one subject instead of merging
+   * every department ever opened from the search into one long list.
+   */
+  showCourse(courseId: string): void {
+    const department = this.catalog.getDepartmentOfCourse(courseId);
+    if (department !== undefined) {
+      this.setSelectedDepartments([department.abbrev]);
+      this.coursesView.pendingDepartmentReveal = department.abbrev;
+    }
+    this.selectedCourseId = courseId;
+  }
+
   /** Whether the Times and Schedules tabs have anything to show. */
   get hasCourses(): boolean {
     return this.selection.courses.length > 0;

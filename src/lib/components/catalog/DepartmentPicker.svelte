@@ -42,9 +42,36 @@
     onchange: (abbrevs: string[]) => void;
     /** The list's scroll offset; bind it to keep it across tab switches. */
     scrollTop?: number;
+    /** A department to scroll into view; `onrevealed` fires once it has been. */
+    reveal?: string | null;
+    onrevealed?: () => void;
   }
 
-  let { catalog, selected, onchange, scrollTop = $bindable(0) }: Props = $props();
+  let {
+    catalog,
+    selected,
+    onchange,
+    scrollTop = $bindable(0),
+    reveal = null,
+    onrevealed,
+  }: Props = $props();
+
+  let list: HTMLSelectElement;
+
+  $effect(() => {
+    const abbrev = reveal;
+    if (abbrev === null) return;
+    // Two frames: `rememberScroll` re-applies the saved offset on the first
+    // frame after mount, which would undo a reveal made any earlier.
+    requestAnimationFrame(() =>
+      requestAnimationFrame(() => {
+        list
+          ?.querySelector(`option[value="${CSS.escape(abbrev)}"]`)
+          ?.scrollIntoView({ block: 'nearest' });
+        onrevealed?.();
+      }),
+    );
+  });
 
   /** Departments bucketed into their group, groups in the declared order. */
   const grouped = $derived.by(() => {
@@ -71,6 +98,7 @@
 <select
   multiple
   size={20}
+  bind:this={list}
   onchange={onSelectChange}
   aria-label="Departments"
   use:rememberScroll={{

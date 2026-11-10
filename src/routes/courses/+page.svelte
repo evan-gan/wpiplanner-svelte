@@ -132,6 +132,8 @@
         selected={app.selectedDepartments}
         bind:scrollTop={view.departmentScrollTop}
         onchange={(abbrevs) => app.setSelectedDepartments(abbrevs)}
+        reveal={view.pendingDepartmentReveal}
+        onrevealed={() => (view.pendingDepartmentReveal = null)}
       />
     {/snippet}
 

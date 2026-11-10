@@ -58,6 +58,29 @@ describe('AppState wiring', () => {
     expect(second.selectedDepartments).toEqual(['CS', 'PH']);
   });
 
+  it('showCourse switches the picker to that course’s department alone', () => {
+    const { app } = makeApp();
+    app.restore();
+    app.setSelectedDepartments(['MA', 'PH']);
+
+    app.showCourse('CS|2102');
+
+    expect(app.selectedDepartments).toEqual(['CS']);
+    expect(app.selectedCourseId).toBe('CS|2102');
+    expect(app.coursesView.pendingDepartmentReveal).toBe('CS');
+  });
+
+  it('showCourse twice in a row does not merge departments', () => {
+    const { app } = makeApp();
+    app.restore();
+
+    app.showCourse('CS|2102');
+    app.showCourse('PH|1110');
+
+    expect(app.selectedDepartments).toEqual(['PH']);
+    expect(app.selectedCourseId).toBe('PH|1110');
+  });
+
   it('restarts the search when a course is added', () => {
     const { app, source } = makeApp();
     const before = source.generateCount;

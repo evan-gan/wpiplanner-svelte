@@ -1,6 +1,6 @@
 <!--
-  The section details modal: the catalog description, a table of its periods, and
-  the sections it conflicts with.
+  The section details modal: a table of its periods with the course description
+  and structured background under it, beside the sections it conflicts with.
 
   Ported from `PeriodDescriptionDialogBox` + `PeriodDataGrid`. The dialog's title
   is still the section's own on/off checkbox.
@@ -10,6 +10,7 @@
   import { dayMaskToNames } from '$lib/model/days';
   import { formatClockTime } from '$lib/model/time';
   import Modal from '$lib/components/primitives/Modal.svelte';
+  import CourseBackgroundForCourse from '$lib/components/catalog/CourseBackgroundForCourse.svelte';
 
   interface Props {
     catalog: Catalog;
@@ -25,6 +26,10 @@
 
   const section = $derived(sectionId === null ? null : (catalog.getSection(sectionId) ?? null));
   const courseId = $derived(sectionId === null ? null : (catalog.getCourseIdOfSection(sectionId) ?? null));
+  const course = $derived(courseId === null ? null : (catalog.getCourse(courseId) ?? null));
+  // The course's description, not the section's: the section's is often empty in the live feed,
+  // and the course's is the text the structured background was read from.
+  const description = $derived(course === null ? '' : catalog.description(course.descriptionIndex));
 </script>
 
 {#if section !== null && courseId !== null}
@@ -38,8 +43,6 @@
 
     <div class="layout">
       <div class="main">
-        <p class="description">{catalog.description(section.descriptionIndex)}</p>
-
         <div class="table-scroll">
           <table>
             <thead>
@@ -72,6 +75,11 @@
             </tbody>
           </table>
         </div>
+
+        <div class="about">
+          <p class="description">{description}</p>
+          <CourseBackgroundForCourse {courseId} {description} />
+        </div>
       </div>
 
       <aside>
@@ -90,6 +98,7 @@
           </ul>
         {/if}
       </aside>
+
     </div>
   </Modal>
 {/if}
@@ -108,8 +117,12 @@
     gap: var(--space-4);
   }
 
+  .about {
+    margin-top: var(--space-3);
+  }
+
   .description {
-    margin-top: 0;
+    margin: 0;
     white-space: pre-wrap;
   }
 

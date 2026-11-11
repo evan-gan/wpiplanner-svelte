@@ -32,11 +32,10 @@ entries:
           kind: topic
           topic: basic coding (for loops, functions, if/else statements)
     noCreditWith: []
-    needsReview: Lead phrase is 'Recommended Background', but the text says the background is helpful but not required. Recorded as suggested.
   - courseId: MFE|5841
     description: (3 credits) This course emphasizes research applications of advanced surface metrology, including the measurement and analysis of surface roughness. Surface metrology can be important in a wide variety of situations including adhesion, friction, catalysis, heat transfer, mass transfer, scattering, biological growth, wear and wetting. These situations impact practically all the engineering disciplines and sciences. The course begins by considering basic principles and conventional analyses, and methods. Measurement and analysis methods are critically reviewed for utility. Students learn advanced methods for differentiating surface textures that are suspected of being different because of their performance or manufacture. Students will also learn methods for making correlations between surface textures and behavioral and manufacturing parameters. The results of applying these methods can be used to support the design and manufacture of surface textures, and to address issues in quality assurance. Examples of research from a broad range of applications are presented, including, food science, pavements, friction, adhesion, machining and grinding. Students do a major project of their choosing, which can involve either an in-depth literature review, or surface measurement and analysis. The facilities of WPI’s Surface Metrology Laboratory are available for making measurements for selected projects. Software for advanced analysis methods is also available for use in the course. No previous knowledge of surface metrology is required. Students should have some background in engineering, math or science. Students cannot receive credit for this course if they have received credit for ME 5371/MTE 5843/MFE 5843 Fundamentals of Surface Metrology or the Special Topics (ME 593/MTE 594/MFE 594) version of Fundamentals of Surface Metrology.
     clauses:
-      - strength: suggested
+      - strength: recommended
         timing: prior
         sourceText: Students should have some background in engineering, math or science.
         requirement:
@@ -49,7 +48,6 @@ entries:
       - ME|593
       - MTE|594
       - MFE|594
-    needsReview: No lead word; 'should have some background' recorded as suggested. 'No previous knowledge of surface metrology is required' is not modelled.
   - courseId: MFE|500
     description: (0 credits) This seminar identifies the typical problems involved in a variety of manufacturing operations, and generic approaches for applying advanced technologies to implement operations. Topical areas of application and development such as intelligent materials processing, automated assembly, MRP and JIT scheduling, vision recognition systems, high-speed computer networks, distributed computer control of manufacturing processes and flexible manufacturing systems may be covered. This seminar is coordinated with the undergraduate program in manufacturing engineering. Required for all full-time students .
     clauses: []
@@ -65,8 +63,8 @@ entries:
   - courseId: MFE|541
     description: "(2 Credits) The problems of cost determination and evaluation of processing alternatives in the designmanufacturing interface are discussed. Approaches for introducing manufacturing capability knowledge into the product design process are covered. An emphasis is placed on part and process simplification, and analysis of alternative manufacturing methods based on such parameters as: anticipated volume, product life cycle, lead time, customer requirements, and quality yield. Lean manufacturing and Six-Sigma concepts and their influence on design quality are included as well. Note: Students cannot receive credit for this course if they have taken the Special Topics version of the same course (MFE594M)."
     clauses: []
-    noCreditWith: []
-    needsReview: No credit with the Special Topics version (MFE594M); that code has a letter suffix, which the course-id pattern cannot store, so noCreditWith omits it.
+    noCreditWith:
+      - MFE|594
   - courseId: MFE|5420
     description: (2 credits) The course starts with an in-depth study of axiomatic design. Applications of axiomatic design are considered primarily, although not exclusively, for the design of manufacturing processes and tools. Axiomatic design is a design methodology based on the premise that there are two axioms that apply to all good designs. These axioms facilitate the teaching and practice of engineering design as a scientific discipline. Manufacturing process analysis is considered from the perspective of supporting design. Methods of analysis of manufacturing processes with broad applicability are sought. Special attention is given to examples in machining (traditional, nontraditional and grinding), additive manufacturing, and to the production of surfaces. The ability to find commonalities across applications and generalize is emphasized to facilitate further development of principles with broad applicability. The content is delivered in video lectures and in readings from the technical literature. Homework and quizzes are given and delivered online. There is a project to design a manufacturing process. The topics can be from work or dissertations that can be interpreted as manufacturing processes and tools. Credit cannot be given for this course and any of the similar, in-class versions for 3 credits, MFE 520, MTE 520 and ME 543.
     clauses: []

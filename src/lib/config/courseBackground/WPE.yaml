@@ -20,8 +20,17 @@ entries:
                 course: WPE|1611
               - kind: topic
                 topic: a regular meditation practice
+      - strength: required
+        timing: prior
+        sourceText: Open to students who have completed WPE 1611 Intro to Mindfulness or who maintain regular meditation practice.
+        requirement:
+          kind: anyOf
+          of:
+            - kind: course
+              course: WPE|1611
+            - kind: topic
+              topic: a regular meditation practice
     noCreditWith: []
-    needsReview: "'(e.g.. WPE1611 ...)' reads as an example, so WPE 1611 may not be the only accepted route. Modelled as one of two alternatives."
   - courseId: WPE|1712
     description: "This class deepens the connection between mind, body, and spirit through intentional breath and mindful movement. Building on foundational postures, we explore longer holds, more complex sequences, and refined alignment to enhance strength, flexibility, balance, and focus. Participants will develop greater body awareness and inner stillness while cultivating resilience and relaxation. CAT I Recommended Background: Foundation knowledge of yoga practice (e.g. WPE1612 or regular Yoga practice)"
     clauses:
@@ -39,7 +48,6 @@ entries:
               - kind: topic
                 topic: regular yoga practice
     noCreditWith: []
-    needsReview: "'(e.g. WPE1612 ...)' reads as an example, so WPE 1612 may not be the only accepted route. Modelled as one of two alternatives."
   - courseId: WPE|1003
     description: Cat. I (1/12 unit) Introduction to the sports through skill development and play.
     clauses: []

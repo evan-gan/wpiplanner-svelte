@@ -273,6 +273,7 @@ entries:
                 course: ES|2001
                 orEquivalent: true
     noCreditWith: []
+    needsReview: Text says 'introductory electrical and computer engineering (ES2010 or equivalent)'. There is no ES 2010; the course is ECE 2010, and the 2026-27 catalog's version of this description names ECE 2010. Kept as ES|2010 because that is what the text says; a human should confirm and switch it to ECE|2010.
   - courseId: ME|4320
     description: "Cat. IThis course integrates students’ background in ME in a one-term designproject that is usually taken from a local company. Students must organizethemselves and the project to successfully realize a product that meets customerneeds. Activities include problem definition, design analysis, mathematicalmodelling, CAD modelling, manufacturing, testing, liaison to vendors,customer relations, marketing, technical management, purchasing, reportwriting, and oral presentations.Recommended background: mechanisms (ME 3310, ME 3311), stressanalysis (ES 3502), design (ME 3320), thermo-fluids (ES 3001, ES 3003,ES 3004), materials (ES 2001), manufacturing (ME 1800)."
     clauses:
@@ -323,7 +324,7 @@ entries:
                 kind: course
                 course: ME|1800
     noCreditWith: []
-    needsReview: The text says 'stressanalysis (ES 3502)', which may be a typo for ES 2502. Recorded as written.
+    needsReview: Text says 'stressanalysis (ES 3502)'. There is no ES 3502 in the catalog and ES 2502 is titled Stress Analysis, so this is likely a typo for ES 2502; kept as written until a human confirms.
   - courseId: ME|4322
     description: "Cat. I This course introduces students to the modeling and analysis of mechatronic systems. Creation of dynamic models and analysis of model response using the bond graph modeling language are emphasized. Lecture topics include energy storage and dissipation elements, transducers, transformers, formulation of equations for dynamic systems, time response of linear systems, and system control through open and closed feedback loops. Computers are used extensively for system modeling, analysis, and control. Hands-on projects will include the reverse engineering and modeling of various physical systems. Physical models may sometimes also be built and tested. Recommended background: mathematics (MA 2051, MA 2071), fluids (ES 3004), thermodynamics (ES 3001), mechanics (ES 2501, ES 2503)."
     clauses:
@@ -778,7 +779,6 @@ entries:
             kind: course
             course: ME|4506
     noCreditWith: []
-    needsReview: "'such as' examples are not exhaustive."
   - courseId: ME|527
     description: "ME 527/RBE 500 Foundations of Robotics (3 Credits) Fundamentals of robotics engineering. Topics include forward and inverse kinematics, velocity kinematics, introduction to dynamics and control theory, sensors, actuators, basic probabilistic robotics concepts, fundamentals of computer vision, and robot ethics. In addition, modular robot programming will be covered, and the concepts learned will be applied using realistic simulators. Prerequisites: Differential Equations (MA 2051 or equivalent), Linear Algebra (MA 2071 or equivalent) and the ability to program in a high-level language"
     clauses:
@@ -825,8 +825,8 @@ entries:
               text: senior or graduate standing
             - kind: permission
               text: consent of the instructor
-    noCreditWith: []
-    needsReview: The special-topics no-credit rule names 'MTE 594S' / 'MTE 594P', which the course-id pattern cannot store. Not recorded.
+    noCreditWith:
+      - MTE|594
   - courseId: ME|5312
     description: "(2 credits) The two introductory classes on materials science (MTE 511 and MTE 512) describe the structure property relationships in materials. The purpose of this class is to provide a basic knowledge of the principles pertaining to the physical, mechanical and chemical properties of materials. The primary focus of this class will be on mechanical properties. The thermal, tensile, compressive, flexural and shear properties of metallic alloys, ceramics and glasses and plastics will be discussed. Fundamental aspects of fracture mechanics and viscoelasticity will be presented. An overview of dynamic properties such as fatigue, impact and creep will be provided. The relationship between the structural parameters and the preceding mechanical properties will be described. Basic composite theories will be presented to describe fiber-reinforced composites and nanocomposites. Various factors associated with material degradation during use will be discussed. Some introductory definitions of electrical and optical properties will be outlined. (Prerequisites: senior or graduate standing or consent of the instructor.) Note: Students cannot receive credit for this course if they have taken the Special Topics version of the same course (MTE 594P)."
     clauses:
@@ -840,8 +840,8 @@ entries:
               text: senior or graduate standing
             - kind: permission
               text: consent of the instructor
-    noCreditWith: []
-    needsReview: The special-topics no-credit rule names 'MTE 594S' / 'MTE 594P', which the course-id pattern cannot store. Not recorded.
+    noCreditWith:
+      - MTE|594
   - courseId: ME|5361
     description: "(2 credits) The failure and wear-out mechanisms for a variety of materials (metals, ceramics, polymers, composites and microelectronics) and applications will be presented and discussed. Multi-axial failure theories and fracture mechanics will be discussed. The methodology and techniques for reliability analysis will also be presented and discussed. A materials systems approach will be used. (Prerequisites: ES 2502 and ME 3023 or equivalent, and senior or graduate standing in engineering or science.) Note: Students cannot receive credit for this course if they have taken the Special Topics version of the same course (MTE 593C/MTE 594C)."
     clauses:
@@ -858,12 +858,13 @@ entries:
               orEquivalent: true
             - kind: standing
               text: senior or graduate standing in engineering or science
-    noCreditWith: []
-    needsReview: The special-topics no-credit rule names 'MTE 593C' style codes, which the course-id pattern cannot store. Not recorded.
+    noCreditWith:
+      - MTE|593
+      - MTE|594
   - courseId: ME|5370
     description: (3 credits) This course emphasizes research applications of advanced surface metrology, including the measurement and analysis of surface roughness. Surface metrology can be important in a wide variety of situations including adhesion, friction, catalysis, heat transfer, mass transfer, scattering, biological growth, wear and wetting. These situations impact practically all the engineering disciplines and sciences. The course begins by considering basic principles and conventional analyses, and methods. Measurement and analysis methods are critically reviewed for utility. Students learn advanced methods for differentiating surface textures that are suspected of being different because of their performance or manufacture. Students will also learn methods for making correlations between surface textures and behavioral and manufacturing parameters. The results of applying these methods can be used to support the design and manufacture of surface textures, and to address issues in quality assurance. Examples of research from a broad range of applications are presented, including, food science, pavements, friction, adhesion, machining and grinding. Students do a major project of their choosing, which can involve either an in-depth literature review, or surface measurement and analysis. The facilities of WPI’s Surface Metrology Laboratory are available for making measurements for selected projects. Software for advanced analysis methods is also available for use in the course. No previous knowledge of surface metrology is required. Students should have some background in engineering, math or science. Students cannot receive credit for this course if they have received credit for ME 5371/MTE 5843/MFE 5843 Fundamentals of Surface Metrology or the Special Topics (ME 593/MTE 594/MFE 594) version of Fundamentals of Surface Metrology.
     clauses:
-      - strength: suggested
+      - strength: recommended
         timing: prior
         sourceText: Students should have some background in engineering, math or science.
         requirement:
@@ -876,7 +877,6 @@ entries:
       - ME|593
       - MTE|594
       - MFE|594
-    needsReview: No lead word; 'should have some background' recorded as suggested.
   - courseId: ME|5385
     description: (2 Credits) Additive Manufacturing (AM), popularly known as 3D printing, is a technique in which parts are fabricated in a layer-by-layer fashion. The focus of this course is on direct metal AM processes that are used in aerospace, automobile, medical, and energy industries. The objective of the course is to enable students to understand the working principles of various additive manufacturing processes, assess the suitability of metal AM processes for different designs and applications, apply process design concepts to metal AM processes via analytical and finite element modeling approaches, and have an introductory-level understanding of design for AM. Through the course project, students will have the opportunity to experience hands-on design, manufacturing, and characterization of additively manufactured materials, and will work in an interdisciplinary team of mechanical, materials, and manufacturing engineers. The economics of the manufacturing process will also be addressed, with an emphasis on determining the major cost drivers and discussing cost minimization strategies. Students cannot receive credit for this course if they have received credit for the Special Topics (ME 593/MTE 594) version of the same course.
     clauses: []
@@ -939,8 +939,8 @@ entries:
   - courseId: ME|5202
     description: "Basic concepts and general principles of classical kinematics and dynamics of particles, systems of particles and rigid bodies are presented with application to engineering problems with complicated three-dimensional kinematics and dynamics. Derivation of the governing equations of motion using Principle of Virtual Work and Lagrange equations is described together with the direct Newton approach. Applications include: swings-effect and its use in engineering, illustrating in particular limit cycles and their stability and reversed-swings control of vibrations of pendulum; various examples of gyroscopic effects; and especially introductory rotor dynamics including transverse vibrations (whirling) and potential instability of rotating shafts. Students cannot receive credit for this course if they have taken the Special Topics (ME 593D) version of the same cours"
     clauses: []
-    noCreditWith: []
-    needsReview: No credit with the Special Topics version (ME 593D); that code has a letter suffix, which the course-id pattern cannot store, so noCreditWith omits it.
+    noCreditWith:
+      - ME|593
   - courseId: ME|5303
     description: This course is devoted to the numerical solution of partial differential equations encountered in engineering sciences. Finite element methods are introduced and developed in a logical progression of complexity. Topics covered include matrix structural analysis variation form of differential equations, Ritz and weighted residual approximations, and development of the discretized domain solution. Techniques are developed in detail for the one- and twodimensional equilibrium and transient problems. These numerical strategies are used to solve actual problems in heat flow, diffusion, wave propagation, vibrations, fluid mechanics, hydrology and solid mechanics. Weekly computer exercises are required to illustrate the concepts discussed in class. Students cannot receive credit for this course if they have taken the Special Topics (ME 593E) version of the same course or ME 533 or CE 524.
     clauses: []
@@ -950,8 +950,8 @@ entries:
   - courseId: ME|5358
     description: "(2 credits) This course will provide an integrated overview of the design, selection and use of synthetic plastics. The basic chemistry associated with polymerization and the structure of commercial plastics will be described. Various aspects of polymer crystallization and glass transition will be outlined. Salient aspects of fluid flow and heat transfer during the processing of plastics will be highlighted. Fundamentals of the diverse processing operations used to shape plastics and the resulting structures that develop after processing will be discussed. The mechanical behavior of plastics including elastic deformation, rubber elasticity, yielding, viscoelasticity, fracture and creep will be discussed. Plastic 164 Mechanical Engineering Return to Table of Contents Mechanical Engineering 165 degradation and environmental issues associated with recycling and disposal of plastics will be examined. Typical techniques used in the analysis and testing of plastics will be described and a working knowledge of various terminologies used in commercial practice will be provided. Note: Students cannot receive credit for this course if they have taken the Special Topics version of the same course (MTE 594A)."
     clauses: []
-    noCreditWith: []
-    needsReview: No credit with the Special Topics version (MTE 594A); that code has a letter suffix, which the course-id pattern cannot store, so noCreditWith omits it.
+    noCreditWith:
+      - MTE|594
   - courseId: ME|5371
     description: (2 Credits) Surface Metrology is about measuring, characterizing, and analyzing surface topographies or textures. This course covers conventional and developing measurement and characterization of roughness. It emphasizes research and covers a wide variety of applications, including, adhesion, friction, fatigue life, mass transfer, scattering, wear, manufacturing, food science, wetting, physical anthropology, and archeology. Surface metrology has applications in practically all engineering disciplines and sciences. Research principles are applied to critical evaluations of research methods. Students learn multiscale methods for discovering correlations between processing, textures, and behavior , and for discriminating surface textures supposed to be different because of their performance or manufacture. Results support product and process design, and quality assurance. Students create detailed project proposals on topics of their choosing, including literature reviews, preparation and testing of surfaces, measurements, characterizations, and analyses. Students cannot receive credit for this course if they have received credit for the Special Topics (ME 593/MTE 594/MFE 594) version of this course, or for ME 5370/MTE 5841/MFE 5841 Surface Metrology.
     clauses: []
@@ -981,8 +981,8 @@ entries:
   - courseId: ME|5441
     description: "(2 Credits) The problems of cost determination and evaluation of processing alternatives in the designmanufacturing interface are discussed. Approaches for introducing manufacturing capability knowledge into the product design process are covered. An emphasis is placed on part and process simplification, and analysis of alternative manufacturing methods based on such parameters as: anticipated volume, product life cycle, lead time, customer requirements, and quality yield. Lean manufacturing and Six-Sigma concepts and their influence on design quality are included as well. Note: Students cannot receive credit for this course if they have taken the Special Topics version of the same course (MFE594M)."
     clauses: []
-    noCreditWith: []
-    needsReview: No credit with the Special Topics version (MFE594M); that code has a letter suffix, which the course-id pattern cannot store, so noCreditWith omits it.
+    noCreditWith:
+      - MFE|594
   - courseId: ME|591
     description: Seminars on current issues related to various areas of mechanical engineering are presented by authorities in their fields. All full-time mechanical engineering students are required to register and attend.
     clauses: []

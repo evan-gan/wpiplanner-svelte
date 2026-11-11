@@ -10,7 +10,6 @@ entries:
           kind: topic
           topic: a basic reading knowledge of music
     noCreditWith: []
-    needsReview: Lead phrase is 'Recommended background', but the text says there are no prerequisites and reading knowledge is helpful but not required. Recorded as suggested.
   - courseId: MU|1100
     description: "MU 1100 Foundations of Music Theory and Aural Skills (1/3 unit; Cat. I) This course introduces basic music theory concepts and helps students develop aural skills. Course topics include scales, intervals, chords, harmonic progressions, and rhythm. Activities include both written work in music notation and ear training exercises. Recommended Background: some basic knowledge of reading music"
     clauses:
@@ -45,7 +44,6 @@ entries:
               - kind: topic
                 topic: equivalent experience
     noCreditWith: []
-    needsReview: The examples are introduced with 'e.g.', so other coursework may also qualify.
   - courseId: MU|2101
     description: "MU 2101: Arranging and Orchestration (1/3 Unit; Cat. I) Students will study specific characteristics of instruments and the voice to enable them to successfully arrange vocal and instrumental music. Students will need to possess a basic knowledge of music theory. Students may not receive credit for both MU 3002 and MU 2101 Suggested background for this course is MU 1100 (Foundations of Music Theory and Aural Skills) or its equivalent"
     clauses:
@@ -169,7 +167,6 @@ entries:
           kind: topic
           topic: the corresponding large music ensemble
     noCreditWith: []
-    needsReview: "The course header in the source says 'MU 2501: Conducting'; the catalog id MU|2451 is used here."
   - courseId: MU|2501
     description: "Cat. I How are we able to distinguish instruments, timbres and rhythms from the intertwined sonic stream presented by the world? How do we organize these elements in time to create rhythms, melodies, phrases and pieces? How do perception and memory interact to allow us navigate a musical work? We will explore these questions by considering the cognitive and perceptual processes that shape our musical experience. Topics will include event distinction, temporal perception, hierarchical organization, perceptual grouping, expertise, memory and categorization . We will illustrate these ideas in musical contexts by listening to a variety of musical works . We will consider how psychological principles are applied to music technologies, such as compression algorithms, mixing methodologies and the field of music information retrieval . We will consider experiments that focus on some of these topics to further our understanding about how we experience music . Note: Students that received credit for MU 202X may not receive credit for MU 2501 . Students also may not receive credit for both MU 2501 and PSY 2501 . This course can count for either the HUA or the SSPS requirement, but it cannot double count for both the HUA and SSPS graduation requirements . Recommended background: Fundamentals of Music I and/or Fundamentals of Music II."
     clauses:
@@ -235,14 +232,12 @@ entries:
     noCreditWith:
       - MU|4623
       - MU|2719
-    needsReview: Bracketed replacement note says credit is not allowed for both MU 4623 and MU 2719; read as no credit with either, since this course replaces MU 4623.
   - courseId: MU|2020
     description: Cat. I This course will explore the uniqueness of America’s popular music and its origins in the music of Africa and the folk music of Europe. Particular emphasis will be given to the origins and history of rock ‘n’ roll examining its roots in blues and early American popular music. [This replaces MU 4625. Credit is not allowed for both MU 4625 and MU 2722.]
     clauses: []
     noCreditWith:
       - MU|4625
       - MU|2722
-    needsReview: Bracketed replacement note says credit is not allowed for both MU 4625 and MU 2722; read as no credit with either, since this course replaces MU 4625.
   - courseId: MU|2401
     description: Cat. I The Glee Club is one of WPI’s choral ensembles and the oldest student organization on campus. Glee Club performs many styles and periods of the vast repertoire of music featuring tenor and bass voices. Several times each year the Glee Club and Alden Voices (soprano and alto voices) join forces as the WPI Festival Chorus to perform major works of the repertoire. The Glee Club regularly performs on campus, throughout the Worcester area, and takes international and domestic tours. Rehearsals are held weekly. No audition is required. The course is open to all who are interested and sing in the tenor and bass range.
     clauses:

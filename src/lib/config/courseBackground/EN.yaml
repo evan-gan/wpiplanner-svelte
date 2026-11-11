@@ -26,7 +26,6 @@ entries:
               topic: SP courses that stress literature and culture
     noCreditWith:
       - EN|125X
-    needsReview: "Lead phrase says 'Recommended Background: None'; the examples are offered as useful preparation and recorded as suggested. The examples are introduced with 'e.g.'."
   - courseId: EN|1439
     description: "This course surveys the aesthetics, forms, histories, and politics of poetic expression from ancient, modern, and contemporary periods, focusing primarily on English-language examples while simultaneously incorporating works across world literatures, in original texts or in English translations. Attention may be given to epic, dramatic, and lyric modes, to elegies, odes, repeating forms (sonnet, villanelle), and short forms (epigram, haiku), and to specific architectures of poetry including address, assonance and consonance, closure, lineation, meter, rhyme, rhythm, and stanzaic structure. Recommended background: None."
     clauses: []
@@ -58,7 +57,6 @@ entries:
             - kind: topic
               topic: any subsequent EN offering
     noCreditWith: []
-    needsReview: "Lead phrase says 'Recommended Background: None'; the helpful coursework is recorded as suggested. The example is introduced with 'e.g.'."
   - courseId: EN|2410
     description: "Feature films are at the heart of a motion picture industry that requires a partnership of multiple disciplines working in unison: acting, directing, filming, and producing. But none of this can happen without the first step—screenwriting. In this course, students will learn to write for mainstream feature and short films, from ideation to synopses and beat sheets to the pages of an original screenplay. While this course will focus on short and feature film screenplays, the knowledge can also apply to other screenwriting forms such as documentaries and web series. Students will combine the creative with the technical, not only studying storytelling through film but also applying the structured authoring required by film producers and screenplay competitions for a feature or short film script. Students may not receive credit for both EN/WR 2410 and EN/WR 241X. Suggested Background: Previous coursework in storytelling (such as creative writing or film courses) or structured authoring (such as WR 3210: Technical Writing)."
     clauses:
@@ -112,7 +110,6 @@ entries:
             - kind: topic
               topic: any subsequent EN offering
     noCreditWith: []
-    needsReview: "Lead phrase says 'Recommended Background: None'; the helpful coursework is recorded as suggested. The example is introduced with 'e.g.'."
   - courseId: EN|2225
     description: Cat. II This course begins with selections from John Milton’s provocative version of Adam and Eve’s original sin in Paradise Lost. Focusing on Milton, John Donne and others, we will examine the theme of sin—political, religious, and sexual— in early modern literature. The events of the English Reformation profoundly influenced these writers, and their personal struggles against societal institutions have greatly influenced subsequent literary expressions of rage and rebellion. Students will also be reading texts by contemporary writers such as David Mamet which address the theme of sin in the modern city. This course will be offered in 2020-21, and in alternating years thereafter.
     clauses: []

@@ -46,7 +46,7 @@ entries:
           kind: standing
           text: closed to native speakers of Spanish and heritage speakers except with written permission from the instructor
     noCreditWith: []
-    needsReview: Says 'Recommended background 2522', which names this course itself. No other background is given, so no recommended clause was recorded; check the source text.
+    needsReview: Text ends 'Recommended background 2522', which is this course's own number; it probably means SP 2521 (Intermediate Spanish I, not in the current catalog). A human must decide whether to record SP|2521 as recommended.
   - courseId: SP|3521
     description: Students at the Advanced level will explore a wider variety of literature (poetry, biographies, short stories), cultural readings, and short films produced in Spanish-speaking contexts to study critical historical, cultural, and social events related to the Hispanic world. Students will also review advanced vocabulary and grammar structures to connect and express ideas into a paragraph length in both oral and written discourses. At the end of the course, students will be able to produce basic academic texts and presentations to summarize, narrate, describe, and express their opinions about different topics and social issues. This course is closed to native speakers of Spanish and heritage speakers except with written permission from the instructor. Recommended background SP 2522
     clauses:
@@ -89,7 +89,7 @@ entries:
           kind: topic
           topic: intermediate advanced Spanish I and II
     noCreditWith: []
-    needsReview: The course codes are not written out (only 'Intermediate Advanced Spanish I and II'), so the topic has no catalog id. Probably SP 2522 and SP 3521/3522, but not guessed.
+    needsReview: Recommended background names 'Intermediate Advanced Spanish I and II' with no codes, and no catalog course has that title. Likely SP 3521/SP 3522 (Advanced Spanish I/II), possibly SP 2522 + SP 3521; a human must pick the codes.
   - courseId: SP|3530
     description: "This course explores Spanish cinema, tracing its evolution from the early 20th century to contemporary works. Students will study a range of films that reflect Spain's rich cultural, political, and social landscapes, analyzing themes such as identity, history, gender, and memory. Through Spanish cinema and other media sources, this course studies images, topics, and cultural and historical issues that have impacted the creation of a modern Spanish nation. This course focuses on current political and ideological issues (after 1936), the importance of the Spanish Civil War, gender identity, and class, cultural, and power relationships. Through screenings, discussions, and critical analysis, students will learn to interpret film as a medium of artistic expression and cultural commentary, developing an understanding of the historical contexts that shaped Spanish cinema. They will also engage in group projects, presentations, and written assignments to deepen their appreciation and understanding of Spain’s cinematic heritage. This course satisfies the Inquiry Seminar to complete the HUA requirement in Spanish and would also count toward International and Global Studies. In addition, this course would benefit students interested in WPI’s Project Centers in Spain. This course is taught at an advanced level of Spanish. This course will be offered in 2025-2026, and in alternating years thereafter. Recommended Background: SP 3521 and SP 3522."
     clauses:

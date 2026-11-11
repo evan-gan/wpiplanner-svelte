@@ -54,7 +54,7 @@ entries:
             - kind: topic
               topic: basic physics
               satisfiedBy:
-                kind: allOf
+                kind: anyOf
                 of:
                   - kind: course
                     course: PH|1110
@@ -76,7 +76,6 @@ entries:
                 course: MA|2051
                 orEquivalent: true
     noCreditWith: []
-    needsReview: Parenthetical course lists with no 'or' (PH 1110, PH 1111; MA 1021, MA 1022) were read as all required.
   - courseId: AE|2310
     description: "This course introduces feedback control systems analysis and design for applications to aircraft and spacecraft. Topics include: linear dynamical systems modeling of aircraft and spacecraft motion, including linearization; identification and transient response analysis of typical modes of motion; time- and frequency domain analysis; Bode plots; criteria for stability; design of stability augmentation and, attitude and orbital control systems using linear state feedback or PID control; numerical simulation of controlled and uncontrolled aircraft and spacecraft motion. Recommended background: ordinary differential equations (MA 2051 or equivalent), introductory dynamics (ES 2503, PH 2201 or equivalent), and linear algebra (MA 2071 or equivalent). Students may not receive credit for both AE 2310 and either AE/ME 3703 or AE 3713."
     clauses:
@@ -185,7 +184,6 @@ entries:
                     course: MA|1024
                     orEquivalent: true
     noCreditWith: []
-    needsReview: Calculus list 'MA 1021, MA 1022, MA 1023, and MA 1024, or equivalent' read as all four; 'or equivalent' could instead allow any one substitute.
   - courseId: AE|2410
     description: "This course provides a concise overview of statics and then focuses on basic stress analysis applied to simple aerospace structures. Topics in stress analysis include: concepts of stress and strain; basic constitutive relations; one-dimensional response to axial loading; thermal stresses; statically determinate and indeterminate problems; shear forces, bending moments, bending stresses and deflections in beams with symmetric cross sections; two-dimensional stress transformation and Mohr’s circle; and an introduction to energy methods in structural analysis. Recommended background: differential, integral, multivariable calculus (MA 1021, MA 1022, MA 1024 or equivalent), mechanics (PH 1110, PH 1111, or equivalent). Students may not receive credit for both AE 2410 and AE 2712."
     clauses:
@@ -222,7 +220,6 @@ entries:
                     orEquivalent: true
     noCreditWith:
       - AE|2712
-    needsReview: Calculus list read as one course per named topic (all three); the text's 'or equivalent' could be read as any one of them.
   - courseId: AE|2550
     description: "Cat I This course introduces the ambient atmospheric and space environments encountered by aerospace vehicles. Topics include: the sun and solar activity; the solar wind; planetary magnetospheres; planetary atmospheres; radiation environments; galactic cosmic rays; meteoroids; and space debris. Recommended background: mechanics (PH1110 / 1111 or equivalent), electromagnetism (PH 1120 / 1121 or equivalent), and ordinary differential equations (MA 2051 or equivalent)."
     clauses:
@@ -273,7 +270,7 @@ entries:
             - kind: topic
               topic: basic physics
               satisfiedBy:
-                kind: allOf
+                kind: anyOf
                 of:
                   - kind: course
                     course: PH|1110
@@ -295,7 +292,6 @@ entries:
                 course: MA|2051
                 orEquivalent: true
     noCreditWith: []
-    needsReview: Parenthetical course lists with no 'or' (PH 1110, PH 1111; MA 1021, MA 1022) were read as all required.
   - courseId: AE|3120
     description: "This course introduces students to the aerodynamics of airfoils, wings, and aircraft in the subsonic and supersonic regimes. Topics covered include: prediction of aerodynamic forces (lift, drag) and moments, dynamic similarity, experimental techniques in aerodynamics, Kutta-Joukowski theorem, circulation, thin airfoil theory, panel methods, finite wing theory, subsonic compressible flow over airfoils, linearized supersonic flow, and viscous flow over airfoils. Recommended background: incompressible and compressible fluid dynamics (AE 2110, AE 3110 or equivalent). Students may not receive credit for both AE 3120 and AE 3711."
     clauses:
@@ -339,7 +335,6 @@ entries:
                 orEquivalent: true
     noCreditWith:
       - AE|3712
-    needsReview: Source text has an unclosed parenthesis after 'AE 2410 or equivalent'; read as written.
   - courseId: AE|3430
     description: "This course provides an overview of the processing techniques and mechanical behavior of composite materials relevant to aerospace applications. Topics in this course may include: classification of composites; elasticity of composite materials; the effect of reinforcements on strength and toughness; bonding mechanisms of interfaces in composite; fabrication methods for polymer-matrix composite materials; viscoelasticity and creep of composites; advanced composites materials (bio-composites, nano-composites). Recommended background: introductory material science (ES 2001), and introductory stress analysis (AE 2410 or equivalent). Students may not receive credit for both AE 3430 and AE 4717."
     clauses:
@@ -540,7 +535,6 @@ entries:
                 orEquivalent: true
     noCreditWith:
       - AE|4771
-    needsReview: "'AE/PH 2550' read as either code (cross-listed course); telecommunications AE 3310 has no 'or equivalent' in the text."
   - courseId: AE|5335
     description: "This course discusses the foundations of autonomy of aerial vehicles including fixed-wing aircraft and quadrotor aircraft. Topics covered include: localization using inertial sensors, GPS, and computer vision; extended Kalman filtering for localization; trajectory planning; feedback guidance for trajectory tracking; and low-level autopilot control design. Whereas this course will review aircraft dynamics, familiarity with this topic at an undergraduate level is beneficial. Prerequisites: dynamics and control of linear systems (AE 5331 or similar); fluency with MATLAB or Python programming. Students cannot receive credit for this course if they have taken AE 5224 “Air Vehicle Dynamics and Control”."
     clauses:
@@ -558,9 +552,14 @@ entries:
                 orEquivalent: true
             - kind: topic
               topic: fluency with MATLAB or Python programming
+      - strength: suggested
+        timing: prior
+        sourceText: familiarity with this topic at an undergraduate level is beneficial
+        requirement:
+          kind: topic
+          topic: aircraft dynamics at an undergraduate level
     noCreditWith:
       - AE|5224
-    needsReview: "'or similar' treated as orEquivalent. Text also says undergraduate aircraft dynamics familiarity is 'beneficial' (not a requirement, not modelled)."
   - courseId: AE|5336
     description: "The course covers the natural dynamics of objects under gravity, including orbits in the two-body problem and the three-body problem. Fundamental topics for astrodynamics cover Lagrange functions, Lambert’s theorem, and patched conics. Application in trajectory design includes orbital maneuvers/transfers and interplanetary orbits. Mission design software will be used to model orbit and trajectory. Students cannot receive credit for this course if they have taken AE 5093 “Special Topics: Orbital Mechanics”. Recommended background: Strong knowledge of dynamics and control, differential equations, and linear algebra (AE 2310, ES 2503, MA 2051, MA 2071, or equivalent). Strong MATLAB programming skills. Credits: 2"
     clauses:
@@ -601,7 +600,6 @@ entries:
           topic: MATLAB programming
     noCreditWith:
       - AE|5093
-    needsReview: "Text says 'Recommended background' but the course-list parenthetical is followed by 'or equivalent'; read as one course per named topic. AE 5093 'Special Topics: Orbital Mechanics' is in the no-credit sentence as a title, id inferred from it."
   - courseId: AE|601
     description: "Arranged by individual faculty with special expertise, these courses cover advanced topics that are not covered by the regular aerospace engineering course offerings. Exact course descriptions are disseminated by the Aerospace Engineering Department in advance of the offering. Recommended Background: Consent of instructor"
     clauses:
@@ -699,4 +697,3 @@ entries:
           kind: topic
           topic: knowledge of a computer programming language
     noCreditWith: []
-    needsReview: The sentence sits in the course-work description; confirm the programming knowledge is a prerequisite rather than a project expectation.

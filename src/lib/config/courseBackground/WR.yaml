@@ -23,7 +23,6 @@ entries:
               - kind: course
                 course: WR|1020
     noCreditWith: []
-    needsReview: The examples are introduced with 'e.g.', so other rhetorical writing courses may also qualify. The text has an unclosed parenthesis.
   - courseId: WR|2020
     description: "This course explores a variety of timely themes and topics related to rhetoric and public culture. Students will refine their understanding of classical and contemporary rhetorical concepts and their application of rhetorical research methods by analyzing and engaging with topics of professional and cultural significance. This course is designed to build on and further develop skills from first-year rhetoric studies (WR1020) and to prepare students for more advanced coursework in this discipline and in the Professional Writing program (e.g., WR3112, inquiry seminars, MQPs). This course may be repeated for different topics. Offering Schedule: This course will be offered in academic years ending in odd numbers. Recommended Background: fundamentals of rhetoric and rhetorical analysis (WR1020)"
     clauses:
@@ -124,7 +123,6 @@ entries:
           topic: foundational life sciences courses with emphasis in anatomy and physiology
     noCreditWith:
       - WR|250X
-    needsReview: The WR 1011 example is introduced with 'e.g.', so other introductory professional writing courses may also qualify.
   - courseId: WR|3011
     description: "Cat. II. Teaching Writing introduces students to the theory and practice of written composition . Students research and read about the writing process and how best to support it through the practice of explicit teaching and tutoring . They learn specific strategies that can support writers as they plan, draft, and revise written work in a number of genres, and they study effective ways to provide helpful feedback on drafts . They also learn about and practice navigating the social, political and interpersonal dynamics of the teacher/tutor-student relationship through a tutoring internship at the Writing Center and through assignments prompting them to develop lesson plans and instructional handouts . This course will help students improve their own writing and read their own and others’ writing more critically . It will be especially useful for those who plan to teach or tutor writing in the future . Recommended background: WR 1010 Elements of Writing This course will be offered in 2019-20, and in alternating years thereafter ."
     clauses:
@@ -176,7 +174,7 @@ entries:
     noCreditWith:
       - IMGD|2400
       - WR|2400
-    needsReview: "'such as that provided by' gives an example, so IMGD/WR 2450 may not be the only route."
+      - IMGD|3450
   - courseId: WR|4210
     description: "Cat. II Medical Writing will provide students with advanced opportunities to create clinically-oriented documents about disease, treatment, and medical research. Students will learn how to develop, structure, and present medical reports that integrate anatomy and physiology, disease history (including associated human and environmental factors), epidemiology, clinical presentation, differential diagnosis, and prognosis. The course will operate as a series of student projects in which students create scientific documents from major disease categories. The course will be focused on disease characterization for more advanced audiences and preparation for future graduate and professional writing in medicine or the life sciences. Students may not receive credit for both WR 4210 and WR 421X. Recommended background: Prior courses or projects (GPS, IQP) in health, medicine, or science writing. Exposure to anatomy and physiology would be helpful. The course is designed for 3rd and 4th year students with a strong interest in pursuing careers or continued education in medicine or public health."
     clauses:

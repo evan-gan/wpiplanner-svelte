@@ -63,8 +63,8 @@ entries:
                     course: RBE|1001
             - kind: course
               course: MA|1022
-    noCreditWith: []
-    needsReview: "'such as ECE 2010 or RBE 1001' is an example list, so other courses may also qualify. Note says ECE 2022 is also excluded; not recorded."
+    noCreditWith:
+      - ECE|2022
   - courseId: ECE|2039
     description: "ECE 2039: Computational Engineering (1/3 Units; Cat. I) Computational Engineering describes the methods and practices of software programming in the context of electrical and computer engineering (ECE), specifically, the construction of programs to be efficiently implemented on hardware. In this regard, the course covers programming design and methodology, developing efficient code using C programming language, hardware device abstraction, and modeling. In doing so, starting with basic programming techniques in the high-level programming language C, the course describes the relevant software and hardware device abstraction levels. Additionally, program analysis, debugging methods, issues encountered when interfacing with signals to/from external devices, and computer engineering models, such as finite state machines and timing in computing hardware, are explained. The course uses assignments/projects to provide hands-on experience with software programming to solve problems in electrical and computer engineering practice. Recommended Background: A prior course in computer programming, such as CS 1004, CS 1101/2, or BME 1004."
     clauses:
@@ -86,7 +86,6 @@ entries:
               - kind: course
                 course: BME|1004
     noCreditWith: []
-    needsReview: "'such as' examples are not exhaustive."
   - courseId: ECE|2049
     description: "ECE 2049 Embedded Computing in Engineering Design (1/3 Units; Cat. I) Embedded computers are literally everywhere in modern life. On any given day we interact with and depend on dozens of small computers to make coffee, run cell phones, take pictures, play music, control elevators, manage the emissions and antilock brakes in our automobile, control a home security system, and so on. Using popular everyday devices as case studies, students in this course are introduced to the unique computing and design challenges posed by embedded systems. Students will then solve real-world design problems using small, resource constrained (time/memory/power) computing platforms. The hardware and software structure of modern embedded devices and basic interactions between embedded computers and the physical world will also be covered in lecture and as part of laboratory experiments. In the laboratory, emphasis is placed on interfacing embedded processors with common sensors and devices (e.g. temperature sensors, keypads, LCD displays, SPI ports, pulse width modulated motor controller outputs) while developing the skills needed to use embedded processors in systems design. This course is also appropriate for RBE and other engineering and CS students interested in learning about embedded system theory and design. Topics: Number/data representations, embedded system design using C, microprocessor and microcontroller architecture, program development and debugging tools for a small target processor, hardware/software dependencies, use of memory mapped peripherals, design of event driven software, time and resource management, applications case studies. Lab Exercises: Students will solve commonly encountered embedded processing problems to implement useful systems. Starting with a requirements list students will use the knowledge gained during the lectures to implement solutions to problems which explore topics such as user interfaces and interfacing with the physical world, logic flow, and timing and time constrained programming. Exercises will be performed on microcontroller and/or microprocessor based embedded systems using cross platform development tools appropriate to the target platform. Note: Students who have received credit for ECE 2801 may not receive credit for ECE 2049. Students may not receive credit for both RBE 2020 and ECE 2049. Recommended Background ECE 2039 (preferred for ECE majors) or a course in C language programming such as CS 2301/3 or equivalent; and ECE 2010 or equivalent knowledge in basic circuits, devices and analysis. Suggested Background: ECE 2029 or equivalent knowledge of digital logic, logic signals, and logic operations."
     clauses:
@@ -288,7 +287,8 @@ entries:
         requirement:
           kind: course
           course: ECE|2049
-    noCreditWith: []
+    noCreditWith:
+      - ECE|4305
   - courseId: ECE|3405
     description: "ECE 3405 Foundations and Trends in Machine Learning for Engineering 1/3 Unit, Category I Machine learning has achieved huge success in many engineering applications such as computer vision, gene discovery, financial forecasting, credit card fraud detection, autonomous vehicle navigation, biomedical signal modeling, wireless/radar/aerospace systems and others. The course will briefly review discrete-time signals and systems, including convolution and Fourier transforms. This course will introduce the fundamental concepts, algorithms, and theories in machine learning, including linear models, projection/nonlinear embedding methods, neural networks/deep learning, parametric/non-parametric methods, kernel machines, mixture models, and pattern recognition/classification. Also, the lectures will briefly summarize recent trends in the field to provide students with cutting-edge knowledge for engineering. The course will give the student the basic ideas and intuition behind these methods, as well as a more formal understanding of how and why they work. Students will have an opportunity to experiment with machine learning techniques and apply them in one or more application-based projects. Recommended Background: ECE 2312, Discrete-Time Signal and System Analysis; ECE 2039 Computational Engineering. Students who have taken ECE 340X may not get credit for ECE 3405. Suggested Background: Linear Algebra (MA 2071) and Probability (MA 2621 or MA 2631)"
     clauses:
@@ -302,8 +302,28 @@ entries:
               course: ECE|2312
             - kind: course
               course: ECE|2039
-    noCreditWith: []
-    needsReview: The source text has a no-credit sentence that was cut off in the snippet; not checked.
+      - strength: suggested
+        timing: prior
+        sourceText: "Suggested Background: Linear Algebra (MA 2071) and Probability (MA 2621 or MA 2631)"
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: linear algebra
+              satisfiedBy:
+                kind: course
+                course: MA|2071
+            - kind: topic
+              topic: probability
+              satisfiedBy:
+                kind: anyOf
+                of:
+                  - kind: course
+                    course: MA|2621
+                  - kind: course
+                    course: MA|2631
+    noCreditWith:
+      - ECE|340X
   - courseId: ECE|3501
     description: "Cat. I This course is designed to provide a cohesive presentation of the principles of electric energy conversion for industrial applications and design. The generation, transmission and conversion of electric energy, as well as basic instrumentation and equipment associated with electric energy flow and conversion are analyzed. Topics: Review of poly-phase circuits. Transducers and instrumentation for power and energy measurements. Rotating machines. Electromechanical transients and stability. Switchgear equipment. Selected laboratory experiments. Recommended background: ECE 2019."
     clauses:
@@ -359,7 +379,6 @@ entries:
               course: ECE|2312
               orEquivalent: true
     noCreditWith: []
-    needsReview: Two-course list with 'or equivalent' read as both courses. It could also mean either one.
   - courseId: ECE|4503
     description: "The availability of electric power in a variety of forms is integral to modern society. Very often, electric power must be converted from one form to another to meet a specific application need – this conversion process is accomplished through the use and efficient management of power electronics. Design of power electronics is introduced first by examining the performance characteristics of basic switching devices, which enable critical management functions that include pulse width modulation (PWM) and output power regulation. Half and full-wave AC source rectification and techniques for improving the resulting DC power characteristics are covered, including polyphase AC sources. AC voltage control with applications for induction motors is studied. DC-DC power conversion is examined, covering a variety of circuit architectures, with applications in feedback control. DC to AC power inversion and resulting power quality considerations are explored. The impacts of design decisions on power electronics systems, from micro- to megawatts, are demonstrated through numerical simulation. This course includes guest lectures, project work including case-studies and selected power system demonstrations. Recommended background: ECE 3204, ECE 3501. Students who have previously received credit for ECE 3503 may not receive credit for ECE 4503."
     clauses:
@@ -373,8 +392,8 @@ entries:
               course: ECE|3204
             - kind: course
               course: ECE|3501
-    noCreditWith: []
-    needsReview: A no-credit sentence about previously received credit was cut off in the snippet; not checked.
+    noCreditWith:
+      - ECE|3503
   - courseId: ECE|4576
     description: "This course introduces the foundational concepts and practical considerations of hardware security, a rapidly evolving field at the intersection of electrical engineering, computer architecture, and cybersecurity. The course focuses on how computing systems can be compromised or protected at the hardware level. The threats across the hardware/software boundary are covered, highlighting the importance of abstraction layers in both exposing and mitigating security flaws. Particular attention will be given to vulnerabilities that arise in hardware/software co-design processes, such as insecure IP integration, misconfigured logic, and timing-related side effects that propagate across system layers. Further topics include risks in the electronics supply chain. Special attention is given to emerging threats in AI accelerators and reconfigurable platforms. The course combines lectures with hands-on lab exercises using hardware platforms to reinforce practical skills. Category: Cat I Recommended Background: A prior course in computer programming, such as ECE 2039 (preferred for ECE majors), CS 2301, or CS 2303; a course in embedded computing (e.g., ECE 2049); and a course in digital circuit design (e.g., ECE 2029)."
     clauses:
@@ -406,7 +425,6 @@ entries:
                 kind: course
                 course: ECE|2029
     noCreditWith: []
-    needsReview: The 'e.g.' examples are not exhaustive.
   - courseId: ECE|4703
     description: "Cat. I This course provides an introduction to the principles of real-time digital signal processing (DSP). The focus of this course is hands-on development of real-time signal processing algorithms using audio-based DSP kits in a laboratory environment. Basic concepts of DSP systems including sampling and quantization of continuous time signals are discussed. Tradeoffs between fixed-point and floating-point processing are exposed. Real-time considerations are discussed and efficient programming techniques leveraging the pipelined and parallel processing architecture of modern DSPs are developed. Using the audio-based DSP kits, students will implement real-time algorithms for various filtering structures and compare experimental results to theoretical predictions. Recommended background: ECE 2049, ECE 2312, some prior experience in C programming. Suggested background: ECE 3311."
     clauses:
@@ -477,7 +495,6 @@ entries:
                 course: MA|2201
                 orEquivalent: true
     noCreditWith: []
-    needsReview: The 'e.g.' example is not exhaustive.
   - courseId: ECE|4803
     description: "Machine Learning has proven immensely effective in a diverse set of applications. This trend has reached a new high with the application of Deep Learning virtually in any application domain. This course studies the applications of Machine Learning in the sub domain of Cybersecurity by introducing a plethora of case studies including anomaly detection in networks and computing, side-channel analysis, user authentication and biometrics, etc. These case studies are discussed in detail in class, and further examples of potential applications of Machine Learning techniques including Deep Learning are outlined. The course has a strong hands-on component, i.e., students are given datasets of specific security applications and are required to perform simulations. Recommended Background: basic knowledge of machine learning techniques (e.g. regression, support vector machines, clustering algorithms, and neural networks). Cat I"
     clauses:
@@ -721,7 +738,7 @@ entries:
   - courseId: ECE|539
     description: BME 595-ST/ECE 539-ST Wearable/Mobile Sensors and Systems (3 credits) This course explores the design and application of small-size, low-power wearable sensors, with a focus on medical- and health-related uses. Students will begin by learning about sensor technologies and electronic circuits that transduce common physiologic signals, including the electrocardiogram (ECG), electromyogram (EMG), electroencephalogram (EEG), photoplethysmogram (PPG; for pulse oximetry), transcutaneous oxygen measurement, temperature, and inertial measurement units (IMUs). The course then delves into modern system-on-chip (SoC) microcontroller units, which serve as small edge devices equipped with analog-to-digital converters (ADC), processors and integrated wireless connectivity via Bluetooth Low Energy (BLE). Students will study the architecture and programming of these systems. Additionally, the course covers how a secondary BLE receiver on a more powerful device collects sensor data for display, storage and processing; including as part of the Internet of Things (IoT). Key topics in signal processing include online or off-line techniques such as heart rate estimation from ECG/PPG data and EMG-based control of prosthetic devices. Through hands-on labs, students will design, build and program functional sensor systems. Students should have a working knowledge of MATLAB (or Python) and C programming and an undergraduate background in analog circuits and computer engineering. Undergraduate background in digital signal processing and/or wireless signals would be helpful, but not necessary. This special topics course may be repeated for credit if different topics are covered.
     clauses:
-      - strength: suggested
+      - strength: recommended
         timing: prior
         sourceText: Students should have a working knowledge of MATLAB (or Python) and C programming and an undergraduate background in analog circuits and computer engineering.
         requirement:
@@ -731,8 +748,13 @@ entries:
               topic: working knowledge of MATLAB (or Python) and C programming
             - kind: topic
               topic: undergraduate background in analog circuits and computer engineering
+      - strength: suggested
+        timing: prior
+        sourceText: Undergraduate background in digital signal processing and/or wireless signals would be helpful, but not necessary.
+        requirement:
+          kind: topic
+          topic: undergraduate background in digital signal processing and/or wireless signals
     noCreditWith: []
-    needsReview: No lead word; 'should have' recorded as suggested.
   - courseId: ECE|545
     description: "This course presents fundamental concepts of digital image processing and an introduction to machine vision. Image processing topics will include visual perception, image formation, imaging geometries, image transform theory and applications, enhancement, restoration, encoding and compression. Machine vision topics will include feature extraction and representation, stereo vision, model-based recognition, motion and image flow, and pattern recognition. Students will be required to complete programming assignments in a high-level language. (Prerequisites: working knowledge of undergraduate level signal analysis and linear algebra; familiarity with probability theory is helpful but not necessary.)"
     clauses:
@@ -784,15 +806,21 @@ entries:
   - courseId: ECE|5521
     description: "This graduate level course is the first of a two course sequence that covers both the principles and practices of power system protective relaying. The course seeks to provide an understanding of how interconnected power systems and their components are protected from abnormal events such as faults (short circuits), over-voltages, off-nominal frequency and unbalanced phase conditions. This subject is presented from a theoretical viewpoint, however, many practical examples are included that emphasize the limitations of existing protective equipment. Course content is not specific to any particular manufacturer’s equipment. The course begins with a brief review of the nature of power system operation, power system faults and other abnormal conditions. The nature and objectives of protective relaying are covered next with emphasis on how the power system can be monitored to detect abnormal conditions. The computational tools needed to analyze system operation and apply protective relaying are covered next, including the per-unit system, phasors and symmetrical components. The modeling of current transformers under steady-state and transient conditions is presented with emphasis on the impact on protective devices. A unit on system grounding and its impact on protective device operation is included. Course emphasis then shifts to protective devices and their principles of operation. Both electromechanical and numeric relay designs are covered. Prerequisite: ECE 5500 Power System Analysis or equivalent background experience is suggested. Familiarity with phasors, derivatives, transfer functions, poles and zeros, block diagram and the notion of feedback with basic understanding power system analysis or similar background is recommended. Note: Credit cannot be awarded for this course if credit has already been received for ECE 5520 Power System Protection and Control."
     clauses:
-      - strength: required
+      - strength: suggested
         timing: prior
         sourceText: "Prerequisite: ECE 5500 Power System Analysis or equivalent background experience is suggested."
         requirement:
           kind: course
           course: ECE|5500
           orEquivalent: true
-    noCreditWith: []
-    needsReview: The source says the equivalent background is 'suggested'; the prerequisite is recorded as required.
+      - strength: recommended
+        timing: prior
+        sourceText: Familiarity with phasors, derivatives, transfer functions, poles and zeros, block diagram and the notion of feedback with basic understanding power system analysis or similar background is recommended.
+        requirement:
+          kind: topic
+          topic: phasors, derivatives, transfer functions, poles and zeros, block diagrams, feedback, and basic power system analysis
+    noCreditWith:
+      - ECE|5520
   - courseId: ECE|5522
     description: "This graduate level course covers advanced topics in the principles and practices of power system protective relaying. The course seeks to provide an understanding of how protective relays are applied to protect power system components. While the subject is presented from a theoretical viewpoint, many practical examples are included. Examples specific to both new installations and existing, older facilities will be included. Course content is not specific to any particular manufacturer’s equipment. The course begins with applications of protective devices to generators. This will include distributed generation as well as wind-turbine and inverter-connected sources. Transformer protection is covered next, including application procedures for older, electromechanical relays as well as modern numeric relay designs. A unit on bus protection is covered next, including all typical high-speed and time backup bus protection schemes. Transmission line and distribution feeder protection is covered in detail including both conventional and communications-assisted schemes. The course ends with a unit on other protection applications such as under frequency load shedding, reclosing and out-of-step relaying. Prerequisite: ECE 5521 Protective Relaying. Note: Credit cannot be awarded for this course if credit has already been received for ECE 5520 Power System Protection and Control."
     clauses:
@@ -807,7 +835,7 @@ entries:
   - courseId: ECE|5523
     description: "This graduate level course is concerned with modeling, analyzing and mitigating power system stability and control problems. The course seeks to provide an understanding of the electromechanical dynamics of the interconnected electric power grid. This subject is presented from a theoretical viewpoint; however, many practical examples are included. The course begins with a description of the physics of the power system, frequency regulation during “steady-state” operation, dynamic characteristics of modern power systems, a review of feedback control systems, power system frequency regulation, and a review of protective relaying. This is followed by material on synchronous machine theory and modeling. Simulation of power system dynamic response, small signal stability, transient stability analysis using SIMULINK and effects of non-traditional power sources on systems dynamics will also be covered. Power system stabilizers, load modeling and under frequency load shedding are covered in the final lectures. Prerequisite: ECE 5500 Power System Analysis and ECE 5511 Transients in Power Systems or equivalent background experience is suggested. Familiarity with the basics of Laplace Transforms, derivatives, transfer functions, poles and zeros, block diagram and the notion of feedback with basic understanding power system analysis topics recommended."
     clauses:
-      - strength: required
+      - strength: suggested
         timing: prior
         sourceText: "Prerequisite: ECE 5500 Power System Analysis and ECE 5511 Transients in Power Systems or equivalent background experience is suggested."
         requirement:
@@ -815,11 +843,17 @@ entries:
           of:
             - kind: course
               course: ECE|5500
+              orEquivalent: true
             - kind: course
               course: ECE|5511
               orEquivalent: true
+      - strength: recommended
+        timing: prior
+        sourceText: Familiarity with the basics of Laplace Transforms, derivatives, transfer functions, poles and zeros, block diagram and the notion of feedback with basic understanding power system analysis topics recommended.
+        requirement:
+          kind: topic
+          topic: Laplace transforms, derivatives, transfer functions, poles and zeros, block diagrams, feedback, and basic power system analysis
     noCreditWith: []
-    needsReview: The source says the equivalent background is 'suggested'; the prerequisites are recorded as required.
   - courseId: ECE|5532
     description: "This course introduces the characteristics and challenges of interconnecting increasing numbers of Distributed Energy Resources (DERs) to the Electric Power System (EPS). Topics include: challenges to distribution and transmission system protection; local voltage control; ride through; optimal interconnection transformer configurations; and practical engineering approaches to maintain system reliability and protection. The current and evolving interconnection standard (IEEE 1547) is included. Prerequisites: Since the course material builds on power system analysis capabilities, including system protection and controls, ECE 5500 Power System Analysis and either ECE 5520 Power System Protection & Control or ECE 5521 Protective Relaying are required. Also, it is recommended that students take this course after completing ECE 5530 Power Distribution."
     clauses:

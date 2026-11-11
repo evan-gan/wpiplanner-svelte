@@ -73,8 +73,13 @@ entries:
               topic: fundamentals of chemistry
             - kind: topic
               topic: basic chemistry laboratory techniques
+      - strength: recommended
+        timing: priorOrConcurrent
+        sourceText: This course may be taken concurrently or following lecture courses in organic chemistry.
+        requirement:
+          kind: topic
+          topic: lecture courses in organic chemistry
     noCreditWith: []
-    needsReview: The lab-technique examples are introduced with 'e.g.'.
   - courseId: CH|2650
     description: "Cat. I This laboratory course emphasizes principles, techniques, and instrumentation employed in modern physical chemistry with a view towards applications throughout the molecular sciences. Investigations include chemical thermodynamics and phase equilibria; gas-phase, solution-phase, and interfacial reaction kinetics and dynamics; and molecular modeling of small molecules. Emphasis includes data collection, interpretation, error analysis, and write-up. Recommended background: Fundamentals in chemistry (see CH 1010 – CH 1040), knowledge in thermodynamics (see CH 3510)."
     clauses:
@@ -131,7 +136,6 @@ entries:
             - kind: topic
               topic: basic chemistry laboratory techniques
     noCreditWith: []
-    needsReview: The lab-technique examples are introduced with 'e.g.'.
   - courseId: CH|2670
     description: "Cat. IThe synthesis, isolation, and characterization of inorganic compounds are emphasized. Syntheses of main group compounds, classical transition metal complexes, and organotransition metal compounds are included. In addition to reinforcing and building on standard techniques of synthesis and characterization, several new techniques are introduced: synthesis under inert atmosphere, measurement of magnetic susceptibility by NMR, and cyclic voltammetry. Some exposure to 13C NMR is also provided. The final experiment of the course requires the student to design a synthesis for a compound selected from a list provided, based on strategies learned in the course.Recommended background: Principles of inorganic chemistry, chemical bonding and reactions, thermodynamic stability of inorganic species, solubility and precipitation of inorganic compounds. Advanced chemistry laboratory skills (see CH 2660)"
     clauses:
@@ -162,13 +166,24 @@ entries:
             - kind: topic
               topic: chemical thermodynamics
             - kind: topic
-              topic: calculus I through IV
+              topic: Calculus I – IV
               satisfiedBy:
-                kind: topic
-                topic: equivalent courses
+                kind: allOf
+                of:
+                  - kind: course
+                    course: MA|1021
+                    orEquivalent: true
+                  - kind: course
+                    course: MA|1022
+                    orEquivalent: true
+                  - kind: course
+                    course: MA|1023
+                    orEquivalent: true
+                  - kind: course
+                    course: MA|1024
+                    orEquivalent: true
     noCreditWith:
       - CH|352X
-    needsReview: "'Calculus I – IV' names no course ids, so only topics were recorded."
   - courseId: CH|3530
     description: "Cat. I An introduction to quantum mechanics with applications to atomic and molecular species. The course will be developed systematically beginning with the postulates of quantum mechanics. The Schroedinger equation will be applied to systems such as the particle in a box, the rigid rotor, the harmonic oscillator and the hydrogen atom. Emphasis will be given to a quantum mechanical description of multielectron atoms, molecular bonding and spectroscopy. Recommended background: a solid foundation in elementary physics and calculus. This course is normally for students in their third year."
     clauses:
@@ -331,16 +346,18 @@ entries:
           kind: topic
           topic: a basic understanding of the principles governing organic reactions
           satisfiedBy:
-            kind: anyOf
+            kind: allOf
             of:
               - kind: course
                 course: CH|2310
+                orEquivalent: true
               - kind: course
                 course: CH|2320
+                orEquivalent: true
               - kind: course
                 course: CH|2330
+                orEquivalent: true
     noCreditWith: []
-    needsReview: The organic chemistry courses are given as examples ('such as'), so they are not exhaustive.
   - courseId: CH|4420
     description: "Cat. I The principles and applications of group theory as a tool in chemistry are presented with an emphasis on systems in inorganic chemistry. Topics covered include the development of symmetry group representations and character tables, applications of group theory in quantum-mechanical wavefunctions, molecular vibrations, ligand field theory, and molecular orbital theory. Particular emphasis will be placed on transition metal complexes, including classical coordination complexes, metal carbonyl complexes, and organotransition metal complexes. Recommended Background: CH 1010 - CH 1040, CH 2640 - CH 2670, CH 3410, CH 3530, and CH 3550, and a fundamental understanding of atomic, molecular and solid state structures and properties. Thermodynamic stabilities of inorganic species. Acidity, solubility and precipitation of inorganic compounds (see CH3410)."
     clauses:
@@ -375,7 +392,6 @@ entries:
             - kind: topic
               topic: a fundamental understanding of atomic, molecular and solid state structures and properties
     noCreditWith: []
-    needsReview: Course ranges (CH 1010 - CH 1040, CH 2640 - CH 2670) were expanded to each number in the range, assuming every course in between exists.
   - courseId: CH|520
     description: Cell signaling defines the way cells respond to changes in their environment including, heat, nutrients, drugs, hormones, and other factors. These external factors allow cells to grow, divide, migrate and proliferate depending on the stimulus, and inappropriate responses lead to cancer and other diseases. This course is directed for advanced undergraduates and graduate level course that is a combination of on-line lectures, discussions, and review of recent literature. Students who previously took the CH 555 version of this course cannot take CH 520 for credit.
     clauses: []
@@ -395,10 +411,11 @@ entries:
             of:
               - kind: course
                 course: CH|2310
+                orEquivalent: true
               - kind: course
                 course: CH|2320
+                orEquivalent: true
     noCreditWith: []
-    needsReview: The CH 2310 / CH 2320 pair is given as an example ('e.g.'), so other foundations may also qualify.
   - courseId: CH|542
     description: "This class will introduce the concepts of basic neuropharmacology and the action of major neurotransmitter families in the brain. The mechanisms of action of the major psychoactive drugs families including cannabis, opioids, and psychedelics will be covered. The effects of pharmaceutical treatments for anxiety and depression on brain chemistry will be discussed as well. This course will be offered in 2020-2021 and alternating years thereafter. Recommended Background: Fundamental understanding of introductory biochemistry (CH4110, CH4120, and/or CH4130)."
     clauses:

@@ -126,7 +126,6 @@ entries:
           kind: other
           text: Knowledge of the subject matter in at least two Civil Engineering design courses
     noCreditWith: []
-    needsReview: Says 'expected background' with no lead word. Recorded as recommended; which two design courses is not named.
   - courseId: CE|3041
     description: "Cat. I This is an introductory course dealing with the science and technology of earth materials with an emphasis on fundamental concepts of particulate mechanics. The topics which are discussed include fluid flow through porous media, deformation and shear characteristics of soil, consolidation, lateral earth pressure, and slope stability. Recommended background: CE 2000 and CE 2001. Suggested background: GE 2341."
     clauses:
@@ -249,7 +248,6 @@ entries:
           kind: course
           course: GE|2341
     noCreditWith: []
-    needsReview: The source text repeats the phrase 'Recommended background' twice; read as one recommended list.
   - courseId: CE|4063
     description: "Cat. II In this course, students will learn to make quantitative relationships between human activities and the effects on water, soil, and air in the environment. Students will learn the scientific and engineering principles that are needed to understand how contaminants enter and move in the environment, how compounds react in the environment, how to predict their concentrations in the environment, and how to develop solutions to environmental problems. Topics to be covered may include water quality engineering (including microbial interactions), air quality engineering, and hazardous waste management. Recommended Background: familiarity with transport phenomena, such as in ES 3004 (Fluid Mechanics) and ES 3002 (Mass Transfer), and familiarity with reaction kinetics and reactor design, such as through CHE 3201 (Kinetics and Reactor Design). Background such as CE 3059 (Environmental Engineering), CE 3060 (Water Treatment), or CE3061 (Wastewater Treatment) is suggested. This course will be offered in 2020-21, and in alternating years thereafter"
     clauses:
@@ -286,7 +284,6 @@ entries:
             - kind: course
               course: CE|3061
     noCreditWith: []
-    needsReview: "'such as' examples are not exhaustive."
   - courseId: CE|4071
     description: Cat. I The purpose of this course is to provide an understanding of the regulatory framework under which land is developed and the built environment is designed. The quality of our environment depends upon the development which is permitted to take place and the controls which direct that development. Through this course, the student will learn the principles, methods, and techniques which a planner or engineer may use to plan and design the highest and best uses and development of land. In particular, the use and limits of zoning, special permits, subdivision control, and other tools with which a developer or planner should be familiar will be examined in detail. Some sections of this course may be offered as Writing Intensive (WI).
     clauses: []
@@ -341,7 +338,7 @@ entries:
     noCreditWith:
       - ME|533
       - CE|524
-    needsReview: The no-credit rule also names 'Special Topics (ME 593E)', which the course-id pattern cannot store. Not recorded.
+      - ME|593
   - courseId: CE|580
     description: "This course develops an understanding of the managerial principles and techniques used throughout a construction project as they are applied to its planning, preconstruction and construction phases. The course emphasizes the integrative challenges of the human, physical and capital resources as experienced from the owner’s point of view in the preconstruction phase of a project. Through assignments and case studies, the course reviews the complex environment of the construction industry and processes, project costing and economic evaluation, project organization, value engineering, time scheduling, contracting and risk allocation alternatives, contract administration, and cost and time control techniques. (Prerequisites: CE 3020, CE 3025, or equivalent.)"
     clauses:

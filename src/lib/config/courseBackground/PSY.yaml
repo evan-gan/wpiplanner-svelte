@@ -44,7 +44,17 @@ entries:
       - MU|2501
   - courseId: PSY|3211
     description: "PSY 3211: Positive Psychology: The Science and Practice of Well-Being Category: II Units: 1/3 Positive psychology is the scientific study of positive experiences, character strengths and the practices that enable individuals and communities alike to thrive. This course invites students to understand factors that allow an individual to thrive and lead a meaningful and fulfilling life. Students will review the literature from psychological science, neuroscience, and applied practice research that empirically supports the psychological understanding of how to foster happiness, well-being, flourishing, and purpose in one’s life. Course topics covered from both a scientific/theoretical basis, and experiential manner, may include: gratitude, strengths, mindfulness, meditation, values, forgiveness, resilience, vulnerability, etc. Special attention will be given to experiential learning, including mindfulness practice and other evidence-based strategies that elicit positive emotion and increase stress coping, optimism, and resilience. This course is particularly suited for students with an interest in fostering mental health and wellbeing. No prior experience with psychology is needed to take this course. Courses in PSY 1400: Introduction to Psychology or PSY 2412: Mental Health may be beneficial."
-    clauses: []
+    clauses:
+      - strength: suggested
+        timing: prior
+        sourceText: "Courses in PSY 1400: Introduction to Psychology or PSY 2412: Mental Health may be beneficial."
+        requirement:
+          kind: anyOf
+          of:
+            - kind: course
+              course: PSY|1400
+            - kind: course
+              course: PSY|2412
     noCreditWith: []
   - courseId: PSY|3300
     description: "This interdisciplinary course integrates educational psychology and cognitive science to equip pre-service STEM educators with strategies that support diverse learners in K-12 settings. Students will explore cognitive load theory, differentiated instruction and Universal Design for Learning (UDL), applying these concepts to enhance student engagement and outcomes for students with disabilities. The course emphasizes the role of social learning theory and cognitive developmental theory in shaping student behavior and motivation. Culturally responsive teaching practices, traumainformed approaches and collaboration with families and communities are also key components that will be explored through case studies, classroom observations, and scenario-based role plays. Students will develop practical skills in instructional lesson design and implementation and demonstrate their knowledge and understanding of course learning objectives through a final project that aligns coursework to real-world teaching scenarios. Recommended background: EDU 2200, EDU 2300"

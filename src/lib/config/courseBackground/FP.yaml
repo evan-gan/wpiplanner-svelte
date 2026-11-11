@@ -23,8 +23,8 @@ entries:
             kind: course
             course: FP|3070
             orEquivalent: true
-    noCreditWith: []
-    needsReview: Says students cannot get credit for both FP 4001 and FP 580S. 'FP 580S' has a letter suffix, which the course-id pattern does not allow, so it is not recorded in noCreditWith.
+    noCreditWith:
+      - FP|580
   - courseId: FP|520
     description: "Modeling of compartment fire behavior is studied through the use and application of two types of models: zone and field. The zone model studied is a student developed model. The field model studied is FDS. Focus on in-depth understanding of each of these models is the primary objective in terms of needed input, equations solved, interpretation of output and limitations. A working student model is required for successful completion of the course. Basic computational ability is assumed. Basic numerical methods are used and can be learned during the course via independent study. (Prerequisite: FP 521 or permission of the instructor.)"
     clauses:
@@ -89,7 +89,6 @@ entries:
             - kind: permission
               text: special permission of the instructor
     noCreditWith: []
-    needsReview: Text writes the codes as FPE 553 / FPE 521 / FPE 570; mapped to the FP department ids the catalog uses for this course.
   - courseId: FP|573
     description: "Principles of fire dynamics, heat transfer and thermodynamics are combined with a general knowledge of automatic detection and suppression systems to analyze fire protection requirements for generic industrial hazards. Topics covered include safe separation distances, plant layout, hazard isolation, smoke control, warehouse storage, and flammable liquid processing and storage. Historic industrial fires influencing current practice on these topics are also discussed. (Prerequisites: FPE 553, FPE 521 or special permission of the instructor.)"
     clauses:
@@ -108,7 +107,6 @@ entries:
             - kind: permission
               text: special permission of the instructor
     noCreditWith: []
-    needsReview: Text writes the codes as FPE 553 / FPE 521; mapped to FP. 'FPE 553, FPE 521 or special permission' read as (both courses) or permission.
   - courseId: FP|582
     description: "FP 582: Quantitative Risk Analysis (3 credits) This course will cover fundamentals of facility siting studies (FSS), quantitative risk assessments (QRA) and mitigation techniques. The primary objectives are to provide a thorough foundation and knowledge of the inputs, methodologies and typical types of results for FSS and QRAs. It will also provide knowledge of how QRAs can be used to identify and prioritize risk mitigation strategies to make informed and effective risk mitigation decisions. This course is ideal for PSM managers, process safety engineers, facility siting coordinators / SMEs, and anyone involved in the facility siting decision making process."
     clauses: []

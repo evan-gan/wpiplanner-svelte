@@ -150,7 +150,6 @@ entries:
             - kind: topic
               topic: foundational understanding of programming concepts
     noCreditWith: []
-    needsReview: Lead phrase is 'Recommended background', but the text says the experience is helpful but not required and the software/programming is optional. Recorded as suggested, not recommended.
   - courseId: AREN|2023
     description: Cat. IThe objective of this course is to introduce the functional parts and systems thatmake up a building as well as their interactions in delivering required sustainableperformance. It encompasses foundations, structures, building enclosures,heating and air conditioning, electrical, plumbing and fire safety systems as wellas concepts of building performance and aspects of pertinent building codes andstandards. This course, in addition, incorporates basic principles of buildingscience and green construction.
     clauses: []

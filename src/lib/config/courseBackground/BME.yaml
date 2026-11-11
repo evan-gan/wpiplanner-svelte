@@ -37,7 +37,6 @@ entries:
               course: CH|1010
               orEquivalent: true
     noCreditWith: []
-    needsReview: "'PH 1120/21' read as PH 1120 or PH 1121."
   - courseId: BME|2211
     description: "Cat. I To learn the fundamentals of basic signal processing methods as well as linear time series analyses framework for modeling and mining biological data. Tools of data analysis include statistics for determining significance of a result, Laplace and Z transforms, convolution, correlation, sampling theorem, Fourier transform, transfer function, coherence function and various filtering techniques. The goal of this course is to offer the students an opportunity to learn and model and simulate static and dynamic physiological systems using linear systems theory. First principles of chemistry and physics are used to quantitatively model physiological systems. Most of the models are based on linear systems theory. Simulations and estimation are performed using Matlab and already-developed software. Recommended background: BME 2210, CS 1004 or equivalent."
     clauses:
@@ -155,8 +154,27 @@ entries:
     noCreditWith: []
   - courseId: BME|3112
     description: "BME 3112 Human Physiology for Biomedical Engineers 1/3 unit (Cat. I) This course provides students with an understanding of the structure, function and pathologies of physiological systems such as the cardiovascular, respiratory, and the renal system. The course will teach the mechanisms of organ function from an engineering standpoint that help students understand the principles and techniques employed in designing devices used to treat or correct pathological conditions in these organ systems. Students will gain a better understanding of the interface between physiology and device design used in medical devices such as stents, catheters, pacemakers, ECG machines, and other devices as applicable. Special emphasis will be given to group discussions where students will discuss disease pathologies and review the devices used to treat those conditions. Students will be encouraged to review the device design and suggest improvements for better patient outcomes. Other topics covered in the course include regenerative medicine, biomedical ethics and the concept of “Bioinspired design”. This course will not count towards the “Biomedical Engineering and Engineering” course requirement for Biomedical Engineering majors. Students who have received credit for BME3111 cannot receive credit for BME3112. Recommended Background: A knowledge of Human biology (such as BB 1025 or equivalent) and Cell Biology (such as BB 2550 or equivalent)."
-    clauses: []
-    noCreditWith: []
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: A knowledge of Human biology (such as BB 1025 or equivalent) and Cell Biology (such as BB 2550 or equivalent)."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: human biology
+              satisfiedBy:
+                kind: course
+                course: BB|1025
+                orEquivalent: true
+            - kind: topic
+              topic: cell biology
+              satisfiedBy:
+                kind: course
+                course: BB|2550
+                orEquivalent: true
+    noCreditWith:
+      - BME|3111
   - courseId: BME|3113
     description: "In this laboratory course, students will conduct hands-on experiments to become familiar with medical devices used for research and clinical practice. Working with ultrasound, electrocardiogram, otoscope, spirometry, pulse oximetry, and other devices as available, students will design experiments to measure, model, and provide mathematical descriptions of biomedical activity. We will discuss appropriate equipment for assessing specific disease states or conditions and use computational modeling to interpret data. This course is appropriate for students with an interest in pursuing a clinical career, working in a medical research setting, or a career in medical devices. Students may not receive credit for both BME 3113 and BME 311X. This course will be offered, at a minimum, in academic years ending in odd numbers. Recommended Background: Basic knowledge of human physiology (e.g., BME 3112 or equivalent) and computer programming (e.g., BME 1004 or equivalent)."
     clauses:
@@ -180,13 +198,12 @@ entries:
                 orEquivalent: true
     noCreditWith:
       - BME|311X
-    needsReview: The examples are introduced with 'e.g.', so other courses may also qualify.
   - courseId: BME|322X
     description: "This course introduces how artificial intelligence (AI) is used in biomedical engineering by examining clinically-relevant AI modules and end-to-end systems. The course emphasizes the engineering workflow required to build, validate, and communicate biomedical AI solutions that operate on biosignals (e.g., ECG, EMG, EEG), medical images (e.g., CT, MRI, ultrasound), and multimodal clinical datasets. Students will learn to implement and evaluate AI-enabled pipelines that produce actionable system outputs using a consistent schema across signals and imaging (e.g., risk_score, alarm, quality, and review_flag). Emphasis is placed on reproducibility, responsible validation, reliability (quality gating and human review workflows), and clear reporting, using hands-on laboratories and applied case studies relevant to digital health and clinical decision support. Case studies are educational and emphasize responsible evaluation, reporting, and workflow design rather than deployment in clinical care. The course is designed for junior-level undergraduate students in biomedical engineering and related fields who want practical, career-relevant skills in biomedical AI, computational medicine, and clinical translation. Recommended Background: General knowledge of: Undergraduate-level calculus (e.g., MA 1021/MA 1022, or equivalent) and basic linear algebra (e.g., MA 2071, or equivalent), introductory probability/statistics (e.g., MA 2610, MA 2611, or MA 2621, or equivalent), programming experience obtained through CS 1004, BME 1004, or equivalent. Prior exposure to biomedical data analysis, such as topics covered in BME 2211, is recommended."
     clauses:
       - strength: recommended
         timing: prior
-        sourceText: "Recommended Background: General knowledge of: Undergraduate-level calculus (e.g., MA 1021/MA 1022, or equivalent) and basic linear algebra (e.g., MA 2071, or equivalent), introductory probability/statistics (e.g., MA 2610, MA 2611, or MA 2621, or equivalent), programming experience obtained through CS 1004, BME 1004, or equivalent"
+        sourceText: "Recommended Background: General knowledge of: Undergraduate-level calculus (e.g., MA 1021/MA 1022, or equivalent) and basic linear algebra (e.g., MA 2071, or equivalent), introductory probability/statistics (e.g., MA 2610, MA 2611, or MA 2621, or equivalent), programming experience obtained through CS 1004, BME 1004, or equivalent."
         requirement:
           kind: allOf
           of:
@@ -232,8 +249,17 @@ entries:
                   - kind: course
                     course: BME|1004
                     orEquivalent: true
+      - strength: recommended
+        timing: prior
+        sourceText: Prior exposure to biomedical data analysis, such as topics covered in BME 2211, is recommended.
+        requirement:
+          kind: topic
+          topic: biomedical data analysis
+          satisfiedBy:
+            kind: course
+            course: BME|2211
+            orEquivalent: true
     noCreditWith: []
-    needsReview: Many course examples are given with 'e.g.'. Text is cut off in the catalog after 'or equivalen', so the tail was not checked.
   - courseId: BME|3300
     description: Cat. I Students are guided through the open-ended, real-world, design process starting with the project definition, specification development, management, team interactions and communication, failure and safety criteria, progress reporting, marketing concepts, documentation and technical presentation of the final project outcome. The course will include a significant writing component, will make use of computers, and hands-on design explorations. Students who have previously received credit for BME 2300 may not receive credit for BME 3300.
     clauses: []
@@ -266,7 +292,7 @@ entries:
     clauses:
       - strength: recommended
         timing: prior
-        sourceText: "Recommended background: Basic knowledge of differential and integral calculus (e.g., MA 2051 or equivalent), fundamental knowledge of biological system function or cell function (e.g., BB 1035 or BB 2550 or equivalent), fundamentals of data analysis and process modeling such as some of the topics covered in BME 2211 or BME 2610"
+        sourceText: "Recommended background: Basic knowledge of differential and integral calculus (e.g., MA 2051 or equivalent), fundamental knowledge of biological system function or cell function (e.g., BB 1035 or BB 2550 or equivalent), fundamentals of data analysis and process modeling such as some of the topics covered in BME 2211 or BME 2610 or ChE 2011, or equivalent."
         requirement:
           kind: allOf
           of:
@@ -294,11 +320,15 @@ entries:
                 of:
                   - kind: course
                     course: BME|2211
+                    orEquivalent: true
                   - kind: course
                     course: BME|2610
+                    orEquivalent: true
+                  - kind: course
+                    course: CHE|2011
+                    orEquivalent: true
     noCreditWith:
       - BME|361X
-    needsReview: "'such as some of the topics covered in BME 2211 or BME 2610' and the 'e.g.' examples are not exhaustive."
   - courseId: BME|3811
     description: "Cat I (1/6 units) This laboratory-driven course provides hands-on experience in the design, fabrication and characterization of biomaterials for medical applications. Students will use synthetic and natural polymer materials to fabricate a scaffold for applications such as tissue engineering, wound healing or controlled drug delivery. A challenge-based laboratory project will be assigned which will require the students to design a biomaterial scaffold that meets specific design criteria, and quantitatively assess the properties of this scaffold to evaluate how well the criteria were met. Design criteria may include mechanical strength, biocompatibility, porosity, degradation rate, or release kinetics. Students will complete the project at their own pace in a team setting and communicate their findings effectively. Recommended background: Basic chemistry (CH 1010 and CH 1020) and a knowledge of material science (ES 2001) or equivalent."
     clauses:
@@ -352,7 +382,6 @@ entries:
               course: ECE|2312
               orEquivalent: true
     noCreditWith: []
-    needsReview: Two-course list with 'or equivalent' read as both courses. It could also mean either one.
   - courseId: BME|4012
     description: "BME 4012 Biomedical Sensors and Instrumentation Laboratory: Applications (1/6 units; Cat. I) This applications lab is a sequential extension of the corresponding techniques lab (BME 3012 and BME 3013). The lab course provides students with experience of utilizing biomedical sensors and instrumentation and their applications for biomedical engineering. The students will learn about the appropriate selection of sensors for clinically relevant problems. The students will work on design projects in teams to develop their instrumentation system that demonstrates proof-of-concept of a potentially useful biomedical instrument, analyzing and interpreting data and effective communication skills. The lab will build on the concepts in sensors and instrumentation introduced in BME 3012 Biomedical Sensors Laboratory: Techniques and BME 3013 Biomedical Instrumentation Laboratory: Techniques, and lower-level instrumentation and data analysis courses. Recommended Background: Knowledge obtained in BME 3012, BME 3013 and ability to perform statistical analysis of the data."
     clauses:
@@ -461,8 +490,19 @@ entries:
     noCreditWith: []
   - courseId: BME|4505
     description: "Cat. I (1/6 unit) This laboratory-driven solid biomechanics course provides hands-on experience in characterizing the mechanical properties of biological tissues such as bone, tendons, ligaments, skin, and blood vessels and their synthetic analogs, in the context of an authentic challenge. Students gain an in-depth understanding of the course material from personal observations, measurements, and analysis of biological tissues and synthetic replacement/fixation materials using industry-standard testing equipment. A challenge-based laboratory project will be assigned which will require the students to determine and execute effective test methods at their own pace in a team setting and communicate their findings effectively. Recommended background: Ability to independently perform tensile and bending tests using a uniaxial mechanical testing machine and to perform mechanical and statistical analysis of test data (BME3505). Students who have previously taken BME3504 may not receive credit for this course. Some sections of this course may be offered as Writing Intensive (WI). ~Note: Students who previously took BME 3506 will not get credit for BME 4505"
-    clauses: []
-    noCreditWith: []
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Ability to independently perform tensile and bending tests using a uniaxial mechanical testing machine and to perform mechanical and statistical analysis of test data (BME3505)."
+        requirement:
+          kind: topic
+          topic: ability to independently perform tensile and bending tests and to perform mechanical and statistical analysis of test data
+          satisfiedBy:
+            kind: course
+            course: BME|3505
+    noCreditWith:
+      - BME|3504
+      - BME|3506
   - courseId: BME|4507
     description: "BME 4507. Skeletal Biomechanics Laboratory: Applications (1/6 units; Cat. I) This application lab is a sequential extension of the corresponding techniques lab (BME 3507). This course provides hands-on experience with applying/utilizing state-of-the-art mechanical testing equipment and software to characterize whole-body biomechanics, including balance, strength, and movement, in the context of an authentic real-world challenge. Students will work in teams to design and execute experiments, utilize appropriate testing equipment, analyze, and interpret data, and effectively communicate results. Recommended Background: A demonstrated ability to independently use skeletal biomechanics equipment to measure balance, kinetics, and kinematics is essential (BME 3507) and the ability to perform statistical analysis of test data."
     clauses:
@@ -503,7 +543,7 @@ entries:
     clauses:
       - strength: recommended
         timing: prior
-        sourceText: Recommended Background:Theory and laboratory techniques
+        sourceText: "Recommended Background:Theory and laboratory techniques related to measurement of process variables such as pressure and flow rates, molecular diffusion apparatus and related equipment covered in BME 3607 Biotransport Laboratory: Techniques, Basic Chemistry (CH 1010, CH 1020), Basic Physics (PH 1010), and a knowledge of cell biology (BB 2550), and data analysis (BME 2210), or equivalent."
         requirement:
           kind: allOf
           of:
@@ -512,6 +552,7 @@ entries:
               satisfiedBy:
                 kind: course
                 course: BME|3607
+                orEquivalent: true
             - kind: topic
               topic: basic chemistry
               satisfiedBy:
@@ -519,17 +560,31 @@ entries:
                 of:
                   - kind: course
                     course: CH|1010
+                    orEquivalent: true
                   - kind: course
                     course: CH|1020
+                    orEquivalent: true
             - kind: topic
               topic: basic physics
               satisfiedBy:
                 kind: course
                 course: PH|1010
+                orEquivalent: true
             - kind: topic
-              topic: a knowledge of cell biology
-    noCreditWith: []
-    needsReview: Only the first part of the recommended-background sentence was checked; the cell biology item is not tied to a course id.
+              topic: cell biology
+              satisfiedBy:
+                kind: course
+                course: BB|2550
+                orEquivalent: true
+            - kind: topic
+              topic: data analysis
+              satisfiedBy:
+                kind: course
+                course: BME|2210
+                orEquivalent: true
+    noCreditWith:
+      - BME|3605
+    needsReview: Text names 'PH 1010', which is not in the catalog and is likely a typo (perhaps PH 1110); recorded as written.
   - courseId: BME|4701
     description: "Cat. I This course examines the principles of molecular and cell biology applied to the design of engineered molecules, cells and tissues. Topics will include the basic structural, chemical and physical properties of biomolecules (proteins, lipids, DNA and RNA), application of biomolecules to monitor and alter cellular processes in vitro and in vivo, and design considerations for engineering cell and molecular therapeutics. Case studies will be used to examine specific applications of molecular and cellular bioengineering technologies to treat disease and promote tissue repair and regeneration. Recommended background: Cell biology (BB 2550). Additional coursework in molecular biology (BB 2950) and/or genetics (BB 2920) would be beneficial. Students who earned credit for BME 37XX may not receive credit for BME 4701."
     clauses:
@@ -542,8 +597,24 @@ entries:
           satisfiedBy:
             kind: course
             course: BB|2550
+      - strength: suggested
+        timing: prior
+        sourceText: Additional coursework in molecular biology (BB 2950) and/or genetics (BB 2920) would be beneficial.
+        requirement:
+          kind: anyOf
+          of:
+            - kind: topic
+              topic: molecular biology
+              satisfiedBy:
+                kind: course
+                course: BB|2950
+            - kind: topic
+              topic: genetics
+              satisfiedBy:
+                kind: course
+                course: BB|2920
     noCreditWith: []
-    needsReview: No-credit rule names 'BME 37XX', which the course-id pattern cannot store. Not recorded.
+    needsReview: No-credit rule names 'BME 37XX', a placeholder number rather than a course; a human must identify which course it is before it can go in noCreditWith.
   - courseId: BME|4828
     description: "Cat. I This course examines the principles of materials science and cell biology underlying the design of medical devices, artificial organs and scaffolds for tissue engineering. Molecular and cellular interactions with biomaterials are analyzed in terms of cellular processes such as matrix synthesis, degradation and contraction. Principles of wound healing and tissue remodeling are used to study biological responses to implanted materials and devices. Case studies will be analyzed to compare tissue responses to intact, bioresorbable and bioerodible biomaterials. Additionally, this course will examine criteria for restoring physiological function of tissue and organs and investigate strategies to design implants and prostheses based on control of biomaterial-tissue interactions. Recommended background: BB 2550 or equivalent, ES 2001 or equivalent, PH 1110 or PH 1111."
     clauses:
@@ -599,7 +670,6 @@ entries:
                     course: BB|2550
                     orEquivalent: true
     noCreditWith: []
-    needsReview: The examples are introduced with 'e.g.', so other courses may also qualify.
   - courseId: BME|520
     description: 'This course introduces Biomechanics and Robotics as a unified subject addressing living and man-made "organisms". It draws deep connections between the natural and the synthetic, showing how the same principles apply to both, starting from sensing, through control, to actuation. Those principles are illustrated in several domains, including locomotion, prosthetics, and medicine. The following topics are addressed: Biological and Artificial sensors, actuators and control, Orthotics Biomechanics and Robotics, Prosthetic Biomechanics and Robotics: Artificial Organs and Limbs, Rehabilitation Robotics and Biomechanics: Therapy, Assistance and Clinical Evaluation, Human-Robot Interaction and Robot Aided Living for Healthier Tomorrow, Sports, Exercise and Games: Biomechanics and Robotics, Robot-aided Surgery, Biologically Inspired Robotics and Micro- (bio)robotics, New Technologies and Methodologies in Medical Robotics and Biomechanics, Neural Control of Movement and Robotics Applications, Applied Musculoskeletal Models and Human Movement Analysis. This course meshes physics, biology, medicine and engineering and introduce students to subject that holds a promise to be one of the most influential innovative research directions defining the 21st century. Recommended background: foundation of physics, linear algebra and differential equations; basic programming skills e.g. using MATLAB, undergraduate level biomechanics, robotics.'
     clauses:
@@ -708,8 +778,8 @@ entries:
                 - kind: course
                   course: RBE|3001
                   orEquivalent: true
-    noCreditWith: []
-    needsReview: The special-topics no-credit rule names 'ME 593U', which the course-id pattern cannot store. Not recorded.
+    noCreditWith:
+      - ME|593
   - courseId: BME|593
     description: "Clear oral, written, and graphical communication of scientific methods and data is an essential skill for success, both in research and in industry. This course will cover aspects of scientific communication including: scientific manuscript preparation and the peer review process, technical report organization, graphical presentation of quantitative data, and oral presentation of scientific information. Organization and clarity will be emphasized in communicating scientific methods, results, and interpretation. Students will complete regular writing and presentation assignments and participate in peer critique sessions. Students will complete an original research article, review article, or technical report as a final project. Students may not receive credit if they previously completed this course as BME 595: Special Topics. *Does not fulfil technical depth requirement."
     clauses: []
@@ -718,7 +788,7 @@ entries:
   - courseId: BME|595
     description: BME 595-ST/ECE 539-ST Wearable/Mobile Sensors and Systems (3 credits) This course explores the design and application of small-size, low-power wearable sensors, with a focus on medical- and health-related uses. Students will begin by learning about sensor technologies and electronic circuits that transduce common physiologic signals, including the electrocardiogram (ECG), electromyogram (EMG), electroencephalogram (EEG), photoplethysmogram (PPG; for pulse oximetry), transcutaneous oxygen measurement, temperature, and inertial measurement units (IMUs). The course then delves into modern system-on-chip (SoC) microcontroller units, which serve as small edge devices equipped with analog-to-digital converters (ADC), processors and integrated wireless connectivity via Bluetooth Low Energy (BLE). Students will study the architecture and programming of these systems. Additionally, the course covers how a secondary BLE receiver on a more powerful device collects sensor data for display, storage and processing; including as part of the Internet of Things (IoT). Key topics in signal processing include online or off-line techniques such as heart rate estimation from ECG/PPG data and EMG-based control of prosthetic devices. Through hands-on labs, students will design, build and program functional sensor systems. Students should have a working knowledge of MATLAB (or Python) and C programming and an undergraduate background in analog circuits and computer engineering. Undergraduate background in digital signal processing and/or wireless signals would be helpful, but not necessary. This special topics course may be repeated for credit if different topics are covered.
     clauses:
-      - strength: suggested
+      - strength: recommended
         timing: prior
         sourceText: Students should have a working knowledge of MATLAB (or Python) and C programming and an undergraduate background in analog circuits and computer engineering.
         requirement:
@@ -728,8 +798,13 @@ entries:
               topic: working knowledge of MATLAB (or Python) and C programming
             - kind: topic
               topic: undergraduate background in analog circuits and computer engineering
+      - strength: suggested
+        timing: prior
+        sourceText: Undergraduate background in digital signal processing and/or wireless signals would be helpful, but not necessary.
+        requirement:
+          kind: topic
+          topic: undergraduate background in digital signal processing and/or wireless signals
     noCreditWith: []
-    needsReview: No lead word; 'should have' recorded as suggested. The 'digital signal processing would be helpful' sentence is not modelled.
   - courseId: BME|555
     description: This course covers microscale biological and physical phenomena and state-of-the-art techniques to measure and manipulate these processes. Topics include scaling laws, microfabrication, machining three-dimensional microstructures, patterning biomolecules, and designing and building microfluidic devices. We will cover various biomedical problems that can be addressed with microfabrication technology and their associated engineering challenges, with special emphasis on applications related to quantitative biology, tissue microengineering, controlling the cellular microenvironment, and clinical/diagnostic lab-on-a-chip devices.
     clauses: []

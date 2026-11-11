@@ -23,7 +23,6 @@ entries:
           kind: topic
           topic: background in a biological area at about the depth of a BB 2000 or BB 3000 level class
     noCreditWith: []
-    needsReview: The BB 2000 / BB 3000 level is a depth, not named courses, so no course ids were recorded.
   - courseId: BCB|402X
     description: "This course will introduce quantitative approaches to address outstanding questions from various biological disciplines. A combination of lectures, readings, and computational exercises will be used to illustrate how to use simple mathematical models to understand complex biological phenomena. We will discuss and examine different biological problems from diverse areas of biological research, including cell biology, genetics, and public health to highlight the broad applicability of these approaches. Primary scientific literature will be used to introduce these topics, as well as the quantitative experimental techniques used to test these models. Units: 1/3 Recommended Background: A strong background in cell biology and genetics ( BB 2 5 50 , BB2920 , or equivalent) ."
     clauses:
@@ -43,7 +42,6 @@ entries:
                 course: BB|2920
                 orEquivalent: true
     noCreditWith: []
-    needsReview: The text writes BB 2550 with spaces ('BB 2 5 50'); read as BB|2550.
   - courseId: BCB|501
     description: "This course will provide an overview of bioinformatics, covering a broad selection of the most important techniques used to analyze biological sequence and expression data. Students will acquire a working knowledge of bioinformatics applications through hands-on use of software to ask and answer biological questions. In addition, the course will provide students with an introduction to the theory behind some of the most important algorithms used to analyze sequence data (for example, alignment algorithms and the use of hidden Markov models). Topics covered will include protein and DNA sequence alignments, evolutionary analysis and phylogenetic trees, obtaining protein secondary structure from sequence, and analysis of gene expression including clustering methods. Students may not receive credit for both BCB 4001 and BCB 501. (Prerequisite: knowledge of genetics, molecular biology, and statistics at the undergraduate level.)"
     clauses:
@@ -93,7 +91,6 @@ entries:
           kind: other
           text: Prerequisites will vary with topic.
     noCreditWith: []
-    needsReview: Prerequisites depend on the topic offered that term; check the online supplement for each offering.
   - courseId: BCB|510
     description: (0 credits; pass/fail grading) This seminar provides an opportunity for students in the BCB program to present their research work, as well as hear research talks from guest speakers.
     clauses: []

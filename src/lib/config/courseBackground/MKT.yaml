@@ -133,7 +133,6 @@ entries:
     clauses: []
     noCreditWith:
       - MKT|598
-    needsReview: The excluded MKT 598 is the Special Topics offering titled Social Media Marketing; catalog id MKT|598 covers all MKT special topics, so the exclusion may be narrower.
   - courseId: MKT|568
     description: "MKT 568: Marketing Analytics (3 credits) Data is at the heart of this new era of marketing. The goal of this course is to provide the skills needed to make intelligent use of marketing data about customers, competitors, and the industry. The focus will be on the application of analytics techniques to enhance marketing decision-making in organizations. The course blends the art and science of marketing and prepares students to generate marketing insights from data in areas such as segmentation, targeting, positioning, product choice, customer satisfaction, and customer lifetime value analysis. This will be a hands-on course, in which students apply the concepts and techniques studied in class to actual business situations."
     clauses: []

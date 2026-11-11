@@ -305,7 +305,7 @@ entries:
     noCreditWith:
       - IMGD|2400
       - WR|2400
-    needsReview: "'such as that provided by' gives an example, so IMGD/WR 2450 may not be the only route."
+      - WR|3450
   - courseId: IMGD|3700
     description: "Cat. I This course covers drawing as it applies to concept art and illustration. The course begins with study of a human model and representational drawing. Following this, students work on drawing from the mind and applying the lessons learned from the figure drawing to creating concept art and illustration. Topics covered are shape recognition and recalling, inventing from the mind, creative starters, study of form and light, visual composition and developing a personal approach, working with individual strengths to create a compelling visual design. Students create a series of concept art exercises and apply these skills towards a personal project of their own. Recommended background: AR 2202, IMGD/AR 2700"
     clauses:
@@ -341,7 +341,6 @@ entries:
                 kind: course
                 course: IMGD|2905
     noCreditWith: []
-    needsReview: "'such as that provided by IMGD 2905' is an example, so other data analysis preparation may also qualify."
   - courseId: IMGD|4000
     description: "Cat. I This course focuses on the application of advanced Computer Science topics as they impact game development. Networking and distributed systems issues are addressed, including scalability and latency compensation techniques, for designing games for online multi-player environments. AI, graphics and physics techniques specific to game development are discussed. Students will implement games or parts of games that apply advanced Computer Science topics. Recommended background: IMGD 3000."
     clauses:
@@ -354,9 +353,14 @@ entries:
     noCreditWith: []
   - courseId: IMGD|4099
     description: "Cat. II (1/6 – 1/3 unit) Arranged by individual faculty with special expertise, this course explores emerging and experimental topics that are not covered by the regular IMGD offerings . Content and format varies to suit the interests and needs of the faculty and students . Specific course descriptions are disseminated by IMGD program in advance of the offering . This course may be repeated for different topic offerings . Recommended background: Varies depending on topic."
-    clauses: []
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Varies depending on topic."
+        requirement:
+          kind: other
+          text: Varies by topic.
     noCreditWith: []
-    needsReview: Recommended background 'varies depending on topic' and is not recorded.
   - courseId: IMGD|411X
     description: "CS/IMGD 411x Multiplayer Network Games This course provides students with an in-depth exploration of multiplayer networked games, covering both game system architectures and programming. Students will develop an understanding of multiplayer networked games from the Internet Protocol level to game programming (Application) level. Topics may include technologies to synchronize state in a distributed game world system (e.g., serialization), mitigate lag (e.g., latency compensation) and improve scalability (e.g., interest management). Students will complete a series of small- to medium-scale programming projects reinforcing lecture concepts and readings. Recommended background: CS 2301 Systems Programming for Non-Majors or CS 2303 Systems Programming Concepts Suggested background: CS 3013 Operating Systems, CS 3516 Computer Networks, IMGD 3000 Technical Game Development I"
     clauses:
@@ -417,7 +421,6 @@ entries:
                   - kind: course
                     course: IMGD|2900
     noCreditWith: []
-    needsReview: "'such as' examples are not exhaustive."
   - courseId: IMGD|5010
     description: In this course, students learn foundational theories and gain foundational skills in interactive media, game development, and computational media targeted at the graduate level, for students with a prior undergraduate background in related fields. Students will read about contemporary challenges in application of these fundamentals to IMGD-related projects, and build disciplinary knowledge and practices necessary for the creation of interactive media and/or games. Topics covered in this course alternate each year based on instructor. Different instantiations of the course cover topics in programming and computing in media contexts (computation studio), art asset conceptualization, creation, and iteration (visual arts studio), audio remixing and composition methods (audio lab), and narrative in interactive contexts (narrative design lab). This course will be offered each year, with topic defined by the faculty member teaching it.
     clauses: []

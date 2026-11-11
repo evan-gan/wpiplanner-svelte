@@ -226,7 +226,6 @@ entries:
           kind: topic
           topic: background in a biological area at about the depth of a BB 2000 or BB 3000 level class
     noCreditWith: []
-    needsReview: The BB 2000 / BB 3000 level is a depth, not named courses, so no course ids were recorded.
   - courseId: BB|3060
     description: "BB 3060 Animal Behavior This course will provide an introduction to the scientific study of animal behavior. A combination of lecture, reading, and videos will be used to illustrate how proximate and ultimate forces interact to shape animal behavior in complex and fascinating ways. Behavioral phenomena in all members of the animal kingdom will be discussed and analyzed from ecological, evolutionary, cognitive, and neurobiological perspectives to highlight how the use of an integrative approach has greatly accelerated our ability to solve complex behavioral problems. Primary scientific literature will be used to outline experimental tools and techniques used to investigate behavior in different contexts, including communication, foraging, navigation, mate choice, predation, and social behavior. Students may not earn credit for both BB2050 and BB3060. Units: 1/3 Category: Category I Recommended Background: A thorough understanding of ecology (BB 2040 Ecology or equivalent)."
     clauses:
@@ -544,11 +543,12 @@ entries:
                 of:
                   - kind: course
                     course: BB|1801
+                    orEquivalent: true
                   - kind: course
                     course: BB|3813
+                    orEquivalent: true
     noCreditWith:
       - BB|3570
-    needsReview: "'such as that offered in BB 1801 and BB 3813' is an example, so the lab requirement may be met other ways."
   - courseId: BB|3920
     description: "Cat. I Through lecture, reading, and discussion, this course will help students understand the origin of immune cells in bone marrow development, the distinction between innate and adaptive immunity, and the function of the immune system in health and disease. The mechanisms responsible for the exquisite specificity of the adaptive immune system will be described. Throughout the course, the probable paths of evolution of the immune system will be stressed. As examples of major genetic diseases of immunity, case studies will be discussed on a weekly basis. Recommended background: a working knowledge of the concepts in cell biology, genetics and biochemistry (BB 2550, BB 2920, CH 4110 and 4120 or equivalent)"
     clauses:
@@ -630,7 +630,6 @@ entries:
                 course: BB|2920
                 orEquivalent: true
     noCreditWith: []
-    needsReview: The text writes BB 2550 with spaces ('BB 2 5 50'); read as BB|2550.
   - courseId: BB|4050
     description: "BB4050: Cancer Biology In this course, students will learn and apply advanced cellular and molecular biology concepts to understand causes and consequences of cancer cell transformation. Through an integration of primary literature and lecture material students will explore how research into basic mechanisms of cancer biology is used to identify therapeutic targets and inform drug design. This course will cover discussion of the hallmarks of cancer including the deregulation of cell growth, cell death, and metabolism; corruption of genome stability; evasion of immune response; and metastatic potential. Students may not earn credit for both BB3050 and BB4050. Units: 1/3 Category: Category I Recommended Background: A thorough understanding of genetics (BB 2920 or equivalent), cell biology (BB 2550 or equivalent), and molecular biology (BB 3950 or equivalent)."
     clauses:
@@ -696,16 +695,21 @@ entries:
         timing: prior
         sourceText: "Recommended Background: Students should have a strong foundational knowledge of cell biology, molecular biology, and genetics, as would be obtained from BB2550, BB2920, and BB3950."
         requirement:
-          kind: allOf
-          of:
-            - kind: course
-              course: BB|2550
-            - kind: course
-              course: BB|2920
-            - kind: course
-              course: BB|3950
+          kind: topic
+          topic: cell biology, molecular biology, and genetics
+          satisfiedBy:
+            kind: allOf
+            of:
+              - kind: course
+                course: BB|2550
+                orEquivalent: true
+              - kind: course
+                course: BB|2920
+                orEquivalent: true
+              - kind: course
+                course: BB|3950
+                orEquivalent: true
     noCreditWith: []
-    needsReview: "'as would be obtained from' lists the courses that give the knowledge; read as all three."
   - courseId: BB|4900
     description: "BB 4900 Advanced Topics in Biology and Biotechnology (Cat. I; 1/3 unit) These classes will serve as integrative experiences for students majoring in Biology & Biotechnology. The course will help students integrate concepts from other courses in the curriculum, practice skills of critical analysis, and evaluate and communicate scientific information effectively. The specific theme of each offering will center around a current topic of biological interest, and may include such areas as genomics, cancer, environmental problems, and synthetic biology. Recommended Background: Prior to enrolling in the course, a student should have completed all of the BB course distribution requirements for BBT majors at the 1000 and 2000 level, or should seek advice from the course instructor. Topics will be announced prior to registration in the year preceding the course offering. Only one offering of BB 4900 can count toward BBT major distribution requirements, although additional offerings may be taken as free electives."
     clauses:
@@ -724,8 +728,8 @@ entries:
   - courseId: BB|508
     description: "Animal cell culture technology is about maintaining cells in vitro under controlled conditions. In recent decades this technology has advanced significantly, and animal cells are used in variety of application both in research and product development. The students in this course will be exposed to the different methodologies utilized to grow cells and how this technology is becoming critical in production of many of the health care products used to control human diseases. The course is covers four general skills (1) Basic techniques for culturing and sub-culturing animal cells and growth parameters, (2) Quality control of a cell culture laboratory/How to control contamination, (3) Primary cell culture and development of cell lines, and (4) Scale-up of cell culture from a T-Flask to a bioreactor. Note: Students may not receive credit for BB508 and BB570-198"
     clauses: []
-    noCreditWith: []
-    needsReview: Says students may not receive credit for BB508 and BB570-198. 'BB570-198' is not a valid course id, so it is not recorded.
+    noCreditWith:
+      - BB|570
   - courseId: BB|550
     description: BB 550 Cancer Biology In this course, students will learn and apply advanced cellular and molecular biology concepts to understand causes and consequences of cancer cell transformation. Through an integration of primary literature and lecture material students will explore how research into basic mechanisms of cancer biology is used to identify therapeutic targets and inform drug design. This course will cover discussion of the hallmarks of cancer including the deregulation of cell growth, cell death, and metabolism; corruption of genome stability; evasion of immune response; and metastatic potential. Students may not earn credit for both BB 4050 and BB 550. Credits 2
     clauses: []
@@ -734,8 +738,8 @@ entries:
   - courseId: BB|552
     description: (3 credits) This course will cover key elements to writing successful grant proposals and manuscripts. This includes project development, identification of funding agencies or journals, proposal and manuscript writing and editing, as well as aspects of the submission and review process. Students will be expected to develop a NIH/NSF style postdoctoral proposal outside their dissertation field and participate in a mock proposal review panel. Students are expected to complete this course prior to their Qualifying Exam. Students may receive credit for either BB552 or a BB570 course entitled Scientific Writing and Proposal Development but not both .
     clauses: []
-    noCreditWith: []
-    needsReview: Says students are expected to complete this course before their Qualifying Exam. Not labelled as a prerequisite, so no clause recorded.
+    noCreditWith:
+      - BB|570
   - courseId: BB|560
     description: "(3 credits) This course provides a detailed hands-on survey of state-of-the-art methods employed by the biotechnology industry for the purification of products, proteins in particular, from fermentation processes. Focus is on methods that offer the best potential for scale-up. Included is the theory of the design, as well as the operation of these methods both at the laboratory scale and scaled up. It is intended for biology, biotechnology, chemical engineering and biochemistry students. (Prerequisite: knowledge of basic biochemistry is assumed.)"
     clauses:
@@ -749,7 +753,8 @@ entries:
   - courseId: BB|562
     description: (3 credits) This course focuses on molecular events that regulate cell cycle transitions and their relevance to mammalian differentiated and undifferentiated cells. Topics include control of the G1/S and G2/M transitions, relationships between tumor suppressor genes such as p16, Rb, p53 or oncogenes such as cyclin D, cdc25A, MDM2 or c-myc and cell cycle control. Where appropriate, the focus is on understanding regulation of cell cycle control through transcriptional induction of gene expression, protein associations, posttranslational modifications like phosphorylation or regulation of protein stability like ubiquitin degradation. Students may receive credit for either BB562 or a BB570 course entitled Cell Cycle Regulation but not both .
     clauses: []
-    noCreditWith: []
+    noCreditWith:
+      - BB|570
   - courseId: BB|575
     description: "(3 credits) Topics in this course focus on the basic building blocks of life: molecules, genes and cells. The course will address areas of the organization, structure, function and analysis of the genome and of cells. (Prerequisite: A familiarity with fundamentals of recombinant DNA and molecular biological techniques as well as cell biology .)"
     clauses:
@@ -804,7 +809,6 @@ entries:
     clauses: []
     noCreditWith:
       - BB|570
-    needsReview: The BB 570 named is the Special Topics offering titled Model Systems; catalog id BB|570 is shared by all BB special topics, so the exclusion may be narrower.
   - courseId: BB|570
     description: (variable credit) Speciality subject courses are offered based on the expertise of the department faculty such as Stem Cell Biology.
     clauses: []

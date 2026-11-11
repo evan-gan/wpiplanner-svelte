@@ -56,7 +56,6 @@ entries:
             kind: course
             course: ES|1310
     noCreditWith: []
-    needsReview: The examples are introduced with 'such as', so other courses may also qualify.
   - courseId: RBE|2002
     description: "RBE 2002: Unified Robotics II: Sensing and Perception in Robotics (Units: 1/3, Cat. I) This course focuses on how robot control and decision processes are informed through sensors. The course covers the operation and integration of simple and complex sensors, including signal transduction, interface circuitry, and physical integration. Themes include how functionality guides sensor selection; how decision-making is affected by uncertainty, and how performance can be improved through signal conditioning, digital filtering, calibration, parameter selection, and sensor fusion. The course will address how sensor inputs can be used to generate representations of the environment, and how a robot uses information to achieve goals within its environment. Laboratory sessions consist of hands-on exercises and team projects where students specify and test a variety of sensors to accomplish specific tasks. Recommended background: Knowledge of Embedded Systems, such as covered in ECE 2049."
     clauses:
@@ -70,7 +69,6 @@ entries:
             kind: course
             course: ECE|2049
     noCreditWith: []
-    needsReview: The example is introduced with 'such as', so other courses may also qualify.
   - courseId: RBE|2020
     description: "1/3 Unit. This course delves into the core aspects of microcontrollers and electronic circuits for robotic systems management and design. Students will engage with interrupt service routines, state machines, and event-driven programming, crucial for process and state management in robotics. The course emphasizes the implementation of both software and hardware timers for robotic control and scheduling. A key focus of the course is on the electronic components of robots, including studies of op-amps and power/control circuits, equipping students with the skills to design and manage robot electronics. The course includes analog-to-digital and digital-to-analog converters, essential for converting sensory data between analog and digital formats. Students will explore communication techniques (SPI, I2C, PWM, etc.), vital for data exchange in robotic systems, and gain comprehensive knowledge of digital and analog electronics for effective sensor and actuator interfacing. The course also covers DC motors and DC motor control (speed, torque, and direction), analog filters for signal processing, sensor calibration, and an introduction to control systems, focusing on PID controllers. Laboratory sessions consist of hands-on exercises where students design and test electronic subsystems interfacing a robot for specific tasks. Compared to ECE 2049, this course explores more peripherals' practical applications in robotics systems but does not dive as deeply into microcontroller architecture. Students may apply RBE 2020 to the Embedded Systems requirement in Robotics Engineering. Credit is not permitted for both RBE 2020 and ECE 2049, regardless of major. Additionally, students cannot receive credit for both RBE 2020 and RBE 200X. Recommended Background: RBE 1001; fundamentals of electronics, such as found in ECE 2010; and programming experience, such as covered in CS 2119, CS 2102/3, CS 2301/3, or ECE 2039."
     clauses:
@@ -106,7 +104,7 @@ entries:
                     course: ECE|2039
     noCreditWith:
       - RBE|200X
-    needsReview: "'CS 2102/3' and 'CS 2301/3' read as CS 2102, CS 2103, CS 2301 and CS 2303. The 'such as' examples may not be exhaustive."
+      - ECE|2049
   - courseId: RBE|3001
     description: "Cat. IThird of a four-course sequence introducing foundational theory and practice ofrobotics engineering from the fields of computer science, electrical engineeringand mechanical engineering. The focus of this course is actuator design,embedded computing and complex response processes. Concepts of dynamicresponse as relates to vibration and motion planning will be presented. Theprinciples of operation and interface methods various actuators will be discussed,including pneumatic, magnetic, piezoelectric, linear, stepper, etc. Complexfeedback mechanisms will be implemented using software executing in anembedded system. The necessary concepts for real-time processor programming,re-entrant code and interrupt signaling will be introduced. Laboratory sessionswill culminate in the construction of a multi-module robotic system thatexemplifies methods introduced during this course.Recommended background: RBE 2002, ECE 2049, CS 2102, MA 2051, andMA 2071."
     clauses:
@@ -134,17 +132,20 @@ entries:
         timing: prior
         sourceText: "Recommended background: RBE 3001, ES 3011, MA 2621, or MA 2631."
         requirement:
-          kind: anyOf
+          kind: allOf
           of:
             - kind: course
               course: RBE|3001
             - kind: course
               course: ES|3011
-            - kind: course
-              course: MA|2621
-            - kind: course
-              course: MA|2631
+            - kind: anyOf
+              of:
+                - kind: course
+                  course: MA|2621
+                - kind: course
+                  course: MA|2631
     noCreditWith: []
+    needsReview: "Read as RBE 3001 + ES 3011 + (MA 2621 or MA 2631): the course is fourth in the RBE sequence after RBE 3001 and covers control and position estimation, and MA 2621/2631 are alternative probability courses. The text's grammar ('…, MA 2621, or MA 2631') could also be read as any one of the four; a human should confirm."
   - courseId: RBE|300X
     description: "This course introduces students to the concepts, techniques, and technologies involved with designing real-world systems software for robotics. Software for robot systems presents unique challenges, because of its inherent real-time, asynchronous, and distributed nature, as well as robots' interaction with the physical world. The course can be understood as a “build your own Robot Operating System (ROS) ”, in that its philosophy is to expose the students to the design and implementation challenges involved in creating systems software of this kind. In the first part of the course, the students will be introduced to foundational software architectures for robotics such as finite state machines, behavior trees, the subsumption architecture, and publish-subscribe architectures. The students will explore how to implement and combine these architectures into a coherent software framework. The second part of the course deals with fault and error management, specifically on the impact of these adverse events on architecture design. The final project will challenge the students to deploy and demonstrate their own software platform for navigation on a real robotic platform. RBE majors may use this course to fulfill their Software Engineering requirement. RBE/CS double majors should consider taking CS 3733 as it counts towards both majors. Recommended Background: Significant programming experience with an object-oriented language, such as Python or C++ , as found in CS 2102 . Fundamentals of robot motion and control, for example as found in RBE 2001 and RBE 2002 ."
     clauses:
@@ -157,8 +158,23 @@ entries:
           satisfiedBy:
             kind: course
             course: CS|2102
+            orEquivalent: true
+      - strength: recommended
+        timing: prior
+        sourceText: Fundamentals of robot motion and control, for example as found in RBE 2001 and RBE 2002 .
+        requirement:
+          kind: topic
+          topic: fundamentals of robot motion and control
+          satisfiedBy:
+            kind: allOf
+            of:
+              - kind: course
+                course: RBE|2001
+                orEquivalent: true
+              - kind: course
+                course: RBE|2002
+                orEquivalent: true
     noCreditWith: []
-    needsReview: The language examples and the 'as found in CS 2102' pointer are read as one route; other preparation may also qualify.
   - courseId: RBE|3100
     description: "Cat.IThis course introduces students to the social, moral, ethical, legal, and current or future philosophical issues within the context of robotic systems and related emerging technology. Students will be expected to contribute to classroom presentations, discussions and debates, and to complete a number of significant writing assignments. This course is recommended for juniors and seniors.Recommended background: A general knowledge of robots and robotic systems.Students may not receive credit for both RBE 3100 and RBE 310X."
     clauses:
@@ -489,7 +505,6 @@ entries:
                 kind: course
                 course: CS|4341
     noCreditWith: []
-    needsReview: "'such as CS 4341' is an example, so other AI courses may also qualify."
   - courseId: RBE|530
     description: "RBE 530 Soft Robotics (2 Credits) Soft robotics studies “intelligent” machines and devices that incorporate some form of compliance in their mechanics. Elasticity is not a byproduct but an integral part of these systems, responsible for inherent safety, adaptation and part of the computation in this class of robots. This course will cover a number of major topics of soft robotics including but not limited to design and fabrication of soft systems, elastic actuation, embedded intelligence, soft robotic modeling and control, and fluidic power. Students will implement new design and fabrication methodologies of soft robots, read recent literature in the field, and complete a project to supplement the course material. Existing soft robotic platforms will be available for experimental work. Prerequisites: Differential equations, linear algebra, stress analysis, kinematics, embedded programming"
     clauses:
@@ -628,8 +643,8 @@ entries:
                 - kind: course
                   course: RBE|3001
                   orEquivalent: true
-    noCreditWith: []
-    needsReview: The special-topics no-credit rule names 'ME 593U', which the course-id pattern cannot store. Not recorded.
+    noCreditWith:
+      - ME|593
   - courseId: RBE|594
     description: "This project-based course integrates robotics engineering theory and practice, and provides the opportunity to apply the skills and knowledge acquired in the Robotics Engineering curriculum. The project is normally conducted in teams of two to four students. Students are encouraged to select projects with practical significance to their current and future professional responsibilities. The projects are administered, advised, and evaluated by WPI faculty as part of the learning experience, but students are also encouraged to seek mentorship from experienced colleagues in the Robotics Engineering profession. The project will include substantial analysis and/or design and conclude with a written report and a public presentation. Prerequisites: The student must have completed the 9-credit RBE Foundations and additional 6 credits including any combination of RBE core, electives, and Engineering Context before enrolling in RBE 594."
     clauses:
@@ -677,4 +692,3 @@ entries:
                 course: PH|1111
     noCreditWith:
       - RBE|1001
-    needsReview: The examples are introduced with 'such as', so other courses may also qualify.

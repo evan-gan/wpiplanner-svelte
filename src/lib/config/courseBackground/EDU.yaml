@@ -97,7 +97,7 @@ entries:
             - kind: course
               course: EDU|3200
     noCreditWith: []
-    needsReview: Text says 'Students who took ID 3100 for credit are not eligible to take EDU 4200 for credit', which names a different course (EDU 4200) and a different ID (ID 3100). Not recorded.
+    needsReview: The no-credit sentence names EDU 4200, not this course ('Students who took ID 3100 for credit are not eligible to take EDU 4200 for credit'), so it looks copied from EDU 4200's description. A human must decide whether ID|3100 belongs in this course's noCreditWith.
   - courseId: EDU|4200
     description: "EDU 4200 Senior Seminar (Cat I, 0 credits) As an essential component of the Teacher Preparation Program, this seminar addresses current issues that impact the field of education to encourage discourse and deepen understanding of K12 school culture and classroom environments experienced during the student-teaching practicum. Other topics include career coaching, resume and cover letter development, navigating a job search and interview preparation skills for K-12 educators. Recommended background: Completion of Student Teaching practicum of the Teacher Preparation Program Only students in their last year of the Teacher Preparation Program should register for this course every term (A, B, C, D)."
     clauses:
@@ -117,8 +117,13 @@ entries:
         requirement:
           kind: standing
           text: practicing PK-12 educators
+      - strength: recommended
+        timing: prior
+        sourceText: Students who are aspiring educators or with prior teaching experience should consult with the program director prior to registration.
+        requirement:
+          kind: permission
+          text: consult with the program director (aspiring educators or those with prior teaching experience)
     noCreditWith: []
-    needsReview: Audience statement rather than a course prerequisite. Aspiring educators or those with teaching experience are told to consult the program director; not modelled.
   - courseId: EDU|510
     description: "EDU 510: Classroom Climate that Supports Diverse STEM Learners (3 credits) This online synchronous course addresses several elements of high-quality teaching, as well as laying the foundation for the variety of teaching & learning styles in different contexts (PreK-12 classrooms, out of school time settings, etc.). Students will discuss research related to family & community, culturally & linguistically sustaining practices, social & emotional learning, Universal Design for Learning, and engaging all learners in STEM. The course will also address different ways of knowing & learning and connecting STEM learning to learners’ culture and place. Students will develop concrete plans to apply course topics into their practice, aligned with professional standards. Recommended Background: This course is intended for practicing PK-12 educators. Students who are aspiring educators or with prior teaching experience should consult with the program director prior to registration."
     clauses:
@@ -128,8 +133,13 @@ entries:
         requirement:
           kind: standing
           text: practicing PK-12 educators
+      - strength: recommended
+        timing: prior
+        sourceText: Students who are aspiring educators or with prior teaching experience should consult with the program director prior to registration.
+        requirement:
+          kind: permission
+          text: consult with the program director (aspiring educators or those with prior teaching experience)
     noCreditWith: []
-    needsReview: Audience statement rather than a course prerequisite. Aspiring educators or those with teaching experience are told to consult the program director; not modelled.
   - courseId: EDU|530
     description: "EDU 530: Performance Assessments in STEM Education (3 credits) In this online synchronous course, students unpack the elements of high-quality performance assessments that allow learners to demonstrate the knowledge and skills they have gained through a variety of methods. Approaches to grading and feedback to learners through an asset-based framework will be discussed. Students will analyze different types of rubrics and develop a standard-aligned rubric for a STEM project of their choice. Recommended Background: This course is intended for practicing PK-12 educators. Students who are aspiring educators or with prior teaching experience should consult with the program director prior to registration. Students enrolled in the MS for Integrated STEM program should take EDU 500 before or concurrent to this course."
     clauses:
@@ -139,14 +149,19 @@ entries:
         requirement:
           kind: standing
           text: practicing PK-12 educators
-      - strength: suggested
+      - strength: recommended
+        timing: prior
+        sourceText: Students who are aspiring educators or with prior teaching experience should consult with the program director prior to registration.
+        requirement:
+          kind: permission
+          text: consult with the program director (aspiring educators or those with prior teaching experience)
+      - strength: recommended
         timing: priorOrConcurrent
         sourceText: Students enrolled in the MS for Integrated STEM program should take EDU 500 before or concurrent to this course.
         requirement:
           kind: course
           course: EDU|500
     noCreditWith: []
-    needsReview: The EDU 500 clause applies to MS for Integrated STEM students only, not every student. The program-director audience note is not modelled.
   - courseId: EDU|550
     description: "EDU 550: Collaboration & Teamwork in STEM Education (3 credits) In this online synchronous course students will review several theories related to teamwork and collaboration and the translation of these theories into successful practices in STEM education classes and the school as a workplace. Theories and strategies for improving team dynamics will be introduced, and participants will learn what factors are shown to lead to greater innovation and creativity on teams. We will also discuss implicit bias and stereotyping on teams, and how to prevent and minimize their negative impacts on participants. Multiple strategies for team formation in the classroom will be discussed, and we will explore how to teach students teamwork skills during project-based classes. The course will include an opportunity to apply some of the theories and strategies for effective and equitable teamwork in the classroom and to reflect on the utility of different approaches. Recommended Background: None."
     clauses: []

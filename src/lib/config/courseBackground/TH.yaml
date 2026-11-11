@@ -20,7 +20,6 @@ entries:
           topic: some theatre or acting experience
     noCreditWith:
       - TH|1100
-    needsReview: Lead phrase is 'Recommended background', but the text says the experience is desirable and the course suits anyone. Recorded as suggested.
   - courseId: TH|2400
     description: "This course will explore the principles and practices of theatrical design, including script analysis, research, concept development, and collaboration. Students will learn to engage in theatrical storytelling through a variety of design disciplines (scenery, costumes, lighting, sound), and will develop a basic understanding of how these elements fit together. Students may not receive credit for TH 2400 and TH 111X. Recommended background: (none)"
     clauses: []

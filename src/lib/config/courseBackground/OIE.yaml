@@ -73,7 +73,6 @@ entries:
             - kind: permission
               text: consent of the instructor
     noCreditWith: []
-    needsReview: "'BUS 3020 and MA 2612 or consent' read as (both courses) or consent."
   - courseId: OIE|3460
     description: "Cat. I This course covers the application of simulation to a variety of managerial problems with examples from operations management, industrial engineering and manufacturing engineering. It introduces the student to the concepts of computer simulation, with an emphasis on the design of a simulation experiment and statistical interpretation of its results. It will discuss simulation of queueing models, inventory and industrial dynamics, and gaming situations. The role and use of computers for the execution of simulations will also be highlighted. A commercial simulation language such as Arena will be used to solve problems from the manufacturing and service industries. Recommended background: CS 1004 and MA 2612."
     clauses:
@@ -214,9 +213,14 @@ entries:
       - OIE|4430
   - courseId: OIE|597
     description: "This capstone course serves as a practical integration of the operations and supply chain theories, practices, tools and techniques that students learned in their MS program. The medium is a major team-based project, sponsored by an external organization. The course goals are: (1) to enrich students’ experiential learning and support the acquisition of the skills and capabilities to tackle real-world problems; and (2) to enhance students’ teamwork, interpersonal and consulting skills. Students will produce a written report documenting their solutions, and providing the financial, organizational, and technical rationale for their approach. They will also formally present their results to the project sponsors. Students are expected to have completed (or be currently completing) all the course requirements for their MS in Operations and Supply Chain Analytics prior to taking the capstone project."
-    clauses: []
+    clauses:
+      - strength: required
+        timing: priorOrConcurrent
+        sourceText: Students are expected to have completed (or be currently completing) all the course requirements for their MS in Operations and Supply Chain Analytics prior to taking the capstone project.
+        requirement:
+          kind: other
+          text: all the course requirements for the MS in Operations and Supply Chain Analytics
     noCreditWith: []
-    needsReview: Says students are expected to have completed (or be completing) all MS course requirements before the capstone. Not labelled as a prerequisite, so no clause recorded.
   - courseId: OIE|3020
     description: Cat. I Operations are embedded in a constantly changing network of relationships with various stakeholders including customers and suppliers. Within the organization, scarce resources (including financial, human, and technological) need to be allocated and aligned with strategic goals. External to the organization, consideration is given to sustainability and environmentally responsible use of resources. This course focuses on process analysis, engineering design thinking and process implementation within the constraints of stakeholder networks. Professional engineering ethics and the consequences of management decision making are discussed in detail. The course includes a process analysis project and a one-piece-flow hands on laboratory experience. Course assignments follow one-piece-flow principles in education, allowing individual students to complete the course at their own pace. Students cannot receive credit for both BUS 3020 and OIE 3020.
     clauses: []

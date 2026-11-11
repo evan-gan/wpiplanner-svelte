@@ -33,9 +33,14 @@ entries:
     noCreditWith: []
   - courseId: BUS|596
     description: This course is the capstone course for the STEM-based, specialty MS programs in the School of Business. This course serves as a practical integration of the STEM-based tools, techniques, and skills and the related business theories and practices that students learned in their MS program. The medium is a major team based project in the form of an actual corporate STEM-based business need for which students will develop solutions. Students will produce a written report that documents and provides the financial, organizational, and technical rationale for the solutions. They will also formally present their results to the project sponsors. Students are expected to have completed (or are currently completing) all the courses requirements for their MS program prior to taking the capstone project. While the capstone requirements are the same for all STEM-based, specialty MS programs in the School of Business, the actual content of the project will differ by sponsor and by MS program. Students must take the appropriate section of BUS 596 for each MS program they complete.
-    clauses: []
+    clauses:
+      - strength: required
+        timing: priorOrConcurrent
+        sourceText: Students are expected to have completed (or are currently completing) all the courses requirements for their MS program prior to taking the capstone project.
+        requirement:
+          kind: other
+          text: all the course requirements for their MS program
     noCreditWith: []
-    needsReview: Says students are expected to have completed (or be completing) all MS program course requirements before the capstone. Not labelled as a prerequisite, so no clause recorded.
   - courseId: BUS|599
     description: "This capstone course integrates management theory and practice, and incorporates a number of skills and tools acquired in the M.B.A. curriculum. The medium is a major team-based project in the form of a corporate venture or green field venture. In addition to a written report, the project is formally presented to a panel of outside experts including serial entrepreneurs and investors. (Prerequisites: ACC 500, ACC 502, ACC 505, BUS 500, BUS 590, FIN 503, FIN 504, MIS 500, MKT 500, OBC 505, OBC 506 and OIE 501 or equivalent content, or instructor consent) (Students cannot get credit for BUS 599 and BUS 517)"
     clauses:
@@ -87,7 +92,6 @@ entries:
               text: instructor consent
     noCreditWith:
       - BUS|517
-    needsReview: Twelve-course list read as all required, or instructor consent instead. The scope of 'or equivalent content' (whole list or each course) is taken as each course.
   - courseId: BUS|631
     description: "This course introduces PhD students to business problems and the nature, scope, and purpose of research and research methodologies to study those problems. Topics include research approaches and designs, data types and their collection, measurement approaches, testing procedures, and interpreting and presenting findings. The ethics of various methods and data collection procedures are covered, as is the Institutional Review Board (IRB) process. Students will investigate applications of research methods to specific problems within their interest area, using qualitative and quantitative designs. They will also read example articles that use the research approaches covered. (Prerequisite: Admission to the Business School PhD program or to another WPI PhD program.)"
     clauses:

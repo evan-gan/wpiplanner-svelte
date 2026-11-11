@@ -118,10 +118,56 @@ entries:
                 kind: course
                 course: CS|2223
     noCreditWith: []
-    needsReview: "'such as' examples are not exhaustive."
   - courseId: DS|4344
     description: "This course introduces the core principles, models, and real-world applications of Natural Language Processing (NLP) and Large Language Models (LLMs) in the context of modern data science. Students will explore NLP tasks, build deep learning models for language understanding and generation, and apply LLMs to solve problems such as information extraction, conversational AI, summarization, and data querying. Students will interact with state-of-the-art LLMs using industry-standard APIs, gaining practical skills in prompt design, system integration, and application development. The course also includes a critical focus on LLM trust, safety, and ethical deployment, preparing students to responsibly build and evaluate generative AI systems. Through projects, students will emerge with both conceptual understanding and practical fluency in applied NLP and LLM development. Recommended background: Programming skills equivalent to (CS 1004 or CS 1101 or CS 1102) and (CS 2102 or CS2103 or CS 2119); and machine learning equivalent to (DS 3010, CS 4445, or CS4342). Units: 1/3 Category: II"
-    clauses: []
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended background: Programming skills equivalent to (CS 1004 or CS 1101 or CS 1102) and (CS 2102 or CS2103 or CS 2119); and machine learning equivalent to (DS 3010, CS 4445, or CS4342)."
+        requirement:
+          kind: allOf
+          of:
+            - kind: topic
+              topic: programming skills
+              satisfiedBy:
+                kind: allOf
+                of:
+                  - kind: anyOf
+                    of:
+                      - kind: course
+                        course: CS|1004
+                        orEquivalent: true
+                      - kind: course
+                        course: CS|1101
+                        orEquivalent: true
+                      - kind: course
+                        course: CS|1102
+                        orEquivalent: true
+                  - kind: anyOf
+                    of:
+                      - kind: course
+                        course: CS|2102
+                        orEquivalent: true
+                      - kind: course
+                        course: CS|2103
+                        orEquivalent: true
+                      - kind: course
+                        course: CS|2119
+                        orEquivalent: true
+            - kind: topic
+              topic: machine learning
+              satisfiedBy:
+                kind: anyOf
+                of:
+                  - kind: course
+                    course: DS|3010
+                    orEquivalent: true
+                  - kind: course
+                    course: CS|4445
+                    orEquivalent: true
+                  - kind: course
+                    course: CS|4342
+                    orEquivalent: true
     noCreditWith: []
   - courseId: DS|4345
     description: "This course introduces foundational concepts and solution strategies for designing intelligent systems composed of multiple autonomous agents. Students will learn about agent-based modeling, coordination, communication, and decision-making in cooperative and competitive environments. The course introduces core theories and algorithms for multi-agent decision-making. It also covers how contemporary AI techniques—such as deep learning and generative models—can be applied to enhance multi-agent system capabilities. Through hands-on projects, students will gain practical experience in analyzing and designing multi-agent systems for real-world applications. Recommended background: Basic knowledge of linear algebra, probability theory, and Python programming. Familiarity with machine learning and deep learning equivalent to (DS 3010, CS 4445, CS4342). Familiarity with deep learning equivalent to CS/DS 4343 encouraged. Units: 1/3 Category: II"
@@ -189,14 +235,13 @@ entries:
   - courseId: DS|5002
     description: "The foci of this class are the essential statistics and linear algebra skills required for Data Science students. The class builds the foundation for theoretical and computational abilities of the students to analyze high dimensional data sets. Topics covered include Bayes’ theorem, the central limit theorem, hypothesis testing, linear equations, linear transformations, matrix algebra, eigenvalues and eigenvectors, and sampling techniques, including Bootstrap and Markov chain Monte Carlo. Students will use these techniques while engaging in hands-on projects with real data. Prerequisites: Some knowledge of integral and differential calculus is recommended."
     clauses:
-      - strength: required
+      - strength: recommended
         timing: prior
         sourceText: "Prerequisites: Some knowledge of integral and differential calculus is recommended."
         requirement:
           kind: topic
           topic: some knowledge of integral and differential calculus
     noCreditWith: []
-    needsReview: Labelled 'Prerequisites' but the text says the knowledge is recommended. Recorded as required; check.
   - courseId: DS|5006
     description: "Machine Learning for Engineering and Science Applications (Cat. I, 3 credits) This course surveys the application of data science (DS) and machine learning (ML) to problems arising in engineering and the sciences. While DS and ML have profoundly affected domains such as image understanding and natural language processing, ML has seen comparatively less impact in chemistry, physics, chemical engineering, electrical engineering, and many other important application domains. Topics covered will include predictive modeling, feature engineering, and model assessment, with a particular focus on the small-data limit. We will analyze and apply algorithms with wide applicability in engineering and sciences including classic techniques such as multiple linear regression and random forests, and state-of-the-art techniques such as deep neural networks. Recommended Background: The intention is for the class to be accessible to a wide audience in disciplines outside of Computer Science and Data Science, though some basic background topics such as statistics or linear algebra, and the ability to learn Python programming at a basic level would be helpful."
     clauses:
@@ -307,7 +352,6 @@ entries:
                 kind: course
                 course: CS|2223
     noCreditWith: []
-    needsReview: "'such as' examples are not exhaustive."
   - courseId: DS|547
     description: "This course introduces the theory, design, and implementation of text-based and Web-based information retrieval systems. Students learn the key concepts and models relevant to information retrieval and natural language processing on largescale corpus such as the Web and social systems. Topics include vector space model, crawling, indexing, web search, ranking, recommender systems, embedding and language model. Prerequisites: statistical learning at the level of DS 502/MA 543 and programming skills at the level of CS 5007."
     clauses:
@@ -368,22 +412,22 @@ entries:
           kind: topic
           topic: core artificial intelligence classes, such as machine learning and deep learning, or equivalent background
     noCreditWith: []
-    needsReview: The examples are introduced with 'such as', so the course list is not exhaustive.
   - courseId: DS|553
     description: "CS 553 / DS 553: Machine Learning Development and Operations (MLOps) (3 credits) This course teaches students the computational skills required in the fields of Artificial Intelligence (AI) and Data Science. As data-driven decision-making and AI applications continue to transform industries, proficiency in programming and machine learning tools is important. In this course, you will develop a strong foundation in programming languages commonly used in AI and Data Science (such as Python). This course will cover the development, debugging, deployment, and subsequent monitoring phases of models in end-to-end pipelines core to machine learning systems. You will also familiarize yourself with popular libraries, frameworks and debugging on IDEs, such as PyCharm, PyTorch, scikit-learn, and/or pandas. Possible topics may include practice code development with a copilot as well as deployment of models on a cloud computing environment The student will engage in hands-on projects to practice their programming skills to solve realworld AI and Data Science problems. Recommended Background: Basic understanding of programming concepts, and preferably some python knowledge."
     clauses:
       - strength: recommended
         timing: prior
-        sourceText: "Recommended Background: Basic understanding of programming concepts, and preferably some python knowledge."
+        sourceText: "Recommended Background: Basic understanding of programming concepts"
         requirement:
-          kind: allOf
-          of:
-            - kind: topic
-              topic: basic understanding of programming concepts
-            - kind: topic
-              topic: some Python knowledge
+          kind: topic
+          topic: basic understanding of programming concepts
+      - strength: suggested
+        timing: prior
+        sourceText: and preferably some python knowledge.
+        requirement:
+          kind: topic
+          topic: some Python knowledge
     noCreditWith: []
-    needsReview: Says 'preferably' for the Python knowledge, so that item is not strictly required. Treated as required here.
   - courseId: DS|554
     description: "CS 554 / DS 554: Natural Language Processing (3 credits) Natural Language Processing (NLP) is an interdisciplinary field at the intersection of artificial intelligence, linguistics, and computer science, dedicated to enabling computers to understand, interpret, and generate human language. NLP underpins advancements in human-computer interaction, information retrieval, sentiment analysis, chatbots, and a multitude of other applications. The course may cover a wide range of topics, including language modeling, sequence-to-sequence architectures, sentiment analysis, machine translation, and advanced techniques for natural language understanding and generation, providing a comprehensive foundation for NLP expertise. Recommended Background: Programming skills at the level of CS 5007."
     clauses:
@@ -399,7 +443,17 @@ entries:
     noCreditWith: []
   - courseId: DS|555
     description: "CS 555 / DS 555: Responsible Artificial Intelligence (3 credits) Artificial Intelligence (AI) algorithms have a significant impact on people’s lives. In this course, we discuss social responsibility around data privacy, bias in data and decision making, policies as guardrails, fairness and transparency in the context of applying AI algorithms. Case studies considering societal challenges caused by AI technologies may include AI-based hiring recommendations stemming from societal biases present in training datasets, AI-empowered selfdriving cars behaving in a dangerous manner when encountering atypical road conditions, digital health applications inadvertently revealing private patient information, or large language models like chat-GPT generating incorrect or harmful responses. This course also studies AI-based algorithmic solutions to some of these challenges. These include the design of robust machine learning algorithms with constraints to ensure fairness, privacy, and safety. Strategies for how to apply these methods to design safe and fair AI are introduced. Topics may include min-max optimization with applications to training machine learning models robust to adversarial attacks, stochastic methods for preserving privacy of sensitive data, and multi-agent machine learning models for reducing algorithmic bias and polarization in recommender systems. Recommended Background: Machine Learning at the graduate level, undergraduate level (CS 4342), or equivalent knowledge."
-    clauses: []
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: "Recommended Background: Machine Learning at the graduate level, undergraduate level (CS 4342), or equivalent knowledge."
+        requirement:
+          kind: topic
+          topic: machine learning at the graduate or undergraduate level
+          satisfiedBy:
+            kind: course
+            course: CS|4342
+            orEquivalent: true
     noCreditWith: []
   - courseId: DS|556
     description: "eep Learning, a core of modern Artificial Intelligence, is rapidly expanding to resourceconstrained devices, including smartphones, wearables, and intelligent embedded systems for improving response time, privacy, and reliability. This course focuses on bringing these powerful deep-learning applications from central data centers and large GPUs to distributed ubiquitous systems. On-Device Deep Learning is an interdisciplinary topic at the intersection of artificial intelligence and ubiquitous systems, dedicated to enabling computing on edge devices. This course includes a wide range of topics related to deep learning in resource constrained settings including pruning and sparsity, quantization, neural architecture search, knowledge distillation, on-device training and transfer learning, distributed training, gradient compression, federated learning, efficient data movement and accelerator design, dynamic network inference, and advanced compression and approximation techniques for enabling on-device deep neural network inference and training. This course provides a comprehensive foundation for cutting-edge “tinyML” expertise. Recommended background: The students should have an introductory undergraduate-level or graduate-level introductory background in machine learning and deep neural networks."
@@ -424,8 +478,13 @@ entries:
               text: completion of at least 24 credits of the AI degree
             - kind: permission
               text: consent of the instructor
+      - strength: required
+        timing: prior
+        sourceText: Students outside the MS-AI program must get the instructor’s approval before.
+        requirement:
+          kind: permission
+          text: instructor’s approval for students outside the MS-AI program
     noCreditWith: []
-    needsReview: Students outside the MS-AI program must also get instructor approval, which is not modelled.
   - courseId: DS|595
     description: "Special Topics in Data Science is course offering that will cover a topic of current interest in detail. This serves as a flexible vehicle to provide a one-time offering of topics of current interest as well as to offer new topics before they are made into a permanent course. Prerequisites: will vary with topic."
     clauses:
@@ -436,7 +495,6 @@ entries:
           kind: other
           text: Prerequisites will vary with topic.
     noCreditWith: []
-    needsReview: Prerequisites depend on the topic offered that term; check the offering.
   - courseId: DS|598
     description: "The Graduate Qualifying Project, or GQP, is a 3-credit project, typically done in teams that is carried out in cooperation with a sponsor or industrial partner. It will be overseen by a faculty member affiliated with the Data Science Program and will offer integrated theory and practice of Data Science including the utilization of tools and techniques acquired in the Data Science Program. In addition to a written report, this project must be presented in a formal demonstration to the faculty of the Data Science program and sponsors. Professional development skills, such as communication, teamwork, leadership, and collaboration, along with storytelling, will be practiced. Prerequisites: DS 501, completion of at least 24 credits of the DS degree, and consent of the instructor."
     clauses:

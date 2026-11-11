@@ -142,7 +142,7 @@ entries:
             - kind: topic
               topic: knowledge of chemistry
               satisfiedBy:
-                kind: anyOf
+                kind: allOf
                 of:
                   - kind: course
                     course: CH|1010
@@ -159,7 +159,6 @@ entries:
                 course: CHE|2011
     noCreditWith:
       - CHE|320X
-    needsReview: "'CH 1010, 1020, 1030' read as alternatives (anyOf) because the sentence gives a list of chemistry courses without 'and'; this could be read as all three."
   - courseId: CHE|4063
     description: "Cat. II In this course, students will learn to make quantitative relationships between human activities and the effects on water, soil, and air in the environment. Students will learn the scientific and engineering principles that are needed to understand how contaminants enter and move in the environment, how compounds react in the environment, how to predict their concentrations in the environment, and how to develop solutions to environmental problems. Topics to be covered may include water quality engineering (including microbial interactions), air quality engineering, and hazardous waste management. Recommended Background: familiarity with transport phenomena, such as in ES 3004 (Fluid Mechanics) and ES 3002 (Mass Transfer), and familiarity with reaction kinetics and reactor design, such as through CHE 3201 (Kinetics and Reactor Design). Background such as CE 3059 (Environmental Engineering), CE 3060 (Water Treatment), or CE3061 (Wastewater Treatment) is suggested. This course will be offered in 2020-21, and in alternating years thereafter"
     clauses:
@@ -196,7 +195,6 @@ entries:
             - kind: course
               course: CE|3061
     noCreditWith: []
-    needsReview: "'such as' examples are not exhaustive."
   - courseId: CHE|4402
     description: "Cat. I Overall format and procedure are essentially the same as in Unit Operations of Chemical Engineering I. Laboratory projects include experiments in heat and mass transfer such as: heat transfer in two heaters and a cooler, climbing film evaporation, multiple effect evaporation, absorption, extraction, distillation and rotary drying of solids. Recommended background: familiarity with techniques and procedures emphasized in CHE 4401."
     clauses:
@@ -250,7 +248,7 @@ entries:
   - courseId: CHE|504
     description: An essential skill of an engineer is to provide analytical and numerical solutions to relevant problems. This course will provide students with a solid mathematical background required to solve chemical engineering problems in fields such as fluid mechanics, reactor design, thermodynamics, and process design. Methods of mathematical analysis relevant to engineering will be selected from such topics as vector analysis, matrices, eigenvalue problems, Fourier analysis, Fourier transforms, Laplace transformation, solution of ordinary and partial differential equations, integral equations, calculus of variation, optimization methods, and numerical methods. Students should have a background in undergraduate calculus and differential equations.
     clauses:
-      - strength: suggested
+      - strength: recommended
         timing: prior
         sourceText: Students should have a background in undergraduate calculus and differential equations.
         requirement:
@@ -261,7 +259,6 @@ entries:
             - kind: topic
               topic: differential equations
     noCreditWith: []
-    needsReview: No lead word; 'should have a background' recorded as suggested.
   - courseId: CHE|509
     description: This course includes a review of prototypical chemical reactors, including design of batch, stirred tank, and tubular reactors. Theories of reaction kinetics and catalysis for simple and complex reactions are addressed. Reactor design is discussed within the context of complex transport phenomena and reaction kinetics, including effects of bulk and pore diffusion and multiphase reactions/reactors. Techniques for experimentation, reaction data treatment, catalyst preparation and characterization, and computational tools are also included. Students cannot receive credit for this course and CHE 506 or CHE 507, which this class replaces.
     clauses: []
@@ -281,9 +278,9 @@ entries:
   - courseId: CHE|571
     description: "Transport rates of mass, energy, and momentum are key to the design of many chemical technologies. This class adopts a unified approach to transport phenomena, providing the fundamental background required for analysis ofcomplex problems. Students will use mathematical techniques for analytic and approximate solutions such as: separation of variables, similarity solutions, perturbation theory, and Laplace and Fourier transform methods. Methods involvingnon-dimensionalization and scaling will be emphasized. Special problems to be covered may include the lubrication approximation, creeping flow, and potential and laminar boundary-layer flows, as well as heat and mass transport in multicomponent systems. Students are expected to have taken previous courses on transport processesand have mathematical background that includes solution of differential equations."
     clauses:
-      - strength: suggested
+      - strength: recommended
         timing: prior
-        sourceText: have mathematical background that includes solution of differential equations.
+        sourceText: Students are expected to have taken previous courses on transport processesand have mathematical background that includes solution of differential equations.
         requirement:
           kind: allOf
           of:
@@ -292,7 +289,6 @@ entries:
             - kind: topic
               topic: solution of differential equations
     noCreditWith: []
-    needsReview: No lead word; 'expected to have taken' recorded as suggested.
   - courseId: CHE|503
     description: Presentations on scientific advances by recognized experts in various fields of chemical engineering and related disciplines. The course will be graded on a Pass/Fail basis.
     clauses: []

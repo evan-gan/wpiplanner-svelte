@@ -365,7 +365,7 @@ entries:
           satisfiedBy:
             kind: course
             course: PH|3300
-      - strength: suggested
+      - strength: recommended
         timing: prior
         sourceText: Students should be comfortable with vector algebra and vector calculus, including gradients, divergence, and curl, as typically covered in MA 2251.
         requirement:
@@ -375,7 +375,6 @@ entries:
             kind: course
             course: MA|2251
     noCreditWith: []
-    needsReview: The text says this course is 'a continuation of PH 3300' without a prerequisite label; PH 3300 is recorded only through the recommended background.
   - courseId: PH|3401
     description: "Cat. I This course includes a study of the basic postulates of quantum mechanics, its mathematical language and applications to one-dimensional problems. The course is recommended for physics majors and other students whose future work will involve the application of quantum mechanics. Topics include wave packets, the uncertainty principle, introduction to operator algebra, application of the Schroedinger equation to the simple harmonic oscillator, barrier penetration and potential wells. Recommended background: Junior standing, MA 4451, and completion of the introductory physics sequence, including the introduction to the 20th century physics. Suggested background: knowledge (or concurrent study) of linear algebra, Fourier series, and Fourier transforms."
     clauses:
@@ -446,9 +445,14 @@ entries:
     noCreditWith: []
   - courseId: PH|4500
     description: This course provides advanced study in topics not addressed in the regular Physics curriculum. Offerings may include areas such as General Relativity, Particle Physics, or advanced topics building upon current courses. Exact course descriptions will be published in advance by the instructor. Students may receive credit for multiple instances of PH 4500 provided each covers a different topic. Recommended Background will be published along with the specific course description.
-    clauses: []
+    clauses:
+      - strength: recommended
+        timing: prior
+        sourceText: Recommended Background will be published along with the specific course description.
+        requirement:
+          kind: other
+          text: Varies by topic.
     noCreditWith: []
-    needsReview: The text says the recommended background is published with each offering, so none is recorded.
   - courseId: PH|4601
     description: "This course provides students with hands-on laboratory experience in experimental quantum optics. Students investigate the quantum nature of light through a series of fiber-optic and free-space optics experiments. Key topics include photon counting and detection, the diffraction of light in the single-photon limit, the generation of correlated and entangled photon pairs, single photon and coincidence detection, photon bunching and indistinguishability, the Hong-Ou-Mandel effect, and the observation of Bell states, as well as special topics. Students will work with single-photon experiments, lasers, various optical components, and photon detectors. Students will also perform data and error analysis and gain experience in scientific communication. This course will be offered in academic years ending in odd numbers. Recommended Background: Students should have basic knowledge of quantum physics at the level of an undergraduate course in quantum mechanics, such as PH3401 Quantum Mechanics I or equivalent. Students should have basic physics laboratory skills at the level of an undergraduate physics course that has a laboratory component, such as PH1130 Modern Physics, PH2510 Atomic Force Microscopy, PH2601 Photonics Laboratory, PH2651 Intermediate Physics Laboratory, or equivalent."
     clauses:
@@ -484,7 +488,6 @@ entries:
                 course: PH|2651
                 orEquivalent: true
     noCreditWith: []
-    needsReview: Both 'such as' lists give examples, so the course lists are not exhaustive.
   - courseId: PH|561
     description: Atomic force microscopes (AFMs) are instruments that allow three-dimensional imaging of surfaces with nanometer resolution and are important enabling tools for nanoscience and technology. The student who successfully completes this course will understand the functional principles of AFMs, be able to run one, and interpret the data that are collected. The recommended background for this course is a bachelor’s degree in science or engineering. Students who have successfully completed PH 2510, the undergraduate version of this course, may not earn credit for PH 561.
     clauses:

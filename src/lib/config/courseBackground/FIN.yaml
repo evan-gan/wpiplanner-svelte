@@ -28,7 +28,6 @@ entries:
                 course: MA|1021
     noCreditWith:
       - BUS|2070
-    needsReview: Neither sentence has a lead word; both are recorded as suggested because the text calls them beneficial.
   - courseId: FIN|3300
     description: "Cat. I This course develops expertise in Finance, Technology, Innovation, leadership, and decision-making by focusing on real-world challenges in the field of FinTech. We will be actively discussing and learning how to analyze, identify, and manage/innovate FinTech across many functional disciplines including Financial, Insurance, Banking, Trading, Information Technology, Regulation, and Budgeting. Students are introduced to the Financial industry and the FinTech ecosystem. The course adopts a decision-maker and leadership perspective (business, operational, functional, and technical leadership) by emphasizing the relationships among financial data, their underlying economic events, risk profiles, challenges/opportunities, and the responses by all stakeholders in a business/corporation. Recommended Background: Introductory business and finance topics such as those found in ACC courses or BUS 2060."
     clauses:
@@ -63,7 +62,7 @@ entries:
   - courseId: FIN|3330
     description: "This course provides the foundation for financial data analytics used in business and FinTech applications. The objective of this course is for students to gain experience in analyzing financial data using modern machine learning techniques, statistical methods, and prediction models. Students will develop computational skills to perform data analysis using a modern statistical programming environment and apply these skills to address a range of problems encountered by business firms, including those in the FinTech industry. The topics discussed include an introduction to R language, visualization of financial data, cluster analysis, simple and multiple linear regression, classification models, high dimension data analysis using Lasso, and model assessment and selection using cross validation. Students will have hands-on experience in the development of data analytics applications to analyze real world financial problems. Recommended background: Students should ideally have taken Statistics 2611 and 2612, and FIN 2070."
     clauses:
-      - strength: suggested
+      - strength: recommended
         timing: prior
         sourceText: Students should ideally have taken Statistics 2611 and 2612, and FIN 2070.
         requirement:
@@ -81,7 +80,6 @@ entries:
             - kind: course
               course: FIN|2070
     noCreditWith: []
-    needsReview: Text says 'Statistics 2611 and 2612'; mapped to MA|2611 and MA|2612 because other catalog texts call these the statistics courses. Confirm the mapping.
   - courseId: FIN|540
     description: FIN 540 Financial Analytics (3 credits) The course introduces advanced methodological tools required for conducting finance and investment analysis research. The course aims to equip students with a working knowledge of important econometric techniques used in financial economics, such as event study, advanced time series analysis, and survival analysis. Substantial emphasis will be placed on developing programming skills in computer programs. The course emphasizes understanding and learning how to apply practitioners' econometric tools in these areas. Students will also cover the basic theory of statistical inference with linear models, general linear models, Heteroskedasticity 4 models, time series models, analysis of variance, discriminate analysis, factor analysis, and nonparametric tests.
     clauses: []

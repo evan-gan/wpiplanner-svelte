@@ -41,8 +41,8 @@ entries:
               course: ES|3001
             - kind: course
               course: ES|2001
-    noCreditWith: []
-    needsReview: The special-topics no-credit rule names 'MTE 594T', which the course-id pattern cannot store. Not recorded.
+    noCreditWith:
+      - MTE|594
   - courseId: MTE|532
     description: "(2 credits) This course discusses the fundamentals of crystallography and X-ray diffraction (XRD) of metals, ceramics and polymers. It introduces graduate students to the main issues and techniques of diffraction analysis as they relate to materials. The techniques for the experimental phase identification and determination of phase fraction via XRD will be reviewed. Topics covered include: basic X-ray physics, basic crystallography, fundamentals of XRD, XRD instrumentation and analysis techniques. (Prerequisites: ES 2001 or equivalent, and senior or graduate standing in engineering or science.) Note: Students cannot receive credit for this course if they have taken the Special Topics version of the same course (MTE 594C)."
     clauses:
@@ -57,8 +57,8 @@ entries:
               orEquivalent: true
             - kind: standing
               text: senior or graduate standing in engineering or science
-    noCreditWith: []
-    needsReview: The special-topics no-credit rule names 'MTE 594C', which the course-id pattern cannot store. Not recorded.
+    noCreditWith:
+      - MTE|594
   - courseId: MTE|5385
     description: (2 Credits) Additive Manufacturing (AM), popularly known as 3D printing, is a technique in which parts are fabricated in a layer-by-layer fashion. The focus of this course is on direct metal AM processes that are used in aerospace, automobile, medical, and energy industries. The objective of the course is to enable students to understand the working principles of various additive manufacturing processes, assess the suitability of metal AM processes for different designs and applications, apply process design concepts to metal AM processes via analytical and finite element modeling approaches, and have an introductory-level understanding of design for AM. Through the course project, students will have the opportunity to experience hands-on design, manufacturing, and characterization of additively manufactured materials, and will work in an interdisciplinary team of mechanical, materials, and manufacturing engineers. The economics of the manufacturing process will also be addressed, with an emphasis on determining the major cost drivers and discussing cost minimization strategies. Students cannot receive credit for this course if they have received credit for the Special Topics (ME 593/MTE 594) version of the same course.
     clauses: []
@@ -81,7 +81,6 @@ entries:
           kind: topic
           topic: basic coding (for loops, functions, if/else statements)
     noCreditWith: []
-    needsReview: Lead phrase is 'Recommended Background', but the text says the background is helpful but not required. Recorded as suggested.
   - courseId: MTE|550
     description: "(3 credits) This course is intended to provide a fundamental understanding of thermodynamic and kinetic principles associated with phase transformations. The mechanisms of phase transformations will be discussed in terms of driving forces to establish a theoretical background for various physical phenomena. The principles of nucleation and growth and spinodal transformations will be described. The theoretical analysis of diffusion controlled and interface controlled growth will be presented The basic concepts of martensitic transformations will be highlighted. Specific examples will include solidification, crystallization, precipitation, sintering, phase separation and transformation toughening. (Prerequisites: MTE 511 and MTE 512, ME 4850 or equivalent.)"
     clauses:
@@ -115,8 +114,9 @@ entries:
               orEquivalent: true
             - kind: standing
               text: senior or graduate standing in engineering or science
-    noCreditWith: []
-    needsReview: The special-topics no-credit rule names 'MTE 593C/MTE 594C', which the course-id pattern cannot store. Not recorded.
+    noCreditWith:
+      - MTE|593
+      - MTE|594
   - courseId: MTE|575
     description: "This course introduces students to current developments in nanoscale science and technology. The current advance of materials and devices constituting of building blocks of metals, semiconductors, ceramics or polymers that are nanometer size (1- 100 nm) are reviewed. The profound implications for technology and science of this research field are discussed. The differences of the properties of matter on the nanometer scale from those on the macroscopic scale due to the size confinement, predominance of interfacial phenomena and quantum mechanics are studied. The main issues and techniques relevant to science and technologies on the nanometer scale are considered. New developments in this field and future perspectives are presented. Topics covered include: fabrication of nanoscale structures, characterization at nanoscale, molecular electronics, nanoscale mechanics, new architecture, nano-optics and societal impacts. Recommended background: ES 2001 Introduction to Materials or equivalent."
     clauses:
@@ -131,7 +131,7 @@ entries:
   - courseId: MTE|5841
     description: (3 credits) This course emphasizes research applications of advanced surface metrology, including the measurement and analysis of surface roughness. Surface metrology can be important in a wide variety of situations including adhesion, friction, catalysis, heat transfer, mass transfer, scattering, biological growth, wear and wetting. These situations impact practically all the engineering disciplines and sciences. The course begins by considering basic principles and conventional analyses, and methods. Measurement and analysis methods are critically reviewed for utility. Students learn advanced methods for differentiating surface textures that are suspected of being different because of their performance or manufacture. Students will also learn methods for making correlations between surface textures and behavioral and manufacturing parameters. The results of applying these methods can be used to support the design and manufacture of surface textures, and to address issues in quality assurance. Examples of research from a broad range of applications are presented, including, food science, pavements, friction, adhesion, machining and grinding. Students do a major project of their choosing, which can involve either an in-depth literature review, or surface measurement and analysis. The facilities of WPI’s Surface Metrology Laboratory are available for making measurements for selected projects. Software for advanced analysis methods is also available for use in the course. No previous knowledge of surface metrology is required. Students should have some background in engineering, math or science. Students cannot receive credit for this course if they have received credit for ME 5371/MTE 5843/MFE 5843 Fundamentals of Surface Metrology or the Special Topics (ME 593/MTE 594/MFE 594) version of Fundamentals of Surface Metrology.
     clauses:
-      - strength: suggested
+      - strength: recommended
         timing: prior
         sourceText: Students should have some background in engineering, math or science.
         requirement:
@@ -144,7 +144,6 @@ entries:
       - ME|593
       - MTE|594
       - MFE|594
-    needsReview: No lead word; 'should have some background' recorded as suggested. 'No previous knowledge of surface metrology is required' is not modelled.
   - courseId: MTE|5844
     description: "(2 credits) An introductory course on corrosion; aqueous corrosion, stress corrosion cracking and hydrogen effects in metals will be presented. High-temperature oxidation, carburization and sulfidation will be discussed. Discussions focus on current corrosive engineering problems and research. (Prerequisites: MTE 511 and MTE 512 or consent of the instructor.) Note: Students cannot receive credit for this course if they have taken the Special Topics version of the same course."
     clauses:
@@ -219,8 +218,8 @@ entries:
   - courseId: MTE|558
     description: "(2 credits) This course will provide an integrated overview of the design, selection and use of synthetic plastics. The basic chemistry associated with polymerization and the structure of commercial plastics will be described. Various aspects of polymer crystallization and glass transition will be outlined. Salient aspects of fluid flow and heat transfer during the processing of plastics will be highlighted. Fundamentals of the diverse processing operations used to shape plastics and the resulting structures that develop after processing will be discussed. The mechanical behavior of plastics including elastic deformation, rubber elasticity, yielding, viscoelasticity, fracture and creep will be discussed. Plastic 164 Mechanical Engineering Return to Table of Contents Mechanical Engineering 165 degradation and environmental issues associated with recycling and disposal of plastics will be examined. Typical techniques used in the analysis and testing of plastics will be described and a working knowledge of various terminologies used in commercial practice will be provided. Note: Students cannot receive credit for this course if they have taken the Special Topics version of the same course (MTE 594A)."
     clauses: []
-    noCreditWith: []
-    needsReview: No credit with the Special Topics version (MTE 594A); that code has a letter suffix, which the course-id pattern cannot store, so noCreditWith omits it.
+    noCreditWith:
+      - MTE|594
   - courseId: MTE|580
     description: Reports on the state-of-the-art in various areas of research and development in materials science and engineering will be presented by the faculty and outside experts. Reports on graduate student research in progress will also be required.
     clauses: []

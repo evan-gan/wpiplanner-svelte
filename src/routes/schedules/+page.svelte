@@ -66,6 +66,19 @@
 
   const selected = $derived(app.permutations.selected);
 
+  /*
+    Every change restarts the search, which clears the selected schedule until
+    the first batch arrives. Grouping the rail by that would flash every course
+    under "Not on schedule" and back, so the last schedule's placement is held
+    until the search either finds one or finishes empty-handed.
+  */
+  let heldPlacement: string[] = [];
+  const railPlacementIds = $derived.by(() => {
+    if (selected !== null) heldPlacement = selected.sectionIds;
+    else if (app.permutations.status !== 'searching') heldPlacement = [];
+    return heldPlacement;
+  });
+
   /** A hovered fix replaces the schedule on the calendar until the pointer leaves it. */
   const shownSchedule = $derived(
     app.fixPanel.previewSectionIds === null
@@ -197,6 +210,7 @@
             app.selection.isSectionDenied(courseId, sectionId)}
           isTermDenied={(courseId, term) => app.selection.isTermDenied(courseId, term)}
           scheduledSectionIds={selected?.sectionIds ?? []}
+          placementSectionIds={railPlacementIds}
           {colorOf}
           isExpanded={(courseId) => app.railView.isExpanded(courseId)}
           ontoggleExpanded={(courseId) => app.railView.toggleExpanded(courseId)}

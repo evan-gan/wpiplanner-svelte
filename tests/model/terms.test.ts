@@ -1,5 +1,13 @@
 import { describe, expect, it } from 'vitest';
-import { TERM_NAMES, formatTermLabel, parseTerms, shareAnyTerm, termIndex } from '$lib/model/terms';
+import {
+  TERM_NAMES,
+  formatTermLabel,
+  formatTermSpanLabel,
+  parseTerms,
+  shareAnyTerm,
+  termIndex,
+  termSpanSortKey,
+} from '$lib/model/terms';
 
 describe('TERM_NAMES', () => {
   it('is in calendar order', () => {
@@ -49,5 +57,27 @@ describe('termIndex', () => {
   it('gives the calendar position used for thumbnail striping', () => {
     expect(termIndex('A')).toBe(0);
     expect(termIndex('D')).toBe(3);
+  });
+});
+
+describe('formatTermSpanLabel', () => {
+  it('names a single term like the week-grid header', () => {
+    expect(formatTermSpanLabel(['B'])).toBe('B-Term');
+  });
+
+  it('joins a semester-long span with a dash', () => {
+    expect(formatTermSpanLabel(['A', 'B'])).toBe('A-Term – B-Term');
+  });
+
+  it('says TBA when there are no terms', () => {
+    expect(formatTermSpanLabel([])).toBe('Term TBA');
+  });
+});
+
+describe('termSpanSortKey', () => {
+  it('orders A, then A–B, then B, with no terms last', () => {
+    const spans: ('A' | 'B')[][] = [[], ['B'], ['A', 'B'], ['A']];
+    const sorted = [...spans].sort((a, b) => termSpanSortKey(a) - termSpanSortKey(b));
+    expect(sorted).toEqual([['A'], ['A', 'B'], ['B'], []]);
   });
 });

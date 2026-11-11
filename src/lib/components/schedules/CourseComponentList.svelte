@@ -27,6 +27,7 @@
   import type { FixTrigger } from '$lib/state/fixPanel.svelte';
   import type { Point } from '$lib/ui/placePopover';
   import ComponentRow from './ComponentRow.svelte';
+  import TermDivider from './TermDivider.svelte';
 
   /** A fix trigger without the course, which the rail adds. */
   type ComponentFixTrigger = Omit<FixTrigger, 'courseId'>;
@@ -134,7 +135,7 @@
   {#each termGroups as termGroup (termGroup.label)}
     <!-- Only worth a divider when the course runs in more than one term. -->
     {#if termGroups.length > 1}
-      <li class="term-divider"><span>{termGroup.label}</span></li>
+      <TermDivider tag="li" label={termGroup.label} />
     {/if}
     {#each termGroup.entries as entry (entry.lecture.number)}
       {@const lecture = entry.lecture}
@@ -172,28 +173,5 @@
     list-style: none;
     margin: 0;
     padding: 0 0 var(--space-2);
-  }
-
-  /* A thin rule with the term name sitting on it: ──── A-Term ──── */
-  .term-divider {
-    grid-column: 1 / -1;
-    display: flex;
-    align-items: center;
-    gap: var(--space-3);
-    margin: var(--space-3) var(--space-2) var(--space-1);
-    font-size: var(--font-size-small);
-    font-weight: bold;
-    color: var(--text-muted);
-  }
-
-  .term-divider::before,
-  .term-divider::after {
-    content: '';
-    flex: 1 1 auto;
-    border-top: 1px solid var(--border-muted);
-  }
-
-  .term-divider:first-child {
-    margin-top: var(--space-1);
   }
 </style>

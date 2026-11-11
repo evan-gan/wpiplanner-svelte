@@ -15,7 +15,7 @@
 import { courseAvailability, type Availability } from './availability.ts';
 import { dayMaskToNames } from './days.ts';
 import type { CourseJson, DayShortName, PeriodJson, SectionJson, TermName } from './schedb.ts';
-import { formatTermLabel, TERM_NAMES } from './terms.ts';
+import { formatTermSpanLabel, TERM_NAMES, termSpanSortKey } from './terms.ts';
 import { formatClockTime, formatShortClockTime } from './time.ts';
 
 /** Workday's stand-ins for "nobody assigned yet", compared lower-cased. */
@@ -228,21 +228,13 @@ export function groupEntriesByTerm(entries: readonly LectureEntry[], course: Cou
     const key = terms.join('');
     let group = groups.get(key);
     if (group === undefined) {
-      const label =
-        terms.length === 0 ? 'Term TBA' : terms.map((term) => formatTermLabel(term)).join(' – ');
-      group = { terms, label, entries: [] };
+      group = { terms, label: formatTermSpanLabel(terms), entries: [] };
       groups.set(key, group);
     }
     group.entries.push(entry);
   }
 
-  // Sort key: first term's position, then span length; no terms sorts last.
-  const sortKey = (group: TermGroup) =>
-    group.terms.length === 0
-      ? Number.MAX_SAFE_INTEGER
-      : TERM_NAMES.indexOf(group.terms[0]) * 10 + group.terms.length;
-
-  return [...groups.values()].sort((a, b) => sortKey(a) - sortKey(b));
+  return [...groups.values()].sort((a, b) => termSpanSortKey(a.terms) - termSpanSortKey(b.terms));
 }
 
 /**

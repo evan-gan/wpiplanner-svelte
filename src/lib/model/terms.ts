@@ -59,3 +59,20 @@ export function formatTermLabel(term: TermName): string {
 export function termIndex(term: TermName): number {
   return TERM_NAMES.indexOf(term);
 }
+
+/** Divider text for a run of terms: "A-Term", "A-Term – B-Term", or "Term TBA" for none. */
+export function formatTermSpanLabel(terms: readonly TermName[]): string {
+  return terms.length === 0 ? 'Term TBA' : terms.map((term) => formatTermLabel(term)).join(' – ');
+}
+
+/**
+ * Sort key that keeps term spans in calendar order: by first term, then by
+ * length, so A comes before A–B, which comes before B. No terms sorts last.
+ *
+ * @param terms Calendar-ordered terms of the span
+ */
+export function termSpanSortKey(terms: readonly TermName[]): number {
+  return terms.length === 0
+    ? Number.MAX_SAFE_INTEGER
+    : TERM_NAMES.indexOf(terms[0]) * 10 + terms.length;
+}

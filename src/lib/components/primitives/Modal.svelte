@@ -11,13 +11,15 @@
   interface Props {
     open: boolean;
     title: Snippet;
+    /** Controls drawn at the right of the header, just before the close button. */
+    actions?: Snippet;
     children: Snippet;
     onclose: () => void;
     /** Width of the panel; the period dialog wants a wide one. */
     width?: string;
   }
 
-  let { open, title, children, onclose, width = '640px' }: Props = $props();
+  let { open, title, actions, children, onclose, width = '640px' }: Props = $props();
 
   let dialog: HTMLDialogElement | undefined = $state();
 
@@ -36,6 +38,9 @@
 <dialog bind:this={dialog} style:width onclose={onclose} onclick={onBackdropClick}>
   <header>
     <div class="title">{@render title()}</div>
+    {#if actions}
+      <div class="actions">{@render actions()}</div>
+    {/if}
     <button type="button" class="close" onclick={onclose} aria-label="Close">×</button>
   </header>
   <div class="body">
@@ -71,6 +76,12 @@
   .title {
     font-weight: bold;
     min-width: 0;
+  }
+
+  /* Pushes the actions and the close button together to the right edge. */
+  .actions {
+    margin-left: auto;
+    flex-shrink: 0;
   }
 
   .close {

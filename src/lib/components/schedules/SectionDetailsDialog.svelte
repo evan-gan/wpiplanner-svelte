@@ -10,6 +10,8 @@
   import { dayMaskToNames } from '$lib/model/days';
   import { formatClockTime } from '$lib/model/time';
   import Modal from '$lib/components/primitives/Modal.svelte';
+  import CopyText from '$lib/components/primitives/CopyText.svelte';
+  import { formatCourseId } from '$lib/model/courseBackgroundText';
   import CourseBackgroundForCourse from '$lib/components/catalog/CourseBackgroundForCourse.svelte';
 
   interface Props {
@@ -39,6 +41,10 @@
         <input type="checkbox" checked={!denied} onchange={ontoggle} />
         {catalog.courseTitle(courseId)} - {section.number}
       </label>
+    {/snippet}
+    {#snippet actions()}
+      <!-- Copied as "MA 1024", with the space, for pasting into searches elsewhere. -->
+      <CopyText text={formatCourseId(courseId)} label="Copy course code" />
     {/snippet}
 
     <div class="layout">

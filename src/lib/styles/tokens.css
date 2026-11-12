@@ -27,6 +27,10 @@
   --toggle-remove: #d32f2f;
   --toggle-remove-bg: #fdeaea;
 
+  /* Click-to-copy flash (CopyText) — the same green, meaning "done". */
+  --copy-done: var(--toggle-add);
+  --copy-done-bg: var(--toggle-add-bg);
+
   /* Availability warning glyphs — CourseList.NoSeatWarning */
   --warn-full: red;
   --warn-waitlist: blue;

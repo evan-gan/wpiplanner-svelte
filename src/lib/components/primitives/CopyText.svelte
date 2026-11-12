@@ -1,8 +1,9 @@
 <!--
   A piece of text that copies itself on click, e.g. a course code to paste into
   another site's search. Copies on the press itself, with no confirm step, and
-  says "Copied" briefly afterwards. Without clipboard permission the text is
-  selected instead, so Ctrl+C still works.
+  flashes green briefly afterwards — no "Copy" label, so several fit in a
+  header. Without clipboard permission the text is selected instead, so Ctrl+C
+  still works.
 -->
 <script lang="ts">
   interface Props {
@@ -43,16 +44,20 @@
   $effect(() => () => clearTimeout(hideTimer));
 </script>
 
-<button type="button" class="copy-text" title={label} aria-label="{label}: {text}" onclick={copyText}>
+<button
+  type="button"
+  class="copy-text"
+  class:copied
+  title={label}
+  aria-label="{label}: {text}"
+  onclick={copyText}
+>
   <span bind:this={textElement}>{text}</span>
-  <span class="status" aria-live="polite">{copied ? 'Copied' : 'Copy'}</span>
 </button>
+<span class="visually-hidden" aria-live="polite">{copied ? `Copied ${text}` : ''}</span>
 
 <style>
   .copy-text {
-    display: inline-flex;
-    align-items: baseline;
-    gap: var(--space-2);
     border: 1px solid var(--border-muted);
     border-radius: var(--radius-sm);
     background: var(--surface);
@@ -67,9 +72,18 @@
     background: var(--surface-alt);
   }
 
-  .status {
-    font-size: var(--font-size-small);
-    font-weight: normal;
-    color: var(--text-muted);
+  .copy-text.copied {
+    border-color: var(--copy-done);
+    background: var(--copy-done-bg);
+    color: var(--copy-done);
+  }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
   }
 </style>

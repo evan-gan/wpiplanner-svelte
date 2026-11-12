@@ -12,6 +12,7 @@
   import Modal from '$lib/components/primitives/Modal.svelte';
   import CopyText from '$lib/components/primitives/CopyText.svelte';
   import { formatCourseId } from '$lib/model/courseBackgroundText';
+  import { sectionParts } from '$lib/model/sectionComponents';
   import CourseBackgroundForCourse from '$lib/components/catalog/CourseBackgroundForCourse.svelte';
 
   interface Props {
@@ -28,6 +29,10 @@
 
   const section = $derived(sectionId === null ? null : (catalog.getSection(sectionId) ?? null));
   const courseId = $derived(sectionId === null ? null : (catalog.getCourseIdOfSection(sectionId) ?? null));
+  // The lecture alone (CL02 of CL02/CD05/CX02), since that is what registration searches by.
+  const lectureNumber = $derived(
+    section === null ? '' : (sectionParts(section).find((part) => part.isLead)?.number ?? section.number),
+  );
   const course = $derived(courseId === null ? null : (catalog.getCourse(courseId) ?? null));
   // The course's description, not the section's: the section's is often empty in the live feed,
   // and the course's is the text the structured background was read from.
@@ -43,8 +48,11 @@
       </label>
     {/snippet}
     {#snippet actions()}
-      <!-- Copied as "MA 1024", with the space, for pasting into searches elsewhere. -->
-      <CopyText text={formatCourseId(courseId)} label="Copy course code" />
+      <!-- Copied as "MA 1024" and "MA 1024-CL02", with the space, for pasting into searches elsewhere. -->
+      <div class="copy-codes">
+        <CopyText text={formatCourseId(courseId)} label="Copy course code" />
+        <CopyText text="{formatCourseId(courseId)}-{lectureNumber}" label="Copy course and lecture section" />
+      </div>
     {/snippet}
 
     <div class="layout">
@@ -115,6 +123,11 @@
     align-items: center;
     gap: var(--space-2);
     cursor: pointer;
+  }
+
+  .copy-codes {
+    display: flex;
+    gap: var(--space-2);
   }
 
   .layout {
